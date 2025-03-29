@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A Telnyx .NET client generated from the Cloudflare OpenAPI schema, updated daily</Description>
+        <Description>A Cloudflare .NET client generated from the Cloudflare OpenAPI schema, updated daily</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">3.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Cloudflare.OpenApiClient</AssemblyName>
