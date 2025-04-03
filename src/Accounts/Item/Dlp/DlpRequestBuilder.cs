@@ -2,18 +2,18 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Email;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Entries;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Limits;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Patterns;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Payload_log;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Profiles;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
+namespace Soenneker.Cloudflare.Accounts.Item.Dlp
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp
@@ -22,42 +22,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
     public partial class DlpRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The datasets property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder Datasets
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder Datasets
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The email property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.EmailRequestBuilder Email
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.EmailRequestBuilder Email
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The entries property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.EntriesRequestBuilder Entries
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Entries.EntriesRequestBuilder Entries
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.EntriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Entries.EntriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The limits property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits.LimitsRequestBuilder Limits
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Limits.LimitsRequestBuilder Limits
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits.LimitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Limits.LimitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The patterns property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns.PatternsRequestBuilder Patterns
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Patterns.PatternsRequestBuilder Patterns
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns.PatternsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Patterns.PatternsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The payload_log property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log.Payload_logRequestBuilder Payload_log
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Payload_log.Payload_logRequestBuilder Payload_log
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log.Payload_logRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Payload_log.Payload_logRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The profiles property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder Profiles
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder Profiles
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.DlpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.DlpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.DlpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.DlpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

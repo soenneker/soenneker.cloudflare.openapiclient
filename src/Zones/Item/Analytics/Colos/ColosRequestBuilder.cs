@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos
+namespace Soenneker.Cloudflare.Zones.Item.Analytics.Colos
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\analytics\colos
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos
     public partial class ColosRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Analytics.Colos.ColosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Analytics.Colos.ColosRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,12 +73,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Analytics.Colos.ColosRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Zones.Item.Analytics.Colos.ColosRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Zones.Item.Analytics.Colos.ColosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.Rotate_secret;
+using Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.Rotate_secret;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\challenges\widgets\{sitekey}
@@ -18,12 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.It
     public partial class WithSitekeyItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The rotate_secret property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.Rotate_secret.Rotate_secretRequestBuilder Rotate_secret
+        public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.Rotate_secret.Rotate_secretRequestBuilder Rotate_secret
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.Rotate_secret.Rotate_secretRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.Rotate_secret.Rotate_secretRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -149,11 +149,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

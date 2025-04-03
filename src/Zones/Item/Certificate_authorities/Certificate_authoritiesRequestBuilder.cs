@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Hostname_associations;
+using Soenneker.Cloudflare.Zones.Item.Certificate_authorities.Hostname_associations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities
+namespace Soenneker.Cloudflare.Zones.Item.Certificate_authorities
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\certificate_authorities
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities
     public partial class Certificate_authoritiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The hostname_associations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Hostname_associations.Hostname_associationsRequestBuilder Hostname_associations
+        public global::Soenneker.Cloudflare.Zones.Item.Certificate_authorities.Hostname_associations.Hostname_associationsRequestBuilder Hostname_associations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Hostname_associations.Hostname_associationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Certificate_authorities.Hostname_associations.Hostname_associationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

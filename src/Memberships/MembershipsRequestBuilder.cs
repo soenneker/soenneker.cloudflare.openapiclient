@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Memberships.Item;
+using Soenneker.Cloudflare.Memberships.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Memberships
+namespace Soenneker.Cloudflare.Memberships
 {
     /// <summary>
     /// Builds and executes requests for operations under \memberships
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Memberships
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembershipsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.memberships.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.memberships.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Memberships.Item.WithMembership_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Memberships.Item.WithMembership_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Memberships.Item.WithMembership_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Memberships.Item.WithMembership_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("membership_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Memberships.Item.WithMembership_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Memberships.Item.WithMembership_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Memberships.MembershipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Memberships
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Memberships.MembershipsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -84,11 +84,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Memberships
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Memberships.MembershipsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Memberships.MembershipsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Memberships.MembershipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

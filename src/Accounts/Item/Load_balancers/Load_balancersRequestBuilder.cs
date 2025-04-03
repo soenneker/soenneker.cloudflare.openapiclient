@@ -2,16 +2,16 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Pools;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Preview;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Regions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Search;
+using Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors;
+using Soenneker.Cloudflare.Accounts.Item.Load_balancers.Pools;
+using Soenneker.Cloudflare.Accounts.Item.Load_balancers.Preview;
+using Soenneker.Cloudflare.Accounts.Item.Load_balancers.Regions;
+using Soenneker.Cloudflare.Accounts.Item.Load_balancers.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers
+namespace Soenneker.Cloudflare.Accounts.Item.Load_balancers
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\load_balancers
@@ -20,32 +20,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers
     public partial class Load_balancersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The monitors property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.MonitorsRequestBuilder Monitors
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.MonitorsRequestBuilder Monitors
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.MonitorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.MonitorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pools property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Pools.PoolsRequestBuilder Pools
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Pools.PoolsRequestBuilder Pools
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Pools.PoolsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Pools.PoolsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The preview property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Preview.PreviewRequestBuilder Preview
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Preview.PreviewRequestBuilder Preview
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The regions property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Regions.RegionsRequestBuilder Regions
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Regions.RegionsRequestBuilder Regions
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Regions.RegionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Regions.RegionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The search property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Search.SearchRequestBuilder Search
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Search.SearchRequestBuilder Search
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Load_balancersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Load_balancersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Load_balancersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Load_balancersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

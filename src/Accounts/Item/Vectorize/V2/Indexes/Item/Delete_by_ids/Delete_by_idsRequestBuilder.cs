@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids
+namespace Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\vectorize\v2\indexes\{index_name}\delete_by_ids
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
     public partial class Delete_by_idsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

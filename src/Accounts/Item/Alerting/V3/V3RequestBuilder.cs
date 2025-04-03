@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Available_alerts;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Destinations;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.History;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Policies;
+using Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Available_alerts;
+using Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Destinations;
+using Soenneker.Cloudflare.Accounts.Item.Alerting.V3.History;
+using Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Policies;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3
+namespace Soenneker.Cloudflare.Accounts.Item.Alerting.V3
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\alerting\v3
@@ -19,27 +19,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3
     public partial class V3RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The available_alerts property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Available_alerts.Available_alertsRequestBuilder Available_alerts
+        public global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Available_alerts.Available_alertsRequestBuilder Available_alerts
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Available_alerts.Available_alertsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Available_alerts.Available_alertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The destinations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Destinations.DestinationsRequestBuilder Destinations
+        public global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Destinations.DestinationsRequestBuilder Destinations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Destinations.DestinationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Destinations.DestinationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The history property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.History.HistoryRequestBuilder History
+        public global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.History.HistoryRequestBuilder History
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policies property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Policies.PoliciesRequestBuilder Policies
+        public global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Policies.PoliciesRequestBuilder Policies
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.V3RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.V3RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.V3RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Alerting.V3.V3RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

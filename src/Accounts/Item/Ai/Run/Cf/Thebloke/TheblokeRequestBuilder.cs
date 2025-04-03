@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke
+namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Thebloke
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\thebloke
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke
     public partial class TheblokeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The discolmGerman7bV1Awq property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder DiscolmGerman7bV1Awq
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder DiscolmGerman7bV1Awq
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

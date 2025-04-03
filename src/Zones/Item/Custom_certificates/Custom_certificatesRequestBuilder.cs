@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Item;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Prioritize;
+using Soenneker.Cloudflare.Zones.Item.Custom_certificates.Item;
+using Soenneker.Cloudflare.Zones.Item.Custom_certificates.Prioritize;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates
+namespace Soenneker.Cloudflare.Zones.Item.Custom_certificates
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\custom_certificates
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates
     public partial class Custom_certificatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The prioritize property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Prioritize.PrioritizeRequestBuilder Prioritize
+        public global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Prioritize.PrioritizeRequestBuilder Prioritize
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Prioritize.PrioritizeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Prioritize.PrioritizeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.custom_certificates.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.custom_certificates.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Item.WithCustom_certificate_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Item.WithCustom_certificate_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Item.WithCustom_certificate_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Item.WithCustom_certificate_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("custom_certificate_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Item.WithCustom_certificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Item.WithCustom_certificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -126,11 +126,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

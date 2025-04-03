@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Export;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.PolicyPreview;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.Export;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.Item;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.PolicyPreview;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
+namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\cloud\resources
@@ -20,29 +20,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
     public partial class ResourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The export property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Export.ExportRequestBuilder Export
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.Export.ExportRequestBuilder Export
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policyPreview property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.PolicyPreview.PolicyPreviewRequestBuilder PolicyPreview
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.PolicyPreview.PolicyPreviewRequestBuilder PolicyPreview
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.PolicyPreview.PolicyPreviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.PolicyPreview.PolicyPreviewRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.cloud.resources.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.magic.cloud.resources.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("resource_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -96,11 +96,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

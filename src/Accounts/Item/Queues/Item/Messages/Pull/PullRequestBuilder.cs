@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull
+namespace Soenneker.Cloudflare.Accounts.Item.Queues.Item.Messages.Pull
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\queues\{queue_id}\messages\pull
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.
     public partial class PullRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Queues.Item.Messages.Pull.PullRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

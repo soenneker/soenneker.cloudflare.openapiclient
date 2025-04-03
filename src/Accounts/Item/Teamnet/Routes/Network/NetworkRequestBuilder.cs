@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.Item;
+using Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.Network.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network
+namespace Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.Network
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\teamnet\routes\network
@@ -15,21 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Networ
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NetworkRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.teamnet.routes.network.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.teamnet.routes.network.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.Item.WithIp_network_encodedItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.Network.Item.WithIp_network_encodedItemRequestBuilder"/></returns>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.Item.WithIp_network_encodedItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.Network.Item.WithIp_network_encodedItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("ip_network_encoded", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.Item.WithIp_network_encodedItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.Network.Item.WithIp_network_encodedItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.NetworkRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.Network.NetworkRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Networ
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.NetworkRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.Network.NetworkRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

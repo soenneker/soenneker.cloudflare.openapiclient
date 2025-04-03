@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.User.Tokens.Item;
-using Soenneker.Cloudflare.OpenApiClient.User.Tokens.Permission_groups;
-using Soenneker.Cloudflare.OpenApiClient.User.Tokens.Verify;
+using Soenneker.Cloudflare.User.Tokens.Item;
+using Soenneker.Cloudflare.User.Tokens.Permission_groups;
+using Soenneker.Cloudflare.User.Tokens.Verify;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
+namespace Soenneker.Cloudflare.User.Tokens
 {
     /// <summary>
     /// Builds and executes requests for operations under \user\tokens
@@ -20,29 +20,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
     public partial class TokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The permission_groups property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.Permission_groups.Permission_groupsRequestBuilder Permission_groups
+        public global::Soenneker.Cloudflare.User.Tokens.Permission_groups.Permission_groupsRequestBuilder Permission_groups
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.Permission_groups.Permission_groupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Tokens.Permission_groups.Permission_groupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The verify property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.Verify.VerifyRequestBuilder Verify
+        public global::Soenneker.Cloudflare.User.Tokens.Verify.VerifyRequestBuilder Verify
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.Verify.VerifyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Tokens.Verify.VerifyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.user.tokens.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.user.tokens.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.Item.WithToken_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.Item.WithToken_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.User.Tokens.Item.WithToken_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.User.Tokens.Item.WithToken_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("token_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.Item.WithToken_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.User.Tokens.Item.WithToken_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Tokens.TokensRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Tokens.TokensRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -132,11 +132,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.User.Tokens.TokensRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.User.Tokens.TokensRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.User.Tokens.TokensRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

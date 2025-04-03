@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Item;
+using Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups
+namespace Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\iam\permission_groups
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Permission_groupsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.iam.permission_groups.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.iam.permission_groups.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Item.WithPermission_group_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Item.WithPermission_group_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Item.WithPermission_group_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Item.WithPermission_group_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("permission_group_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Item.WithPermission_group_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Item.WithPermission_group_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -84,11 +84,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Iam.Permission_groups.Permission_groupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

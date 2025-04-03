@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.Destination;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.Origin;
+using Soenneker.Cloudflare.Zones.Item.Logpush.Validate.Destination;
+using Soenneker.Cloudflare.Zones.Item.Logpush.Validate.Origin;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate
+namespace Soenneker.Cloudflare.Zones.Item.Logpush.Validate
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\logpush\validate
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate
     public partial class ValidateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The destination property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.Destination.DestinationRequestBuilder Destination
+        public global::Soenneker.Cloudflare.Zones.Item.Logpush.Validate.Destination.DestinationRequestBuilder Destination
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.Destination.DestinationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Logpush.Validate.Destination.DestinationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.Origin.OriginRequestBuilder Origin
+        public global::Soenneker.Cloudflare.Zones.Item.Logpush.Validate.Origin.OriginRequestBuilder Origin
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.Origin.OriginRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Logpush.Validate.Origin.OriginRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.ValidateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Logpush.Validate.ValidateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Validate.ValidateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Logpush.Validate.ValidateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

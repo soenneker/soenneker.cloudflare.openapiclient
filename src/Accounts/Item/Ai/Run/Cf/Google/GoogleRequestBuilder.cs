@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google
+namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\google
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google
     public partial class GoogleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The gemma2bItLora property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora.Gemma2bItLoraRequestBuilder Gemma2bItLora
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora.Gemma2bItLoraRequestBuilder Gemma2bItLora
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora.Gemma2bItLoraRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora.Gemma2bItLoraRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gemma7bItLora property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora.Gemma7bItLoraRequestBuilder Gemma7bItLora
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora.Gemma7bItLoraRequestBuilder Gemma7bItLora
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora.Gemma7bItLoraRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora.Gemma7bItLoraRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.GoogleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.GoogleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.GoogleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Google.GoogleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

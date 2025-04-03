@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Locations;
+using Soenneker.Cloudflare.Radar.Traffic_anomalies.Locations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
+namespace Soenneker.Cloudflare.Radar.Traffic_anomalies
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\traffic_anomalies
@@ -18,12 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
     public partial class Traffic_anomaliesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The locations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Locations.LocationsRequestBuilder Locations
+        public global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Locations.LocationsRequestBuilder Locations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -77,11 +77,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

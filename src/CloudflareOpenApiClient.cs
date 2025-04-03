@@ -6,22 +6,22 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
-using Soenneker.Cloudflare.OpenApiClient.Accounts;
-using Soenneker.Cloudflare.OpenApiClient.Certificates;
-using Soenneker.Cloudflare.OpenApiClient.Configs;
-using Soenneker.Cloudflare.OpenApiClient.Ips;
-using Soenneker.Cloudflare.OpenApiClient.Memberships;
-using Soenneker.Cloudflare.OpenApiClient.Notification;
-using Soenneker.Cloudflare.OpenApiClient.Organizations;
-using Soenneker.Cloudflare.OpenApiClient.Radar;
-using Soenneker.Cloudflare.OpenApiClient.Scans;
-using Soenneker.Cloudflare.OpenApiClient.User;
-using Soenneker.Cloudflare.OpenApiClient.Zones;
+using Soenneker.Cloudflare.Accounts;
+using Soenneker.Cloudflare.Certificates;
+using Soenneker.Cloudflare.Configs;
+using Soenneker.Cloudflare.Ips;
+using Soenneker.Cloudflare.Memberships;
+using Soenneker.Cloudflare.Notification;
+using Soenneker.Cloudflare.Organizations;
+using Soenneker.Cloudflare.Radar;
+using Soenneker.Cloudflare.Scans;
+using Soenneker.Cloudflare.User;
+using Soenneker.Cloudflare.Zones;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient
+namespace Soenneker.Cloudflare
 {
     /// <summary>
     /// The main entry point of the SDK, exposes the configuration and the fluent API.
@@ -30,62 +30,62 @@ namespace Soenneker.Cloudflare.OpenApiClient
     public partial class CloudflareOpenApiClient : BaseRequestBuilder
     {
         /// <summary>The accounts property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.AccountsRequestBuilder Accounts
+        public global::Soenneker.Cloudflare.Accounts.AccountsRequestBuilder Accounts
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder Certificates
+        public global::Soenneker.Cloudflare.Certificates.CertificatesRequestBuilder Certificates
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The configs property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Configs.ConfigsRequestBuilder Configs
+        public global::Soenneker.Cloudflare.Configs.ConfigsRequestBuilder Configs
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Configs.ConfigsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Configs.ConfigsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ips property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Ips.IpsRequestBuilder Ips
+        public global::Soenneker.Cloudflare.Ips.IpsRequestBuilder Ips
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Ips.IpsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Ips.IpsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The memberships property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder Memberships
+        public global::Soenneker.Cloudflare.Memberships.MembershipsRequestBuilder Memberships
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notification property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Notification.NotificationRequestBuilder Notification
+        public global::Soenneker.Cloudflare.Notification.NotificationRequestBuilder Notification
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Notification.NotificationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Notification.NotificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder Organizations
+        public global::Soenneker.Cloudflare.Organizations.OrganizationsRequestBuilder Organizations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The radar property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder Radar
+        public global::Soenneker.Cloudflare.Radar.RadarRequestBuilder Radar
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.RadarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scans property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Scans.ScansRequestBuilder Scans
+        public global::Soenneker.Cloudflare.Scans.ScansRequestBuilder Scans
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder User
+        public global::Soenneker.Cloudflare.User.UserRequestBuilder User
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.UserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zones property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder Zones
+        public global::Soenneker.Cloudflare.Zones.ZonesRequestBuilder Zones
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.ZonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.CloudflareOpenApiClient"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.CloudflareOpenApiClient"/> and sets the default values.
         /// </summary>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CloudflareOpenApiClient(IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}", new Dictionary<string, object>())

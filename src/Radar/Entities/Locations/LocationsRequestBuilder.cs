@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.Item;
+using Soenneker.Cloudflare.Radar.Entities.Locations.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
+namespace Soenneker.Cloudflare.Radar.Entities.Locations
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\entities\locations
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LocationsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.entities.locations.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.radar.entities.locations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.Item.WithLocationItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.Item.WithLocationItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Entities.Locations.Item.WithLocationItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Radar.Entities.Locations.Item.WithLocationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("location", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.Item.WithLocationItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Radar.Entities.Locations.Item.WithLocationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.LocationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Entities.Locations.LocationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.LocationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Entities.Locations.LocationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -84,11 +84,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.LocationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Entities.Locations.LocationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.LocationsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Radar.Entities.Locations.LocationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.LocationsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Radar.Entities.Locations.LocationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

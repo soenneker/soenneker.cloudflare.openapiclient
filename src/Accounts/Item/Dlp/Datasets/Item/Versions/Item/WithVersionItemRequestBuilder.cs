@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries;
+using Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\datasets\{dataset_id}\versions\{version}
@@ -18,12 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Ver
     public partial class WithVersionItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The entries property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.EntriesRequestBuilder Entries
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.EntriesRequestBuilder Entries
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.EntriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.EntriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Ver
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -77,11 +77,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Ver
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Versions.Item.WithVersionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

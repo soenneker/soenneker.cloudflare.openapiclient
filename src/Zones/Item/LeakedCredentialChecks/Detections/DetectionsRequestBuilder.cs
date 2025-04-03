@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item;
+using Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections
+namespace Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\leaked-credential-checks\detections
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetectionsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.leakedCredentialChecks.detections.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.leakedCredentialChecks.detections.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("detection_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.Item.WithDetection_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.Detections.DetectionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

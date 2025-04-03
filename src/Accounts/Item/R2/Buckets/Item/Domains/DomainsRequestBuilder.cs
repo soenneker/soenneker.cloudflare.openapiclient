@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.Custom;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.Managed;
+using Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.Custom;
+using Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.Managed;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains
+namespace Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\r2\buckets\{bucket_name}\domains
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domai
     public partial class DomainsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The custom property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.Custom.CustomRequestBuilder Custom
+        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.Custom.CustomRequestBuilder Custom
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.Custom.CustomRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.Custom.CustomRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The managed property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.Managed.ManagedRequestBuilder Managed
+        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.Managed.ManagedRequestBuilder Managed
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.Managed.ManagedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.Managed.ManagedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domai
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

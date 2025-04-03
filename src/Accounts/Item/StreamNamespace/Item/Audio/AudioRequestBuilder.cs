@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.Copy;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.Item;
+using Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.Copy;
+using Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio
+namespace Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\stream\{identifier}\audio
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.
     public partial class AudioRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The copy property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.Copy.CopyRequestBuilder Copy
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.Copy.CopyRequestBuilder Copy
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.Copy.CopyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.Copy.CopyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.stream.item.audio.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.stream.item.audio.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.Item.WithAudio_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.Item.WithAudio_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.Item.WithAudio_identifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.Item.WithAudio_identifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("audio_identifier", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.Item.WithAudio_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.Item.WithAudio_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -90,11 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

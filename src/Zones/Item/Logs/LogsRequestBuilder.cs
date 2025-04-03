@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received;
+using Soenneker.Cloudflare.Zones.Item.Logs.Control;
+using Soenneker.Cloudflare.Zones.Item.Logs.Rayids;
+using Soenneker.Cloudflare.Zones.Item.Logs.Received;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs
+namespace Soenneker.Cloudflare.Zones.Item.Logs
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\logs
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs
     public partial class LogsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The control property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.ControlRequestBuilder Control
+        public global::Soenneker.Cloudflare.Zones.Item.Logs.Control.ControlRequestBuilder Control
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.ControlRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Logs.Control.ControlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rayids property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.RayidsRequestBuilder Rayids
+        public global::Soenneker.Cloudflare.Zones.Item.Logs.Rayids.RayidsRequestBuilder Rayids
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.RayidsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Logs.Rayids.RayidsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The received property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder Received
+        public global::Soenneker.Cloudflare.Zones.Item.Logs.Received.ReceivedRequestBuilder Received
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Logs.Received.ReceivedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.LogsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Logs.LogsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.LogsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Logs.LogsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

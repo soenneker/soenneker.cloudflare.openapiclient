@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Disable;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Enable;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloads;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Settings;
+using Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Disable;
+using Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Enable;
+using Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Payloads;
+using Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan
+namespace Soenneker.Cloudflare.Zones.Item.ContentUploadScan
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\content-upload-scan
@@ -19,27 +19,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan
     public partial class ContentUploadScanRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The disable property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Disable.DisableRequestBuilder Disable
+        public global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Disable.DisableRequestBuilder Disable
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enable property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Enable.EnableRequestBuilder Enable
+        public global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Enable.EnableRequestBuilder Enable
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The payloads property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloads.PayloadsRequestBuilder Payloads
+        public global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Payloads.PayloadsRequestBuilder Payloads
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloads.PayloadsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Payloads.PayloadsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

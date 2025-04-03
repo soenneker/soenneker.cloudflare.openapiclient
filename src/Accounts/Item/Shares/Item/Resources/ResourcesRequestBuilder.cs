@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item;
-using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.Item;
+using Soenneker.Cloudflare.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
+namespace Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\shares\{share_id}\resources
@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourcesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.shares.item.resources.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.shares.item.resources.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("resource_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,11 +54,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -89,11 +89,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -121,11 +121,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List share resources by share ID.
@@ -152,7 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
 #endif
             /// <summary>Filter share resources by resource_type.</summary>
             [QueryParameter("resource_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type? ResourceTypeAsResourceSharingResourceType { get; set; }
+            public global::Soenneker.Cloudflare.Models.ResourceSharing_resource_type? ResourceTypeAsResourceSharingResourceType { get; set; }
             /// <summary>Filter share resources by status.</summary>
             [Obsolete("This property is deprecated, use StatusAsResourceSharingResourceStatus instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,14 +166,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
 #endif
             /// <summary>Filter share resources by status.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status? StatusAsResourceSharingResourceStatus { get; set; }
+            public global::Soenneker.Cloudflare.Models.ResourceSharing_resource_status? StatusAsResourceSharingResourceStatus { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>
+        public partial class ResourcesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Shares.Item.Resources.ResourcesRequestBuilder.ResourcesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

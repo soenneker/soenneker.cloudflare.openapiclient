@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations;
+using Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.Operations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
+namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\api_gateway\discovery
@@ -18,12 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
     public partial class DiscoveryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The operations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.OperationsRequestBuilder Operations
+        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.Operations.OperationsRequestBuilder Operations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -77,11 +77,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

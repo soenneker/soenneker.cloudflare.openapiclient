@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bChat;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bChatAwq;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bChat;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bChatAwq;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen
+namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\qwen
@@ -19,27 +19,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen
     public partial class QwenRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The qwen1505bChat property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bChat.Qwen1505bChatRequestBuilder Qwen1505bChat
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bChat.Qwen1505bChatRequestBuilder Qwen1505bChat
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bChat.Qwen1505bChatRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bChat.Qwen1505bChatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The qwen1514bChatAwq property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bChatAwq.Qwen1514bChatAwqRequestBuilder Qwen1514bChatAwq
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bChatAwq.Qwen1514bChatAwqRequestBuilder Qwen1514bChatAwq
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bChatAwq.Qwen1514bChatAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bChatAwq.Qwen1514bChatAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The qwen1518bChat property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat.Qwen1518bChatRequestBuilder Qwen1518bChat
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat.Qwen1518bChatRequestBuilder Qwen1518bChat
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat.Qwen1518bChatRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat.Qwen1518bChatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The qwen157bChatAwq property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq.Qwen157bChatAwqRequestBuilder Qwen157bChatAwq
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq.Qwen157bChatAwqRequestBuilder Qwen157bChatAwq
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq.Qwen157bChatAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq.Qwen157bChatAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.QwenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.QwenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.QwenRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Qwen.QwenRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

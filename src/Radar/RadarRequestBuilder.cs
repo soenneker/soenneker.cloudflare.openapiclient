@@ -2,30 +2,30 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Annotations;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Datasets;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Entities;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Http;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Quality;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ranking;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Search;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Tcp_resets_timeouts;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots;
+using Soenneker.Cloudflare.Radar.Ai;
+using Soenneker.Cloudflare.Radar.Annotations;
+using Soenneker.Cloudflare.Radar.As112;
+using Soenneker.Cloudflare.Radar.Attacks;
+using Soenneker.Cloudflare.Radar.Bgp;
+using Soenneker.Cloudflare.Radar.Datasets;
+using Soenneker.Cloudflare.Radar.Dns;
+using Soenneker.Cloudflare.Radar.Email;
+using Soenneker.Cloudflare.Radar.Entities;
+using Soenneker.Cloudflare.Radar.Http;
+using Soenneker.Cloudflare.Radar.Leaked_credential_checks;
+using Soenneker.Cloudflare.Radar.Netflows;
+using Soenneker.Cloudflare.Radar.Quality;
+using Soenneker.Cloudflare.Radar.Ranking;
+using Soenneker.Cloudflare.Radar.Robots_txt;
+using Soenneker.Cloudflare.Radar.Search;
+using Soenneker.Cloudflare.Radar.Tcp_resets_timeouts;
+using Soenneker.Cloudflare.Radar.Traffic_anomalies;
+using Soenneker.Cloudflare.Radar.Verified_bots;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar
+namespace Soenneker.Cloudflare.Radar
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar
@@ -34,102 +34,102 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar
     public partial class RadarRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ai property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.AiRequestBuilder Ai
+        public global::Soenneker.Cloudflare.Radar.Ai.AiRequestBuilder Ai
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.AiRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Ai.AiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The annotations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.AnnotationsRequestBuilder Annotations
+        public global::Soenneker.Cloudflare.Radar.Annotations.AnnotationsRequestBuilder Annotations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.AnnotationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Annotations.AnnotationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The as112 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.As112RequestBuilder As112
+        public global::Soenneker.Cloudflare.Radar.As112.As112RequestBuilder As112
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.As112RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.As112.As112RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attacks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.AttacksRequestBuilder Attacks
+        public global::Soenneker.Cloudflare.Radar.Attacks.AttacksRequestBuilder Attacks
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.AttacksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.AttacksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bgp property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.BgpRequestBuilder Bgp
+        public global::Soenneker.Cloudflare.Radar.Bgp.BgpRequestBuilder Bgp
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.BgpRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Bgp.BgpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The datasets property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.DatasetsRequestBuilder Datasets
+        public global::Soenneker.Cloudflare.Radar.Datasets.DatasetsRequestBuilder Datasets
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.DnsRequestBuilder Dns
+        public global::Soenneker.Cloudflare.Radar.Dns.DnsRequestBuilder Dns
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The email property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.EmailRequestBuilder Email
+        public global::Soenneker.Cloudflare.Radar.Email.EmailRequestBuilder Email
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The entities property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.EntitiesRequestBuilder Entities
+        public global::Soenneker.Cloudflare.Radar.Entities.EntitiesRequestBuilder Entities
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.EntitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Entities.EntitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.HttpRequestBuilder Http
+        public global::Soenneker.Cloudflare.Radar.Http.HttpRequestBuilder Http
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.HttpRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Http.HttpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The leaked_credential_checks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Leaked_credential_checksRequestBuilder Leaked_credential_checks
+        public global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Leaked_credential_checksRequestBuilder Leaked_credential_checks
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Leaked_credential_checksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Leaked_credential_checksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The netflows property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.NetflowsRequestBuilder Netflows
+        public global::Soenneker.Cloudflare.Radar.Netflows.NetflowsRequestBuilder Netflows
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.NetflowsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Netflows.NetflowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The quality property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.QualityRequestBuilder Quality
+        public global::Soenneker.Cloudflare.Radar.Quality.QualityRequestBuilder Quality
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.QualityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Quality.QualityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ranking property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.RankingRequestBuilder Ranking
+        public global::Soenneker.Cloudflare.Radar.Ranking.RankingRequestBuilder Ranking
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.RankingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Ranking.RankingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The robots_txt property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Robots_txtRequestBuilder Robots_txt
+        public global::Soenneker.Cloudflare.Radar.Robots_txt.Robots_txtRequestBuilder Robots_txt
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Robots_txtRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Robots_txt.Robots_txtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The search property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.SearchRequestBuilder Search
+        public global::Soenneker.Cloudflare.Radar.Search.SearchRequestBuilder Search
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tcp_resets_timeouts property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Tcp_resets_timeouts.Tcp_resets_timeoutsRequestBuilder Tcp_resets_timeouts
+        public global::Soenneker.Cloudflare.Radar.Tcp_resets_timeouts.Tcp_resets_timeoutsRequestBuilder Tcp_resets_timeouts
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Tcp_resets_timeouts.Tcp_resets_timeoutsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Tcp_resets_timeouts.Tcp_resets_timeoutsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The traffic_anomalies property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder Traffic_anomalies
+        public global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder Traffic_anomalies
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Traffic_anomalies.Traffic_anomaliesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The verified_bots property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Verified_botsRequestBuilder Verified_bots
+        public global::Soenneker.Cloudflare.Radar.Verified_bots.Verified_botsRequestBuilder Verified_bots
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Verified_bots.Verified_botsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Verified_bots.Verified_botsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.RadarRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -137,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.RadarRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

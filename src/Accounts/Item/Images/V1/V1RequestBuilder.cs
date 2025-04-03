@@ -3,16 +3,16 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Item;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Keys;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Stats;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants;
+using Soenneker.Cloudflare.Accounts.Item.Images.V1.Item;
+using Soenneker.Cloudflare.Accounts.Item.Images.V1.Keys;
+using Soenneker.Cloudflare.Accounts.Item.Images.V1.Stats;
+using Soenneker.Cloudflare.Accounts.Item.Images.V1.Variants;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
+namespace Soenneker.Cloudflare.Accounts.Item.Images.V1
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\images\v1
@@ -21,34 +21,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The keys property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Keys.KeysRequestBuilder Keys
+        public global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Keys.KeysRequestBuilder Keys
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Keys.KeysRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Keys.KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Stats.StatsRequestBuilder Stats
+        public global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Stats.StatsRequestBuilder Stats
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Stats.StatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Stats.StatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The variants property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.VariantsRequestBuilder Variants
+        public global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Variants.VariantsRequestBuilder Variants
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Variants.VariantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Variants.VariantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.images.v1.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.images.v1.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Item.WithImage_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Item.WithImage_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Item.WithImage_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Item.WithImage_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("image_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Item.WithImage_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Images.V1.Item.WithImage_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Images.V1.V1RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Images.V1.V1RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -140,11 +140,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Images.V1.V1RequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Images.V1.V1RequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Images.V1.V1RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,20 +2,20 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Arc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dmarc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Malicious;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spam;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spf;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spoof;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Threat_category;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Tls_version;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Arc;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Dkim;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Dmarc;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Malicious;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spam;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spf;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spoof;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Threat_category;
+using Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Tls_version;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups
+namespace Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\email\security\timeseries_groups
@@ -24,52 +24,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The arc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Arc.ArcRequestBuilder Arc
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Arc.ArcRequestBuilder Arc
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dkim property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder Dkim
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder Dkim
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dmarc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dmarc.DmarcRequestBuilder Dmarc
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Dmarc.DmarcRequestBuilder Dmarc
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The malicious property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Malicious.MaliciousRequestBuilder Malicious
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Malicious.MaliciousRequestBuilder Malicious
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Malicious.MaliciousRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Malicious.MaliciousRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spam property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spam.SpamRequestBuilder Spam
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spam.SpamRequestBuilder Spam
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spam.SpamRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spam.SpamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spf.SpfRequestBuilder Spf
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spf.SpfRequestBuilder Spf
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spoof property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spoof.SpoofRequestBuilder Spoof
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spoof.SpoofRequestBuilder Spoof
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spoof.SpoofRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Spoof.SpoofRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The threat_category property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Threat_category.Threat_categoryRequestBuilder Threat_category
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Threat_category.Threat_categoryRequestBuilder Threat_category
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Threat_category.Threat_categoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Threat_category.Threat_categoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tls_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder Tls_version
+        public global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder Tls_version
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Security.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

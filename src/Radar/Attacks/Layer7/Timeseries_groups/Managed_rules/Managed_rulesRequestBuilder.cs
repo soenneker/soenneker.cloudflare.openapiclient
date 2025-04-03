@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules
+namespace Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\attacks\layer7\timeseries_groups\managed_rules
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
     public partial class Managed_rulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

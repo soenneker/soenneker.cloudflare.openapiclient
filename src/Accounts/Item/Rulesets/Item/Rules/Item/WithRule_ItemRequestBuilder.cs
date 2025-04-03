@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rulesets\{ruleset_id}\rules\{rule_id}
@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.I
     public partial class WithRule_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.I
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,100 +36,100 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.I
         /// <summary>
         /// Deletes an existing rule from an account ruleset.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse?> DeleteAsWithRule_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse?> DeleteAsWithRule_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse> DeleteAsWithRule_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse> DeleteAsWithRule_DeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse>(requestInfo, global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an existing rule from an account ruleset.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
         [Obsolete("This method is obsolete. Use DeleteAsWithRule_DeleteResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response>(requestInfo, global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an existing rule in an account ruleset.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse"/></returns>
         /// <param name="body">Removed invalid $ref</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse?> PatchAsWithRule_PatchResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse?> PatchAsWithRule_PatchResponseAsync(global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse> PatchAsWithRule_PatchResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse> PatchAsWithRule_PatchResponseAsync(global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse>(requestInfo, global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an existing rule in an account ruleset.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response"/></returns>
         /// <param name="body">Removed invalid $ref</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.Models.WithRule_4XXError">When receiving a 4XX status code</exception>
         [Obsolete("This method is obsolete. Use PatchAsWithRule_PatchResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response?> PatchAsync(global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response> PatchAsync(global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.Models.WithRule_4XXError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response>(requestInfo, global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an existing rule from an account ruleset.
@@ -158,11 +158,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_PatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -175,11 +175,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.I
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Rulesets.Item.Rules.Item.WithRule_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

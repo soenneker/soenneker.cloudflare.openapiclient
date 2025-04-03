@@ -3,19 +3,19 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Detections;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Move;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Preview;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Raw;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Trace;
-using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Detections;
+using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Move;
+using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Preview;
+using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Raw;
+using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify;
+using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Trace;
+using Soenneker.Cloudflare.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item
+namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\investigate\{postfix_id}
@@ -24,37 +24,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
     public partial class WithPostfix_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The detections property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Detections.DetectionsRequestBuilder Detections
+        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Detections.DetectionsRequestBuilder Detections
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Detections.DetectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Detections.DetectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The move property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Move.MoveRequestBuilder Move
+        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Move.MoveRequestBuilder Move
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The preview property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Preview.PreviewRequestBuilder Preview
+        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Preview.PreviewRequestBuilder Preview
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The raw property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Raw.RawRequestBuilder Raw
+        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Raw.RawRequestBuilder Raw
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reclassify property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify.ReclassifyRequestBuilder Reclassify
+        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify.ReclassifyRequestBuilder Reclassify
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify.ReclassifyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Reclassify.ReclassifyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tracePath property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Trace.TraceRequestBuilder TracePath
+        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Trace.TraceRequestBuilder TracePath
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.Trace.TraceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.Trace.TraceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithPostfix_4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.Models.WithPostfix_4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithPostfix_4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.Models.WithPostfix_4XXError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -114,11 +114,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.Item.WithPostfix_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

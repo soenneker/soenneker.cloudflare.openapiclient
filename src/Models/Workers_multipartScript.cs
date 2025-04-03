@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Models
+namespace Soenneker.Cloudflare.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -17,13 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>JSON encoded metadata about the uploaded parts and Worker configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata Metadata { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Workers_multipartScript"/> and sets the default values.
         /// </summary>
         public Workers_multipartScript()
         {
@@ -32,12 +32,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Workers_multipartScript"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.Models.Workers_multipartScript CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript();
+            return new global::Soenneker.Cloudflare.Models.Workers_multipartScript();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata>(global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata>("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

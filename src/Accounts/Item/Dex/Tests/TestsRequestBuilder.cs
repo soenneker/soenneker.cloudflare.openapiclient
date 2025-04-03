@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.UniqueDevices;
+using Soenneker.Cloudflare.Accounts.Item.Dex.Tests.Overview;
+using Soenneker.Cloudflare.Accounts.Item.Dex.Tests.UniqueDevices;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests
+namespace Soenneker.Cloudflare.Accounts.Item.Dex.Tests
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\tests
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests
     public partial class TestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The overview property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder Overview
+        public global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder Overview
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The uniqueDevices property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.UniqueDevices.UniqueDevicesRequestBuilder UniqueDevices
+        public global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.UniqueDevices.UniqueDevicesRequestBuilder UniqueDevices
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.UniqueDevices.UniqueDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.UniqueDevices.UniqueDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.TestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.TestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.TestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.TestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

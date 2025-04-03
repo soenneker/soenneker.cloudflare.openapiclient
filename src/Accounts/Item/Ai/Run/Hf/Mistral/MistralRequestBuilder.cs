@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral
+namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\mistral
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral
     public partial class MistralRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The mistral7bInstructV02 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder Mistral7bInstructV02
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder Mistral7bInstructV02
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

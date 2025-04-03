@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.UnaCybertron7bV2Bf16;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Fblgit.UnaCybertron7bV2Bf16;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit
+namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Fblgit
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\fblgit
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit
     public partial class FblgitRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The unaCybertron7bV2Bf16 property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.UnaCybertron7bV2Bf16.UnaCybertron7bV2Bf16RequestBuilder UnaCybertron7bV2Bf16
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Fblgit.UnaCybertron7bV2Bf16.UnaCybertron7bV2Bf16RequestBuilder UnaCybertron7bV2Bf16
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.UnaCybertron7bV2Bf16.UnaCybertron7bV2Bf16RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Fblgit.UnaCybertron7bV2Bf16.UnaCybertron7bV2Bf16RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.FblgitRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Fblgit.FblgitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.FblgitRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Fblgit.FblgitRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers.Routes;
+using Soenneker.Cloudflare.Zones.Item.Workers.Routes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers
+namespace Soenneker.Cloudflare.Zones.Item.Workers
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\workers
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers
     public partial class WorkersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The routes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers.Routes.RoutesRequestBuilder Routes
+        public global::Soenneker.Cloudflare.Zones.Item.Workers.Routes.RoutesRequestBuilder Routes
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Workers.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

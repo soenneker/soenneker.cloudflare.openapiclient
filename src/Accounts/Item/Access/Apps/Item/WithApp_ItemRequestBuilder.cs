@@ -3,16 +3,16 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Ca;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Policies;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Revoke_tokens;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks;
+using Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Ca;
+using Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Policies;
+using Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Revoke_tokens;
+using Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\apps\{app_id}
@@ -21,27 +21,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item
     public partial class WithApp_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ca property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Ca.CaRequestBuilder Ca
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Ca.CaRequestBuilder Ca
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Ca.CaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Ca.CaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policies property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Policies.PoliciesRequestBuilder Policies
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Policies.PoliciesRequestBuilder Policies
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The revoke_tokens property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Revoke_tokens.Revoke_tokensRequestBuilder Revoke_tokens
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Revoke_tokens.Revoke_tokensRequestBuilder Revoke_tokens
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Revoke_tokens.Revoke_tokensRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.Revoke_tokens.Revoke_tokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user_policy_checks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder User_policy_checks
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder User_policy_checks
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -167,11 +167,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.WithApp_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.Preview;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.References;
+using Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.Preview;
+using Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.References;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\load_balancers\monitors\{monitor_id}
@@ -19,17 +19,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monito
     public partial class WithMonitor_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The preview property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.Preview.PreviewRequestBuilder Preview
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.Preview.PreviewRequestBuilder Preview
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The references property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.References.ReferencesRequestBuilder References
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.References.ReferencesRequestBuilder References
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.References.ReferencesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.References.ReferencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monito
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -191,11 +191,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monito
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Load_balancers.Monitors.Item.WithMonitor_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

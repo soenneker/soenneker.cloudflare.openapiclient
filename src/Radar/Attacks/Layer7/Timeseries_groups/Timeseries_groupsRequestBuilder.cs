@@ -2,18 +2,18 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_version;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Industry;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Ip_version;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Vertical;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Http_method;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Http_version;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Industry;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Ip_version;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Vertical;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups
+namespace Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\attacks\layer7\timeseries_groups
@@ -22,42 +22,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The http_method property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.Http_methodRequestBuilder Http_method
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Http_method.Http_methodRequestBuilder Http_method
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.Http_methodRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Http_method.Http_methodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_version.Http_versionRequestBuilder Http_version
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Http_version.Http_versionRequestBuilder Http_version
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_version.Http_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Http_version.Http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The industry property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Industry.IndustryRequestBuilder Industry
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Industry.IndustryRequestBuilder Industry
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The managed_rules property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder Managed_rules
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder Managed_rules
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mitigation_product property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product.Mitigation_productRequestBuilder Mitigation_product
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product.Mitigation_productRequestBuilder Mitigation_product
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product.Mitigation_productRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product.Mitigation_productRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vertical property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Vertical.VerticalRequestBuilder Vertical
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Vertical.VerticalRequestBuilder Vertical
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

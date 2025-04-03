@@ -3,21 +3,21 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.User.Audit_logs;
-using Soenneker.Cloudflare.OpenApiClient.User.Billing;
-using Soenneker.Cloudflare.OpenApiClient.User.Firewall;
-using Soenneker.Cloudflare.OpenApiClient.User.Invites;
-using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers;
-using Soenneker.Cloudflare.OpenApiClient.User.Load_balancing_analytics;
-using Soenneker.Cloudflare.OpenApiClient.User.Organizations;
-using Soenneker.Cloudflare.OpenApiClient.User.Subscriptions;
-using Soenneker.Cloudflare.OpenApiClient.User.Tokens;
+using Soenneker.Cloudflare.User.Audit_logs;
+using Soenneker.Cloudflare.User.Billing;
+using Soenneker.Cloudflare.User.Firewall;
+using Soenneker.Cloudflare.User.Invites;
+using Soenneker.Cloudflare.User.Load_balancers;
+using Soenneker.Cloudflare.User.Load_balancing_analytics;
+using Soenneker.Cloudflare.User.Organizations;
+using Soenneker.Cloudflare.User.Subscriptions;
+using Soenneker.Cloudflare.User.Tokens;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.User
+namespace Soenneker.Cloudflare.User
 {
     /// <summary>
     /// Builds and executes requests for operations under \user
@@ -26,52 +26,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
     public partial class UserRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The audit_logs property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder Audit_logs
+        public global::Soenneker.Cloudflare.User.Audit_logs.Audit_logsRequestBuilder Audit_logs
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Audit_logs.Audit_logsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Audit_logs.Audit_logsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The billing property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Billing.BillingRequestBuilder Billing
+        public global::Soenneker.Cloudflare.User.Billing.BillingRequestBuilder Billing
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The firewall property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.FirewallRequestBuilder Firewall
+        public global::Soenneker.Cloudflare.User.Firewall.FirewallRequestBuilder Firewall
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.FirewallRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Firewall.FirewallRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The invites property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Invites.InvitesRequestBuilder Invites
+        public global::Soenneker.Cloudflare.User.Invites.InvitesRequestBuilder Invites
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Invites.InvitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Invites.InvitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The load_balancers property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Load_balancersRequestBuilder Load_balancers
+        public global::Soenneker.Cloudflare.User.Load_balancers.Load_balancersRequestBuilder Load_balancers
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Load_balancersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Load_balancers.Load_balancersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The load_balancing_analytics property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancing_analytics.Load_balancing_analyticsRequestBuilder Load_balancing_analytics
+        public global::Soenneker.Cloudflare.User.Load_balancing_analytics.Load_balancing_analyticsRequestBuilder Load_balancing_analytics
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancing_analytics.Load_balancing_analyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Load_balancing_analytics.Load_balancing_analyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder Organizations
+        public global::Soenneker.Cloudflare.User.Organizations.OrganizationsRequestBuilder Organizations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscriptions property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Subscriptions.SubscriptionsRequestBuilder Subscriptions
+        public global::Soenneker.Cloudflare.User.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tokens property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder Tokens
+        public global::Soenneker.Cloudflare.User.Tokens.TokensRequestBuilder Tokens
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Tokens.TokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.UserRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -161,11 +161,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.User
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.User.UserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.User.UserRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.User.UserRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

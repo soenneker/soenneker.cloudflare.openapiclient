@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Histogram;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Summary;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top;
+using Soenneker.Cloudflare.Radar.Quality.Speed.Histogram;
+using Soenneker.Cloudflare.Radar.Quality.Speed.Summary;
+using Soenneker.Cloudflare.Radar.Quality.Speed.Top;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed
+namespace Soenneker.Cloudflare.Radar.Quality.Speed
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\quality\speed
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed
     public partial class SpeedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The histogram property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Histogram.HistogramRequestBuilder Histogram
+        public global::Soenneker.Cloudflare.Radar.Quality.Speed.Histogram.HistogramRequestBuilder Histogram
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Histogram.HistogramRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Quality.Speed.Histogram.HistogramRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The summary property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Summary.SummaryRequestBuilder Summary
+        public global::Soenneker.Cloudflare.Radar.Quality.Speed.Summary.SummaryRequestBuilder Summary
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Quality.Speed.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The top property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.TopRequestBuilder Top
+        public global::Soenneker.Cloudflare.Radar.Quality.Speed.Top.TopRequestBuilder Top
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.Top.TopRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Quality.Speed.Top.TopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.SpeedRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Quality.Speed.SpeedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.SpeedRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Quality.Speed.SpeedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

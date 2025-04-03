@@ -5,24 +5,24 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item
+namespace Soenneker.Cloudflare.Zones.Item.Rulesets.Item.Rules.Item
 {
     /// <summary>
     /// Removed invalid $ref
     /// </summary>
     [Obsolete("This class is obsolete. Use WithRule_DeleteResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithRule_Response : global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse, IParsable
+    public partial class WithRule_Response : global::Soenneker.Cloudflare.Zones.Item.Rulesets.Item.Rules.Item.WithRule_DeleteResponse, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item.WithRule_Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Rulesets.Item.Rules.Item.WithRule_Response"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item.WithRule_Response CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.Zones.Item.Rulesets.Item.Rules.Item.WithRule_Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item.WithRule_Response();
+            return new global::Soenneker.Cloudflare.Zones.Item.Rulesets.Item.Rules.Item.WithRule_Response();
         }
     }
 }

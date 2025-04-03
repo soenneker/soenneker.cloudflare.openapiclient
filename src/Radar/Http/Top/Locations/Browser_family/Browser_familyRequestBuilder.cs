@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_family.Item;
+using Soenneker.Cloudflare.Radar.Http.Top.Locations.Browser_family.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_family
+namespace Soenneker.Cloudflare.Radar.Http.Top.Locations.Browser_family
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\http\top\locations\browser_family
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_fa
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Browser_familyRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.browser_family.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.radar.http.top.locations.browser_family.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_family.Item.WithBrowser_familyItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_family.Item.WithBrowser_familyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Browser_family.Item.WithBrowser_familyItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Browser_family.Item.WithBrowser_familyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("browser_family", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_family.Item.WithBrowser_familyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Browser_family.Item.WithBrowser_familyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_family.Browser_familyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Browser_family.Browser_familyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_fa
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Browser_family.Browser_familyRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Browser_family.Browser_familyRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

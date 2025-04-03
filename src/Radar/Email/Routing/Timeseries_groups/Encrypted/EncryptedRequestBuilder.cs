@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted
+namespace Soenneker.Cloudflare.Radar.Email.Routing.Timeseries_groups.Encrypted
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\email\routing\timeseries_groups\encrypted
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
     public partial class EncryptedRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

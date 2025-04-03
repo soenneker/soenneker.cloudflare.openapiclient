@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Iqi;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed;
+using Soenneker.Cloudflare.Radar.Quality.Iqi;
+using Soenneker.Cloudflare.Radar.Quality.Speed;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality
+namespace Soenneker.Cloudflare.Radar.Quality
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\quality
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality
     public partial class QualityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The iqi property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Iqi.IqiRequestBuilder Iqi
+        public global::Soenneker.Cloudflare.Radar.Quality.Iqi.IqiRequestBuilder Iqi
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Iqi.IqiRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Quality.Iqi.IqiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The speed property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.SpeedRequestBuilder Speed
+        public global::Soenneker.Cloudflare.Radar.Quality.Speed.SpeedRequestBuilder Speed
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.Speed.SpeedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Quality.Speed.SpeedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.QualityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Quality.QualityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Quality
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.QualityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Quality.QualityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

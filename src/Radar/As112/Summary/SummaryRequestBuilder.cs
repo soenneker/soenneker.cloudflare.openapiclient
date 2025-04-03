@@ -2,17 +2,17 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes;
+using Soenneker.Cloudflare.Radar.As112.Summary.Dnssec;
+using Soenneker.Cloudflare.Radar.As112.Summary.Edns;
+using Soenneker.Cloudflare.Radar.As112.Summary.Ip_version;
+using Soenneker.Cloudflare.Radar.As112.Summary.Protocol;
+using Soenneker.Cloudflare.Radar.As112.Summary.Query_type;
+using Soenneker.Cloudflare.Radar.As112.Summary.Response_codes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary
+namespace Soenneker.Cloudflare.Radar.As112.Summary
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\as112\summary
@@ -21,37 +21,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dnssec property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec.DnssecRequestBuilder Dnssec
+        public global::Soenneker.Cloudflare.Radar.As112.Summary.Dnssec.DnssecRequestBuilder Dnssec
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.As112.Summary.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The edns property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns.EdnsRequestBuilder Edns
+        public global::Soenneker.Cloudflare.Radar.As112.Summary.Edns.EdnsRequestBuilder Edns
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns.EdnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.As112.Summary.Edns.EdnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
+        public global::Soenneker.Cloudflare.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The protocol property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol.ProtocolRequestBuilder Protocol
+        public global::Soenneker.Cloudflare.Radar.As112.Summary.Protocol.ProtocolRequestBuilder Protocol
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.As112.Summary.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The query_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type.Query_typeRequestBuilder Query_type
+        public global::Soenneker.Cloudflare.Radar.As112.Summary.Query_type.Query_typeRequestBuilder Query_type
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.As112.Summary.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The response_codes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder Response_codes
+        public global::Soenneker.Cloudflare.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder Response_codes
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.As112.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.As112.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

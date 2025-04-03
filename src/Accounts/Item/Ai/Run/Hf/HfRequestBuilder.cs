@@ -2,18 +2,18 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Google;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistralai;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Google;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistralai;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nousresearch;
+using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf
+namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf
@@ -22,42 +22,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf
     public partial class HfRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The google property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Google.GoogleRequestBuilder Google
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Google.GoogleRequestBuilder Google
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Google.GoogleRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Google.GoogleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The metaLlama property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlamaRequestBuilder MetaLlama
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlamaRequestBuilder MetaLlama
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlamaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlamaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mistral property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder Mistral
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder Mistral
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mistralai property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistralai.MistralaiRequestBuilder Mistralai
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistralai.MistralaiRequestBuilder Mistralai
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistralai.MistralaiRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Mistralai.MistralaiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The nexusflow property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder Nexusflow
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder Nexusflow
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The nousresearch property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.NousresearchRequestBuilder Nousresearch
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nousresearch.NousresearchRequestBuilder Nousresearch
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.NousresearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nousresearch.NousresearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The thebloke property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder Thebloke
+        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder Thebloke
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.HfRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.HfRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.HfRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.HfRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

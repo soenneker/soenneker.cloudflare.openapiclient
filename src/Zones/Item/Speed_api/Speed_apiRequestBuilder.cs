@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Availabilities;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Schedule;
+using Soenneker.Cloudflare.Zones.Item.Speed_api.Availabilities;
+using Soenneker.Cloudflare.Zones.Item.Speed_api.Pages;
+using Soenneker.Cloudflare.Zones.Item.Speed_api.Schedule;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api
+namespace Soenneker.Cloudflare.Zones.Item.Speed_api
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\speed_api
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api
     public partial class Speed_apiRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The availabilities property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Availabilities.AvailabilitiesRequestBuilder Availabilities
+        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Availabilities.AvailabilitiesRequestBuilder Availabilities
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Availabilities.AvailabilitiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Availabilities.AvailabilitiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pages property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.PagesRequestBuilder Pages
+        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.PagesRequestBuilder Pages
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The schedule property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Schedule.ScheduleRequestBuilder Schedule
+        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Schedule.ScheduleRequestBuilder Schedule
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Schedule.ScheduleRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Schedule.ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Speed_apiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Speed_apiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Speed_apiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Speed_apiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

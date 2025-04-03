@@ -2,19 +2,19 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Bulk;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Dom;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Har;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Responses;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Result;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Scan;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Bulk;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Dom;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Har;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Responses;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Result;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Scan;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots;
+using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2
+namespace Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\urlscanner\v2
@@ -23,47 +23,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2
     public partial class V2RequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bulk property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Bulk.BulkRequestBuilder Bulk
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Bulk.BulkRequestBuilder Bulk
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dom property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Dom.DomRequestBuilder Dom
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Dom.DomRequestBuilder Dom
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Dom.DomRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Dom.DomRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The har property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Har.HarRequestBuilder Har
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Har.HarRequestBuilder Har
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Har.HarRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Har.HarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The responses property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Responses.ResponsesRequestBuilder Responses
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Responses.ResponsesRequestBuilder Responses
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Responses.ResponsesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Responses.ResponsesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The result property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Result.ResultRequestBuilder Result
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Result.ResultRequestBuilder Result
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Result.ResultRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Result.ResultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scan property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Scan.ScanRequestBuilder Scan
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Scan.ScanRequestBuilder Scan
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Scan.ScanRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Scan.ScanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The screenshots property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder Screenshots
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder Screenshots
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The search property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder Search
+        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder Search
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.V2RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.V2RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.V2RequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.V2RequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

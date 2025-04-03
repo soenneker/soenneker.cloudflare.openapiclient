@@ -2,17 +2,17 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Hijacks;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Timeseries;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top;
+using Soenneker.Cloudflare.Radar.Bgp.Hijacks;
+using Soenneker.Cloudflare.Radar.Bgp.Ips;
+using Soenneker.Cloudflare.Radar.Bgp.Leaks;
+using Soenneker.Cloudflare.Radar.Bgp.Routes;
+using Soenneker.Cloudflare.Radar.Bgp.Timeseries;
+using Soenneker.Cloudflare.Radar.Bgp.Top;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp
+namespace Soenneker.Cloudflare.Radar.Bgp
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\bgp
@@ -21,37 +21,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp
     public partial class BgpRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The hijacks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Hijacks.HijacksRequestBuilder Hijacks
+        public global::Soenneker.Cloudflare.Radar.Bgp.Hijacks.HijacksRequestBuilder Hijacks
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Hijacks.HijacksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Bgp.Hijacks.HijacksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ips property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.IpsRequestBuilder Ips
+        public global::Soenneker.Cloudflare.Radar.Bgp.Ips.IpsRequestBuilder Ips
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.IpsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Bgp.Ips.IpsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The leaks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.LeaksRequestBuilder Leaks
+        public global::Soenneker.Cloudflare.Radar.Bgp.Leaks.LeaksRequestBuilder Leaks
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.LeaksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Bgp.Leaks.LeaksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The routes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.RoutesRequestBuilder Routes
+        public global::Soenneker.Cloudflare.Radar.Bgp.Routes.RoutesRequestBuilder Routes
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Bgp.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Timeseries.TimeseriesRequestBuilder Timeseries
+        public global::Soenneker.Cloudflare.Radar.Bgp.Timeseries.TimeseriesRequestBuilder Timeseries
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Bgp.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The top property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.TopRequestBuilder Top
+        public global::Soenneker.Cloudflare.Radar.Bgp.Top.TopRequestBuilder Top
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.TopRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Bgp.Top.TopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.BgpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Bgp.BgpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.BgpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Bgp.BgpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

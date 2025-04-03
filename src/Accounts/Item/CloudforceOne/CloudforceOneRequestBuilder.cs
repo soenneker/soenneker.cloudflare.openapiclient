@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans;
+using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events;
+using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests;
+using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Scans;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne
+namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne
     public partial class CloudforceOneRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The events property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder Events
+        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder Events
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The requests property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder Requests
+        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder Requests
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scans property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans.ScansRequestBuilder Scans
+        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Scans.ScansRequestBuilder Scans
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.CloudforceOneRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.CloudforceOneRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.CloudforceOneRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.CloudforceOneRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.Item;
+using Soenneker.Cloudflare.User.Load_balancers.Pools.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
+namespace Soenneker.Cloudflare.User.Load_balancers.Pools
 {
     /// <summary>
     /// Builds and executes requests for operations under \user\load_balancers\pools
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PoolsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.user.load_balancers.pools.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.user.load_balancers.pools.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.Item.WithPool_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.Item.WithPool_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.User.Load_balancers.Pools.Item.WithPool_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.User.Load_balancers.Pools.Item.WithPool_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("pool_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.Item.WithPool_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.User.Load_balancers.Pools.Item.WithPool_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Load_balancers.Pools.PoolsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Load_balancers.Pools.PoolsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -156,11 +156,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.User.Load_balancers.Pools.PoolsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.User.Load_balancers.Pools.PoolsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.User.Load_balancers.Pools.PoolsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

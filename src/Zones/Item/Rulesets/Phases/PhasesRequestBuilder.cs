@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item;
+using Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases
+namespace Soenneker.Cloudflare.Zones.Item.Rulesets.Phases
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\rulesets\phases
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PhasesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.rulesets.phases.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.rulesets.phases.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.WithRuleset_phaseItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.WithRuleset_phaseItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.WithRuleset_phaseItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.WithRuleset_phaseItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("ruleset_phase", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.WithRuleset_phaseItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.WithRuleset_phaseItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.PhasesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.PhasesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.PhasesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.PhasesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

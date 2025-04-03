@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Active_sessions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Failed_logins;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Last_seen_identity;
+using Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Active_sessions;
+using Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Failed_logins;
+using Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Last_seen_identity;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Access.Users.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\users\{user_id}
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item
     public partial class WithUser_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The active_sessions property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Active_sessions.Active_sessionsRequestBuilder Active_sessions
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Active_sessions.Active_sessionsRequestBuilder Active_sessions
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Active_sessions.Active_sessionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Active_sessions.Active_sessionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The failed_logins property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Failed_logins.Failed_loginsRequestBuilder Failed_logins
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Failed_logins.Failed_loginsRequestBuilder Failed_logins
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Failed_logins.Failed_loginsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Failed_logins.Failed_loginsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The last_seen_identity property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Last_seen_identity.Last_seen_identityRequestBuilder Last_seen_identity
+        public global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Last_seen_identity.Last_seen_identityRequestBuilder Last_seen_identity
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.Last_seen_identity.Last_seen_identityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.Last_seen_identity.Last_seen_identityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.WithUser_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.WithUser_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.Item.WithUser_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Users.Item.WithUser_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

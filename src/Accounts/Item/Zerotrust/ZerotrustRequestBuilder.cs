@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets;
+using Soenneker.Cloudflare.Accounts.Item.Zerotrust.Connectivity_settings;
+using Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust
+namespace Soenneker.Cloudflare.Accounts.Item.Zerotrust
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zerotrust
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust
     public partial class ZerotrustRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The connectivity_settings property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder Connectivity_settings
+        public global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder Connectivity_settings
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subnets property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder Subnets
+        public global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder Subnets
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.ZerotrustRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.ZerotrustRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.ZerotrustRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.ZerotrustRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

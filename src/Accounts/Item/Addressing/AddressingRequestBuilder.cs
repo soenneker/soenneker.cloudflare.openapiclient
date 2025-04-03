@@ -2,16 +2,16 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Services;
+using Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps;
+using Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents;
+using Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes;
+using Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames;
+using Soenneker.Cloudflare.Accounts.Item.Addressing.Services;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
+namespace Soenneker.Cloudflare.Accounts.Item.Addressing
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing
@@ -20,32 +20,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
     public partial class AddressingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The address_maps property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Address_mapsRequestBuilder Address_maps
+        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Address_mapsRequestBuilder Address_maps
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Address_mapsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Address_mapsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The loa_documents property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Loa_documentsRequestBuilder Loa_documents
+        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Loa_documentsRequestBuilder Loa_documents
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Loa_documentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Loa_documentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The prefixes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.PrefixesRequestBuilder Prefixes
+        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.PrefixesRequestBuilder Prefixes
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The regional_hostnames property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder Regional_hostnames
+        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder Regional_hostnames
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The services property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Services.ServicesRequestBuilder Services
+        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Services.ServicesRequestBuilder Services
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.AddressingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.AddressingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.AddressingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.AddressingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

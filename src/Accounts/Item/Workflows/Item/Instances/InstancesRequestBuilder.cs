@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item;
+using Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Batch;
+using Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances
+namespace Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workflows\{workflow_name}\instances
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
     public partial class InstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The batch property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.BatchRequestBuilder Batch
+        public global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Batch.BatchRequestBuilder Batch
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.workflows.item.instances.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.workflows.item.instances.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.WithInstance_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.WithInstance_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.WithInstance_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.WithInstance_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("instance_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.WithInstance_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.WithInstance_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -126,11 +126,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.InstancesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

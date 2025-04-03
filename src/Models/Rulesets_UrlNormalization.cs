@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Models
+namespace Soenneker.Cloudflare.Models
 {
     /// <summary>
     /// A URL Normalization object.
@@ -16,11 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The scope of the URL normalization.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization_scope? Scope { get; set; }
+        public global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization_scope? Scope { get; set; }
         /// <summary>The type of URL normalization performed by Cloudflare.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization"/> and sets the default values.
         /// </summary>
         public Rulesets_UrlNormalization()
         {
@@ -29,12 +29,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization();
+            return new global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,8 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization_scope>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization_type>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization_scope>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization_type>(); } },
             };
         }
         /// <summary>
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization_scope>("scope", Scope);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization_scope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.Models.Rulesets_UrlNormalization_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

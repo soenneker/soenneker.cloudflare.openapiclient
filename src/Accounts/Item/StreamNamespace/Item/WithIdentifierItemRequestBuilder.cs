@@ -3,17 +3,17 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Captions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Downloads;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Embed;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Token;
+using Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio;
+using Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Captions;
+using Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Downloads;
+using Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Embed;
+using Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Token;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item
+namespace Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\stream\{identifier}
@@ -22,32 +22,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item
     public partial class WithIdentifierItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The audio property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder Audio
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder Audio
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Audio.AudioRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The captions property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Captions.CaptionsRequestBuilder Captions
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Captions.CaptionsRequestBuilder Captions
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Captions.CaptionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Captions.CaptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The downloads property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsRequestBuilder Downloads
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsRequestBuilder Downloads
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The embed property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Embed.EmbedRequestBuilder Embed
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Embed.EmbedRequestBuilder Embed
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Embed.EmbedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Embed.EmbedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The token property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Token.TokenRequestBuilder Token
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Token.TokenRequestBuilder Token
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Token.TokenRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.Token.TokenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -173,11 +173,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.StreamNamespace.Item.WithIdentifierItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

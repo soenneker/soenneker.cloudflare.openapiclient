@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Apps;
+using Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics;
+using Soenneker.Cloudflare.Zones.Item.Spectrum.Apps;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum
+namespace Soenneker.Cloudflare.Zones.Item.Spectrum
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\spectrum
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum
     public partial class SpectrumRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The analytics property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.AnalyticsRequestBuilder Analytics
+        public global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.AnalyticsRequestBuilder Analytics
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The apps property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Apps.AppsRequestBuilder Apps
+        public global::Soenneker.Cloudflare.Zones.Item.Spectrum.Apps.AppsRequestBuilder Apps
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Spectrum.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.SpectrumRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Spectrum.SpectrumRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.SpectrumRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Spectrum.SpectrumRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

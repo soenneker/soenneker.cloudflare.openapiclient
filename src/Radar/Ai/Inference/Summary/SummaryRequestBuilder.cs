@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace;
+using Soenneker.Cloudflare.Radar.Ai.Inference.Summary.Model;
+using Soenneker.Cloudflare.Radar.Ai.Inference.Summary.TaskNamespace;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary
+namespace Soenneker.Cloudflare.Radar.Ai.Inference.Summary
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\ai\inference\summary
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The model property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder Model
+        public global::Soenneker.Cloudflare.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder Model
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The task property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder Task
+        public global::Soenneker.Cloudflare.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder Task
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ai.Inference.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ai.Inference.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

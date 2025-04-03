@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Item;
+using Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds
+namespace Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\indicator_feeds
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Indicator_feedsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.intel.indicator_feeds.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.intel.indicator_feeds.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Item.WithFeed_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Item.WithFeed_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Item.WithFeed_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Item.WithFeed_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("feed_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Item.WithFeed_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Item.WithFeed_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

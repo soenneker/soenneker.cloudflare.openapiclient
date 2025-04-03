@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates;
+using Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item
+namespace Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\custom_hostnames\{custom_hostname_id}\certificate_pack\{certificate_pack_id}
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
     public partial class WithCertificate_pack_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The certificates property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.CertificatesRequestBuilder Certificates
+        public global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.CertificatesRequestBuilder Certificates
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.WithCertificate_pack_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.WithCertificate_pack_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.WithCertificate_pack_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item.WithCertificate_pack_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

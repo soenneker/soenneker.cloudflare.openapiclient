@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Jobs;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Ownership;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Validate;
+using Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets;
+using Soenneker.Cloudflare.Accounts.Item.Logpush.Jobs;
+using Soenneker.Cloudflare.Accounts.Item.Logpush.Ownership;
+using Soenneker.Cloudflare.Accounts.Item.Logpush.Validate;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush
+namespace Soenneker.Cloudflare.Accounts.Item.Logpush
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logpush
@@ -19,27 +19,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush
     public partial class LogpushRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The datasets property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder Datasets
+        public global::Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder Datasets
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The jobs property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Jobs.JobsRequestBuilder Jobs
+        public global::Soenneker.Cloudflare.Accounts.Item.Logpush.Jobs.JobsRequestBuilder Jobs
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Logpush.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ownership property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Ownership.OwnershipRequestBuilder Ownership
+        public global::Soenneker.Cloudflare.Accounts.Item.Logpush.Ownership.OwnershipRequestBuilder Ownership
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Ownership.OwnershipRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Logpush.Ownership.OwnershipRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The validate property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Validate.ValidateRequestBuilder Validate
+        public global::Soenneker.Cloudflare.Accounts.Item.Logpush.Validate.ValidateRequestBuilder Validate
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Logpush.Validate.ValidateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.LogpushRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Logpush.LogpushRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.LogpushRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Logpush.LogpushRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

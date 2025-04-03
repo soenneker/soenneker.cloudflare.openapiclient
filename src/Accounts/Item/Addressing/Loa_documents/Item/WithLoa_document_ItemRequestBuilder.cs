@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Item.Download;
+using Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Item.Download;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing\loa_documents\{loa_document_id}
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_docume
     public partial class WithLoa_document_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The download property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Item.Download.DownloadRequestBuilder Download
+        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Item.Download.DownloadRequestBuilder Download
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Item.Download.DownloadRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Item.Download.DownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Item.WithLoa_document_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Item.WithLoa_document_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_docume
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Item.WithLoa_document_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Loa_documents.Item.WithLoa_document_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

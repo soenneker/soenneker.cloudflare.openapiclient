@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item;
+using Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Fallback_origin;
+using Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
+namespace Soenneker.Cloudflare.Zones.Item.Custom_hostnames
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\custom_hostnames
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
     public partial class Custom_hostnamesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fallback_origin property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originRequestBuilder Fallback_origin
+        public global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originRequestBuilder Fallback_origin
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.custom_hostnames.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.custom_hostnames.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("custom_hostname_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -126,11 +126,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

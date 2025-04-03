@@ -2,19 +2,19 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.AccountSettings;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Domains;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Subdomain;
+using Soenneker.Cloudflare.Accounts.Item.Workers.AccountSettings;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Assets;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Dispatch;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Domains;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Scripts;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Services;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Subdomain;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers
+namespace Soenneker.Cloudflare.Accounts.Item.Workers
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers
@@ -23,47 +23,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers
     public partial class WorkersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The accountSettings property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.AccountSettings.AccountSettingsRequestBuilder AccountSettings
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.AccountSettings.AccountSettingsRequestBuilder AccountSettings
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.AccountSettings.AccountSettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.AccountSettings.AccountSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The assets property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.AssetsRequestBuilder Assets
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Assets.AssetsRequestBuilder Assets
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets.AssetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Assets.AssetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dispatch property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.DispatchRequestBuilder Dispatch
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Dispatch.DispatchRequestBuilder Dispatch
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.DispatchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Dispatch.DispatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domains property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Domains.DomainsRequestBuilder Domains
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Domains.DomainsRequestBuilder Domains
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The durable_objects property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Durable_objectsRequestBuilder Durable_objects
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Durable_objectsRequestBuilder Durable_objects
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Durable_objectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Durable_objectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scripts property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.ScriptsRequestBuilder Scripts
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.ScriptsRequestBuilder Scripts
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.ScriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.ScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The services property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.ServicesRequestBuilder Services
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.ServicesRequestBuilder Services
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.ServicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subdomain property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Subdomain.SubdomainRequestBuilder Subdomain
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Subdomain.SubdomainRequestBuilder Subdomain
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Subdomain.SubdomainRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Subdomain.SubdomainRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

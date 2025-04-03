@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists;
+using Soenneker.Cloudflare.Accounts.Item.Rules.Lists;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules
+namespace Soenneker.Cloudflare.Accounts.Item.Rules
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rules
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules
     public partial class RulesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The lists property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.ListsRequestBuilder Lists
+        public global::Soenneker.Cloudflare.Accounts.Item.Rules.Lists.ListsRequestBuilder Lists
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Rules.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.RulesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rules.RulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.RulesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rules.RulesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

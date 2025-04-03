@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups;
+using Soenneker.Cloudflare.Radar.Ai.Bots.Summary;
+using Soenneker.Cloudflare.Radar.Ai.Bots.Timeseries_groups;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots
+namespace Soenneker.Cloudflare.Radar.Ai.Bots
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\ai\bots
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots
     public partial class BotsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The summary property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.SummaryRequestBuilder Summary
+        public global::Soenneker.Cloudflare.Radar.Ai.Bots.Summary.SummaryRequestBuilder Summary
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Ai.Bots.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries_groups property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups
+        public global::Soenneker.Cloudflare.Radar.Ai.Bots.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Timeseries_groupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Ai.Bots.Timeseries_groups.Timeseries_groupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.BotsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ai.Bots.BotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.BotsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ai.Bots.BotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

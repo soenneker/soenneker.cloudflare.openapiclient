@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
+namespace Soenneker.Cloudflare.Organizations.Item.Shares
 {
     /// <summary>
     /// Builds and executes requests for operations under \organizations\{organization_id}\shares
@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
     public partial class SharesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,11 +41,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -72,11 +72,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all organization shares.
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
 #endif
             /// <summary>Direction to sort objects.</summary>
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.Organizations.Item.Shares.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
             /// <summary>Filter shares by kind.</summary>
             [Obsolete("This property is deprecated, use KindAsResourceSharingShareKind instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
 #endif
             /// <summary>Filter shares by kind.</summary>
             [QueryParameter("kind")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_kind? KindAsResourceSharingShareKind { get; set; }
+            public global::Soenneker.Cloudflare.Models.ResourceSharing_share_kind? KindAsResourceSharingShareKind { get; set; }
             /// <summary>Order shares by values in the given field.</summary>
             [Obsolete("This property is deprecated, use OrderAsGetOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
 #endif
             /// <summary>Order shares by values in the given field.</summary>
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.Organizations.Item.Shares.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
             /// <summary>Page number.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
 #endif
             /// <summary>Filter shares by status.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_status? StatusAsResourceSharingShareStatus { get; set; }
+            public global::Soenneker.Cloudflare.Models.ResourceSharing_share_status? StatusAsResourceSharingShareStatus { get; set; }
             /// <summary>Filter shares by target_type.</summary>
             [Obsolete("This property is deprecated, use TargetTypeAsResourceSharingShareTargetType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,14 +159,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
 #endif
             /// <summary>Filter shares by target_type.</summary>
             [QueryParameter("target_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_target_type? TargetTypeAsResourceSharingShareTargetType { get; set; }
+            public global::Soenneker.Cloudflare.Models.ResourceSharing_share_target_type? TargetTypeAsResourceSharingShareTargetType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SharesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>
+        public partial class SharesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>
         {
         }
     }

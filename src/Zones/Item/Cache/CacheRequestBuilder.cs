@@ -2,17 +2,17 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve_clear;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_cache;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants;
+using Soenneker.Cloudflare.Zones.Item.Cache.Cache_reserve;
+using Soenneker.Cloudflare.Zones.Item.Cache.Cache_reserve_clear;
+using Soenneker.Cloudflare.Zones.Item.Cache.Origin_post_quantum_encryption;
+using Soenneker.Cloudflare.Zones.Item.Cache.Regional_tiered_cache;
+using Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable;
+using Soenneker.Cloudflare.Zones.Item.Cache.Variants;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
+namespace Soenneker.Cloudflare.Zones.Item.Cache
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\cache
@@ -21,37 +21,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
     public partial class CacheRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cache_reserve property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve.Cache_reserveRequestBuilder Cache_reserve
+        public global::Soenneker.Cloudflare.Zones.Item.Cache.Cache_reserve.Cache_reserveRequestBuilder Cache_reserve
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve.Cache_reserveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Cache.Cache_reserve.Cache_reserveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cache_reserve_clear property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve_clear.Cache_reserve_clearRequestBuilder Cache_reserve_clear
+        public global::Soenneker.Cloudflare.Zones.Item.Cache.Cache_reserve_clear.Cache_reserve_clearRequestBuilder Cache_reserve_clear
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve_clear.Cache_reserve_clearRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Cache.Cache_reserve_clear.Cache_reserve_clearRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_post_quantum_encryption property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption.Origin_post_quantum_encryptionRequestBuilder Origin_post_quantum_encryption
+        public global::Soenneker.Cloudflare.Zones.Item.Cache.Origin_post_quantum_encryption.Origin_post_quantum_encryptionRequestBuilder Origin_post_quantum_encryption
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption.Origin_post_quantum_encryptionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Cache.Origin_post_quantum_encryption.Origin_post_quantum_encryptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The regional_tiered_cache property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_cache.Regional_tiered_cacheRequestBuilder Regional_tiered_cache
+        public global::Soenneker.Cloudflare.Zones.Item.Cache.Regional_tiered_cache.Regional_tiered_cacheRequestBuilder Regional_tiered_cache
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_cache.Regional_tiered_cacheRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Cache.Regional_tiered_cache.Regional_tiered_cacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tiered_cache_smart_topology_enable property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder Tiered_cache_smart_topology_enable
+        public global::Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder Tiered_cache_smart_topology_enable
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The variants property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants.VariantsRequestBuilder Variants
+        public global::Soenneker.Cloudflare.Zones.Item.Cache.Variants.VariantsRequestBuilder Variants
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants.VariantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Cache.Variants.VariantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.CacheRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Cache.CacheRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.CacheRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Cache.CacheRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

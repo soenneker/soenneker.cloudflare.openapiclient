@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules;
+using Soenneker.Cloudflare.User.Firewall.Access_rules;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall
+namespace Soenneker.Cloudflare.User.Firewall
 {
     /// <summary>
     /// Builds and executes requests for operations under \user\firewall
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall
     public partial class FirewallRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The access_rules property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Access_rulesRequestBuilder Access_rules
+        public global::Soenneker.Cloudflare.User.Firewall.Access_rules.Access_rulesRequestBuilder Access_rules
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Access_rulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.User.Firewall.Access_rules.Access_rulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.FirewallRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Firewall.FirewallRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.FirewallRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Firewall.FirewallRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

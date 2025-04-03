@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Models
+namespace Soenneker.Cloudflare.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string To { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_single_step_migrations_renamed_classes"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Workers_single_step_migrations_renamed_classes"/> and sets the default values.
         /// </summary>
         public Workers_single_step_migrations_renamed_classes()
         {
@@ -40,12 +40,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_single_step_migrations_renamed_classes"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Workers_single_step_migrations_renamed_classes"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_single_step_migrations_renamed_classes CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.Models.Workers_single_step_migrations_renamed_classes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_single_step_migrations_renamed_classes();
+            return new global::Soenneker.Cloudflare.Models.Workers_single_step_migrations_renamed_classes();
         }
         /// <summary>
         /// The deserialization information for the current model

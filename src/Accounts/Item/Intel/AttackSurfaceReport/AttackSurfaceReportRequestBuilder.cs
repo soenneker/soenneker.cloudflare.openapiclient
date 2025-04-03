@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item;
+using Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes;
+using Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues;
+using Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport
+namespace Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\attack-surface-report
@@ -18,29 +18,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
     public partial class AttackSurfaceReportRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The issues property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder Issues
+        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder Issues
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The issueTypes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes.IssueTypesRequestBuilder IssueTypes
+        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes.IssueTypesRequestBuilder IssueTypes
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes.IssueTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes.IssueTypesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.intel.attackSurfaceReport.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.intel.attackSurfaceReport.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("issue_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

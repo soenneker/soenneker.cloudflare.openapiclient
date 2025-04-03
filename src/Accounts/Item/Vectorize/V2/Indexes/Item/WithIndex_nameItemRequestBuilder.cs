@@ -3,19 +3,19 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Get_by_ids;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Info;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Insert;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Query;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Upsert;
+using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids;
+using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Get_by_ids;
+using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Info;
+using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Insert;
+using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index;
+using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Query;
+using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Upsert;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\vectorize\v2\indexes\{index_name}
@@ -24,42 +24,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
     public partial class WithIndex_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The delete_by_ids property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder Delete_by_ids
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder Delete_by_ids
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Delete_by_ids.Delete_by_idsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The get_by_ids property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Get_by_ids.Get_by_idsRequestBuilder Get_by_ids
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Get_by_ids.Get_by_idsRequestBuilder Get_by_ids
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Get_by_ids.Get_by_idsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Get_by_ids.Get_by_idsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The info property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Info.InfoRequestBuilder Info
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Info.InfoRequestBuilder Info
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Info.InfoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Info.InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The insert property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Insert.InsertRequestBuilder Insert
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Insert.InsertRequestBuilder Insert
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Insert.InsertRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Insert.InsertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The metadata_index property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder Metadata_index
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder Metadata_index
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The query property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Query.QueryRequestBuilder Query
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Query.QueryRequestBuilder Query
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Query.QueryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Query.QueryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The upsert property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Upsert.UpsertRequestBuilder Upsert
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Upsert.UpsertRequestBuilder Upsert
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Upsert.UpsertRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Upsert.UpsertRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -149,11 +149,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.WithIndex_nameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects;
+using Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item
+namespace Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Namespaces.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\durable_objects\namespaces\{id}
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objec
     public partial class NamespacesItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The objects property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder Objects
+        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder Objects
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Namespaces.Item.Objects.ObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.NamespacesItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Namespaces.Item.NamespacesItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objec
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Namespaces.Item.NamespacesItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Durable_objects.Namespaces.Item.NamespacesItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

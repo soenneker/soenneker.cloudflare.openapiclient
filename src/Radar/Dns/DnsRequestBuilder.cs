@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top;
+using Soenneker.Cloudflare.Radar.Dns.Summary;
+using Soenneker.Cloudflare.Radar.Dns.Timeseries;
+using Soenneker.Cloudflare.Radar.Dns.Timeseries_groups;
+using Soenneker.Cloudflare.Radar.Dns.Top;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns
+namespace Soenneker.Cloudflare.Radar.Dns
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\dns
@@ -19,27 +19,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns
     public partial class DnsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The summary property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.SummaryRequestBuilder Summary
+        public global::Soenneker.Cloudflare.Radar.Dns.Summary.SummaryRequestBuilder Summary
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Dns.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries.TimeseriesRequestBuilder Timeseries
+        public global::Soenneker.Cloudflare.Radar.Dns.Timeseries.TimeseriesRequestBuilder Timeseries
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Dns.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries_groups property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups
+        public global::Soenneker.Cloudflare.Radar.Dns.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Timeseries_groupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Dns.Timeseries_groups.Timeseries_groupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The top property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.TopRequestBuilder Top
+        public global::Soenneker.Cloudflare.Radar.Dns.Top.TopRequestBuilder Top
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.TopRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Dns.Top.TopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.DnsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Dns.DnsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.DnsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Dns.DnsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Summary;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top;
+using Soenneker.Cloudflare.Radar.Netflows.Summary;
+using Soenneker.Cloudflare.Radar.Netflows.Timeseries;
+using Soenneker.Cloudflare.Radar.Netflows.Top;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows
+namespace Soenneker.Cloudflare.Radar.Netflows
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\netflows
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows
     public partial class NetflowsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The summary property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Summary.SummaryRequestBuilder Summary
+        public global::Soenneker.Cloudflare.Radar.Netflows.Summary.SummaryRequestBuilder Summary
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Netflows.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries.TimeseriesRequestBuilder Timeseries
+        public global::Soenneker.Cloudflare.Radar.Netflows.Timeseries.TimeseriesRequestBuilder Timeseries
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Netflows.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The top property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top.TopRequestBuilder Top
+        public global::Soenneker.Cloudflare.Radar.Netflows.Top.TopRequestBuilder Top
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top.TopRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Netflows.Top.TopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.NetflowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Netflows.NetflowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.NetflowsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Netflows.NetflowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

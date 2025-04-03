@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.Item;
+using Soenneker.Cloudflare.Radar.As112.Top.Locations.Edns.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns
+namespace Soenneker.Cloudflare.Radar.As112.Top.Locations.Edns
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\as112\top\locations\edns
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EdnsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.as112.top.locations.edns.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.radar.as112.top.locations.edns.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("edns", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.EdnsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.As112.Top.Locations.Edns.EdnsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.EdnsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.As112.Top.Locations.Edns.EdnsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

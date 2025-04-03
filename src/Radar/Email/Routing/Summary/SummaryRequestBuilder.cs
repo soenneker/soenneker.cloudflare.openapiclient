@@ -2,17 +2,17 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Arc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dkim;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dmarc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Encrypted;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Ip_version;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Spf;
+using Soenneker.Cloudflare.Radar.Email.Routing.Summary.Arc;
+using Soenneker.Cloudflare.Radar.Email.Routing.Summary.Dkim;
+using Soenneker.Cloudflare.Radar.Email.Routing.Summary.Dmarc;
+using Soenneker.Cloudflare.Radar.Email.Routing.Summary.Encrypted;
+using Soenneker.Cloudflare.Radar.Email.Routing.Summary.Ip_version;
+using Soenneker.Cloudflare.Radar.Email.Routing.Summary.Spf;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary
+namespace Soenneker.Cloudflare.Radar.Email.Routing.Summary
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\email\routing\summary
@@ -21,37 +21,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The arc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Arc.ArcRequestBuilder Arc
+        public global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Arc.ArcRequestBuilder Arc
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dkim property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dkim.DkimRequestBuilder Dkim
+        public global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Dkim.DkimRequestBuilder Dkim
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dmarc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dmarc.DmarcRequestBuilder Dmarc
+        public global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Dmarc.DmarcRequestBuilder Dmarc
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The encrypted property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Encrypted.EncryptedRequestBuilder Encrypted
+        public global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Encrypted.EncryptedRequestBuilder Encrypted
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Encrypted.EncryptedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Encrypted.EncryptedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
+        public global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Spf.SpfRequestBuilder Spf
+        public global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Spf.SpfRequestBuilder Spf
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Routing.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

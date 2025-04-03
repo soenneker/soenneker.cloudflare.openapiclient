@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent;
+using Soenneker.Cloudflare.Radar.Ai.Bots.Summary.User_agent;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary
+namespace Soenneker.Cloudflare.Radar.Ai.Bots.Summary
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\ai\bots\summary
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The user_agent property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder User_agent
+        public global::Soenneker.Cloudflare.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder User_agent
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ai.Bots.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.SummaryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ai.Bots.Summary.SummaryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

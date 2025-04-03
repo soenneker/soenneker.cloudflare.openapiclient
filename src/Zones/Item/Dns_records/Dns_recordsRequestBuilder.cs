@@ -3,17 +3,17 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Export;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Import;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan;
+using Soenneker.Cloudflare.Zones.Item.Dns_records.Batch;
+using Soenneker.Cloudflare.Zones.Item.Dns_records.Export;
+using Soenneker.Cloudflare.Zones.Item.Dns_records.Import;
+using Soenneker.Cloudflare.Zones.Item.Dns_records.Item;
+using Soenneker.Cloudflare.Zones.Item.Dns_records.Scan;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
+namespace Soenneker.Cloudflare.Zones.Item.Dns_records
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\dns_records
@@ -22,39 +22,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
     public partial class Dns_recordsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The batch property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder Batch
+        public global::Soenneker.Cloudflare.Zones.Item.Dns_records.Batch.BatchRequestBuilder Batch
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Dns_records.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The export property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Export.ExportRequestBuilder Export
+        public global::Soenneker.Cloudflare.Zones.Item.Dns_records.Export.ExportRequestBuilder Export
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Dns_records.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The import property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Import.ImportRequestBuilder Import
+        public global::Soenneker.Cloudflare.Zones.Item.Dns_records.Import.ImportRequestBuilder Import
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Import.ImportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Dns_records.Import.ImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scan property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder Scan
+        public global::Soenneker.Cloudflare.Zones.Item.Dns_records.Scan.ScanRequestBuilder Scan
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Dns_records.Scan.ScanRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.dns_records.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.dns_records.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("dns_record_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Zones.Item.Dns_records.Item.WithDns_record_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Dns_records.Dns_recordsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Dns_records.Dns_recordsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -144,11 +144,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Dns_records.Dns_recordsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.Zones.Item.Dns_records.Dns_recordsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.Zones.Item.Dns_records.Dns_recordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

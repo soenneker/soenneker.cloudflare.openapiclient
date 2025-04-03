@@ -2,16 +2,16 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Ases;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Locations;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Ases;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Attacks;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Industry;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Locations;
+using Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Vertical;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top
+namespace Soenneker.Cloudflare.Radar.Attacks.Layer7.Top
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\attacks\layer7\top
@@ -20,32 +20,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top
     public partial class TopRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ases property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Ases.AsesRequestBuilder Ases
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Ases.AsesRequestBuilder Ases
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Ases.AsesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Ases.AsesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attacks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks.AttacksRequestBuilder Attacks
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Attacks.AttacksRequestBuilder Attacks
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks.AttacksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Attacks.AttacksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The industry property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder Industry
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder Industry
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The locations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Locations.LocationsRequestBuilder Locations
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Locations.LocationsRequestBuilder Locations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The vertical property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder Vertical
+        public global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder Vertical
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.TopRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.TopRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.TopRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer7.Top.TopRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

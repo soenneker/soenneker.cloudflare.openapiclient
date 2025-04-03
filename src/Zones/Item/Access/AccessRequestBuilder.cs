@@ -2,17 +2,17 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Certificates;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Groups;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Identity_providers;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Organizations;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Service_tokens;
+using Soenneker.Cloudflare.Zones.Item.Access.Apps;
+using Soenneker.Cloudflare.Zones.Item.Access.Certificates;
+using Soenneker.Cloudflare.Zones.Item.Access.Groups;
+using Soenneker.Cloudflare.Zones.Item.Access.Identity_providers;
+using Soenneker.Cloudflare.Zones.Item.Access.Organizations;
+using Soenneker.Cloudflare.Zones.Item.Access.Service_tokens;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access
+namespace Soenneker.Cloudflare.Zones.Item.Access
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\access
@@ -21,37 +21,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access
     public partial class AccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The apps property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.AppsRequestBuilder Apps
+        public global::Soenneker.Cloudflare.Zones.Item.Access.Apps.AppsRequestBuilder Apps
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Access.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Certificates.CertificatesRequestBuilder Certificates
+        public global::Soenneker.Cloudflare.Zones.Item.Access.Certificates.CertificatesRequestBuilder Certificates
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Access.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The groups property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Groups.GroupsRequestBuilder Groups
+        public global::Soenneker.Cloudflare.Zones.Item.Access.Groups.GroupsRequestBuilder Groups
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Access.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The identity_providers property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Identity_providers.Identity_providersRequestBuilder Identity_providers
+        public global::Soenneker.Cloudflare.Zones.Item.Access.Identity_providers.Identity_providersRequestBuilder Identity_providers
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Identity_providers.Identity_providersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Access.Identity_providers.Identity_providersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Organizations.OrganizationsRequestBuilder Organizations
+        public global::Soenneker.Cloudflare.Zones.Item.Access.Organizations.OrganizationsRequestBuilder Organizations
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Access.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The service_tokens property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Service_tokens.Service_tokensRequestBuilder Service_tokens
+        public global::Soenneker.Cloudflare.Zones.Item.Access.Service_tokens.Service_tokensRequestBuilder Service_tokens
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.Service_tokens.Service_tokensRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Zones.Item.Access.Service_tokens.Service_tokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.AccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Access.AccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.AccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Access.AccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

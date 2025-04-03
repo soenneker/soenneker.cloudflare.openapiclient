@@ -2,19 +2,19 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Apps;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf_interconnects;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Routes;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Apps;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Cf_interconnects;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Connectors;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Gre_tunnels;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Ipsec_tunnels;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Routes;
+using Soenneker.Cloudflare.Accounts.Item.Magic.Sites;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
+namespace Soenneker.Cloudflare.Accounts.Item.Magic
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic
@@ -23,47 +23,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
     public partial class MagicRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The apps property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Apps.AppsRequestBuilder Apps
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Apps.AppsRequestBuilder Apps
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cf_interconnects property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf_interconnects.Cf_interconnectsRequestBuilder Cf_interconnects
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cf_interconnects.Cf_interconnectsRequestBuilder Cf_interconnects
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf_interconnects.Cf_interconnectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cf_interconnects.Cf_interconnectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cloud property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CloudRequestBuilder Cloud
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.CloudRequestBuilder Cloud
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CloudRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.CloudRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The connectors property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder Connectors
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder Connectors
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gre_tunnels property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels.Gre_tunnelsRequestBuilder Gre_tunnels
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Gre_tunnels.Gre_tunnelsRequestBuilder Gre_tunnels
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels.Gre_tunnelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Gre_tunnels.Gre_tunnelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ipsec_tunnels property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Ipsec_tunnelsRequestBuilder Ipsec_tunnels
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Ipsec_tunnels.Ipsec_tunnelsRequestBuilder Ipsec_tunnels
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Ipsec_tunnelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Ipsec_tunnels.Ipsec_tunnelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The routes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Routes.RoutesRequestBuilder Routes
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Routes.RoutesRequestBuilder Routes
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sites property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.SitesRequestBuilder Sites
+        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.SitesRequestBuilder Sites
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.MagicRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.MagicRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.MagicRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.MagicRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version.Item;
+using Soenneker.Cloudflare.Radar.Http.Top.Locations.Ip_version.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version
+namespace Soenneker.Cloudflare.Radar.Http.Top.Locations.Ip_version
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\http\top\locations\ip_version
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Ip_versionRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.ip_version.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.radar.http.top.locations.ip_version.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version.Item.WithIp_versionItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version.Item.WithIp_versionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Ip_version.Item.WithIp_versionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Ip_version.Item.WithIp_versionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("ip_version", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version.Item.WithIp_versionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Ip_version.Item.WithIp_versionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
