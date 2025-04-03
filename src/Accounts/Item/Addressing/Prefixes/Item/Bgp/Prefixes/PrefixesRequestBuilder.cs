@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing\prefixes\{prefix_id}\bgp\prefixes
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefix
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PrefixesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.addressing.prefixes.item.bgp.prefixes.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.addressing.prefixes.item.bgp.prefixes.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item.WithBgp_prefix_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item.WithBgp_prefix_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item.WithBgp_prefix_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item.WithBgp_prefix_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("bgp_prefix_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item.WithBgp_prefix_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.Item.WithBgp_prefix_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefix
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefix
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

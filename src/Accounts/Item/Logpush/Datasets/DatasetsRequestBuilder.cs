@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logpush\datasets
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DatasetsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.logpush.datasets.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.logpush.datasets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.Item.WithDataset_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.Item.WithDataset_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.Item.WithDataset_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.Item.WithDataset_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("dataset_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.Item.WithDataset_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.Item.WithDataset_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logpush.Datasets.DatasetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

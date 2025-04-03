@@ -2,18 +2,18 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.Configuration;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.Operations;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.Schemas;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.Settings;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuration;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Api_gateway
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\api_gateway
@@ -22,42 +22,42 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway
     public partial class Api_gatewayRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The configuration property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Configuration.ConfigurationRequestBuilder Configuration
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuration.ConfigurationRequestBuilder Configuration
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The discovery property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder Discovery
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder Discovery
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.DiscoveryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The expressionTemplate property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder ExpressionTemplate
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder ExpressionTemplate
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The operations property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Operations.OperationsRequestBuilder Operations
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.OperationsRequestBuilder Operations
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The schemas property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder Schemas
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder Schemas
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user_schemas property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder User_schemas
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder User_schemas
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Api_gatewayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Api_gatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Api_gatewayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Api_gatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

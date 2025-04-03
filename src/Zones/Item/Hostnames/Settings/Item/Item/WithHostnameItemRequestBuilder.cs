@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\hostnames\settings\{setting_id}\{hostname}
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item
     public partial class WithHostnameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -107,11 +107,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.Item.Item.WithHostnameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Ranking.Internet_services.Categories;
-using Soenneker.Cloudflare.Radar.Ranking.Internet_services.Timeseries_groups;
-using Soenneker.Cloudflare.Radar.Ranking.Internet_services.Top;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Categories;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Timeseries_groups;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Top;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Radar.Ranking.Internet_services
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\ranking\internet_services
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.Radar.Ranking.Internet_services
     public partial class Internet_servicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The categories property</summary>
-        public global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Categories.CategoriesRequestBuilder Categories
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Categories.CategoriesRequestBuilder Categories
         {
-            get => new global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries_groups property</summary>
-        public global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups
         {
-            get => new global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Timeseries_groups.Timeseries_groupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Timeseries_groups.Timeseries_groupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The top property</summary>
-        public global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Top.TopRequestBuilder Top
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Top.TopRequestBuilder Top
         {
-            get => new global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Top.TopRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Top.TopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Internet_servicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Internet_servicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.Radar.Ranking.Internet_services
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ranking.Internet_services.Internet_servicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Internet_services.Internet_servicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

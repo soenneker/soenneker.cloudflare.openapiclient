@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Analytics.Colos;
-using Soenneker.Cloudflare.Zones.Item.Analytics.Dashboard;
-using Soenneker.Cloudflare.Zones.Item.Analytics.Latency;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Latency;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Analytics
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\analytics
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.Zones.Item.Analytics
     public partial class AnalyticsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The colos property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Analytics.Colos.ColosRequestBuilder Colos
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder Colos
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Analytics.Colos.ColosRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dashboard property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder Dashboard
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder Dashboard
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The latency property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Analytics.Latency.LatencyRequestBuilder Latency
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Latency.LatencyRequestBuilder Latency
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Analytics.Latency.LatencyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Latency.LatencyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Analytics.AnalyticsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.AnalyticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Analytics
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Analytics.AnalyticsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.AnalyticsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

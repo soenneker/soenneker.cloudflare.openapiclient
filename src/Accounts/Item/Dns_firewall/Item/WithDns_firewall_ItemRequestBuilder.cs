@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.Dns_analytics;
-using Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.Reverse_dns;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns_analytics;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Reverse_dns;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dns_firewall\{dns_firewall_id}
@@ -19,17 +19,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item
     public partial class WithDns_firewall_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dns_analytics property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.Dns_analytics.Dns_analyticsRequestBuilder Dns_analytics
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns_analytics.Dns_analyticsRequestBuilder Dns_analytics
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.Dns_analytics.Dns_analyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns_analytics.Dns_analyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reverse_dns property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.Reverse_dns.Reverse_dnsRequestBuilder Reverse_dns
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Reverse_dns.Reverse_dnsRequestBuilder Reverse_dns
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.Reverse_dns.Reverse_dnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Reverse_dns.Reverse_dnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -155,11 +155,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.WithDns_firewall_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

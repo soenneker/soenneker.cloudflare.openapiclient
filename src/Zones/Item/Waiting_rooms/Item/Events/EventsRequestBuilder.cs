@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\waiting_rooms\{waiting_room_id}\events
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.waiting_rooms.item.events.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.waiting_rooms.item.events.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.Item.WithEvent_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.Item.WithEvent_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("event_id", position);
-                return new global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,11 +53,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -88,11 +88,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists events for a waiting room.
@@ -144,7 +144,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EventsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>
+        public partial class EventsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

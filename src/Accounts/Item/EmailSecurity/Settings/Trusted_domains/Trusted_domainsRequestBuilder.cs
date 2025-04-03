@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item;
-using Soenneker.Cloudflare.Models;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\settings\trusted_domains
@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_doma
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Trusted_domainsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.emailSecurity.settings.trusted_domains.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.emailSecurity.settings.trusted_domains.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item.WithTrusted_domain_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item.WithTrusted_domain_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item.WithTrusted_domain_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item.WithTrusted_domain_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("trusted_domain_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item.WithTrusted_domain_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Item.WithTrusted_domain_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_doma
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_doma
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.Models.Trusted_domains4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Trusted_domains4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_doma
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.Models.Trusted_domains4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Trusted_domains4XXError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_doma
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.Models.Trusted_domains4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Trusted_domains4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_doma
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.Models.Trusted_domains4XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Trusted_domains4XXError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -133,11 +133,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_doma
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

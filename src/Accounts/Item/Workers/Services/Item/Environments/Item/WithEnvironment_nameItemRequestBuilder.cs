@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.Content;
-using Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.Content;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\services\{service_name}\environments\{environment_name}
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.
     public partial class WithEnvironment_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The content property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.Content.ContentRequestBuilder Content
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.Content.ContentRequestBuilder Content
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.Item.WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.Item.WithEnvironment_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

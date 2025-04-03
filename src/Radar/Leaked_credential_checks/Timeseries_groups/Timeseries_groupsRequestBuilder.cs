@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class;
-using Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Compromised;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\leaked_credential_checks\timeseries_groups
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bot_class property</summary>
-        public global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.Bot_classRequestBuilder Bot_class
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.Bot_classRequestBuilder Bot_class
         {
-            get => new global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.Bot_classRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.Bot_classRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The compromised property</summary>
-        public global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder Compromised
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder Compromised
         {
-            get => new global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Leaked_credential_checks.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

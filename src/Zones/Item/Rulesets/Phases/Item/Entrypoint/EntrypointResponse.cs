@@ -5,24 +5,24 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.Entrypoint
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint
 {
     /// <summary>
     /// Removed invalid $ref
     /// </summary>
     [Obsolete("This class is obsolete. Use EntrypointGetResponse instead.")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class EntrypointResponse : global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointGetResponse, IParsable
+    public partial class EntrypointResponse : global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointGetResponse, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointResponse();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint.EntrypointResponse();
         }
     }
 }

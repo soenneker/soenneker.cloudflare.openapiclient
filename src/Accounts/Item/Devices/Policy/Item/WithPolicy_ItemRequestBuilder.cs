@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Exclude;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Fallback_domains;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Include;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Exclude;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Fallback_domains;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Include;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\devices\policy\{policy_id}
@@ -20,22 +20,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item
     public partial class WithPolicy_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The exclude property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Exclude.ExcludeRequestBuilder Exclude
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Exclude.ExcludeRequestBuilder Exclude
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Exclude.ExcludeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Exclude.ExcludeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fallback_domains property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Fallback_domains.Fallback_domainsRequestBuilder Fallback_domains
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Fallback_domains.Fallback_domainsRequestBuilder Fallback_domains
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Fallback_domains.Fallback_domainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Fallback_domains.Fallback_domainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The include property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Include.IncludeRequestBuilder Include
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Include.IncludeRequestBuilder Include
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.Include.IncludeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.Include.IncludeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -161,11 +161,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

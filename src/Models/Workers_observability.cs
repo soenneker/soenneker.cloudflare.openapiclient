@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.Models
+namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
     /// Observability settings for the Worker.
@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.</summary>
         public double? HeadSamplingRate { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Workers_observability"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability"/> and sets the default values.
         /// </summary>
         public Workers_observability()
         {
@@ -29,12 +29,12 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Workers_observability"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.Models.Workers_observability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.Models.Workers_observability();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability();
         }
         /// <summary>
         /// The deserialization information for the current model

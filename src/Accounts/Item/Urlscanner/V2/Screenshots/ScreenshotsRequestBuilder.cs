@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\urlscanner\v2\screenshots
@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots
     public partial class ScreenshotsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.ScreenshotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,10 +34,10 @@ namespace Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots
         /// <summary>
         /// Builds and executes requests for operations under \accounts\{account_identifier-id}\urlscanner\v2\screenshots\{scan_id}.png
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder WithScan_idPng()
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder WithScan_idPng()
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder(PathParameters, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder(PathParameters, RequestAdapter);
         }
     }
 }

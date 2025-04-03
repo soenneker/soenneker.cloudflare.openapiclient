@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Behaviors;
-using Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Integrations;
-using Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Item;
-using Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Summary;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Behaviors;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integrations;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Summary;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zt_risk_scoring
@@ -19,34 +19,34 @@ namespace Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring
     public partial class Zt_risk_scoringRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The behaviors property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Behaviors.BehaviorsRequestBuilder Behaviors
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Behaviors.BehaviorsRequestBuilder Behaviors
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Behaviors.BehaviorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Behaviors.BehaviorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The integrations property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Integrations.IntegrationsRequestBuilder Integrations
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integrations.IntegrationsRequestBuilder Integrations
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Integrations.IntegrationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integrations.IntegrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The summary property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Summary.SummaryRequestBuilder Summary
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Summary.SummaryRequestBuilder Summary
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.zt_risk_scoring.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.zt_risk_scoring.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("user_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Zt_risk_scoringRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Zt_risk_scoringRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zt_risk_scoring.Zt_risk_scoringRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Zt_risk_scoringRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

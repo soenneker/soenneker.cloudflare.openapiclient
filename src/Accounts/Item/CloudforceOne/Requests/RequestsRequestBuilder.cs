@@ -3,18 +3,18 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Constants;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Item;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.New;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Priority;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Quota;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Types;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Constants;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.New;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Quota;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Types;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\requests
@@ -23,44 +23,44 @@ namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests
     public partial class RequestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The constants property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Constants.ConstantsRequestBuilder Constants
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Constants.ConstantsRequestBuilder Constants
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Constants.ConstantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Constants.ConstantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The new property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.New.NewRequestBuilder New
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.New.NewRequestBuilder New
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.New.NewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.New.NewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The priority property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Priority.PriorityRequestBuilder Priority
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.PriorityRequestBuilder Priority
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Priority.PriorityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.PriorityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The quota property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Quota.QuotaRequestBuilder Quota
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Quota.QuotaRequestBuilder Quota
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Quota.QuotaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Quota.QuotaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The types property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Types.TypesRequestBuilder Types
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Types.TypesRequestBuilder Types
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Types.TypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Types.TypesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.cloudforceOne.requests.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.requests.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("request_identifier", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -114,11 +114,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

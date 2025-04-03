@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.Logs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.Logs;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pages\projects\{project_name}\deployments\{deployment_id}\history
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Ite
     public partial class HistoryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The logs property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.Logs.LogsRequestBuilder Logs
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.Logs.LogsRequestBuilder Logs
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Ite
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

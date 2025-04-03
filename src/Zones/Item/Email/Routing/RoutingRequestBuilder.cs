@@ -3,16 +3,16 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Email.Routing.Disable;
-using Soenneker.Cloudflare.Zones.Item.Email.Routing.Dns;
-using Soenneker.Cloudflare.Zones.Item.Email.Routing.Enable;
-using Soenneker.Cloudflare.Zones.Item.Email.Routing.Rules;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Email.Routing
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\email\routing
@@ -21,27 +21,27 @@ namespace Soenneker.Cloudflare.Zones.Item.Email.Routing
     public partial class RoutingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The disable property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Disable.DisableRequestBuilder Disable
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder Disable
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Dns.DnsRequestBuilder Dns
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns.DnsRequestBuilder Dns
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The enable property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Enable.EnableRequestBuilder Enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder Enable
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Rules.RulesRequestBuilder Rules
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules.RulesRequestBuilder Rules
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Email.Routing.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Email.Routing.RoutingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Email.Routing
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Email.Routing.RoutingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -95,11 +95,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Email.Routing
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Email.Routing.RoutingRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Email.Routing.RoutingRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Email.Routing.RoutingRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

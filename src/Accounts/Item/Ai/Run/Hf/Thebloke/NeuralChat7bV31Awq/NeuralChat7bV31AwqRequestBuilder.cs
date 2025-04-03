@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\thebloke\neural-chat-7b-v3-1-awq
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31A
     public partial class NeuralChat7bV31AwqRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31A
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31A
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

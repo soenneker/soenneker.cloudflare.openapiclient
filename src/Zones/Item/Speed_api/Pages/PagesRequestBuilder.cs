@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Speed_api.Pages
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\speed_api\pages
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.Zones.Item.Speed_api.Pages
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.speed_api.pages.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.speed_api.pages.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("url", position);
-                return new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.PagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.PagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Speed_api.Pages
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.PagesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.PagesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -84,11 +84,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Speed_api.Pages
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.PagesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.PagesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.PagesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.PagesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.PagesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.PagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\meta-llama\meta-llama-3-8b-instruct
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bIns
     public partial class MetaLlama38bInstructRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bIns
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bIns
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlama38bInstruct.MetaLlama38bInstructRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Http.Top.Locations.Os.Item;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Radar.Http.Top.Locations.Os
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\http\top\locations\os
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.Radar.Http.Top.Locations.Os
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.radar.http.top.locations.os.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.os.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("os", position);
-                return new global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Os.OsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.OsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.Radar.Http.Top.Locations.Os
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Locations.Os.OsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.OsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

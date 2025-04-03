@@ -3,16 +3,16 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Acls;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.App_configs;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Lans;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Wans;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Acls;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.App_configs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Lans;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Wans;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\sites\{site_id}
@@ -21,27 +21,27 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item
     public partial class WithSite_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The acls property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Acls.AclsRequestBuilder Acls
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Acls.AclsRequestBuilder Acls
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Acls.AclsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Acls.AclsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The app_configs property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.App_configs.App_configsRequestBuilder App_configs
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.App_configs.App_configsRequestBuilder App_configs
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.App_configs.App_configsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.App_configs.App_configsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The lans property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Lans.LansRequestBuilder Lans
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Lans.LansRequestBuilder Lans
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Lans.LansRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Lans.LansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The wans property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Wans.WansRequestBuilder Wans
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Wans.WansRequestBuilder Wans
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.Wans.WansRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Wans.WansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -203,11 +203,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.WithSite_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run
@@ -18,29 +18,29 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run
     public partial class RunRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The Cf property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.CfRequestBuilder Cf
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.CfRequestBuilder Cf
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.CfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.CfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Hf property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.HfRequestBuilder Hf
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.HfRequestBuilder Hf
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.HfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.HfRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.ai.run.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.ai.run.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("model_name", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Item.WithModel_nameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.RunRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.RunRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.RunRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.RunRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

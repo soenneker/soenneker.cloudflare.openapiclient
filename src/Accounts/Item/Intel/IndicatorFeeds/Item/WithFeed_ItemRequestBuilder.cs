@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.Data;
-using Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Data;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\indicator-feeds\{feed_id}
@@ -19,17 +19,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item
     public partial class WithFeed_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The data property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.Data.DataRequestBuilder Data
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Data.DataRequestBuilder Data
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.Data.DataRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Data.DataRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The snapshot property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot.SnapshotRequestBuilder Snapshot
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot.SnapshotRequestBuilder Snapshot
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot.SnapshotRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot.SnapshotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -119,11 +119,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

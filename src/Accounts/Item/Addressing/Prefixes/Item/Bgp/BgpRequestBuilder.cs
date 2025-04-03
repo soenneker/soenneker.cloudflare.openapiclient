@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing\prefixes\{prefix_id}\bgp
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp
     public partial class BgpRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The prefixes property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder Prefixes
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder Prefixes
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder Status
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder Status
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

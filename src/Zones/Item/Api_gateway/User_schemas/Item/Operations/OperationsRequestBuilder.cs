@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\api_gateway\user_schemas\{schema_id}\operations
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operatio
     public partial class OperationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operatio
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -40,11 +40,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operatio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -57,11 +57,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operatio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operatio
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.
@@ -107,11 +107,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operatio
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("feature")]
-            public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.GetFeatureQueryParameterType[]? FeatureAsGetFeatureQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.GetFeatureQueryParameterType[]? FeatureAsGetFeatureQueryParameterType { get; set; }
 #nullable restore
 #else
             [QueryParameter("feature")]
-            public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.GetFeatureQueryParameterType[] FeatureAsGetFeatureQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.GetFeatureQueryParameterType[] FeatureAsGetFeatureQueryParameterType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operatio
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>
+        public partial class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>
         {
         }
     }

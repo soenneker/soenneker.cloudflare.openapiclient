@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Radar.Dns.Summary.Query_type
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\dns\summary\query_type
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Radar.Dns.Summary.Query_type
     public partial class Query_typeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Radar.Dns.Summary.Query_type
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Radar.Dns.Summary.Query_type
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

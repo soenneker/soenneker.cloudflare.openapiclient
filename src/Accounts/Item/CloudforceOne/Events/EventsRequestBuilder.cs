@@ -3,25 +3,25 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Attackers;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Categories;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Countries;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Create;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Cron;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Dataset;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Event_tag;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.IndicatorTypes;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Item;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Raw;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Relate;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Tags;
-using Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.TargetIndustries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Attackers;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Countries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Cron;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Raw;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Relate;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.TargetIndustries;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\events
@@ -30,79 +30,79 @@ namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The attackers property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Attackers.AttackersRequestBuilder Attackers
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Attackers.AttackersRequestBuilder Attackers
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Attackers.AttackersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Attackers.AttackersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The categories property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder Categories
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder Categories
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The countries property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Countries.CountriesRequestBuilder Countries
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Countries.CountriesRequestBuilder Countries
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Countries.CountriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Countries.CountriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The create property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Create.CreateRequestBuilder Create
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.CreateRequestBuilder Create
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cron property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Cron.CronRequestBuilder Cron
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Cron.CronRequestBuilder Cron
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Cron.CronRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Cron.CronRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dataset property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Dataset.DatasetRequestBuilder Dataset
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.DatasetRequestBuilder Dataset
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Dataset.DatasetRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.DatasetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The event_tag property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Event_tag.Event_tagRequestBuilder Event_tag
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag.Event_tagRequestBuilder Event_tag
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Event_tag.Event_tagRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag.Event_tagRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The indicatorTypes property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder IndicatorTypes
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder IndicatorTypes
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The raw property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Raw.RawRequestBuilder Raw
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Raw.RawRequestBuilder Raw
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The relate property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Relate.RelateRequestBuilder Relate
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Relate.RelateRequestBuilder Relate
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Relate.RelateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Relate.RelateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Tags.TagsRequestBuilder Tags
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags.TagsRequestBuilder Tags
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The targetIndustries property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.TargetIndustries.TargetIndustriesRequestBuilder TargetIndustries
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.TargetIndustries.TargetIndustriesRequestBuilder TargetIndustries
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.TargetIndustries.TargetIndustriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.TargetIndustries.TargetIndustriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.cloudforceOne.events.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.events.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("event_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -156,11 +156,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Hostnames.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Hostnames
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\hostnames
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Zones.Item.Hostnames
     public partial class HostnamesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Hostnames.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Hostnames.HostnamesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.HostnamesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Hostnames
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Hostnames.HostnamesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.HostnamesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

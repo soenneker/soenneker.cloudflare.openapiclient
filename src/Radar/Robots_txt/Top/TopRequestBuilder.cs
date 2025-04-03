@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Robots_txt.Top.Domain_categories;
-using Soenneker.Cloudflare.Radar.Robots_txt.Top.User_agents;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.User_agents;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Radar.Robots_txt.Top
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\robots_txt\top
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Radar.Robots_txt.Top
     public partial class TopRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The domain_categories property</summary>
-        public global::Soenneker.Cloudflare.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder Domain_categories
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder Domain_categories
         {
-            get => new global::Soenneker.Cloudflare.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user_agents property</summary>
-        public global::Soenneker.Cloudflare.Radar.Robots_txt.Top.User_agents.User_agentsRequestBuilder User_agents
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.User_agents.User_agentsRequestBuilder User_agents
         {
-            get => new global::Soenneker.Cloudflare.Radar.Robots_txt.Top.User_agents.User_agentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.User_agents.User_agentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Robots_txt.Top.TopRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.TopRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Radar.Robots_txt.Top
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Robots_txt.Top.TopRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.TopRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

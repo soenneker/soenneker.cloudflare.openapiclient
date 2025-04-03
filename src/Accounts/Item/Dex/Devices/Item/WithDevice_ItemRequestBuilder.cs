@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item.FleetStatus;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\devices\{device_id}
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item
     public partial class WithDevice_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fleetStatus property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item.FleetStatus.FleetStatusRequestBuilder FleetStatus
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.FleetStatusRequestBuilder FleetStatus
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item.FleetStatus.FleetStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.FleetStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item.WithDevice_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.WithDevice_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.Devices.Item.WithDevice_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.WithDevice_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekMath7bInstruct;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekR1DistillQwen32b;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekMath7bInstruct;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekR1DistillQwen32b;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\deepseek-ai
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi
     public partial class DeepseekAiRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The deepseekMath7bInstruct property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekMath7bInstruct.DeepseekMath7bInstructRequestBuilder DeepseekMath7bInstruct
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekMath7bInstruct.DeepseekMath7bInstructRequestBuilder DeepseekMath7bInstruct
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekMath7bInstruct.DeepseekMath7bInstructRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekMath7bInstruct.DeepseekMath7bInstructRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deepseekR1DistillQwen32b property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekR1DistillQwen32b.DeepseekR1DistillQwen32bRequestBuilder DeepseekR1DistillQwen32b
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekR1DistillQwen32b.DeepseekR1DistillQwen32bRequestBuilder DeepseekR1DistillQwen32b
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekR1DistillQwen32b.DeepseekR1DistillQwen32bRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekR1DistillQwen32b.DeepseekR1DistillQwen32bRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekAiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekAiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekAiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekAiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

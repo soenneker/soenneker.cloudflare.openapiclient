@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Annotations.Outages;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Radar.Annotations
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\annotations
@@ -18,12 +18,12 @@ namespace Soenneker.Cloudflare.Radar.Annotations
     public partial class AnnotationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The outages property</summary>
-        public global::Soenneker.Cloudflare.Radar.Annotations.Outages.OutagesRequestBuilder Outages
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages.OutagesRequestBuilder Outages
         {
-            get => new global::Soenneker.Cloudflare.Radar.Annotations.Outages.OutagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.Outages.OutagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Annotations.AnnotationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.AnnotationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.Radar.Annotations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Annotations.AnnotationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.AnnotationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -77,11 +77,11 @@ namespace Soenneker.Cloudflare.Radar.Annotations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Annotations.AnnotationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.AnnotationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Radar.Annotations.AnnotationsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.AnnotationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Radar.Annotations.AnnotationsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.AnnotationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

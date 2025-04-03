@@ -3,16 +3,16 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Page_shield.Connections;
-using Soenneker.Cloudflare.Zones.Item.Page_shield.Cookies;
-using Soenneker.Cloudflare.Zones.Item.Page_shield.Policies;
-using Soenneker.Cloudflare.Zones.Item.Page_shield.Scripts;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Policies;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Page_shield
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\page_shield
@@ -21,27 +21,27 @@ namespace Soenneker.Cloudflare.Zones.Item.Page_shield
     public partial class Page_shieldRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The connections property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder Connections
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder Connections
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cookies property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder Cookies
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder Cookies
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policies property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Page_shield.Policies.PoliciesRequestBuilder Policies
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Policies.PoliciesRequestBuilder Policies
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Page_shield.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scripts property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder Scripts
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder Scripts
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Page_shield.Page_shieldRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Page_shieldRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Page_shield
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Page_shield.Page_shieldRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Page_shieldRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -131,11 +131,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Page_shield
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Page_shield.Page_shieldRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Page_shieldRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Page_shield.Page_shieldRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Page_shieldRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Page_shield.Page_shieldRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Page_shieldRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

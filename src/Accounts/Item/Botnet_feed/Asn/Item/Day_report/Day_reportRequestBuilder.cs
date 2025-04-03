@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.Day_report
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\botnet_feed\asn\{asn_id}\day_report
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report
     public partial class Day_reportRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.Day_report.Day_reportRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

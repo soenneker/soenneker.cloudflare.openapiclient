@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\mistral\mistral-7b-instruct-v0.2-lora
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstruct
     public partial class Mistral7bInstructV02LoraRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstruct
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstruct
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

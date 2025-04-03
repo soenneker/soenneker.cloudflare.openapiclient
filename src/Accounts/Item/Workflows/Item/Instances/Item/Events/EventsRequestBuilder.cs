@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Events.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Events
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workflows\{workflow_name}\instances\{instance_id}\events
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Event
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.workflows.item.instances.item.events.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.workflows.item.instances.item.events.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Events.Item.WithEvent_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Events.Item.WithEvent_typeItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events.Item.WithEvent_typeItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events.Item.WithEvent_typeItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("event_type", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Events.Item.WithEvent_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events.Item.WithEvent_typeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Event
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workflows.Item.Instances.Item.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

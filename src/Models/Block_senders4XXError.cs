@@ -6,7 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.Models
+namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
     /// Removed invalid $ref
@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Block_senders4XXError"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Block_senders4XXError"/> and sets the default values.
         /// </summary>
         public Block_senders4XXError()
         {
@@ -28,12 +28,12 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Block_senders4XXError"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Block_senders4XXError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.Models.Block_senders4XXError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Block_senders4XXError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.Models.Block_senders4XXError();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Block_senders4XXError();
         }
         /// <summary>
         /// The deserialization information for the current model

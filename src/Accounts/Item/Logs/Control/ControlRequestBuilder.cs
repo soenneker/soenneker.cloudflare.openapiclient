@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Logs.Control.Cmb;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control.Cmb;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Logs.Control
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logs\control
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Logs.Control
     public partial class ControlRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cmb property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Logs.Control.Cmb.CmbRequestBuilder Cmb
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control.Cmb.CmbRequestBuilder Cmb
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Logs.Control.Cmb.CmbRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control.Cmb.CmbRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Logs.Control
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

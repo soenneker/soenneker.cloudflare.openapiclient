@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Item;
-using Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.List;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.List;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Rum.Site_info
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rum\site_info
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.Accounts.Item.Rum.Site_info
     public partial class Site_infoRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The list property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.List.ListRequestBuilder List
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.List.ListRequestBuilder List
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.List.ListRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.List.ListRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.rum.site_info.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.rum.site_info.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("site_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Item.WithSite_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Rum.Site_info
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -90,11 +90,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Rum.Site_info
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.Site_infoRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

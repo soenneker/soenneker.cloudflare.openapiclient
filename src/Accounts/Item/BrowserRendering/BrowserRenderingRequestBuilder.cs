@@ -2,19 +2,19 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Content;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.JsonEscaped;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Links;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Markdown;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Pdf;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Scrape;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Screenshot;
-using Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Snapshot;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEscaped;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Links;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Markdown;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Pdf;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Screenshot;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Snapshot;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.BrowserRendering
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\browser-rendering
@@ -23,47 +23,47 @@ namespace Soenneker.Cloudflare.Accounts.Item.BrowserRendering
     public partial class BrowserRenderingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The content property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Content.ContentRequestBuilder Content
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content.ContentRequestBuilder Content
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The json property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.JsonEscaped.JsonRequestBuilder Json
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEscaped.JsonRequestBuilder Json
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.JsonEscaped.JsonRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEscaped.JsonRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The links property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Links.LinksRequestBuilder Links
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Links.LinksRequestBuilder Links
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Links.LinksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Links.LinksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The markdown property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Markdown.MarkdownRequestBuilder Markdown
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Markdown.MarkdownRequestBuilder Markdown
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Markdown.MarkdownRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Markdown.MarkdownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pdf property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Pdf.PdfRequestBuilder Pdf
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Pdf.PdfRequestBuilder Pdf
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Pdf.PdfRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Pdf.PdfRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scrape property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder Scrape
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder Scrape
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Scrape.ScrapeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The screenshot property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Screenshot.ScreenshotRequestBuilder Screenshot
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Screenshot.ScreenshotRequestBuilder Screenshot
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Screenshot.ScreenshotRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Screenshot.ScreenshotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The snapshot property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Snapshot.SnapshotRequestBuilder Snapshot
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Snapshot.SnapshotRequestBuilder Snapshot
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.Snapshot.SnapshotRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Snapshot.SnapshotRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.BrowserRenderingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.BrowserRenderingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.BrowserRendering
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.BrowserRendering.BrowserRenderingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.BrowserRenderingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

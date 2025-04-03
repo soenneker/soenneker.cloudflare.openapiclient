@@ -2,16 +2,16 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Ssl.Analyze;
-using Soenneker.Cloudflare.Zones.Item.Ssl.Certificate_packs;
-using Soenneker.Cloudflare.Zones.Item.Ssl.Recommendation;
-using Soenneker.Cloudflare.Zones.Item.Ssl.Universal;
-using Soenneker.Cloudflare.Zones.Item.Ssl.Verification;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Analyze;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Universal;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Ssl
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\ssl
@@ -20,32 +20,32 @@ namespace Soenneker.Cloudflare.Zones.Item.Ssl
     public partial class SslRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The analyze property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Ssl.Analyze.AnalyzeRequestBuilder Analyze
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Analyze.AnalyzeRequestBuilder Analyze
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Ssl.Analyze.AnalyzeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Analyze.AnalyzeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificate_packs property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder Certificate_packs
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder Certificate_packs
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The recommendation property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder Recommendation
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder Recommendation
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The universal property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Ssl.Universal.UniversalRequestBuilder Universal
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Universal.UniversalRequestBuilder Universal
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Ssl.Universal.UniversalRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Universal.UniversalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The verification property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Ssl.Verification.VerificationRequestBuilder Verification
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification.VerificationRequestBuilder Verification
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Ssl.Verification.VerificationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification.VerificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Ssl.SslRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.SslRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Ssl
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Ssl.SslRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.SslRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

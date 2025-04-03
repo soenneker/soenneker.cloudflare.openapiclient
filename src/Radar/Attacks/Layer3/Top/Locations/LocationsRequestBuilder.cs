@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.Origin;
-using Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.Target;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.Origin;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.Target;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\attacks\layer3\top\locations
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations
     public partial class LocationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The origin property</summary>
-        public global::Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.Origin.OriginRequestBuilder Origin
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.Origin.OriginRequestBuilder Origin
         {
-            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.Origin.OriginRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.Origin.OriginRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The target property</summary>
-        public global::Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.Target.TargetRequestBuilder Target
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.Target.TargetRequestBuilder Target
         {
-            get => new global::Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.Target.TargetRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.Target.TargetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.LocationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.LocationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Attacks.Layer3.Top.Locations.LocationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Locations.LocationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

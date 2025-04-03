@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Cni.Cnis;
-using Soenneker.Cloudflare.Accounts.Item.Cni.Interconnects;
-using Soenneker.Cloudflare.Accounts.Item.Cni.Settings;
-using Soenneker.Cloudflare.Accounts.Item.Cni.Slots;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Cni
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cni
@@ -19,27 +19,27 @@ namespace Soenneker.Cloudflare.Accounts.Item.Cni
     public partial class CniRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cnis property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Cni.Cnis.CnisRequestBuilder Cnis
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.CnisRequestBuilder Cnis
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Cni.Cnis.CnisRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis.CnisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The interconnects property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Cni.Interconnects.InterconnectsRequestBuilder Interconnects
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects.InterconnectsRequestBuilder Interconnects
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Cni.Interconnects.InterconnectsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Interconnects.InterconnectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Cni.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Cni.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The slots property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Cni.Slots.SlotsRequestBuilder Slots
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder Slots
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Cni.Slots.SlotsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Cni.CniRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.CniRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Cni
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Cni.CniRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.CniRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Healthchecks.Item;
-using Soenneker.Cloudflare.Zones.Item.Healthchecks.Preview;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Healthchecks
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\healthchecks
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.Zones.Item.Healthchecks
     public partial class HealthchecksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The preview property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Healthchecks.Preview.PreviewRequestBuilder Preview
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.PreviewRequestBuilder Preview
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Healthchecks.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.healthchecks.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.healthchecks.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Healthchecks.Item.WithHealthcheck_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Zones.Item.Healthchecks.Item.WithHealthcheck_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Item.WithHealthcheck_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Item.WithHealthcheck_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("healthcheck_id", position);
-                return new global::Soenneker.Cloudflare.Zones.Item.Healthchecks.Item.WithHealthcheck_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Item.WithHealthcheck_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Healthchecks
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,11 +59,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Healthchecks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -94,11 +94,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Healthchecks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Healthchecks
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List configured health checks.
@@ -150,7 +150,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Healthchecks
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class HealthchecksRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>
+        public partial class HealthchecksRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder.HealthchecksRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add;
-using Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove;
-using Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.View;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.View;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\indicator-feeds\permissions
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions
     public partial class PermissionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The add property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add.AddRequestBuilder Add
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add.AddRequestBuilder Add
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add.AddRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add.AddRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The remove property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove.RemoveRequestBuilder Remove
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove.RemoveRequestBuilder Remove
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The view property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.View.ViewRequestBuilder View
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.View.ViewRequestBuilder View
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.View.ViewRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.View.ViewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.PermissionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.PermissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.Permissions.PermissionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.PermissionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

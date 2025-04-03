@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Radar.As112.Summary.Ip_version
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\as112\summary\ip_version
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Radar.As112.Summary.Ip_version
     public partial class Ip_versionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Radar.As112.Summary.Ip_version
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Radar.As112.Summary.Ip_version
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

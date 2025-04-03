@@ -2,16 +2,16 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeBaseEnV15;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeLargeEnV15;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeM3;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeRerankerBase;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeSmallEnV15;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeBaseEnV15;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeLargeEnV15;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeM3;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeRerankerBase;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeSmallEnV15;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\baai
@@ -20,32 +20,32 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai
     public partial class BaaiRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bgeBaseEnV15 property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeBaseEnV15.BgeBaseEnV15RequestBuilder BgeBaseEnV15
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeBaseEnV15.BgeBaseEnV15RequestBuilder BgeBaseEnV15
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeBaseEnV15.BgeBaseEnV15RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeBaseEnV15.BgeBaseEnV15RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bgeLargeEnV15 property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeLargeEnV15.BgeLargeEnV15RequestBuilder BgeLargeEnV15
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeLargeEnV15.BgeLargeEnV15RequestBuilder BgeLargeEnV15
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeLargeEnV15.BgeLargeEnV15RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeLargeEnV15.BgeLargeEnV15RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bgeM3 property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeM3.BgeM3RequestBuilder BgeM3
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeM3.BgeM3RequestBuilder BgeM3
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeM3.BgeM3RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeM3.BgeM3RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bgeRerankerBase property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeRerankerBase.BgeRerankerBaseRequestBuilder BgeRerankerBase
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeRerankerBase.BgeRerankerBaseRequestBuilder BgeRerankerBase
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeRerankerBase.BgeRerankerBaseRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeRerankerBase.BgeRerankerBaseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bgeSmallEnV15 property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeSmallEnV15.BgeSmallEnV15RequestBuilder BgeSmallEnV15
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeSmallEnV15.BgeSmallEnV15RequestBuilder BgeSmallEnV15
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BgeSmallEnV15.BgeSmallEnV15RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeSmallEnV15.BgeSmallEnV15RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BaaiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BaaiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Baai.BaaiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BaaiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

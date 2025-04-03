@@ -3,22 +3,22 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Dex_tests;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Item;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Networks;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Policies;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Policy;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Posture;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Resilience;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Revoke;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Settings;
-using Soenneker.Cloudflare.Accounts.Item.Devices.Unrevoke;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Unrevoke;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Devices
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\devices
@@ -27,64 +27,64 @@ namespace Soenneker.Cloudflare.Accounts.Item.Devices
     public partial class DevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dex_tests property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder Dex_tests
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder Dex_tests
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The networks property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Networks.NetworksRequestBuilder Networks
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder Networks
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Networks.NetworksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policies property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Policies.PoliciesRequestBuilder Policies
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies.PoliciesRequestBuilder Policies
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policy property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.PolicyRequestBuilder Policy
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.PolicyRequestBuilder Policy
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The posture property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Posture.PostureRequestBuilder Posture
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder Posture
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Posture.PostureRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resilience property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder Resilience
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder Resilience
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The revoke property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Revoke.RevokeRequestBuilder Revoke
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke.RevokeRequestBuilder Revoke
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Revoke.RevokeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke.RevokeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unrevoke property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Unrevoke.UnrevokeRequestBuilder Unrevoke
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Unrevoke.UnrevokeRequestBuilder Unrevoke
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Devices.Unrevoke.UnrevokeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Unrevoke.UnrevokeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.devices.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.devices.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("device_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Devices.DevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Devices
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Devices.DevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -138,11 +138,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Devices
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Devices.DevicesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Devices.DevicesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Devices.DevicesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

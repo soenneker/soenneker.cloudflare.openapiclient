@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Create;
-using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Delete;
-using Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.List;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Create;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Delete;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.List;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\vectorize\v2\indexes\{index_name}\metadata_index
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_
     public partial class Metadata_indexRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The create property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Create.CreateRequestBuilder Create
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Create.CreateRequestBuilder Create
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Create.CreateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deletePath property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Delete.DeleteRequestBuilder DeletePath
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Delete.DeleteRequestBuilder DeletePath
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Delete.DeleteRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Delete.DeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The list property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.List.ListRequestBuilder List
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.List.ListRequestBuilder List
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.List.ListRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.List.ListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index.Metadata_indexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

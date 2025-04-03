@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Pcaps.Item;
-using Soenneker.Cloudflare.Accounts.Item.Pcaps.Ownership;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Ownership;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Pcaps
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pcaps
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pcaps
     public partial class PcapsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ownership property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pcaps.Ownership.OwnershipRequestBuilder Ownership
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Ownership.OwnershipRequestBuilder Ownership
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pcaps.Ownership.OwnershipRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Ownership.OwnershipRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.pcaps.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.pcaps.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pcaps.Item.WithPcap_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pcaps.Item.WithPcap_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.WithPcap_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.WithPcap_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("pcap_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Pcaps.Item.WithPcap_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.WithPcap_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pcaps.PcapsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pcaps
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pcaps.PcapsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -126,11 +126,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pcaps
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pcaps.PcapsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pcaps.PcapsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Pcaps.PcapsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

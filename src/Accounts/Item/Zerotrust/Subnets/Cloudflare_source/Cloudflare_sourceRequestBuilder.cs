@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zerotrust\subnets\cloudflare_source
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cloudflare_sourceRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.zerotrust.subnets.cloudflare_source.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.zerotrust.subnets.cloudflare_source.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item.WithAddress_familyItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item.WithAddress_familyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item.WithAddress_familyItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item.WithAddress_familyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("address_family", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item.WithAddress_familyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Item.WithAddress_familyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

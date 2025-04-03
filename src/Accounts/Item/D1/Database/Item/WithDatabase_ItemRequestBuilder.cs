@@ -3,16 +3,16 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Export;
-using Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Import;
-using Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Query;
-using Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Raw;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Export;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Import;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Query;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Raw;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.D1.Database.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\d1\database\{database_id}
@@ -21,27 +21,27 @@ namespace Soenneker.Cloudflare.Accounts.Item.D1.Database.Item
     public partial class WithDatabase_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The export property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Export.ExportRequestBuilder Export
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Export.ExportRequestBuilder Export
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The import property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Import.ImportRequestBuilder Import
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Import.ImportRequestBuilder Import
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Import.ImportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Import.ImportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The query property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Query.QueryRequestBuilder Query
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Query.QueryRequestBuilder Query
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Query.QueryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Query.QueryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The raw property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Raw.RawRequestBuilder Raw
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Raw.RawRequestBuilder Raw
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.D1.Database.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -131,11 +131,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.D1.Database.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

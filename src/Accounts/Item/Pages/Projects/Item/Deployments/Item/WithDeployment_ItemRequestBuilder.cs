@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History;
-using Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.Retry;
-using Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.Rollback;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.Retry;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.Rollback;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pages\projects\{project_name}\deployments\{deployment_id}
@@ -20,22 +20,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Ite
     public partial class WithDeployment_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The history property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder History
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder History
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The retry property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.Retry.RetryRequestBuilder Retry
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.Retry.RetryRequestBuilder Retry
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.Retry.RetryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.Retry.RetryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rollback property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.Rollback.RollbackRequestBuilder Rollback
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.Rollback.RollbackRequestBuilder Rollback
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.Rollback.RollbackRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.Rollback.RollbackRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Ite
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -125,11 +125,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Ite
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.WithDeployment_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

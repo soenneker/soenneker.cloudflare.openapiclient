@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Access.Certificates.Item;
-using Soenneker.Cloudflare.Accounts.Item.Access.Certificates.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Access.Certificates
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\certificates
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Certificates
     public partial class CertificatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.access.certificates.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.access.certificates.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.Item.WithCertificate_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.Item.WithCertificate_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.Item.WithCertificate_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.Item.WithCertificate_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("certificate_id", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.Item.WithCertificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.Item.WithCertificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.CertificatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Certificates
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.CertificatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -126,11 +126,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Certificates
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.CertificatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.CertificatesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.CertificatesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

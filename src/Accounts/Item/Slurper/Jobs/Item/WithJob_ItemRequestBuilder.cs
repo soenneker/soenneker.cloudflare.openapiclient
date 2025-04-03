@@ -3,17 +3,17 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Abort;
-using Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Logs;
-using Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Pause;
-using Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Progress;
-using Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Resume;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Abort;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Logs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Pause;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Progress;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Resume;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\slurper\jobs\{job_id}
@@ -22,32 +22,32 @@ namespace Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item
     public partial class WithJob_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The abort property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Abort.AbortRequestBuilder Abort
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Abort.AbortRequestBuilder Abort
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Abort.AbortRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Abort.AbortRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logs property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Logs.LogsRequestBuilder Logs
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Logs.LogsRequestBuilder Logs
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pause property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Pause.PauseRequestBuilder Pause
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Pause.PauseRequestBuilder Pause
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Pause.PauseRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Pause.PauseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The progress property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Progress.ProgressRequestBuilder Progress
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Progress.ProgressRequestBuilder Progress
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Progress.ProgressRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Progress.ProgressRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resume property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Resume.ResumeRequestBuilder Resume
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Resume.ResumeRequestBuilder Resume
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.Resume.ResumeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Resume.ResumeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -101,11 +101,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.WithJob_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

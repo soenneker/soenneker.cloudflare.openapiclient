@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Submissions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity
     public partial class EmailSecurityRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The investigate property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.InvestigateRequestBuilder Investigate
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.InvestigateRequestBuilder Investigate
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Investigate.InvestigateRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.InvestigateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The submissions property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder Submissions
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder Submissions
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.EmailSecurityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.EmailSecurityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.EmailSecurityRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.EmailSecurityRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

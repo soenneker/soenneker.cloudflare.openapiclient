@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Dlp.Email.Account_mapping;
-using Soenneker.Cloudflare.Accounts.Item.Dlp.Email.Rules;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Account_mapping;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Email
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\email
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Email
     public partial class EmailRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The account_mapping property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.Account_mapping.Account_mappingRequestBuilder Account_mapping
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Account_mapping.Account_mappingRequestBuilder Account_mapping
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.Account_mapping.Account_mappingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Account_mapping.Account_mappingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.Rules.RulesRequestBuilder Rules
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules.RulesRequestBuilder Rules
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.EmailRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.EmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Email
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Email.EmailRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.EmailRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

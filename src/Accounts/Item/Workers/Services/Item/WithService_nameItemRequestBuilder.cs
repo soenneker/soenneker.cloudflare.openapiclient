@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\services\{service_name}
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item
     public partial class WithService_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The environments property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.EnvironmentsRequestBuilder Environments
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.EnvironmentsRequestBuilder Environments
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.WithService_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.WithService_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Services.Item.WithService_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.Item.WithService_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

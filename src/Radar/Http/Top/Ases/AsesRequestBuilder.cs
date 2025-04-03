@@ -3,20 +3,20 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Bot_class;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Browser_family;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Device_type;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Http_protocol;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Http_version;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Ip_version;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Os;
-using Soenneker.Cloudflare.Radar.Http.Top.Ases.Tls_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Device_type;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Os;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Radar.Http.Top.Ases
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\http\top\ases
@@ -25,47 +25,47 @@ namespace Soenneker.Cloudflare.Radar.Http.Top.Ases
     public partial class AsesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bot_class property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Bot_class.Bot_classRequestBuilder Bot_class
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Bot_classRequestBuilder Bot_class
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Bot_class.Bot_classRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Bot_class.Bot_classRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The browser_family property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Browser_family.Browser_familyRequestBuilder Browser_family
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Browser_familyRequestBuilder Browser_family
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Browser_family.Browser_familyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Browser_family.Browser_familyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The device_type property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Device_type.Device_typeRequestBuilder Device_type
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Device_type.Device_typeRequestBuilder Device_type
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Device_type.Device_typeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Device_type.Device_typeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http_protocol property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Http_protocol.Http_protocolRequestBuilder Http_protocol
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Http_protocolRequestBuilder Http_protocol
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Http_protocol.Http_protocolRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Http_protocolRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http_version property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Http_version.Http_versionRequestBuilder Http_version
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_version.Http_versionRequestBuilder Http_version
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Http_version.Http_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_version.Http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Ip_version.Ip_versionRequestBuilder Ip_version
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Ip_versionRequestBuilder Ip_version
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The os property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Os.OsRequestBuilder Os
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Os.OsRequestBuilder Os
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Os.OsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Os.OsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tls_version property</summary>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Tls_version.Tls_versionRequestBuilder Tls_version
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Tls_versionRequestBuilder Tls_version
         {
-            get => new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Ases.AsesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.Radar.Http.Top.Ases
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Ases.AsesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -119,11 +119,11 @@ namespace Soenneker.Cloudflare.Radar.Http.Top.Ases
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Http.Top.Ases.AsesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Radar.Http.Top.Ases.AsesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Radar.Http.Top.Ases.AsesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

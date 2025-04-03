@@ -3,22 +3,22 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.App_types;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Audit_ssh_settings;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Categories;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Certificates;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Configuration;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Lists;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Locations;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Logging;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Proxy_endpoints;
-using Soenneker.Cloudflare.Accounts.Item.Gateway.Rules;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.App_types;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Categories;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Certificates;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Locations;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Gateway
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\gateway
@@ -27,57 +27,57 @@ namespace Soenneker.Cloudflare.Accounts.Item.Gateway
     public partial class GatewayRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The app_types property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.App_types.App_typesRequestBuilder App_types
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.App_types.App_typesRequestBuilder App_types
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.App_types.App_typesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.App_types.App_typesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The audit_ssh_settings property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Audit_ssh_settings.Audit_ssh_settingsRequestBuilder Audit_ssh_settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_settings.Audit_ssh_settingsRequestBuilder Audit_ssh_settings
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Audit_ssh_settings.Audit_ssh_settingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_settings.Audit_ssh_settingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The categories property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Categories.CategoriesRequestBuilder Categories
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Categories.CategoriesRequestBuilder Categories
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Certificates.CertificatesRequestBuilder Certificates
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Certificates.CertificatesRequestBuilder Certificates
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The configuration property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Configuration.ConfigurationRequestBuilder Configuration
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration.ConfigurationRequestBuilder Configuration
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The lists property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Lists.ListsRequestBuilder Lists
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder Lists
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The locations property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Locations.LocationsRequestBuilder Locations
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Locations.LocationsRequestBuilder Locations
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logging property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Logging.LoggingRequestBuilder Logging
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging.LoggingRequestBuilder Logging
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Logging.LoggingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging.LoggingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The proxy_endpoints property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder Proxy_endpoints
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder Proxy_endpoints
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.Rules.RulesRequestBuilder Rules
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules.RulesRequestBuilder Rules
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Gateway.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Gateway.GatewayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.GatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Gateway
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Gateway.GatewayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.GatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -167,11 +167,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Gateway
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Gateway.GatewayRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.GatewayRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Gateway.GatewayRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.GatewayRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Gateway.GatewayRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.GatewayRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

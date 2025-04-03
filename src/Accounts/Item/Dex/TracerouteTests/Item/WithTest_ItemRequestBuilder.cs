@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath;
-using Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.Percentiles;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.Percentiles;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\traceroute-tests\{test_id}
@@ -19,17 +19,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item
     public partial class WithTest_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The networkPath property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder NetworkPath
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder NetworkPath
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.NetworkPath.NetworkPathRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The percentiles property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.Percentiles.PercentilesRequestBuilder Percentiles
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.Percentiles.PercentilesRequestBuilder Percentiles
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.Percentiles.PercentilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.Percentiles.PercentilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -83,11 +83,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

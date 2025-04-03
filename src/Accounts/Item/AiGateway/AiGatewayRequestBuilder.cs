@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.AiGateway.EvaluationTypes;
-using Soenneker.Cloudflare.Accounts.Item.AiGateway.Gateways;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.EvaluationTypes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.AiGateway
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.AiGateway
     public partial class AiGatewayRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The evaluationTypes property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.AiGateway.EvaluationTypes.EvaluationTypesRequestBuilder EvaluationTypes
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.EvaluationTypes.EvaluationTypesRequestBuilder EvaluationTypes
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.AiGateway.EvaluationTypes.EvaluationTypesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.EvaluationTypes.EvaluationTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gateways property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.AiGateway.Gateways.GatewaysRequestBuilder Gateways
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.GatewaysRequestBuilder Gateways
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.AiGateway.Gateways.GatewaysRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.GatewaysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.AiGateway.AiGatewayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.AiGatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.AiGateway
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.AiGateway.AiGatewayRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.AiGatewayRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.Class;
-using Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.Severity;
-using Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.TypeNamespace;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Class;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Severity;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.TypeNamespace;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\attack-surface-report\issues
@@ -21,24 +21,24 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues
     {
         /// <summary>The class property</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.Class.ClassRequestBuilder Class
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Class.ClassRequestBuilder Class
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.Class.ClassRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Class.ClassRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The severity property</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.Severity.SeverityRequestBuilder Severity
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Severity.SeverityRequestBuilder Severity
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.Severity.SeverityRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Severity.SeverityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The type property</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.TypeNamespace.TypeRequestBuilder Type
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.TypeNamespace.TypeRequestBuilder Type
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.TypeNamespace.TypeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.TypeNamespace.TypeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -94,12 +94,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

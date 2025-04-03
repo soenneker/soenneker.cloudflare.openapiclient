@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Logs.Control.Retention;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.Retention;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Logs.Control
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\logs\control
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Zones.Item.Logs.Control
     public partial class ControlRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The retention property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Logs.Control.Retention.RetentionRequestBuilder Retention
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.Retention.RetentionRequestBuilder Retention
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Logs.Control.Retention.RetentionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.Retention.RetentionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Logs.Control
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.ControlRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\datasets\{dataset_id}\upload
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UploadRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.dlp.datasets.item.upload.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dlp.datasets.item.upload.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.Item.WithVersionItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.Item.WithVersionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.Item.WithVersionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.Item.WithVersionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("version", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.Item.WithVersionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -84,11 +84,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upload.UploadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes;
-using Soenneker.Cloudflare.Accounts.Item.Teamnet.Virtual_networks;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_networks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Teamnet
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\teamnet
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Teamnet
     public partial class TeamnetRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The routes property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.RoutesRequestBuilder Routes
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.RoutesRequestBuilder Routes
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The virtual_networks property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Virtual_networks.Virtual_networksRequestBuilder Virtual_networks
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_networks.Virtual_networksRequestBuilder Virtual_networks
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Teamnet.Virtual_networks.Virtual_networksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_networks.Virtual_networksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Teamnet.TeamnetRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.TeamnetRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Teamnet
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Teamnet.TeamnetRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.TeamnetRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

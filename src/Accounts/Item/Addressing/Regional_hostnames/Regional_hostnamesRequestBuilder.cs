@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames.Regions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing\regional_hostnames
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames
     public partial class Regional_hostnamesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The regions property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames.Regions.RegionsRequestBuilder Regions
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regions.RegionsRequestBuilder Regions
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames.Regions.RegionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regions.RegionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

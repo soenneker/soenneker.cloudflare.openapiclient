@@ -2,16 +2,16 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Allow_policies;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Block_senders;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Domains;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Impersonation_registry;
-using Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Domains;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Impersonation_registry;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\settings
@@ -20,32 +20,32 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The allow_policies property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder Allow_policies
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder Allow_policies
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies.Allow_policiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The block_senders property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Block_senders.Block_sendersRequestBuilder Block_senders
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders.Block_sendersRequestBuilder Block_senders
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Block_senders.Block_sendersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders.Block_sendersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domains property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Domains.DomainsRequestBuilder Domains
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Domains.DomainsRequestBuilder Domains
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The impersonation_registry property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Impersonation_registry.Impersonation_registryRequestBuilder Impersonation_registry
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Impersonation_registry.Impersonation_registryRequestBuilder Impersonation_registry
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Impersonation_registry.Impersonation_registryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Impersonation_registry.Impersonation_registryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The trusted_domains property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder Trusted_domains
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder Trusted_domains
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

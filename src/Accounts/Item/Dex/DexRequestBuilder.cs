@@ -2,19 +2,19 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Dex.Colos;
-using Soenneker.Cloudflare.Accounts.Item.Dex.Commands;
-using Soenneker.Cloudflare.Accounts.Item.Dex.Devices;
-using Soenneker.Cloudflare.Accounts.Item.Dex.FleetStatus;
-using Soenneker.Cloudflare.Accounts.Item.Dex.HttpTests;
-using Soenneker.Cloudflare.Accounts.Item.Dex.Tests;
-using Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults;
-using Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Dex
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex
@@ -23,47 +23,47 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex
     public partial class DexRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The colos property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.Colos.ColosRequestBuilder Colos
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder Colos
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.Colos.ColosRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The commands property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.Commands.CommandsRequestBuilder Commands
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.CommandsRequestBuilder Commands
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.Commands.CommandsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.CommandsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The devices property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.Devices.DevicesRequestBuilder Devices
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.DevicesRequestBuilder Devices
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fleetStatus property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.FleetStatus.FleetStatusRequestBuilder FleetStatus
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.FleetStatusRequestBuilder FleetStatus
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.FleetStatus.FleetStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.FleetStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The httpTests property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder HttpTests
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder HttpTests
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tests property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.TestsRequestBuilder Tests
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.TestsRequestBuilder Tests
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.Tests.TestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.TestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tracerouteTestResults property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.TracerouteTestResultsRequestBuilder TracerouteTestResults
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.TracerouteTestResultsRequestBuilder TracerouteTestResults
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.TracerouteTestResultsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.TracerouteTestResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tracerouteTests property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.TracerouteTestsRequestBuilder TracerouteTests
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.TracerouteTestsRequestBuilder TracerouteTests
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTests.TracerouteTestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.TracerouteTestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.DexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.DexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.DexRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.DexRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

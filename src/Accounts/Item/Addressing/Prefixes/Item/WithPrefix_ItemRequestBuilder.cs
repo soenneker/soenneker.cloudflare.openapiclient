@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bindings;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Delegations;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bindings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Delegations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing\prefixes\{prefix_id}
@@ -20,22 +20,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item
     public partial class WithPrefix_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bgp property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder Bgp
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder Bgp
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bindings property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bindings.BindingsRequestBuilder Bindings
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bindings.BindingsRequestBuilder Bindings
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Bindings.BindingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bindings.BindingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The delegations property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Delegations.DelegationsRequestBuilder Delegations
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Delegations.DelegationsRequestBuilder Delegations
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.Delegations.DelegationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Delegations.DelegationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -161,11 +161,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.WithPrefix_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

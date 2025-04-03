@@ -2,17 +2,17 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Config;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Default;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Export;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Publish;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Workflow;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Config;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Default;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Export;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Publish;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Workflow;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Settings.Zaraz
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\settings\zaraz
@@ -21,37 +21,37 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings.Zaraz
     public partial class ZarazRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The config property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Config.ConfigRequestBuilder Config
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Config.ConfigRequestBuilder Config
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Config.ConfigRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Config.ConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The default property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Default.DefaultRequestBuilder Default
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Default.DefaultRequestBuilder Default
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Default.DefaultRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Default.DefaultRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The export property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Export.ExportRequestBuilder Export
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Export.ExportRequestBuilder Export
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The history property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder History
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder History
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The publish property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Publish.PublishRequestBuilder Publish
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Publish.PublishRequestBuilder Publish
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Publish.PublishRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Publish.PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workflow property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Workflow.WorkflowRequestBuilder Workflow
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Workflow.WorkflowRequestBuilder Workflow
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.Workflow.WorkflowRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.Workflow.WorkflowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.ZarazRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings.Zaraz
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.ZarazRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

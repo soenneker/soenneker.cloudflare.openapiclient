@@ -2,17 +2,17 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Authors;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Finetunes;
-using Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Tasks;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Tomarkdown;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Authors;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tasks;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai
@@ -21,37 +21,37 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai
     public partial class AiRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The authors property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Authors.AuthorsRequestBuilder Authors
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Authors.AuthorsRequestBuilder Authors
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Authors.AuthorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Authors.AuthorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The finetunes property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Finetunes.FinetunesRequestBuilder Finetunes
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.FinetunesRequestBuilder Finetunes
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Finetunes.FinetunesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.FinetunesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The models property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder Models
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder Models
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The run property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.RunRequestBuilder Run
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.RunRequestBuilder Run
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.RunRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.RunRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tasks property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Tasks.TasksRequestBuilder Tasks
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tasks.TasksRequestBuilder Tasks
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tomarkdown property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Tomarkdown.TomarkdownRequestBuilder Tomarkdown
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown.TomarkdownRequestBuilder Tomarkdown
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Tomarkdown.TomarkdownRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown.TomarkdownRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.AiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.AiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.AiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.AiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

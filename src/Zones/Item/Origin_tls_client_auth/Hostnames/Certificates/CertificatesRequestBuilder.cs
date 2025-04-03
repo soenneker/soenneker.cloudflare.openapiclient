@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\origin_tls_client_auth\hostnames\certificates
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certi
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CertificatesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.origin_tls_client_auth.hostnames.certificates.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.origin_tls_client_auth.hostnames.certificates.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item.WithCertificate_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item.WithCertificate_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item.WithCertificate_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item.WithCertificate_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("certificate_id", position);
-                return new global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item.WithCertificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.Item.WithCertificate_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certi
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certi
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Hostnames.Certificates.CertificatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

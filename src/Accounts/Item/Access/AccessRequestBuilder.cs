@@ -2,27 +2,27 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Access.Apps;
-using Soenneker.Cloudflare.Accounts.Item.Access.Bookmarks;
-using Soenneker.Cloudflare.Accounts.Item.Access.Certificates;
-using Soenneker.Cloudflare.Accounts.Item.Access.Custom_pages;
-using Soenneker.Cloudflare.Accounts.Item.Access.Gateway_ca;
-using Soenneker.Cloudflare.Accounts.Item.Access.Groups;
-using Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers;
-using Soenneker.Cloudflare.Accounts.Item.Access.Keys;
-using Soenneker.Cloudflare.Accounts.Item.Access.Logs;
-using Soenneker.Cloudflare.Accounts.Item.Access.Organizations;
-using Soenneker.Cloudflare.Accounts.Item.Access.Policies;
-using Soenneker.Cloudflare.Accounts.Item.Access.PolicyTests;
-using Soenneker.Cloudflare.Accounts.Item.Access.Seats;
-using Soenneker.Cloudflare.Accounts.Item.Access.Service_tokens;
-using Soenneker.Cloudflare.Accounts.Item.Access.Tags;
-using Soenneker.Cloudflare.Accounts.Item.Access.Users;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Custom_pages;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Gateway_ca;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Groups;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Keys;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Policies;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.PolicyTests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Seats;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Service_tokens;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Tags;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Access
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access
@@ -31,87 +31,87 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access
     public partial class AccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The apps property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.AppsRequestBuilder Apps
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.AppsRequestBuilder Apps
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bookmarks property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder Bookmarks
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder Bookmarks
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.CertificatesRequestBuilder Certificates
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder Certificates
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_pages property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Custom_pages.Custom_pagesRequestBuilder Custom_pages
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Custom_pages.Custom_pagesRequestBuilder Custom_pages
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Custom_pages.Custom_pagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Custom_pages.Custom_pagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gateway_ca property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Gateway_ca.Gateway_caRequestBuilder Gateway_ca
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Gateway_ca.Gateway_caRequestBuilder Gateway_ca
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Gateway_ca.Gateway_caRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Gateway_ca.Gateway_caRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The groups property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Groups.GroupsRequestBuilder Groups
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Groups.GroupsRequestBuilder Groups
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The identity_providers property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Identity_providersRequestBuilder Identity_providers
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Identity_providersRequestBuilder Identity_providers
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Identity_providersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Identity_providersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Keys.KeysRequestBuilder Keys
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Keys.KeysRequestBuilder Keys
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Keys.KeysRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Keys.KeysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logs property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Logs.LogsRequestBuilder Logs
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.LogsRequestBuilder Logs
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizations property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder Organizations
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder Organizations
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policies property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Policies.PoliciesRequestBuilder Policies
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Policies.PoliciesRequestBuilder Policies
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policyTests property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.PolicyTests.PolicyTestsRequestBuilder PolicyTests
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.PolicyTests.PolicyTestsRequestBuilder PolicyTests
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.PolicyTests.PolicyTestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.PolicyTests.PolicyTestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The seats property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Seats.SeatsRequestBuilder Seats
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Seats.SeatsRequestBuilder Seats
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Seats.SeatsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Seats.SeatsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The service_tokens property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Service_tokens.Service_tokensRequestBuilder Service_tokens
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Service_tokens.Service_tokensRequestBuilder Service_tokens
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Service_tokens.Service_tokensRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Service_tokens.Service_tokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tags property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Tags.TagsRequestBuilder Tags
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Tags.TagsRequestBuilder Tags
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Users.UsersRequestBuilder Users
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.UsersRequestBuilder Users
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.AccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -119,7 +119,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.AccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

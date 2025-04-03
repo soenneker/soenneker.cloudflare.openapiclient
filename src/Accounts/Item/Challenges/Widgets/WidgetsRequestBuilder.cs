@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\challenges\widgets
@@ -17,20 +17,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WidgetsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.challenges.widgets.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.challenges.widgets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("sitekey", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.WithSitekeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -53,11 +53,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -88,11 +88,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -106,11 +106,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Lists all turnstile widgets of an account.
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
             public string Direction { get; set; }
 #endif
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
             [Obsolete("This property is deprecated, use OrderAsGetOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,7 +155,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
             public string Order { get; set; }
 #endif
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("per_page")]
@@ -166,7 +166,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WidgetsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>
+        public partial class WidgetsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
@@ -186,7 +186,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
             public string Direction { get; set; }
 #endif
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.PostDirectionQueryParameterType? DirectionAsPostDirectionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.PostDirectionQueryParameterType? DirectionAsPostDirectionQueryParameterType { get; set; }
             [Obsolete("This property is deprecated, use OrderAsPostOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,7 +198,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
             public string Order { get; set; }
 #endif
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.PostOrderQueryParameterType? OrderAsPostOrderQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.PostOrderQueryParameterType? OrderAsPostOrderQueryParameterType { get; set; }
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("per_page")]
@@ -209,7 +209,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WidgetsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>
+        public partial class WidgetsRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.WidgetsRequestBuilder.WidgetsRequestBuilderPostQueryParameters>
         {
         }
     }

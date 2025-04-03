@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\apps\{app_id}\user_policy_checks
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks
     public partial class User_policy_checksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

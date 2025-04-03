@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow.StarlingLm7bBeta;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.StarlingLm7bBeta;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\nexusflow
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow
     public partial class NexusflowRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The starlingLm7bBeta property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow.StarlingLm7bBeta.StarlingLm7bBetaRequestBuilder StarlingLm7bBeta
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.StarlingLm7bBeta.StarlingLm7bBetaRequestBuilder StarlingLm7bBeta
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow.StarlingLm7bBeta.StarlingLm7bBetaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.StarlingLm7bBeta.StarlingLm7bBetaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

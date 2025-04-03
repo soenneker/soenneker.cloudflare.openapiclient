@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.V2;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.V2;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\scripts\{script_name}\content
@@ -18,12 +18,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content
     public partial class ContentRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The v2 property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.V2.V2RequestBuilder V2
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.V2.V2RequestBuilder V2
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.V2.V2RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.V2.V2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -77,11 +77,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Content.ContentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

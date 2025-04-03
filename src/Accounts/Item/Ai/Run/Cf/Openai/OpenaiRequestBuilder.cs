@@ -2,14 +2,14 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.Whisper;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.WhisperTinyEn;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whisper;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperTinyEn;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\openai
@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai
     public partial class OpenaiRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The whisper property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.Whisper.WhisperRequestBuilder Whisper
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whisper.WhisperRequestBuilder Whisper
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.Whisper.WhisperRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whisper.WhisperRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The whisperLargeV3Turbo property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo.WhisperLargeV3TurboRequestBuilder WhisperLargeV3Turbo
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo.WhisperLargeV3TurboRequestBuilder WhisperLargeV3Turbo
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo.WhisperLargeV3TurboRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo.WhisperLargeV3TurboRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The whisperTinyEn property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.WhisperTinyEn.WhisperTinyEnRequestBuilder WhisperTinyEn
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperTinyEn.WhisperTinyEnRequestBuilder WhisperTinyEn
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.WhisperTinyEn.WhisperTinyEnRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperTinyEn.WhisperTinyEnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.OpenaiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.OpenaiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Cf.Openai.OpenaiRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.OpenaiRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

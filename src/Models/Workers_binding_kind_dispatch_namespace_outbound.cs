@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.Models
+namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
     /// Outbound worker.
@@ -26,13 +26,13 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>Outbound worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound_worker? Worker { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound_worker? Worker { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound_worker Worker { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound_worker Worker { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound"/> and sets the default values.
         /// </summary>
         public Workers_binding_kind_dispatch_namespace_outbound()
         {
@@ -41,12 +41,12 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "params", n => { Params = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "worker", n => { Worker = n.GetObjectValue<global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound_worker>(global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound_worker.CreateFromDiscriminatorValue); } },
+                { "worker", n => { Worker = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound_worker>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound_worker.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("params", Params);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.Models.Workers_binding_kind_dispatch_namespace_outbound_worker>("worker", Worker);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound_worker>("worker", Worker);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

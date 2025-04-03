@@ -2,19 +2,19 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bBaseAwq;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bInstructAwq;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Llama213bChatAwq;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Llamaguard7bAwq;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq;
-using Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bBaseAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bInstructAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Llama213bChatAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Llamaguard7bAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\thebloke
@@ -23,47 +23,47 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke
     public partial class TheblokeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The deepseekCoder67bBaseAwq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bBaseAwq.DeepseekCoder67bBaseAwqRequestBuilder DeepseekCoder67bBaseAwq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bBaseAwq.DeepseekCoder67bBaseAwqRequestBuilder DeepseekCoder67bBaseAwq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bBaseAwq.DeepseekCoder67bBaseAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bBaseAwq.DeepseekCoder67bBaseAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deepseekCoder67bInstructAwq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bInstructAwq.DeepseekCoder67bInstructAwqRequestBuilder DeepseekCoder67bInstructAwq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bInstructAwq.DeepseekCoder67bInstructAwqRequestBuilder DeepseekCoder67bInstructAwq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bInstructAwq.DeepseekCoder67bInstructAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bInstructAwq.DeepseekCoder67bInstructAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The llama213bChatAwq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Llama213bChatAwq.Llama213bChatAwqRequestBuilder Llama213bChatAwq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Llama213bChatAwq.Llama213bChatAwqRequestBuilder Llama213bChatAwq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Llama213bChatAwq.Llama213bChatAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Llama213bChatAwq.Llama213bChatAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The llamaguard7bAwq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Llamaguard7bAwq.Llamaguard7bAwqRequestBuilder Llamaguard7bAwq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Llamaguard7bAwq.Llamaguard7bAwqRequestBuilder Llamaguard7bAwq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Llamaguard7bAwq.Llamaguard7bAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Llamaguard7bAwq.Llamaguard7bAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The mistral7bInstructV01Awq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder Mistral7bInstructV01Awq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder Mistral7bInstructV01Awq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The neuralChat7bV31Awq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder NeuralChat7bV31Awq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder NeuralChat7bV31Awq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The openhermes25Mistral7bAwq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq.Openhermes25Mistral7bAwqRequestBuilder Openhermes25Mistral7bAwq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq.Openhermes25Mistral7bAwqRequestBuilder Openhermes25Mistral7bAwq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq.Openhermes25Mistral7bAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq.Openhermes25Mistral7bAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zephyr7bBetaAwq property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq.Zephyr7bBetaAwqRequestBuilder Zephyr7bBetaAwq
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq.Zephyr7bBetaAwqRequestBuilder Zephyr7bBetaAwq
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq.Zephyr7bBetaAwqRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq.Zephyr7bBetaAwqRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.TheblokeRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

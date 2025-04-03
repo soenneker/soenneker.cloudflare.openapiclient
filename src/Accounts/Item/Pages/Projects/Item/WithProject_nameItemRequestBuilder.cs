@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments;
-using Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Domains;
-using Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Purge_build_cache;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Domains;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Purge_build_cache;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pages\projects\{project_name}
@@ -20,22 +20,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item
     public partial class WithProject_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The deployments property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.DeploymentsRequestBuilder Deployments
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.DeploymentsRequestBuilder Deployments
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Deployments.DeploymentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.DeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domains property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Domains.DomainsRequestBuilder Domains
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Domains.DomainsRequestBuilder Domains
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The purge_build_cache property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Purge_build_cache.Purge_build_cacheRequestBuilder Purge_build_cache
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Purge_build_cache.Purge_build_cacheRequestBuilder Purge_build_cache
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.Purge_build_cache.Purge_build_cacheRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Purge_build_cache.Purge_build_cacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -161,11 +161,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.WithProject_nameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

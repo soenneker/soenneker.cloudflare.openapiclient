@@ -3,67 +3,67 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Access;
-using Soenneker.Cloudflare.Zones.Item.Acm;
-using Soenneker.Cloudflare.Zones.Item.Activation_check;
-using Soenneker.Cloudflare.Zones.Item.Addressing;
-using Soenneker.Cloudflare.Zones.Item.Analytics;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway;
-using Soenneker.Cloudflare.Zones.Item.Argo;
-using Soenneker.Cloudflare.Zones.Item.Available_plans;
-using Soenneker.Cloudflare.Zones.Item.Available_rate_plans;
-using Soenneker.Cloudflare.Zones.Item.Bot_management;
-using Soenneker.Cloudflare.Zones.Item.Cache;
-using Soenneker.Cloudflare.Zones.Item.Certificate_authorities;
-using Soenneker.Cloudflare.Zones.Item.Client_certificates;
-using Soenneker.Cloudflare.Zones.Item.Cloud_connector;
-using Soenneker.Cloudflare.Zones.Item.ContentUploadScan;
-using Soenneker.Cloudflare.Zones.Item.Custom_certificates;
-using Soenneker.Cloudflare.Zones.Item.Custom_hostnames;
-using Soenneker.Cloudflare.Zones.Item.Custom_ns;
-using Soenneker.Cloudflare.Zones.Item.Custom_pages;
-using Soenneker.Cloudflare.Zones.Item.Dcv_delegation;
-using Soenneker.Cloudflare.Zones.Item.Devices;
-using Soenneker.Cloudflare.Zones.Item.Dns_analytics;
-using Soenneker.Cloudflare.Zones.Item.Dns_records;
-using Soenneker.Cloudflare.Zones.Item.Dns_settings;
-using Soenneker.Cloudflare.Zones.Item.Dnssec;
-using Soenneker.Cloudflare.Zones.Item.Email;
-using Soenneker.Cloudflare.Zones.Item.Filters;
-using Soenneker.Cloudflare.Zones.Item.Firewall;
-using Soenneker.Cloudflare.Zones.Item.Healthchecks;
-using Soenneker.Cloudflare.Zones.Item.Hold;
-using Soenneker.Cloudflare.Zones.Item.Hostnames;
-using Soenneker.Cloudflare.Zones.Item.Keyless_certificates;
-using Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks;
-using Soenneker.Cloudflare.Zones.Item.Load_balancers;
-using Soenneker.Cloudflare.Zones.Item.Logpush;
-using Soenneker.Cloudflare.Zones.Item.Logs;
-using Soenneker.Cloudflare.Zones.Item.Managed_headers;
-using Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth;
-using Soenneker.Cloudflare.Zones.Item.Page_shield;
-using Soenneker.Cloudflare.Zones.Item.Pagerules;
-using Soenneker.Cloudflare.Zones.Item.Purge_cache;
-using Soenneker.Cloudflare.Zones.Item.Rate_limits;
-using Soenneker.Cloudflare.Zones.Item.Rulesets;
-using Soenneker.Cloudflare.Zones.Item.Secondary_dns;
-using Soenneker.Cloudflare.Zones.Item.SecurityCenter;
-using Soenneker.Cloudflare.Zones.Item.Settings;
-using Soenneker.Cloudflare.Zones.Item.Snippets;
-using Soenneker.Cloudflare.Zones.Item.Spectrum;
-using Soenneker.Cloudflare.Zones.Item.Speed_api;
-using Soenneker.Cloudflare.Zones.Item.Ssl;
-using Soenneker.Cloudflare.Zones.Item.Subscription;
-using Soenneker.Cloudflare.Zones.Item.Url_normalization;
-using Soenneker.Cloudflare.Zones.Item.Waiting_rooms;
-using Soenneker.Cloudflare.Zones.Item.Web3;
-using Soenneker.Cloudflare.Zones.Item.Workers;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Activation_check;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_plans;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_rate_plans;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_ns;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dcv_delegation;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Devices;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_settings;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Managed_headers;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}
@@ -72,282 +72,282 @@ namespace Soenneker.Cloudflare.Zones.Item
     public partial class IdentifierItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The access property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Access.AccessRequestBuilder Access
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.AccessRequestBuilder Access
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Access.AccessRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access.AccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The acm property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Acm.AcmRequestBuilder Acm
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.AcmRequestBuilder Acm
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Acm.AcmRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.AcmRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The activation_check property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Activation_check.Activation_checkRequestBuilder Activation_check
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Activation_check.Activation_checkRequestBuilder Activation_check
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Activation_check.Activation_checkRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Activation_check.Activation_checkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The addressing property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Addressing.AddressingRequestBuilder Addressing
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing.AddressingRequestBuilder Addressing
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Addressing.AddressingRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing.AddressingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The analytics property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Analytics.AnalyticsRequestBuilder Analytics
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.AnalyticsRequestBuilder Analytics
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The api_gateway property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Api_gatewayRequestBuilder Api_gateway
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Api_gatewayRequestBuilder Api_gateway
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.Api_gatewayRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Api_gatewayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The argo property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Argo.ArgoRequestBuilder Argo
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.ArgoRequestBuilder Argo
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Argo.ArgoRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.ArgoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The available_plans property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Available_plans.Available_plansRequestBuilder Available_plans
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_plans.Available_plansRequestBuilder Available_plans
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Available_plans.Available_plansRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_plans.Available_plansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The available_rate_plans property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Available_rate_plans.Available_rate_plansRequestBuilder Available_rate_plans
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_rate_plans.Available_rate_plansRequestBuilder Available_rate_plans
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Available_rate_plans.Available_rate_plansRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_rate_plans.Available_rate_plansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The bot_management property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Bot_management.Bot_managementRequestBuilder Bot_management
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management.Bot_managementRequestBuilder Bot_management
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Bot_management.Bot_managementRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management.Bot_managementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cache property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Cache.CacheRequestBuilder Cache
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.CacheRequestBuilder Cache
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Cache.CacheRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.CacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificate_authorities property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder Certificate_authorities
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder Certificate_authorities
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The client_certificates property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Client_certificates.Client_certificatesRequestBuilder Client_certificates
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Client_certificatesRequestBuilder Client_certificates
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Client_certificates.Client_certificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates.Client_certificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The cloud_connector property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Cloud_connector.Cloud_connectorRequestBuilder Cloud_connector
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector.Cloud_connectorRequestBuilder Cloud_connector
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Cloud_connector.Cloud_connectorRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector.Cloud_connectorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The contentUploadScan property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder ContentUploadScan
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder ContentUploadScan
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_certificates property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder Custom_certificates
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder Custom_certificates
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_hostnames property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder Custom_hostnames
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder Custom_hostnames
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_ns property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Custom_ns.Custom_nsRequestBuilder Custom_ns
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_ns.Custom_nsRequestBuilder Custom_ns
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Custom_ns.Custom_nsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_ns.Custom_nsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_pages property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Custom_pages.Custom_pagesRequestBuilder Custom_pages
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Custom_pagesRequestBuilder Custom_pages
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Custom_pages.Custom_pagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Custom_pagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dcv_delegation property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Dcv_delegation.Dcv_delegationRequestBuilder Dcv_delegation
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dcv_delegation.Dcv_delegationRequestBuilder Dcv_delegation
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Dcv_delegation.Dcv_delegationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dcv_delegation.Dcv_delegationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The devices property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Devices.DevicesRequestBuilder Devices
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Devices.DevicesRequestBuilder Devices
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Devices.DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns_analytics property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Dns_analytics.Dns_analyticsRequestBuilder Dns_analytics
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Dns_analyticsRequestBuilder Dns_analytics
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Dns_analytics.Dns_analyticsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Dns_analyticsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns_records property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Dns_records.Dns_recordsRequestBuilder Dns_records
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder Dns_records
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Dns_records.Dns_recordsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns_settings property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Dns_settings.Dns_settingsRequestBuilder Dns_settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_settings.Dns_settingsRequestBuilder Dns_settings
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Dns_settings.Dns_settingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_settings.Dns_settingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dnssec property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Dnssec.DnssecRequestBuilder Dnssec
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec.DnssecRequestBuilder Dnssec
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The email property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Email.EmailRequestBuilder Email
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.EmailRequestBuilder Email
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The filters property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Filters.FiltersRequestBuilder Filters
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder Filters
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Filters.FiltersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The firewall property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Firewall.FirewallRequestBuilder Firewall
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder Firewall
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Firewall.FirewallRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The healthchecks property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder Healthchecks
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder Healthchecks
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Healthchecks.HealthchecksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hold property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Hold.HoldRequestBuilder Hold
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder Hold
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Hold.HoldRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold.HoldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hostnames property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Hostnames.HostnamesRequestBuilder Hostnames
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.HostnamesRequestBuilder Hostnames
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Hostnames.HostnamesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames.HostnamesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keyless_certificates property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder Keyless_certificates
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder Keyless_certificates
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The leakedCredentialChecks property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder LeakedCredentialChecks
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder LeakedCredentialChecks
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The load_balancers property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Load_balancers.Load_balancersRequestBuilder Load_balancers
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers.Load_balancersRequestBuilder Load_balancers
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Load_balancers.Load_balancersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers.Load_balancersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logpush property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Logpush.LogpushRequestBuilder Logpush
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.LogpushRequestBuilder Logpush
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Logpush.LogpushRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.LogpushRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The logs property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Logs.LogsRequestBuilder Logs
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.LogsRequestBuilder Logs
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The managed_headers property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Managed_headers.Managed_headersRequestBuilder Managed_headers
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Managed_headers.Managed_headersRequestBuilder Managed_headers
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Managed_headers.Managed_headersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Managed_headers.Managed_headersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_tls_client_auth property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Origin_tls_client_authRequestBuilder Origin_tls_client_auth
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Origin_tls_client_authRequestBuilder Origin_tls_client_auth
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Origin_tls_client_auth.Origin_tls_client_authRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Origin_tls_client_authRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The page_shield property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Page_shield.Page_shieldRequestBuilder Page_shield
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Page_shieldRequestBuilder Page_shield
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Page_shield.Page_shieldRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Page_shieldRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pagerules property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Pagerules.PagerulesRequestBuilder Pagerules
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder Pagerules
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Pagerules.PagerulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The purge_cache property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Purge_cache.Purge_cacheRequestBuilder Purge_cache
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache.Purge_cacheRequestBuilder Purge_cache
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Purge_cache.Purge_cacheRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache.Purge_cacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rate_limits property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Rate_limits.Rate_limitsRequestBuilder Rate_limits
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Rate_limitsRequestBuilder Rate_limits
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Rate_limits.Rate_limitsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Rate_limitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rulesets property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Rulesets.RulesetsRequestBuilder Rulesets
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.RulesetsRequestBuilder Rulesets
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Rulesets.RulesetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.RulesetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secondary_dns property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Secondary_dns.Secondary_dnsRequestBuilder Secondary_dns
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Secondary_dnsRequestBuilder Secondary_dns
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Secondary_dns.Secondary_dnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Secondary_dnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The securityCenter property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.SecurityCenter.SecurityCenterRequestBuilder SecurityCenter
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.SecurityCenterRequestBuilder SecurityCenter
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.SecurityCenter.SecurityCenterRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.SecurityCenterRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.SettingsRequestBuilder Settings
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder Settings
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The snippets property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Snippets.SnippetsRequestBuilder Snippets
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.SnippetsRequestBuilder Snippets
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Snippets.SnippetsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.SnippetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spectrum property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Spectrum.SpectrumRequestBuilder Spectrum
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.SpectrumRequestBuilder Spectrum
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Spectrum.SpectrumRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.SpectrumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The speed_api property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Speed_apiRequestBuilder Speed_api
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Speed_apiRequestBuilder Speed_api
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Speed_apiRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Speed_apiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ssl property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Ssl.SslRequestBuilder Ssl
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.SslRequestBuilder Ssl
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Ssl.SslRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.SslRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subscription property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Subscription.SubscriptionRequestBuilder Subscription
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription.SubscriptionRequestBuilder Subscription
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Subscription.SubscriptionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription.SubscriptionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The url_normalization property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Url_normalization.Url_normalizationRequestBuilder Url_normalization
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationRequestBuilder Url_normalization
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Url_normalization.Url_normalizationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The waiting_rooms property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Waiting_roomsRequestBuilder Waiting_rooms
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Waiting_roomsRequestBuilder Waiting_rooms
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Waiting_rooms.Waiting_roomsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Waiting_roomsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The web3 property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Web3.Web3RequestBuilder Web3
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Web3RequestBuilder Web3
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Web3.Web3RequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Web3RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workers property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Workers.WorkersRequestBuilder Workers
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers.WorkersRequestBuilder Workers
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Workers.WorkersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Workers.WorkersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.IdentifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.IdentifierItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -355,7 +355,7 @@ namespace Soenneker.Cloudflare.Zones.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.IdentifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.IdentifierItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -473,11 +473,11 @@ namespace Soenneker.Cloudflare.Zones.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.IdentifierItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.IdentifierItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.IdentifierItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.IdentifierItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.IdentifierItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.IdentifierItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

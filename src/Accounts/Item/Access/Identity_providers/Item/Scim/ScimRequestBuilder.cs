@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.Groups;
-using Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.Users;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.Groups;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.Users;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\identity_providers\{identity_provider_id}\scim
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim
     public partial class ScimRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The groups property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.Groups.GroupsRequestBuilder Groups
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.Groups.GroupsRequestBuilder Groups
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The users property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.Users.UsersRequestBuilder Users
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.Users.UsersRequestBuilder Users
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.ScimRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.ScimRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Identity_providers.Item.Scim.ScimRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.ScimRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

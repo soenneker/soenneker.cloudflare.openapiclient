@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.Schema;
-using Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.Search;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Schema;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\models
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests
     public partial class ModelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The schema property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.Schema.SchemaRequestBuilder Schema
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Schema.SchemaRequestBuilder Schema
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.Schema.SchemaRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Schema.SchemaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The search property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.Search.SearchRequestBuilder Search
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Search.SearchRequestBuilder Search
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.ModelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\traceroute-test-results\{test_result_id}\network-path
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.Netw
     public partial class NetworkPathRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.Netw
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -71,11 +71,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.Netw
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults.Item.NetworkPath.NetworkPathRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

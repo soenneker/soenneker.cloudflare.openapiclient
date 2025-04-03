@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\web3\hostnames\{identifier}\ipfs_universal_path
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_pat
     public partial class Ipfs_universal_pathRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The content_list property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Content_listRequestBuilder Content_list
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Content_listRequestBuilder Content_list
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Content_listRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Content_listRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Ipfs_universal_pathRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Ipfs_universal_pathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_pat
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Ipfs_universal_pathRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Ipfs_universal_pathRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

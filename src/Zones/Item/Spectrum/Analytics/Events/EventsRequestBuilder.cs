@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.Bytime;
-using Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.Summary;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Bytime;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\spectrum\analytics\events
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The bytime property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.Bytime.BytimeRequestBuilder Bytime
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Bytime.BytimeRequestBuilder Bytime
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.Bytime.BytimeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Bytime.BytimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The summary property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.Summary.SummaryRequestBuilder Summary
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary.SummaryRequestBuilder Summary
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Spectrum.Analytics.Events.EventsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.EventsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

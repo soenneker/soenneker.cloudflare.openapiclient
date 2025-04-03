@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\cache\tiered_cache_smart_topology_enable
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enab
     public partial class Tiered_cache_smart_topology_enableRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enab
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -143,11 +143,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enab
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable.Tiered_cache_smart_topology_enableRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

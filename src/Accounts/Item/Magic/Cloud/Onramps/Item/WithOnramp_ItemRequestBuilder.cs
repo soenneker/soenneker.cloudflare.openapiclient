@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Apply;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Export;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Plan;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Apply;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Export;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Plan;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\cloud\onramps\{onramp_id}
@@ -20,22 +20,22 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item
     public partial class WithOnramp_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The apply property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Apply.ApplyRequestBuilder Apply
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Apply.ApplyRequestBuilder Apply
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Apply.ApplyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Apply.ApplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The export property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Export.ExportRequestBuilder Export
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Export.ExportRequestBuilder Export
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Export.ExportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The plan property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Plan.PlanRequestBuilder Plan
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Plan.PlanRequestBuilder Plan
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.Plan.PlanRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.Plan.PlanRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -197,11 +197,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.Item.WithOnramp_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

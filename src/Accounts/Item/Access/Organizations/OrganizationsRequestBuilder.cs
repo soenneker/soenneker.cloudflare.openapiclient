@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Access.Organizations.Doh;
-using Soenneker.Cloudflare.Accounts.Item.Access.Organizations.Revoke_user;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Doh;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Revoke_user;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Access.Organizations
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\organizations
@@ -19,17 +19,17 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Organizations
     public partial class OrganizationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The doh property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.Doh.DohRequestBuilder Doh
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Doh.DohRequestBuilder Doh
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.Doh.DohRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Doh.DohRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The revoke_user property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.Revoke_user.Revoke_userRequestBuilder Revoke_user
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Revoke_user.Revoke_userRequestBuilder Revoke_user
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.Revoke_user.Revoke_userRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.Revoke_user.Revoke_userRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Organizations
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -155,11 +155,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.Access.Organizations
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations.OrganizationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

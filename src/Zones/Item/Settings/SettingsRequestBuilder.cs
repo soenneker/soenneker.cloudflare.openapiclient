@@ -3,21 +3,21 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Settings.Aegis;
-using Soenneker.Cloudflare.Zones.Item.Settings.Fonts;
-using Soenneker.Cloudflare.Zones.Item.Settings.Item;
-using Soenneker.Cloudflare.Zones.Item.Settings.Origin_h2_max_streams;
-using Soenneker.Cloudflare.Zones.Item.Settings.Origin_max_http_version;
-using Soenneker.Cloudflare.Zones.Item.Settings.Rum;
-using Soenneker.Cloudflare.Zones.Item.Settings.Speed_brain;
-using Soenneker.Cloudflare.Zones.Item.Settings.Ssl_automatic_mode;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Settings
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\settings
@@ -26,59 +26,59 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The aegis property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Aegis.AegisRequestBuilder Aegis
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder Aegis
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Aegis.AegisRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fonts property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Fonts.FontsRequestBuilder Fonts
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder Fonts
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Fonts.FontsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_h2_max_streams property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder Origin_h2_max_streams
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder Origin_h2_max_streams
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_max_http_version property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder Origin_max_http_version
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder Origin_max_http_version
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rum property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Rum.RumRequestBuilder Rum
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum.RumRequestBuilder Rum
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Rum.RumRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum.RumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The speed_brain property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder Speed_brain
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder Speed_brain
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ssl_automatic_mode property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder Ssl_automatic_mode
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder Ssl_automatic_mode
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zaraz property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.ZarazRequestBuilder Zaraz
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder Zaraz
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.ZarazRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.zones.item.settings.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.settings.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.Item.WithSetting_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Item.WithSetting_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Item.WithSetting_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Item.WithSetting_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("setting_id", position);
-                return new global::Soenneker.Cloudflare.Zones.Item.Settings.Item.WithSetting_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Item.WithSetting_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.SettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.SettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -168,11 +168,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.SettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.SettingsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Settings.SettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

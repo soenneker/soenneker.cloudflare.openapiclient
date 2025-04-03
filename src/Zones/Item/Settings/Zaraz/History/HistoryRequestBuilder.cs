@@ -3,13 +3,13 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.Configs;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.Configs;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\settings\zaraz\history
@@ -18,12 +18,12 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History
     public partial class HistoryRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The configs property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.Configs.ConfigsRequestBuilder Configs
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.Configs.ConfigsRequestBuilder Configs
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.Configs.ConfigsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.Configs.ConfigsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -113,11 +113,11 @@ namespace Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

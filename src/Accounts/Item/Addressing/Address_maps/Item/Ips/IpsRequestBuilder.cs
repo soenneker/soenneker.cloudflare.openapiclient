@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Item.Ips.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Item.Ips
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing\address_maps\{address_map_id}\ips
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IpsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.accounts.item.addressing.address_maps.item.ips.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.addressing.address_maps.item.ips.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips.Item.WithIp_addressItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips.Item.WithIp_addressItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Item.Ips.Item.WithIp_addressItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Item.Ips.Item.WithIp_addressItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("ip_address", position);
-                return new global::Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips.Item.WithIp_addressItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Item.Ips.Item.WithIp_addressItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips.IpsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Item.Ips.IpsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Addressing.Address_maps.Item.Ips.IpsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Item.Ips.IpsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

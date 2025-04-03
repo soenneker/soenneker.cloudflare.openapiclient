@@ -2,13 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.Tests;
-using Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.Trend;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tests;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\speed_api\pages\{url}
@@ -17,17 +17,17 @@ namespace Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item
     public partial class WithUrlItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The tests property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.Tests.TestsRequestBuilder Tests
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tests.TestsRequestBuilder Tests
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.Tests.TestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tests.TestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The trend property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder Trend
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder Trend
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.WithUrlItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\api_gateway\expression-template
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate
     public partial class ExpressionTemplateRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The fallthrough property</summary>
-        public global::Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder Fallthrough
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder Fallthrough
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.Fallthrough.FallthroughRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

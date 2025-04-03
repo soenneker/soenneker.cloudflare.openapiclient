@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.Models
+namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
     /// Configuration for assets within a Worker.
@@ -24,9 +24,9 @@ namespace Soenneker.Cloudflare.Models
         public string Headers { get; set; }
 #endif
         /// <summary>Determines the redirects and rewrites of requests for HTML content.</summary>
-        public global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config_html_handling? HtmlHandling { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_html_handling? HtmlHandling { get; set; }
         /// <summary>Determines the response when a request does not match a static asset, and there is no Worker script.</summary>
-        public global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config_not_found_handling? NotFoundHandling { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_not_found_handling? NotFoundHandling { get; set; }
         /// <summary>The contents of a _redirects file (used to apply redirects or proxy paths ahead of asset serving)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.Models
         [Obsolete("")]
         public bool? ServeDirectly { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config"/> and sets the default values.
         /// </summary>
         public Workers_multipartScript_metadata_assets_config()
         {
@@ -50,12 +50,12 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_headers", n => { Headers = n.GetStringValue(); } },
-                { "html_handling", n => { HtmlHandling = n.GetEnumValue<global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config_html_handling>(); } },
-                { "not_found_handling", n => { NotFoundHandling = n.GetEnumValue<global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config_not_found_handling>(); } },
+                { "html_handling", n => { HtmlHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_html_handling>(); } },
+                { "not_found_handling", n => { NotFoundHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_not_found_handling>(); } },
                 { "_redirects", n => { Redirects = n.GetStringValue(); } },
                 { "run_worker_first", n => { RunWorkerFirst = n.GetBoolValue(); } },
                 { "serve_directly", n => { ServeDirectly = n.GetBoolValue(); } },
@@ -81,8 +81,8 @@ namespace Soenneker.Cloudflare.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("_headers", Headers);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config_html_handling>("html_handling", HtmlHandling);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.Models.Workers_multipartScript_metadata_assets_config_not_found_handling>("not_found_handling", NotFoundHandling);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_html_handling>("html_handling", HtmlHandling);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_not_found_handling>("not_found_handling", NotFoundHandling);
             writer.WriteStringValue("_redirects", Redirects);
             writer.WriteBoolValue("run_worker_first", RunWorkerFirst);
             writer.WriteBoolValue("serve_directly", ServeDirectly);

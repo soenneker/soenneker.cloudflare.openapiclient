@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Ranking.Domain.Item;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Radar.Ranking.Domain
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\ranking\domain
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.Radar.Ranking.Domain
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DomainRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.radar.ranking.domain.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.ranking.domain.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("domain", position);
-                return new global::Soenneker.Cloudflare.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ranking.Domain.DomainRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.DomainRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.Radar.Ranking.Domain
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Ranking.Domain.DomainRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.DomainRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

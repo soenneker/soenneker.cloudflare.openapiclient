@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Soenneker.Cloudflare.Models
+namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
@@ -41,21 +41,21 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>A list of classes with Durable Object namespaces that were renamed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.Models.Workers_migration_step_renamed_classes>? RenamedClasses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_renamed_classes>? RenamedClasses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.Models.Workers_migration_step_renamed_classes> RenamedClasses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_renamed_classes> RenamedClasses { get; set; }
 #endif
         /// <summary>A list of transfers for Durable Object namespaces from a different Worker and class to a class defined in this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.Models.Workers_migration_step_transferred_classes>? TransferredClasses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_transferred_classes>? TransferredClasses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.Models.Workers_migration_step_transferred_classes> TransferredClasses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_transferred_classes> TransferredClasses { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Models.Workers_migration_step"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step"/> and sets the default values.
         /// </summary>
         public Workers_migration_step()
         {
@@ -64,12 +64,12 @@ namespace Soenneker.Cloudflare.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Models.Workers_migration_step"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.Models.Workers_migration_step CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.Models.Workers_migration_step();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,8 +82,8 @@ namespace Soenneker.Cloudflare.Models
                 { "deleted_classes", n => { DeletedClasses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "new_classes", n => { NewClasses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "new_sqlite_classes", n => { NewSqliteClasses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "renamed_classes", n => { RenamedClasses = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.Models.Workers_migration_step_renamed_classes>(global::Soenneker.Cloudflare.Models.Workers_migration_step_renamed_classes.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "transferred_classes", n => { TransferredClasses = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.Models.Workers_migration_step_transferred_classes>(global::Soenneker.Cloudflare.Models.Workers_migration_step_transferred_classes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "renamed_classes", n => { RenamedClasses = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_renamed_classes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_renamed_classes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "transferred_classes", n => { TransferredClasses = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_transferred_classes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_transferred_classes.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,8 +96,8 @@ namespace Soenneker.Cloudflare.Models
             writer.WriteCollectionOfPrimitiveValues<string>("deleted_classes", DeletedClasses);
             writer.WriteCollectionOfPrimitiveValues<string>("new_classes", NewClasses);
             writer.WriteCollectionOfPrimitiveValues<string>("new_sqlite_classes", NewSqliteClasses);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.Models.Workers_migration_step_renamed_classes>("renamed_classes", RenamedClasses);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.Models.Workers_migration_step_transferred_classes>("transferred_classes", TransferredClasses);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_renamed_classes>("renamed_classes", RenamedClasses);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_migration_step_transferred_classes>("transferred_classes", TransferredClasses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -2,23 +2,23 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Asn;
-using Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Dns;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Domain;
-using Soenneker.Cloudflare.Accounts.Item.Intel.DomainHistory;
-using Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Ip;
-using Soenneker.Cloudflare.Accounts.Item.Intel.IpList;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Miscategorization;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Sinkholes;
-using Soenneker.Cloudflare.Accounts.Item.Intel.Whois;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.DomainHistory;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpList;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Miscategorization;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Sinkholes;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Whois;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Intel
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel
@@ -27,67 +27,67 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel
     public partial class IntelRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The asn property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Asn.AsnRequestBuilder Asn
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.AsnRequestBuilder Asn
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Asn.AsnRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.AsnRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The attackSurfaceReport property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder AttackSurfaceReport
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder AttackSurfaceReport
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Dns.DnsRequestBuilder Dns
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns.DnsRequestBuilder Dns
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domain property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Domain.DomainRequestBuilder Domain
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.DomainRequestBuilder Domain
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Domain.DomainRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain.DomainRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domainHistory property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.DomainHistory.DomainHistoryRequestBuilder DomainHistory
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.DomainHistory.DomainHistoryRequestBuilder DomainHistory
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.DomainHistory.DomainHistoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.DomainHistory.DomainHistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The indicator_feeds property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder Indicator_feeds
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder Indicator_feeds
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The indicatorFeeds property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.IndicatorFeedsRequestBuilder IndicatorFeeds
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.IndicatorFeedsRequestBuilder IndicatorFeeds
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.IndicatorFeeds.IndicatorFeedsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.IndicatorFeedsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ip property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Ip.IpRequestBuilder Ip
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.IpRequestBuilder Ip
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Ip.IpRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.IpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ipList property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.IpList.IpListRequestBuilder IpList
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpList.IpListRequestBuilder IpList
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.IpList.IpListRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpList.IpListRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The miscategorization property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Miscategorization.MiscategorizationRequestBuilder Miscategorization
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Miscategorization.MiscategorizationRequestBuilder Miscategorization
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Miscategorization.MiscategorizationRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Miscategorization.MiscategorizationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sinkholes property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Sinkholes.SinkholesRequestBuilder Sinkholes
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Sinkholes.SinkholesRequestBuilder Sinkholes
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Sinkholes.SinkholesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Sinkholes.SinkholesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The whois property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Intel.Whois.WhoisRequestBuilder Whois
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Whois.WhoisRequestBuilder Whois
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Intel.Whois.WhoisRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Whois.WhoisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.IntelRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IntelRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Intel
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Intel.IntelRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IntelRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

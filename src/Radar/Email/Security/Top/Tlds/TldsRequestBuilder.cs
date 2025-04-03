@@ -3,15 +3,15 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Malicious;
-using Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Spam;
-using Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Spoof;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Malicious;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spoof;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\email\security\top\tlds
@@ -20,22 +20,22 @@ namespace Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds
     public partial class TldsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The malicious property</summary>
-        public global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Malicious.MaliciousRequestBuilder Malicious
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Malicious.MaliciousRequestBuilder Malicious
         {
-            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Malicious.MaliciousRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Malicious.MaliciousRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spam property</summary>
-        public global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Spam.SpamRequestBuilder Spam
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.SpamRequestBuilder Spam
         {
-            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Spam.SpamRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.SpamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spoof property</summary>
-        public global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Spoof.SpoofRequestBuilder Spoof
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spoof.SpoofRequestBuilder Spoof
         {
-            get => new global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.Spoof.SpoofRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spoof.SpoofRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.TldsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.TldsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.TldsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.TldsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -89,11 +89,11 @@ namespace Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.TldsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.TldsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.TldsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.TldsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Radar.Email.Security.Top.Tlds.TldsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.TldsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

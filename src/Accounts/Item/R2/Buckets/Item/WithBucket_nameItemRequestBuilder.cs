@@ -3,17 +3,17 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Cors;
-using Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains;
-using Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Lifecycle;
-using Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Lock;
-using Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Sippy;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Cors;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lifecycle;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lock;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Sippy;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\r2\buckets\{bucket_name}
@@ -22,32 +22,32 @@ namespace Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item
     public partial class WithBucket_nameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cors property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Cors.CorsRequestBuilder Cors
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Cors.CorsRequestBuilder Cors
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Cors.CorsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Cors.CorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The domains property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder Domains
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder Domains
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains.DomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The lifecycle property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Lifecycle.LifecycleRequestBuilder Lifecycle
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lifecycle.LifecycleRequestBuilder Lifecycle
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Lifecycle.LifecycleRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lifecycle.LifecycleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The lock property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Lock.LockRequestBuilder Lock
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lock.LockRequestBuilder Lock
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Lock.LockRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lock.LockRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sippy property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Sippy.SippyRequestBuilder Sippy
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Sippy.SippyRequestBuilder Sippy
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.Sippy.SippyRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Sippy.SippyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -137,11 +137,11 @@ namespace Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.WithBucket_nameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -2,15 +2,15 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.CatalogSyncs;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Providers;
-using Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CatalogSyncs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\cloud
@@ -19,27 +19,27 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud
     public partial class CloudRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The catalogSyncs property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.CatalogSyncs.CatalogSyncsRequestBuilder CatalogSyncs
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CatalogSyncs.CatalogSyncsRequestBuilder CatalogSyncs
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.CatalogSyncs.CatalogSyncsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CatalogSyncs.CatalogSyncsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The onramps property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.OnrampsRequestBuilder Onramps
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.OnrampsRequestBuilder Onramps
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Onramps.OnrampsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.OnrampsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The providers property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Providers.ProvidersRequestBuilder Providers
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.ProvidersRequestBuilder Providers
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Providers.ProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Providers.ProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resources property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder Resources
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder Resources
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.CloudRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CloudRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Magic.Cloud
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Magic.Cloud.CloudRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CloudRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

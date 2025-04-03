@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.User.Load_balancers.Preview.Item;
+using Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.User.Load_balancers.Preview
+namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview
 {
     /// <summary>
     /// Builds and executes requests for operations under \user\load_balancers\preview
@@ -15,20 +15,20 @@ namespace Soenneker.Cloudflare.User.Load_balancers.Preview
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PreviewRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.user.load_balancers.preview.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.user.load_balancers.preview.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("preview_id", position);
-                return new global::Soenneker.Cloudflare.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.Item.WithPreview_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Load_balancers.Preview.PreviewRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.PreviewRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.User.Load_balancers.Preview
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.User.Load_balancers.Preview.PreviewRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Preview.PreviewRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

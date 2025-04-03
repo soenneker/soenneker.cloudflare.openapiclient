@@ -2,12 +2,12 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Accounts.Item.Slurper.Source.ConnectivityPrecheck;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Source.ConnectivityPrecheck;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-namespace Soenneker.Cloudflare.Accounts.Item.Slurper.Source
+namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Source
 {
     /// <summary>
     /// Builds and executes requests for operations under \accounts\{account_identifier-id}\slurper\source
@@ -16,12 +16,12 @@ namespace Soenneker.Cloudflare.Accounts.Item.Slurper.Source
     public partial class SourceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The connectivityPrecheck property</summary>
-        public global::Soenneker.Cloudflare.Accounts.Item.Slurper.Source.ConnectivityPrecheck.ConnectivityPrecheckRequestBuilder ConnectivityPrecheck
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Source.ConnectivityPrecheck.ConnectivityPrecheckRequestBuilder ConnectivityPrecheck
         {
-            get => new global::Soenneker.Cloudflare.Accounts.Item.Slurper.Source.ConnectivityPrecheck.ConnectivityPrecheckRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Source.ConnectivityPrecheck.ConnectivityPrecheckRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Slurper.Source.SourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Source.SourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.Accounts.Item.Slurper.Source
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Accounts.Item.Slurper.Source.SourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Source.SourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>

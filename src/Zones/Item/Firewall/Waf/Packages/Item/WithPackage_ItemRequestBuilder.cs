@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.Groups;
-using Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.Rules;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Groups;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item
+namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\firewall\waf\packages\{package_id}
@@ -20,18 +20,18 @@ namespace Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item
     {
         /// <summary>The groups property</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.Groups.GroupsRequestBuilder Groups
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Groups.GroupsRequestBuilder Groups
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder Rules
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder Rules
         {
-            get => new global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -125,12 +125,12 @@ namespace Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("")]
-        public global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.WithPackage_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

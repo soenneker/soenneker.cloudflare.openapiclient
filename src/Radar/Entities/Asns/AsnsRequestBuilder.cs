@@ -3,14 +3,14 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.Radar.Entities.Asns.Ip;
-using Soenneker.Cloudflare.Radar.Entities.Asns.Item;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Ip;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Soenneker.Cloudflare.Radar.Entities.Asns
+namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns
 {
     /// <summary>
     /// Builds and executes requests for operations under \radar\entities\asns
@@ -19,24 +19,24 @@ namespace Soenneker.Cloudflare.Radar.Entities.Asns
     public partial class AsnsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The ip property</summary>
-        public global::Soenneker.Cloudflare.Radar.Entities.Asns.Ip.IpRequestBuilder Ip
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Ip.IpRequestBuilder Ip
         {
-            get => new global::Soenneker.Cloudflare.Radar.Entities.Asns.Ip.IpRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Ip.IpRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.radar.entities.asns.item collection</summary>
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.entities.asns.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("asn", position);
-                return new global::Soenneker.Cloudflare.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Entities.Asns.AsnsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.Radar.Entities.Asns
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.Radar.Entities.Asns.AsnsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -90,11 +90,11 @@ namespace Soenneker.Cloudflare.Radar.Entities.Asns
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.Radar.Entities.Asns.AsnsRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.Radar.Entities.Asns.AsnsRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.Radar.Entities.Asns.AsnsRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
