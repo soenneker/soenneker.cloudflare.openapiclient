@@ -6,9 +6,11 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings;
@@ -36,6 +38,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The physicalDevices property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder PhysicalDevices
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The policies property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies.PoliciesRequestBuilder Policies
         {
@@ -50,6 +57,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder Posture
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The registrations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder Registrations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resilience property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder Resilience

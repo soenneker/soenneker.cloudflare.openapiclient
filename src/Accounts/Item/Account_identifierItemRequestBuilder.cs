@@ -56,6 +56,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper;
@@ -350,6 +351,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Secondary_dnsRequestBuilder Secondary_dns
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Secondary_dnsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The secrets_store property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Secrets_storeRequestBuilder Secrets_store
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Secrets_storeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The securityCenter property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.SecurityCenterRequestBuilder SecurityCenter
