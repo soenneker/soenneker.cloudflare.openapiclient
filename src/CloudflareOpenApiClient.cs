@@ -15,7 +15,6 @@ using Soenneker.Cloudflare.OpenApiClient.Notification;
 using Soenneker.Cloudflare.OpenApiClient.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Radar;
 using Soenneker.Cloudflare.OpenApiClient.Scans;
-using Soenneker.Cloudflare.OpenApiClient.Telemetry;
 using Soenneker.Cloudflare.OpenApiClient.User;
 using Soenneker.Cloudflare.OpenApiClient.Zones;
 using System.Collections.Generic;
@@ -74,11 +73,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Scans.ScansRequestBuilder Scans
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The telemetry property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Telemetry.TelemetryRequestBuilder Telemetry
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Telemetry.TelemetryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder User
