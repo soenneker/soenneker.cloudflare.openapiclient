@@ -33,11 +33,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override
         {
         }
         /// <summary>
-        /// Fetches a one-time use admin override code for a device. This relies on the **Admin Override** setting being enabled in your device configuration.
+        /// Fetches a one-time use admin override code for a registration. This relies on the **Admin Override** setting being enabled in your device configuration.   **Deprecated:** please use GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes instead.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -51,10 +52,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches a one-time use admin override code for a device. This relies on the **Admin Override** setting being enabled in your device configuration.
+        /// Fetches a one-time use admin override code for a registration. This relies on the **Admin Override** setting being enabled in your device configuration.   **Deprecated:** please use GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -73,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override_codes.Override_codesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override_codes.Override_codesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override_codes.Override_codesRequestBuilder(rawUrl, RequestAdapter);

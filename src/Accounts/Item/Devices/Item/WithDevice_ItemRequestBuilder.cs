@@ -18,6 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item
     public partial class WithDevice_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The override_codes property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override_codes.Override_codesRequestBuilder Override_codes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override_codes.Override_codesRequestBuilder(PathParameters, RequestAdapter);
@@ -39,11 +40,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item
         {
         }
         /// <summary>
-        /// Fetches details for a single device.
+        /// Fetches a single WARP registration.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices/{device_id}- GET /accounts/{account_id}/devices/registrations/{registration_id}
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -57,10 +59,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches details for a single device.
+        /// Fetches a single WARP registration.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices/{device_id}- GET /accounts/{account_id}/devices/registrations/{registration_id}
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -79,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder(rawUrl, RequestAdapter);

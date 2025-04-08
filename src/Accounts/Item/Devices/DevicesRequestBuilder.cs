@@ -29,56 +29,67 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
     public partial class DevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dex_tests property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder Dex_tests
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The networks property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder Networks
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The physicalDevices property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder PhysicalDevices
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices.PhysicalDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policies property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies.PoliciesRequestBuilder Policies
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The policy property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.PolicyRequestBuilder Policy
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.PolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The posture property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder Posture
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Posture.PostureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The registrations property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder Registrations
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.RegistrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resilience property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder Resilience
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Resilience.ResilienceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The revoke property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke.RevokeRequestBuilder Revoke
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke.RevokeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings.SettingsRequestBuilder Settings
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unrevoke property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Unrevoke.UnrevokeRequestBuilder Unrevoke
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Unrevoke.UnrevokeRequestBuilder(PathParameters, RequestAdapter);
@@ -86,6 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.devices.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.WithDevice_ItemRequestBuilder this[string position]
         {
             get
@@ -112,11 +124,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         {
         }
         /// <summary>
-        /// Fetches a list of enrolled devices.
+        /// List WARP registrations.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices- GET /accounts/{account_id}/devices/registrations
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -130,10 +143,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches a list of enrolled devices.
+        /// List WARP registrations.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices- GET /accounts/{account_id}/devices/registrations
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -152,6 +166,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DevicesRequestBuilder(rawUrl, RequestAdapter);

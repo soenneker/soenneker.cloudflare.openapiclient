@@ -47,6 +47,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar;
@@ -306,6 +307,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder Pcaps
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pipelines property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder Pipelines
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The queues property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.QueuesRequestBuilder Queues
