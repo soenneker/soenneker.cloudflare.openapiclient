@@ -18,6 +18,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama323bI
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama3370bInstructFp8Fast;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama38bInstruct;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama38bInstructAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama4Scout17b16eInstruct;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.LlamaGuard38b;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.M2m10012b;
 using System.Collections.Generic;
@@ -111,6 +112,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama38bInstructAwq.Llama38bInstructAwqRequestBuilder Llama38bInstructAwq
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama38bInstructAwq.Llama38bInstructAwqRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The llama4Scout17b16eInstruct property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama4Scout17b16eInstruct.Llama4Scout17b16eInstructRequestBuilder Llama4Scout17b16eInstruct
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama4Scout17b16eInstruct.Llama4Scout17b16eInstructRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The llamaGuard38b property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.LlamaGuard38b.LlamaGuard38bRequestBuilder LlamaGuard38b
