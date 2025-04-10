@@ -30,8 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string QueueName { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type? Type { get; set; }
+        /// <summary>The kind of resource that the binding provides.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "queue_name", n => { QueueName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue_type>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("queue_name", QueueName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

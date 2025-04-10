@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
         {
         }
         /// <summary>
-        /// List, filter, and paginate Pipelines in an account.
+        /// List, filter, and paginate pipelines in an account.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new Pipeline.
+        /// Create a new pipeline.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List, filter, and paginate Pipelines in an account.
+        /// List, filter, and paginate pipelines in an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
             return requestInfo;
         }
         /// <summary>
-        /// Create a new Pipeline.
+        /// Create a new pipeline.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

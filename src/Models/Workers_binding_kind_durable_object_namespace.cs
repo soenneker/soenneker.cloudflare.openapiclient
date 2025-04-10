@@ -54,8 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ScriptName { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type? Type { get; set; }
+        /// <summary>The kind of resource that the binding provides.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace"/> and sets the default values.
         /// </summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace_id", n => { NamespaceId = n.GetStringValue(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_type>(); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("namespace_id", NamespaceId);
             writer.WriteStringValue("script_name", ScriptName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

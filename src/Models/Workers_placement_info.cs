@@ -15,6 +15,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The last time the script was analyzed for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
+        public DateTimeOffset? LastAnalyzedAt { get; private set; }
         /// <summary>Enables [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode? Mode { get; set; }
         /// <summary>Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
@@ -44,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "last_analyzed_at", n => { LastAnalyzedAt = n.GetDateTimeOffsetValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status>(); } },
             };

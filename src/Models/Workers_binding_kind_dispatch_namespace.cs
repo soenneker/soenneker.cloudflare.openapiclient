@@ -38,8 +38,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound Outbound { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type? Type { get; set; }
+        /// <summary>The kind of resource that the binding provides.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
                 { "outbound", n => { Outbound = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_type>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("namespace", Namespace);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_outbound>("outbound", Outbound);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
