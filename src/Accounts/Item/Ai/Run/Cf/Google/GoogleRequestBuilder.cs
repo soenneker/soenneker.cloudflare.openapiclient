@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma312bIt;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora.Gemma2bItLoraRequestBuilder Gemma2bItLora
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora.Gemma2bItLoraRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The gemma312bIt property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma312bIt.Gemma312bItRequestBuilder Gemma312bIt
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma312bIt.Gemma312bItRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The gemma7bItLora property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora.Gemma7bItLoraRequestBuilder Gemma7bItLora

@@ -6,6 +6,8 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bC
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bChatAwq;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25Coder32bInstruct;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwq32b;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -37,6 +39,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq.Qwen157bChatAwqRequestBuilder Qwen157bChatAwq
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq.Qwen157bChatAwqRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The qwen25Coder32bInstruct property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25Coder32bInstruct.Qwen25Coder32bInstructRequestBuilder Qwen25Coder32bInstruct
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25Coder32bInstruct.Qwen25Coder32bInstructRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The qwq32b property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwq32b.Qwq32bRequestBuilder Qwq32b
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwq32b.Qwq32bRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.QwenRequestBuilder"/> and sets the default values.

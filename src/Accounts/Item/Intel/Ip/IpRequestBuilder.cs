@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,18 +16,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IpRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.intel.ip.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.Item.WithIpv_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.Item.WithIpv_typeItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("ipv_type", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.Item.WithIpv_typeItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.IpRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -46,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip
         {
         }
         /// <summary>
-        /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. This is an alternative to the `/intel/ip/{ipv_type}/{ip_address}` endpoint. Must provide query parameters containing `IPv4` or `IPv6` and the IP address.
+        /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. **Must provide ip query parameters.** For example, `/intel/ip?ipv4=1.1.1.1` or `/intel/ip?ipv6=2001:db8::1`
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. This is an alternative to the `/intel/ip/{ipv_type}/{ip_address}` endpoint. Must provide query parameters containing `IPv4` or `IPv6` and the IP address.
+        /// Gets the geolocation, ASN, infrastructure type of the ASN, and any security threat categories of an IP address. **Must provide ip query parameters.** For example, `/intel/ip?ipv4=1.1.1.1` or `/intel/ip?ipv6=2001:db8::1`
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

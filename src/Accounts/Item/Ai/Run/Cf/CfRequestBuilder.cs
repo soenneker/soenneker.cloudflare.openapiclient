@@ -16,6 +16,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MetaLlama;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MyshellAi;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat;
@@ -106,6 +107,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.MistralRequestBuilder Mistral
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.MistralRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mistralai property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.MistralaiRequestBuilder Mistralai
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.MistralaiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The myshellAi property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MyshellAi.MyshellAiRequestBuilder MyshellAi
