@@ -8,13 +8,10 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Cloudflare.OpenApiClient.Accounts;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
-using Soenneker.Cloudflare.OpenApiClient.Configs;
 using Soenneker.Cloudflare.OpenApiClient.Ips;
 using Soenneker.Cloudflare.OpenApiClient.Memberships;
-using Soenneker.Cloudflare.OpenApiClient.Notification;
 using Soenneker.Cloudflare.OpenApiClient.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Radar;
-using Soenneker.Cloudflare.OpenApiClient.Scans;
 using Soenneker.Cloudflare.OpenApiClient.User;
 using Soenneker.Cloudflare.OpenApiClient.Zones;
 using System.Collections.Generic;
@@ -39,11 +36,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The configs property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Configs.ConfigsRequestBuilder Configs
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Configs.ConfigsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The ips property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Ips.IpsRequestBuilder Ips
         {
@@ -54,11 +46,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The notification property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Notification.NotificationRequestBuilder Notification
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Notification.NotificationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The organizations property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Organizations.OrganizationsRequestBuilder Organizations
         {
@@ -68,11 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder Radar
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.RadarRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The scans property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Scans.ScansRequestBuilder Scans
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder User

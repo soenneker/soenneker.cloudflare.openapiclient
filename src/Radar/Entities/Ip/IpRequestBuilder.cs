@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Ip
         {
         }
         /// <summary>
-        /// Retrieves IP address information. 
+        /// Retrieves IP address information.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Ip
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves IP address information. 
+        /// Retrieves IP address information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
