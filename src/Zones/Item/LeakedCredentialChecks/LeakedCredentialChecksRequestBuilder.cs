@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
         {
         }
         /// <summary>
-        /// Retrieves the current status of Leaked Credential Checks
+        /// Retrieves the current status of Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the current status of Leaked Credential Checks
+        /// Updates the current status of Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the current status of Leaked Credential Checks
+        /// Retrieves the current status of Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
             return requestInfo;
         }
         /// <summary>
-        /// Updates the current status of Leaked Credential Checks
+        /// Updates the current status of Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

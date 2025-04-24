@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
         {
         }
         /// <summary>
-        /// List user-defined detection patterns for Leaked Credential Checks
+        /// List user-defined detection patterns for Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create user-defined detection pattern for Leaked Credential Checks
+        /// Create user-defined detection pattern for Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List user-defined detection patterns for Leaked Credential Checks
+        /// List user-defined detection patterns for Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.D
             return requestInfo;
         }
         /// <summary>
-        /// Create user-defined detection pattern for Leaked Credential Checks
+        /// Create user-defined detection pattern for Leaked Credential Checks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

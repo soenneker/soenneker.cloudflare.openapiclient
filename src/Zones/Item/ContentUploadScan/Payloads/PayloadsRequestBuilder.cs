@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
         {
         }
         /// <summary>
-        /// Get a list of existing custom scan expressions for Content Scanning
+        /// Get a list of existing custom scan expressions for Content Scanning.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add custom scan expressions for Content Scanning
+        /// Add custom scan expressions for Content Scanning.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of existing custom scan expressions for Content Scanning
+        /// Get a list of existing custom scan expressions for Content Scanning.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.Payloa
             return requestInfo;
         }
         /// <summary>
-        /// Add custom scan expressions for Content Scanning
+        /// Add custom scan expressions for Content Scanning.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
