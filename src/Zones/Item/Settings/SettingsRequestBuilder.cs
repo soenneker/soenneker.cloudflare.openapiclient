@@ -26,41 +26,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The aegis property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder Aegis
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fonts property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder Fonts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_h2_max_streams property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder Origin_h2_max_streams
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_max_http_version property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder Origin_max_http_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rum property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum.RumRequestBuilder Rum
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum.RumRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The speed_brain property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder Speed_brain
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain.Speed_brainRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ssl_automatic_mode property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder Ssl_automatic_mode
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode.Ssl_automatic_modeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zaraz property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder Zaraz
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.ZarazRequestBuilder(PathParameters, RequestAdapter);
@@ -99,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -117,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PatchAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -134,6 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -152,6 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPatchRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -170,6 +182,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder(rawUrl, RequestAdapter);
