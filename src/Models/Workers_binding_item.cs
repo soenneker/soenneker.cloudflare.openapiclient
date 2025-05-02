@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser_rendering"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Workers_binding_item : IComposedTypeWrapper, IParsable
@@ -37,13 +37,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets WorkersBindingKindAssets { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser_rendering"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser_rendering? WorkersBindingKindBrowserRendering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser? WorkersBindingKindBrowser { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser_rendering WorkersBindingKindBrowserRendering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser WorkersBindingKindBrowser { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,9 +211,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.WorkersBindingKindAssets = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets();
             }
-            else if("browser_rendering".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("browser".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WorkersBindingKindBrowserRendering = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser_rendering();
+                result.WorkersBindingKindBrowser = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser();
             }
             else if("d1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -307,9 +307,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return WorkersBindingKindAssets.GetFieldDeserializers();
             }
-            else if(WorkersBindingKindBrowserRendering != null)
+            else if(WorkersBindingKindBrowser != null)
             {
-                return WorkersBindingKindBrowserRendering.GetFieldDeserializers();
+                return WorkersBindingKindBrowser.GetFieldDeserializers();
             }
             else if(WorkersBindingKindD1 != null)
             {
@@ -404,9 +404,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets>(null, WorkersBindingKindAssets);
             }
-            else if(WorkersBindingKindBrowserRendering != null)
+            else if(WorkersBindingKindBrowser != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser_rendering>(null, WorkersBindingKindBrowserRendering);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser>(null, WorkersBindingKindBrowser);
             }
             else if(WorkersBindingKindD1 != null)
             {

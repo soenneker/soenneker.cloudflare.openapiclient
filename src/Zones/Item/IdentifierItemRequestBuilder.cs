@@ -46,6 +46,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings;
@@ -285,6 +286,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.RulesetsRequestBuilder Rulesets
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.RulesetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The schema_validation property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema_validationRequestBuilder Schema_validation
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema_validationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secondary_dns property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns.Secondary_dnsRequestBuilder Secondary_dns

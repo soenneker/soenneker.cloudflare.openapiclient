@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Terminate;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.BatchRequestBuilder Batch
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The terminate property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Terminate.TerminateRequestBuilder Terminate
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Terminate.TerminateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.workflows.item.instances.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

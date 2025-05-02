@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Ca;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Policies;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Revoke_tokens;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Settings;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +35,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Revoke_tokens.Revoke_tokensRequestBuilder Revoke_tokens
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Revoke_tokens.Revoke_tokensRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The settings property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user_policy_checks property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item.User_policy_checks.User_policy_checksRequestBuilder User_policy_checks

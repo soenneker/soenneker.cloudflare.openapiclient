@@ -108,53 +108,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// <summary>
         /// Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithScript_name4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse?> PutAsWithScript_namePutResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse> PutAsWithScript_namePutResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithScript_name4XXError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithScript_name4XXError">When receiving a 4XX status code</exception>
-        [Obsolete("This method is obsolete. Use PutAsWithScript_namePutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithScript_name4XXError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a worker from a Workers for Platforms namespace. This call has no response body on a successful delete.
@@ -210,7 +179,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "multipart/form-data", body);
             return requestInfo;
         }

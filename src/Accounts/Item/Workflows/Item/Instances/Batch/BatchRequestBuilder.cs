@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.Terminate;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +17,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BatchRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The terminate property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.Terminate.TerminateRequestBuilder Terminate
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.Terminate.TerminateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch.BatchRequestBuilder"/> and sets the default values.
         /// </summary>
