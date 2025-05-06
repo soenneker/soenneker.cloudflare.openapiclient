@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override
         {
         }
         /// <summary>
-        /// Fetches a one-time use admin override code for a registration. This relies on the **Admin Override** setting being enabled in your device configuration.   **Deprecated:** please use GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes instead.
+        /// Fetches a one-time use admin override code for a registration. This relies on the **Admin Override** setting being enabled in your device configuration.**Deprecated:** please use GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes instead.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item.Override
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches a one-time use admin override code for a registration. This relies on the **Admin Override** setting being enabled in your device configuration.   **Deprecated:** please use GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes instead.
+        /// Fetches a one-time use admin override code for a registration. This relies on the **Admin Override** setting being enabled in your device configuration.**Deprecated:** please use GET /accounts/{account_id}/devices/registrations/{registration_id}/override_codes instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

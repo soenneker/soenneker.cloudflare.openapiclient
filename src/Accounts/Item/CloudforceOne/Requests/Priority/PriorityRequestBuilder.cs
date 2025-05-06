@@ -31,14 +31,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Request
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.requests.priority.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.Item.WithPriority_identiferItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.Item.WithPriority_identiferItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.Item.WithPriority_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.Item.WithPriority_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("priority_identifer", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.Item.WithPriority_identiferItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("priority_id", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Priority.Item.WithPriority_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

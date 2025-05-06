@@ -266,7 +266,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             /// <summary>Filter by registration status. Defaults to &apos;active&apos;.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations.GetStatusQueryParameterType? StatusAsGetStatusQueryParameterType { get; set; }
-            /// <summary>Filter by Access user ID</summary>
+            /// <summary>Filter by Access user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Eid")]

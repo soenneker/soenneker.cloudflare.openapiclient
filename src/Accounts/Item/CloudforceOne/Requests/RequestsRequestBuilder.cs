@@ -49,14 +49,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Request
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.requests.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("request_identifier", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("request_id", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.Item.WithRequest_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
