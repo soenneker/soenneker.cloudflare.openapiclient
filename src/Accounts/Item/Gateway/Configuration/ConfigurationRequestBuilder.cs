@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration.Custom_certificate;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,6 +17,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConfigurationRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The custom_certificate property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration.Custom_certificate.Custom_certificateRequestBuilder Custom_certificate
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration.Custom_certificate.Custom_certificateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration.ConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>

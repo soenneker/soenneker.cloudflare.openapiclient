@@ -19,6 +19,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>The sampling rate for incoming requests. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.</summary>
         public double? HeadSamplingRate { get; set; }
+        /// <summary>Log settings for the Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_logs? Logs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_logs Logs { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability"/> and sets the default values.
         /// </summary>
@@ -46,6 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "head_sampling_rate", n => { HeadSamplingRate = n.GetDoubleValue(); } },
+                { "logs", n => { Logs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_logs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_logs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_logs>("logs", Logs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

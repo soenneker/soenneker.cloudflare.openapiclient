@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Download;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Stop;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,6 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Download.DownloadRequestBuilder Download
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Download.DownloadRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stop property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Stop.StopRequestBuilder Stop
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Stop.StopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.WithPcap_ItemRequestBuilder"/> and sets the default values.

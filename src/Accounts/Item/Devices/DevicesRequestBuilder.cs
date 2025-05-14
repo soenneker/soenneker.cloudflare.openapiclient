@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices;
@@ -27,6 +28,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DevicesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The dex_tests property</summary>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder Dex_tests
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Dex_tests.Dex_testsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The networks property</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.NetworksRequestBuilder Networks
