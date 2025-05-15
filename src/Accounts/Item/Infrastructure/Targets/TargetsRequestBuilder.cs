@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_delete;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch.BatchRequestBuilder Batch
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The batch_delete property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_delete.Batch_deleteRequestBuilder Batch_delete
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets.Batch_delete.Batch_deleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.infrastructure.targets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
