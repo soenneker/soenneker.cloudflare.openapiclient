@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The contents of a _headers file (used to attach custom headers on asset responses)</summary>
+        /// <summary>The contents of a _headers file (used to attach custom headers on asset responses).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Headers { get; set; }
@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_html_handling? HtmlHandling { get; set; }
         /// <summary>Determines the response when a request does not match a static asset, and there is no Worker script.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_not_found_handling? NotFoundHandling { get; set; }
-        /// <summary>The contents of a _redirects file (used to apply redirects or proxy paths ahead of asset serving)</summary>
+        /// <summary>The contents of a _redirects file (used to apply redirects or proxy paths ahead of asset serving).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Redirects { get; set; }
