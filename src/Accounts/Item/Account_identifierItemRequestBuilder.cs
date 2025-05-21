@@ -70,7 +70,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Waiting_rooms;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.WarpChangeEvents;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows;
@@ -428,11 +427,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Warp_connectorRequestBuilder Warp_connector
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Warp_connectorRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The warpChangeEvents property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.WarpChangeEvents.WarpChangeEventsRequestBuilder WarpChangeEvents
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.WarpChangeEvents.WarpChangeEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workers property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.WorkersRequestBuilder Workers

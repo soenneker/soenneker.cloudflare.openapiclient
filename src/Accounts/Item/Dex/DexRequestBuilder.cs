@@ -10,6 +10,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -61,6 +62,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.TracerouteTestsRequestBuilder TracerouteTests
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.TracerouteTestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The warpChangeEvents property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder WarpChangeEvents
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.DexRequestBuilder"/> and sets the default values.
