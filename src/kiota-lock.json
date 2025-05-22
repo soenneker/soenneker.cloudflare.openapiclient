@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "380758DDDB8C94EFF89852D8AE52DEF78DF1A54A3A5279E1C6FBB7B9C8AD014AA65AFD5B3B7CCC031D8D6303669B7749407A482A34C5822C2866CBFC8CEB444F",
+  "descriptionHash": "7162FC4AC1DB4E646A5B3276066731E7376F195527C99FEA772AB582C11E5B5AE60A33416F464D2A6D4E940425B54404C01AFBADE17EB2376DB6CA4D26FDD7D5",
   "descriptionLocation": "../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.26.0",
+  "kiotaVersion": "1.26.1",
   "clientClassName": "CloudflareOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Cloudflare.OpenApiClient",
