@@ -2,19 +2,70 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions
 {
     /// <summary>
-    /// Removed invalid $ref
+    /// JSON encoded metadata about the uploaded parts and Worker configuration.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VersionsPostRequestBody : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The annotations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsPostRequestBody_annotations? Annotations { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsPostRequestBody_annotations Annotations { get; set; }
+#endif
+        /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>? Bindings { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item> Bindings { get; set; }
+#endif
+        /// <summary>Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_date? CompatibilityDate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_date CompatibilityDate { get; set; }
+#endif
+        /// <summary>Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag>? CompatibilityFlags { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag> CompatibilityFlags { get; set; }
+#endif
+        /// <summary>List of binding types to keep from previous_upload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? KeepBindings { get; set; }
+#nullable restore
+#else
+        public List<string> KeepBindings { get; set; }
+#endif
+        /// <summary>Name of the part in the multipart request that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker, which is required for Version Upload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MainModule { get; set; }
+#nullable restore
+#else
+        public string MainModule { get; set; }
+#endif
+        /// <summary>Usage model for the Worker invocations.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model? UsageModel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -40,6 +91,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsPostRequestBody_annotations>(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsPostRequestBody_annotations.CreateFromDiscriminatorValue); } },
+                { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "compatibility_date", n => { CompatibilityDate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_date>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_date.CreateFromDiscriminatorValue); } },
+                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "keep_bindings", n => { KeepBindings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "main_module", n => { MainModule = n.GetStringValue(); } },
+                { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(); } },
             };
         }
         /// <summary>
@@ -49,6 +107,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsPostRequestBody_annotations>("annotations", Annotations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>("bindings", Bindings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_date>("compatibility_date", CompatibilityDate);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag>("compatibility_flags", CompatibilityFlags);
+            writer.WriteCollectionOfPrimitiveValues<string>("keep_bindings", KeepBindings);
+            writer.WriteStringValue("main_module", MainModule);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

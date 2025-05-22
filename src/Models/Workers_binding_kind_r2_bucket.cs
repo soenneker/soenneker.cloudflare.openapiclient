@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name Name { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_type? Type { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket_name", n => { BucketName = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_type>(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket_name", BucketName);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

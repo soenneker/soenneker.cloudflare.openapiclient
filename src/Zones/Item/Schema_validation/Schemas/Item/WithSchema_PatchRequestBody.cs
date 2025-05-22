@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item
 {
-    /// <summary>
-    /// Removed invalid $ref
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class WithSchema_PatchRequestBody : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Flag whether schema is enabled for validation.</summary>
+        public bool? ValidationEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.WithSchema_PatchRequestBody"/> and sets the default values.
         /// </summary>
@@ -40,6 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "validation_enabled", n => { ValidationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("validation_enabled", ValidationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

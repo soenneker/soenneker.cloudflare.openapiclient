@@ -7,14 +7,33 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas
 {
-    /// <summary>
-    /// Removed invalid $ref
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class SchemasPostRequestBody : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The kind of the schema</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.SchemasPostRequestBody_kind? Kind { get; set; }
+        /// <summary>A human-readable name for the schema</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The raw schema, e.g., the OpenAPI schema, either as JSON or YAML</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get; set; }
+#nullable restore
+#else
+        public string Source { get; set; }
+#endif
+        /// <summary>An indicator if this schema is enabled</summary>
+        public bool? ValidationEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.SchemasPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -40,6 +59,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.SchemasPostRequestBody_kind>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "validation_enabled", n => { ValidationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.SchemasPostRequestBody_kind>("kind", Kind);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("source", Source);
+            writer.WriteBoolValue("validation_enabled", ValidationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name Name { get; set; }
 #endif
         /// <summary>Name of Worker to bind to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "environment", n => { Environment = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name.CreateFromDiscriminatorValue); } },
                 { "service", n => { Service = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service_type>(); } },
             };
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("environment", Environment);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>("name", Name);
             writer.WriteStringValue("service", Service);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

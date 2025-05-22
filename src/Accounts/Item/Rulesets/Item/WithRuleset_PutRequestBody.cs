@@ -2,32 +2,35 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item
 {
-    /// <summary>
-    /// Removed invalid $ref
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithRuleset_PutRequestBody : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class WithRuleset_PutRequestBody : global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.WithRuleset_PutRequestBody"/> and sets the default values.
-        /// </summary>
-        public WithRuleset_PutRequestBody()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>The kind of the ruleset.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind? Kind { get; set; }
+        /// <summary>The phase of the ruleset.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase? Phase { get; set; }
+        /// <summary>The list of rules in the ruleset.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule>? Rules { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule> Rules { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.WithRuleset_PutRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.WithRuleset_PutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.WithRuleset_PutRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.WithRuleset_PutRequestBody();
@@ -36,20 +39,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>(); } },
+                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            base.Serialize(writer);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>("phase", Phase);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule>("rules", Rules);
         }
     }
 }
