@@ -18,12 +18,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Ver
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dlp.datasets.item.versions.item.entries.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.Item.WithEntry_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.Item.WithEntry_ItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.Item.WithEntry_ItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("entry_id", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.Item.WithEntry_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dlp.datasets.item.versions.item.entries.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.Item.WithEntry_ItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.Item.WithEntry_ItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("entry_id", position);
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries.Item.WithEntry_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

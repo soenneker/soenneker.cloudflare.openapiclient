@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ColosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/colos", pathParameters)
+        public ColosRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/colos?from={from}&to={to}{&sortBy*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ColosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/colos", rawUrl)
+        public ColosRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/colos?from={from}&to={to}{&sortBy*}", rawUrl)
         {
         }
         /// <summary>
         /// List Cloudflare colos that account&apos;s devices were connected to during a time period, sorted by usage starting from the most used colo. Colos without traffic are also returned and sorted alphabetically.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_colos_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder.ColosRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_colos_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder.ColosRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List Cloudflare colos that account&apos;s devices were connected to during a time period, sorted by usage starting from the most used colo. Colos without traffic are also returned and sorted alphabetically.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_colos_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder.ColosRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_colos_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder.ColosRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +89,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// List Cloudflare colos that account&apos;s devices were connected to during a time period, sorted by usage starting from the most used colo. Colos without traffic are also returned and sorted alphabetically.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ColosRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Start time for connection period in ISO (RFC3339 - ISO 8601) format</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("from")]
+            public string? From { get; set; }
+#nullable restore
+#else
+            [QueryParameter("from")]
+            public string From { get; set; }
+#endif
+            /// <summary>Type of usage that colos should be sorted by. If unspecified, returns all Cloudflare colos sorted alphabetically.</summary>
+            [Obsolete("This property is deprecated, use SortByAsDexEndpointsListColosParamSortBy instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sortBy")]
+            public string? SortBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sortBy")]
+            public string SortBy { get; set; }
+#endif
+            /// <summary>Type of usage that colos should be sorted by. If unspecified, returns all Cloudflare colos sorted alphabetically.</summary>
+            [QueryParameter("sortBy")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_colos_Param_sortBy? SortByAsDexEndpointsListColosParamSortBy { get; set; }
+            /// <summary>End time for connection period in ISO (RFC3339 - ISO 8601) format</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("to")]
+            public string? To { get; set; }
+#nullable restore
+#else
+            [QueryParameter("to")]
+            public string To { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ColosRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ColosRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Colos.ColosRequestBuilder.ColosRequestBuilderGetQueryParameters>
         {
         }
     }

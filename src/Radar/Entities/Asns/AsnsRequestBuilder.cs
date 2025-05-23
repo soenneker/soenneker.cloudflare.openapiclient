@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Ip;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item;
 using System.Collections.Generic;
@@ -24,9 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Ip.IpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.entities.asns.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Single Autonomous System Number (ASN) as integer.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder this[int position]
         {
             get
             {
@@ -35,12 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns
                 return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.entities.asns.item collection</summary>
+        /// <param name="position">Single Autonomous System Number (ASN) as integer.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("asn", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.WithAsnItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AsnsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/asns", pathParameters)
+        public AsnsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/asns{?asn*,format*,limit*,location*,offset*,orderBy*}", pathParameters)
         {
         }
         /// <summary>
@@ -48,43 +62,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AsnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/asns", rawUrl)
+        public AsnsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/asns{?asn*,format*,limit*,location*,offset*,orderBy*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves a list of autonomous systems.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Response_200_application_json"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder.AsnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder.AsnsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Response_400_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of autonomous systems.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder.AsnsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder.AsnsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -97,11 +122,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieves a list of autonomous systems.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AsnsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("asn")]
+            public string? Asn { get; set; }
+#nullable restore
+#else
+            [QueryParameter("asn")]
+            public string Asn { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [Obsolete("This property is deprecated, use FormatAsRadarGetEntitiesAsnListParamFormat instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("format")]
+            public string? Format { get; set; }
+#nullable restore
+#else
+            [QueryParameter("format")]
+            public string Format { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Param_format? FormatAsRadarGetEntitiesAsnListParamFormat { get; set; }
+            /// <summary>Limits the number of objects returned in the response.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            /// <summary>Filters results by location. Specify an alpha-2 location code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("location")]
+            public string? Location { get; set; }
+#nullable restore
+#else
+            [QueryParameter("location")]
+            public string Location { get; set; }
+#endif
+            /// <summary>Skips the specified number of objects before fetching the results.</summary>
+            [QueryParameter("offset")]
+            public int? Offset { get; set; }
+            /// <summary>Specifies the metric to order the ASNs by.</summary>
+            [Obsolete("This property is deprecated, use OrderByAsRadarGetEntitiesAsnListParamOrderBy instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("orderBy")]
+            public string? OrderBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("orderBy")]
+            public string OrderBy { get; set; }
+#endif
+            /// <summary>Specifies the metric to order the ASNs by.</summary>
+            [QueryParameter("orderBy")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_list_Param_orderBy? OrderByAsRadarGetEntitiesAsnListParamOrderBy { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AsnsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class AsnsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.AsnsRequestBuilder.AsnsRequestBuilderGetQueryParameters>
         {
         }
     }

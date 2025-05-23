@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spoof
     public partial class SpoofRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.security.top.tlds.spoof.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Spoof classification.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spoof.Item.WithSpoofItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spoof.Item.WithSpoofItemRequestBuilder this[string position]
         {

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/tests/overview", pathParameters)
+        public OverviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/tests/overview", rawUrl)
+        public OverviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", rawUrl)
         {
         }
         /// <summary>
         /// List DEX tests with overview metrics
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_tests_overview_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder.OverviewRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_tests_overview_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder.OverviewRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List DEX tests with overview metrics
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_tests_overview_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder.OverviewRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_list_tests_overview_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder.OverviewRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +89,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// List DEX tests with overview metrics
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class OverviewRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("colo")]
+            public string? Colo { get; set; }
+#nullable restore
+#else
+            [QueryParameter("colo")]
+            public string Colo { get; set; }
+#endif
+            /// <summary>Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("deviceId")]
+            public string[]? DeviceId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("deviceId")]
+            public string[] DeviceId { get; set; }
+#endif
+            /// <summary>Page number of paginated results</summary>
+            [QueryParameter("page")]
+            public double? Page { get; set; }
+            /// <summary>Number of items per page</summary>
+            [QueryParameter("per_page")]
+            public double? PerPage { get; set; }
+            /// <summary>Optionally filter results by test name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("testName")]
+            public string? TestName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("testName")]
+            public string TestName { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OverviewRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class OverviewRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.OverviewRequestBuilder.OverviewRequestBuilderGetQueryParameters>
         {
         }
     }

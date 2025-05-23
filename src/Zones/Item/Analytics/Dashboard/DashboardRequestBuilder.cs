@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DashboardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/analytics/dashboard", pathParameters)
+        public DashboardRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/analytics/dashboard{?continuous*,since*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,45 +30,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DashboardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/analytics/dashboard", rawUrl)
+        public DashboardRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/analytics/dashboard{?continuous*,since*,until*}", rawUrl)
         {
         }
         /// <summary>
         /// The dashboard view provides both totals and timeseries data for the given zone and time period across the entire Cloudflare network.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_dashboard_response"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_dashboard_response?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics___deprecated__get_dashboard_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder.DashboardRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_dashboard_response> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics___deprecated__get_dashboard_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder.DashboardRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_dashboard_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_dashboard_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The dashboard view provides both totals and timeseries data for the given zone and time period across the entire Cloudflare network.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics___deprecated__get_dashboard_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder.DashboardRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics___deprecated__get_dashboard_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder.DashboardRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -81,11 +88,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// The dashboard view provides both totals and timeseries data for the given zone and time period across the entire Cloudflare network.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class DashboardRequestBuilderGetQueryParameters 
+        {
+            [QueryParameter("continuous")]
+            public bool? Continuous { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("since")]
+            public string? Since { get; set; }
+#nullable restore
+#else
+            [QueryParameter("since")]
+            public string Since { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("until")]
+            public string? Until { get; set; }
+#nullable restore
+#else
+            [QueryParameter("until")]
+            public string Until { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DashboardRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class DashboardRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder.DashboardRequestBuilderGetQueryParameters>
         {
         }
     }

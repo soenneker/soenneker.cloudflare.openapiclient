@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DkimRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/email/security/timeseries_groups/dkim", pathParameters)
+        public DkimRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/email/security/timeseries_groups/dkim{?aggInterval*,arc*,dateEnd*,dateRange*,dateStart*,dmarc*,format*,name*,spf*,tlsVersion*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DkimRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/email/security/timeseries_groups/dkim", rawUrl)
+        public DkimRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/email/security/timeseries_groups/dkim{?aggInterval*,arc*,dateEnd*,dateRange*,dateStart*,dmarc*,format*,name*,spf*,tlsVersion*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the distribution of emails by DKIM (DomainKeys Identified Mail) validation over time.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Response_200_application_json"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder.DkimRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder.DkimRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Response_400_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the distribution of emails by DKIM (DomainKeys Identified Mail) validation over time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder.DkimRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder.DkimRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,170 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieves the distribution of emails by DKIM (DomainKeys Identified Mail) validation over time.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class DkimRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
+            [Obsolete("This property is deprecated, use AggIntervalAsRadarGetEmailSecurityTimeseriesGroupByDkimParamAggInterval instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("aggInterval")]
+            public string? AggInterval { get; set; }
+#nullable restore
+#else
+            [QueryParameter("aggInterval")]
+            public string AggInterval { get; set; }
+#endif
+            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
+            [QueryParameter("aggInterval")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Param_aggInterval? AggIntervalAsRadarGetEmailSecurityTimeseriesGroupByDkimParamAggInterval { get; set; }
+            /// <summary>Filters results by ARC (Authenticated Received Chain) validation.</summary>
+            [Obsolete("This property is deprecated, use ArcAsGetArcQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("arc")]
+            public string[]? Arc { get; set; }
+#nullable restore
+#else
+            [QueryParameter("arc")]
+            public string[] Arc { get; set; }
+#endif
+            /// <summary>Filters results by ARC (Authenticated Received Chain) validation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("arc")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetArcQueryParameterType[]? ArcAsGetArcQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("arc")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetArcQueryParameterType[] ArcAsGetArcQueryParameterType { get; set; }
+#endif
+            /// <summary>End of the date range (inclusive).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[]? DateEnd { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[] DateEnd { get; set; }
+#endif
+            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateRange")]
+            public string[]? DateRange { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateRange")]
+            public string[] DateRange { get; set; }
+#endif
+            /// <summary>Start of the date range.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[]? DateStart { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[] DateStart { get; set; }
+#endif
+            /// <summary>Filters results by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation status.</summary>
+            [Obsolete("This property is deprecated, use DmarcAsGetDmarcQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dmarc")]
+            public string[]? Dmarc { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dmarc")]
+            public string[] Dmarc { get; set; }
+#endif
+            /// <summary>Filters results by DMARC (Domain-based Message Authentication, Reporting and Conformance) validation status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dmarc")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetDmarcQueryParameterType[]? DmarcAsGetDmarcQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dmarc")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetDmarcQueryParameterType[] DmarcAsGetDmarcQueryParameterType { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [Obsolete("This property is deprecated, use FormatAsRadarGetEmailSecurityTimeseriesGroupByDkimParamFormat instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("format")]
+            public string? Format { get; set; }
+#nullable restore
+#else
+            [QueryParameter("format")]
+            public string Format { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_dkim_Param_format? FormatAsRadarGetEmailSecurityTimeseriesGroupByDkimParamFormat { get; set; }
+            /// <summary>Array of names used to label the series in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string[]? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string[] Name { get; set; }
+#endif
+            /// <summary>Filters results by SPF (Sender Policy Framework) validation status.</summary>
+            [Obsolete("This property is deprecated, use SpfAsGetSpfQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("spf")]
+            public string[]? Spf { get; set; }
+#nullable restore
+#else
+            [QueryParameter("spf")]
+            public string[] Spf { get; set; }
+#endif
+            /// <summary>Filters results by SPF (Sender Policy Framework) validation status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("spf")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetSpfQueryParameterType[]? SpfAsGetSpfQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("spf")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetSpfQueryParameterType[] SpfAsGetSpfQueryParameterType { get; set; }
+#endif
+            /// <summary>Filters results by TLS version.</summary>
+            [Obsolete("This property is deprecated, use TlsVersionAsGetTlsVersionQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tlsVersion")]
+            public string[]? TlsVersion { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tlsVersion")]
+            public string[] TlsVersion { get; set; }
+#endif
+            /// <summary>Filters results by TLS version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tlsVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetTlsVersionQueryParameterType[]? TlsVersionAsGetTlsVersionQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tlsVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.GetTlsVersionQueryParameterType[] TlsVersionAsGetTlsVersionQueryParameterType { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DkimRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class DkimRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim.DkimRequestBuilder.DkimRequestBuilderGetQueryParameters>
         {
         }
     }

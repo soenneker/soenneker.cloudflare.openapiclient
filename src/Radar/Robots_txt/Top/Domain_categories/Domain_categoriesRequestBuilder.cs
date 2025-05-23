@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categor
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Domain_categoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/robots_txt/top/domain_categories", pathParameters)
+        public Domain_categoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/robots_txt/top/domain_categories{?date*,format*,limit*,name*,userAgentCategory*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categor
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Domain_categoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/robots_txt/top/domain_categories", rawUrl)
+        public Domain_categoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/robots_txt/top/domain_categories{?date*,format*,limit*,name*,userAgentCategory*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the top domain categories by the number of robots.txt files parsed.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Response_200_application_json"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Response_404_application_json">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Response_404_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top domain categories by the number of robots.txt files parsed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,69 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categor
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieves the top domain categories by the number of robots.txt files parsed.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Domain_categoriesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Filters results by the specified array of dates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("date")]
+            public Date?[]? Date { get; set; }
+#nullable restore
+#else
+            [QueryParameter("date")]
+            public Date?[] Date { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [Obsolete("This property is deprecated, use FormatAsRadarGetRobotsTxtTopDomainCategoriesByFilesParsedParamFormat instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("format")]
+            public string? Format { get; set; }
+#nullable restore
+#else
+            [QueryParameter("format")]
+            public string Format { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Param_format? FormatAsRadarGetRobotsTxtTopDomainCategoriesByFilesParsedParamFormat { get; set; }
+            /// <summary>Limits the number of objects returned in the response.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            /// <summary>Array of names used to label the series in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string[]? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string[] Name { get; set; }
+#endif
+            /// <summary>Filters results by user agent category.</summary>
+            [Obsolete("This property is deprecated, use UserAgentCategoryAsRadarGetRobotsTxtTopDomainCategoriesByFilesParsedParamUserAgentCategory instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("userAgentCategory")]
+            public string? UserAgentCategory { get; set; }
+#nullable restore
+#else
+            [QueryParameter("userAgentCategory")]
+            public string UserAgentCategory { get; set; }
+#endif
+            /// <summary>Filters results by user agent category.</summary>
+            [QueryParameter("userAgentCategory")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_robots_txt_top_domain_categories_by_files_parsed_Param_userAgentCategory? UserAgentCategoryAsRadarGetRobotsTxtTopDomainCategoriesByFilesParsedParamUserAgentCategory { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Domain_categoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class Domain_categoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt.Top.Domain_categories.Domain_categoriesRequestBuilder.Domain_categoriesRequestBuilderGetQueryParameters>
         {
         }
     }

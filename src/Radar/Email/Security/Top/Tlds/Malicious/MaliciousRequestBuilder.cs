@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Malic
     public partial class MaliciousRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.security.top.tlds.malicious.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Malicious classification.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Malicious.Item.WithMaliciousItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Malicious.Item.WithMaliciousItemRequestBuilder this[string position]
         {

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.History
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/billing/history", pathParameters)
+        public HistoryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/billing/history{?action*,occurred_at*,order*,page*,per_page*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,45 +30,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.History
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/billing/history", rawUrl)
+        public HistoryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/user/billing/history{?action*,occurred_at*,order*,page*,per_page*,type*}", rawUrl)
         {
         }
         /// <summary>
         /// Accesses your billing history object.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history___deprecated__billing_history_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history___deprecated__billing_history_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Accesses your billing history object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history___deprecated__billing_history_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history___deprecated__billing_history_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -81,11 +88,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.History
             return new global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Accesses your billing history object.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class HistoryRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action")]
+            public string? Action { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action")]
+            public string Action { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("occurred_at")]
+            public string? OccurredAt { get; set; }
+#nullable restore
+#else
+            [QueryParameter("occurred_at")]
+            public string OccurredAt { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use OrderAsUserBillingHistoryDeprecatedBillingHistoryDetailsParamOrder instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("order")]
+            public string? Order { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order")]
+            public string Order { get; set; }
+#endif
+            [QueryParameter("order")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history___deprecated__billing_history_details_Param_order? OrderAsUserBillingHistoryDeprecatedBillingHistoryDetailsParamOrder { get; set; }
+            [QueryParameter("page")]
+            public double? Page { get; set; }
+            [QueryParameter("per_page")]
+            public double? PerPage { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public string? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public string Type { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class HistoryRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class HistoryRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>
         {
         }
     }

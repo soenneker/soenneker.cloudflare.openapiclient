@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Dnssec
     public partial class DnssecRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.as112.top.locations.dnssec.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">DNSSEC (DNS Security Extensions) status.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Dnssec.Item.WithDnssecItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Dnssec.Item.WithDnssecItemRequestBuilder this[string position]
         {

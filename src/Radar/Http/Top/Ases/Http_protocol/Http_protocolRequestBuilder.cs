@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol
     public partial class Http_protocolRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.http_protocol.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">HTTP protocol (HTTP vs. HTTPS).</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttp_protocolItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Http_protocol.Item.WithHttp_protocolItemRequestBuilder this[string position]
         {

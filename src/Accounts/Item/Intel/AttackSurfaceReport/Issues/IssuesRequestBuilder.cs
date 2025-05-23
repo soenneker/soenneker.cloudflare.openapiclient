@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Class;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.Severity;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.TypeNamespace;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/attack-surface-report/issues", pathParameters)
+        public IssuesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/attack-surface-report/issues{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
         {
         }
         /// <summary>
@@ -50,45 +51,55 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IssuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/attack-surface-report/issues", rawUrl)
+        public IssuesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/attack-surface-report/issues{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
         {
         }
         /// <summary>
         /// Get Security Center Issues
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_apiResponseCommonFailure">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_issues_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_issues_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Security Center Issues
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_issues_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_issues_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -102,11 +113,175 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Get Security Center Issues
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class IssuesRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dismissed")]
+            public string? Dismissed { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dismissed")]
+            public string Dismissed { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("issue_class")]
+            public string[]? IssueClass { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_class")]
+            public string[] IssueClass { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("issue_class%7Eneq")]
+            public string[]? IssueClassNeq { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_class%7Eneq")]
+            public string[] IssueClassNeq { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use IssueTypeAsSecurityCenterIssueType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("issue_type")]
+            public string[]? IssueType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_type")]
+            public string[] IssueType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("issue_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeAsSecurityCenterIssueType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeAsSecurityCenterIssueType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use IssueTypeNeqAsSecurityCenterIssueType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("issue_type%7Eneq")]
+            public string[]? IssueTypeNeq { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_type%7Eneq")]
+            public string[] IssueTypeNeq { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("issue_type%7Eneq")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeNeqAsSecurityCenterIssueType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_type%7Eneq")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeNeqAsSecurityCenterIssueType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page")]
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("per_page")]
+            public string? PerPage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("per_page")]
+            public string PerPage { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("product")]
+            public string[]? Product { get; set; }
+#nullable restore
+#else
+            [QueryParameter("product")]
+            public string[] Product { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("product%7Eneq")]
+            public string[]? ProductNeq { get; set; }
+#nullable restore
+#else
+            [QueryParameter("product%7Eneq")]
+            public string[] ProductNeq { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use SeverityAsGetSeverityQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("severity")]
+            public string[]? Severity { get; set; }
+#nullable restore
+#else
+            [QueryParameter("severity")]
+            public string[] Severity { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("severity")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.GetSeverityQueryParameterType[]? SeverityAsGetSeverityQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("severity")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.GetSeverityQueryParameterType[] SeverityAsGetSeverityQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use SeverityNeqAsGetSeverityNeqQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("severity%7Eneq")]
+            public string[]? SeverityNeq { get; set; }
+#nullable restore
+#else
+            [QueryParameter("severity%7Eneq")]
+            public string[] SeverityNeq { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("severity%7Eneq")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.GetSeverityNeqQueryParameterType[]? SeverityNeqAsGetSeverityNeqQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("severity%7Eneq")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.GetSeverityNeqQueryParameterType[] SeverityNeqAsGetSeverityNeqQueryParameterType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("subject")]
+            public string[]? Subject { get; set; }
+#nullable restore
+#else
+            [QueryParameter("subject")]
+            public string[] Subject { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("subject%7Eneq")]
+            public string[]? SubjectNeq { get; set; }
+#nullable restore
+#else
+            [QueryParameter("subject%7Eneq")]
+            public string[] SubjectNeq { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class IssuesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class IssuesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder.IssuesRequestBuilderGetQueryParameters>
         {
         }
     }

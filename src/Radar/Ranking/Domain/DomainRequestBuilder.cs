@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain
     public partial class DomainRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.ranking.domain.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Domain name.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ranking.Domain.Item.WithDomainItemRequestBuilder this[string position]
         {

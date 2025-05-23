@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam
     public partial class SpamRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.security.top.tlds.spam.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Spam classification.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.WithSpamItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Top.Tlds.Spam.Item.WithSpamItemRequestBuilder this[string position]
         {

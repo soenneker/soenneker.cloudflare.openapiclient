@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.Dow
     public partial class DownloadsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dex.commands.item.downloads.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The name of the file to be downloaded, including the `.zip` extension</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.Downloads.Item.WithFilenameItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.Downloads.Item.WithFilenameItemRequestBuilder this[string position]
         {

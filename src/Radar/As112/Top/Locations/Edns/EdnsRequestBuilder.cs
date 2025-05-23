@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns
     public partial class EdnsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.as112.top.locations.edns.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">EDNS (Extension Mechanisms for DNS) status.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Top.Locations.Edns.Item.WithEdnsItemRequestBuilder this[string position]
         {

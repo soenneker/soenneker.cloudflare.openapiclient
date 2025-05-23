@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests
     public partial class HttpTestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dex.httpTests.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">unique identifier for a specific test</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder this[string position]
         {

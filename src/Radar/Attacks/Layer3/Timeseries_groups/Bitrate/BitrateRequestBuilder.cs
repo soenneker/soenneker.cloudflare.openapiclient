@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitrateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer3/timeseries_groups/bitrate", pathParameters)
+        public BitrateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer3/timeseries_groups/bitrate{?aggInterval*,continent*,dateEnd*,dateRange*,dateStart*,direction*,format*,ipVersion*,location*,name*,normalization*,protocol*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BitrateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer3/timeseries_groups/bitrate", rawUrl)
+        public BitrateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer3/timeseries_groups/bitrate{?aggInterval*,continent*,dateEnd*,dateRange*,dateStart*,direction*,format*,ipVersion*,location*,name*,normalization*,protocol*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the distribution of layer 3 attacks by bitrate over time.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Response_200_application_json"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder.BitrateRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder.BitrateRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Response_400_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the distribution of layer 3 attacks by bitrate over time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder.BitrateRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder.BitrateRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,176 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieves the distribution of layer 3 attacks by bitrate over time.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class BitrateRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
+            [Obsolete("This property is deprecated, use AggIntervalAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamAggInterval instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("aggInterval")]
+            public string? AggInterval { get; set; }
+#nullable restore
+#else
+            [QueryParameter("aggInterval")]
+            public string AggInterval { get; set; }
+#endif
+            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
+            [QueryParameter("aggInterval")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Param_aggInterval? AggIntervalAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamAggInterval { get; set; }
+            /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("continent")]
+            public string[]? Continent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("continent")]
+            public string[] Continent { get; set; }
+#endif
+            /// <summary>End of the date range (inclusive).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[]? DateEnd { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[] DateEnd { get; set; }
+#endif
+            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateRange")]
+            public string[]? DateRange { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateRange")]
+            public string[] DateRange { get; set; }
+#endif
+            /// <summary>Start of the date range.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[]? DateStart { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[] DateStart { get; set; }
+#endif
+            /// <summary>Specifies whether the `location` filter applies to the source or target location.</summary>
+            [Obsolete("This property is deprecated, use DirectionAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            /// <summary>Specifies whether the `location` filter applies to the source or target location.</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Param_direction? DirectionAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamDirection { get; set; }
+            /// <summary>Format in which results will be returned.</summary>
+            [Obsolete("This property is deprecated, use FormatAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamFormat instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("format")]
+            public string? Format { get; set; }
+#nullable restore
+#else
+            [QueryParameter("format")]
+            public string Format { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Param_format? FormatAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamFormat { get; set; }
+            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
+            [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ipVersion")]
+            public string[]? IpVersion { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ipVersion")]
+            public string[] IpVersion { get; set; }
+#endif
+            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.GetIpVersionQueryParameterType[]? IpVersionAsGetIpVersionQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.GetIpVersionQueryParameterType[] IpVersionAsGetIpVersionQueryParameterType { get; set; }
+#endif
+            /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("location")]
+            public string[]? Location { get; set; }
+#nullable restore
+#else
+            [QueryParameter("location")]
+            public string[] Location { get; set; }
+#endif
+            /// <summary>Array of names used to label the series in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string[]? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string[] Name { get; set; }
+#endif
+            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
+            [Obsolete("This property is deprecated, use NormalizationAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamNormalization instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("normalization")]
+            public string? Normalization { get; set; }
+#nullable restore
+#else
+            [QueryParameter("normalization")]
+            public string Normalization { get; set; }
+#endif
+            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
+            [QueryParameter("normalization")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_timeseries_group_by_bitrate_Param_normalization? NormalizationAsRadarGetAttacksLayer3TimeseriesGroupByBitrateParamNormalization { get; set; }
+            /// <summary>Filters the results by layer 3/4 protocol.</summary>
+            [Obsolete("This property is deprecated, use ProtocolAsGetProtocolQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("protocol")]
+            public string[]? Protocol { get; set; }
+#nullable restore
+#else
+            [QueryParameter("protocol")]
+            public string[] Protocol { get; set; }
+#endif
+            /// <summary>Filters the results by layer 3/4 protocol.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("protocol")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.GetProtocolQueryParameterType[]? ProtocolAsGetProtocolQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("protocol")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.GetProtocolQueryParameterType[] ProtocolAsGetProtocolQueryParameterType { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BitrateRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class BitrateRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder.BitrateRequestBuilderGetQueryParameters>
         {
         }
     }

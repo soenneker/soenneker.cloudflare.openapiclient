@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os
     public partial class OsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.os.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Operating system.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Os.Item.WithOsItemRequestBuilder this[string position]
         {

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.Prefixes;
 using System.Collections.Generic;
 using System.IO;
@@ -27,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AsesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bgp/top/ases", pathParameters)
+        public AsesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bgp/top/ases{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,name*,prefix*,updateType*}", pathParameters)
         {
         }
         /// <summary>
@@ -35,43 +36,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AsesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bgp/top/ases", rawUrl)
+        public AsesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bgp/top/ases{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,name*,prefix*,updateType*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the top autonomous systems by BGP updates (announcements only).
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Response_200_application_json"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Response_400_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the top autonomous systems by BGP updates (announcements only).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -84,11 +96,116 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.AsesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieves the top autonomous systems by BGP updates (announcements only).
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AsesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("asn")]
+            public string[]? Asn { get; set; }
+#nullable restore
+#else
+            [QueryParameter("asn")]
+            public string[] Asn { get; set; }
+#endif
+            /// <summary>End of the date range (inclusive).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[]? DateEnd { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[] DateEnd { get; set; }
+#endif
+            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateRange")]
+            public string[]? DateRange { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateRange")]
+            public string[] DateRange { get; set; }
+#endif
+            /// <summary>Start of the date range.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[]? DateStart { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[] DateStart { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [Obsolete("This property is deprecated, use FormatAsRadarGetBgpTopAsesParamFormat instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("format")]
+            public string? Format { get; set; }
+#nullable restore
+#else
+            [QueryParameter("format")]
+            public string Format { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_top_ases_Param_format? FormatAsRadarGetBgpTopAsesParamFormat { get; set; }
+            /// <summary>Limits the number of objects returned in the response.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            /// <summary>Array of names used to label the series in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string[]? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string[] Name { get; set; }
+#endif
+            /// <summary>Filters results by BGP network prefix.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("prefix")]
+            public string[]? Prefix { get; set; }
+#nullable restore
+#else
+            [QueryParameter("prefix")]
+            public string[] Prefix { get; set; }
+#endif
+            /// <summary>Filters results by BGP update type.</summary>
+            [Obsolete("This property is deprecated, use UpdateTypeAsGetUpdateTypeQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("updateType")]
+            public string[]? UpdateType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("updateType")]
+            public string[] UpdateType { get; set; }
+#endif
+            /// <summary>Filters results by BGP update type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("updateType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.GetUpdateTypeQueryParameterType[]? UpdateTypeAsGetUpdateTypeQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("updateType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.GetUpdateTypeQueryParameterType[] UpdateTypeAsGetUpdateTypeQueryParameterType { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AsesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class AsesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests", pathParameters)
+        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,since*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests", rawUrl)
+        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,since*,until*}", rawUrl)
         {
         }
         /// <summary>
         /// Gets a list of Access authentication audit logs for an account.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_accessRequests_componentsSchemasResponse_collection"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_accessRequests_componentsSchemasResponse_collection?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_authentication_logs_get_access_authentication_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_accessRequests_componentsSchemasResponse_collection> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_authentication_logs_get_access_authentication_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_accessRequests_componentsSchemasResponse_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Access_accessRequests_componentsSchemasResponse_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of Access authentication audit logs for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_authentication_logs_get_access_authentication_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_authentication_logs_get_access_authentication_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Gets a list of Access authentication audit logs for an account.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Access_requestsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>The chronological sorting order for the logs.</summary>
+            [Obsolete("This property is deprecated, use DirectionAsAccessAuthenticationLogsGetAccessAuthenticationLogsParamDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            /// <summary>The chronological sorting order for the logs.</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_authentication_logs_get_access_authentication_logs_Param_direction? DirectionAsAccessAuthenticationLogsGetAccessAuthenticationLogsParamDirection { get; set; }
+            /// <summary>The maximum number of log entries to retrieve.</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            /// <summary>The earliest event timestamp to query.</summary>
+            [QueryParameter("since")]
+            public DateTimeOffset? Since { get; set; }
+            /// <summary>The latest event timestamp to query.</summary>
+            [QueryParameter("until")]
+            public DateTimeOffset? Until { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Access_requestsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class Access_requestsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>
         {
         }
     }

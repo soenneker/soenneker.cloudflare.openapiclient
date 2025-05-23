@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
     public partial class AbuseReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.abuseReports.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The report type to be submitted</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_typeItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_typeItemRequestBuilder this[string position]
         {

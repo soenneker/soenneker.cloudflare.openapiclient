@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -35,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/waf/packages", pathParameters)
+        public PackagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/waf/packages{?direction*,match*,name*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,45 +44,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PackagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/waf/packages", rawUrl)
+        public PackagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/waf/packages{?direction*,match*,name*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
         /// Fetches WAF packages for a zone.**Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collection"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collection?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_list_waf_packages_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collection> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_list_waf_packages_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches WAF packages for a zone.**Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_list_waf_packages_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_list_waf_packages_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -95,11 +102,67 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Fetches WAF packages for a zone.**Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class PackagesRequestBuilderGetQueryParameters 
+        {
+            [Obsolete("This property is deprecated, use DirectionAsWafPackagesListWafPackagesParamDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_list_waf_packages_Param_direction? DirectionAsWafPackagesListWafPackagesParamDirection { get; set; }
+            [Obsolete("This property is deprecated, use MatchAsWafPackagesListWafPackagesParamMatch instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("match")]
+            public string? Match { get; set; }
+#nullable restore
+#else
+            [QueryParameter("match")]
+            public string Match { get; set; }
+#endif
+            [QueryParameter("match")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_list_waf_packages_Param_match? MatchAsWafPackagesListWafPackagesParamMatch { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use OrderAsWafPackagesListWafPackagesParamOrder instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("order")]
+            public string? Order { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order")]
+            public string Order { get; set; }
+#endif
+            [QueryParameter("order")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_list_waf_packages_Param_order? OrderAsWafPackagesListWafPackagesParamOrder { get; set; }
+            [QueryParameter("page")]
+            public double? Page { get; set; }
+            [QueryParameter("per_page")]
+            public double? PerPage { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class PackagesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.PackagesRequestBuilder.PackagesRequestBuilderGetQueryParameters>
         {
         }
     }

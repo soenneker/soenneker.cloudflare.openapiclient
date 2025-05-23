@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.Dex_testsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dex.devices.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Unique identifier for device</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.WithDevice_ItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.WithDevice_ItemRequestBuilder this[string position]
         {

@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     public partial class Event_tagRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.events.event_tag.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Event UUID.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag.Item.WithEvent_ItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag.Item.WithEvent_ItemRequestBuilder this[string position]
         {

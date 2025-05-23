@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit", pathParameters)
+        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,action_result*,action_type*,actor_context*,actor_email*,actor_id*,actor_ip_address*,actor_token_id*,actor_token_name*,actor_type*,audit_log_id*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_method*,raw_status_code*,raw_uri*,resource_id*,resource_product*,resource_scope*,resource_type*,zone_id*,zone_name*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit", rawUrl)
+        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,action_result*,action_type*,actor_context*,actor_email*,actor_id*,actor_ip_address*,actor_token_id*,actor_token_name*,actor_type*,audit_log_id*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_method*,raw_status_code*,raw_uri*,resource_id*,resource_product*,resource_scope*,resource_type*,zone_id*,zone_name*}", rawUrl)
         {
         }
         /// <summary>
         /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasApiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,244 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AuditRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("account_name")]
+            public string? AccountName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("account_name")]
+            public string AccountName { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActionResultAsAuditLogsV2GetAccountAuditLogsParamActionResult instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action_result")]
+            public string? ActionResult { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_result")]
+            public string ActionResult { get; set; }
+#endif
+            [QueryParameter("action_result")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_action_result? ActionResultAsAuditLogsV2GetAccountAuditLogsParamActionResult { get; set; }
+            [Obsolete("This property is deprecated, use ActionTypeAsAuditLogsV2GetAccountAuditLogsParamActionType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action_type")]
+            public string? ActionType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_type")]
+            public string ActionType { get; set; }
+#endif
+            [QueryParameter("action_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_action_type? ActionTypeAsAuditLogsV2GetAccountAuditLogsParamActionType { get; set; }
+            [Obsolete("This property is deprecated, use ActorContextAsAuditLogsV2GetAccountAuditLogsParamActorContext instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_context")]
+            public string? ActorContext { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_context")]
+            public string ActorContext { get; set; }
+#endif
+            [QueryParameter("actor_context")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_actor_context? ActorContextAsAuditLogsV2GetAccountAuditLogsParamActorContext { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_email")]
+            public string? ActorEmail { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_email")]
+            public string ActorEmail { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_id")]
+            public string? ActorId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_id")]
+            public string ActorId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_ip_address")]
+            public string? ActorIpAddress { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_ip_address")]
+            public string ActorIpAddress { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_token_id")]
+            public string? ActorTokenId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_token_id")]
+            public string ActorTokenId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_token_name")]
+            public string? ActorTokenName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_token_name")]
+            public string ActorTokenName { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActorTypeAsAuditLogsV2GetAccountAuditLogsParamActorType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_type")]
+            public string? ActorType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_type")]
+            public string ActorType { get; set; }
+#endif
+            [QueryParameter("actor_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_actor_type? ActorTypeAsAuditLogsV2GetAccountAuditLogsParamActorType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("audit_log_id")]
+            public string? AuditLogId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("audit_log_id")]
+            public string AuditLogId { get; set; }
+#endif
+            /// <summary>Filters actions based on a given timestamp in the format yyyy-mm-dd, returning only logs that occurred on and before the specified date.</summary>
+            [QueryParameter("before")]
+            public Date? Before { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use DirectionAsAuditLogsV2GetAccountAuditLogsParamDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_direction? DirectionAsAuditLogsV2GetAccountAuditLogsParamDirection { get; set; }
+            [QueryParameter("limit")]
+            public double? Limit { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw_cf_ray_id")]
+            public string? RawCfRayId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_cf_ray_id")]
+            public string RawCfRayId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw_method")]
+            public string? RawMethod { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_method")]
+            public string RawMethod { get; set; }
+#endif
+            [QueryParameter("raw_status_code")]
+            public int? RawStatusCode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw_uri")]
+            public string? RawUri { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_uri")]
+            public string RawUri { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_id")]
+            public string? ResourceId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_id")]
+            public string ResourceId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_product")]
+            public string? ResourceProduct { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_product")]
+            public string ResourceProduct { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ResourceScopeAsAuditLogsV2GetAccountAuditLogsParamResourceScope instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_scope")]
+            public string? ResourceScope { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_scope")]
+            public string ResourceScope { get; set; }
+#endif
+            [QueryParameter("resource_scope")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_resource_scope? ResourceScopeAsAuditLogsV2GetAccountAuditLogsParamResourceScope { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_type")]
+            public string? ResourceType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_type")]
+            public string ResourceType { get; set; }
+#endif
+            /// <summary>Filters actions based on a given timestamp in the format yyyy-mm-dd, returning only logs that occurred on and after the specified date.</summary>
+            [QueryParameter("since")]
+            public Date? Since { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("zone_id")]
+            public string? ZoneId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("zone_id")]
+            public string ZoneId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("zone_name")]
+            public string? ZoneName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("zone_name")]
+            public string ZoneName { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AuditRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class AuditRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/speed_api/pages/{url}/trend", pathParameters)
+        public TrendRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/speed_api/pages/{url}/trend?deviceType={deviceType}&metrics={metrics}&region={region}&start={start}&tz={tz}{&end*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TrendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/speed_api/pages/{url}/trend", rawUrl)
+        public TrendRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/speed_api/pages/{url}/trend?deviceType={deviceType}&metrics={metrics}&region={region}&start={start}&tz={tz}{&end*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists the core web vital metrics trend over time for a specific page.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_trendResponse"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_trendResponse?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_list_page_trend_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder.TrendRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_trendResponse> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_list_page_trend_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder.TrendRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_trendResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_trendResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists the core web vital metrics trend over time for a specific page.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_list_page_trend_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder.TrendRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_list_page_trend_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder.TrendRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,80 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Lists the core web vital metrics trend over time for a specific page.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class TrendRequestBuilderGetQueryParameters 
+        {
+            [Obsolete("This property is deprecated, use DeviceTypeAsObservatoryDeviceType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("deviceType")]
+            public string? DeviceType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("deviceType")]
+            public string DeviceType { get; set; }
+#endif
+            [QueryParameter("deviceType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_device_type? DeviceTypeAsObservatoryDeviceType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("end")]
+            public string? End { get; set; }
+#nullable restore
+#else
+            [QueryParameter("end")]
+            public string End { get; set; }
+#endif
+            /// <summary>A comma-separated list of metrics to include in the results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("metrics")]
+            public string? Metrics { get; set; }
+#nullable restore
+#else
+            [QueryParameter("metrics")]
+            public string Metrics { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use RegionAsObservatoryRegion instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("region")]
+            public string? Region { get; set; }
+#nullable restore
+#else
+            [QueryParameter("region")]
+            public string Region { get; set; }
+#endif
+            [QueryParameter("region")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_region? RegionAsObservatoryRegion { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("start")]
+            public string? Start { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start")]
+            public string Start { get; set; }
+#endif
+            /// <summary>The timezone of the start and end timestamps.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tz")]
+            public string? Tz { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tz")]
+            public string Tz { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TrendRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class TrendRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Trend.TrendRequestBuilder.TrendRequestBuilderGetQueryParameters>
         {
         }
     }

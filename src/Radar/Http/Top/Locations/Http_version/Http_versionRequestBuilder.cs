@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_versi
     public partial class Http_versionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.http_version.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">HTTP version.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttp_versionItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Http_version.Item.WithHttp_versionItemRequestBuilder this[string position]
         {

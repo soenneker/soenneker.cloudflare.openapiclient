@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -35,37 +36,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms.Item.Statu
         /// <summary>
         /// Fetches the status of a configured waiting room. Response fields include:1. `status`: String indicating the status of the waiting room. The possible status are:- **not_queueing** indicates that the configured thresholds have not been met and all users are going through to the origin.- **queueing** indicates that the thresholds have been met and some users are held in the waiting room.- **event_prequeueing** indicates that an event is active and is currently prequeueing users before it starts.- **suspended** indicates that the room is suspended.2. `event_id`: String of the current event&apos;s `id` if an event is active, otherwise an empty string.3. `estimated_queued_users`: Integer of the estimated number of users currently waiting in the queue.4. `estimated_total_active_users`: Integer of the estimated number of users currently active on the origin.5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_room_get_waiting_room_status_Response_4XX_application_json">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_room_get_waiting_room_status_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_room_get_waiting_room_status_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_room_get_waiting_room_status_Response_4XX_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches the status of a configured waiting room. Response fields include:1. `status`: String indicating the status of the waiting room. The possible status are:- **not_queueing** indicates that the configured thresholds have not been met and all users are going through to the origin.- **queueing** indicates that the thresholds have been met and some users are held in the waiting room.- **event_prequeueing** indicates that an event is active and is currently prequeueing users before it starts.- **suspended** indicates that the room is suspended.2. `event_id`: String of the current event&apos;s `id` if an event is active, otherwise an empty string.3. `estimated_queued_users`: Integer of the estimated number of users currently waiting in the queue.4. `estimated_total_active_users`: Integer of the estimated number of users currently active on the origin.5. `max_estimated_time_minutes`: Integer of the maximum estimated time currently presented to the users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_room_get_waiting_room_status_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_room_get_waiting_room_status_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

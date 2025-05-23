@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Manage
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Managed_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/summary/managed_rules", pathParameters)
+        public Managed_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/summary/managed_rules{?asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,httpMethod*,httpVersion*,ipVersion*,limitPerGroup*,location*,mitigationProduct*,name*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Manage
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Managed_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/summary/managed_rules", rawUrl)
+        public Managed_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/summary/managed_rules{?asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,httpMethod*,httpVersion*,ipVersion*,limitPerGroup*,location*,mitigationProduct*,name*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves the distribution of layer 7 attacks by managed rules.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Response_200_application_json"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder.Managed_rulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder.Managed_rulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Response_400_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the distribution of layer 7 attacks by managed rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder.Managed_rulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder.Managed_rulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,189 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Manage
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieves the distribution of layer 7 attacks by managed rules.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Managed_rulesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("asn")]
+            public string[]? Asn { get; set; }
+#nullable restore
+#else
+            [QueryParameter("asn")]
+            public string[] Asn { get; set; }
+#endif
+            /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("continent")]
+            public string[]? Continent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("continent")]
+            public string[] Continent { get; set; }
+#endif
+            /// <summary>End of the date range (inclusive).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[]? DateEnd { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateEnd")]
+            public DateTimeOffset?[] DateEnd { get; set; }
+#endif
+            /// <summary>Filters results by date range. For example, use `7d` and `7dcontrol` to compare this week with the previous week. Use this parameter or set specific start and end dates (`dateStart` and `dateEnd` parameters).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateRange")]
+            public string[]? DateRange { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateRange")]
+            public string[] DateRange { get; set; }
+#endif
+            /// <summary>Start of the date range.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[]? DateStart { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dateStart")]
+            public DateTimeOffset?[] DateStart { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [Obsolete("This property is deprecated, use FormatAsRadarGetAttacksLayer7SummaryByManagedRulesParamFormat instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("format")]
+            public string? Format { get; set; }
+#nullable restore
+#else
+            [QueryParameter("format")]
+            public string Format { get; set; }
+#endif
+            /// <summary>Format in which results will be returned.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_summary_by_managed_rules_Param_format? FormatAsRadarGetAttacksLayer7SummaryByManagedRulesParamFormat { get; set; }
+            /// <summary>Filters results by HTTP method.</summary>
+            [Obsolete("This property is deprecated, use HttpMethodAsGetHttpMethodQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("httpMethod")]
+            public string[]? HttpMethod { get; set; }
+#nullable restore
+#else
+            [QueryParameter("httpMethod")]
+            public string[] HttpMethod { get; set; }
+#endif
+            /// <summary>Filters results by HTTP method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("httpMethod")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetHttpMethodQueryParameterType[]? HttpMethodAsGetHttpMethodQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("httpMethod")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetHttpMethodQueryParameterType[] HttpMethodAsGetHttpMethodQueryParameterType { get; set; }
+#endif
+            /// <summary>Filters results by HTTP version.</summary>
+            [Obsolete("This property is deprecated, use HttpVersionAsGetHttpVersionQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("httpVersion")]
+            public string[]? HttpVersion { get; set; }
+#nullable restore
+#else
+            [QueryParameter("httpVersion")]
+            public string[] HttpVersion { get; set; }
+#endif
+            /// <summary>Filters results by HTTP version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("httpVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetHttpVersionQueryParameterType[]? HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("httpVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetHttpVersionQueryParameterType[] HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
+#endif
+            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
+            [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ipVersion")]
+            public string[]? IpVersion { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ipVersion")]
+            public string[] IpVersion { get; set; }
+#endif
+            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetIpVersionQueryParameterType[]? IpVersionAsGetIpVersionQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetIpVersionQueryParameterType[] IpVersionAsGetIpVersionQueryParameterType { get; set; }
+#endif
+            /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
+            [QueryParameter("limitPerGroup")]
+            public int? LimitPerGroup { get; set; }
+            /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("location")]
+            public string[]? Location { get; set; }
+#nullable restore
+#else
+            [QueryParameter("location")]
+            public string[] Location { get; set; }
+#endif
+            /// <summary>Filters the results by layer 7 mitigation product.</summary>
+            [Obsolete("This property is deprecated, use MitigationProductAsGetMitigationProductQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("mitigationProduct")]
+            public string[]? MitigationProduct { get; set; }
+#nullable restore
+#else
+            [QueryParameter("mitigationProduct")]
+            public string[] MitigationProduct { get; set; }
+#endif
+            /// <summary>Filters the results by layer 7 mitigation product.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("mitigationProduct")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetMitigationProductQueryParameterType[]? MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("mitigationProduct")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.GetMitigationProductQueryParameterType[] MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
+#endif
+            /// <summary>Array of names used to label the series in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string[]? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string[] Name { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Managed_rulesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class Managed_rulesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Managed_rules.Managed_rulesRequestBuilder.Managed_rulesRequestBuilderGetQueryParameters>
         {
         }
     }

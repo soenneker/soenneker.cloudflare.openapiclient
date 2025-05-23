@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Device_type
     public partial class Device_typeRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.device_type.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Device type.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Device_type.Item.WithDevice_typeItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Device_type.Item.WithDevice_typeItemRequestBuilder this[string position]
         {

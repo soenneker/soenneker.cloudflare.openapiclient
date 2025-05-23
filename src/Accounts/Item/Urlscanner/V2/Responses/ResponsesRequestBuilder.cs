@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Respons
     public partial class ResponsesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.urlscanner.v2.responses.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Response hash.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Responses.Item.WithResponse_ItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Responses.Item.WithResponse_ItemRequestBuilder this[string position]
         {

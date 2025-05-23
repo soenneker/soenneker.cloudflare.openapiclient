@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version
     public partial class Tls_versionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.ases.tls_version.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">TLS version.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTls_versionItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.WithTls_versionItemRequestBuilder this[string position]
         {

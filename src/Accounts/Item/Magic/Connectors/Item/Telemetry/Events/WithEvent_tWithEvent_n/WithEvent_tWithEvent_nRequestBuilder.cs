@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,10 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder"/> and sets the default values.
         /// </summary>
+        /// <param name="event_n">The path parameter: event_n</param>
+        /// <param name="event_t">The path parameter: event_t</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithEvent_tWithEvent_nRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}", pathParameters)
+        public WithEvent_tWithEvent_nRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, double? event_n = default, double? event_t = default) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}", pathParameters)
         {
+            if (event_n != null) PathParameters.Add("event_n", event_n);
+            if (event_t != null) PathParameters.Add("event_t", event_t);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder"/> and sets the default values.
@@ -35,37 +40,58 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// <summary>
         /// Get Event
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_event_get_success"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_event_get_success?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_telemetry_events_get_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_event_get_success> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_telemetry_events_get_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_envelope.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_event_get_success>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_event_get_success.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Event
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_telemetry_events_get_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_telemetry_events_get_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

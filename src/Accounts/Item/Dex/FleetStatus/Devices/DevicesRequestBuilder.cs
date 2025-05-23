@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices", pathParameters)
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices", rawUrl)
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", rawUrl)
         {
         }
         /// <summary>
         /// List details for devices using WARP
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_fleet_status_devices_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_fleet_status_devices_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List details for devices using WARP
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_fleet_status_devices_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_fleet_status_devices_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +85,146 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// List details for devices using WARP
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class DevicesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Cloudflare colo</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("colo")]
+            public string? Colo { get; set; }
+#nullable restore
+#else
+            [QueryParameter("colo")]
+            public string Colo { get; set; }
+#endif
+            /// <summary>Device-specific ID, given as UUID v4</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("device_id")]
+            public string? DeviceId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("device_id")]
+            public string DeviceId { get; set; }
+#endif
+            /// <summary>Time range beginning in ISO format</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("from")]
+            public string? From { get; set; }
+#nullable restore
+#else
+            [QueryParameter("from")]
+            public string From { get; set; }
+#endif
+            /// <summary>The mode under which the WARP client is run</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("mode")]
+            public string? Mode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("mode")]
+            public string Mode { get; set; }
+#endif
+            /// <summary>Page number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page")]
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
+            /// <summary>Number of results per page</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("per_page")]
+            public string? PerPage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("per_page")]
+            public string PerPage { get; set; }
+#endif
+            /// <summary>Operating system</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("platform")]
+            public string? Platform { get; set; }
+#nullable restore
+#else
+            [QueryParameter("platform")]
+            public string Platform { get; set; }
+#endif
+            /// <summary>Dimension to sort results by</summary>
+            [Obsolete("This property is deprecated, use SortByAsDigitalExperienceMonitoringSortBy instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sort_by")]
+            public string? SortBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort_by")]
+            public string SortBy { get; set; }
+#endif
+            /// <summary>Dimension to sort results by</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_sort_by? SortByAsDigitalExperienceMonitoringSortBy { get; set; }
+            /// <summary>Source:  * `hourly` - device details aggregated hourly, up to 7 days prior  * `last_seen` - device details, up to 24 hours prior  * `raw` - device details, up to 7 days prior</summary>
+            [Obsolete("This property is deprecated, use SourceAsDigitalExperienceMonitoringSource instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("source")]
+            public string? Source { get; set; }
+#nullable restore
+#else
+            [QueryParameter("source")]
+            public string Source { get; set; }
+#endif
+            /// <summary>Source:  * `hourly` - device details aggregated hourly, up to 7 days prior  * `last_seen` - device details, up to 24 hours prior  * `raw` - device details, up to 7 days prior</summary>
+            [QueryParameter("source")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_source? SourceAsDigitalExperienceMonitoringSource { get; set; }
+            /// <summary>Network status</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
+#endif
+            /// <summary>Time range end in ISO format</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("to")]
+            public string? To { get; set; }
+#nullable restore
+#else
+            [QueryParameter("to")]
+            public string To { get; set; }
+#endif
+            /// <summary>WARP client version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("version")]
+            public string? Version { get; set; }
+#nullable restore
+#else
+            [QueryParameter("version")]
+            public string Version { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class DevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>
         {
         }
     }

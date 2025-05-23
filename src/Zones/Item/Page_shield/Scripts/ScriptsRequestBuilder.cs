@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -34,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScriptsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/page_shield/scripts", pathParameters)
+        public ScriptsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/page_shield/scripts{?direction*,exclude_cdn_cgi*,exclude_duplicates*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,43 +43,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScriptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/page_shield/scripts", rawUrl)
+        public ScriptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/page_shield/scripts{?direction*,exclude_cdn_cgi*,exclude_duplicates*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists all scripts detected by Page Shield.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneScriptsResponse"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneScriptsResponse?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_scripts_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneScriptsResponse> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_scripts_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneScriptsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneScriptsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all scripts detected by Page Shield.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_scripts_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_scripts_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -91,11 +103,116 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Lists all scripts detected by Page Shield.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ScriptsRequestBuilderGetQueryParameters 
+        {
+            [Obsolete("This property is deprecated, use DirectionAsPageShieldListScriptsParamDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_scripts_Param_direction? DirectionAsPageShieldListScriptsParamDirection { get; set; }
+            [QueryParameter("exclude_cdn_cgi")]
+            public bool? ExcludeCdnCgi { get; set; }
+            [QueryParameter("exclude_duplicates")]
+            public bool? ExcludeDuplicates { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("exclude_urls")]
+            public string? ExcludeUrls { get; set; }
+#nullable restore
+#else
+            [QueryParameter("exclude_urls")]
+            public string ExcludeUrls { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ExportAsPageShieldListScriptsParamExport instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("export")]
+            public string? Export { get; set; }
+#nullable restore
+#else
+            [QueryParameter("export")]
+            public string Export { get; set; }
+#endif
+            [QueryParameter("export")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_scripts_Param_export? ExportAsPageShieldListScriptsParamExport { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("hosts")]
+            public string? Hosts { get; set; }
+#nullable restore
+#else
+            [QueryParameter("hosts")]
+            public string Hosts { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use OrderByAsPageShieldListScriptsParamOrderBy instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("order_by")]
+            public string? OrderBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order_by")]
+            public string OrderBy { get; set; }
+#endif
+            [QueryParameter("order_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_scripts_Param_order_by? OrderByAsPageShieldListScriptsParamOrderBy { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page")]
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page_url")]
+            public string? PageUrl { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page_url")]
+            public string PageUrl { get; set; }
+#endif
+            [QueryParameter("per_page")]
+            public double? PerPage { get; set; }
+            [QueryParameter("prioritize_malicious")]
+            public bool? PrioritizeMalicious { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("urls")]
+            public string? Urls { get; set; }
+#nullable restore
+#else
+            [QueryParameter("urls")]
+            public string Urls { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScriptsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ScriptsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts.ScriptsRequestBuilder.ScriptsRequestBuilderGetQueryParameters>
         {
         }
     }

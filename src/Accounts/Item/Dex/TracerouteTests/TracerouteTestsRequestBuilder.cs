@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests
     public partial class TracerouteTestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dex.tracerouteTests.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Unique identifier for a specific test</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests.Item.WithTest_ItemRequestBuilder this[string position]
         {

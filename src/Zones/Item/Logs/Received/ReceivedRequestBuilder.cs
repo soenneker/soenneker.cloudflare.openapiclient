@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.Fields;
 using System.Collections.Generic;
 using System.IO;
@@ -27,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReceivedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/logs/received", pathParameters)
+        public ReceivedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/logs/received?end={end}{&count*,fields*,sample*,start*,timestamps*}", pathParameters)
         {
         }
         /// <summary>
@@ -35,43 +36,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReceivedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/logs/received", rawUrl)
+        public ReceivedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/logs/received?end={end}{&count*,fields*,sample*,start*,timestamps*}", rawUrl)
         {
         }
         /// <summary>
         /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is &quot;give me all the logs for zone Z for minute M&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_received_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder.ReceivedRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_received_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder.ReceivedRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is &quot;give me all the logs for zone Z for minute M&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_received_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder.ReceivedRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_received_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder.ReceivedRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -84,11 +91,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is &quot;give me all the logs for zone Z for minute M&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ReceivedRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("count")]
+            public string? Count { get; set; }
+#nullable restore
+#else
+            [QueryParameter("count")]
+            public string Count { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("end")]
+            public string? End { get; set; }
+#nullable restore
+#else
+            [QueryParameter("end")]
+            public string End { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string Fields { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sample")]
+            public string? Sample { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sample")]
+            public string Sample { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("start")]
+            public string? Start { get; set; }
+#nullable restore
+#else
+            [QueryParameter("start")]
+            public string Start { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use TimestampsAsLogshareTimestamps instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timestamps")]
+            public string? Timestamps { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timestamps")]
+            public string Timestamps { get; set; }
+#endif
+            [QueryParameter("timestamps")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_timestamps? TimestampsAsLogshareTimestamps { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ReceivedRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class ReceivedRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder.ReceivedRequestBuilderGetQueryParameters>
         {
         }
     }

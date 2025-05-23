@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates", pathParameters)
+        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,43 +30,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates", rawUrl)
+        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_response"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_response?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_list_access_scim_update_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.UpdatesRequestBuilder.UpdatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_response> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_list_access_scim_update_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.UpdatesRequestBuilder.UpdatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_list_access_scim_update_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.UpdatesRequestBuilder.UpdatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_scim_update_logs_list_access_scim_update_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.UpdatesRequestBuilder.UpdatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +90,159 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.UpdatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Lists Access SCIM update logs that maintain a record of updates made to User and Group resources synced to Cloudflare via the System for Cross-domain Identity Management (SCIM).
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class UpdatesRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cf_resource_id")]
+            public string? CfResourceId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cf_resource_id")]
+            public string CfResourceId { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use DirectionAsAccessDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_direction? DirectionAsAccessDirection { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("idp_id")]
+            public string[]? IdpId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("idp_id")]
+            public string[] IdpId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("idp_resource_id")]
+            public string? IdpResourceId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("idp_resource_id")]
+            public string IdpResourceId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("limit")]
+            public string? Limit { get; set; }
+#nullable restore
+#else
+            [QueryParameter("limit")]
+            public string Limit { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use RequestMethodAsGetRequestMethodQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("request_method")]
+            public string[]? RequestMethod { get; set; }
+#nullable restore
+#else
+            [QueryParameter("request_method")]
+            public string[] RequestMethod { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("request_method")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetRequest_methodQueryParameterType[]? RequestMethodAsGetRequestMethodQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("request_method")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetRequest_methodQueryParameterType[] RequestMethodAsGetRequestMethodQueryParameterType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_group_name")]
+            public string? ResourceGroupName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_group_name")]
+            public string ResourceGroupName { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ResourceTypeAsGetResourceTypeQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_type")]
+            public string[]? ResourceType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_type")]
+            public string[] ResourceType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetResource_typeQueryParameterType[]? ResourceTypeAsGetResourceTypeQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetResource_typeQueryParameterType[] ResourceTypeAsGetResourceTypeQueryParameterType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_user_email")]
+            public string? ResourceUserEmail { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_user_email")]
+            public string ResourceUserEmail { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("since")]
+            public string? Since { get; set; }
+#nullable restore
+#else
+            [QueryParameter("since")]
+            public string Since { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string[]? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string[] Status { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetStatusQueryParameterType[]? StatusAsGetStatusQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetStatusQueryParameterType[] StatusAsGetStatusQueryParameterType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("until")]
+            public string? Until { get; set; }
+#nullable restore
+#else
+            [QueryParameter("until")]
+            public string Until { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class UpdatesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class UpdatesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.UpdatesRequestBuilder.UpdatesRequestBuilderGetQueryParameters>
         {
         }
     }

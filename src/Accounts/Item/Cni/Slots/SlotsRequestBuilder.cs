@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cni.slots.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item.WithSlotItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item.WithSlotItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item.WithSlotItemRequestBuilder this[Guid position]
         {
             get
             {
@@ -29,12 +30,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item.WithSlotItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cni.slots.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item.WithSlotItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item.WithSlotItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("slot", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.Item.WithSlotItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/slots", pathParameters)
+        public SlotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/slots{?address_contains*,cursor*,limit*,occupied*,site*,speed*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,43 +56,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/slots", rawUrl)
+        public SlotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/slots{?address_contains*,cursor*,limit*,occupied*,site*,speed*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve a list of all slots matching the specified parameters
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_SlotList"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_SlotList?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.List_slots_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder.SlotsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_SlotList> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.List_slots_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder.SlotsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_SlotList>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_SlotList.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of all slots matching the specified parameters
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.List_slots_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder.SlotsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.List_slots_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder.SlotsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -91,11 +111,55 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Retrieve a list of all slots matching the specified parameters
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SlotsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>If specified, only show slots with the given text in their address field</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("address_contains")]
+            public string? AddressContains { get; set; }
+#nullable restore
+#else
+            [QueryParameter("address_contains")]
+            public string AddressContains { get; set; }
+#endif
+            [QueryParameter("cursor")]
+            public int? Cursor { get; set; }
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            /// <summary>If specified, only show slots with a specific occupied/unoccupied state</summary>
+            [QueryParameter("occupied")]
+            public bool? Occupied { get; set; }
+            /// <summary>If specified, only show slots located at the given site</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("site")]
+            public string? Site { get; set; }
+#nullable restore
+#else
+            [QueryParameter("site")]
+            public string Site { get; set; }
+#endif
+            /// <summary>If specified, only show slots that support the given speed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("speed")]
+            public string? Speed { get; set; }
+#nullable restore
+#else
+            [QueryParameter("speed")]
+            public string Speed { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SlotsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class SlotsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Slots.SlotsRequestBuilder.SlotsRequestBuilderGetQueryParameters>
         {
         }
     }

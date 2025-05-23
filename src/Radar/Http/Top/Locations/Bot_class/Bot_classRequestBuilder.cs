@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Bot_class
     public partial class Bot_classRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.top.locations.bot_class.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Bot_class.Item.WithBot_classItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.Bot_class.Item.WithBot_classItemRequestBuilder this[string position]
         {

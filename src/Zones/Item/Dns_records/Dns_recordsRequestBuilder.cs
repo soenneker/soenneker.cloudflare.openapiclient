@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Export;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Import;
@@ -58,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/dns_records", pathParameters)
+        public Dns_recordsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -66,79 +67,91 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/dns_records", rawUrl)
+        public Dns_recordsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/dns_records{?comment*,comment%2Eabsent*,comment%2Econtains*,comment%2Eendswith*,comment%2Eexact*,comment%2Epresent*,comment%2Estartswith*,content*,content%2Econtains*,content%2Eendswith*,content%2Eexact*,content%2Estartswith*,direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,proxied*,search*,tag*,tag%2Eabsent*,tag%2Econtains*,tag%2Eendswith*,tag%2Eexact*,tag%2Epresent*,tag%2Estartswith*,tag_match*,type*}", rawUrl)
         {
         }
         /// <summary>
         /// List, search, sort, and filter a zones&apos; DNS records.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_list_dns_records_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_list_dns_records_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new DNS record for a zone.Notes:- A/AAAA records cannot exist on the same name as CNAME records.- NS records cannot exist on the same name as any other record type.- Domain names are always represented in Punycode, even if Unicode  characters were used when creating the record.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List, search, sort, and filter a zones&apos; DNS records.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_list_dns_records_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_list_dns_records_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
         /// Create a new DNS record for a zone.Notes:- A/AAAA records cannot exist on the same name as CNAME records.- NS records cannot exist on the same name as any other record type.- Domain names are always represented in Punycode, even if Unicode  characters were used when creating the record.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -151,11 +164,330 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// List, search, sort, and filter a zones&apos; DNS records.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Dns_recordsRequestBuilderGetQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("comment")]
+            public string? Comment { get; set; }
+#nullable restore
+#else
+            [QueryParameter("comment")]
+            public string Comment { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("comment%2Eabsent")]
+            public string? CommentAbsent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("comment%2Eabsent")]
+            public string CommentAbsent { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("comment%2Econtains")]
+            public string? CommentContains { get; set; }
+#nullable restore
+#else
+            [QueryParameter("comment%2Econtains")]
+            public string CommentContains { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("comment%2Eendswith")]
+            public string? CommentEndswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("comment%2Eendswith")]
+            public string CommentEndswith { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("comment%2Eexact")]
+            public string? CommentExact { get; set; }
+#nullable restore
+#else
+            [QueryParameter("comment%2Eexact")]
+            public string CommentExact { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("comment%2Epresent")]
+            public string? CommentPresent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("comment%2Epresent")]
+            public string CommentPresent { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("comment%2Estartswith")]
+            public string? CommentStartswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("comment%2Estartswith")]
+            public string CommentStartswith { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("content")]
+            public string? Content { get; set; }
+#nullable restore
+#else
+            [QueryParameter("content")]
+            public string Content { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("content%2Econtains")]
+            public string? ContentContains { get; set; }
+#nullable restore
+#else
+            [QueryParameter("content%2Econtains")]
+            public string ContentContains { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("content%2Eendswith")]
+            public string? ContentEndswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("content%2Eendswith")]
+            public string ContentEndswith { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("content%2Eexact")]
+            public string? ContentExact { get; set; }
+#nullable restore
+#else
+            [QueryParameter("content%2Eexact")]
+            public string ContentExact { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("content%2Estartswith")]
+            public string? ContentStartswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("content%2Estartswith")]
+            public string ContentStartswith { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use DirectionAsDnsRecordsDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_direction? DirectionAsDnsRecordsDirection { get; set; }
+            [Obsolete("This property is deprecated, use MatchAsDnsRecordsMatch instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("match")]
+            public string? Match { get; set; }
+#nullable restore
+#else
+            [QueryParameter("match")]
+            public string Match { get; set; }
+#endif
+            [QueryParameter("match")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_match? MatchAsDnsRecordsMatch { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name%2Econtains")]
+            public string? NameContains { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name%2Econtains")]
+            public string NameContains { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name%2Eendswith")]
+            public string? NameEndswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name%2Eendswith")]
+            public string NameEndswith { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name%2Eexact")]
+            public string? NameExact { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name%2Eexact")]
+            public string NameExact { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name%2Estartswith")]
+            public string? NameStartswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name%2Estartswith")]
+            public string NameStartswith { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use OrderAsDnsRecordsOrder instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("order")]
+            public string? Order { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order")]
+            public string Order { get; set; }
+#endif
+            [QueryParameter("order")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_order? OrderAsDnsRecordsOrder { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page")]
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("per_page")]
+            public string? PerPage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("per_page")]
+            public string PerPage { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("proxied")]
+            public string? Proxied { get; set; }
+#nullable restore
+#else
+            [QueryParameter("proxied")]
+            public string Proxied { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag")]
+            public string? Tag { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag")]
+            public string Tag { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag%2Eabsent")]
+            public string? TagAbsent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag%2Eabsent")]
+            public string TagAbsent { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag%2Econtains")]
+            public string? TagContains { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag%2Econtains")]
+            public string TagContains { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag%2Eendswith")]
+            public string? TagEndswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag%2Eendswith")]
+            public string TagEndswith { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag%2Eexact")]
+            public string? TagExact { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag%2Eexact")]
+            public string TagExact { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use TagMatchAsDnsRecordsTagMatch instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag_match")]
+            public string? TagMatch { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag_match")]
+            public string TagMatch { get; set; }
+#endif
+            [QueryParameter("tag_match")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_tag_match? TagMatchAsDnsRecordsTagMatch { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag%2Epresent")]
+            public string? TagPresent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag%2Epresent")]
+            public string TagPresent { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tag%2Estartswith")]
+            public string? TagStartswith { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag%2Estartswith")]
+            public string TagStartswith { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use TypeAsDnsRecordsType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public string? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public string Type { get; set; }
+#endif
+            [QueryParameter("type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_type? TypeAsDnsRecordsType { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Dns_recordsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class Dns_recordsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

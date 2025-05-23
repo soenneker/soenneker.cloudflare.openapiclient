@@ -35,9 +35,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
         /// Builds and executes requests for operations under \accounts\{account_identifier-id}\urlscanner\v2\screenshots\{scan_id}.png
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder WithScan_idPng()
+        /// <param name="scan_id">Scan UUID.</param>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder WithScan_idPng(Guid? scan_id)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder(PathParameters, RequestAdapter);
+            _ = scan_id ?? throw new ArgumentNullException(nameof(scan_id));
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder(PathParameters, RequestAdapter, scan_id);
         }
     }
 }

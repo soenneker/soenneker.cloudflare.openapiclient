@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.Percentiles;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTest_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/http-tests/{test_id}", pathParameters)
+        public WithTest_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/http-tests/{test_id}?from={from}&interval={interval}&to={to}{&colo*,deviceId*}", pathParameters)
         {
         }
         /// <summary>
@@ -35,43 +36,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTest_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/http-tests/{test_id}", rawUrl)
+        public WithTest_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/http-tests/{test_id}?from={from}&interval={interval}&to={to}{&colo*,deviceId*}", rawUrl)
         {
         }
         /// <summary>
         /// Get test details and aggregate performance metrics for an http test for a given time period between 1 hour and 7 days.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_http_test_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder.WithTest_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_http_test_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder.WithTest_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get test details and aggregate performance metrics for an http test for a given time period between 1 hour and 7 days.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_http_test_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder.WithTest_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_http_test_details_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder.WithTest_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -84,11 +95,72 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Get test details and aggregate performance metrics for an http test for a given time period between 1 hour and 7 days.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithTest_ItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Optionally filter result stats to a Cloudflare colo. Cannot be used in combination with deviceId param.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("colo")]
+            public string? Colo { get; set; }
+#nullable restore
+#else
+            [QueryParameter("colo")]
+            public string Colo { get; set; }
+#endif
+            /// <summary>Optionally filter result stats to a specific device(s). Cannot be used in combination with colo param.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("deviceId")]
+            public string[]? DeviceId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("deviceId")]
+            public string[] DeviceId { get; set; }
+#endif
+            /// <summary>Start time for aggregate metrics in ISO ms</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("from")]
+            public string? From { get; set; }
+#nullable restore
+#else
+            [QueryParameter("from")]
+            public string From { get; set; }
+#endif
+            /// <summary>Time interval for aggregate time slots.</summary>
+            [Obsolete("This property is deprecated, use IntervalAsDexEndpointsHttpTestDetailsParamInterval instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("interval")]
+            public string? Interval { get; set; }
+#nullable restore
+#else
+            [QueryParameter("interval")]
+            public string Interval { get; set; }
+#endif
+            /// <summary>Time interval for aggregate time slots.</summary>
+            [QueryParameter("interval")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_endpoints_http_test_details_Param_interval? IntervalAsDexEndpointsHttpTestDetailsParamInterval { get; set; }
+            /// <summary>End time for aggregate metrics in ISO ms</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("to")]
+            public string? To { get; set; }
+#nullable restore
+#else
+            [QueryParameter("to")]
+            public string To { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithTest_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithTest_ItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.Item.WithTest_ItemRequestBuilder.WithTest_ItemRequestBuilderGetQueryParameters>
         {
         }
     }

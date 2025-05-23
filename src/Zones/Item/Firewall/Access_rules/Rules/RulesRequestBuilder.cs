@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Rules.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -34,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Ru
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/access_rules/rules", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/access_rules/rules{?configuration%2Etarget*,configuration%2Evalue*,direction*,match*,mode*,notes*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,79 +43,91 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Ru
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/access_rules/rules", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/access_rules/rules{?configuration%2Etarget*,configuration%2Evalue*,direction*,match*,mode*,notes*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
         /// Fetches IP Access rules of a zone. You can filter the results using several optional parameters.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_collection_response"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_collection_response?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_collection_response> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_collection_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_collection_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new IP Access rule for a zone.Note: To create an IP Access rule that applies to multiple zones, refer to [IP Access rules for a user](#ip-access-rules-for-a-user) or [IP Access rules for an account](#ip-access-rules-for-an-account) as appropriate.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_create_an_ip_access_rule_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_create_an_ip_access_rule_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches IP Access rules of a zone. You can filter the results using several optional parameters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
         /// Creates a new IP Access rule for a zone.Note: To create an IP Access rule that applies to multiple zones, refer to [IP Access rules for a user](#ip-access-rules-for-a-user) or [IP Access rules for an account](#ip-access-rules-for-an-account) as appropriate.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_create_an_ip_access_rule_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_create_an_ip_access_rule_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -127,11 +140,100 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Ru
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Rules.RulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Fetches IP Access rules of a zone. You can filter the results using several optional parameters.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class RulesRequestBuilderGetQueryParameters 
+        {
+            [Obsolete("This property is deprecated, use ConfigurationTargetAsIpAccessRulesForAZoneListIpAccessRulesParamConfigurationTarget instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("configuration%2Etarget")]
+            public string? ConfigurationTarget { get; set; }
+#nullable restore
+#else
+            [QueryParameter("configuration%2Etarget")]
+            public string ConfigurationTarget { get; set; }
+#endif
+            [QueryParameter("configuration%2Etarget")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_Param_configuration_target? ConfigurationTargetAsIpAccessRulesForAZoneListIpAccessRulesParamConfigurationTarget { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("configuration%2Evalue")]
+            public string? ConfigurationValue { get; set; }
+#nullable restore
+#else
+            [QueryParameter("configuration%2Evalue")]
+            public string ConfigurationValue { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use DirectionAsIpAccessRulesForAZoneListIpAccessRulesParamDirection instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("direction")]
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_Param_direction? DirectionAsIpAccessRulesForAZoneListIpAccessRulesParamDirection { get; set; }
+            [Obsolete("This property is deprecated, use MatchAsIpAccessRulesForAZoneListIpAccessRulesParamMatch instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("match")]
+            public string? Match { get; set; }
+#nullable restore
+#else
+            [QueryParameter("match")]
+            public string Match { get; set; }
+#endif
+            [QueryParameter("match")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_Param_match? MatchAsIpAccessRulesForAZoneListIpAccessRulesParamMatch { get; set; }
+            [Obsolete("This property is deprecated, use ModeAsFirewallSchemasMode instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("mode")]
+            public string? Mode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("mode")]
+            public string Mode { get; set; }
+#endif
+            [QueryParameter("mode")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? ModeAsFirewallSchemasMode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("notes")]
+            public string? Notes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("notes")]
+            public string Notes { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use OrderAsIpAccessRulesForAZoneListIpAccessRulesParamOrder instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("order")]
+            public string? Order { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order")]
+            public string Order { get; set; }
+#endif
+            [QueryParameter("order")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_zone_list_ip_access_rules_Param_order? OrderAsIpAccessRulesForAZoneListIpAccessRulesParamOrder { get; set; }
+            [QueryParameter("page")]
+            public double? Page { get; set; }
+            [QueryParameter("per_page")]
+            public double? PerPage { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RulesRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class RulesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,51 +22,66 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithScan_idPngRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/screenshots/{scan_id}.png", pathParameters)
+        /// <param name="scan_id">Scan UUID.</param>
+        public WithScan_idPngRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Guid? scan_id = default) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/screenshots/{scan_id}.png{?resolution*}", pathParameters)
         {
+            if (scan_id != null) PathParameters.Add("scan_id", scan_id);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithScan_idPngRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/screenshots/{scan_id}.png", rawUrl)
+        public WithScan_idPngRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/screenshots/{scan_id}.png{?resolution*}", rawUrl)
         {
         }
         /// <summary>
         /// Get scan&apos;s screenshot by resolution (desktop/mobile/tablet).
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_Response_400_application_json">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_Response_404_application_json">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder.WithScan_idPngRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder.WithScan_idPngRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_Response_400_application_json.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_Response_404_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get scan&apos;s screenshot by resolution (desktop/mobile/tablet).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder.WithScan_idPngRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder.WithScan_idPngRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "image/png");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -78,11 +94,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Get scan&apos;s screenshot by resolution (desktop/mobile/tablet).
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithScan_idPngRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Target device type.</summary>
+            [Obsolete("This property is deprecated, use ResolutionAsUrlscannerGetScanScreenshotV2ParamResolution instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resolution")]
+            public string? Resolution { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resolution")]
+            public string Resolution { get; set; }
+#endif
+            /// <summary>Target device type.</summary>
+            [QueryParameter("resolution")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_screenshot_v2_Param_resolution? ResolutionAsUrlscannerGetScanScreenshotV2ParamResolution { get; set; }
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithScan_idPngRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class WithScan_idPngRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder.WithScan_idPngRequestBuilderGetQueryParameters>
         {
         }
     }
