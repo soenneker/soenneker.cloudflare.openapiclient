@@ -15,9 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable rule to block AI Scrapers and Crawlers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection? AiBotsProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection AiBotsProtection { get; set; }
+#endif
         /// <summary>Enable rule to punish AI Scrapers and Crawlers via a link maze.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection? CrawlerProtection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection CrawlerProtection { get; set; }
+#endif
         /// <summary>Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,8 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ai_bots_protection", n => { AiBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>(); } },
-                { "crawler_protection", n => { CrawlerProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>(); } },
+                { "ai_bots_protection", n => { AiBotsProtection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection.CreateFromDiscriminatorValue); } },
+                { "crawler_protection", n => { CrawlerProtection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection.CreateFromDiscriminatorValue); } },
                 { "enable_js", n => { EnableJs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_enable_js>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_enable_js.CreateFromDiscriminatorValue); } },
                 { "using_latest_model", n => { UsingLatestModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_using_latest_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_using_latest_model.CreateFromDiscriminatorValue); } },
             };
@@ -72,8 +84,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>("ai_bots_protection", AiBotsProtection);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>("crawler_protection", CrawlerProtection);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>("ai_bots_protection", AiBotsProtection);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>("crawler_protection", CrawlerProtection);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_enable_js>("enable_js", EnableJs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_using_latest_model>("using_latest_model", UsingLatestModel);
             writer.WriteAdditionalData(AdditionalData);

@@ -55,7 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name Name { get; set; }
 #endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus Status { get; set; }
+#endif
         /// <summary>Store Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier.CreateFromDiscriminatorValue); } },
                 { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus.CreateFromDiscriminatorValue); } },
                 { "store_id", n => { StoreId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier.CreateFromDiscriminatorValue); } },
             };
         }
@@ -110,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified>("modified", Modified);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier>("store_id", StoreId);
             writer.WriteAdditionalData(AdditionalData);
         }

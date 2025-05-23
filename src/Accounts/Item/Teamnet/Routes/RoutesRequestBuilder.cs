@@ -231,7 +231,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes
             [QueryParameter("tunnel_id")]
             public string TunnelId { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use TunTypesAsTunnelTunnelType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tun_types")]
@@ -240,15 +239,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes
 #else
             [QueryParameter("tun_types")]
             public string[] TunTypes { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tun_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[]? TunTypesAsTunnelTunnelType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tun_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[] TunTypesAsTunnelTunnelType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

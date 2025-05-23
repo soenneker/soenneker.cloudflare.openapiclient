@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_per_ttl PacketsPerTtl { get; set; }
 #endif
         /// <summary>Type of packet sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type? PacketType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type PacketType { get; set; }
+#endif
         /// <summary>For UDP and TCP, specifies the destination port. For ICMP, specifies the initial ICMP sequence value. Default value 0 will choose the best value to use for each protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,7 +60,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicTransit_options()
         {
             AdditionalData = new Dictionary<string, object>();
-            PacketType = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type.Icmp;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -75,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "max_ttl", n => { MaxTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_ttl.CreateFromDiscriminatorValue); } },
-                { "packet_type", n => { PacketType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>(); } },
+                { "packet_type", n => { PacketType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type.CreateFromDiscriminatorValue); } },
                 { "packets_per_ttl", n => { PacketsPerTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_per_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_per_ttl.CreateFromDiscriminatorValue); } },
                 { "port", n => { Port = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_port.CreateFromDiscriminatorValue); } },
                 { "wait_time", n => { WaitTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_wait_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_wait_time.CreateFromDiscriminatorValue); } },
@@ -90,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_ttl>("max_ttl", MaxTtl);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_per_ttl>("packets_per_ttl", PacketsPerTtl);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>("packet_type", PacketType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>("packet_type", PacketType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_port>("port", Port);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_wait_time>("wait_time", WaitTime);
             writer.WriteAdditionalData(AdditionalData);

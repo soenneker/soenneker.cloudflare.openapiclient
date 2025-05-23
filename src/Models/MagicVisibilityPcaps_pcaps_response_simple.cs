@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_offset_time OffsetTime { get; set; }
 #endif
         /// <summary>The status of the packet capture request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status Status { get; set; }
+#endif
         /// <summary>The RFC 3339 timestamp when the packet capture was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_submitted Submitted { get; set; }
 #endif
         /// <summary>The system used to collect packet captures.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system? System { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system System { get; set; }
+#endif
         /// <summary>The packet capture duration in seconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled TimeLimit { get; set; }
 #endif
         /// <summary>The type of packet capture. `Simple` captures sampled packets, and `full` captures entire payloads and non-sampled packets.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_response_simple"/> and sets the default values.
         /// </summary>
@@ -88,11 +106,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "filter_v1", n => { FilterV1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_filter_v1>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_filter_v1.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_id.CreateFromDiscriminatorValue); } },
                 { "offset_time", n => { OffsetTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_offset_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_offset_time.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status.CreateFromDiscriminatorValue); } },
                 { "submitted", n => { Submitted = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_submitted>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_submitted.CreateFromDiscriminatorValue); } },
-                { "system", n => { System = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system>(); } },
+                { "system", n => { System = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system.CreateFromDiscriminatorValue); } },
                 { "time_limit", n => { TimeLimit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,11 +123,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_filter_v1>("filter_v1", FilterV1);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_id>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_offset_time>("offset_time", OffsetTime);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_submitted>("submitted", Submitted);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system>("system", System);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system>("system", System);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled>("time_limit", TimeLimit);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

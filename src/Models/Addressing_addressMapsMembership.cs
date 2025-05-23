@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_identifier Identifier { get; set; }
 #endif
         /// <summary>The type of the membership.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind? Kind { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind Kind { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsMembership"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "can_delete", n => { CanDelete = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasCan_delete>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasCan_delete.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp.CreateFromDiscriminatorValue); } },
                 { "identifier", n => { Identifier = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_identifier.CreateFromDiscriminatorValue); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>(); } },
+                { "kind", n => { Kind = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasCan_delete>("can_delete", CanDelete);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_identifier>("identifier", Identifier);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>("kind", Kind);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>("kind", Kind);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

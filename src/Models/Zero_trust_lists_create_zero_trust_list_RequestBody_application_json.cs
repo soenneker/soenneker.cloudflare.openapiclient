@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_name Name { get; set; }
 #endif
         /// <summary>The type of list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_lists_create_zero_trust_list_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_description.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_name.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_description>("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists>("items", Items);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_name>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

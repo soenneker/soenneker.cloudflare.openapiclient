@@ -16,13 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only Value { get; set; }
-#endif
+        public bool? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only"/> and sets the default values.
         /// </summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only>("value", Value);
+            writer.WriteBoolValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

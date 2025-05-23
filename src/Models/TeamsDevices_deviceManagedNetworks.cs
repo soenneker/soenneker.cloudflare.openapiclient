@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid NetworkId { get; set; }
 #endif
         /// <summary>The type of device managed network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_response.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName.CreateFromDiscriminatorValue); } },
                 { "network_id", n => { NetworkId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_response>("config", Config);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid>("network_id", NetworkId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

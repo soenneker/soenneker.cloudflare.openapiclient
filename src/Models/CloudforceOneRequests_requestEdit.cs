@@ -47,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary Summary { get; set; }
 #endif
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp Tlp { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestEdit"/> and sets the default values.
         /// </summary>
@@ -77,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "request_type", n => { RequestType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType.CreateFromDiscriminatorValue); } },
                 { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary.CreateFromDiscriminatorValue); } },
-                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
+                { "tlp", n => { Tlp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType>("request_type", RequestType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary>("summary", Summary);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

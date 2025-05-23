@@ -47,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html CustomPageHtml { get; set; }
 #endif
         /// <summary>The language of the default page template. If no default_template_language is provided, then `en-US` (English) will be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language? DefaultTemplateLanguage { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language DefaultTemplateLanguage { get; set; }
+#endif
         /// <summary>A note that you can use to add more details about the waiting room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,9 +127,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all QueueAll { get; set; }
 #endif
         /// <summary>Sets the queueing method used by the waiting room. Changing this parameter from the **default** queueing method is only available for the Waiting Room Advanced subscription. Regardless of the queueing method, if `queue_all` is enabled or an event is prequeueing, users in the waiting room will not be accepted to the origin. These users will always see a waiting room page that refreshes automatically. The valid queueing methods are:1. `fifo` **(default)**: First-In-First-Out queue where customers gain access in the order they arrived.2. `random`: Random queue where customers gain access randomly, regardless of arrival time.3. `passthrough`: Users will pass directly through the waiting room and into the origin website. As a result, any configured limits will not be respected while this is enabled. This method can be used as an alternative to disabling a waiting room (with `suspended`) so that analytics are still reported. This can be used if you wish to allow all traffic normally, but want to restrict traffic during a waiting room event, or vice versa.4. `reject`: Users will be immediately rejected from the waiting room. As a result, no users will reach the origin website while this is enabled. This can be used if you wish to reject all traffic while performing maintenance, block traffic during a specified period of time (an event), or block traffic while events are not occurring. Consider a waiting room used for vaccine distribution that only allows traffic during sign-up events, and otherwise blocks all traffic. For this case, the waiting room uses `reject`, and its events override this with `fifo`, `random`, or `passthrough`. When this queueing method is enabled and neither `queueAll` is enabled nor an event is prequeueing, the waiting room page **will not refresh automatically**.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method? QueueingMethod { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method QueueingMethod { get; set; }
+#endif
         /// <summary>HTTP status code returned to a user while in the queue.</summary>
-        public int? QueueingStatusCode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code? QueueingStatusCode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code QueueingStatusCode { get; set; }
+#endif
         /// <summary>Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to the route. If a user is not seen by Cloudflare again in that time period, they will be treated as a new user that visits the route.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,19 +167,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users TotalActiveUsers { get; set; }
 #endif
         /// <summary>Which action to take when a bot is detected using Turnstile. `log` willhave no impact on queueing behavior, simply keeping track of how manybots are detected in Waiting Room Analytics. `infinite_queue` will sendbots to a false queueing state, where they will never reach yourorigin. `infinite_queue` requires Advanced Waiting Room.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action? TurnstileAction { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action TurnstileAction { get; set; }
+#endif
         /// <summary>Which Turnstile widget type to use for detecting bot traffic. See[the Turnstile documentation](https://developers.cloudflare.com/turnstile/concepts/widget/#widget-types)for the definitions of these widget types. Set to `off` to disable theTurnstile integration entirely. Setting this to anything other than`off` or `invisible` requires Advanced Waiting Room.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode? TurnstileMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode TurnstileMode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_query_waitingroom"/> and sets the default values.
         /// </summary>
         public Waitingroom_query_waitingroom()
         {
             AdditionalData = new Dictionary<string, object>();
-            DefaultTemplateLanguage = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language.EnUS;
-            QueueingMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method.Fifo;
-            TurnstileAction = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action.Log;
-            TurnstileMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode.Invisible;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -185,7 +211,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cookie_attributes", n => { CookieAttributes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes.CreateFromDiscriminatorValue); } },
                 { "cookie_suffix", n => { CookieSuffix = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix.CreateFromDiscriminatorValue); } },
                 { "custom_page_html", n => { CustomPageHtml = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html.CreateFromDiscriminatorValue); } },
-                { "default_template_language", n => { DefaultTemplateLanguage = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>(); } },
+                { "default_template_language", n => { DefaultTemplateLanguage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description.CreateFromDiscriminatorValue); } },
                 { "disable_session_renewal", n => { DisableSessionRenewal = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal.CreateFromDiscriminatorValue); } },
                 { "enabled_origin_commands", n => { EnabledOriginCommands = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -195,13 +221,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "new_users_per_minute", n => { NewUsersPerMinute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute.CreateFromDiscriminatorValue); } },
                 { "path", n => { Path = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path.CreateFromDiscriminatorValue); } },
                 { "queue_all", n => { QueueAll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all.CreateFromDiscriminatorValue); } },
-                { "queueing_method", n => { QueueingMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>(); } },
-                { "queueing_status_code", n => { QueueingStatusCode = n.GetIntValue(); } },
+                { "queueing_method", n => { QueueingMethod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method.CreateFromDiscriminatorValue); } },
+                { "queueing_status_code", n => { QueueingStatusCode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code.CreateFromDiscriminatorValue); } },
                 { "session_duration", n => { SessionDuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration.CreateFromDiscriminatorValue); } },
                 { "suspended", n => { Suspended = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended.CreateFromDiscriminatorValue); } },
                 { "total_active_users", n => { TotalActiveUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users.CreateFromDiscriminatorValue); } },
-                { "turnstile_action", n => { TurnstileAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>(); } },
-                { "turnstile_mode", n => { TurnstileMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>(); } },
+                { "turnstile_action", n => { TurnstileAction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action.CreateFromDiscriminatorValue); } },
+                { "turnstile_mode", n => { TurnstileMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -215,7 +241,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes>("cookie_attributes", CookieAttributes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix>("cookie_suffix", CookieSuffix);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html>("custom_page_html", CustomPageHtml);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>("default_template_language", DefaultTemplateLanguage);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>("default_template_language", DefaultTemplateLanguage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal>("disable_session_renewal", DisableSessionRenewal);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>("enabled_origin_commands", EnabledOriginCommands);
@@ -225,13 +251,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute>("new_users_per_minute", NewUsersPerMinute);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path>("path", Path);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all>("queue_all", QueueAll);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>("queueing_method", QueueingMethod);
-            writer.WriteIntValue("queueing_status_code", QueueingStatusCode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>("queueing_method", QueueingMethod);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code>("queueing_status_code", QueueingStatusCode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration>("session_duration", SessionDuration);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended>("suspended", Suspended);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users>("total_active_users", TotalActiveUsers);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>("turnstile_action", TurnstileAction);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>("turnstile_mode", TurnstileMode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>("turnstile_action", TurnstileAction);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>("turnstile_mode", TurnstileMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

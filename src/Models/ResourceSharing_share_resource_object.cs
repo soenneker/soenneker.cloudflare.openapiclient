@@ -63,7 +63,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id ResourceId { get; set; }
 #endif
         /// <summary>Resource Type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type? ResourceType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type ResourceType { get; set; }
+#endif
         /// <summary>Resource Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +79,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version ResourceVersion { get; set; }
 #endif
         /// <summary>Resource Status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_object"/> and sets the default values.
         /// </summary>
@@ -105,9 +117,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified.CreateFromDiscriminatorValue); } },
                 { "resource_account_id", n => { ResourceAccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id.CreateFromDiscriminatorValue); } },
                 { "resource_id", n => { ResourceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id.CreateFromDiscriminatorValue); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>(); } },
+                { "resource_type", n => { ResourceType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type.CreateFromDiscriminatorValue); } },
                 { "resource_version", n => { ResourceVersion = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -123,9 +135,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified>("modified", Modified);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id>("resource_account_id", ResourceAccountId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id>("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>("resource_type", ResourceType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>("resource_type", ResourceType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version>("resource_version", ResourceVersion);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

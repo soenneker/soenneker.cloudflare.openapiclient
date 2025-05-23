@@ -16,7 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The action to perform.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode? Mode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode Mode { get; set; }
+#endif
         /// <summary>A custom content type and reponse to return when the threshold is exceeded. The custom response configured in this object will override the custom error for the zone. This object is optional.Notes: If you omit this object, Cloudflare will use the default HTML error page. If &quot;mode&quot; is &quot;challenge&quot;, &quot;managed_challenge&quot;, or &quot;js_challenge&quot;, Cloudflare will use the zone challenge pages and you should not provide the &quot;response&quot; object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode>(); } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode.CreateFromDiscriminatorValue); } },
                 { "response", n => { Response = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout.CreateFromDiscriminatorValue); } },
             };
@@ -70,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode>("mode", Mode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode>("mode", Mode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response>("response", Response);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout>("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);

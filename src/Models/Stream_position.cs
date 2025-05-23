@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position? Value { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position Value { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position"/> and sets the default values.
@@ -29,6 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Stream_position()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = "upperRight";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position>("value", Value);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

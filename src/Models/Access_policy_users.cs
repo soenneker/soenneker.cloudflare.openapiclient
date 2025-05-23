@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName Name { get; set; }
 #endif
         /// <summary>Policy evaluation result for an individual user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_user_result? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_user_result Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_users"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "email", n => { Email = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_user_result>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_user_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_user_result.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail>("email", Email);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_user_result>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_user_result>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

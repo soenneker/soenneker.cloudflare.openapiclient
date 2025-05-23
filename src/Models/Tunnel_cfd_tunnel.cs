@@ -96,9 +96,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_remote_config RemoteConfig { get; set; }
 #endif
         /// <summary>The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status Status { get; set; }
+#endif
         /// <summary>The type of tunnel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type? TunType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type TunType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel"/> and sets the default values.
         /// </summary>
@@ -134,8 +146,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name.CreateFromDiscriminatorValue); } },
                 { "remote_config", n => { RemoteConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_remote_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_remote_config.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status>(); } },
-                { "tun_type", n => { TunType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status.CreateFromDiscriminatorValue); } },
+                { "tun_type", n => { TunType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -155,8 +167,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_remote_config>("remote_config", RemoteConfig);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>("tun_type", TunType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>("tun_type", TunType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

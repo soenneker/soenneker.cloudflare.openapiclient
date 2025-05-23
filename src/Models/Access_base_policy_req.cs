@@ -15,7 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision? Decision { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision Decision { get; set; }
+#endif
         /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>(); } },
+                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision.CreateFromDiscriminatorValue); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_componentsSchemasName.CreateFromDiscriminatorValue); } },
@@ -87,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>("decision", Decision);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("exclude", Exclude);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("include", Include);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_componentsSchemasName>("name", Name);

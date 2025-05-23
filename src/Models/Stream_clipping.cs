@@ -111,7 +111,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds StartTimeSeconds { get; set; }
 #endif
         /// <summary>Specifies the processing status for all quality levels for a video.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state Status { get; set; }
+#endif
         /// <summary>The timestamp for a thumbnail image calculated as a percentage value of the video&apos;s duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,7 +171,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "preview", n => { Preview = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview.CreateFromDiscriminatorValue); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs.CreateFromDiscriminatorValue); } },
                 { "startTimeSeconds", n => { StartTimeSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state.CreateFromDiscriminatorValue); } },
                 { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct.CreateFromDiscriminatorValue); } },
                 { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload.CreateFromDiscriminatorValue); } },
             };
@@ -189,7 +195,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview>("preview", Preview);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs>("requireSignedURLs", RequireSignedURLs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds>("startTimeSeconds", StartTimeSeconds);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct>("thumbnailTimestampPct", ThumbnailTimestampPct);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload>("watermark", Watermark);
             writer.WriteAdditionalData(AdditionalData);

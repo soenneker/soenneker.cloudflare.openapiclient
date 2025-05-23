@@ -13,7 +13,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Allow or deny operations against the resources.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access? Access { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access Access { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Policy identifier.</summary>
@@ -65,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access", n => { Access = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access>(); } },
+                { "access", n => { Access = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_identifier.CreateFromDiscriminatorValue); } },
                 { "permission_groups", n => { PermissionGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resource_groups", n => { ResourceGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -78,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access>("access", Access);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access>("access", Access);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_identifier>("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group>("permission_groups", PermissionGroups);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group>("resource_groups", ResourceGroups);

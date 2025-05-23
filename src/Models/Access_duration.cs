@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_duration? Value { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_duration Value { get; set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_duration"/> and sets the default values.
@@ -29,6 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Access_duration()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = "8760h";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_duration.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_duration>("value", Value);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -33,7 +33,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Requirement { get; set; }
 #endif
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp Tlp { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priorityEdit"/> and sets the default values.
         /// </summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "requirement", n => { Requirement = n.GetStringValue(); } },
-                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
+                { "tlp", n => { Tlp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("requirement", Requirement);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

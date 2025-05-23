@@ -71,7 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network Network { get; set; }
 #endif
         /// <summary>The type of subnet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type? SubnetType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type SubnetType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet"/> and sets the default values.
         /// </summary>
@@ -104,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_default_network", n => { IsDefaultNetwork = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_is_default_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_is_default_network.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name.CreateFromDiscriminatorValue); } },
                 { "network", n => { Network = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network.CreateFromDiscriminatorValue); } },
-                { "subnet_type", n => { SubnetType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>(); } },
+                { "subnet_type", n => { SubnetType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -121,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_is_default_network>("is_default_network", IsDefaultNetwork);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network>("network", Network);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>("subnet_type", SubnetType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>("subnet_type", SubnetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

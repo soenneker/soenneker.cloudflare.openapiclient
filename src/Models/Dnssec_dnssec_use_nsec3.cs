@@ -16,13 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, enables the use of NSEC3 together with DNSSEC on the zone.Combined with setting dnssec_presigned to true, this enables the use ofNSEC3 records when transferring in from an external provider.If dnssec_presigned is instead set to false (default), NSEC3 records will begenerated and signed at request time.See [DNSSEC with NSEC3](https://developers.cloudflare.com/dns/dnssec/enable-nsec3/) for details.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_dnssec_use_nsec3? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_dnssec_use_nsec3 Value { get; set; }
-#endif
+        public bool? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_dnssec_use_nsec3"/> and sets the default values.
         /// </summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_dnssec_use_nsec3>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_dnssec_use_nsec3.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_dnssec_use_nsec3>("value", Value);
+            writer.WriteBoolValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

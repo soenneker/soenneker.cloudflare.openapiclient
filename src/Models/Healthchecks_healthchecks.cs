@@ -119,7 +119,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries Retries { get; set; }
 #endif
         /// <summary>The current status of the origin server according to the health check.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status? Status { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status Status { get; set; }
+#endif
         /// <summary>If suspended, no health checks are sent to the origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -190,7 +196,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timestamp.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name.CreateFromDiscriminatorValue); } },
                 { "retries", n => { Retries = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status.CreateFromDiscriminatorValue); } },
                 { "suspended", n => { Suspended = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended.CreateFromDiscriminatorValue); } },
                 { "tcp_config", n => { TcpConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout.CreateFromDiscriminatorValue); } },
@@ -217,6 +223,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timestamp>("modified_on", ModifiedOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries>("retries", Retries);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended>("suspended", Suspended);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>("tcp_config", TcpConfig);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout>("timeout", Timeout);

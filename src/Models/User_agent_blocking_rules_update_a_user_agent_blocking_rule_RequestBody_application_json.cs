@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier Id { get; set; }
 #endif
         /// <summary>The action to apply to a matched request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? Mode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode Mode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User_agent_blocking_rules_update_a_user_agent_blocking_rule_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -59,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>(); } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>("configuration", Configuration);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier>("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>("mode", Mode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>("mode", Mode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

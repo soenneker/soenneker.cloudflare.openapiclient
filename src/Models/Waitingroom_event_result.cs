@@ -143,9 +143,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_total_active_users TotalActiveUsers { get; set; }
 #endif
         /// <summary>If set, the event will override the waiting room&apos;s `turnstile_action` property while it is active. If null, the event will inherit it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_action? TurnstileAction { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_action TurnstileAction { get; set; }
+#endif
         /// <summary>If set, the event will override the waiting room&apos;s `turnstile_mode` property while it is active. If null, the event will inherit it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_mode? TurnstileMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_mode TurnstileMode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_result"/> and sets the default values.
         /// </summary>
@@ -187,8 +199,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "shuffle_at_event_start", n => { ShuffleAtEventStart = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_shuffle_at_event_start>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_shuffle_at_event_start.CreateFromDiscriminatorValue); } },
                 { "suspended", n => { Suspended = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_suspended>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_suspended.CreateFromDiscriminatorValue); } },
                 { "total_active_users", n => { TotalActiveUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_total_active_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_total_active_users.CreateFromDiscriminatorValue); } },
-                { "turnstile_action", n => { TurnstileAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_action>(); } },
-                { "turnstile_mode", n => { TurnstileMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_mode>(); } },
+                { "turnstile_action", n => { TurnstileAction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_action.CreateFromDiscriminatorValue); } },
+                { "turnstile_mode", n => { TurnstileMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_mode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -214,8 +226,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_shuffle_at_event_start>("shuffle_at_event_start", ShuffleAtEventStart);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_suspended>("suspended", Suspended);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_total_active_users>("total_active_users", TotalActiveUsers);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_action>("turnstile_action", TurnstileAction);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_mode>("turnstile_mode", TurnstileMode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_action>("turnstile_action", TurnstileAction);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_event_turnstile_mode>("turnstile_mode", TurnstileMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

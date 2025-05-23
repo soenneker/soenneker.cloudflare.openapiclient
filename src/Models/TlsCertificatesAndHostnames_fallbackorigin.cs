@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_origin Origin { get; set; }
 #endif
         /// <summary>Status of the fallback origin&apos;s activation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostnameFallbackOrigin_componentsSchemasStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostnameFallbackOrigin_componentsSchemasStatus Status { get; set; }
+#endif
         /// <summary>This is the time the fallback origin was updated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCreated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCreated_at.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_origin.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostnameFallbackOrigin_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostnameFallbackOrigin_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostnameFallbackOrigin_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_updated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_updated_at.CreateFromDiscriminatorValue); } },
             };
         }
@@ -90,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCreated_at>("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_origin>("origin", Origin);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostnameFallbackOrigin_componentsSchemasStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostnameFallbackOrigin_componentsSchemasStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_updated_at>("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -95,7 +95,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.List
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListRequestBuilderGetQueryParameters 
         {
-            [Obsolete("This property is deprecated, use OrderByAsRumOrderBy instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -105,8 +104,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.Site_info.List
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_order_by? OrderByAsRumOrderBy { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page")]

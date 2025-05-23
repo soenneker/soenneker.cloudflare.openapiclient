@@ -87,7 +87,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl Ssl { get; set; }
 #endif
         /// <summary>Status of the hostname&apos;s activation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus Status { get; set; }
+#endif
         /// <summary>These are errors that were encountered while trying to activate a hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,7 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ownership_verification", n => { OwnershipVerification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification.CreateFromDiscriminatorValue); } },
                 { "ownership_verification_http", n => { OwnershipVerificationHttp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification_http>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification_http.CreateFromDiscriminatorValue); } },
                 { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
                 { "verification_errors", n => { VerificationErrors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -150,7 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification>("ownership_verification", OwnershipVerification);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification_http>("ownership_verification_http", OwnershipVerificationHttp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl>("ssl", Ssl);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus>("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("verification_errors", VerificationErrors);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -32,7 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_ttl Ttl { get; set; }
 #endif
         /// <summary>The type of DNS record associated with the origin. &quot;&quot; is used to specify a combination of A/AAAA records.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns"/> and sets the default values.
         /// </summary>
@@ -60,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_name.CreateFromDiscriminatorValue); } },
                 { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_ttl.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_ttl>("ttl", Ttl);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

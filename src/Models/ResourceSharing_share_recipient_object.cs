@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Share Recipient association status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status? AssociationStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status AssociationStatus { get; set; }
+#endif
         /// <summary>When the share was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id.CreateFromDiscriminatorValue); } },
-                { "association_status", n => { AssociationStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status>(); } },
+                { "association_status", n => { AssociationStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_id.CreateFromDiscriminatorValue); } },
                 { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified.CreateFromDiscriminatorValue); } },
@@ -97,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id>("account_id", AccountId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status>("association_status", AssociationStatus);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status>("association_status", AssociationStatus);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created>("created", Created);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_id>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified>("modified", Modified);

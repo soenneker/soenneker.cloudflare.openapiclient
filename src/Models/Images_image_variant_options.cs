@@ -16,7 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fit property describes how the width and height dimensions should be interpreted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_fit? Fit { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_fit Fit { get; set; }
+#endif
         /// <summary>Maximum height in image pixels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_height Height { get; set; }
 #endif
         /// <summary>What EXIF data should be preserved in the output image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_schemas_metadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_schemas_metadata Metadata { get; set; }
+#endif
         /// <summary>Maximum width in image pixels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,9 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fit", n => { Fit = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_fit>(); } },
+                { "fit", n => { Fit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_fit>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_fit.CreateFromDiscriminatorValue); } },
                 { "height", n => { Height = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_height>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_height.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_schemas_metadata>(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_schemas_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_schemas_metadata.CreateFromDiscriminatorValue); } },
                 { "width", n => { Width = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_width>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_width.CreateFromDiscriminatorValue); } },
             };
         }
@@ -73,9 +85,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_fit>("fit", Fit);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_fit>("fit", Fit);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_height>("height", Height);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_schemas_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_schemas_metadata>("metadata", Metadata);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_width>("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }

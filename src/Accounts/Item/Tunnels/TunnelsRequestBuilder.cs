@@ -146,7 +146,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
             [QueryParameter("per_page")]
             public string PerPage { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use StatusAsTunnelStatus instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -156,9 +155,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
-            [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status? StatusAsTunnelStatus { get; set; }
-            [Obsolete("This property is deprecated, use TunTypesAsTunnelTunnelType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tun_types")]
@@ -167,15 +163,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
 #else
             [QueryParameter("tun_types")]
             public string[] TunTypes { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tun_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[]? TunTypesAsTunnelTunnelType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tun_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[] TunTypesAsTunnelTunnelType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

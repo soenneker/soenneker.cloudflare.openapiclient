@@ -15,7 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset? Dataset { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset Dataset { get; set; }
+#endif
         /// <summary>Uniquely identifies a resource (such as an s3 bucket) where data will be pushed. Additional configuration parameters supported by the destination may be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,10 +47,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_filter Filter { get; set; }
 #endif
         /// <summary>This field is deprecated. Please use `max_upload_*` parameters instead. The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</summary>
-        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency? Frequency { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency Frequency { get; set; }
+#endif
         /// <summary>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs. Currently, Edge Log Delivery is only supported for the `http_requests` dataset.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind? Kind { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind Kind { get; set; }
+#endif
         /// <summary>This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,8 +124,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Post_accounts_account_id_logpush_jobs_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
-            Dataset = global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset.Http_requests;
-            Frequency = global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency.High;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -128,12 +143,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dataset", n => { Dataset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>(); } },
+                { "dataset", n => { Dataset = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset.CreateFromDiscriminatorValue); } },
                 { "destination_conf", n => { DestinationConf = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_enabled.CreateFromDiscriminatorValue); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_filter>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_filter.CreateFromDiscriminatorValue); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
+                { "frequency", n => { Frequency = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency.CreateFromDiscriminatorValue); } },
+                { "kind", n => { Kind = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind.CreateFromDiscriminatorValue); } },
                 { "logpull_options", n => { LogpullOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options.CreateFromDiscriminatorValue); } },
                 { "max_upload_bytes", n => { MaxUploadBytes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes.CreateFromDiscriminatorValue); } },
                 { "max_upload_interval_seconds", n => { MaxUploadIntervalSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds.CreateFromDiscriminatorValue); } },
@@ -150,12 +165,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>("dataset", Dataset);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>("dataset", Dataset);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf>("destination_conf", DestinationConf);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_enabled>("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_filter>("filter", Filter);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options>("logpull_options", LogpullOptions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>("max_upload_bytes", MaxUploadBytes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>("max_upload_interval_seconds", MaxUploadIntervalSeconds);

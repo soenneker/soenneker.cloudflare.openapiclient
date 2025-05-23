@@ -88,7 +88,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt SrtPlayback { get; set; }
 #endif
         /// <summary>The connection status of a live input.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status Status { get; set; }
+#endif
         /// <summary>A unique identifier for a live input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rtmpsPlayback", n => { RtmpsPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps.CreateFromDiscriminatorValue); } },
                 { "srt", n => { Srt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_srt>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_srt.CreateFromDiscriminatorValue); } },
                 { "srtPlayback", n => { SrtPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status.CreateFromDiscriminatorValue); } },
                 { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier.CreateFromDiscriminatorValue); } },
                 { "webRTC", n => { WebRTC = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_webrtc>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_webrtc.CreateFromDiscriminatorValue); } },
                 { "webRTCPlayback", n => { WebRTCPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_webrtc>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_webrtc.CreateFromDiscriminatorValue); } },
@@ -169,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps>("rtmpsPlayback", RtmpsPlayback);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_srt>("srt", Srt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt>("srtPlayback", SrtPlayback);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier>("uid", Uid);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_webrtc>("webRTC", WebRTC);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_webrtc>("webRTCPlayback", WebRTCPlayback);

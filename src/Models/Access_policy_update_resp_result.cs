@@ -55,7 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed PercentUsersProcessed { get; set; }
 #endif
         /// <summary>The status of the policy test.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status Status { get; set; }
+#endif
         /// <summary>The total number of users in the user base.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "percent_blocked", n => { PercentBlocked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked.CreateFromDiscriminatorValue); } },
                 { "percent_errored", n => { PercentErrored = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored.CreateFromDiscriminatorValue); } },
                 { "percent_users_processed", n => { PercentUsersProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status.CreateFromDiscriminatorValue); } },
                 { "total_users", n => { TotalUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users.CreateFromDiscriminatorValue); } },
                 { "users_approved", n => { UsersApproved = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved.CreateFromDiscriminatorValue); } },
                 { "users_blocked", n => { UsersBlocked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked.CreateFromDiscriminatorValue); } },
@@ -137,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked>("percent_blocked", PercentBlocked);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored>("percent_errored", PercentErrored);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed>("percent_users_processed", PercentUsersProcessed);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users>("total_users", TotalUsers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved>("users_approved", UsersApproved);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked>("users_blocked", UsersBlocked);

@@ -47,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName Name { get; set; }
 #endif
         /// <summary>The type of device posture integration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_devicePostureIntegrations"/> and sets the default values.
         /// </summary>
@@ -77,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval>("interval", Interval);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

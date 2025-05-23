@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_bot_fight_mode BotFightMode { get; set; }
 #endif
         /// <summary>If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,this setting can determine the clearance level to be set</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level? ClearanceLevel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level ClearanceLevel { get; set; }
+#endif
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_ephemeral_id EphemeralId { get; set; }
 #endif
         /// <summary>Widget Mode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode? Mode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode Mode { get; set; }
+#endif
         /// <summary>Human readable widget name. Not unique. Cloudflare suggests that youset this to a meaningful string to make it easier to identify yourwidget, and where it is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,14 +71,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_offlabel Offlabel { get; set; }
 #endif
         /// <summary>Region where this widget can be used. This cannot be changed after creation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region? Region { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region Region { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_turnstile_widget_update_RequestBody_application_json"/> and sets the default values.
         /// </summary>
         public Accounts_turnstile_widget_update_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
-            Region = global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region.World;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,13 +104,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bot_fight_mode", n => { BotFightMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_bot_fight_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_bot_fight_mode.CreateFromDiscriminatorValue); } },
-                { "clearance_level", n => { ClearanceLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level>(); } },
+                { "clearance_level", n => { ClearanceLevel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level>(global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level.CreateFromDiscriminatorValue); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ephemeral_id", n => { EphemeralId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_ephemeral_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_ephemeral_id.CreateFromDiscriminatorValue); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode>(); } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_name.CreateFromDiscriminatorValue); } },
                 { "offlabel", n => { Offlabel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_offlabel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_offlabel.CreateFromDiscriminatorValue); } },
-                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region>(); } },
+                { "region", n => { Region = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region>(global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,13 +121,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_bot_fight_mode>("bot_fight_mode", BotFightMode);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level>("clearance_level", ClearanceLevel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level>("clearance_level", ClearanceLevel);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_ephemeral_id>("ephemeral_id", EphemeralId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode>("mode", Mode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode>("mode", Mode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_offlabel>("offlabel", Offlabel);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region>("region", Region);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region>("region", Region);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

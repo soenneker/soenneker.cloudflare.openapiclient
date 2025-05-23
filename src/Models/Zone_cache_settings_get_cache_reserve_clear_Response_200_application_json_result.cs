@@ -29,7 +29,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_start_ts StartTs { get; set; }
 #endif
         /// <summary>The current state of the Cache Reserve Clear operation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state? State { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state State { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "end_ts", n => { EndTs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_end_ts>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_end_ts.CreateFromDiscriminatorValue); } },
                 { "start_ts", n => { StartTs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_start_ts>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_start_ts.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>(); } },
+                { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_end_ts>("end_ts", EndTs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_start_ts>("start_ts", StartTs);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>("state", State);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>("state", State);
         }
     }
 }

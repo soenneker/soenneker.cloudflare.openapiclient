@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval AlertInterval { get; set; }
 #endif
         /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type? AlertType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type AlertType { get; set; }
+#endif
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alert_interval", n => { AlertInterval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval.CreateFromDiscriminatorValue); } },
-                { "alert_type", n => { AlertType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>(); } },
+                { "alert_type", n => { AlertType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_timestamp.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled.CreateFromDiscriminatorValue); } },
@@ -133,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval>("alert_interval", AlertInterval);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>("alert_type", AlertType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>("alert_type", AlertType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_timestamp>("created", Created);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled>("enabled", Enabled);

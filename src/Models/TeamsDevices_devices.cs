@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted Deleted { get; set; }
 #endif
         /// <summary>The device_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform? DeviceType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform DeviceType { get; set; }
+#endif
         /// <summary>Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,7 +201,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created.CreateFromDiscriminatorValue); } },
                 { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted.CreateFromDiscriminatorValue); } },
-                { "device_type", n => { DeviceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform>(); } },
+                { "device_type", n => { DeviceType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id.CreateFromDiscriminatorValue); } },
                 { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key.CreateFromDiscriminatorValue); } },
@@ -224,7 +230,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created>("created", Created);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted>("deleted", Deleted);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform>("device_type", DeviceType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform>("device_type", DeviceType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip>("ip", Ip);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key>("key", Key);

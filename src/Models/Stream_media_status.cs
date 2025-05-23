@@ -40,7 +40,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete PctComplete { get; set; }
 #endif
         /// <summary>Specifies the processing status for all quality levels for a video.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? State { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state State { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_status"/> and sets the default values.
         /// </summary>
@@ -69,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errorReasonCode", n => { ErrorReasonCode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode.CreateFromDiscriminatorValue); } },
                 { "errorReasonText", n => { ErrorReasonText = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText.CreateFromDiscriminatorValue); } },
                 { "pctComplete", n => { PctComplete = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(); } },
+                { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode>("errorReasonCode", ErrorReasonCode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText>("errorReasonText", ErrorReasonText);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete>("pctComplete", PctComplete);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("state", State);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The email address to send health status notifications to. This field is now deprecated in favor of Cloudflare Notifications for Load Balancing, so only resetting this field with an empty string `&quot;&quot;` is accepted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationEmail { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_patch_pools_notification_email? NotificationEmail { get; set; }
 #nullable restore
 #else
-        public string NotificationEmail { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_patch_pools_notification_email NotificationEmail { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_patch_pools_RequestBody_application_json"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notification_email", n => { NotificationEmail = n.GetStringValue(); } },
+                { "notification_email", n => { NotificationEmail = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_patch_pools_notification_email>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_patch_pools_notification_email.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("notification_email", NotificationEmail);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_patch_pools_notification_email>("notification_email", NotificationEmail);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

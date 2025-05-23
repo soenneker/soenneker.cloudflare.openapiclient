@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_language Language { get; set; }
 #endif
         /// <summary>The status of a generated caption.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_captions"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "generated", n => { Generated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_generated_caption>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_generated_caption.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_label>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_label.CreateFromDiscriminatorValue); } },
                 { "language", n => { Language = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_language>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_language.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_generated_caption>("generated", Generated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_label>("label", Label);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_language>("language", Language);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

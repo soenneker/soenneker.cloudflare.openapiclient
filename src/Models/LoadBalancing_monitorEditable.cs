@@ -135,14 +135,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout Timeout { get; set; }
 #endif
         /// <summary>The protocol to use for the health check. Currently supported protocols are &apos;HTTP&apos;,&apos;HTTPS&apos;, &apos;TCP&apos;, &apos;ICMP-PING&apos;, &apos;UDP-ICMP&apos;, and &apos;SMTP&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitorEditable"/> and sets the default values.
         /// </summary>
         public LoadBalancing_monitorEditable()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type.Http;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -177,7 +182,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "probe_zone", n => { ProbeZone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone.CreateFromDiscriminatorValue); } },
                 { "retries", n => { Retries = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -202,7 +207,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone>("probe_zone", ProbeZone);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries>("retries", Retries);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout>("timeout", Timeout);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -24,7 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_name Name { get; set; }
 #endif
         /// <summary>The type of DNS record associated with the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_type? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_type Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns"/> and sets the default values.
         /// </summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_name.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_type>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_name>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

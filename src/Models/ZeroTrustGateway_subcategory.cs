@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_beta Beta { get; set; }
 #endif
         /// <summary>Which account types are allowed to create policies based on this category. `blocked` categories are blocked unconditionally for all accounts. `removalPending` categories can be removed from policies but not added. `noBlock` categories cannot be blocked.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class? Class { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class Class { get; set; }
+#endif
         /// <summary>A short summary of domains in the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "beta", n => { Beta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_beta>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_beta.CreateFromDiscriminatorValue); } },
-                { "class", n => { Class = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>(); } },
+                { "class", n => { Class = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_id.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_categories_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_categories_componentsSchemasName.CreateFromDiscriminatorValue); } },
@@ -88,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_beta>("beta", Beta);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>("class", Class);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>("class", Class);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasDescription>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_id>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_categories_componentsSchemasName>("name", Name);

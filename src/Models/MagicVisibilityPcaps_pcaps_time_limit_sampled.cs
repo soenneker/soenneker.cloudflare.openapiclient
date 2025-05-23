@@ -16,13 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The packet capture duration in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled Value { get; set; }
-#endif
+        public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled"/> and sets the default values.
         /// </summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_time_limit_sampled>("value", Value);
+            writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

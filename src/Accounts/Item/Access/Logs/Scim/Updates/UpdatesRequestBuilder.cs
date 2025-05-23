@@ -104,7 +104,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             [QueryParameter("cf_resource_id")]
             public string CfResourceId { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use DirectionAsAccessDirection instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("direction")]
@@ -114,8 +113,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             [QueryParameter("direction")]
             public string Direction { get; set; }
 #endif
-            [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_direction? DirectionAsAccessDirection { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idp_id")]

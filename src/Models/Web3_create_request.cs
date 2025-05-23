@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name Name { get; set; }
 #endif
         /// <summary>Specify the target gateway of the hostname.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target? Target { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target Target { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_create_request"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description.CreateFromDiscriminatorValue); } },
                 { "dnslink", n => { Dnslink = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>(); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink>("dnslink", Dnslink);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

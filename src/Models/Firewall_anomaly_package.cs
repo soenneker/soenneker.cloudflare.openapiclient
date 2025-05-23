@@ -13,17 +13,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The default action performed by the rules in the WAF package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode? ActionMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode ActionMode { get; set; }
+#endif
         /// <summary>The sensitivity of the WAF package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity? Sensitivity { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_anomaly_package"/> and sets the default values.
-        /// </summary>
-        public Firewall_anomaly_package() : base()
-        {
-            ActionMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode.Challenge;
-            Sensitivity = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity.High;
-        }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity Sensitivity { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,8 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action_mode", n => { ActionMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>(); } },
-                { "sensitivity", n => { Sensitivity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>(); } },
+                { "action_mode", n => { ActionMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode.CreateFromDiscriminatorValue); } },
+                { "sensitivity", n => { Sensitivity = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -54,8 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>("action_mode", ActionMode);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>("sensitivity", Sensitivity);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>("action_mode", ActionMode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>("sensitivity", Sensitivity);
         }
     }
 }

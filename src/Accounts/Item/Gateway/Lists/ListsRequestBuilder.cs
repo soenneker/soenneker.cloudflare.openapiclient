@@ -155,7 +155,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListsRequestBuilderGetQueryParameters 
         {
-            [Obsolete("This property is deprecated, use TypeAsZeroTrustGatewaySchemasType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
@@ -165,8 +164,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
             [QueryParameter("type")]
             public string Type { get; set; }
 #endif
-            [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType? TypeAsZeroTrustGatewaySchemasType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -55,7 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism Mechanism { get; set; }
 #endif
         /// <summary>The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type? MechanismType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type MechanismType { get; set; }
+#endif
         /// <summary>Name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid.CreateFromDiscriminatorValue); } },
                 { "mechanism", n => { Mechanism = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism.CreateFromDiscriminatorValue); } },
-                { "mechanism_type", n => { MechanismType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>(); } },
+                { "mechanism_type", n => { MechanismType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName.CreateFromDiscriminatorValue); } },
                 { "policy_id", n => { PolicyId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId.CreateFromDiscriminatorValue); } },
                 { "sent", n => { Sent = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent.CreateFromDiscriminatorValue); } },
@@ -128,7 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism>("mechanism", Mechanism);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>("mechanism_type", MechanismType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>("mechanism_type", MechanismType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId>("policy_id", PolicyId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent>("sent", Sent);

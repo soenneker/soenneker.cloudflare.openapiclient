@@ -16,13 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time in seconds during which Cloudflare will perform the mitigation action. Must be an integer value greater than or equal to the period.Notes: If &quot;mode&quot; is &quot;challenge&quot;, &quot;managed_challenge&quot;, or &quot;js_challenge&quot;, Cloudflare will use the zone&apos;s Challenge Passage time and you should not provide this value.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout Value { get; set; }
-#endif
+        public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout"/> and sets the default values.
         /// </summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_timeout>("value", Value);
+            writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -71,7 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schedule Schedule { get; set; }
 #endif
         /// <summary>The type of device posture rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_devicePostureRules"/> and sets the default values.
         /// </summary>
@@ -104,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "match", n => { Match = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_name.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schedule>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schedule.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -121,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item>("match", Match);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schedule>("schedule", Schedule);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -95,7 +95,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script> TailConsumers { get; set; }
 #endif
         /// <summary>The usage_model property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model? UsageModel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model UsageModel { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem"/> and sets the default values.
         /// </summary>
@@ -131,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tag.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(); } },
+                { "usage_model", n => { UsageModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -151,7 +157,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status>("placement", Placement);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tag>("tags", Tags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script>("tail_consumers", TailConsumers);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

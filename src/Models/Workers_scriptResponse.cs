@@ -79,9 +79,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info Placement { get; set; }
 #endif
         /// <summary>The placement_mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode? PlacementMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode PlacementMode { get; set; }
+#endif
         /// <summary>The placement_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status? PlacementStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status PlacementStatus { get; set; }
+#endif
         /// <summary>List of Workers that will consume logs from the attached Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +103,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script> TailConsumers { get; set; }
 #endif
         /// <summary>Usage model for the Worker invocations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model? UsageModel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model UsageModel { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptResponse"/> and sets the default values.
         /// </summary>
@@ -125,10 +143,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "logpush", n => { Logpush = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_logpush>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_logpush.CreateFromDiscriminatorValue); } },
                 { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on.CreateFromDiscriminatorValue); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info.CreateFromDiscriminatorValue); } },
-                { "placement_mode", n => { PlacementMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>(); } },
-                { "placement_status", n => { PlacementStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status>(); } },
+                { "placement_mode", n => { PlacementMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode.CreateFromDiscriminatorValue); } },
+                { "placement_status", n => { PlacementStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status.CreateFromDiscriminatorValue); } },
                 { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(); } },
+                { "usage_model", n => { UsageModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -145,10 +163,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_logpush>("logpush", Logpush);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on>("modified_on", ModifiedOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info>("placement", Placement);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>("placement_mode", PlacementMode);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status>("placement_status", PlacementStatus);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>("placement_mode", PlacementMode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status>("placement_status", PlacementStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script>("tail_consumers", TailConsumers);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

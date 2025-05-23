@@ -13,7 +13,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to preform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action? Action { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action Action { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
@@ -169,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_read_only_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_read_only_timestamp.CreateFromDiscriminatorValue); } },
                 { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_deleted_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_deleted_at.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription.CreateFromDiscriminatorValue); } },
@@ -195,7 +201,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_read_only_timestamp>("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_deleted_at>("deleted_at", DeletedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription>("description", Description);

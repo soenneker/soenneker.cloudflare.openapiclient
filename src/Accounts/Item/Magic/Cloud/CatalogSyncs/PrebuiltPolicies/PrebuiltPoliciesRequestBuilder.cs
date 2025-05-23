@@ -102,7 +102,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CatalogSy
         public partial class PrebuiltPoliciesRequestBuilderGetQueryParameters 
         {
             /// <summary>Specify type of destination, omit to return all.</summary>
-            [Obsolete("This property is deprecated, use DestinationTypeAsMcnCatalogSyncDestinationType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("destination_type")]
@@ -112,9 +111,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.CatalogSy
             [QueryParameter("destination_type")]
             public string DestinationType { get; set; }
 #endif
-            /// <summary>Specify type of destination, omit to return all.</summary>
-            [QueryParameter("destination_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type? DestinationTypeAsMcnCatalogSyncDestinationType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -143,7 +143,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state State { get; set; }
 #endif
         /// <summary>Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus Status { get; set; }
+#endif
         /// <summary>The number of days the Client Certificate will be valid after the issued_on date</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,7 +199,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature.CreateFromDiscriminatorValue); } },
                 { "ski", n => { Ski = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski.CreateFromDiscriminatorValue); } },
                 { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
                 { "validity_days", n => { ValidityDays = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days.CreateFromDiscriminatorValue); } },
             };
         }
@@ -220,7 +226,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature>("signature", Signature);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski>("ski", Ski);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state>("state", State);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days>("validity_days", ValidityDays);
             writer.WriteAdditionalData(AdditionalData);
         }

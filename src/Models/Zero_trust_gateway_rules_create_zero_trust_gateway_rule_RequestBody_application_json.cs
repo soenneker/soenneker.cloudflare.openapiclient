@@ -13,7 +13,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to preform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action? Action { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action Action { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description of the rule.</summary>
@@ -129,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription.CreateFromDiscriminatorValue); } },
                 { "device_posture", n => { DevicePosture = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled.CreateFromDiscriminatorValue); } },
@@ -150,7 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture>("device_posture", DevicePosture);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled>("enabled", Enabled);

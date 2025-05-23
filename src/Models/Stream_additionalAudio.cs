@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label Label { get; set; }
 #endif
         /// <summary>Specifies the processing status of the video.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state Status { get; set; }
+#endif
         /// <summary>A Cloudflare-generated unique identifier for a media item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "default", n => { Default = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default.CreateFromDiscriminatorValue); } },
                 { "label", n => { Label = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state.CreateFromDiscriminatorValue); } },
                 { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier.CreateFromDiscriminatorValue); } },
             };
         }
@@ -80,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default>("default", Default);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label>("label", Label);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier>("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -65,7 +65,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         public string MainModule { get; set; }
 #endif
         /// <summary>Usage model for the Worker invocations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model? UsageModel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model UsageModel { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.Worker_versions_upload_version_RequestBody_multipart_form_dataPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -97,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
                 { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "keep_bindings", n => { KeepBindings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "main_module", n => { MainModule = n.GetStringValue(); } },
-                { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(); } },
+                { "usage_model", n => { UsageModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -113,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_compatibility_flag>("compatibility_flags", CompatibilityFlags);
             writer.WriteCollectionOfPrimitiveValues<string>("keep_bindings", KeepBindings);
             writer.WriteStringValue("main_module", MainModule);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

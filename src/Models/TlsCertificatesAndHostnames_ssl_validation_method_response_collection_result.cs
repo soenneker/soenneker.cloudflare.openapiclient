@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_componentsSchemasStatus Status { get; set; }
 #endif
         /// <summary>Desired validation method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition? ValidationMethod { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition ValidationMethod { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_method_response_collection_result"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
-                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition>(); } },
+                { "validation_method", n => { ValidationMethod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_componentsSchemasStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition>("validation_method", ValidationMethod);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition>("validation_method", ValidationMethod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

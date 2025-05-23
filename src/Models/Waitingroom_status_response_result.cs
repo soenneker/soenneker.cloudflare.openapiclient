@@ -47,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes MaxEstimatedTimeMinutes { get; set; }
 #endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response_result"/> and sets the default values.
         /// </summary>
@@ -77,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users.CreateFromDiscriminatorValue); } },
                 { "event_id", n => { EventId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id.CreateFromDiscriminatorValue); } },
                 { "max_estimated_time_minutes", n => { MaxEstimatedTimeMinutes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users>("estimated_total_active_users", EstimatedTotalActiveUsers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id>("event_id", EventId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes>("max_estimated_time_minutes", MaxEstimatedTimeMinutes);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

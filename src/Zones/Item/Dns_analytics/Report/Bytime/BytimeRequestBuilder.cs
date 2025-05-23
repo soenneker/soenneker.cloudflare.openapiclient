@@ -148,7 +148,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report.Byt
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use TimeDeltaAsDnsAnalyticsTimeDelta instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("time_delta")]
@@ -158,8 +157,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report.Byt
             [QueryParameter("time_delta")]
             public string TimeDelta { get; set; }
 #endif
-            [QueryParameter("time_delta")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_time_delta? TimeDeltaAsDnsAnalyticsTimeDelta { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("until")]

@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp CreatedAt { get; set; }
 #endif
         /// <summary>The action Access will take if a user matches this policy. Infrastructure application policies can only use the Allow action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision? Decision { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision Decision { get; set; }
+#endif
         /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp.CreateFromDiscriminatorValue); } },
-                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>(); } },
+                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision.CreateFromDiscriminatorValue); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUuid.CreateFromDiscriminatorValue); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -115,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>("decision", Decision);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_decision>("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("exclude", Exclude);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUuid>("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("include", Include);

@@ -63,7 +63,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Roles { get; private set; }
 #endif
         /// <summary>Status of this membership.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membershipWithPolicies"/> and sets the default values.
         /// </summary>
@@ -95,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permissions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permissions.CreateFromDiscriminatorValue); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_list_member_policy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_list_member_policy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -108,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_access_enabled>("api_access_enabled", ApiAccessEnabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_componentsSchemasIdentifier>("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_list_member_policy>("policies", Policies);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

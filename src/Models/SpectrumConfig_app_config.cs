@@ -77,19 +77,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol Protocol { get; set; }
 #endif
         /// <summary>Enables Proxy Protocol to the origin. Refer to [Enable Proxy protocol](https://developers.cloudflare.com/spectrum/getting-started/proxy-protocol/) for implementation details on PROXY Protocol V1, PROXY Protocol V2, and Simple Proxy Protocol.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol? ProxyProtocol { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol ProxyProtocol { get; set; }
+#endif
         /// <summary>The type of TLS termination associated with the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls? Tls { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls Tls { get; set; }
+#endif
         /// <summary>Determines how data travels from the edge to your origin. When set to &quot;direct&quot;, Spectrum will send traffic directly to your origin, and the application&apos;s type is derived from the `protocol`. When set to &quot;http&quot; or &quot;https&quot;, Spectrum will apply Cloudflare&apos;s HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type? TrafficType { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config"/> and sets the default values.
-        /// </summary>
-        public SpectrumConfig_app_config() : base()
-        {
-            ProxyProtocol = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol.Off;
-            TrafficType = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type.Direct;
-        }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type TrafficType { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -116,9 +126,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "origin_dns", n => { OriginDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns.CreateFromDiscriminatorValue); } },
                 { "origin_port", n => { OriginPort = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port.CreateFromDiscriminatorValue); } },
                 { "protocol", n => { Protocol = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol.CreateFromDiscriminatorValue); } },
-                { "proxy_protocol", n => { ProxyProtocol = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>(); } },
-                { "tls", n => { Tls = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>(); } },
-                { "traffic_type", n => { TrafficType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>(); } },
+                { "proxy_protocol", n => { ProxyProtocol = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol.CreateFromDiscriminatorValue); } },
+                { "tls", n => { Tls = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls.CreateFromDiscriminatorValue); } },
+                { "traffic_type", n => { TrafficType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,9 +147,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>("origin_dns", OriginDns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>("origin_port", OriginPort);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol>("protocol", Protocol);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>("proxy_protocol", ProxyProtocol);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>("tls", Tls);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>("traffic_type", TrafficType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>("proxy_protocol", ProxyProtocol);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>("tls", Tls);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>("traffic_type", TrafficType);
         }
     }
 }

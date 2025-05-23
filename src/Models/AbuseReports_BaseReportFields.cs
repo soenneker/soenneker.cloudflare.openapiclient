@@ -13,7 +13,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The abuse report type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType? Act { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType Act { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
@@ -91,7 +97,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Email2 { get; set; }
 #endif
         /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification? HostNotification { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification HostNotification { get; set; }
+#endif
         /// <summary>A detailed description of the infringement, including any necessary access details and the exact steps needed to view the content, not exceeding 5000 characters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,7 +121,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification? NcmecNotification { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification NcmecNotification { get; set; }
+#endif
         /// <summary>If the submitter is the target of NCSEI in the URLs of the abuse report.</summary>
         public bool? NcseiSubjectRepresentation { get; set; }
         /// <summary>Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
@@ -121,7 +139,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string OriginalWork { get; set; }
 #endif
         /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification? OwnerNotification { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification OwnerNotification { get; set; }
+#endif
         /// <summary>A comma separated list of ports and protocols e.g. 80/TCP, 22/UDP. The total size of the field should not exceed 2000 characters. Each individual port/protocol should not exceed 100 characters. The list should not have more than 30 unique ports and protocols.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,7 +267,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "act", n => { Act = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType>(); } },
+                { "act", n => { Act = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType.CreateFromDiscriminatorValue); } },
                 { "address1", n => { Address1 = n.GetStringValue(); } },
                 { "agent_name", n => { AgentName = n.GetStringValue(); } },
                 { "agree", n => { Agree = n.GetIntValue(); } },
@@ -254,13 +278,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "destination_ips", n => { DestinationIps = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "email2", n => { Email2 = n.GetStringValue(); } },
-                { "host_notification", n => { HostNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>(); } },
+                { "host_notification", n => { HostNotification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification.CreateFromDiscriminatorValue); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "ncmec_notification", n => { NcmecNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>(); } },
+                { "ncmec_notification", n => { NcmecNotification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification.CreateFromDiscriminatorValue); } },
                 { "ncsei_subject_representation", n => { NcseiSubjectRepresentation = n.GetBoolValue(); } },
                 { "original_work", n => { OriginalWork = n.GetStringValue(); } },
-                { "owner_notification", n => { OwnerNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>(); } },
+                { "owner_notification", n => { OwnerNotification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>(global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification.CreateFromDiscriminatorValue); } },
                 { "ports_protocols", n => { PortsProtocols = n.GetStringValue(); } },
                 { "reported_country", n => { ReportedCountry = n.GetStringValue(); } },
                 { "reported_user_agent", n => { ReportedUserAgent = n.GetStringValue(); } },
@@ -282,7 +306,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType>("act", Act);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType>("act", Act);
             writer.WriteStringValue("address1", Address1);
             writer.WriteStringValue("agent_name", AgentName);
             writer.WriteIntValue("agree", Agree);
@@ -293,13 +317,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("destination_ips", DestinationIps);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("email2", Email2);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>("host_notification", HostNotification);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>("host_notification", HostNotification);
             writer.WriteStringValue("justification", Justification);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>("ncmec_notification", NcmecNotification);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>("ncmec_notification", NcmecNotification);
             writer.WriteBoolValue("ncsei_subject_representation", NcseiSubjectRepresentation);
             writer.WriteStringValue("original_work", OriginalWork);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>("owner_notification", OwnerNotification);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_Notification>("owner_notification", OwnerNotification);
             writer.WriteStringValue("ports_protocols", PortsProtocols);
             writer.WriteStringValue("reported_country", ReportedCountry);
             writer.WriteStringValue("reported_user_agent", ReportedUserAgent);

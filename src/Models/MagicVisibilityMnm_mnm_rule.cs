@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_bandwidth_threshold BandwidthThreshold { get; set; }
 #endif
         /// <summary>The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values [&quot;1m&quot;,&quot;5m&quot;,&quot;10m&quot;,&quot;15m&quot;,&quot;20m&quot;,&quot;30m&quot;,&quot;45m&quot;,&quot;60m&quot;].</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration? Duration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration Duration { get; set; }
+#endif
         /// <summary>The id of the rule. Must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,20 +71,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_ip_prefix> Prefixes { get; set; }
 #endif
         /// <summary>Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match? PrefixMatch { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match PrefixMatch { get; set; }
+#endif
         /// <summary>MNM rule type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type Type { get; set; }
+#endif
         /// <summary>Level of sensitivity set for zscore rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity? ZscoreSensitivity { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity ZscoreSensitivity { get; set; }
+#endif
         /// <summary>Target of the zscore rule analysis.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target? ZscoreTarget { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target ZscoreTarget { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule"/> and sets the default values.
         /// </summary>
         public MagicVisibilityMnm_mnm_rule()
         {
             AdditionalData = new Dictionary<string, object>();
-            Duration = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration.Onem;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -100,15 +129,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "automatic_advertisement", n => { AutomaticAdvertisement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_automatic_advertisement>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_automatic_advertisement.CreateFromDiscriminatorValue); } },
                 { "bandwidth_threshold", n => { BandwidthThreshold = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_bandwidth_threshold>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_bandwidth_threshold.CreateFromDiscriminatorValue); } },
-                { "duration", n => { Duration = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>(); } },
+                { "duration", n => { Duration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_rule_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_rule_identifier.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_name.CreateFromDiscriminatorValue); } },
                 { "packet_threshold", n => { PacketThreshold = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_packet_threshold>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_packet_threshold.CreateFromDiscriminatorValue); } },
-                { "prefix_match", n => { PrefixMatch = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match>(); } },
+                { "prefix_match", n => { PrefixMatch = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match.CreateFromDiscriminatorValue); } },
                 { "prefixes", n => { Prefixes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_ip_prefix>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_ip_prefix.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type>(); } },
-                { "zscore_sensitivity", n => { ZscoreSensitivity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity>(); } },
-                { "zscore_target", n => { ZscoreTarget = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type.CreateFromDiscriminatorValue); } },
+                { "zscore_sensitivity", n => { ZscoreSensitivity = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity.CreateFromDiscriminatorValue); } },
+                { "zscore_target", n => { ZscoreTarget = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -120,15 +149,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_automatic_advertisement>("automatic_advertisement", AutomaticAdvertisement);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_bandwidth_threshold>("bandwidth_threshold", BandwidthThreshold);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>("duration", Duration);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>("duration", Duration);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_rule_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_name>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_packet_threshold>("packet_threshold", PacketThreshold);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_ip_prefix>("prefixes", Prefixes);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match>("prefix_match", PrefixMatch);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type>("type", Type);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity>("zscore_sensitivity", ZscoreSensitivity);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target>("zscore_target", ZscoreTarget);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match>("prefix_match", PrefixMatch);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity>("zscore_sensitivity", ZscoreSensitivity);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target>("zscore_target", ZscoreTarget);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

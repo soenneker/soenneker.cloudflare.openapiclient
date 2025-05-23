@@ -40,7 +40,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_timestamp CreatedAt { get; set; }
 #endif
         /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel&apos;s configuration on the Zero Trust dashboard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src? Source { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src Source { get; set; }
+#endif
         /// <summary>UUID of the tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +69,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Tunnel_configuration()
         {
             AdditionalData = new Dictionary<string, object>();
-            Source = global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src.Local;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -86,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_identifier.CreateFromDiscriminatorValue); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_timestamp.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src>(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src.CreateFromDiscriminatorValue); } },
                 { "tunnel_id", n => { TunnelId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasTunnel_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasTunnel_id.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_version.CreateFromDiscriminatorValue); } },
             };
@@ -101,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_identifier>("account_id", AccountId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config>("config", Config);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_timestamp>("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src>("source", Source);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasTunnel_id>("tunnel_id", TunnelId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_version>("version", Version);
             writer.WriteAdditionalData(AdditionalData);

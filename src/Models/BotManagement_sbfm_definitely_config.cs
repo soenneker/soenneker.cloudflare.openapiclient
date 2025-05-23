@@ -21,7 +21,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress OptimizeWordpress { get; set; }
 #endif
         /// <summary>Super Bot Fight Mode (SBFM) action to take on definitely automated requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated? SbfmDefinitelyAutomated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated SbfmDefinitelyAutomated { get; set; }
+#endif
         /// <summary>Super Bot Fight Mode (SBFM) to enable static resource protection.Enable if static resources on your application need bot protection.Note: Static resource protection can also result in legitimate traffic being blocked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,7 +37,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection SbfmStaticResourceProtection { get; set; }
 #endif
         /// <summary>Super Bot Fight Mode (SBFM) action to take on verified bots requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots? SbfmVerifiedBots { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots SbfmVerifiedBots { get; set; }
+#endif
         /// <summary>A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,9 +71,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "optimize_wordpress", n => { OptimizeWordpress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress.CreateFromDiscriminatorValue); } },
-                { "sbfm_definitely_automated", n => { SbfmDefinitelyAutomated = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated>(); } },
+                { "sbfm_definitely_automated", n => { SbfmDefinitelyAutomated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated.CreateFromDiscriminatorValue); } },
                 { "sbfm_static_resource_protection", n => { SbfmStaticResourceProtection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection.CreateFromDiscriminatorValue); } },
-                { "sbfm_verified_bots", n => { SbfmVerifiedBots = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots>(); } },
+                { "sbfm_verified_bots", n => { SbfmVerifiedBots = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots.CreateFromDiscriminatorValue); } },
                 { "stale_zone_configuration", n => { StaleZoneConfiguration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config_stale_zone_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config_stale_zone_configuration.CreateFromDiscriminatorValue); } },
             };
         }
@@ -74,9 +86,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress>("optimize_wordpress", OptimizeWordpress);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated>("sbfm_definitely_automated", SbfmDefinitelyAutomated);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated>("sbfm_definitely_automated", SbfmDefinitelyAutomated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection>("sbfm_static_resource_protection", SbfmStaticResourceProtection);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots>("sbfm_verified_bots", SbfmVerifiedBots);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots>("sbfm_verified_bots", SbfmVerifiedBots);
         }
     }
 }

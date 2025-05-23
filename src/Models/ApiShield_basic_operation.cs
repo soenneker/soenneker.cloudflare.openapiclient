@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host Host { get; set; }
 #endif
         /// <summary>The HTTP method used to access the endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method? Method { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method Method { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation"/> and sets the default values.
         /// </summary>
@@ -59,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "endpoint", n => { Endpoint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint.CreateFromDiscriminatorValue); } },
                 { "host", n => { Host = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host.CreateFromDiscriminatorValue); } },
-                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>(); } },
+                { "method", n => { Method = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint>("endpoint", Endpoint);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host>("host", Host);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>("method", Method);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>("method", Method);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

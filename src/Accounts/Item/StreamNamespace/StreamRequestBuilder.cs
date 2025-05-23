@@ -256,7 +256,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             [QueryParameter("start")]
             public string Start { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use StatusAsStreamMediaState instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -266,8 +265,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
-            [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? StatusAsStreamMediaState { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]

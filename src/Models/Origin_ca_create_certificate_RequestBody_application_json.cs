@@ -31,9 +31,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Hostnames { get; set; }
 #endif
         /// <summary>The number of days for which the certificate should be valid.</summary>
-        public double? RequestedValidity { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_requested_validity? RequestedValidity { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_requested_validity RequestedValidity { get; set; }
+#endif
         /// <summary>Signature type desired on certificate (&quot;origin-rsa&quot; (rsa), &quot;origin-ecc&quot; (ecdsa), or &quot;keyless-certificate&quot; (for Keyless SSL servers).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_request_type? RequestType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_request_type RequestType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Origin_ca_create_certificate_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -61,8 +73,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "csr", n => { Csr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_csr>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_csr.CreateFromDiscriminatorValue); } },
                 { "hostnames", n => { Hostnames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "request_type", n => { RequestType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_request_type>(); } },
-                { "requested_validity", n => { RequestedValidity = n.GetDoubleValue(); } },
+                { "request_type", n => { RequestType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_request_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_request_type.CreateFromDiscriminatorValue); } },
+                { "requested_validity", n => { RequestedValidity = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_requested_validity>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_requested_validity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +86,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_csr>("csr", Csr);
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
-            writer.WriteDoubleValue("requested_validity", RequestedValidity);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_request_type>("request_type", RequestType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_requested_validity>("requested_validity", RequestedValidity);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_request_type>("request_type", RequestType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

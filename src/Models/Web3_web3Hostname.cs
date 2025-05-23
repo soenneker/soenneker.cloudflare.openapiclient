@@ -63,9 +63,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name Name { get; set; }
 #endif
         /// <summary>Specifies the status of the hostname&apos;s activation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_status? Status { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_status Status { get; set; }
+#endif
         /// <summary>Specify the target gateway of the hostname.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target? Target { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target Target { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_web3Hostname"/> and sets the default values.
         /// </summary>
@@ -97,8 +109,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_identifier.CreateFromDiscriminatorValue); } },
                 { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_timestamp.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_status>(); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_status.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -114,7 +126,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_timestamp>("modified_on", ModifiedOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_name>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

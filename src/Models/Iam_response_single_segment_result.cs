@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before NotBefore { get; set; }
 #endif
         /// <summary>Status of the token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_response_single_segment_result"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expires_on", n => { ExpiresOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier.CreateFromDiscriminatorValue); } },
                 { "not_before", n => { NotBefore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>("expires_on", ExpiresOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>("not_before", NotBefore);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

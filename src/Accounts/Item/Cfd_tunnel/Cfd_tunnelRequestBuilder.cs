@@ -201,7 +201,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel
             [QueryParameter("per_page")]
             public string PerPage { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use StatusAsTunnelStatus instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -211,8 +210,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
-            [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status? StatusAsTunnelStatus { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("uuid")]

@@ -55,7 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature Signature { get; set; }
 #endif
         /// <summary>Status of the certificate activation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus Status { get; set; }
+#endif
         /// <summary>This is the time the certificate was uploaded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier.CreateFromDiscriminatorValue); } },
                 { "issuer", n => { Issuer = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer.CreateFromDiscriminatorValue); } },
                 { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
                 { "uploaded_on", n => { UploadedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUploaded_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUploaded_on.CreateFromDiscriminatorValue); } },
             };
         }
@@ -110,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer>("issuer", Issuer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature>("signature", Signature);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUploaded_on>("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -47,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_customPages_componentsSchemasName Name { get; set; }
 #endif
         /// <summary>Custom page type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasType Type { get; set; }
+#endif
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp.CreateFromDiscriminatorValue); } },
                 { "custom_html", n => { CustomHtml = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_customPages_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_customPages_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasType.CreateFromDiscriminatorValue); } },
                 { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp.CreateFromDiscriminatorValue); } },
             };
@@ -109,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>("created_at", CreatedAt);
             writer.WriteStringValue("custom_html", CustomHtml);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_customPages_componentsSchemasName>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>("uid", Uid);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

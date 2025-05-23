@@ -15,7 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The integration_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType? IntegrationType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType IntegrationType { get; set; }
+#endif
         /// <summary>A reference id that can be supplied by the client. Currently this should be set to the Access-Okta IDP ID (a UUIDv4).https://developers.cloudflare.com/api/operations/access-identity-providers-get-an-access-identity-provider</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "integration_type", n => { IntegrationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType>(); } },
+                { "integration_type", n => { IntegrationType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType.CreateFromDiscriminatorValue); } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
                 { "tenant_url", n => { TenantUrl = n.GetStringValue(); } },
             };
@@ -69,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType>("integration_type", IntegrationType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType>("integration_type", IntegrationType);
             writer.WriteStringValue("reference_id", ReferenceId);
             writer.WriteStringValue("tenant_url", TenantUrl);
             writer.WriteAdditionalData(AdditionalData);

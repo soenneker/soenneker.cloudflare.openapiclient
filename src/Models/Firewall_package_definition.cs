@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasDescription Description { get; set; }
 #endif
         /// <summary>The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a &apos;block&apos; action will win over a &apos;challenge&apos; action).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode? DetectionMode { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode? DetectionMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode DetectionMode { get; set; }
+#endif
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_name Name { get; set; }
 #endif
         /// <summary>When set to `active`, indicates that the WAF package will be applied to the zone.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status? Status { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status Status { get; set; }
+#endif
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +68,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Firewall_package_definition()
         {
             AdditionalData = new Dictionary<string, object>();
-            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status.Active;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -77,10 +88,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasDescription.CreateFromDiscriminatorValue); } },
-                { "detection_mode", n => { DetectionMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode>(); } },
+                { "detection_mode", n => { DetectionMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_name.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status.CreateFromDiscriminatorValue); } },
                 { "zone_id", n => { ZoneId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier.CreateFromDiscriminatorValue); } },
             };
         }
@@ -92,8 +103,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode>("detection_mode", DetectionMode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier>("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }

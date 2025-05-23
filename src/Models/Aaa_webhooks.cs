@@ -63,7 +63,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret Secret { get; set; }
 #endif
         /// <summary>Type of webhook endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType Type { get; set; }
+#endif
         /// <summary>The POST endpoint to call when dispatching a notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_success", n => { LastSuccess = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url.CreateFromDiscriminatorValue); } },
             };
         }
@@ -120,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success>("last_success", LastSuccess);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret>("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url>("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

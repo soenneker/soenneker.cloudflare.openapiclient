@@ -56,7 +56,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_timestamp ModifiedOn { get; set; }
 #endif
         /// <summary>Specify the type of content list entry to block.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry"/> and sets the default values.
         /// </summary>
@@ -87,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_identifier.CreateFromDiscriminatorValue); } },
                 { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_timestamp.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -102,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_timestamp>("modified_on", ModifiedOn);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
