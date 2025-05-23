@@ -9,45 +9,53 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Observatory_apiResponseCollection : IAdditionalDataHolder, IParsable
+    public partial class Addresses : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>The code property</summary>
+        public int? Code { get; set; }
+        /// <summary>The documentation_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages>? Errors { get; set; }
+        public string? DocumentationUrl { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages> Errors { get; set; }
+        public string DocumentationUrl { get; set; }
 #endif
-        /// <summary>The messages property</summary>
+        /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages>? Messages { get; set; }
+        public string? Message { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages> Messages { get; set; }
+        public string Message { get; set; }
 #endif
-        /// <summary>Whether the API call was successful.</summary>
-        public bool? Success { get; set; }
+        /// <summary>The source property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses_source? Source { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses_source Source { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_apiResponseCollection"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses"/> and sets the default values.
         /// </summary>
-        public Observatory_apiResponseCollection()
+        public Addresses()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_apiResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_apiResponseCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_apiResponseCollection();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,9 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
+                { "code", n => { Code = n.GetIntValue(); } },
+                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses_source.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,9 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages>("messages", Messages);
-            writer.WriteBoolValue("success", Success);
+            writer.WriteIntValue("code", Code);
+            writer.WriteStringValue("documentation_url", DocumentationUrl);
+            writer.WriteStringValue("message", Message);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addresses_source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
