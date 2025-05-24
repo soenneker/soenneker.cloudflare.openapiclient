@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Search
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/search{?page*,per_page*,search_params*}", pathParameters)
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/search{?page*,per_page*,query*,references*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Search
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/search{?page*,per_page*,search_params*}", rawUrl)
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/search{?page*,per_page*,query*,references*}", rawUrl)
         {
         }
         /// <summary>
@@ -100,13 +100,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Search
             public double? PerPage { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("search_params")]
-            public string? SearchParams { get; set; }
+            [QueryParameter("query")]
+            public string? Query { get; set; }
 #nullable restore
 #else
-            [QueryParameter("search_params")]
-            public string SearchParams { get; set; }
+            [QueryParameter("query")]
+            public string Query { get; set; }
 #endif
+            [Obsolete("This property is deprecated, use ReferencesAsAccountLoadBalancerSearchSearchResourcesParamReferences instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("references")]
+            public string? References { get; set; }
+#nullable restore
+#else
+            [QueryParameter("references")]
+            public string References { get; set; }
+#endif
+            [QueryParameter("references")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_search_search_resources_Param_references? ReferencesAsAccountLoadBalancerSearchSearchResourcesParamReferences { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
