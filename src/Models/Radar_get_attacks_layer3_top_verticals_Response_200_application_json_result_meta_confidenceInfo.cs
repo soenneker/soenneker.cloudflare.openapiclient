@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_verticals_Response_200_application_json_result_meta_confidenceInfo_annotations> Annotations { get; set; }
 #endif
-        /// <summary>The level property</summary>
+        /// <summary>Provides an indication of how much confidence Cloudflare has in the data.</summary>
         public int? Level { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_verticals_Response_200_application_json_result_meta_confidenceInfo"/> and sets the default values.

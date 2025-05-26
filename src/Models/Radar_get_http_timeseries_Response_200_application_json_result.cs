@@ -14,21 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The meta property</summary>
+        /// <summary>Metadata for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_meta? Meta { get; set; }
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_meta Meta { get; set; }
-#endif
-        /// <summary>The serie_0 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_serie_0? Serie0 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_serie_0 Serie0 { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result"/> and sets the default values.
@@ -56,7 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_meta.CreateFromDiscriminatorValue); } },
-                { "serie_0", n => { Serie0 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_serie_0>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_serie_0.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_meta>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_Response_200_application_json_result_serie_0>("serie_0", Serie0);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

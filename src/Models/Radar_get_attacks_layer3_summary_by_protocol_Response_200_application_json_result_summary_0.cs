@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The GRE property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GRE { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string GRE { get; set; }
 #endif
-        /// <summary>The ICMP property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ICMP { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ICMP { get; set; }
 #endif
-        /// <summary>The TCP property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TCP { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TCP { get; set; }
 #endif
-        /// <summary>The UDP property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UDP { get; set; }

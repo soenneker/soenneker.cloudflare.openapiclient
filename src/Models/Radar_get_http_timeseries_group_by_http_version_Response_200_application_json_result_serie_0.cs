@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get; set; }
 #nullable restore
 #else
-        public List<string> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_http_version_Response_200_application_json_result_serie_0"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "HTTP/1.x", n => { HTTP1X = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "HTTP/2", n => { HTTP2 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "HTTP/3", n => { HTTP3 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<DateTimeOffset?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("HTTP/1.x", HTTP1X);
             writer.WriteCollectionOfPrimitiveValues<string>("HTTP/2", HTTP2);
             writer.WriteCollectionOfPrimitiveValues<string>("HTTP/3", HTTP3);
-            writer.WriteCollectionOfPrimitiveValues<string>("timestamps", Timestamps);
+            writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

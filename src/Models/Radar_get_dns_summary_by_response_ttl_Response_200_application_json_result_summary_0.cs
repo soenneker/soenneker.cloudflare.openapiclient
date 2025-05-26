@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The gt_15m_lte_1h property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Gt15mLte1h { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Gt15mLte1h { get; set; }
 #endif
-        /// <summary>The gt_1d_lte_1w property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Gt1dLte1w { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Gt1dLte1w { get; set; }
 #endif
-        /// <summary>The gt_1h_lte_1d property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Gt1hLte1d { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Gt1hLte1d { get; set; }
 #endif
-        /// <summary>The gt_1m_lte_5m property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Gt1mLte5m { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Gt1mLte5m { get; set; }
 #endif
-        /// <summary>The gt_1w property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Gt1w { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Gt1w { get; set; }
 #endif
-        /// <summary>The gt_5m_lte_15m property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Gt5mLte15m { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Gt5mLte15m { get; set; }
 #endif
-        /// <summary>The lte_1m property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Lte1m { get; set; }

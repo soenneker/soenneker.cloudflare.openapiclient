@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Metadata for the results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_meta? Meta { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_meta Meta { get; set; }
+#endif
         /// <summary>The top_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_meta.CreateFromDiscriminatorValue); } },
                 { "top_0", n => { Top0 = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_top_0>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_top_0.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_meta>("meta", Meta);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_ases_Response_200_application_json_result_top_0>("top_0", Top0);
             writer.WriteAdditionalData(AdditionalData);
         }

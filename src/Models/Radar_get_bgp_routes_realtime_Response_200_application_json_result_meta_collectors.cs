@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Collector { get; set; }
 #endif
-        /// <summary>Latest realtime stream timestamp for this collector.</summary>
+        /// <summary>Latest real-time stream timestamp for this collector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LatestRealtimeTs { get; set; }

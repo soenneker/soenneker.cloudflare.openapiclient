@@ -14,13 +14,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The top_0 property</summary>
+        /// <summary>The confidenceInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_top_0? Top0 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_confidenceInfo? ConfidenceInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_top_0 Top0 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_confidenceInfo ConfidenceInfo { get; set; }
+#endif
+        /// <summary>The dateRange property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_dateRange>? DateRange { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_dateRange> DateRange { get; set; }
+#endif
+        /// <summary>Timestamp of the last dataset update.</summary>
+        public DateTimeOffset? LastUpdated { get; set; }
+        /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_normalization? Normalization { get; set; }
+        /// <summary>Measurement units for the results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_units>? Units { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_units> Units { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta"/> and sets the default values.
@@ -47,7 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "top_0", n => { Top0 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_top_0>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_top_0.CreateFromDiscriminatorValue); } },
+                { "confidenceInfo", n => { ConfidenceInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_confidenceInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_confidenceInfo.CreateFromDiscriminatorValue); } },
+                { "dateRange", n => { DateRange = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_dateRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_dateRange.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "lastUpdated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
+                { "normalization", n => { Normalization = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_normalization>(); } },
+                { "units", n => { Units = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_units>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_units.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_top_0>("top_0", Top0);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_confidenceInfo>("confidenceInfo", ConfidenceInfo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_dateRange>("dateRange", DateRange);
+            writer.WriteDateTimeOffsetValue("lastUpdated", LastUpdated);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_normalization>("normalization", Normalization);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ranking_top_domains_Response_200_application_json_result_meta_units>("units", Units);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

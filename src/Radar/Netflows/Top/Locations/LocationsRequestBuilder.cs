@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top.Locations
         /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_Response_400_application_json">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_Response_404_application_json">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top.Locations.LocationsRequestBuilder.LocationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top.Locations
             var requestInfo = ToGetRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_Response_400_application_json.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_Response_404_application_json.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_top_locations_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

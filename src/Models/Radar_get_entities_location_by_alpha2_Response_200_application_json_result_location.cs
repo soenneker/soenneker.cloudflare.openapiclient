@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The confidenceLevel property</summary>
         public int? ConfidenceLevel { get; set; }
-        /// <summary>The latitude property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Latitude { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Latitude { get; set; }
 #endif
-        /// <summary>The longitude property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Longitude { get; set; }

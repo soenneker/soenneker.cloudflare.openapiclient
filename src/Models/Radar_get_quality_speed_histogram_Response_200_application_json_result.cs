@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_quality_speed_histogram_Response_200_application_json_result_histogram_0 Histogram0 { get; set; }
 #endif
-        /// <summary>The meta property</summary>
+        /// <summary>Metadata for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_quality_speed_histogram_Response_200_application_json_result_meta? Meta { get; set; }

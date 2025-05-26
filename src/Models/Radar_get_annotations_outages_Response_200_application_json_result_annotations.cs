@@ -47,13 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The endDate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EndDate { get; set; }
-#nullable restore
-#else
-        public string EndDate { get; set; }
-#endif
+        public DateTimeOffset? EndDate { get; set; }
         /// <summary>The eventType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,13 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Scope { get; set; }
 #endif
         /// <summary>The startDate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StartDate { get; set; }
-#nullable restore
-#else
-        public string StartDate { get; set; }
-#endif
+        public DateTimeOffset? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations"/> and sets the default values.
         /// </summary>
@@ -147,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "asnsDetails", n => { AsnsDetails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_asnsDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_asnsDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dataSource", n => { DataSource = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "endDate", n => { EndDate = n.GetStringValue(); } },
+                { "endDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "eventType", n => { EventType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "linkedUrl", n => { LinkedUrl = n.GetStringValue(); } },
@@ -155,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "locationsDetails", n => { LocationsDetails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_locationsDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_locationsDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "outage", n => { Outage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_outage>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_outage.CreateFromDiscriminatorValue); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
-                { "startDate", n => { StartDate = n.GetStringValue(); } },
+                { "startDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -169,7 +157,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_asnsDetails>("asnsDetails", AsnsDetails);
             writer.WriteStringValue("dataSource", DataSource);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("endDate", EndDate);
+            writer.WriteDateTimeOffsetValue("endDate", EndDate);
             writer.WriteStringValue("eventType", EventType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("linkedUrl", LinkedUrl);
@@ -177,7 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_locationsDetails>("locationsDetails", LocationsDetails);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_outages_Response_200_application_json_result_annotations_outage>("outage", Outage);
             writer.WriteStringValue("scope", Scope);
-            writer.WriteStringValue("startDate", StartDate);
+            writer.WriteDateTimeOffsetValue("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

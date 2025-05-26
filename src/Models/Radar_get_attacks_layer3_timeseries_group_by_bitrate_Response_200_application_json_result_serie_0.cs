@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get; set; }
 #nullable restore
 #else
-        public List<string> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get; set; }
 #endif
         /// <summary>The UNDER_500_MBPS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "_1_GBPS_TO_10_GBPS", n => { N1GBPSTO10GBPS = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "_500_MBPS_TO_1_GBPS", n => { N500MBPSTO1GBPS = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "OVER_100_GBPS", n => { OVER100GBPS = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<DateTimeOffset?>()?.AsList(); } },
                 { "UNDER_500_MBPS", n => { UNDER500MBPS = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("_1_GBPS_TO_10_GBPS", N1GBPSTO10GBPS);
             writer.WriteCollectionOfPrimitiveValues<string>("_500_MBPS_TO_1_GBPS", N500MBPSTO1GBPS);
             writer.WriteCollectionOfPrimitiveValues<string>("OVER_100_GBPS", OVER100GBPS);
-            writer.WriteCollectionOfPrimitiveValues<string>("timestamps", Timestamps);
+            writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
             writer.WriteCollectionOfPrimitiveValues<string>("UNDER_500_MBPS", UNDER500MBPS);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get; set; }
 #nullable restore
 #else
-        public List<string> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get; set; }
 #endif
         /// <summary>The UDP property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "GRE", n => { GRE = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ICMP", n => { ICMP = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "TCP", n => { TCP = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<DateTimeOffset?>()?.AsList(); } },
                 { "UDP", n => { UDP = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("GRE", GRE);
             writer.WriteCollectionOfPrimitiveValues<string>("ICMP", ICMP);
             writer.WriteCollectionOfPrimitiveValues<string>("TCP", TCP);
-            writer.WriteCollectionOfPrimitiveValues<string>("timestamps", Timestamps);
+            writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
             writer.WriteCollectionOfPrimitiveValues<string>("UDP", UDP);
             writer.WriteAdditionalData(AdditionalData);
         }

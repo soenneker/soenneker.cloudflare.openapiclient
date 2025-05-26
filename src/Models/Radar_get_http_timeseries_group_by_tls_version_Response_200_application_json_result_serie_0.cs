@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get; set; }
 #nullable restore
 #else
-        public List<string> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get; set; }
 #endif
         /// <summary>The TLS10 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "TLS 1.2", n => { TLS12 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "TLS 1.3", n => { TLS13 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "TLS QUIC", n => { TLSQUIC = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<DateTimeOffset?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("timestamps", Timestamps);
+            writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
             writer.WriteCollectionOfPrimitiveValues<string>("TLS 1.0", TLS10);
             writer.WriteCollectionOfPrimitiveValues<string>("TLS 1.1", TLS11);
             writer.WriteCollectionOfPrimitiveValues<string>("TLS 1.2", TLS12);

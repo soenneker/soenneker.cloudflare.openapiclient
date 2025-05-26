@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Radar_get_attacks_layer3_summary_by_bitrate_Response_200_application_json_result_summary_0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The _10_GBPS_TO_100_GBPS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N10GBPSTO100GBPS { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string N10GBPSTO100GBPS { get; set; }
 #endif
-        /// <summary>The _1_GBPS_TO_10_GBPS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N1GBPSTO10GBPS { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string N1GBPSTO10GBPS { get; set; }
 #endif
-        /// <summary>The _500_MBPS_TO_1_GBPS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N500MBPSTO1GBPS { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The OVER_100_GBPS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OVER100GBPS { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OVER100GBPS { get; set; }
 #endif
-        /// <summary>The UNDER_500_MBPS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UNDER500MBPS { get; set; }

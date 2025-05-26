@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,8 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Operations.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Operations.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
                 { "upload_details", n => { UploadDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_upload_details_errors_critical>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_upload_details_errors_critical.CreateFromDiscriminatorValue); } },
@@ -90,8 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Configuration>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Operations>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure_result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_upload_details_errors_critical>("upload_details", UploadDetails);

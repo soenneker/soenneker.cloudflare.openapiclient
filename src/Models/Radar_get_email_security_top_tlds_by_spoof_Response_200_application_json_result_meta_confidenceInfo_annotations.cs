@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Annotation associated with the result (e.g. outage or other type of event).
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Radar_get_email_security_top_tlds_by_spoof_Response_200_application_json_result_meta_confidenceInfo_annotations : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -40,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>The isInstantaneous property</summary>
+        /// <summary>Whether event is a single point in time or a time range.</summary>
         public bool? IsInstantaneous { get; set; }
         /// <summary>The linkedUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

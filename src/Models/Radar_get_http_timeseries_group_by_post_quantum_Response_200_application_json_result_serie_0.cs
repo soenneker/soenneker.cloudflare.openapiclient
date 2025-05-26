@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get; set; }
 #nullable restore
 #else
-        public List<string> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_post_quantum_Response_200_application_json_result_serie_0"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "NOT_SUPPORTED", n => { NOTSUPPORTED = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "SUPPORTED", n => { SUPPORTED = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<DateTimeOffset?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("NOT_SUPPORTED", NOTSUPPORTED);
             writer.WriteCollectionOfPrimitiveValues<string>("SUPPORTED", SUPPORTED);
-            writer.WriteCollectionOfPrimitiveValues<string>("timestamps", Timestamps);
+            writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_Response_200_application_json_result_trafficAnomalies_asnDetails AsnDetails { get; set; }
 #endif
         /// <summary>The endDate property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EndDate { get; set; }
-#nullable restore
-#else
-        public string EndDate { get; set; }
-#endif
+        public DateTimeOffset? EndDate { get; set; }
         /// <summary>The locationDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "asnDetails", n => { AsnDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_Response_200_application_json_result_trafficAnomalies_asnDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_Response_200_application_json_result_trafficAnomalies_asnDetails.CreateFromDiscriminatorValue); } },
-                { "endDate", n => { EndDate = n.GetStringValue(); } },
+                { "endDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "locationDetails", n => { LocationDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_Response_200_application_json_result_trafficAnomalies_locationDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_Response_200_application_json_result_trafficAnomalies_locationDetails.CreateFromDiscriminatorValue); } },
                 { "startDate", n => { StartDate = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -121,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_Response_200_application_json_result_trafficAnomalies_asnDetails>("asnDetails", AsnDetails);
-            writer.WriteStringValue("endDate", EndDate);
+            writer.WriteDateTimeOffsetValue("endDate", EndDate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_Response_200_application_json_result_trafficAnomalies_locationDetails>("locationDetails", LocationDetails);
             writer.WriteStringValue("startDate", StartDate);
             writer.WriteStringValue("status", Status);

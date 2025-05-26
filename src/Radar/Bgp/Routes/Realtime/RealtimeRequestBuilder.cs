@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Realtime
         {
         }
         /// <summary>
-        /// Retrieves realtime routes for prefixes using public realtime data collectors (RouteViews and RIPE RIS).
+        /// Retrieves real-time BGP routes for a prefix, using public real-time data collectors (RouteViews and RIPE RIS).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_routes_realtime_Response_200_application_json"/></returns>
         /// <param name="body">Fallback request body schema</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Realtime
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_routes_realtime_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_routes_realtime_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves realtime routes for prefixes using public realtime data collectors (RouteViews and RIPE RIS).
+        /// Retrieves real-time BGP routes for a prefix, using public real-time data collectors (RouteViews and RIPE RIS).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fallback request body schema</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Realtime
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Realtime.RealtimeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves realtime routes for prefixes using public realtime data collectors (RouteViews and RIPE RIS).
+        /// Retrieves real-time BGP routes for a prefix, using public real-time data collectors (RouteViews and RIPE RIS).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RealtimeRequestBuilderGetQueryParameters 

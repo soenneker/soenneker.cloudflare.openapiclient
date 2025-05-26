@@ -7,13 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Metadata for the results.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_aggInterval? AggInterval { get; set; }
+        /// <summary>The confidenceInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_confidenceInfo? ConfidenceInfo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_confidenceInfo ConfidenceInfo { get; set; }
+#endif
+        /// <summary>The dateRange property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_dateRange>? DateRange { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_dateRange> DateRange { get; set; }
+#endif
+        /// <summary>Timestamp of the last dataset update.</summary>
+        public DateTimeOffset? LastUpdated { get; set; }
+        /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_normalization? Normalization { get; set; }
+        /// <summary>Measurement units for the results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_units>? Units { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_units> Units { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta"/> and sets the default values.
         /// </summary>
@@ -39,6 +70,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "aggInterval", n => { AggInterval = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_aggInterval>(); } },
+                { "confidenceInfo", n => { ConfidenceInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_confidenceInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_confidenceInfo.CreateFromDiscriminatorValue); } },
+                { "dateRange", n => { DateRange = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_dateRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_dateRange.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "lastUpdated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
+                { "normalization", n => { Normalization = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_normalization>(); } },
+                { "units", n => { Units = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_units>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_units.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -48,6 +85,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_aggInterval>("aggInterval", AggInterval);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_confidenceInfo>("confidenceInfo", ConfidenceInfo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_dateRange>("dateRange", DateRange);
+            writer.WriteDateTimeOffsetValue("lastUpdated", LastUpdated);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_normalization>("normalization", Normalization);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_spf_Response_200_application_json_result_meta_units>("units", Units);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

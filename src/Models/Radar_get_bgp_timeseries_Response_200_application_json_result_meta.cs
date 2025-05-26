@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aggInterval property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AggInterval { get; set; }
-#nullable restore
-#else
-        public string AggInterval { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_aggInterval? AggInterval { get; set; }
         /// <summary>The confidenceInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggInterval", n => { AggInterval = n.GetStringValue(); } },
+                { "aggInterval", n => { AggInterval = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_aggInterval>(); } },
                 { "confidenceInfo", n => { ConfidenceInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_confidenceInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_confidenceInfo.CreateFromDiscriminatorValue); } },
                 { "dateRange", n => { DateRange = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_dateRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_dateRange.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "lastUpdated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
@@ -78,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("aggInterval", AggInterval);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_aggInterval>("aggInterval", AggInterval);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_confidenceInfo>("confidenceInfo", ConfidenceInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_timeseries_Response_200_application_json_result_meta_dateRange>("dateRange", DateRange);
             writer.WriteDateTimeOffsetValue("lastUpdated", LastUpdated);

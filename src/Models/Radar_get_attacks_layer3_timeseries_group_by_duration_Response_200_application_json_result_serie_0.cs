@@ -57,10 +57,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timestamps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Timestamps { get; set; }
+        public List<DateTimeOffset?>? Timestamps { get; set; }
 #nullable restore
 #else
-        public List<string> Timestamps { get; set; }
+        public List<DateTimeOffset?> Timestamps { get; set; }
 #endif
         /// <summary>The UNDER_10_MINS property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "_20_MINS_TO_40_MINS", n => { N20MINSTO40MINS = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "_40_MINS_TO_1_HOUR", n => { N40MINSTO1HOUR = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "OVER_3_HOURS", n => { OVER3HOURS = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "timestamps", n => { Timestamps = n.GetCollectionOfPrimitiveValues<DateTimeOffset?>()?.AsList(); } },
                 { "UNDER_10_MINS", n => { UNDER10MINS = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("_20_MINS_TO_40_MINS", N20MINSTO40MINS);
             writer.WriteCollectionOfPrimitiveValues<string>("_40_MINS_TO_1_HOUR", N40MINSTO1HOUR);
             writer.WriteCollectionOfPrimitiveValues<string>("OVER_3_HOURS", OVER3HOURS);
-            writer.WriteCollectionOfPrimitiveValues<string>("timestamps", Timestamps);
+            writer.WriteCollectionOfPrimitiveValues<DateTimeOffset?>("timestamps", Timestamps);
             writer.WriteCollectionOfPrimitiveValues<string>("UNDER_10_MINS", UNDER10MINS);
             writer.WriteAdditionalData(AdditionalData);
         }

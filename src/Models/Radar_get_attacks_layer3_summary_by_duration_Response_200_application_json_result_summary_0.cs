@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Radar_get_attacks_layer3_summary_by_duration_Response_200_application_json_result_summary_0 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The _10_MINS_TO_20_MINS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N10MINSTO20MINS { get; set; }
@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string N10MINSTO20MINS { get; set; }
 #endif
-        /// <summary>The _1_HOUR_TO_3_HOURS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N1HOURTO3HOURS { get; set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string N1HOURTO3HOURS { get; set; }
 #endif
-        /// <summary>The _20_MINS_TO_40_MINS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N20MINSTO40MINS { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string N20MINSTO40MINS { get; set; }
 #endif
-        /// <summary>The _40_MINS_TO_1_HOUR property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? N40MINSTO1HOUR { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The OVER_3_HOURS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OVER3HOURS { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OVER3HOURS { get; set; }
 #endif
-        /// <summary>The UNDER_10_MINS property</summary>
+        /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UNDER10MINS { get; set; }

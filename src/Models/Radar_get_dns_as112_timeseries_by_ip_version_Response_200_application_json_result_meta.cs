@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Metadata for the results.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -30,21 +31,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_dateRange> DateRange { get; set; }
 #endif
-        /// <summary>The lastUpdated property</summary>
+        /// <summary>Timestamp of the last dataset update.</summary>
+        public DateTimeOffset? LastUpdated { get; set; }
+        /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_normalization? Normalization { get; set; }
+        /// <summary>Measurement units for the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastUpdated { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_units>? Units { get; set; }
 #nullable restore
 #else
-        public string LastUpdated { get; set; }
-#endif
-        /// <summary>The normalization property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Normalization { get; set; }
-#nullable restore
-#else
-        public string Normalization { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_units> Units { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta"/> and sets the default values.
@@ -73,8 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "confidenceInfo", n => { ConfidenceInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_confidenceInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_confidenceInfo.CreateFromDiscriminatorValue); } },
                 { "dateRange", n => { DateRange = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_dateRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_dateRange.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "lastUpdated", n => { LastUpdated = n.GetStringValue(); } },
-                { "normalization", n => { Normalization = n.GetStringValue(); } },
+                { "lastUpdated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
+                { "normalization", n => { Normalization = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_normalization>(); } },
+                { "units", n => { Units = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_units>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_units.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -86,8 +84,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_confidenceInfo>("confidenceInfo", ConfidenceInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_dateRange>("dateRange", DateRange);
-            writer.WriteStringValue("lastUpdated", LastUpdated);
-            writer.WriteStringValue("normalization", Normalization);
+            writer.WriteDateTimeOffsetValue("lastUpdated", LastUpdated);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_normalization>("normalization", Normalization);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_as112_timeseries_by_ip_version_Response_200_application_json_result_meta_units>("units", Units);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
