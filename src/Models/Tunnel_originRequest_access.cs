@@ -39,7 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Tunnel_originRequest_access()
         {
             AdditionalData = new Dictionary<string, object>();
-            TeamName = "Your Zero Trust organization name.";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

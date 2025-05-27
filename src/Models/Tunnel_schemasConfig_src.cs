@@ -23,7 +23,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Tunnel_schemasConfig_src()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src_Value.Local;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
