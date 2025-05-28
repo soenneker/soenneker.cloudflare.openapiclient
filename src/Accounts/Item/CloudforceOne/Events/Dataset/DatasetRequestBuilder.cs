@@ -27,12 +27,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.events.dataset.item collection</summary>
         /// <param name="position">Dataset ID.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.WithDataset_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.WithDataset_ItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.WithDataset_ItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("dataset_id", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.WithDataset_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.events.dataset.item collection</summary>
+        /// <param name="position">Dataset ID.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.WithDataset_ItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.WithDataset_ItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("dataset_id", position);
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset.Item.WithDataset_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }

@@ -10,6 +10,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection;
@@ -123,6 +124,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs.Audit_logsRequestBuilder Audit_logs
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs.Audit_logsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The autorag property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.AutoragRequestBuilder Autorag
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.AutoragRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The billing property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BillingRequestBuilder Billing
