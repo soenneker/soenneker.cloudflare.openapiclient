@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CnisRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis{?cursor*,limit*,slot*}", pathParameters)
+        public CnisRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis{?cursor*,limit*,slot*,tunnel_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CnisRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis{?cursor*,limit*,slot*}", rawUrl)
+        public CnisRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cni/cnis{?cursor*,limit*,slot*,tunnel_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -171,6 +171,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.Cnis
 #else
             [QueryParameter("slot")]
             public string Slot { get; set; }
+#endif
+            /// <summary>If specified, only show cnis associated with the specified tunnel id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tunnel_id")]
+            public string? TunnelId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tunnel_id")]
+            public string TunnelId { get; set; }
 #endif
         }
         /// <summary>

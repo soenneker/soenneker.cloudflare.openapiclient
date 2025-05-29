@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>Country to geo egress from</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Urlscanner_create_scan_v2_RequestBody_application_json_country
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "AF")]
         #pragma warning disable CS1591

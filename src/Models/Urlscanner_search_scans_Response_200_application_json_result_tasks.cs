@@ -36,14 +36,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Scan id</summary>
         public Guid? Uuid { get; set; }
-        /// <summary>Visibility status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Visibility { get; set; }
-#nullable restore
-#else
-        public string Visibility { get; set; }
-#endif
+        /// <summary>Submitted visibility status.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_Response_200_application_json_result_tasks_visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_Response_200_application_json_result_tasks"/> and sets the default values.
         /// </summary>
@@ -74,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "time", n => { Time = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
-                { "visibility", n => { Visibility = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_Response_200_application_json_result_tasks_visibility>(); } },
             };
         }
         /// <summary>
@@ -89,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("time", Time);
             writer.WriteStringValue("url", Url);
             writer.WriteGuidValue("uuid", Uuid);
-            writer.WriteStringValue("visibility", Visibility);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_Response_200_application_json_result_tasks_visibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

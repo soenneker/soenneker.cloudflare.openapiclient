@@ -27,13 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Scan ID.</summary>
         public Guid? Uuid { get; set; }
         /// <summary>Submitted visibility status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Visibility { get; set; }
-#nullable restore
-#else
-        public string Visibility { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_Response_200_application_json_result_visibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_Response_200_application_json_result"/> and sets the default values.
         /// </summary>
@@ -62,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "time", n => { Time = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
-                { "visibility", n => { Visibility = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_Response_200_application_json_result_visibility>(); } },
             };
         }
         /// <summary>
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("time", Time);
             writer.WriteStringValue("url", Url);
             writer.WriteGuidValue("uuid", Uuid);
-            writer.WriteStringValue("visibility", Visibility);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_Response_200_application_json_result_visibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

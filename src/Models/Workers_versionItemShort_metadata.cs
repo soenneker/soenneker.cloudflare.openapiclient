@@ -14,6 +14,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The author_email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthorEmail { get; private set; }
+#nullable restore
+#else
+        public string AuthorEmail { get; private set; }
+#endif
+        /// <summary>The author_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthorId { get; private set; }
+#nullable restore
+#else
+        public string AuthorId { get; private set; }
+#endif
+        /// <summary>The created_on property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedOn { get; private set; }
+#nullable restore
+#else
+        public string CreatedOn { get; private set; }
+#endif
+        /// <summary>The hasPreview property</summary>
+        public bool? HasPreview { get; private set; }
+        /// <summary>The modified_on property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifiedOn { get; private set; }
+#nullable restore
+#else
+        public string ModifiedOn { get; private set; }
+#endif
+        /// <summary>The source property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort_metadata_source? Source { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort_metadata"/> and sets the default values.
         /// </summary>
@@ -39,6 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "author_email", n => { AuthorEmail = n.GetStringValue(); } },
+                { "author_id", n => { AuthorId = n.GetStringValue(); } },
+                { "created_on", n => { CreatedOn = n.GetStringValue(); } },
+                { "hasPreview", n => { HasPreview = n.GetBoolValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort_metadata_source>(); } },
             };
         }
         /// <summary>
