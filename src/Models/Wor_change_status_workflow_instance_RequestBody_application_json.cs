@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Possible actions to apply to instance.</summary>
+        /// <summary>Apply action to instance.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_change_status_workflow_instance_RequestBody_application_json_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_change_status_workflow_instance_RequestBody_application_json"/> and sets the default values.

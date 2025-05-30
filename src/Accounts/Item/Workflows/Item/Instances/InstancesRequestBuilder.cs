@@ -171,10 +171,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InstancesRequestBuilderGetQueryParameters 
         {
-            /// <summary>In ISO 8601 with no timezone offsets and in UTC.</summary>
+            /// <summary>Accepts ISO 8601 with no timezone offsets and in UTC.</summary>
             [QueryParameter("date_end")]
             public DateTimeOffset? DateEnd { get; set; }
-            /// <summary>In ISO 8601 with no timezone offsets and in UTC.</summary>
+            /// <summary>Accepts ISO 8601 with no timezone offsets and in UTC.</summary>
             [QueryParameter("date_start")]
             public DateTimeOffset? DateStart { get; set; }
             [QueryParameter("page")]

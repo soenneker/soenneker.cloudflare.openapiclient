@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_change_status_workflow_instance_Response_200_application_json_result_status? Status { get; set; }
-        /// <summary>In ISO 8601 with no timezone offsets and in UTC.</summary>
+        /// <summary>Accepts ISO 8601 with no timezone offsets and in UTC.</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_change_status_workflow_instance_Response_200_application_json_result"/> and sets the default values.

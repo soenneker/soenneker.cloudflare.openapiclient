@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Possible actions to apply to instance.</summary>
+    /// <summary>Apply action to instance.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Wor_change_status_workflow_instance_RequestBody_application_json_status
     {

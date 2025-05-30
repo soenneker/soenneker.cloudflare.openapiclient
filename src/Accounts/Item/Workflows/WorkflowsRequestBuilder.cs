@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows
             public double? Page { get; set; }
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
-            /// <summary>Filter workflows by name.</summary>
+            /// <summary>Allows filtering workflows` name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
