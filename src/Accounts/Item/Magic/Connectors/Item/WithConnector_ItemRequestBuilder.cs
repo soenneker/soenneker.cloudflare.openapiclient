@@ -40,6 +40,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         {
         }
         /// <summary>
+        /// Remove a connector from your account
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_delete_response"/></returns>
+        /// <param name="body">Fallback request body schema</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 500 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_delete_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_delete_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_delete_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_delete_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_delete_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_delete_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Fetch Connector
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_fetch_response"/></returns>
@@ -133,6 +164,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Remove a connector from your account
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">Fallback request body schema</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_delete_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_connector_delete_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Fetch Connector
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -206,6 +259,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnector_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.WithConnector_ItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
+        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithConnector_ItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
