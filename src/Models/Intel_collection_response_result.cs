@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The content_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory>? ContentCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bulk>? ContentCategories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory> ContentCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bulk> ContentCategories { get; set; }
 #endif
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "additional_information", n => { AdditionalInformation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_additional_information>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_additional_information.CreateFromDiscriminatorValue); } },
                 { "application", n => { Application = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_application>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_application.CreateFromDiscriminatorValue); } },
-                { "content_categories", n => { ContentCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory>(global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "content_categories", n => { ContentCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bulk>(global::Soenneker.Cloudflare.OpenApiClient.Models.Bulk.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "domain", n => { Domain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name.CreateFromDiscriminatorValue); } },
                 { "inherited_content_categories", n => { InheritedContentCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inherited_from", n => { InheritedFrom = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from.CreateFromDiscriminatorValue); } },
@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_additional_information>("additional_information", AdditionalInformation);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_application>("application", Application);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory>("content_categories", ContentCategories);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bulk>("content_categories", ContentCategories);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name>("domain", Domain);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>("inherited_content_categories", InheritedContentCategories);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from>("inherited_from", InheritedFrom);
