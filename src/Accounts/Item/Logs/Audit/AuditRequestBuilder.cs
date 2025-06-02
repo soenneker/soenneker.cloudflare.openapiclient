@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,action_result*,action_type*,actor_context*,actor_email*,actor_id*,actor_ip_address*,actor_token_id*,actor_token_name*,actor_type*,audit_log_id*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_method*,raw_status_code*,raw_uri*,resource_id*,resource_product*,resource_scope*,resource_type*,zone_id*,zone_name*}", pathParameters)
+        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,action_result*,action_type*,actor_context*,actor_email*,actor_id*,actor_ip_address*,actor_token_id*,actor_token_name*,actor_type*,audit_log_id*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_method*,raw_status_code*,raw_uri*,resource_id*,resource_product*,resource_scope*,resource_type*,zone_id*,zone_name*}", rawUrl)
+        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", rawUrl)
         {
         }
         /// <summary>
@@ -98,115 +98,282 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("account_name")]
-            public string? AccountName { get; set; }
+            public string[]? AccountName { get; set; }
 #nullable restore
 #else
             [QueryParameter("account_name")]
-            public string AccountName { get; set; }
+            public string[] AccountName { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ActionResultAsAuditLogsV2GetAccountAuditLogsParamActionResult instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("account_name%2Enot")]
+            public string[]? AccountNameNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("account_name%2Enot")]
+            public string[] AccountNameNot { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActionResultAsGetActionResultQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("action_result")]
-            public string? ActionResult { get; set; }
+            public string[]? ActionResult { get; set; }
 #nullable restore
 #else
             [QueryParameter("action_result")]
-            public string ActionResult { get; set; }
+            public string[] ActionResult { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("action_result")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_action_result? ActionResultAsAuditLogsV2GetAccountAuditLogsParamActionResult { get; set; }
-            [Obsolete("This property is deprecated, use ActionTypeAsAuditLogsV2GetAccountAuditLogsParamActionType instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[]? ActionResultAsGetActionResultQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_result")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[] ActionResultAsGetActionResultQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActionResultNotAsGetActionResultNotQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action_result%2Enot")]
+            public string[]? ActionResultNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_result%2Enot")]
+            public string[] ActionResultNot { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action_result%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[]? ActionResultNotAsGetActionResultNotQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_result%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[] ActionResultNotAsGetActionResultNotQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActionTypeAsGetActionTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("action_type")]
-            public string? ActionType { get; set; }
+            public string[]? ActionType { get; set; }
 #nullable restore
 #else
             [QueryParameter("action_type")]
-            public string ActionType { get; set; }
+            public string[] ActionType { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("action_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_action_type? ActionTypeAsAuditLogsV2GetAccountAuditLogsParamActionType { get; set; }
-            [Obsolete("This property is deprecated, use ActorContextAsAuditLogsV2GetAccountAuditLogsParamActorContext instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[]? ActionTypeAsGetActionTypeQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[] ActionTypeAsGetActionTypeQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActionTypeNotAsGetActionTypeNotQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action_type%2Enot")]
+            public string[]? ActionTypeNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_type%2Enot")]
+            public string[] ActionTypeNot { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("action_type%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[]? ActionTypeNotAsGetActionTypeNotQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action_type%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[] ActionTypeNotAsGetActionTypeNotQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActorContextAsGetActorContextQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_context")]
-            public string? ActorContext { get; set; }
+            public string[]? ActorContext { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_context")]
-            public string ActorContext { get; set; }
+            public string[] ActorContext { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("actor_context")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_actor_context? ActorContextAsAuditLogsV2GetAccountAuditLogsParamActorContext { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[]? ActorContextAsGetActorContextQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_context")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[] ActorContextAsGetActorContextQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActorContextNotAsGetActorContextNotQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_context%2Enot")]
+            public string[]? ActorContextNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_context%2Enot")]
+            public string[] ActorContextNot { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_context%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[]? ActorContextNotAsGetActorContextNotQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_context%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[] ActorContextNotAsGetActorContextNotQueryParameterType { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_email")]
-            public string? ActorEmail { get; set; }
+            public string[]? ActorEmail { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_email")]
-            public string ActorEmail { get; set; }
+            public string[] ActorEmail { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_email%2Enot")]
+            public string[]? ActorEmailNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_email%2Enot")]
+            public string[] ActorEmailNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_id")]
-            public string? ActorId { get; set; }
+            public string[]? ActorId { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_id")]
-            public string ActorId { get; set; }
+            public string[] ActorId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_id%2Enot")]
+            public string[]? ActorIdNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_id%2Enot")]
+            public string[] ActorIdNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_ip_address")]
-            public string? ActorIpAddress { get; set; }
+            public string[]? ActorIpAddress { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_ip_address")]
-            public string ActorIpAddress { get; set; }
+            public string[] ActorIpAddress { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_ip_address%2Enot")]
+            public string[]? ActorIpAddressNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_ip_address%2Enot")]
+            public string[] ActorIpAddressNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_token_id")]
-            public string? ActorTokenId { get; set; }
+            public string[]? ActorTokenId { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_token_id")]
-            public string ActorTokenId { get; set; }
+            public string[] ActorTokenId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_token_id%2Enot")]
+            public string[]? ActorTokenIdNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_token_id%2Enot")]
+            public string[] ActorTokenIdNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_token_name")]
-            public string? ActorTokenName { get; set; }
+            public string[]? ActorTokenName { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_token_name")]
-            public string ActorTokenName { get; set; }
+            public string[] ActorTokenName { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ActorTypeAsAuditLogsV2GetAccountAuditLogsParamActorType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_token_name%2Enot")]
+            public string[]? ActorTokenNameNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_token_name%2Enot")]
+            public string[] ActorTokenNameNot { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActorTypeAsGetActorTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_type")]
-            public string? ActorType { get; set; }
+            public string[]? ActorType { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_type")]
-            public string ActorType { get; set; }
+            public string[] ActorType { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("actor_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_actor_type? ActorTypeAsAuditLogsV2GetAccountAuditLogsParamActorType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[]? ActorTypeAsGetActorTypeQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[] ActorTypeAsGetActorTypeQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ActorTypeNotAsGetActorTypeNotQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_type%2Enot")]
+            public string[]? ActorTypeNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_type%2Enot")]
+            public string[] ActorTypeNot { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("actor_type%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[]? ActorTypeNotAsGetActorTypeNotQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("actor_type%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[] ActorTypeNotAsGetActorTypeNotQueryParameterType { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("audit_log_id")]
-            public string? AuditLogId { get; set; }
+            public string[]? AuditLogId { get; set; }
 #nullable restore
 #else
             [QueryParameter("audit_log_id")]
-            public string AuditLogId { get; set; }
+            public string[] AuditLogId { get; set; }
 #endif
-            /// <summary>Filters actions based on a given timestamp in the format yyyy-mm-dd, returning only logs that occurred on and before the specified date.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("audit_log_id%2Enot")]
+            public string[]? AuditLogIdNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("audit_log_id%2Enot")]
+            public string[] AuditLogIdNot { get; set; }
+#endif
+            /// <summary>Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.</summary>
             [QueryParameter("before")]
             public Date? Before { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -235,91 +402,205 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("raw_cf_ray_id")]
-            public string? RawCfRayId { get; set; }
+            public string[]? RawCfRayId { get; set; }
 #nullable restore
 #else
             [QueryParameter("raw_cf_ray_id")]
-            public string RawCfRayId { get; set; }
+            public string[] RawCfRayId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw_cf_ray_id%2Enot")]
+            public string[]? RawCfRayIdNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_cf_ray_id%2Enot")]
+            public string[] RawCfRayIdNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("raw_method")]
-            public string? RawMethod { get; set; }
+            public string[]? RawMethod { get; set; }
 #nullable restore
 #else
             [QueryParameter("raw_method")]
-            public string RawMethod { get; set; }
+            public string[] RawMethod { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw_method%2Enot")]
+            public string[]? RawMethodNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_method%2Enot")]
+            public string[] RawMethodNot { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("raw_status_code")]
-            public int? RawStatusCode { get; set; }
+            public int?[]? RawStatusCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_status_code")]
+            public int?[] RawStatusCode { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw_status_code%2Enot")]
+            public int?[]? RawStatusCodeNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_status_code%2Enot")]
+            public int?[] RawStatusCodeNot { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("raw_uri")]
-            public string? RawUri { get; set; }
+            public string[]? RawUri { get; set; }
 #nullable restore
 #else
             [QueryParameter("raw_uri")]
-            public string RawUri { get; set; }
+            public string[] RawUri { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("raw_uri%2Enot")]
+            public string[]? RawUriNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("raw_uri%2Enot")]
+            public string[] RawUriNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_id")]
-            public string? ResourceId { get; set; }
+            public string[]? ResourceId { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_id")]
-            public string ResourceId { get; set; }
+            public string[] ResourceId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_id%2Enot")]
+            public string[]? ResourceIdNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_id%2Enot")]
+            public string[] ResourceIdNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_product")]
-            public string? ResourceProduct { get; set; }
+            public string[]? ResourceProduct { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_product")]
-            public string ResourceProduct { get; set; }
+            public string[] ResourceProduct { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ResourceScopeAsAuditLogsV2GetAccountAuditLogsParamResourceScope instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_product%2Enot")]
+            public string[]? ResourceProductNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_product%2Enot")]
+            public string[] ResourceProductNot { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ResourceScopeAsGetResourceScopeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_scope")]
-            public string? ResourceScope { get; set; }
+            public string[]? ResourceScope { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_scope")]
-            public string ResourceScope { get; set; }
+            public string[] ResourceScope { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("resource_scope")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Audit_logs_v2_get_account_audit_logs_Param_resource_scope? ResourceScopeAsAuditLogsV2GetAccountAuditLogsParamResourceScope { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[]? ResourceScopeAsGetResourceScopeQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_scope")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[] ResourceScopeAsGetResourceScopeQueryParameterType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use ResourceScopeNotAsGetResourceScopeNotQueryParameterType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_scope%2Enot")]
+            public string[]? ResourceScopeNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_scope%2Enot")]
+            public string[] ResourceScopeNot { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_scope%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[]? ResourceScopeNotAsGetResourceScopeNotQueryParameterType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_scope%2Enot")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[] ResourceScopeNotAsGetResourceScopeNotQueryParameterType { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_type")]
-            public string? ResourceType { get; set; }
+            public string[]? ResourceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_type")]
-            public string ResourceType { get; set; }
+            public string[] ResourceType { get; set; }
 #endif
-            /// <summary>Filters actions based on a given timestamp in the format yyyy-mm-dd, returning only logs that occurred on and after the specified date.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_type%2Enot")]
+            public string[]? ResourceTypeNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_type%2Enot")]
+            public string[] ResourceTypeNot { get; set; }
+#endif
+            /// <summary>Limits the returned results to logs newer than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.</summary>
             [QueryParameter("since")]
             public Date? Since { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("zone_id")]
-            public string? ZoneId { get; set; }
+            public string[]? ZoneId { get; set; }
 #nullable restore
 #else
             [QueryParameter("zone_id")]
-            public string ZoneId { get; set; }
+            public string[] ZoneId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("zone_id%2Enot")]
+            public string[]? ZoneIdNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("zone_id%2Enot")]
+            public string[] ZoneIdNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("zone_name")]
-            public string? ZoneName { get; set; }
+            public string[]? ZoneName { get; set; }
 #nullable restore
 #else
             [QueryParameter("zone_name")]
-            public string ZoneName { get; set; }
+            public string[] ZoneName { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("zone_name%2Enot")]
+            public string[]? ZoneNameNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("zone_name%2Enot")]
+            public string[] ZoneNameNot { get; set; }
 #endif
         }
         /// <summary>
