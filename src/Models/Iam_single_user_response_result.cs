@@ -14,6 +14,94 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Lists the betas that the user is participating in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Betas { get; private set; }
+#nullable restore
+#else
+        public List<string> Betas { get; private set; }
+#endif
+        /// <summary>The country in which the user lives.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country? Country { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country Country { get; set; }
+#endif
+        /// <summary>User&apos;s first name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name? FirstName { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name FirstName { get; set; }
+#endif
+        /// <summary>Indicates whether user has any business zones</summary>
+        public bool? HasBusinessZones { get; private set; }
+        /// <summary>Indicates whether user has any enterprise zones</summary>
+        public bool? HasEnterpriseZones { get; private set; }
+        /// <summary>Indicates whether user has any pro zones</summary>
+        public bool? HasProZones { get; private set; }
+        /// <summary>Identifier of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; private set; }
+#nullable restore
+#else
+        public string Id { get; private set; }
+#endif
+        /// <summary>User&apos;s last name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name? LastName { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name LastName { get; set; }
+#endif
+        /// <summary>The organizations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization>? Organizations { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization> Organizations { get; set; }
+#endif
+        /// <summary>Indicates whether user has been suspended</summary>
+        public bool? Suspended { get; private set; }
+        /// <summary>User&apos;s telephone number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone? Telephone { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone Telephone { get; set; }
+#endif
+        /// <summary>Indicates whether two-factor authentication is enabled for the user account. Does not apply to API authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_enabled? TwoFactorAuthenticationEnabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_enabled TwoFactorAuthenticationEnabled { get; set; }
+#endif
+        /// <summary>Indicates whether two-factor authentication is required by one of the accounts that the user is a member of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_locked? TwoFactorAuthenticationLocked { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_locked TwoFactorAuthenticationLocked { get; set; }
+#endif
+        /// <summary>The zipcode or postal code where the user lives.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode? Zipcode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode Zipcode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_single_user_response_result"/> and sets the default values.
         /// </summary>
@@ -39,6 +127,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "betas", n => { Betas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country.CreateFromDiscriminatorValue); } },
+                { "first_name", n => { FirstName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name.CreateFromDiscriminatorValue); } },
+                { "has_business_zones", n => { HasBusinessZones = n.GetBoolValue(); } },
+                { "has_enterprise_zones", n => { HasEnterpriseZones = n.GetBoolValue(); } },
+                { "has_pro_zones", n => { HasProZones = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_name", n => { LastName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name.CreateFromDiscriminatorValue); } },
+                { "organizations", n => { Organizations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "suspended", n => { Suspended = n.GetBoolValue(); } },
+                { "telephone", n => { Telephone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone.CreateFromDiscriminatorValue); } },
+                { "two_factor_authentication_enabled", n => { TwoFactorAuthenticationEnabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_enabled.CreateFromDiscriminatorValue); } },
+                { "two_factor_authentication_locked", n => { TwoFactorAuthenticationLocked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_locked>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_locked.CreateFromDiscriminatorValue); } },
+                { "zipcode", n => { Zipcode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +150,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country>("country", Country);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name>("first_name", FirstName);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name>("last_name", LastName);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization>("organizations", Organizations);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone>("telephone", Telephone);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_enabled>("two_factor_authentication_enabled", TwoFactorAuthenticationEnabled);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_two_factor_authentication_locked>("two_factor_authentication_locked", TwoFactorAuthenticationLocked);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode>("zipcode", Zipcode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

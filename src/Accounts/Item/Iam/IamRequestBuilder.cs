@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Permission_groups;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.Resource_groupsRequestBuilder Resource_groups
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.Resource_groupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The user_groups property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.User_groupsRequestBuilder User_groups
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.User_groups.User_groupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.IamRequestBuilder"/> and sets the default values.
