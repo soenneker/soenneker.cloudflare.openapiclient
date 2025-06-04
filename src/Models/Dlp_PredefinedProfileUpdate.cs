@@ -35,6 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_ContextAwareness ContextAwareness { get; set; }
 #endif
         /// <summary>The entries property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryUpdate>? Entries { get; set; }

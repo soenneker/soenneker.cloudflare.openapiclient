@@ -45,6 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Access_identityProvider_scim_config()
         {
             AdditionalData = new Dictionary<string, object>();
+            IdentityUpdateBehavior = global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identityProvider_scim_config_identity_update_behavior.No_action;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

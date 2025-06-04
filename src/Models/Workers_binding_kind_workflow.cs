@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Class name of the Workflow. Should only be provided if the Workflow belongs to this script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClassName { get; set; }
+#nullable restore
+#else
+        public string ClassName { get; set; }
+#endif
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name Name { get; set; }
+#endif
+        /// <summary>Script name that contains the Workflow. If not provided, defaults to this script name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScriptName { get; set; }
+#nullable restore
+#else
+        public string ScriptName { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow_type? Type { get; set; }
@@ -57,7 +73,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name.CreateFromDiscriminatorValue); } },
+                { "script_name", n => { ScriptName = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow_type>(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
@@ -69,7 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("class_name", ClassName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>("name", Name);
+            writer.WriteStringValue("script_name", ScriptName);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow_type>("type", Type);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);

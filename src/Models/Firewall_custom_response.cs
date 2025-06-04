@@ -31,6 +31,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_content_type ContentType { get; set; }
 #endif
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response"/> and sets the default values.
         /// </summary>
@@ -58,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "body", n => { Body = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_body>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_body.CreateFromDiscriminatorValue); } },
                 { "content_type", n => { ContentType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_content_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_content_type.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_body>("body", Body);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_content_type>("content_type", ContentType);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

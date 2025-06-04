@@ -35,11 +35,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Redirects { get; set; }
 #endif
-        /// <summary>When true, requests will always invoke the Worker script. Otherwise, attempt to serve an asset matching the request, falling back to the Worker script.</summary>
-        public bool? RunWorkerFirst { get; set; }
-        /// <summary>When true and the incoming request matches an asset, that will be served instead of invoking the Worker script. When false, requests will always invoke the Worker script.</summary>
-        [Obsolete("")]
-        public bool? ServeDirectly { get; set; }
+        /// <summary>Contains a list path rules to control routing to either the Worker or assets. Glob (*) and negative (!) rules are supported. Rules must start with either &apos;/&apos; or &apos;!/&apos;. At least one non-negative rule must be provided, and negative rules have higher precedence than non-negative rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RunWorkerFirst { get; set; }
+#nullable restore
+#else
+        public List<string> RunWorkerFirst { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config"/> and sets the default values.
         /// </summary>
@@ -69,8 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "html_handling", n => { HtmlHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_html_handling>(); } },
                 { "not_found_handling", n => { NotFoundHandling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_not_found_handling>(); } },
                 { "_redirects", n => { Redirects = n.GetStringValue(); } },
-                { "run_worker_first", n => { RunWorkerFirst = n.GetBoolValue(); } },
-                { "serve_directly", n => { ServeDirectly = n.GetBoolValue(); } },
+                { "run_worker_first", n => { RunWorkerFirst = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,8 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_html_handling>("html_handling", HtmlHandling);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_multipartScript_metadata_assets_config_not_found_handling>("not_found_handling", NotFoundHandling);
             writer.WriteStringValue("_redirects", Redirects);
-            writer.WriteBoolValue("run_worker_first", RunWorkerFirst);
-            writer.WriteBoolValue("serve_directly", ServeDirectly);
+            writer.WriteCollectionOfPrimitiveValues<string>("run_worker_first", RunWorkerFirst);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
