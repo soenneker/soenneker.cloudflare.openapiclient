@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LastSeenAt { get; set; }
 #endif
-        /// <summary>The last Access user to use the WARP device.</summary>
+        /// <summary>The last user to use the WARP device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_physical_device_last_seen_user? LastSeenUser { get; set; }

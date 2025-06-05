@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Access_schemasOnelogin_config : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_genericOauthConfig, IParsable
+    public partial class Access_schemasOnelogin_config : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGenericOauthConfig, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Your OneLogin account url</summary>

@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item
         {
         }
         /// <summary>
-        /// Fetches a single WARP registration.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices/{device_id}- GET /accounts/{account_id}/devices/registrations/{registration_id}
+        /// Fetches a single WARP device. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled for the account.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices/{device_id}- GET /accounts/{account_id}/devices/registrations/{registration_id}
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_response"/></returns>
         /// <param name="body">Fallback request body schema</param>
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches a single WARP registration.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices/{device_id}- GET /accounts/{account_id}/devices/registrations/{registration_id}
+        /// Fetches a single WARP device. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled for the account.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices/{device_id}- GET /accounts/{account_id}/devices/registrations/{registration_id}
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fallback request body schema</param>

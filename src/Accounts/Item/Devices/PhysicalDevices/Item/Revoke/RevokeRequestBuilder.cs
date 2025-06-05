@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
         {
         }
         /// <summary>
-        /// Revokes all registrations associated with the specified device.
+        /// Revokes all WARP registrations associated with the specified device.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Revoke_device_Response_200_application_json"/></returns>
         /// <param name="body">Fallback request body schema</param>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Revoke_device_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Revoke_device_Response_200_application_json.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revokes all registrations associated with the specified device.
+        /// Revokes all WARP registrations associated with the specified device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fallback request body schema</param>

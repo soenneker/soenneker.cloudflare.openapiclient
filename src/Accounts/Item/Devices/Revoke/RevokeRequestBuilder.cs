@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke
         {
         }
         /// <summary>
-        /// Revokes a list of registrations.**Deprecated**: please use POST /accounts/{account_id}/devices/registrations/revoke instead.
+        /// Revokes a list of devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled.**Deprecated**: please use POST /accounts/{account_id}/devices/registrations/revoke instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle"/></returns>
         /// <param name="body">A list of Registration IDs to revoke.</param>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Revokes a list of registrations.**Deprecated**: please use POST /accounts/{account_id}/devices/registrations/revoke instead.
+        /// Revokes a list of devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled.**Deprecated**: please use POST /accounts/{account_id}/devices/registrations/revoke instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A list of Registration IDs to revoke.</param>

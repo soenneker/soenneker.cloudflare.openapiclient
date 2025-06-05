@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// The last Access user to use the WARP device.
+    /// The last user to use the WARP device.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamsDevices_physical_device_last_seen_user : global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_user, IParsable

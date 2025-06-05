@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         {
         }
         /// <summary>
-        /// List WARP registrations.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices- GET /accounts/{account_id}/devices/registrations
+        /// List WARP devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled for the account.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices- GET /accounts/{account_id}/devices/registrations
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_devices_response"/></returns>
         /// <param name="body">Fallback request body schema</param>
@@ -139,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_devices_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_devices_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List WARP registrations.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices- GET /accounts/{account_id}/devices/registrations
+        /// List WARP devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled for the account.**Deprecated**: please use one of the following endpoints instead:- GET /accounts/{account_id}/devices/physical-devices- GET /accounts/{account_id}/devices/registrations
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fallback request body schema</param>

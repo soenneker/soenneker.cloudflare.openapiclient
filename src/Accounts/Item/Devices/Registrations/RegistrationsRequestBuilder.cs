@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_registrations_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_registrations_Response_200_application_json.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List WARP registrations.
+        /// Lists WARP registrations.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.List_registrations_Response_200_application_json"/></returns>
         /// <param name="body">Fallback request body schema</param>
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             return requestInfo;
         }
         /// <summary>
-        /// List WARP registrations.
+        /// Lists WARP registrations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Fallback request body schema</param>
@@ -177,7 +177,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
         {
         }
         /// <summary>
-        /// List WARP registrations.
+        /// Lists WARP registrations.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RegistrationsRequestBuilderGetQueryParameters 
@@ -296,7 +296,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             /// <summary>Filter by registration status. Defaults to &apos;active&apos;.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.List_registrations_Param_status? StatusAsListRegistrationsParamStatus { get; set; }
-            /// <summary>Filter by Access user ID.</summary>
+            /// <summary>Filter by user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Eid")]

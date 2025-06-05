@@ -9,53 +9,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithApp_ : IAdditionalDataHolder, IParsable
+    public partial class Access_schemasGenericOauthConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The code property</summary>
-        public int? Code { get; set; }
-        /// <summary>The documentation_url property</summary>
+        /// <summary>Your OAuth Client ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentationUrl { get; set; }
+        public string? ClientId { get; set; }
 #nullable restore
 #else
-        public string DocumentationUrl { get; set; }
+        public string ClientId { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>Your OAuth Client Secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? ClientSecret { get; set; }
 #nullable restore
 #else
-        public string Message { get; set; }
-#endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp__source? Source { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp__source Source { get; set; }
+        public string ClientSecret { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp_"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGenericOauthConfig"/> and sets the default values.
         /// </summary>
-        public WithApp_()
+        public Access_schemasGenericOauthConfig()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp_"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGenericOauthConfig"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp_ CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGenericOauthConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp_();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGenericOauthConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,10 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetIntValue(); } },
-                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp__source>(global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp__source.CreateFromDiscriminatorValue); } },
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,10 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("code", Code);
-            writer.WriteStringValue("documentation_url", DocumentationUrl);
-            writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WithApp__source>("source", Source);
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
