@@ -15,42 +15,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An informative summary of the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The filter expression. For more information, refer to [Expressions](https://developers.cloudflare.com/ruleset-engine/rules-language/expressions/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_expression? Expression { get; set; }
+        public string? Expression { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_expression Expression { get; set; }
+        public string Expression { get; set; }
 #endif
         /// <summary>The unique identifier of the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasId? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasId Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When true, indicates that the filter is currently paused.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasPaused? Paused { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasPaused Paused { get; set; }
-#endif
+        public bool? Paused { get; set; }
         /// <summary>A short reference tag. Allows you to select related filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasRef? Ref { get; set; }
+        public string? Ref { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasRef Ref { get; set; }
+        public string Ref { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,11 +64,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
-                { "expression", n => { Expression = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_expression>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_expression.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasId.CreateFromDiscriminatorValue); } },
-                { "paused", n => { Paused = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasPaused>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasPaused.CreateFromDiscriminatorValue); } },
-                { "ref", n => { Ref = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasRef>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasRef.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "expression", n => { Expression = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,11 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_expression>("expression", Expression);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filters_componentsSchemasPaused>("paused", Paused);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasRef>("ref", Ref);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("expression", Expression);
+            writer.WriteBoolValue("paused", Paused);
+            writer.WriteStringValue("ref", Ref);
         }
     }
 }

@@ -15,44 +15,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_allow_null_cipher? AllowNullCipher { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_allow_null_cipher AllowNullCipher { get; set; }
-#endif
+        public bool? AllowNullCipher { get; set; }
         /// <summary>The IP address assigned to the Cloudflare side of the IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_ipsec_endpoint? CloudflareEndpoint { get; set; }
+        public string? CloudflareEndpoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_ipsec_endpoint CloudflareEndpoint { get; set; }
+        public string CloudflareEndpoint { get; set; }
 #endif
         /// <summary>The date and time the tunnel was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasCreated_on? CreatedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasCreated_on CreatedOn { get; set; }
-#endif
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>The IP address assigned to the customer side of the IPsec tunnel. Not required, but must be set for proactive traceroutes to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_ipsec_endpoint? CustomerEndpoint { get; set; }
+        public string? CustomerEndpoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_ipsec_endpoint CustomerEndpoint { get; set; }
+        public string CustomerEndpoint { get; set; }
 #endif
         /// <summary>An optional description forthe IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_componentsSchemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_componentsSchemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,34 +53,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address? InterfaceAddress { get; set; }
+        public string? InterfaceAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address InterfaceAddress { get; set; }
+        public string InterfaceAddress { get; set; }
 #endif
         /// <summary>The date and time the tunnel was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasModified_on? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasModified_on ModifiedOn { get; set; }
-#endif
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The name of the IPsec tunnel. The name cannot share a name with other tunnels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipsec_tunnel_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipsec_tunnel_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The PSK metadata that includes when the PSK was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,13 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata PskMetadata { get; set; }
 #endif
         /// <summary>If `true`, then IPsec replay protection will be supported in the Cloudflare-to-customer direction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_replay_protection? ReplayProtection { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_replay_protection ReplayProtection { get; set; }
-#endif
+        public bool? ReplayProtection { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipsecTunnel"/> and sets the default values.
         /// </summary>
@@ -135,18 +111,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_null_cipher", n => { AllowNullCipher = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_allow_null_cipher>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_allow_null_cipher.CreateFromDiscriminatorValue); } },
-                { "cloudflare_endpoint", n => { CloudflareEndpoint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_ipsec_endpoint>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_ipsec_endpoint.CreateFromDiscriminatorValue); } },
-                { "created_on", n => { CreatedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasCreated_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasCreated_on.CreateFromDiscriminatorValue); } },
-                { "customer_endpoint", n => { CustomerEndpoint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_ipsec_endpoint>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_ipsec_endpoint.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
+                { "allow_null_cipher", n => { AllowNullCipher = n.GetBoolValue(); } },
+                { "cloudflare_endpoint", n => { CloudflareEndpoint = n.GetStringValue(); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "customer_endpoint", n => { CustomerEndpoint = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "interface_address", n => { InterfaceAddress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasModified_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasModified_on.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipsec_tunnel_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipsec_tunnel_name.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "psk_metadata", n => { PskMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata.CreateFromDiscriminatorValue); } },
-                { "replay_protection", n => { ReplayProtection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_replay_protection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_replay_protection.CreateFromDiscriminatorValue); } },
+                { "replay_protection", n => { ReplayProtection = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -156,18 +132,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_allow_null_cipher>("allow_null_cipher", AllowNullCipher);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_ipsec_endpoint>("cloudflare_endpoint", CloudflareEndpoint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasCreated_on>("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_ipsec_endpoint>("customer_endpoint", CustomerEndpoint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_componentsSchemasDescription>("description", Description);
+            writer.WriteBoolValue("allow_null_cipher", AllowNullCipher);
+            writer.WriteStringValue("cloudflare_endpoint", CloudflareEndpoint);
+            writer.WriteStringValue("customer_endpoint", CustomerEndpoint);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>("health_check", HealthCheck);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address>("interface_address", InterfaceAddress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasModified_on>("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipsec_tunnel_name>("name", Name);
+            writer.WriteStringValue("interface_address", InterfaceAddress);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata>("psk_metadata", PskMetadata);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_replay_protection>("replay_protection", ReplayProtection);
+            writer.WriteBoolValue("replay_protection", ReplayProtection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

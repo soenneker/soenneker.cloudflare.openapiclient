@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Client Certificate PEM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate? Certificate { get; set; }
+        public string? Certificate { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate Certificate { get; set; }
+        public string Certificate { get; private set; }
 #endif
         /// <summary>Certificate Authority used to issue the Client Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,131 +33,119 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Common Name of the Client Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_common_name? CommonName { get; set; }
+        public string? CommonName { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_common_name CommonName { get; set; }
+        public string CommonName { get; private set; }
 #endif
         /// <summary>Country, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_country? Country { get; set; }
+        public string? Country { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_country Country { get; set; }
+        public string Country { get; private set; }
 #endif
         /// <summary>The Certificate Signing Request (CSR). Must be newline-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCsr? Csr { get; set; }
+        public string? Csr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCsr Csr { get; set; }
+        public string Csr { get; set; }
 #endif
         /// <summary>Date that the Client Certificate expires</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_expired_on? ExpiresOn { get; set; }
+        public string? ExpiresOn { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_expired_on ExpiresOn { get; set; }
+        public string ExpiresOn { get; private set; }
 #endif
         /// <summary>Unique identifier of the Client Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fingerprint_sha256? FingerprintSha256 { get; set; }
+        public string? FingerprintSha256 { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fingerprint_sha256 FingerprintSha256 { get; set; }
+        public string FingerprintSha256 { get; private set; }
 #endif
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Date that the Client Certificate was issued by the Certificate Authority</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issued_on? IssuedOn { get; set; }
+        public string? IssuedOn { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issued_on IssuedOn { get; set; }
+        public string IssuedOn { get; private set; }
 #endif
         /// <summary>Location, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_location? Location { get; set; }
+        public string? Location { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_location Location { get; set; }
+        public string Location { get; private set; }
 #endif
         /// <summary>Organization, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organization? Organization { get; set; }
+        public string? Organization { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organization Organization { get; set; }
+        public string Organization { get; private set; }
 #endif
         /// <summary>Organizational Unit, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organizational_unit? OrganizationalUnit { get; set; }
+        public string? OrganizationalUnit { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organizational_unit OrganizationalUnit { get; set; }
+        public string OrganizationalUnit { get; private set; }
 #endif
         /// <summary>The serial number on the created Client Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSerial_number? SerialNumber { get; set; }
+        public string? SerialNumber { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSerial_number SerialNumber { get; set; }
+        public string SerialNumber { get; private set; }
 #endif
         /// <summary>The type of hash used for the Client Certificate..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature? Signature { get; set; }
+        public string? Signature { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature Signature { get; set; }
+        public string Signature { get; private set; }
 #endif
         /// <summary>Subject Key Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski? Ski { get; set; }
+        public string? Ski { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski Ski { get; set; }
+        public string Ski { get; private set; }
 #endif
         /// <summary>State, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state? State { get; set; }
+        public string? State { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state State { get; set; }
+        public string State { get; private set; }
 #endif
         /// <summary>Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus Status { get; set; }
-#endif
         /// <summary>The number of days the Client Certificate will be valid after the issued_on date</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days? ValidityDays { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days ValidityDays { get; set; }
-#endif
+        public int? ValidityDays { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_client_certificate"/> and sets the default values.
         /// </summary>
@@ -183,24 +171,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "certificate", n => { Certificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate.CreateFromDiscriminatorValue); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
                 { "certificate_authority", n => { CertificateAuthority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate_authority>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate_authority.CreateFromDiscriminatorValue); } },
-                { "common_name", n => { CommonName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_common_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_common_name.CreateFromDiscriminatorValue); } },
-                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_country>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_country.CreateFromDiscriminatorValue); } },
-                { "csr", n => { Csr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCsr>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCsr.CreateFromDiscriminatorValue); } },
-                { "expires_on", n => { ExpiresOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_expired_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_expired_on.CreateFromDiscriminatorValue); } },
-                { "fingerprint_sha256", n => { FingerprintSha256 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fingerprint_sha256>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fingerprint_sha256.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier.CreateFromDiscriminatorValue); } },
-                { "issued_on", n => { IssuedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issued_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issued_on.CreateFromDiscriminatorValue); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_location>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_location.CreateFromDiscriminatorValue); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organization>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organization.CreateFromDiscriminatorValue); } },
-                { "organizational_unit", n => { OrganizationalUnit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organizational_unit>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organizational_unit.CreateFromDiscriminatorValue); } },
-                { "serial_number", n => { SerialNumber = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSerial_number>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSerial_number.CreateFromDiscriminatorValue); } },
-                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature.CreateFromDiscriminatorValue); } },
-                { "ski", n => { Ski = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
-                { "validity_days", n => { ValidityDays = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days.CreateFromDiscriminatorValue); } },
+                { "common_name", n => { CommonName = n.GetStringValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "csr", n => { Csr = n.GetStringValue(); } },
+                { "expires_on", n => { ExpiresOn = n.GetStringValue(); } },
+                { "fingerprint_sha256", n => { FingerprintSha256 = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "issued_on", n => { IssuedOn = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetStringValue(); } },
+                { "organizational_unit", n => { OrganizationalUnit = n.GetStringValue(); } },
+                { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "ski", n => { Ski = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>(); } },
+                { "validity_days", n => { ValidityDays = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -210,24 +198,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate>("certificate", Certificate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate_authority>("certificate_authority", CertificateAuthority);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_common_name>("common_name", CommonName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_country>("country", Country);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCsr>("csr", Csr);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_expired_on>("expires_on", ExpiresOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fingerprint_sha256>("fingerprint_sha256", FingerprintSha256);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issued_on>("issued_on", IssuedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_location>("location", Location);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organization>("organization", Organization);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_organizational_unit>("organizational_unit", OrganizationalUnit);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSerial_number>("serial_number", SerialNumber);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasSignature>("signature", Signature);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ski>("ski", Ski);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_state>("state", State);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidity_days>("validity_days", ValidityDays);
+            writer.WriteStringValue("csr", Csr);
+            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>("status", Status);
+            writer.WriteIntValue("validity_days", ValidityDays);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

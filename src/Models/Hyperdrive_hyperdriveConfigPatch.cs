@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "caching", n => { Caching = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCaching>(global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCaching.CreateFromDiscriminatorValue); } },
                 { "mtls", n => { Mtls = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveMtls>(global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveMtls.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfigPatch_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfigPatch_origin.CreateFromDiscriminatorValue); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCaching>("caching", Caching);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveMtls>("mtls", Mtls);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfigPatch_origin>("origin", Origin);
             writer.WriteAdditionalData(AdditionalData);
         }

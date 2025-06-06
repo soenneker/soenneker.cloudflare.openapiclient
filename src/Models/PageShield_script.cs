@@ -17,30 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cryptomining score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score? CryptominingScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score CryptominingScore { get; set; }
-#endif
+        public int? CryptominingScore { get; set; }
         /// <summary>The dataflow score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score? DataflowScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score DataflowScore { get; set; }
-#endif
+        public int? DataflowScore { get; set; }
         /// <summary>The domain_reported_malicious property</summary>
         public bool? DomainReportedMalicious { get; set; }
         /// <summary>The timestamp of when the script was last fetched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at? FetchedAt { get; set; }
+        public string? FetchedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at FetchedAt { get; set; }
+        public string FetchedAt { get; set; }
 #endif
         /// <summary>The first_page_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The computed hash of the analyzed script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash? Hash { get; set; }
+        public string? Hash { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash Hash { get; set; }
+        public string Hash { get; set; }
 #endif
         /// <summary>The host property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,29 +59,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_id? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_id Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The integrity score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score? JsIntegrityScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score JsIntegrityScore { get; set; }
-#endif
+        public int? JsIntegrityScore { get; set; }
         /// <summary>The last_seen_at property</summary>
         public DateTimeOffset? LastSeenAt { get; set; }
         /// <summary>The magecart score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score? MagecartScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score MagecartScore { get; set; }
-#endif
+        public int? MagecartScore { get; set; }
         /// <summary>The malicious_domain_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,21 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> MaliciousUrlCategories { get; set; }
 #endif
         /// <summary>The malware score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score? MalwareScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score MalwareScore { get; set; }
-#endif
+        public int? MalwareScore { get; set; }
         /// <summary>The obfuscation score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score? ObfuscationScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score ObfuscationScore { get; set; }
-#endif
+        public int? ObfuscationScore { get; set; }
         /// <summary>The page_urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -172,22 +136,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "cryptomining_score", n => { CryptominingScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score.CreateFromDiscriminatorValue); } },
-                { "dataflow_score", n => { DataflowScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score.CreateFromDiscriminatorValue); } },
+                { "cryptomining_score", n => { CryptominingScore = n.GetIntValue(); } },
+                { "dataflow_score", n => { DataflowScore = n.GetIntValue(); } },
                 { "domain_reported_malicious", n => { DomainReportedMalicious = n.GetBoolValue(); } },
-                { "fetched_at", n => { FetchedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at.CreateFromDiscriminatorValue); } },
+                { "fetched_at", n => { FetchedAt = n.GetStringValue(); } },
                 { "first_page_url", n => { FirstPageUrl = n.GetStringValue(); } },
                 { "first_seen_at", n => { FirstSeenAt = n.GetDateTimeOffsetValue(); } },
-                { "hash", n => { Hash = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash.CreateFromDiscriminatorValue); } },
+                { "hash", n => { Hash = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_id.CreateFromDiscriminatorValue); } },
-                { "js_integrity_score", n => { JsIntegrityScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "js_integrity_score", n => { JsIntegrityScore = n.GetIntValue(); } },
                 { "last_seen_at", n => { LastSeenAt = n.GetDateTimeOffsetValue(); } },
-                { "magecart_score", n => { MagecartScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score.CreateFromDiscriminatorValue); } },
+                { "magecart_score", n => { MagecartScore = n.GetIntValue(); } },
                 { "malicious_domain_categories", n => { MaliciousDomainCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "malicious_url_categories", n => { MaliciousUrlCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "malware_score", n => { MalwareScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score.CreateFromDiscriminatorValue); } },
-                { "obfuscation_score", n => { ObfuscationScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score.CreateFromDiscriminatorValue); } },
+                { "malware_score", n => { MalwareScore = n.GetIntValue(); } },
+                { "obfuscation_score", n => { ObfuscationScore = n.GetIntValue(); } },
                 { "page_urls", n => { PageUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "url_contains_cdn_cgi_path", n => { UrlContainsCdnCgiPath = n.GetBoolValue(); } },
@@ -202,22 +166,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score>("cryptomining_score", CryptominingScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score>("dataflow_score", DataflowScore);
+            writer.WriteIntValue("cryptomining_score", CryptominingScore);
+            writer.WriteIntValue("dataflow_score", DataflowScore);
             writer.WriteBoolValue("domain_reported_malicious", DomainReportedMalicious);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at>("fetched_at", FetchedAt);
+            writer.WriteStringValue("fetched_at", FetchedAt);
             writer.WriteStringValue("first_page_url", FirstPageUrl);
             writer.WriteDateTimeOffsetValue("first_seen_at", FirstSeenAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash>("hash", Hash);
+            writer.WriteStringValue("hash", Hash);
             writer.WriteStringValue("host", Host);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score>("js_integrity_score", JsIntegrityScore);
+            writer.WriteIntValue("js_integrity_score", JsIntegrityScore);
             writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score>("magecart_score", MagecartScore);
+            writer.WriteIntValue("magecart_score", MagecartScore);
             writer.WriteCollectionOfPrimitiveValues<string>("malicious_domain_categories", MaliciousDomainCategories);
             writer.WriteCollectionOfPrimitiveValues<string>("malicious_url_categories", MaliciousUrlCategories);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score>("malware_score", MalwareScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score>("obfuscation_score", ObfuscationScore);
+            writer.WriteIntValue("malware_score", MalwareScore);
+            writer.WriteIntValue("obfuscation_score", ObfuscationScore);
             writer.WriteCollectionOfPrimitiveValues<string>("page_urls", PageUrls);
             writer.WriteStringValue("url", Url);
             writer.WriteBoolValue("url_contains_cdn_cgi_path", UrlContainsCdnCgiPath);

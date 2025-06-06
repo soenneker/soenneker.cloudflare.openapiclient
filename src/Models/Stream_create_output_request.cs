@@ -15,28 +15,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When enabled, live video streamed to the associated live input will be sent to the output URL. When disabled, live video will not be sent to the output URL, even when streaming to the associated live input. Use this to control precisely when you start and stop simulcasting to specific destinations like YouTube and Twitch.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The streamKey used to authenticate against an output&apos;s target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_streamKey? StreamKey { get; set; }
+        public string? StreamKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_streamKey StreamKey { get; set; }
+        public string StreamKey { get; set; }
 #endif
         /// <summary>The URL an output uses to restream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_url? Url { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_url Url { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_create_output_request"/> and sets the default values.
@@ -63,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_enabled.CreateFromDiscriminatorValue); } },
-                { "streamKey", n => { StreamKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_streamKey>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_streamKey.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_url.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "streamKey", n => { StreamKey = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_enabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_streamKey>("streamKey", StreamKey);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_output_url>("url", Url);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("streamKey", StreamKey);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

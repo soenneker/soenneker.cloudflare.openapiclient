@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of the item values you want to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_value>? Remove { get; set; }
+        public List<string>? Remove { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_value> Remove { get; set; }
+        public List<string> Remove { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_lists_patch_zero_trust_list_RequestBody_application_json"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "append", n => { Append = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithList_>(global::Soenneker.Cloudflare.OpenApiClient.Models.WithList_.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "remove", n => { Remove = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_value.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "remove", n => { Remove = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithList_>("append", Append);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_value>("remove", Remove);
+            writer.WriteCollectionOfPrimitiveValues<string>("remove", Remove);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

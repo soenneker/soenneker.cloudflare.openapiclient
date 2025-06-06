@@ -15,37 +15,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on? ExpiresOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on ExpiresOn { get; set; }
-#endif
+        public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Token identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The time before which the token MUST NOT be accepted for processing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before? NotBefore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before NotBefore { get; set; }
-#endif
+        public DateTimeOffset? NotBefore { get; set; }
         /// <summary>Status of the token.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_response_single_segment_result"/> and sets the default values.
         /// </summary>
@@ -71,10 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expires_on", n => { ExpiresOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier.CreateFromDiscriminatorValue); } },
-                { "not_before", n => { NotBefore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status.CreateFromDiscriminatorValue); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>(); } },
             };
         }
         /// <summary>
@@ -84,10 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>("expires_on", ExpiresOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>("not_before", NotBefore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>("status", Status);
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
+            writer.WriteDateTimeOffsetValue("not_before", NotBefore);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,18 +25,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress? NextHop { get; set; }
+        public string? NextHop { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress NextHop { get; set; }
+        public string NextHop { get; set; }
 #endif
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr? Prefix { get; set; }
+        public string? Prefix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr Prefix { get; set; }
+        public string Prefix { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_routed_subnet"/> and sets the default values.
@@ -64,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "nat", n => { Nat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat.CreateFromDiscriminatorValue); } },
-                { "next_hop", n => { NextHop = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress.CreateFromDiscriminatorValue); } },
-                { "prefix", n => { Prefix = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr.CreateFromDiscriminatorValue); } },
+                { "next_hop", n => { NextHop = n.GetStringValue(); } },
+                { "prefix", n => { Prefix = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>("nat", Nat);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>("next_hop", NextHop);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>("prefix", Prefix);
+            writer.WriteStringValue("next_hop", NextHop);
+            writer.WriteStringValue("prefix", Prefix);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

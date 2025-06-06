@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Customer account tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag? Account { get; set; }
+        public string? Account { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag Account { get; set; }
+        public string Account { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag.CreateFromDiscriminatorValue); } },
+                { "account", n => { Account = n.GetStringValue(); } },
                 { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_BgpControl>(global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_BgpControl.CreateFromDiscriminatorValue); } },
                 { "interconnect", n => { Interconnect = n.GetStringValue(); } },
                 { "magic", n => { Magic = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_MagicSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_MagicSettings.CreateFromDiscriminatorValue); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag>("account", Account);
+            writer.WriteStringValue("account", Account);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_BgpControl>("bgp", Bgp);
             writer.WriteStringValue("interconnect", Interconnect);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_MagicSettings>("magic", Magic);

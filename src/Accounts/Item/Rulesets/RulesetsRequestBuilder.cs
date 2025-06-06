@@ -168,15 +168,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public int? PerPage { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

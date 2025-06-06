@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user-defined identifier for the media creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator? Creator { get; set; }
+        public string? Creator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator Creator { get; set; }
+        public string Creator { get; set; }
 #endif
         /// <summary>The total minutes of video content stored in the account.</summary>
         public int? TotalStorageMinutes { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator.CreateFromDiscriminatorValue); } },
+                { "creator", n => { Creator = n.GetStringValue(); } },
                 { "totalStorageMinutes", n => { TotalStorageMinutes = n.GetIntValue(); } },
                 { "totalStorageMinutesLimit", n => { TotalStorageMinutesLimit = n.GetIntValue(); } },
                 { "videoCount", n => { VideoCount = n.GetIntValue(); } },
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator>("creator", Creator);
+            writer.WriteStringValue("creator", Creator);
             writer.WriteIntValue("totalStorageMinutes", TotalStorageMinutes);
             writer.WriteIntValue("totalStorageMinutesLimit", TotalStorageMinutesLimit);
             writer.WriteIntValue("videoCount", VideoCount);

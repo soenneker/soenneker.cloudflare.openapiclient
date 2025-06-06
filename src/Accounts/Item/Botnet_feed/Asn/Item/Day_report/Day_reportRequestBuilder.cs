@@ -95,15 +95,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Day_reportRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("date")]
-            public string? Date { get; set; }
-#nullable restore
-#else
-            [QueryParameter("date")]
-            public string Date { get; set; }
-#endif
+            public DateTimeOffset? Date { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

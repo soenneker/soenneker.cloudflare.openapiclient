@@ -23,69 +23,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_attack_mitigation AttackMitigation { get; set; }
 #endif
         /// <summary>Whether to refuse to answer queries for the ANY type</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_deprecate_any_requests? DeprecateAnyRequests { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_deprecate_any_requests DeprecateAnyRequests { get; set; }
-#endif
+        public bool? DeprecateAnyRequests { get; set; }
         /// <summary>Whether to forward client IP (resolver) subnet if no EDNS Client Subnet is sent</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ecs_fallback? EcsFallback { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ecs_fallback EcsFallback { get; set; }
-#endif
+        public bool? EcsFallback { get; set; }
         /// <summary>Maximum DNS cache TTL This setting sets an upper bound on DNS TTLs for purposes of caching between DNS Firewall and the upstream servers. Higher TTLs will be decreased to the maximum defined here for caching purposes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_maximum_cache_ttl? MaximumCacheTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_maximum_cache_ttl MaximumCacheTtl { get; set; }
-#endif
+        public double? MaximumCacheTtl { get; set; }
         /// <summary>Minimum DNS cache TTL This setting sets a lower bound on DNS TTLs for purposes of caching between DNS Firewall and the upstream servers. Lower TTLs will be increased to the minimum defined here for caching purposes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_minimum_cache_ttl? MinimumCacheTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_minimum_cache_ttl MinimumCacheTtl { get; set; }
-#endif
+        public double? MinimumCacheTtl { get; set; }
         /// <summary>DNS Firewall cluster name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Negative DNS cache TTL This setting controls how long DNS Firewall should cache negative responses (e.g., NXDOMAIN) from the upstream servers.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_negative_cache_ttl? NegativeCacheTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_negative_cache_ttl NegativeCacheTtl { get; set; }
-#endif
+        public double? NegativeCacheTtl { get; set; }
         /// <summary>Ratelimit in queries per second per datacenter (applies to DNS queries sent to the upstream nameservers configured on the cluster)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ratelimit? Ratelimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ratelimit Ratelimit { get; set; }
-#endif
+        public double? Ratelimit { get; set; }
         /// <summary>Number of retries for fetching DNS responses from upstream nameservers (not counting the initial attempt)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_retries? Retries { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_retries Retries { get; set; }
-#endif
+        public double? Retries { get; set; }
         /// <summary>The upstream_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,14 +78,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attack_mitigation", n => { AttackMitigation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_attack_mitigation>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_attack_mitigation.CreateFromDiscriminatorValue); } },
-                { "deprecate_any_requests", n => { DeprecateAnyRequests = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_deprecate_any_requests>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_deprecate_any_requests.CreateFromDiscriminatorValue); } },
-                { "ecs_fallback", n => { EcsFallback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ecs_fallback>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ecs_fallback.CreateFromDiscriminatorValue); } },
-                { "maximum_cache_ttl", n => { MaximumCacheTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_maximum_cache_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_maximum_cache_ttl.CreateFromDiscriminatorValue); } },
-                { "minimum_cache_ttl", n => { MinimumCacheTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_minimum_cache_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_minimum_cache_ttl.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_name.CreateFromDiscriminatorValue); } },
-                { "negative_cache_ttl", n => { NegativeCacheTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_negative_cache_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_negative_cache_ttl.CreateFromDiscriminatorValue); } },
-                { "ratelimit", n => { Ratelimit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ratelimit>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ratelimit.CreateFromDiscriminatorValue); } },
-                { "retries", n => { Retries = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_retries>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_retries.CreateFromDiscriminatorValue); } },
+                { "deprecate_any_requests", n => { DeprecateAnyRequests = n.GetBoolValue(); } },
+                { "ecs_fallback", n => { EcsFallback = n.GetBoolValue(); } },
+                { "maximum_cache_ttl", n => { MaximumCacheTtl = n.GetDoubleValue(); } },
+                { "minimum_cache_ttl", n => { MinimumCacheTtl = n.GetDoubleValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "negative_cache_ttl", n => { NegativeCacheTtl = n.GetDoubleValue(); } },
+                { "ratelimit", n => { Ratelimit = n.GetDoubleValue(); } },
+                { "retries", n => { Retries = n.GetDoubleValue(); } },
                 { "upstream_ips", n => { UpstreamIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -139,14 +97,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_attack_mitigation>("attack_mitigation", AttackMitigation);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_deprecate_any_requests>("deprecate_any_requests", DeprecateAnyRequests);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ecs_fallback>("ecs_fallback", EcsFallback);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_maximum_cache_ttl>("maximum_cache_ttl", MaximumCacheTtl);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_minimum_cache_ttl>("minimum_cache_ttl", MinimumCacheTtl);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_negative_cache_ttl>("negative_cache_ttl", NegativeCacheTtl);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_ratelimit>("ratelimit", Ratelimit);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_retries>("retries", Retries);
+            writer.WriteBoolValue("deprecate_any_requests", DeprecateAnyRequests);
+            writer.WriteBoolValue("ecs_fallback", EcsFallback);
+            writer.WriteDoubleValue("maximum_cache_ttl", MaximumCacheTtl);
+            writer.WriteDoubleValue("minimum_cache_ttl", MinimumCacheTtl);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("negative_cache_ttl", NegativeCacheTtl);
+            writer.WriteDoubleValue("ratelimit", Ratelimit);
+            writer.WriteDoubleValue("retries", Retries);
             writer.WriteCollectionOfPrimitiveValues<string>("upstream_ips", UpstreamIps);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,27 +17,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The endpoint which can contain path parameter templates in curly braces, each will be replaced from left to right with {varN}, starting with {var1}, during insertion. This will further be Cloudflare-normalized upon insertion. See: https://developers.cloudflare.com/rules/normalization/how-it-works/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint? Endpoint { get; set; }
+        public string? Endpoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint Endpoint { get; set; }
+        public string Endpoint { get; set; }
 #endif
         /// <summary>RFC3986-compliant host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host? Host { get; set; }
+        public string? Host { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host Host { get; set; }
+        public string Host { get; set; }
 #endif
         /// <summary>The HTTP method used to access the endpoint.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method? Method { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method Method { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation"/> and sets the default values.
         /// </summary>
@@ -63,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "endpoint", n => { Endpoint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint.CreateFromDiscriminatorValue); } },
-                { "host", n => { Host = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host.CreateFromDiscriminatorValue); } },
-                { "method", n => { Method = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method.CreateFromDiscriminatorValue); } },
+                { "endpoint", n => { Endpoint = n.GetStringValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_endpoint>("endpoint", Endpoint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_host>("host", Host);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>("method", Method);
+            writer.WriteStringValue("endpoint", Endpoint);
+            writer.WriteStringValue("host", Host);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>("method", Method);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

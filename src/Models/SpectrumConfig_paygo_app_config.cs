@@ -31,10 +31,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The port configuration at Cloudflare&apos;s edge. May specify a single port, for example `&quot;tcp/1000&quot;`, or a range of ports, for example `&quot;tcp/1000-2000&quot;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol? Protocol { get; set; }
+        public string? Protocol { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol Protocol { get; set; }
+        public string Protocol { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns.CreateFromDiscriminatorValue); } },
                 { "origin_direct", n => { OriginDirect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "protocol", n => { Protocol = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol.CreateFromDiscriminatorValue); } },
+                { "protocol", n => { Protocol = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns>("dns", Dns);
             writer.WriteCollectionOfPrimitiveValues<string>("origin_direct", OriginDirect);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_protocol>("protocol", Protocol);
+            writer.WriteStringValue("protocol", Protocol);
         }
     }
 }

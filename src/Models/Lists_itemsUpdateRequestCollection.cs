@@ -15,20 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines a non-negative 32 bit integer.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn? Asn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn Asn { get; set; }
-#endif
+        public int? Asn { get; set; }
         /// <summary>Defines an informative summary of the list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_comment? Comment { get; set; }
+        public string? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_comment Comment { get; set; }
+        public string Comment { get; set; }
 #endif
         /// <summary>Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An IPv4 address, an IPv4 CIDR, or an IPv6 CIDR. IPv6 CIDRs are limited to a maximum of /64.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip? Ip { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip Ip { get; set; }
+        public string Ip { get; set; }
 #endif
         /// <summary>The definition of the redirect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +73,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asn", n => { Asn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn.CreateFromDiscriminatorValue); } },
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_comment>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_comment.CreateFromDiscriminatorValue); } },
+                { "asn", n => { Asn = n.GetIntValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip.CreateFromDiscriminatorValue); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
                 { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,10 +87,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn>("asn", Asn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_comment>("comment", Comment);
+            writer.WriteIntValue("asn", Asn);
+            writer.WriteStringValue("comment", Comment);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>("hostname", Hostname);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip>("ip", Ip);
+            writer.WriteStringValue("ip", Ip);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>("redirect", Redirect);
             writer.WriteAdditionalData(AdditionalData);
         }

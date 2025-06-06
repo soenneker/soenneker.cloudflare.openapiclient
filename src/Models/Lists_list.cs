@@ -17,61 +17,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The RFC 3339 timestamp of when the list was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_created_on? CreatedOn { get; set; }
+        public string? CreatedOn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_created_on CreatedOn { get; set; }
+        public string CreatedOn { get; set; }
 #endif
         /// <summary>An informative summary of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The unique ID of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_id? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_id Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_kind? Kind { get; set; }
         /// <summary>The RFC 3339 timestamp of when the list was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_modified_on? ModifiedOn { get; set; }
+        public string? ModifiedOn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_modified_on ModifiedOn { get; set; }
+        public string ModifiedOn { get; set; }
 #endif
         /// <summary>An informative name for the list. Use this name in filter and rule expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The number of items in the list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_items? NumItems { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_items NumItems { get; set; }
-#endif
+        public double? NumItems { get; set; }
         /// <summary>The number of [filters](/operations/filters-list-filters) referencing the list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_referencing_filters? NumReferencingFilters { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_referencing_filters NumReferencingFilters { get; set; }
-#endif
+        public double? NumReferencingFilters { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list"/> and sets the default values.
         /// </summary>
@@ -97,14 +85,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_on", n => { CreatedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_created_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_created_on.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_description.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_id.CreateFromDiscriminatorValue); } },
+                { "created_on", n => { CreatedOn = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_kind>(); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_modified_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_modified_on.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_name.CreateFromDiscriminatorValue); } },
-                { "num_items", n => { NumItems = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_items>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_items.CreateFromDiscriminatorValue); } },
-                { "num_referencing_filters", n => { NumReferencingFilters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_referencing_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_referencing_filters.CreateFromDiscriminatorValue); } },
+                { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "num_items", n => { NumItems = n.GetDoubleValue(); } },
+                { "num_referencing_filters", n => { NumReferencingFilters = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -114,14 +102,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_created_on>("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_id>("id", Id);
+            writer.WriteStringValue("created_on", CreatedOn);
+            writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_kind>("kind", Kind);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_modified_on>("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_items>("num_items", NumItems);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_num_referencing_filters>("num_referencing_filters", NumReferencingFilters);
+            writer.WriteStringValue("modified_on", ModifiedOn);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("num_items", NumItems);
+            writer.WriteDoubleValue("num_referencing_filters", NumReferencingFilters);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

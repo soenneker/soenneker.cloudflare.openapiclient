@@ -17,58 +17,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Freeform text describing the secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_comment? Comment { get; set; }
+        public string? Comment { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_comment Comment { get; set; }
+        public string Comment { get; private set; }
 #endif
         /// <summary>Whenthe secret was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>Secret identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When the secret was modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>The name of the secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus Status { get; set; }
-#endif
         /// <summary>Store Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier? StoreId { get; set; }
+        public string? StoreId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier StoreId { get; set; }
+        public string StoreId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secretObject"/> and sets the default values.
@@ -95,13 +77,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_comment>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_comment.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_created.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus.CreateFromDiscriminatorValue); } },
-                { "store_id", n => { StoreId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>(); } },
+                { "store_id", n => { StoreId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_comment>("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_modified>("modified", Modified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secret_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_store_identifier>("store_id", StoreId);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

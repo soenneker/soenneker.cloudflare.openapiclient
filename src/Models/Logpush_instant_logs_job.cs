@@ -17,42 +17,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Unique WebSocket address that will receive messages from Cloudflare’s edge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasDestination_conf? DestinationConf { get; set; }
+        public string? DestinationConf { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasDestination_conf DestinationConf { get; set; }
+        public string DestinationConf { get; set; }
 #endif
         /// <summary>Comma-separated list of fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields? Fields { get; set; }
+        public string? Fields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields Fields { get; set; }
+        public string Fields { get; set; }
 #endif
         /// <summary>Filters to drill down into specific events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter? Filter { get; set; }
+        public string? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter Filter { get; set; }
+        public string Filter { get; set; }
 #endif
         /// <summary>The sample parameter is the sample rate of the records set by the client: &quot;sample&quot;: 1 is 100% of records &quot;sample&quot;: 10 is 10% and so on.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample? Sample { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample Sample { get; set; }
-#endif
+        public int? Sample { get; set; }
         /// <summary>Unique session id of the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_session_id? SessionId { get; set; }
+        public string? SessionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_session_id SessionId { get; set; }
+        public string SessionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_instant_logs_job"/> and sets the default values.
@@ -79,11 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination_conf", n => { DestinationConf = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasDestination_conf>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasDestination_conf.CreateFromDiscriminatorValue); } },
-                { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields.CreateFromDiscriminatorValue); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter.CreateFromDiscriminatorValue); } },
-                { "sample", n => { Sample = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample.CreateFromDiscriminatorValue); } },
-                { "session_id", n => { SessionId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_session_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_session_id.CreateFromDiscriminatorValue); } },
+                { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
+                { "fields", n => { Fields = n.GetStringValue(); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
+                { "sample", n => { Sample = n.GetIntValue(); } },
+                { "session_id", n => { SessionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +87,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasDestination_conf>("destination_conf", DestinationConf);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields>("fields", Fields);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter>("filter", Filter);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample>("sample", Sample);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_session_id>("session_id", SessionId);
+            writer.WriteStringValue("destination_conf", DestinationConf);
+            writer.WriteStringValue("fields", Fields);
+            writer.WriteStringValue("filter", Filter);
+            writer.WriteIntValue("sample", Sample);
+            writer.WriteStringValue("session_id", SessionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

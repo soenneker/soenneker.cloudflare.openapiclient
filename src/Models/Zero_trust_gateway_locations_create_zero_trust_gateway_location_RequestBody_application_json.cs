@@ -15,29 +15,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if the location is the default location.</summary>
+        public bool? ClientDefault { get; set; }
+        /// <summary>The dns_destination_ips_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_clientDefault? ClientDefault { get; set; }
+        public UntypedNode? DnsDestinationIpsId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_clientDefault ClientDefault { get; set; }
-#endif
-        /// <summary>The identifier of the pair of IPv4 addresses assigned to this location. When creating a location, if this field is absent or set with null, the pair of shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When updating a location, if the field is absent or set with null, the pre-assigned pair remains unchanged.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_dnsDestinationIpsIdWrite? DnsDestinationIpsId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_dnsDestinationIpsIdWrite DnsDestinationIpsId { get; set; }
+        public UntypedNode DnsDestinationIpsId { get; set; }
 #endif
         /// <summary>True if the location needs to resolve EDNS queries.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ecsSupport? EcsSupport { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ecsSupport EcsSupport { get; set; }
-#endif
+        public bool? EcsSupport { get; set; }
         /// <summary>The destination endpoints configured for this location. When updating a location, if this field is absent or set with null, the endpoints configuration remains unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>A list of network ranges that requests from this location would originate from. A non-empty list is only effective if the ipv4 endpoint is enabled for this location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,11 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "client_default", n => { ClientDefault = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_clientDefault>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_clientDefault.CreateFromDiscriminatorValue); } },
-                { "dns_destination_ips_id", n => { DnsDestinationIpsId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_dnsDestinationIpsIdWrite>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_dnsDestinationIpsIdWrite.CreateFromDiscriminatorValue); } },
-                { "ecs_support", n => { EcsSupport = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ecsSupport>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ecsSupport.CreateFromDiscriminatorValue); } },
+                { "client_default", n => { ClientDefault = n.GetBoolValue(); } },
+                { "dns_destination_ips_id", n => { DnsDestinationIpsId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ecs_support", n => { EcsSupport = n.GetBoolValue(); } },
                 { "endpoints", n => { Endpoints = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "networks", n => { Networks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -102,11 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_clientDefault>("client_default", ClientDefault);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_dnsDestinationIpsIdWrite>("dns_destination_ips_id", DnsDestinationIpsId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ecsSupport>("ecs_support", EcsSupport);
+            writer.WriteBoolValue("client_default", ClientDefault);
+            writer.WriteObjectValue<UntypedNode>("dns_destination_ips_id", DnsDestinationIpsId);
+            writer.WriteBoolValue("ecs_support", EcsSupport);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>("endpoints", Endpoints);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network>("networks", Networks);
             writer.WriteAdditionalData(AdditionalData);
         }

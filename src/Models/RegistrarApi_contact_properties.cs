@@ -17,106 +17,106 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address? Address { get; set; }
+        public string? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address Address { get; set; }
+        public string Address { get; set; }
 #endif
         /// <summary>Optional address line for unit, floor, suite, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address2? Address2 { get; set; }
+        public string? Address2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address2 Address2 { get; set; }
+        public string Address2 { get; set; }
 #endif
         /// <summary>City.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_city? City { get; set; }
+        public string? City { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_city City { get; set; }
+        public string City { get; set; }
 #endif
         /// <summary>The country in which the user lives.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_country? Country { get; set; }
+        public string? Country { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_country Country { get; set; }
+        public string Country { get; set; }
 #endif
         /// <summary>The contact email address of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_email? Email { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_email Email { get; set; }
+        public string Email { get; set; }
 #endif
         /// <summary>Contact fax number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_fax? Fax { get; set; }
+        public string? Fax { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_fax Fax { get; set; }
+        public string Fax { get; set; }
 #endif
         /// <summary>User&apos;s first name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_first_name? FirstName { get; set; }
+        public string? FirstName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_first_name FirstName { get; set; }
+        public string FirstName { get; set; }
 #endif
         /// <summary>Contact Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_contact_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_contact_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>User&apos;s last name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_last_name? LastName { get; set; }
+        public string? LastName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_last_name LastName { get; set; }
+        public string LastName { get; set; }
 #endif
         /// <summary>Name of organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_organization? Organization { get; set; }
+        public string? Organization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_organization Organization { get; set; }
+        public string Organization { get; set; }
 #endif
         /// <summary>User&apos;s telephone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_telephone? Phone { get; set; }
+        public string? Phone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_telephone Phone { get; set; }
+        public string Phone { get; set; }
 #endif
         /// <summary>State.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_state? State { get; set; }
+        public string? State { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_state State { get; set; }
+        public string State { get; set; }
 #endif
         /// <summary>The zipcode or postal code where the user lives.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_zipcode? Zip { get; set; }
+        public string? Zip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_zipcode Zip { get; set; }
+        public string Zip { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_contact_properties"/> and sets the default values.
@@ -143,19 +143,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address.CreateFromDiscriminatorValue); } },
-                { "address2", n => { Address2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address2>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address2.CreateFromDiscriminatorValue); } },
-                { "city", n => { City = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_city>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_city.CreateFromDiscriminatorValue); } },
-                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_country>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_country.CreateFromDiscriminatorValue); } },
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_email>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_email.CreateFromDiscriminatorValue); } },
-                { "fax", n => { Fax = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_fax>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_fax.CreateFromDiscriminatorValue); } },
-                { "first_name", n => { FirstName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_first_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_first_name.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_contact_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_contact_identifier.CreateFromDiscriminatorValue); } },
-                { "last_name", n => { LastName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_last_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_last_name.CreateFromDiscriminatorValue); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_organization>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_organization.CreateFromDiscriminatorValue); } },
-                { "phone", n => { Phone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_telephone>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_telephone.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_state.CreateFromDiscriminatorValue); } },
-                { "zip", n => { Zip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_zipcode>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_zipcode.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "address2", n => { Address2 = n.GetStringValue(); } },
+                { "city", n => { City = n.GetStringValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "fax", n => { Fax = n.GetStringValue(); } },
+                { "first_name", n => { FirstName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_name", n => { LastName = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetStringValue(); } },
+                { "phone", n => { Phone = n.GetStringValue(); } },
+                { "state", n => { State = n.GetStringValue(); } },
+                { "zip", n => { Zip = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -165,19 +165,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_address2>("address2", Address2);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_city>("city", City);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_country>("country", Country);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_email>("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_fax>("fax", Fax);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_first_name>("first_name", FirstName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_contact_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_last_name>("last_name", LastName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_organization>("organization", Organization);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_telephone>("phone", Phone);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_state>("state", State);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_zipcode>("zip", Zip);
+            writer.WriteStringValue("address", Address);
+            writer.WriteStringValue("address2", Address2);
+            writer.WriteStringValue("city", City);
+            writer.WriteStringValue("country", Country);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("fax", Fax);
+            writer.WriteStringValue("first_name", FirstName);
+            writer.WriteStringValue("last_name", LastName);
+            writer.WriteStringValue("organization", Organization);
+            writer.WriteStringValue("phone", Phone);
+            writer.WriteStringValue("state", State);
+            writer.WriteStringValue("zip", Zip);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

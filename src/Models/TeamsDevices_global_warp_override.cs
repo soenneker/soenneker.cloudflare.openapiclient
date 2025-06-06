@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Disconnects all devices on the account using Global WARP override.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disconnect? Disconnect { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disconnect Disconnect { get; set; }
-#endif
+        public bool? Disconnect { get; set; }
         /// <summary>When the Global WARP override state was updated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_timestamp? Timestamp { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_timestamp Timestamp { get; set; }
-#endif
+        public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_global_warp_override"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "disconnect", n => { Disconnect = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disconnect>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disconnect.CreateFromDiscriminatorValue); } },
-                { "timestamp", n => { Timestamp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_timestamp.CreateFromDiscriminatorValue); } },
+                { "disconnect", n => { Disconnect = n.GetBoolValue(); } },
+                { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disconnect>("disconnect", Disconnect);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_timestamp>("timestamp", Timestamp);
+            writer.WriteBoolValue("disconnect", Disconnect);
+            writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

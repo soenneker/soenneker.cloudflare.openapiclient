@@ -17,50 +17,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IP Prefix in Classless Inter-Domain Routing format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr? Cidr { get; set; }
+        public string? Cidr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr Cidr { get; set; }
+        public string Cidr { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Account identifier for the account to which prefix is being delegated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier? DelegatedAccountId { get; set; }
+        public string? DelegatedAccountId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier DelegatedAccountId { get; set; }
+        public string DelegatedAccountId { get; set; }
 #endif
         /// <summary>Identifier of a Delegation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegation_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegation_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp? ModifiedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp ModifiedAt { get; set; }
-#endif
+        public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>Identifier of an IP Prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_prefix_identifier? ParentPrefixId { get; set; }
+        public string? ParentPrefixId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_prefix_identifier ParentPrefixId { get; set; }
+        public string ParentPrefixId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamDelegations"/> and sets the default values.
@@ -87,12 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cidr", n => { Cidr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp.CreateFromDiscriminatorValue); } },
-                { "delegated_account_id", n => { DelegatedAccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegation_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegation_identifier.CreateFromDiscriminatorValue); } },
-                { "modified_at", n => { ModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp.CreateFromDiscriminatorValue); } },
-                { "parent_prefix_id", n => { ParentPrefixId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_prefix_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_prefix_identifier.CreateFromDiscriminatorValue); } },
+                { "cidr", n => { Cidr = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "delegated_account_id", n => { DelegatedAccountId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "parent_prefix_id", n => { ParentPrefixId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>("cidr", Cidr);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier>("delegated_account_id", DelegatedAccountId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegation_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>("modified_at", ModifiedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_prefix_identifier>("parent_prefix_id", ParentPrefixId);
+            writer.WriteStringValue("cidr", Cidr);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("delegated_account_id", DelegatedAccountId);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
+            writer.WriteStringValue("parent_prefix_id", ParentPrefixId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

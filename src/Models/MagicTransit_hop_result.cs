@@ -23,29 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result> Nodes { get; set; }
 #endif
         /// <summary>Number of packets where no response was received.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_lost? PacketsLost { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_lost PacketsLost { get; set; }
-#endif
+        public int? PacketsLost { get; set; }
         /// <summary>Number of packets sent with specified TTL.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_sent? PacketsSent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_sent PacketsSent { get; set; }
-#endif
+        public int? PacketsSent { get; set; }
         /// <summary>The time to live (TTL).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_ttl? PacketsTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_ttl PacketsTtl { get; set; }
-#endif
+        public int? PacketsTtl { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result"/> and sets the default values.
         /// </summary>
@@ -72,9 +54,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "nodes", n => { Nodes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "packets_lost", n => { PacketsLost = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_lost>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_lost.CreateFromDiscriminatorValue); } },
-                { "packets_sent", n => { PacketsSent = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_sent>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_sent.CreateFromDiscriminatorValue); } },
-                { "packets_ttl", n => { PacketsTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_ttl.CreateFromDiscriminatorValue); } },
+                { "packets_lost", n => { PacketsLost = n.GetIntValue(); } },
+                { "packets_sent", n => { PacketsSent = n.GetIntValue(); } },
+                { "packets_ttl", n => { PacketsTtl = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +67,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result>("nodes", Nodes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_lost>("packets_lost", PacketsLost);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_sent>("packets_sent", PacketsSent);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packets_ttl>("packets_ttl", PacketsTtl);
+            writer.WriteIntValue("packets_lost", PacketsLost);
+            writer.WriteIntValue("packets_sent", PacketsSent);
+            writer.WriteIntValue("packets_ttl", PacketsTtl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,61 +15,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Shows if a domain is available for transferring into Cloudflare Registrar.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_available? Available { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_available Available { get; set; }
-#endif
+        public bool? Available { get; set; }
         /// <summary>Indicates if the domain can be registered as a new domain.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_can_register? CanRegister { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_can_register CanRegister { get; set; }
-#endif
+        public bool? CanRegister { get; set; }
         /// <summary>Shows time of creation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_created_at? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_created_at CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Shows name of current registrar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_current_registrar? CurrentRegistrar { get; set; }
+        public string? CurrentRegistrar { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_current_registrar CurrentRegistrar { get; set; }
+        public string CurrentRegistrar { get; set; }
 #endif
         /// <summary>Shows when domain name registration expires.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_expires_at? ExpiresAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_expires_at ExpiresAt { get; set; }
-#endif
+        public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>Domain identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_domain_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_domain_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Shows whether a registrar lock is in place for a domain.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_locked? Locked { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_locked Locked { get; set; }
-#endif
+        public bool? Locked { get; set; }
         /// <summary>Shows contact information for domain registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,19 +51,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A comma-separated list of registry status codes. A full list of status codes can be found at [EPP Status Codes](https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registry_statuses? RegistryStatuses { get; set; }
+        public string? RegistryStatuses { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registry_statuses RegistryStatuses { get; set; }
+        public string RegistryStatuses { get; set; }
 #endif
         /// <summary>Whether a particular TLD is currently supported by Cloudflare Registrar. Refer to [TLD Policies](https://www.cloudflare.com/tld-policies/) for a list of supported TLDs.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_supported_tld? SupportedTld { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_supported_tld SupportedTld { get; set; }
-#endif
+        public bool? SupportedTld { get; set; }
         /// <summary>Statuses for domain transfers into Cloudflare Registrar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,13 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in TransferIn { get; set; }
 #endif
         /// <summary>Last updated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_updated_at? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_updated_at UpdatedAt { get; set; }
-#endif
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_domains"/> and sets the default values.
         /// </summary>
@@ -135,18 +93,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "available", n => { Available = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_available>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_available.CreateFromDiscriminatorValue); } },
-                { "can_register", n => { CanRegister = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_can_register>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_can_register.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_created_at.CreateFromDiscriminatorValue); } },
-                { "current_registrar", n => { CurrentRegistrar = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_current_registrar>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_current_registrar.CreateFromDiscriminatorValue); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_expires_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_expires_at.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_domain_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_domain_identifier.CreateFromDiscriminatorValue); } },
-                { "locked", n => { Locked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_locked>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_locked.CreateFromDiscriminatorValue); } },
+                { "available", n => { Available = n.GetBoolValue(); } },
+                { "can_register", n => { CanRegister = n.GetBoolValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "current_registrar", n => { CurrentRegistrar = n.GetStringValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
                 { "registrant_contact", n => { RegistrantContact = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registrant_contact>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registrant_contact.CreateFromDiscriminatorValue); } },
-                { "registry_statuses", n => { RegistryStatuses = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registry_statuses>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registry_statuses.CreateFromDiscriminatorValue); } },
-                { "supported_tld", n => { SupportedTld = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_supported_tld>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_supported_tld.CreateFromDiscriminatorValue); } },
+                { "registry_statuses", n => { RegistryStatuses = n.GetStringValue(); } },
+                { "supported_tld", n => { SupportedTld = n.GetBoolValue(); } },
                 { "transfer_in", n => { TransferIn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_updated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_updated_at.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -156,18 +114,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_available>("available", Available);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_can_register>("can_register", CanRegister);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_created_at>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_current_registrar>("current_registrar", CurrentRegistrar);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_expires_at>("expires_at", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_domain_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_locked>("locked", Locked);
+            writer.WriteBoolValue("available", Available);
+            writer.WriteBoolValue("can_register", CanRegister);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("current_registrar", CurrentRegistrar);
+            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
+            writer.WriteBoolValue("locked", Locked);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registrant_contact>("registrant_contact", RegistrantContact);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registry_statuses>("registry_statuses", RegistryStatuses);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_supported_tld>("supported_tld", SupportedTld);
+            writer.WriteStringValue("registry_statuses", RegistryStatuses);
+            writer.WriteBoolValue("supported_tld", SupportedTld);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in>("transfer_in", TransferIn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_updated_at>("updated_at", UpdatedAt);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

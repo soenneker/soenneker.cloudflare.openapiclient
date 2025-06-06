@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier? ConsumerId { get; set; }
+        public string? ConsumerId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier ConsumerId { get; set; }
+        public string ConsumerId { get; private set; }
 #endif
         /// <summary>The created_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier? QueueId { get; set; }
+        public string? QueueId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier QueueId { get; set; }
+        public string QueueId { get; private set; }
 #endif
         /// <summary>The script property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,21 +103,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ConsumerId = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier();
-            }
-            else if("mq_http-consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("mq_http-consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqHttpConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer();
             }
             else if("mq_worker-consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqWorkerConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.QueueId = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -131,9 +123,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.Settings = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_settings();
             }
+            else if(parseNode.GetStringValue() is string consumerIdValue)
+            {
+                result.ConsumerId = consumerIdValue;
+            }
             else if(parseNode.GetStringValue() is string createdOnValue)
             {
                 result.CreatedOn = createdOnValue;
+            }
+            else if(parseNode.GetStringValue() is string queueIdValue)
+            {
+                result.QueueId = queueIdValue;
             }
             else if(parseNode.GetStringValue() is string typeValue)
             {
@@ -147,21 +147,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ConsumerId != null)
-            {
-                return ConsumerId.GetFieldDeserializers();
-            }
-            else if(MqHttpConsumer != null)
+            if(MqHttpConsumer != null)
             {
                 return MqHttpConsumer.GetFieldDeserializers();
             }
             else if(MqWorkerConsumer != null)
             {
                 return MqWorkerConsumer.GetFieldDeserializers();
-            }
-            else if(QueueId != null)
-            {
-                return QueueId.GetFieldDeserializers();
             }
             else if(Script != null)
             {
@@ -184,21 +176,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(ConsumerId != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier>(null, ConsumerId);
-            }
-            else if(MqHttpConsumer != null)
+            if(MqHttpConsumer != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer>(null, MqHttpConsumer);
             }
             else if(MqWorkerConsumer != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer>(null, MqWorkerConsumer);
-            }
-            else if(QueueId != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier>(null, QueueId);
             }
             else if(Script != null)
             {
@@ -212,9 +196,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_settings>(null, Settings);
             }
+            else if(ConsumerId != null)
+            {
+                writer.WriteStringValue(null, ConsumerId);
+            }
             else if(CreatedOn != null)
             {
                 writer.WriteStringValue(null, CreatedOn);
+            }
+            else if(QueueId != null)
+            {
+                writer.WriteStringValue(null, QueueId);
             }
             else if(Type != null)
             {

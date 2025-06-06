@@ -15,28 +15,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the view was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_created_time? CreatedTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_created_time CreatedTime { get; set; }
-#endif
+        public DateTimeOffset? CreatedTime { get; private set; }
         /// <summary>When the view was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_modified_time? ModifiedTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_modified_time ModifiedTime { get; set; }
-#endif
+        public DateTimeOffset? ModifiedTime { get; private set; }
         /// <summary>The name of the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The list of zones linked to this view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_created_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_created_time.CreateFromDiscriminatorValue); } },
-                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_modified_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_modified_time.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_name.CreateFromDiscriminatorValue); } },
+                { "created_time", n => { CreatedTime = n.GetDateTimeOffsetValue(); } },
+                { "modified_time", n => { ModifiedTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "zones", n => { Zones = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -84,9 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_created_time>("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_modified_time>("modified_time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_name>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("zones", Zones);
             writer.WriteAdditionalData(AdditionalData);
         }

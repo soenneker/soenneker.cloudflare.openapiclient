@@ -25,27 +25,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The interval between each posture check with the third-party API. Use `m` for minutes (e.g. `5m`) and `h` for hours (e.g. `12h`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval? Interval { get; set; }
+        public string? Interval { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval Interval { get; set; }
+        public string Interval { get; set; }
 #endif
         /// <summary>The name of the device posture integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The type of device posture integration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Device_posture_integrations_create_device_posture_integration_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -72,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request>("config", Config);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_interval>("interval", Interval);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>("type", Type);
+            writer.WriteStringValue("interval", Interval);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

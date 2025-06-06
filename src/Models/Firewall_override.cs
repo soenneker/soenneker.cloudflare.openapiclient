@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An informative summary of the current URI-based WAF override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>An object that allows you to enable or disable WAF rule groups for the current WAF override. Each key of this object must be the ID of a WAF rule group, and each value must be a valid WAF action (usually `default` or `disable`). When creating a new URI-based WAF override, you must provide a `groups` object or a `rules` object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,27 +33,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier of the WAF override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_overridesId? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_overridesId Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When true, indicates that the WAF package is currently paused.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_paused? Paused { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_paused Paused { get; set; }
-#endif
+        public bool? Paused { get; set; }
         /// <summary>The relative priority of the current URI-based WAF override when multiple overrides match a single URL. A lower number indicates higher priority. Higher priority overrides may overwrite values set by lower priority overrides.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_priority? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_priority Priority { get; set; }
-#endif
+        public double? Priority { get; set; }
         /// <summary>Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,11 +91,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "groups", n => { Groups = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_groups>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_groups.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_overridesId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_overridesId.CreateFromDiscriminatorValue); } },
-                { "paused", n => { Paused = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_paused>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_paused.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_priority>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_priority.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "rewrite_action", n => { RewriteAction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rewrite_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rewrite_action.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -120,11 +108,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_groups>("groups", Groups);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_overridesId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_paused>("paused", Paused);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_priority>("priority", Priority);
+            writer.WriteBoolValue("paused", Paused);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rewrite_action>("rewrite_action", RewriteAction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules>("rules", Rules);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);

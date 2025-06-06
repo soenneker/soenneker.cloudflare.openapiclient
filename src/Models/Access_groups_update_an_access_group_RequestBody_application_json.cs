@@ -30,21 +30,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule> Include { get; set; }
 #endif
-        /// <summary>Whether this is the default group</summary>
+        /// <summary>The is_default property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_is_default? IsDefault { get; set; }
+        public UntypedNode? IsDefault { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_is_default IsDefault { get; set; }
+        public UntypedNode IsDefault { get; set; }
 #endif
         /// <summary>The name of the Access group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_groups_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_groups_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Rules evaluated with an AND logical operator. To match a policy, a user must meet all of the Require rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,8 +81,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "is_default", n => { IsDefault = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_is_default>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_is_default.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_groups_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_groups_componentsSchemasName.CreateFromDiscriminatorValue); } },
+                { "is_default", n => { IsDefault = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "require", n => { Require = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -95,8 +95,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("exclude", Exclude);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("include", Include);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_is_default>("is_default", IsDefault);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_groups_componentsSchemasName>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("is_default", IsDefault);
+            writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("require", Require);
             writer.WriteAdditionalData(AdditionalData);
         }

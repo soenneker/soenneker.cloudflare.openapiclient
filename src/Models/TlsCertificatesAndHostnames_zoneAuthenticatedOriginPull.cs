@@ -13,20 +13,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether zone-level authenticated origin pulls is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasEnabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasEnabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The zone&apos;s private key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_private_key? PrivateKey { get; set; }
+        public string? PrivateKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_private_key PrivateKey { get; set; }
+        public string PrivateKey { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,8 +40,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasEnabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasEnabled.CreateFromDiscriminatorValue); } },
-                { "private_key", n => { PrivateKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_private_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_private_key.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "private_key", n => { PrivateKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasEnabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_private_key>("private_key", PrivateKey);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("private_key", PrivateKey);
         }
     }
 }

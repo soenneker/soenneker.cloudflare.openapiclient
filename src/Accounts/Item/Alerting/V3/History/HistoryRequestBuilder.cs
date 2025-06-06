@@ -90,26 +90,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.History
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HistoryRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("before")]
-            public string? Before { get; set; }
-#nullable restore
-#else
-            [QueryParameter("before")]
-            public string Before { get; set; }
-#endif
+            public DateTimeOffset? Before { get; set; }
             [QueryParameter("page")]
             public double? Page { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public double? PerPage { get; set; }
             [QueryParameter("since")]
             public DateTimeOffset? Since { get; set; }
         }

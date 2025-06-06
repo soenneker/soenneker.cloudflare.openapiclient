@@ -15,99 +15,58 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and a time a watermark profile was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>The source URL for a downloaded image. If the watermark profile was created via direct upload, this field is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloadedFrom? DownloadedFrom { get; set; }
+        public string? DownloadedFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloadedFrom DownloadedFrom { get; set; }
+        public string DownloadedFrom { get; set; }
 #endif
         /// <summary>The height of the image in pixels.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_height? Height { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_height Height { get; set; }
-#endif
+        public int? Height { get; set; }
         /// <summary>A short description of the watermark profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The translucency of the image. A value of `0.0` makes the image completely transparent, and `1.0` makes the image completely opaque. Note that if the image is already semi-transparent, setting this to `1.0` will not make the image completely opaque.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_opacity? Opacity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_opacity Opacity { get; set; }
-#endif
+        public double? Opacity { get; set; }
         /// <summary>The whitespace between the adjacent edges (determined by position) of the video and the image. `0.0` indicates no padding, and `1.0` indicates a fully padded video width or length, as determined by the algorithm.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_padding? Padding { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_padding Padding { get; set; }
-#endif
+        public double? Padding { get; set; }
         /// <summary>The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position? Position { get; set; }
+        public string? Position { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position Position { get; set; }
+        public string Position { get; set; }
 #endif
         /// <summary>The size of the image relative to the overall size of the video. This parameter will adapt to horizontal and vertical videos automatically. `0.0` indicates no scaling (use the size of the image as-is), and `1.0 `fills the entire video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scale? Scale { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scale Scale { get; set; }
-#endif
+        public double? Scale { get; set; }
         /// <summary>The size of the image in bytes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_size? Size { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_size Size { get; set; }
-#endif
+        public double? Size { get; set; }
         /// <summary>The unique identifier for a watermark profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_identifier? Uid { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_identifier Uid { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>The width of the image in pixels.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_width? Width { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_width Width { get; set; }
-#endif
+        public int? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarks"/> and sets the default values.
         /// </summary>
         public Stream_watermarks()
         {
             AdditionalData = new Dictionary<string, object>();
+            Position = "upperRight";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -127,17 +86,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_created.CreateFromDiscriminatorValue); } },
-                { "downloadedFrom", n => { DownloadedFrom = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloadedFrom>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloadedFrom.CreateFromDiscriminatorValue); } },
-                { "height", n => { Height = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_height>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_height.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_name.CreateFromDiscriminatorValue); } },
-                { "opacity", n => { Opacity = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_opacity>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_opacity.CreateFromDiscriminatorValue); } },
-                { "padding", n => { Padding = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_padding>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_padding.CreateFromDiscriminatorValue); } },
-                { "position", n => { Position = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position.CreateFromDiscriminatorValue); } },
-                { "scale", n => { Scale = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scale>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scale.CreateFromDiscriminatorValue); } },
-                { "size", n => { Size = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_size>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_size.CreateFromDiscriminatorValue); } },
-                { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_identifier.CreateFromDiscriminatorValue); } },
-                { "width", n => { Width = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_width>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_width.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "downloadedFrom", n => { DownloadedFrom = n.GetStringValue(); } },
+                { "height", n => { Height = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "opacity", n => { Opacity = n.GetDoubleValue(); } },
+                { "padding", n => { Padding = n.GetDoubleValue(); } },
+                { "position", n => { Position = n.GetStringValue(); } },
+                { "scale", n => { Scale = n.GetDoubleValue(); } },
+                { "size", n => { Size = n.GetDoubleValue(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -147,17 +106,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloadedFrom>("downloadedFrom", DownloadedFrom);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_height>("height", Height);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_opacity>("opacity", Opacity);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_padding>("padding", Padding);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_position>("position", Position);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scale>("scale", Scale);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_size>("size", Size);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_identifier>("uid", Uid);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_width>("width", Width);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteStringValue("downloadedFrom", DownloadedFrom);
+            writer.WriteIntValue("height", Height);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("opacity", Opacity);
+            writer.WriteDoubleValue("padding", Padding);
+            writer.WriteStringValue("position", Position);
+            writer.WriteDoubleValue("scale", Scale);
+            writer.WriteDoubleValue("size", Size);
+            writer.WriteStringValue("uid", Uid);
+            writer.WriteIntValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,68 +15,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Timestamp of when the webhook destination was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_created_at? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_created_at CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The unique identifier of a webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_webhookId? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_webhookId Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Timestamp of the last time an attempt to dispatch a notification to this webhook failed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_failure? LastFailure { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_failure LastFailure { get; set; }
-#endif
+        public DateTimeOffset? LastFailure { get; private set; }
         /// <summary>Timestamp of the last time Cloudflare was able to successfully dispatch a notification using this webhook.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success? LastSuccess { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success LastSuccess { get; set; }
-#endif
+        public DateTimeOffset? LastSuccess { get; private set; }
         /// <summary>The name of the webhook destination. This will be included in the request body when you receive a webhook notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Optional secret that will be passed in the `cf-webhook-auth` header when dispatching generic webhook notifications or formatted for supported destinations. Secrets are not returned in any API response body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret? Secret { get; set; }
+        public string? Secret { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret Secret { get; set; }
+        public string Secret { get; set; }
 #endif
         /// <summary>Type of webhook endpoint.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType Type { get; set; }
-#endif
         /// <summary>The POST endpoint to call when dispatching a notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url? Url { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url Url { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_webhooks"/> and sets the default values.
@@ -103,14 +79,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_created_at.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_webhookId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_webhookId.CreateFromDiscriminatorValue); } },
-                { "last_failure", n => { LastFailure = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_failure>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_failure.CreateFromDiscriminatorValue); } },
-                { "last_success", n => { LastSuccess = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_failure", n => { LastFailure = n.GetDateTimeOffsetValue(); } },
+                { "last_success", n => { LastSuccess = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -120,14 +96,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_created_at>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_webhookId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_failure>("last_failure", LastFailure);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_last_success>("last_success", LastSuccess);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_secret>("secret", Secret);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_url>("url", Url);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("secret", Secret);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>("type", Type);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

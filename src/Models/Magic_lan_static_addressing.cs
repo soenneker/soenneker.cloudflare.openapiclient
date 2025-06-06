@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr? Address { get; set; }
+        public string? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr Address { get; set; }
+        public string Address { get; set; }
 #endif
         /// <summary>The dhcp_relay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,18 +42,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr? SecondaryAddress { get; set; }
+        public string? SecondaryAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr SecondaryAddress { get; set; }
+        public string SecondaryAddress { get; set; }
 #endif
         /// <summary>A valid CIDR notation representing an IP range.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr? VirtualAddress { get; set; }
+        public string? VirtualAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr VirtualAddress { get; set; }
+        public string VirtualAddress { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_static_addressing"/> and sets the default values.
@@ -80,11 +80,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetStringValue(); } },
                 { "dhcp_relay", n => { DhcpRelay = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_relay>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_relay.CreateFromDiscriminatorValue); } },
                 { "dhcp_server", n => { DhcpServer = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_server>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_server.CreateFromDiscriminatorValue); } },
-                { "secondary_address", n => { SecondaryAddress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr.CreateFromDiscriminatorValue); } },
-                { "virtual_address", n => { VirtualAddress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr.CreateFromDiscriminatorValue); } },
+                { "secondary_address", n => { SecondaryAddress = n.GetStringValue(); } },
+                { "virtual_address", n => { VirtualAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>("address", Address);
+            writer.WriteStringValue("address", Address);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_relay>("dhcp_relay", DhcpRelay);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_server>("dhcp_server", DhcpServer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>("secondary_address", SecondaryAddress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>("virtual_address", VirtualAddress);
+            writer.WriteStringValue("secondary_address", SecondaryAddress);
+            writer.WriteStringValue("virtual_address", VirtualAddress);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

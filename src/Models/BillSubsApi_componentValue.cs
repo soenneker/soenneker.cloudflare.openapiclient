@@ -15,23 +15,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default amount allocated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_default? Default { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_default Default { get; set; }
-#endif
+        public double? Default { get; set; }
         /// <summary>The unique component.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasName? Name { get; set; }
         /// <summary>The unit price of the addon.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_unit_price? UnitPrice { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_unit_price UnitPrice { get; set; }
-#endif
+        public double? UnitPrice { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue"/> and sets the default values.
         /// </summary>
@@ -57,9 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default", n => { Default = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_default>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_default.CreateFromDiscriminatorValue); } },
+                { "default", n => { Default = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasName>(); } },
-                { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_unit_price>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_unit_price.CreateFromDiscriminatorValue); } },
+                { "unit_price", n => { UnitPrice = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -69,9 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_default>("default", Default);
+            writer.WriteDoubleValue("default", Default);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_unit_price>("unit_price", UnitPrice);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,18 +25,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>a valid hostname that’s been added to your DNS zone as an A, AAAA, or CNAME record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_server? CustomOriginServer { get; set; }
+        public string? CustomOriginServer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_server CustomOriginServer { get; set; }
+        public string CustomOriginServer { get; set; }
 #endif
         /// <summary>A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string &apos;:request_host_header:&apos; which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_sni? CustomOriginSni { get; set; }
+        public string? CustomOriginSni { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_sni CustomOriginSni { get; set; }
+        public string CustomOriginSni { get; set; }
 #endif
         /// <summary>SSL properties used when creating the custom hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,8 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "custom_metadata", n => { CustomMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_metadata.CreateFromDiscriminatorValue); } },
-                { "custom_origin_server", n => { CustomOriginServer = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_server>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_server.CreateFromDiscriminatorValue); } },
-                { "custom_origin_sni", n => { CustomOriginSni = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_sni>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_sni.CreateFromDiscriminatorValue); } },
+                { "custom_origin_server", n => { CustomOriginServer = n.GetStringValue(); } },
+                { "custom_origin_sni", n => { CustomOriginSni = n.GetStringValue(); } },
                 { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost.CreateFromDiscriminatorValue); } },
             };
         }
@@ -85,8 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_metadata>("custom_metadata", CustomMetadata);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_server>("custom_origin_server", CustomOriginServer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_origin_sni>("custom_origin_sni", CustomOriginSni);
+            writer.WriteStringValue("custom_origin_server", CustomOriginServer);
+            writer.WriteStringValue("custom_origin_sni", CustomOriginSni);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost>("ssl", Ssl);
             writer.WriteAdditionalData(AdditionalData);
         }

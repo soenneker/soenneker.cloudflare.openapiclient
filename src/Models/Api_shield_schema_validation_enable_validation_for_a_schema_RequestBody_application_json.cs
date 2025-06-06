@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The validation_enabled property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_validation_enabled? ValidationEnabled { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_RequestBody_application_json_validation_enabled? ValidationEnabled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_validation_enabled ValidationEnabled { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_RequestBody_application_json_validation_enabled ValidationEnabled { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_RequestBody_application_json"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "validation_enabled", n => { ValidationEnabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_validation_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_validation_enabled.CreateFromDiscriminatorValue); } },
+                { "validation_enabled", n => { ValidationEnabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_RequestBody_application_json_validation_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_RequestBody_application_json_validation_enabled.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_validation_enabled>("validation_enabled", ValidationEnabled);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_RequestBody_application_json_validation_enabled>("validation_enabled", ValidationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If `false`, the BGP route is withdrawn.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised? Advertised { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised Advertised { get; set; }
-#endif
+        public bool? Advertised { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_dynamic_advertisement_update_prefix_dynamic_advertisement_status_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "advertised", n => { Advertised = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised.CreateFromDiscriminatorValue); } },
+                { "advertised", n => { Advertised = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised>("advertised", Advertised);
+            writer.WriteBoolValue("advertised", Advertised);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

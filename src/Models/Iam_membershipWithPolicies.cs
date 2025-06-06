@@ -23,20 +23,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enterprise only. Indicates whether or not API access is enabled specifically for this user on a given account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_access_enabled? ApiAccessEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_access_enabled ApiAccessEnabled { get; set; }
-#endif
+        public bool? ApiAccessEnabled { get; set; }
         /// <summary>Membership identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>All access permissions for the user at the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,13 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Roles { get; private set; }
 #endif
         /// <summary>Status of this membership.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membershipWithPolicies"/> and sets the default values.
         /// </summary>
@@ -96,12 +84,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount.CreateFromDiscriminatorValue); } },
-                { "api_access_enabled", n => { ApiAccessEnabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_access_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_access_enabled.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
+                { "api_access_enabled", n => { ApiAccessEnabled = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permissions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permissions.CreateFromDiscriminatorValue); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_list_member_policy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_list_member_policy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>(); } },
             };
         }
         /// <summary>
@@ -111,10 +99,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_access_enabled>("api_access_enabled", ApiAccessEnabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_componentsSchemasIdentifier>("id", Id);
+            writer.WriteBoolValue("api_access_enabled", ApiAccessEnabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_list_member_policy>("policies", Policies);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

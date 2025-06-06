@@ -104,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             [QueryParameter("cf_resource_id")]
             public string CfResourceId { get; set; }
 #endif
+            [Obsolete("This property is deprecated, use DirectionAsAccessDirection instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("direction")]
@@ -113,6 +114,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             [QueryParameter("direction")]
             public string Direction { get; set; }
 #endif
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_direction? DirectionAsAccessDirection { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("idp_id")]
@@ -131,15 +134,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             [QueryParameter("idp_resource_id")]
             public string IdpResourceId { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("limit")]
-            public string? Limit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("limit")]
-            public string Limit { get; set; }
-#endif
+            public int? Limit { get; set; }
             [Obsolete("This property is deprecated, use RequestMethodAsGetRequestMethodQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,15 +192,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             [QueryParameter("resource_user_email")]
             public string ResourceUserEmail { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("since")]
-            public string? Since { get; set; }
-#nullable restore
-#else
-            [QueryParameter("since")]
-            public string Since { get; set; }
-#endif
+            public DateTimeOffset? Since { get; set; }
             [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -224,15 +213,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates.GetStatusQueryParameterType[] StatusAsGetStatusQueryParameterType { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("until")]
-            public string? Until { get; set; }
-#nullable restore
-#else
-            [QueryParameter("until")]
-            public string Until { get; set; }
-#endif
+            public DateTimeOffset? Until { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

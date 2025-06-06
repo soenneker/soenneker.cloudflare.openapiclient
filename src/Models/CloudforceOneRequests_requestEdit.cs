@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Request content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestContent? Content { get; set; }
+        public string? Content { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestContent Content { get; set; }
+        public string Content { get; set; }
 #endif
         /// <summary>Priority for analyzing the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,27 +33,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Requested information from request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType? RequestType { get; set; }
+        public string? RequestType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType RequestType { get; set; }
+        public string RequestType { get; set; }
 #endif
         /// <summary>Brief description of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary? Summary { get; set; }
+        public string? Summary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary Summary { get; set; }
+        public string Summary { get; set; }
 #endif
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp Tlp { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestEdit"/> and sets the default values.
         /// </summary>
@@ -79,11 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestContent>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestContent.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
-                { "request_type", n => { RequestType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary.CreateFromDiscriminatorValue); } },
-                { "tlp", n => { Tlp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp.CreateFromDiscriminatorValue); } },
+                { "request_type", n => { RequestType = n.GetStringValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
             };
         }
         /// <summary>
@@ -93,11 +87,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestContent>("content", Content);
+            writer.WriteStringValue("content", Content);
             writer.WriteStringValue("priority", Priority);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestType>("request_type", RequestType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestSummary>("summary", Summary);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
+            writer.WriteStringValue("request_type", RequestType);
+            writer.WriteStringValue("summary", Summary);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

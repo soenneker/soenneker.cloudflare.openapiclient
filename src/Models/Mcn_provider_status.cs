@@ -111,21 +111,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string LastDiscoveryStartedAtV2 { get; set; }
 #endif
         /// <summary>The last_discovery_status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status? LastDiscoveryStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status LastDiscoveryStatus { get; set; }
-#endif
         /// <summary>The last_discovery_status_v2 property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status? LastDiscoveryStatusV2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status LastDiscoveryStatusV2 { get; set; }
-#endif
         /// <summary>The last_updated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,8 +167,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_discovery_completed_at_v2", n => { LastDiscoveryCompletedAtV2 = n.GetStringValue(); } },
                 { "last_discovery_started_at", n => { LastDiscoveryStartedAt = n.GetStringValue(); } },
                 { "last_discovery_started_at_v2", n => { LastDiscoveryStartedAtV2 = n.GetStringValue(); } },
-                { "last_discovery_status", n => { LastDiscoveryStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status.CreateFromDiscriminatorValue); } },
-                { "last_discovery_status_v2", n => { LastDiscoveryStatusV2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status.CreateFromDiscriminatorValue); } },
+                { "last_discovery_status", n => { LastDiscoveryStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>(); } },
+                { "last_discovery_status_v2", n => { LastDiscoveryStatusV2 = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>(); } },
                 { "last_updated", n => { LastUpdated = n.GetStringValue(); } },
                 { "regions", n => { Regions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -204,8 +192,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("last_discovery_completed_at_v2", LastDiscoveryCompletedAtV2);
             writer.WriteStringValue("last_discovery_started_at", LastDiscoveryStartedAt);
             writer.WriteStringValue("last_discovery_started_at_v2", LastDiscoveryStartedAtV2);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>("last_discovery_status", LastDiscoveryStatus);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>("last_discovery_status_v2", LastDiscoveryStatusV2);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>("last_discovery_status", LastDiscoveryStatus);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_provider_discovery_status>("last_discovery_status_v2", LastDiscoveryStatusV2);
             writer.WriteStringValue("last_updated", LastUpdated);
             writer.WriteCollectionOfPrimitiveValues<string>("regions", Regions);
             writer.WriteAdditionalData(AdditionalData);

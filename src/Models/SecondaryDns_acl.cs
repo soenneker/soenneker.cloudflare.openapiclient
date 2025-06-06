@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Allowed IPv4/IPv6 address range of primary or secondary nameservers. This will be applied for the entire account. The IP range is used to allow additional NOTIFY IPs for secondary zones and IPs Cloudflare allows AXFR/IXFR requests from for primary zones. CIDRs are limited to a maximum of /24 for IPv4 and /64 for IPv6 respectively.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip_range? IpRange { get; set; }
+        public string? IpRange { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip_range IpRange { get; set; }
+        public string IpRange { get; set; }
 #endif
         /// <summary>The name of the acl.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "ip_range", n => { IpRange = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip_range>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip_range.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl_componentsSchemasName.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "ip_range", n => { IpRange = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip_range>("ip_range", IpRange);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl_componentsSchemasName>("name", Name);
+            writer.WriteStringValue("ip_range", IpRange);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

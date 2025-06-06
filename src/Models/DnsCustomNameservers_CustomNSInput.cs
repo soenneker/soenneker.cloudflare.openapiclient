@@ -17,19 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The FQDN of the name server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name? NsName { get; set; }
+        public string? NsName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name NsName { get; set; }
+        public string NsName { get; set; }
 #endif
         /// <summary>The number of the set that this name server belongs to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set? NsSet { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set NsSet { get; set; }
-#endif
+        public double? NsSet { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNSInput"/> and sets the default values.
         /// </summary>
@@ -55,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ns_name", n => { NsName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name.CreateFromDiscriminatorValue); } },
-                { "ns_set", n => { NsSet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set.CreateFromDiscriminatorValue); } },
+                { "ns_name", n => { NsName = n.GetStringValue(); } },
+                { "ns_set", n => { NsSet = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name>("ns_name", NsName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set>("ns_set", NsSet);
+            writer.WriteStringValue("ns_name", NsName);
+            writer.WriteDoubleValue("ns_set", NsSet);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

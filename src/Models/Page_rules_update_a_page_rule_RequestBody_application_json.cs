@@ -22,22 +22,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The priority of the rule, used to define which Page Rule is processedover another. A higher number indicates a higher priority. For example,if you have a catch-all Page Rule (rule A: `/images/*`) but want a morespecific Page Rule to take precedence (rule B: `/images/special/*`),specify a higher priority for rule B so it overrides rule A.</summary>
+        /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_priority? Priority { get; set; }
+        public UntypedNode? Priority { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_priority Priority { get; set; }
+        public UntypedNode Priority { get; set; }
 #endif
         /// <summary>The status of the Page Rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status Status { get; set; }
-#endif
         /// <summary>The rule targets to evaluate on each request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Page_rules_update_a_page_rule_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
+            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status.Disabled;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_update_a_page_rule_RequestBody_application_json.WithPagerule_>(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_update_a_page_rule_RequestBody_application_json.WithPagerule_.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_priority>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_priority.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status.CreateFromDiscriminatorValue); } },
+                { "priority", n => { Priority = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>(); } },
                 { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -85,8 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_update_a_page_rule_RequestBody_application_json.WithPagerule_>("actions", Actions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_priority>("priority", Priority);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>("status", Status);
+            writer.WriteObjectValue<UntypedNode>("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,29 +14,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Certificate identifier tag.</summary>
+        /// <summary>The cert_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_cert_id? CertId { get; set; }
+        public UntypedNode? CertId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_cert_id CertId { get; set; }
+        public UntypedNode CertId { get; set; }
 #endif
         /// <summary>Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The hostname on the origin for which the client certificate uploaded will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname? Hostname { get; set; }
+        public string? Hostname { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname Hostname { get; set; }
+        public string Hostname { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_input"/> and sets the default values.
@@ -63,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cert_id", n => { CertId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_cert_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_cert_id.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled.CreateFromDiscriminatorValue); } },
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname.CreateFromDiscriminatorValue); } },
+                { "cert_id", n => { CertId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_cert_id>("cert_id", CertId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname>("hostname", Hostname);
+            writer.WriteObjectValue<UntypedNode>("cert_id", CertId);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("hostname", Hostname);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

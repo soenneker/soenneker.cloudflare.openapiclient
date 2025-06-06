@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The preview_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_identifier? PreviewId { get; set; }
+        public string? PreviewId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_identifier PreviewId { get; set; }
+        public string PreviewId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_preview_response_result"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pools", n => { Pools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_preview_response_result_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_preview_response_result_pools.CreateFromDiscriminatorValue); } },
-                { "preview_id", n => { PreviewId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_identifier.CreateFromDiscriminatorValue); } },
+                { "preview_id", n => { PreviewId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_preview_response_result_pools>("pools", Pools);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_identifier>("preview_id", PreviewId);
+            writer.WriteStringValue("preview_id", PreviewId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,115 +17,67 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier? CertId { get; set; }
+        public string? CertId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier CertId { get; set; }
+        public string CertId { get; set; }
 #endif
         /// <summary>The hostname certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasCertificate? Certificate { get; set; }
+        public string? Certificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasCertificate Certificate { get; set; }
+        public string Certificate { get; set; }
 #endif
         /// <summary>Status of the certificate or the association.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus? CertStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus CertStatus { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus? CertStatus { get; private set; }
         /// <summary>The time when the certificate was updated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at? CertUpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at CertUpdatedAt { get; set; }
-#endif
+        public DateTimeOffset? CertUpdatedAt { get; private set; }
         /// <summary>The time when the certificate was uploaded.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasUploaded_on? CertUploadedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasUploaded_on CertUploadedOn { get; set; }
-#endif
+        public DateTimeOffset? CertUploadedOn { get; set; }
         /// <summary>The time when the certificate was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasCreated_at? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasCreated_at CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The date when the certificate expires.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasExpires_on? ExpiresOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasExpires_on ExpiresOn { get; set; }
-#endif
+        public DateTimeOffset? ExpiresOn { get; private set; }
         /// <summary>The hostname on the origin for which the client certificate uploaded will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname? Hostname { get; set; }
+        public string? Hostname { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname Hostname { get; set; }
+        public string Hostname { get; set; }
 #endif
         /// <summary>The certificate authority that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer? Issuer { get; set; }
+        public string? Issuer { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer Issuer { get; set; }
+        public string Issuer { get; private set; }
 #endif
         /// <summary>The serial number on the uploaded certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_serial_number? SerialNumber { get; set; }
+        public string? SerialNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_serial_number SerialNumber { get; set; }
+        public string SerialNumber { get; set; }
 #endif
         /// <summary>The type of hash used for the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature? Signature { get; set; }
+        public string? Signature { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature Signature { get; set; }
+        public string Signature { get; private set; }
 #endif
         /// <summary>Status of the certificate or the association.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus? Status { get; private set; }
         /// <summary>The time when the certificate was updated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at UpdatedAt { get; set; }
-#endif
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_object"/> and sets the default values.
         /// </summary>
@@ -151,20 +103,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cert_id", n => { CertId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier.CreateFromDiscriminatorValue); } },
-                { "cert_status", n => { CertStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
-                { "cert_updated_at", n => { CertUpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at.CreateFromDiscriminatorValue); } },
-                { "cert_uploaded_on", n => { CertUploadedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasUploaded_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasUploaded_on.CreateFromDiscriminatorValue); } },
-                { "certificate", n => { Certificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasCertificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasCertificate.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasCreated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasCreated_at.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled.CreateFromDiscriminatorValue); } },
-                { "expires_on", n => { ExpiresOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasExpires_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasExpires_on.CreateFromDiscriminatorValue); } },
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname.CreateFromDiscriminatorValue); } },
-                { "issuer", n => { Issuer = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer.CreateFromDiscriminatorValue); } },
-                { "serial_number", n => { SerialNumber = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_serial_number>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_serial_number.CreateFromDiscriminatorValue); } },
-                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at.CreateFromDiscriminatorValue); } },
+                { "cert_id", n => { CertId = n.GetStringValue(); } },
+                { "cert_status", n => { CertStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>(); } },
+                { "cert_updated_at", n => { CertUpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "cert_uploaded_on", n => { CertUploadedOn = n.GetDateTimeOffsetValue(); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -174,20 +126,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_identifier>("cert_id", CertId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasCertificate>("certificate", Certificate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>("cert_status", CertStatus);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at>("cert_updated_at", CertUpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasUploaded_on>("cert_uploaded_on", CertUploadedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasCreated_at>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasEnabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasExpires_on>("expires_on", ExpiresOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasHostname>("hostname", Hostname);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_issuer>("issuer", Issuer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_serial_number>("serial_number", SerialNumber);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_signature>("signature", Signature);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasUpdated_at>("updated_at", UpdatedAt);
+            writer.WriteStringValue("cert_id", CertId);
+            writer.WriteStringValue("certificate", Certificate);
+            writer.WriteDateTimeOffsetValue("cert_uploaded_on", CertUploadedOn);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("hostname", Hostname);
+            writer.WriteStringValue("serial_number", SerialNumber);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

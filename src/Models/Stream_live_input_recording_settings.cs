@@ -24,43 +24,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> AllowedOrigins { get; set; }
 #endif
         /// <summary>Disables reporting the number of live viewers when this property is set to `true`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_hideLiveViewerCount? HideLiveViewerCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_hideLiveViewerCount HideLiveViewerCount { get; set; }
-#endif
+        public bool? HideLiveViewerCount { get; set; }
         /// <summary>Specifies the recording behavior for the live input. Set this value to `off` to prevent a recording. Set the value to `automatic` to begin a recording and transition to on-demand after Stream Live stops receiving input.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode? Mode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode Mode { get; set; }
-#endif
         /// <summary>Indicates if a video using the live input has the `requireSignedURLs` property set. Also enforces access controls on any video recording of the livestream with the live input.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_requireSignedURLs? RequireSignedURLs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_requireSignedURLs RequireSignedURLs { get; set; }
-#endif
+        public bool? RequireSignedURLs { get; set; }
         /// <summary>Determines the amount of time a live input configured in `automatic` mode should wait before a recording transitions from live to on-demand. `0` is recommended for most use cases and indicates the platform default should be used.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_timeoutSeconds? TimeoutSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_timeoutSeconds TimeoutSeconds { get; set; }
-#endif
+        public int? TimeoutSeconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_settings"/> and sets the default values.
         /// </summary>
         public Stream_live_input_recording_settings()
         {
             AdditionalData = new Dictionary<string, object>();
+            Mode = global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -81,10 +58,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "hideLiveViewerCount", n => { HideLiveViewerCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_hideLiveViewerCount>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_hideLiveViewerCount.CreateFromDiscriminatorValue); } },
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode.CreateFromDiscriminatorValue); } },
-                { "requireSignedURLs", n => { RequireSignedURLs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_requireSignedURLs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_requireSignedURLs.CreateFromDiscriminatorValue); } },
-                { "timeoutSeconds", n => { TimeoutSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_timeoutSeconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_timeoutSeconds.CreateFromDiscriminatorValue); } },
+                { "hideLiveViewerCount", n => { HideLiveViewerCount = n.GetBoolValue(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode>(); } },
+                { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
+                { "timeoutSeconds", n => { TimeoutSeconds = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -95,10 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_hideLiveViewerCount>("hideLiveViewerCount", HideLiveViewerCount);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode>("mode", Mode);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_requireSignedURLs>("requireSignedURLs", RequireSignedURLs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_timeoutSeconds>("timeoutSeconds", TimeoutSeconds);
+            writer.WriteBoolValue("hideLiveViewerCount", HideLiveViewerCount);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_mode>("mode", Mode);
+            writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
+            writer.WriteIntValue("timeoutSeconds", TimeoutSeconds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

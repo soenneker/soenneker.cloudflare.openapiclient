@@ -16,10 +16,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Magic account app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id? AccountAppId { get; set; }
+        public string? AccountAppId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id AccountAppId { get; set; }
+        public string AccountAppId { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -34,26 +34,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>? IpSubnets { get; set; }
+        public List<string>? IpSubnets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr> IpSubnets { get; set; }
+        public List<string> IpSubnets { get; set; }
 #endif
         /// <summary>Display name for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Category of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_type? Type { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_type Type { get; set; }
+        public string Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app"/> and sets the default values.
@@ -80,11 +80,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_app_id", n => { AccountAppId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id.CreateFromDiscriminatorValue); } },
+                { "account_app_id", n => { AccountAppId = n.GetStringValue(); } },
                 { "hostnames", n => { Hostnames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ip_subnets", n => { IpSubnets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_name.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_type.CreateFromDiscriminatorValue); } },
+                { "ip_subnets", n => { IpSubnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id>("account_app_id", AccountAppId);
+            writer.WriteStringValue("account_app_id", AccountAppId);
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cidr>("ip_subnets", IpSubnets);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_type>("type", Type);
+            writer.WriteCollectionOfPrimitiveValues<string>("ip_subnets", IpSubnets);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

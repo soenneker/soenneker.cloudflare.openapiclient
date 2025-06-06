@@ -131,25 +131,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             public string Mode { get; set; }
 #endif
             /// <summary>Page number</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
+            public double? Page { get; set; }
             /// <summary>Number of results per page</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public double? PerPage { get; set; }
             /// <summary>Operating system</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             public string Platform { get; set; }
 #endif
             /// <summary>Dimension to sort results by</summary>
+            [Obsolete("This property is deprecated, use SortByAsDigitalExperienceMonitoringSortBy instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort_by")]
@@ -170,7 +157,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("sort_by")]
             public string SortBy { get; set; }
 #endif
+            /// <summary>Dimension to sort results by</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_sort_by? SortByAsDigitalExperienceMonitoringSortBy { get; set; }
             /// <summary>Source:  * `hourly` - device details aggregated hourly, up to 7 days prior  * `last_seen` - device details, up to 24 hours prior  * `raw` - device details, up to 7 days prior</summary>
+            [Obsolete("This property is deprecated, use SourceAsDigitalExperienceMonitoringSource instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("source")]
@@ -180,6 +171,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             [QueryParameter("source")]
             public string Source { get; set; }
 #endif
+            /// <summary>Source:  * `hourly` - device details aggregated hourly, up to 7 days prior  * `last_seen` - device details, up to 24 hours prior  * `raw` - device details, up to 7 days prior</summary>
+            [QueryParameter("source")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_source? SourceAsDigitalExperienceMonitoringSource { get; set; }
             /// <summary>Network status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

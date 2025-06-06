@@ -17,19 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Turn on or off Cloudflare error pages generated from issues sent from the origin server. If enabled, this setting triggers error pages issued by the origin.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_id? Id { get; set; }
         /// <summary>Value of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value Value { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru"/> and sets the default values.
         /// </summary>
         public Zones_origin_error_page_pass_thru()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_id>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

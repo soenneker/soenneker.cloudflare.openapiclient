@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Web Analytics site identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag? SiteTag { get; set; }
+        public string? SiteTag { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag SiteTag { get; set; }
+        public string SiteTag { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_siteTagResponseSingle_result"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "site_tag", n => { SiteTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag.CreateFromDiscriminatorValue); } },
+                { "site_tag", n => { SiteTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag>("site_tag", SiteTag);
+            writer.WriteStringValue("site_tag", SiteTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

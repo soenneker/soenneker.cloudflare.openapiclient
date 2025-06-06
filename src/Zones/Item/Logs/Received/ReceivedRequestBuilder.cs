@@ -96,15 +96,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReceivedRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("count")]
-            public string? Count { get; set; }
-#nullable restore
-#else
-            [QueryParameter("count")]
-            public string Count { get; set; }
-#endif
+            public int? Count { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("end")]
@@ -123,15 +116,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sample")]
-            public string? Sample { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sample")]
-            public string Sample { get; set; }
-#endif
+            public double? Sample { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("start")]
@@ -141,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
             [QueryParameter("start")]
             public string Start { get; set; }
 #endif
+            [Obsolete("This property is deprecated, use TimestampsAsLogshareTimestamps instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("timestamps")]
@@ -150,6 +137,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
             [QueryParameter("timestamps")]
             public string Timestamps { get; set; }
 #endif
+            [QueryParameter("timestamps")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_timestamps? TimestampsAsLogshareTimestamps { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

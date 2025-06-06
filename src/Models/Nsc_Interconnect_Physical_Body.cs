@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Cloudflare site name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_CloudflareSite? Site { get; set; }
+        public string? Site { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_CloudflareSite Site { get; set; }
+        public string Site { get; set; }
 #endif
         /// <summary>The slot_id property</summary>
         public Guid? SlotId { get; set; }
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "facility", n => { Facility = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_FacilityInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_FacilityInfo.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "site", n => { Site = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_CloudflareSite>(global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_CloudflareSite.CreateFromDiscriminatorValue); } },
+                { "site", n => { Site = n.GetStringValue(); } },
                 { "slot_id", n => { SlotId = n.GetGuidValue(); } },
                 { "speed", n => { Speed = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_FacilityInfo>("facility", Facility);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_CloudflareSite>("site", Site);
+            writer.WriteStringValue("site", Site);
             writer.WriteGuidValue("slot_id", SlotId);
             writer.WriteStringValue("speed", Speed);
             writer.WriteStringValue("type", Type);

@@ -160,6 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Shares_list_Param_direction? DirectionAsSharesListParamDirection { get; set; }
             /// <summary>Filter shares by kind.</summary>
+            [Obsolete("This property is deprecated, use KindAsResourceSharingShareKind instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("kind")]
@@ -169,6 +170,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             [QueryParameter("kind")]
             public string Kind { get; set; }
 #endif
+            /// <summary>Filter shares by kind.</summary>
+            [QueryParameter("kind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_kind? KindAsResourceSharingShareKind { get; set; }
             /// <summary>Order shares by values in the given field.</summary>
             [Obsolete("This property is deprecated, use OrderAsSharesListParamOrder instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -190,6 +194,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter shares by status.</summary>
+            [Obsolete("This property is deprecated, use StatusAsResourceSharingShareStatus instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -199,7 +204,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
+            /// <summary>Filter shares by status.</summary>
+            [QueryParameter("status")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_status? StatusAsResourceSharingShareStatus { get; set; }
             /// <summary>Filter shares by target_type.</summary>
+            [Obsolete("This property is deprecated, use TargetTypeAsResourceSharingShareTargetType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("target_type")]
@@ -209,6 +218,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             [QueryParameter("target_type")]
             public string TargetType { get; set; }
 #endif
+            /// <summary>Filter shares by target_type.</summary>
+            [QueryParameter("target_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_target_type? TargetTypeAsResourceSharingShareTargetType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

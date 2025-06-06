@@ -15,12 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options? LogpullOptions { get; set; }
+        public string? LogpullOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options LogpullOptions { get; set; }
+        public string LogpullOptions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_accounts_account_id_logpush_validate_origin_RequestBody_application_json"/> and sets the default values.
@@ -47,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "logpull_options", n => { LogpullOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options.CreateFromDiscriminatorValue); } },
+                { "logpull_options", n => { LogpullOptions = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpull_options>("logpull_options", LogpullOptions);
+            writer.WriteStringValue("logpull_options", LogpullOptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

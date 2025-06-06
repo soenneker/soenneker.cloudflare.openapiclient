@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of IP addresses to handle domain resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip>? DnsServer { get; set; }
+        public List<string>? DnsServer { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip> DnsServer { get; set; }
+        public List<string> DnsServer { get; set; }
 #endif
         /// <summary>The domain suffix to match when resolving locally.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "dns_server", n => { DnsServer = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dns_server", n => { DnsServer = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "suffix", n => { Suffix = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip>("dns_server", DnsServer);
+            writer.WriteCollectionOfPrimitiveValues<string>("dns_server", DnsServer);
             writer.WriteStringValue("suffix", Suffix);
             writer.WriteAdditionalData(AdditionalData);
         }

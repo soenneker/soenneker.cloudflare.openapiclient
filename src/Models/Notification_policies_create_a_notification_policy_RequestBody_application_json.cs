@@ -17,35 +17,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Optional specification of how often to re-alert from the same incident, not support on all alert types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval? AlertInterval { get; set; }
+        public string? AlertInterval { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval AlertInterval { get; set; }
+        public string AlertInterval { get; set; }
 #endif
         /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type? AlertType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type AlertType { get; set; }
-#endif
         /// <summary>Optional description for the Notification policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Whether or not the Notification policy is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,10 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Notification_policies_create_a_notification_policy_RequestBody_application_json"/> and sets the default values.
@@ -95,13 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alert_interval", n => { AlertInterval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval.CreateFromDiscriminatorValue); } },
-                { "alert_type", n => { AlertType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled.CreateFromDiscriminatorValue); } },
+                { "alert_interval", n => { AlertInterval = n.GetStringValue(); } },
+                { "alert_type", n => { AlertType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters.CreateFromDiscriminatorValue); } },
                 { "mechanisms", n => { Mechanisms = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanisms>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanisms.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +99,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_interval>("alert_interval", AlertInterval);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>("alert_type", AlertType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_enabled>("enabled", Enabled);
+            writer.WriteStringValue("alert_interval", AlertInterval);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>("alert_type", AlertType);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters>("filters", Filters);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanisms>("mechanisms", Mechanisms);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,38 +13,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to take when the expression matches.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_action? Action { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_action Action { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>When set to true, the rule is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>Criteria defining when there is a match for the current rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_expression? Expression { get; set; }
+        public string? Expression { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_expression Expression { get; set; }
+        public string Expression { get; set; }
 #endif
         /// <summary>Reorder the position of a rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +67,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_action.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_description.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_enabled.CreateFromDiscriminatorValue); } },
-                { "expression", n => { Expression = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_expression>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_expression.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_action>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "expression", n => { Expression = n.GetStringValue(); } },
                 { "position", n => { Position = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_position>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_position.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_action>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_enabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_expression>("expression", Expression);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_action>("action", Action);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("expression", Expression);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_position>("position", Position);
             writer.WriteAdditionalData(AdditionalData);
         }

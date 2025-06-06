@@ -25,43 +25,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique video identifier (UID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipped_from_video_uid? ClippedFromVideoUID { get; set; }
+        public string? ClippedFromVideoUID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipped_from_video_uid ClippedFromVideoUID { get; set; }
+        public string ClippedFromVideoUID { get; set; }
 #endif
         /// <summary>The date and time the clip was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>A user-defined identifier for the media creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator? Creator { get; set; }
+        public string? Creator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator Creator { get; set; }
+        public string Creator { get; set; }
 #endif
         /// <summary>Specifies the end time for the video clip in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_end_time_seconds? EndTimeSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_end_time_seconds EndTimeSeconds { get; set; }
-#endif
+        public int? EndTimeSeconds { get; set; }
         /// <summary>The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds? MaxDurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds MaxDurationSeconds { get; set; }
-#endif
+        public int? MaxDurationSeconds { get; set; }
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,13 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata Meta { get; set; }
 #endif
         /// <summary>The date and time the live input was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; set; }
         /// <summary>The playback property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,43 +65,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The video&apos;s preview page URI. This field is omitted until encoding is complete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview? Preview { get; set; }
+        public string? Preview { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview Preview { get; set; }
+        public string Preview { get; set; }
 #endif
         /// <summary>Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs? RequireSignedURLs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs RequireSignedURLs { get; set; }
-#endif
+        public bool? RequireSignedURLs { get; set; }
         /// <summary>Specifies the start time for the video clip in seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds? StartTimeSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds StartTimeSeconds { get; set; }
-#endif
+        public int? StartTimeSeconds { get; set; }
         /// <summary>Specifies the processing status for all quality levels for a video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state Status { get; set; }
-#endif
         /// <summary>The timestamp for a thumbnail image calculated as a percentage value of the video&apos;s duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct? ThumbnailTimestampPct { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct ThumbnailTimestampPct { get; set; }
-#endif
+        public double? ThumbnailTimestampPct { get; set; }
         /// <summary>The watermark property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,19 +112,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "clippedFromVideoUID", n => { ClippedFromVideoUID = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipped_from_video_uid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipped_from_video_uid.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_created.CreateFromDiscriminatorValue); } },
-                { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator.CreateFromDiscriminatorValue); } },
-                { "endTimeSeconds", n => { EndTimeSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_end_time_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_end_time_seconds.CreateFromDiscriminatorValue); } },
-                { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds.CreateFromDiscriminatorValue); } },
+                { "clippedFromVideoUID", n => { ClippedFromVideoUID = n.GetStringValue(); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "creator", n => { Creator = n.GetStringValue(); } },
+                { "endTimeSeconds", n => { EndTimeSeconds = n.GetIntValue(); } },
+                { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified.CreateFromDiscriminatorValue); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "playback", n => { Playback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback.CreateFromDiscriminatorValue); } },
-                { "preview", n => { Preview = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview.CreateFromDiscriminatorValue); } },
-                { "requireSignedURLs", n => { RequireSignedURLs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs.CreateFromDiscriminatorValue); } },
-                { "startTimeSeconds", n => { StartTimeSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state.CreateFromDiscriminatorValue); } },
-                { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct.CreateFromDiscriminatorValue); } },
+                { "preview", n => { Preview = n.GetStringValue(); } },
+                { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
+                { "startTimeSeconds", n => { StartTimeSeconds = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(); } },
+                { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetDoubleValue(); } },
                 { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload.CreateFromDiscriminatorValue); } },
             };
         }
@@ -184,19 +136,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipped_from_video_uid>("clippedFromVideoUID", ClippedFromVideoUID);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator>("creator", Creator);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_end_time_seconds>("endTimeSeconds", EndTimeSeconds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds>("maxDurationSeconds", MaxDurationSeconds);
+            writer.WriteStringValue("clippedFromVideoUID", ClippedFromVideoUID);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteStringValue("creator", Creator);
+            writer.WriteIntValue("endTimeSeconds", EndTimeSeconds);
+            writer.WriteIntValue("maxDurationSeconds", MaxDurationSeconds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified>("modified", Modified);
+            writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback>("playback", Playback);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_preview>("preview", Preview);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs>("requireSignedURLs", RequireSignedURLs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_start_time_seconds>("startTimeSeconds", StartTimeSeconds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct>("thumbnailTimestampPct", ThumbnailTimestampPct);
+            writer.WriteStringValue("preview", Preview);
+            writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
+            writer.WriteIntValue("startTimeSeconds", StartTimeSeconds);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("status", Status);
+            writer.WriteDoubleValue("thumbnailTimestampPct", ThumbnailTimestampPct);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload>("watermark", Watermark);
             writer.WriteAdditionalData(AdditionalData);
         }

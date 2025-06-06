@@ -195,24 +195,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes
             [QueryParameter("network_superset")]
             public string NetworkSuperset { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public double? Page { get; set; }
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public double? PerPage { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("route_id")]
@@ -222,15 +208,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes
             [QueryParameter("route_id")]
             public string RouteId { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("tunnel_id")]
-            public string? TunnelId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tunnel_id")]
-            public string TunnelId { get; set; }
-#endif
+            public Guid? TunnelId { get; set; }
+            [Obsolete("This property is deprecated, use TunTypesAsTunnelTunnelType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tun_types")]
@@ -242,13 +222,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("virtual_network_id")]
-            public string? VirtualNetworkId { get; set; }
+            [QueryParameter("tun_types")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[]? TunTypesAsTunnelTunnelType { get; set; }
 #nullable restore
 #else
-            [QueryParameter("virtual_network_id")]
-            public string VirtualNetworkId { get; set; }
+            [QueryParameter("tun_types")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[] TunTypesAsTunnelTunnelType { get; set; }
 #endif
+            [QueryParameter("virtual_network_id")]
+            public Guid? VirtualNetworkId { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

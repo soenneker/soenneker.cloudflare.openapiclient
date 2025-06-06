@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The duration the DoH JWT is valid for. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.  Note that the maximum duration for this setting is the same as the key rotation period on the account. Default expiration is 24h</summary>
+        /// <summary>The doh_jwt_duration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_doh_jwt_duration? DohJwtDuration { get; set; }
+        public UntypedNode? DohJwtDuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_doh_jwt_duration DohJwtDuration { get; set; }
+        public UntypedNode DohJwtDuration { get; set; }
 #endif
         /// <summary>The uuid of the service token you want to use for DoH authentication</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "doh_jwt_duration", n => { DohJwtDuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_doh_jwt_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_doh_jwt_duration.CreateFromDiscriminatorValue); } },
+                { "doh_jwt_duration", n => { DohJwtDuration = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "service_token_id", n => { ServiceTokenId = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_doh_jwt_duration>("doh_jwt_duration", DohJwtDuration);
+            writer.WriteObjectValue<UntypedNode>("doh_jwt_duration", DohJwtDuration);
             writer.WriteStringValue("service_token_id", ServiceTokenId);
             writer.WriteAdditionalData(AdditionalData);
         }

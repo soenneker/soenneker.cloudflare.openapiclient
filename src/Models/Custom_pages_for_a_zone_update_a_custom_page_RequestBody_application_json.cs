@@ -15,20 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom page state.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state? State { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state State { get; set; }
-#endif
-        /// <summary>The URL associated with the custom page.</summary>
+        /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_url? Url { get; set; }
+        public UntypedNode? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_url Url { get; set; }
+        public UntypedNode Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_pages_for_a_zone_update_a_custom_page_RequestBody_application_json"/> and sets the default values.
@@ -55,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_url.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state>(); } },
+                { "url", n => { Url = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state>("state", State);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_url>("url", Url);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state>("state", State);
+            writer.WriteObjectValue<UntypedNode>("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,19 +8,13 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect"/>, <see cref="int"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Lists_item : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn? ListsItemAsn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn ListsItemAsn { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="int"/></summary>
+        public int? Integer { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,14 +23,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname ListsItemHostname { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip? ListsItemIp { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip ListsItemIp { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect ListsItemRedirect { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,21 +49,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item();
-            if("lists_item_asn".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ListsItemAsn = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn();
-            }
-            else if("lists_item_hostname".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("lists_item_hostname".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ListsItemHostname = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname();
-            }
-            else if("lists_item_ip".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ListsItemIp = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip();
             }
             else if("lists_item_redirect".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ListsItemRedirect = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect();
+            }
+            else if(parseNode.GetIntValue() is int integerValue)
+            {
+                result.Integer = integerValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
             }
             return result;
         }
@@ -79,17 +73,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ListsItemAsn != null)
-            {
-                return ListsItemAsn.GetFieldDeserializers();
-            }
-            else if(ListsItemHostname != null)
+            if(ListsItemHostname != null)
             {
                 return ListsItemHostname.GetFieldDeserializers();
-            }
-            else if(ListsItemIp != null)
-            {
-                return ListsItemIp.GetFieldDeserializers();
             }
             else if(ListsItemRedirect != null)
             {
@@ -104,21 +90,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(ListsItemAsn != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_asn>(null, ListsItemAsn);
-            }
-            else if(ListsItemHostname != null)
+            if(ListsItemHostname != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>(null, ListsItemHostname);
-            }
-            else if(ListsItemIp != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_ip>(null, ListsItemIp);
             }
             else if(ListsItemRedirect != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>(null, ListsItemRedirect);
+            }
+            else if(Integer != null)
+            {
+                writer.WriteIntValue(null, Integer);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

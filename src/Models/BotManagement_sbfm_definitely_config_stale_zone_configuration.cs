@@ -16,20 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that the zone&apos;s Bot Fight Mode is turned on.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_fight_mode_turned_on? FightMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_fight_mode_turned_on FightMode { get; set; }
-#endif
+        public bool? FightMode { get; set; }
         /// <summary>Indicates that the zone&apos;s likely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on? SbfmLikelyAutomated { get; set; }
+        public string? SbfmLikelyAutomated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on SbfmLikelyAutomated { get; set; }
+        public string SbfmLikelyAutomated { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config_stale_zone_configuration"/> and sets the default values.
@@ -56,8 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fight_mode", n => { FightMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_fight_mode_turned_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_fight_mode_turned_on.CreateFromDiscriminatorValue); } },
-                { "sbfm_likely_automated", n => { SbfmLikelyAutomated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on.CreateFromDiscriminatorValue); } },
+                { "fight_mode", n => { FightMode = n.GetBoolValue(); } },
+                { "sbfm_likely_automated", n => { SbfmLikelyAutomated = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_fight_mode_turned_on>("fight_mode", FightMode);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on>("sbfm_likely_automated", SbfmLikelyAutomated);
+            writer.WriteBoolValue("fight_mode", FightMode);
+            writer.WriteStringValue("sbfm_likely_automated", SbfmLikelyAutomated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

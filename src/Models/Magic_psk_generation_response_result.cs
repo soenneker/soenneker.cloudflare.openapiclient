@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_identifier? IpsecTunnelId { get; set; }
+        public string? IpsecTunnelId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_identifier IpsecTunnelId { get; set; }
+        public string IpsecTunnelId { get; private set; }
 #endif
         /// <summary>A randomly generated or provided string for use in the IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk? Psk { get; set; }
+        public string? Psk { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk Psk { get; set; }
+        public string Psk { get; set; }
 #endif
         /// <summary>The PSK metadata that includes when the PSK was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ipsec_tunnel_id", n => { IpsecTunnelId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_identifier.CreateFromDiscriminatorValue); } },
-                { "psk", n => { Psk = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk.CreateFromDiscriminatorValue); } },
+                { "ipsec_tunnel_id", n => { IpsecTunnelId = n.GetStringValue(); } },
+                { "psk", n => { Psk = n.GetStringValue(); } },
                 { "psk_metadata", n => { PskMetadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,8 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_identifier>("ipsec_tunnel_id", IpsecTunnelId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk>("psk", Psk);
+            writer.WriteStringValue("psk", Psk);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata>("psk_metadata", PskMetadata);
             writer.WriteAdditionalData(AdditionalData);
         }

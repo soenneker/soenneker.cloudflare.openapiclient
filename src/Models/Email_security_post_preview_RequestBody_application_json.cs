@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The identifier of the message.</summary>
+        /// <summary>The postfix_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId? PostfixId { get; set; }
+        public UntypedNode? PostfixId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId PostfixId { get; set; }
+        public UntypedNode PostfixId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_preview_RequestBody_application_json"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "postfix_id", n => { PostfixId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId.CreateFromDiscriminatorValue); } },
+                { "postfix_id", n => { PostfixId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId>("postfix_id", PostfixId);
+            writer.WriteObjectValue<UntypedNode>("postfix_id", PostfixId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,26 +18,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The secret key to use for playback via SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_passphrase? Passphrase { get; set; }
+        public string? Passphrase { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_passphrase Passphrase { get; set; }
+        public string Passphrase { get; set; }
 #endif
         /// <summary>The identifier of the live input to use for playback via SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_id? StreamId { get; set; }
+        public string? StreamId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_id StreamId { get; set; }
+        public string StreamId { get; set; }
 #endif
         /// <summary>The URL used to play live video over SRT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_url? Url { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_url Url { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "passphrase", n => { Passphrase = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_passphrase>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_passphrase.CreateFromDiscriminatorValue); } },
-                { "streamId", n => { StreamId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_id.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_url.CreateFromDiscriminatorValue); } },
+                { "passphrase", n => { Passphrase = n.GetStringValue(); } },
+                { "streamId", n => { StreamId = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_passphrase>("passphrase", Passphrase);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_stream_id>("streamId", StreamId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt_url>("url", Url);
+            writer.WriteStringValue("passphrase", Passphrase);
+            writer.WriteStringValue("streamId", StreamId);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

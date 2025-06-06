@@ -17,50 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The description of the example test</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The unique identifier for the indicator feed</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_id? Id { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_id Id { get; set; }
-#endif
+        public int? Id { get; set; }
         /// <summary>Whether the indicator feed can be attributed to a provider</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_attributable? IsAttributable { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_attributable IsAttributable { get; set; }
-#endif
+        public bool? IsAttributable { get; set; }
         /// <summary>Whether the indicator feed can be downloaded</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_downloadable? IsDownloadable { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_downloadable IsDownloadable { get; set; }
-#endif
+        public bool? IsDownloadable { get; set; }
         /// <summary>Whether the indicator feed is exposed to customers</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_public? IsPublic { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_public IsPublic { get; set; }
-#endif
+        public bool? IsPublic { get; set; }
         /// <summary>The name of the indicator feed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_permission_list_item"/> and sets the default values.
@@ -87,12 +63,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_description.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_id.CreateFromDiscriminatorValue); } },
-                { "is_attributable", n => { IsAttributable = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_attributable>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_attributable.CreateFromDiscriminatorValue); } },
-                { "is_downloadable", n => { IsDownloadable = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_downloadable>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_downloadable.CreateFromDiscriminatorValue); } },
-                { "is_public", n => { IsPublic = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_public>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_public.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_name.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "is_attributable", n => { IsAttributable = n.GetBoolValue(); } },
+                { "is_downloadable", n => { IsDownloadable = n.GetBoolValue(); } },
+                { "is_public", n => { IsPublic = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +78,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_attributable>("is_attributable", IsAttributable);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_downloadable>("is_downloadable", IsDownloadable);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_is_public>("is_public", IsPublic);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_name>("name", Name);
+            writer.WriteStringValue("description", Description);
+            writer.WriteIntValue("id", Id);
+            writer.WriteBoolValue("is_attributable", IsAttributable);
+            writer.WriteBoolValue("is_downloadable", IsDownloadable);
+            writer.WriteBoolValue("is_public", IsPublic);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

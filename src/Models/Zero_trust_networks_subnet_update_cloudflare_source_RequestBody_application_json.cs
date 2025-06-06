@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An optional description of the subnet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_comment? Comment { get; set; }
+        public string? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_comment Comment { get; set; }
+        public string Comment { get; set; }
 #endif
         /// <summary>A user-friendly name for the subnet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The private IPv4 or IPv6 range defining the subnet, in CIDR notation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network? Network { get; set; }
+        public string? Network { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network Network { get; set; }
+        public string Network { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnet_update_cloudflare_source_RequestBody_application_json"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_comment>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_comment.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name.CreateFromDiscriminatorValue); } },
-                { "network", n => { Network = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "network", n => { Network = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_comment>("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_ip_network>("network", Network);
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("network", Network);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier? ConsumerId { get; set; }
+        public string? ConsumerId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier ConsumerId { get; set; }
+        public string ConsumerId { get; private set; }
 #endif
         /// <summary>The created_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier? QueueId { get; set; }
+        public string? QueueId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier QueueId { get; set; }
+        public string QueueId { get; private set; }
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,9 +73,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consumer_id", n => { ConsumerId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier.CreateFromDiscriminatorValue); } },
+                { "consumer_id", n => { ConsumerId = n.GetStringValue(); } },
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
-                { "queue_id", n => { QueueId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier.CreateFromDiscriminatorValue); } },
+                { "queue_id", n => { QueueId = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer_settings.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer_type>(); } },
             };
@@ -87,8 +87,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier>("consumer_id", ConsumerId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_identifier>("queue_id", QueueId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer_settings>("settings", Settings);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

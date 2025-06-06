@@ -17,26 +17,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Optional remark describing the virtual network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_comment? Comment { get; set; }
+        public string? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_comment Comment { get; set; }
+        public string Comment { get; set; }
 #endif
         /// <summary>If `true`, this virtual network is the default for the account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_default_network? IsDefaultNetwork { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_default_network IsDefaultNetwork { get; set; }
-#endif
+        public bool? IsDefaultNetwork { get; set; }
         /// <summary>A user-friendly name for the virtual network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_get_RequestBody_application_json"/> and sets the default values.
@@ -63,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_comment>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_comment.CreateFromDiscriminatorValue); } },
-                { "is_default_network", n => { IsDefaultNetwork = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_default_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_default_network.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_name.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "is_default_network", n => { IsDefaultNetwork = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_comment>("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_default_network>("is_default_network", IsDefaultNetwork);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_virtual_network_name>("name", Name);
+            writer.WriteStringValue("comment", Comment);
+            writer.WriteBoolValue("is_default_network", IsDefaultNetwork);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

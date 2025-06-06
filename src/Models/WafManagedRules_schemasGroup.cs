@@ -15,19 +15,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the available states for the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode>? AllowedModes { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode?>? AllowedModes { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode> AllowedModes { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode?> AllowedModes { get; private set; }
 #endif
         /// <summary>Defines the state of the rules contained in the rule group. When `on`, the rules in the group are configurable/usable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode? Mode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode Mode { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasGroup"/> and sets the default values.
+        /// </summary>
+        public WafManagedRules_schemasGroup() : base()
+        {
+            Mode = global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode.On;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowed_modes", n => { AllowedModes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode.CreateFromDiscriminatorValue); } },
+                { "allowed_modes", n => { AllowedModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode>()?.AsList(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode>(); } },
             };
         }
         /// <summary>
@@ -58,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode>("mode", Mode);
         }
     }
 }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid? AppUid { get; set; }
+        public string? AppUid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid AppUid { get; set; }
+        public string AppUid { get; set; }
 #endif
         /// <summary>The aud property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app_uid", n => { AppUid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid.CreateFromDiscriminatorValue); } },
+                { "app_uid", n => { AppUid = n.GetStringValue(); } },
                 { "aud", n => { Aud = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>("app_uid", AppUid);
+            writer.WriteStringValue("app_uid", AppUid);
             writer.WriteStringValue("aud", Aud);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("name", Name);

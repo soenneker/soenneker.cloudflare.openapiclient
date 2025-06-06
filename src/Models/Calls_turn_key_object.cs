@@ -15,36 +15,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the item was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>The date and time the item was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; set; }
         /// <summary>A short description of Calls app, not shown to end users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>A Cloudflare-generated unique identifier for a item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_identifier? Uid { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_identifier Uid { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_turn_key_object"/> and sets the default values.
@@ -71,10 +59,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_created.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_modified.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_name.CreateFromDiscriminatorValue); } },
-                { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_identifier.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_modified>("modified", Modified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Calls_identifier>("uid", Uid);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteDateTimeOffsetValue("modified", Modified);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

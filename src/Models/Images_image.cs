@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Image file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_filename? Filename { get; set; }
+        public string? Filename { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_filename Filename { get; set; }
+        public string Filename { get; private set; }
 #endif
         /// <summary>Image unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>User modifiable key-value store. Can be used for keeping references to another system of record for managing images. Metadata must not exceed 1024 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,28 +39,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_metadata Meta { get; set; }
 #endif
         /// <summary>Indicates whether the image can be a accessed only using it&apos;s UID. If set to true, a signed token needs to be generated with a signing key to view the image.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_requireSignedURLs? RequireSignedURLs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_requireSignedURLs RequireSignedURLs { get; set; }
-#endif
+        public bool? RequireSignedURLs { get; set; }
         /// <summary>When the media item was uploaded.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_uploaded? Uploaded { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_uploaded Uploaded { get; set; }
-#endif
+        public DateTimeOffset? Uploaded { get; private set; }
         /// <summary>Object specifying available variants for an image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image.V1>? Variants { get; private set; }
+        public List<string>? Variants { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image.V1> Variants { get; private set; }
+        public List<string> Variants { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image"/> and sets the default values.
@@ -87,12 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filename", n => { Filename = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_filename>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_filename.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_identifier.CreateFromDiscriminatorValue); } },
+                { "filename", n => { Filename = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_metadata.CreateFromDiscriminatorValue); } },
-                { "requireSignedURLs", n => { RequireSignedURLs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_requireSignedURLs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_requireSignedURLs.CreateFromDiscriminatorValue); } },
-                { "uploaded", n => { Uploaded = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_uploaded>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_uploaded.CreateFromDiscriminatorValue); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image.V1>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image.V1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
+                { "uploaded", n => { Uploaded = n.GetDateTimeOffsetValue(); } },
+                { "variants", n => { Variants = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -102,78 +90,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_filename>("filename", Filename);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_metadata>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_requireSignedURLs>("requireSignedURLs", RequireSignedURLs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_uploaded>("uploaded", Uploaded);
+            writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_hero_url"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_original_url"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_thumbnail_url"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class V1 : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_hero_url"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_hero_url? ImagesImageHeroUrl { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_hero_url ImagesImageHeroUrl { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_original_url"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_original_url? ImagesImageOriginalUrl { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_original_url ImagesImageOriginalUrl { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_thumbnail_url"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_thumbnail_url? ImagesImageThumbnailUrl { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_thumbnail_url ImagesImageThumbnailUrl { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image.V1"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image.V1 CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image.V1();
-                result.ImagesImageHeroUrl = new global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_hero_url();
-                result.ImagesImageOriginalUrl = new global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_original_url();
-                result.ImagesImageThumbnailUrl = new global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_thumbnail_url();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ImagesImageHeroUrl != null || ImagesImageOriginalUrl != null || ImagesImageThumbnailUrl != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ImagesImageHeroUrl, ImagesImageOriginalUrl, ImagesImageThumbnailUrl);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_hero_url>(null, ImagesImageHeroUrl, ImagesImageOriginalUrl, ImagesImageThumbnailUrl);
-            }
         }
     }
 }

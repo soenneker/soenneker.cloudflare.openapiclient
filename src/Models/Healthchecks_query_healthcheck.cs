@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The hostname or IP address of the origin server to run health checks on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_address? Address { get; set; }
+        public string? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_address Address { get; set; }
+        public string Address { get; set; }
 #endif
         /// <summary>A list of regions from which to run health checks. Null means Cloudflare will pick a default region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,28 +31,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks> CheckRegions { get; set; }
 #endif
         /// <summary>The number of consecutive fails required from a health check before changing the health to unhealthy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_fails? ConsecutiveFails { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_fails ConsecutiveFails { get; set; }
-#endif
+        public int? ConsecutiveFails { get; set; }
         /// <summary>The number of consecutive successes required from a health check before changing the health to healthy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_successes? ConsecutiveSuccesses { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_successes ConsecutiveSuccesses { get; set; }
-#endif
+        public int? ConsecutiveSuccesses { get; set; }
         /// <summary>A human-readable description of the health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Parameters specific to an HTTP or HTTPS health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,37 +51,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_http_config HttpConfig { get; set; }
 #endif
         /// <summary>The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_interval? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_interval Interval { get; set; }
-#endif
+        public int? Interval { get; set; }
         /// <summary>A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries? Retries { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries Retries { get; set; }
-#endif
+        public int? Retries { get; set; }
         /// <summary>If suspended, no health checks are sent to the origin.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended? Suspended { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended Suspended { get; set; }
-#endif
+        public bool? Suspended { get; set; }
         /// <summary>Parameters specific to TCP health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,20 +73,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config TcpConfig { get; set; }
 #endif
         /// <summary>The timeout (in seconds) before marking the health check as failed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout? Timeout { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout Timeout { get; set; }
-#endif
+        public int? Timeout { get; set; }
         /// <summary>The protocol to use for the health check. Currently supported protocols are &apos;HTTP&apos;, &apos;HTTPS&apos; and &apos;TCP&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_type? Type { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_type Type { get; set; }
+        public string Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_query_healthcheck"/> and sets the default values.
@@ -124,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Healthchecks_query_healthcheck()
         {
             AdditionalData = new Dictionary<string, object>();
+            Type = "HTTP";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -143,19 +108,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_address.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetStringValue(); } },
                 { "check_regions", n => { CheckRegions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "consecutive_fails", n => { ConsecutiveFails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_fails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_fails.CreateFromDiscriminatorValue); } },
-                { "consecutive_successes", n => { ConsecutiveSuccesses = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_successes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_successes.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_description.CreateFromDiscriminatorValue); } },
+                { "consecutive_fails", n => { ConsecutiveFails = n.GetIntValue(); } },
+                { "consecutive_successes", n => { ConsecutiveSuccesses = n.GetIntValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "http_config", n => { HttpConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_http_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_http_config.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_interval>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_interval.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name.CreateFromDiscriminatorValue); } },
-                { "retries", n => { Retries = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries.CreateFromDiscriminatorValue); } },
-                { "suspended", n => { Suspended = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "retries", n => { Retries = n.GetIntValue(); } },
+                { "suspended", n => { Suspended = n.GetBoolValue(); } },
                 { "tcp_config", n => { TcpConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config.CreateFromDiscriminatorValue); } },
-                { "timeout", n => { Timeout = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_type.CreateFromDiscriminatorValue); } },
+                { "timeout", n => { Timeout = n.GetIntValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -165,19 +130,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_address>("address", Address);
+            writer.WriteStringValue("address", Address);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>("check_regions", CheckRegions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_fails>("consecutive_fails", ConsecutiveFails);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_consecutive_successes>("consecutive_successes", ConsecutiveSuccesses);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_description>("description", Description);
+            writer.WriteIntValue("consecutive_fails", ConsecutiveFails);
+            writer.WriteIntValue("consecutive_successes", ConsecutiveSuccesses);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_http_config>("http_config", HttpConfig);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_interval>("interval", Interval);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_retries>("retries", Retries);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_suspended>("suspended", Suspended);
+            writer.WriteIntValue("interval", Interval);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("retries", Retries);
+            writer.WriteBoolValue("suspended", Suspended);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>("tcp_config", TcpConfig);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_timeout>("timeout", Timeout);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_type>("type", Type);
+            writer.WriteIntValue("timeout", Timeout);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,47 +13,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to apply to a matched request. The `log` action is only available on an Enterprise plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasAction? Action { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasAction Action { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An informative summary of the firewall rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The unique identifier of the firewall rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasId? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasId Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>When true, indicates that the firewall rule is currently paused.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPaused? Paused { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPaused Paused { get; set; }
-#endif
+        public bool? Paused { get; set; }
         /// <summary>The priority of the rule. Optional value used to define the processing order. A lower number indicates a higher priority. If not provided, rules with a defined priority will be processed before rules without a priority.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPriority? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPriority Priority { get; set; }
-#endif
+        public double? Priority { get; set; }
         /// <summary>The products property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A short reference tag. Allows you to select related firewall rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_ref? Ref { get; set; }
+        public string? Ref { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_ref Ref { get; set; }
+        public string Ref { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRuleBase"/> and sets the default values.
@@ -95,13 +77,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasAction>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasAction.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasId.CreateFromDiscriminatorValue); } },
-                { "paused", n => { Paused = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPaused>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPaused.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPriority>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPriority.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasAction>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rules.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "ref", n => { Ref = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_ref>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_ref.CreateFromDiscriminatorValue); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +93,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_firewallRules_componentsSchemasId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPaused>("paused", Paused);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasPriority>("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasAction>("action", Action);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("paused", Paused);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>("products", Products);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_ref>("ref", Ref);
+            writer.WriteStringValue("ref", Ref);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

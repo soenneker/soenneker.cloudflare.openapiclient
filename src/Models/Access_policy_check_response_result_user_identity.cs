@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid? UserUuid { get; set; }
+        public string? UserUuid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid UserUuid { get; set; }
+        public string UserUuid { get; set; }
 #endif
         /// <summary>The version property</summary>
         public int? Version { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_gateway", n => { IsGateway = n.GetBoolValue(); } },
                 { "is_warp", n => { IsWarp = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "user_uuid", n => { UserUuid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid.CreateFromDiscriminatorValue); } },
+                { "user_uuid", n => { UserUuid = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -132,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_gateway", IsGateway);
             writer.WriteBoolValue("is_warp", IsWarp);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>("user_uuid", UserUuid);
+            writer.WriteStringValue("user_uuid", UserUuid);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

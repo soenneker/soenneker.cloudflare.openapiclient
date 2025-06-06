@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An optional description of the interconnect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_componentsSchemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_componentsSchemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The configuration specific to GRE interconnects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,19 +41,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address? InterfaceAddress { get; set; }
+        public string? InterfaceAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address InterfaceAddress { get; set; }
+        public string InterfaceAddress { get; set; }
 #endif
         /// <summary>The Maximum Transmission Unit (MTU) in bytes for the interconnect. The minimum value is 576.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasMtu? Mtu { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasMtu Mtu { get; set; }
-#endif
+        public int? Mtu { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_tunnel_update_request"/> and sets the default values.
         /// </summary>
@@ -79,11 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "gre", n => { Gre = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre.CreateFromDiscriminatorValue); } },
                 { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.CreateFromDiscriminatorValue); } },
-                { "interface_address", n => { InterfaceAddress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address.CreateFromDiscriminatorValue); } },
-                { "mtu", n => { Mtu = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasMtu>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasMtu.CreateFromDiscriminatorValue); } },
+                { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
+                { "mtu", n => { Mtu = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +87,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_componentsSchemasDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre>("gre", Gre);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base>("health_check", HealthCheck);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address>("interface_address", InterfaceAddress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasMtu>("mtu", Mtu);
+            writer.WriteStringValue("interface_address", InterfaceAddress);
+            writer.WriteIntValue("mtu", Mtu);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

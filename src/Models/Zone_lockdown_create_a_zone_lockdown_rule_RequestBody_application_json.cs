@@ -25,26 +25,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An informative summary of the rate limit. This value is sanitized and any tags will be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>When true, indicates that the rule is currently paused.</summary>
+        public bool? Paused { get; set; }
+        /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPaused? Paused { get; set; }
+        public UntypedNode? Priority { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPaused Paused { get; set; }
-#endif
-        /// <summary>The priority of the rule to control the processing order. A lower number indicates higher priority. If not provided, any rules with a configured priority will be processed before rules without a priority.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPriority? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPriority Priority { get; set; }
+        public UntypedNode Priority { get; set; }
 #endif
         /// <summary>The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,9 +74,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule_RequestBody_application_json.Lockdowns>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule_RequestBody_application_json.Lockdowns.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description.CreateFromDiscriminatorValue); } },
-                { "paused", n => { Paused = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPaused>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPaused.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPriority>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPriority.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
+                { "priority", n => { Priority = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -94,9 +88,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule_RequestBody_application_json.Lockdowns>("configurations", Configurations);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPaused>("paused", Paused);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasPriority>("priority", Priority);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("paused", Paused);
+            writer.WriteObjectValue<UntypedNode>("priority", Priority);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);
         }

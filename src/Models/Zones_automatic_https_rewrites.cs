@@ -17,19 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Turn on or off Automatic HTTPS Rewrites.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_id? Id { get; set; }
         /// <summary>Value of the zone setting.Notes: Default value depends on the zone&apos;s plan level.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value Value { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites"/> and sets the default values.
         /// </summary>
         public Zones_automatic_https_rewrites()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value.On;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_id>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If `false`, the BGP route is withdrawn.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised? Advertised { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised Advertised { get; set; }
-#endif
+        public bool? Advertised { get; set; }
         /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable? AdvertisedModifiedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable AdvertisedModifiedAt { get; set; }
-#endif
+        public DateTimeOffset? AdvertisedModifiedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_advertised_response_result"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "advertised", n => { Advertised = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised.CreateFromDiscriminatorValue); } },
-                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable.CreateFromDiscriminatorValue); } },
+                { "advertised", n => { Advertised = n.GetBoolValue(); } },
+                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasAdvertised>("advertised", Advertised);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable>("advertised_modified_at", AdvertisedModifiedAt);
+            writer.WriteBoolValue("advertised", Advertised);
+            writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

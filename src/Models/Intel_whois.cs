@@ -20,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name? Domain { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name Domain { get; set; }
+        public string Domain { get; set; }
 #endif
         /// <summary>The nameservers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_date", n => { CreatedDate = n.GetDateValue(); } },
-                { "domain", n => { Domain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
                 { "nameservers", n => { Nameservers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "registrant", n => { Registrant = n.GetStringValue(); } },
                 { "registrant_country", n => { RegistrantCountry = n.GetStringValue(); } },
@@ -119,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("created_date", CreatedDate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name>("domain", Domain);
+            writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfPrimitiveValues<string>("nameservers", Nameservers);
             writer.WriteStringValue("registrant", Registrant);
             writer.WriteStringValue("registrant_country", RegistrantCountry);

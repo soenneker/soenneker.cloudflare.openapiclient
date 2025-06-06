@@ -14,13 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zones_cacheRules_origin_h2_max_streams : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cacheRules_base, IParsable
     {
         /// <summary>Value of the Origin H2 Max Streams Setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cacheRules_origin_h2_max_streams_value? Value { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cacheRules_origin_h2_max_streams_value Value { get; set; }
-#endif
+        public int? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cacheRules_origin_h2_max_streams_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cacheRules_origin_h2_max_streams_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -50,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cacheRules_origin_h2_max_streams_value>("value", Value);
+            writer.WriteIntValue("value", Value);
         }
     }
 }

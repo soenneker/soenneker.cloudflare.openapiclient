@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the public description of the WAF rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasDescription? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasDescription Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Defines the rule group to which the current WAF rule belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,26 +33,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the unique identifier of the WAF rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Defines the unique identifier of a WAF package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier? PackageId { get; set; }
+        public string? PackageId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier PackageId { get; set; }
+        public string PackageId { get; private set; }
 #endif
         /// <summary>Defines the order in which the individual WAF rule is executed within its rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_priority? Priority { get; set; }
+        public string? Priority { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_priority Priority { get; set; }
+        public string Priority { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasBase"/> and sets the default values.
@@ -79,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "group", n => { Group = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasBase_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasBase_group.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "package_id", n => { PackageId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_priority>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_priority.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "package_id", n => { PackageId = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,10 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_schemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_componentsSchemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier>("package_id", PackageId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_priority>("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

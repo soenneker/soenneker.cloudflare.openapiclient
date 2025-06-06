@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the ruleset expression to use in matching content objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanPayload? Payload { get; set; }
+        public string? Payload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanPayload Payload { get; set; }
+        public string Payload { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScan"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanId>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanId.CreateFromDiscriminatorValue); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanPayload>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanPayload.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_customScanPayload>("payload", Payload);
+            writer.WriteStringValue("payload", Payload);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

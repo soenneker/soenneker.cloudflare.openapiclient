@@ -17,34 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>TSIG algorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_algo? Algo { get; set; }
+        public string? Algo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_algo Algo { get; set; }
+        public string Algo { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>TSIG key name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>TSIG secret.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_secret? Secret { get; set; }
+        public string? Secret { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_secret Secret { get; set; }
+        public string Secret { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_tsig"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "algo", n => { Algo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_algo>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_algo.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasName.CreateFromDiscriminatorValue); } },
-                { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_secret>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_secret.CreateFromDiscriminatorValue); } },
+                { "algo", n => { Algo = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +84,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_algo>("algo", Algo);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_schemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_secret>("secret", Secret);
+            writer.WriteStringValue("algo", Algo);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

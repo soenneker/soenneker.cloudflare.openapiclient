@@ -202,15 +202,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("asc")]
-            public string? Asc { get; set; }
-#nullable restore
-#else
-            [QueryParameter("asc")]
-            public string Asc { get; set; }
-#endif
+            public bool? Asc { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("creator")]
@@ -220,24 +213,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             [QueryParameter("creator")]
             public string Creator { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("end")]
-            public string? End { get; set; }
-#nullable restore
-#else
-            [QueryParameter("end")]
-            public string End { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public DateTimeOffset? End { get; set; }
             [QueryParameter("include_counts")]
-            public string? IncludeCounts { get; set; }
-#nullable restore
-#else
-            [QueryParameter("include_counts")]
-            public string IncludeCounts { get; set; }
-#endif
+            public bool? IncludeCounts { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -247,15 +226,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("start")]
-            public string? Start { get; set; }
-#nullable restore
-#else
-            [QueryParameter("start")]
-            public string Start { get; set; }
-#endif
+            public DateTimeOffset? Start { get; set; }
+            [Obsolete("This property is deprecated, use StatusAsStreamMediaState instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -265,6 +238,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
+            [QueryParameter("status")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? StatusAsStreamMediaState { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
@@ -289,15 +264,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderPostQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direct_user")]
-            public string? DirectUser { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direct_user")]
-            public string DirectUser { get; set; }
-#endif
+            public bool? DirectUser { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

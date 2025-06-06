@@ -13,13 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Number of access applications currently using this policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_count? AppCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_count AppCount { get; set; }
-#endif
+        public int? AppCount { get; set; }
         /// <summary>The reusable property</summary>
         public bool? Reusable { get; set; }
         /// <summary>
@@ -40,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "app_count", n => { AppCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_count.CreateFromDiscriminatorValue); } },
+                { "app_count", n => { AppCount = n.GetIntValue(); } },
                 { "reusable", n => { Reusable = n.GetBoolValue(); } },
             };
         }
@@ -52,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_count>("app_count", AppCount);
+            writer.WriteIntValue("app_count", AppCount);
             writer.WriteBoolValue("reusable", Reusable);
         }
     }

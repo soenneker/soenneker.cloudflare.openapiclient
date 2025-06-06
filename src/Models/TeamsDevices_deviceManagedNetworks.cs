@@ -25,27 +25,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of the device managed network. This name must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>API UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid? NetworkId { get; set; }
+        public string? NetworkId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid NetworkId { get; set; }
+        public string NetworkId { get; set; }
 #endif
         /// <summary>The type of device managed network.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks"/> and sets the default values.
         /// </summary>
@@ -72,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_response.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "network_id", n => { NetworkId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "network_id", n => { NetworkId = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>(); } },
             };
         }
         /// <summary>
@@ -85,9 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_response>("config", Config);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceManagedNetworks_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_uuid>("network_id", NetworkId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>("type", Type);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("network_id", NetworkId);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

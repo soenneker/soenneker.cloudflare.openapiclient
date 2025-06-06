@@ -17,27 +17,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If you have legacy TLS clients which do not send the TLS server name indicator, then you can specify one default SNI on the map. If Cloudflare receives a TLS handshake from a client without an SNI, it will respond with the default SNI on those IPs. The default SNI can be any valid zone or subdomain owned by the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_default_sni? DefaultSni { get; set; }
+        public string? DefaultSni { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_default_sni DefaultSni { get; set; }
+        public string DefaultSni { get; set; }
 #endif
         /// <summary>An optional description field which may be used to describe the types of IPs or zones on the map.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Whether the Address Map is enabled or not. Cloudflare&apos;s DNS will not respond with IP addresses on an Address Map until the map is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_address_maps_update_address_map_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -63,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_sni", n => { DefaultSni = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_default_sni>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_default_sni.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasDescription.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_enabled.CreateFromDiscriminatorValue); } },
+                { "default_sni", n => { DefaultSni = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_default_sni>("default_sni", DefaultSni);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_schemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_enabled>("enabled", Enabled);
+            writer.WriteStringValue("default_sni", DefaultSni);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

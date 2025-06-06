@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Specifies that, when a WAF rule matches, its configured action will be replaced by the action configured in this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "rewrite_action", n => { RewriteAction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rewrite_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rewrite_action.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules.CreateFromDiscriminatorValue); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -84,7 +84,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_identifier>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rewrite_action>("rewrite_action", RewriteAction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules>("rules", Rules);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);

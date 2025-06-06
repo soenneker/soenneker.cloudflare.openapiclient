@@ -16,29 +16,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the script was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on? CreatedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on CreatedOn { get; set; }
-#endif
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Name of the Workers for Platforms dispatch namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name? DispatchNamespace { get; set; }
+        public string? DispatchNamespace { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name DispatchNamespace { get; set; }
+        public string DispatchNamespace { get; set; }
 #endif
         /// <summary>When the script was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on ModifiedOn { get; set; }
-#endif
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>The script property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,9 +60,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_on", n => { CreatedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on.CreateFromDiscriminatorValue); } },
-                { "dispatch_namespace", n => { DispatchNamespace = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on.CreateFromDiscriminatorValue); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "dispatch_namespace", n => { DispatchNamespace = n.GetStringValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "script", n => { Script = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptResponse.CreateFromDiscriminatorValue); } },
             };
         }
@@ -85,9 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on>("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name>("dispatch_namespace", DispatchNamespace);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on>("modified_on", ModifiedOn);
+            writer.WriteStringValue("dispatch_namespace", DispatchNamespace);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptResponse>("script", Script);
             writer.WriteAdditionalData(AdditionalData);
         }

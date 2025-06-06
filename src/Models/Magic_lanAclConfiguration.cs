@@ -33,26 +33,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of port ranges on the provided LAN that will be included in the ACL. If no ports or port rangess are provided, communication on any port on this LAN is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclPortRange>? PortRanges { get; set; }
+        public List<string>? PortRanges { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclPortRange> PortRanges { get; set; }
+        public List<string> PortRanges { get; set; }
 #endif
         /// <summary>Array of ports on the provided LAN that will be included in the ACL. If no ports or port ranges are provided, communication on any port on this LAN is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port>? Ports { get; set; }
+        public List<int?>? Ports { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port> Ports { get; set; }
+        public List<int?> Ports { get; set; }
 #endif
         /// <summary>Array of subnet IPs within the LAN that will be included in the ACL. If no subnets are provided, communication on any subnets on this LAN are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet>? Subnets { get; set; }
+        public List<string>? Subnets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet> Subnets { get; set; }
+        public List<string> Subnets { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration"/> and sets the default values.
@@ -81,9 +81,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "lan_id", n => { LanId = n.GetStringValue(); } },
                 { "lan_name", n => { LanName = n.GetStringValue(); } },
-                { "port_ranges", n => { PortRanges = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclPortRange>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclPortRange.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "ports", n => { Ports = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "subnets", n => { Subnets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "port_ranges", n => { PortRanges = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "subnets", n => { Subnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("lan_id", LanId);
             writer.WriteStringValue("lan_name", LanName);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclPortRange>("port_ranges", PortRanges);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port>("ports", Ports);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet>("subnets", Subnets);
+            writer.WriteCollectionOfPrimitiveValues<string>("port_ranges", PortRanges);
+            writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
+            writer.WriteCollectionOfPrimitiveValues<string>("subnets", Subnets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

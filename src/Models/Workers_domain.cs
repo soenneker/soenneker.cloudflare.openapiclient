@@ -17,50 +17,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Worker environment associated with the zone and hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasEnvironment? Environment { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasEnvironment Environment { get; set; }
+        public string Environment { get; set; }
 #endif
         /// <summary>Hostname of the Worker Domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_hostname? Hostname { get; set; }
+        public string? Hostname { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_hostname Hostname { get; set; }
+        public string Hostname { get; set; }
 #endif
         /// <summary>Identifer of the Worker Domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_domain_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_domain_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Worker service associated with the zone and hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasService? Service { get; set; }
+        public string? Service { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasService Service { get; set; }
+        public string Service { get; set; }
 #endif
         /// <summary>Identifier of the zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_identifier? ZoneId { get; set; }
+        public string? ZoneId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_identifier ZoneId { get; set; }
+        public string ZoneId { get; set; }
 #endif
         /// <summary>Name of the zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_name? ZoneName { get; set; }
+        public string? ZoneName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_name ZoneName { get; set; }
+        public string ZoneName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_domain"/> and sets the default values.
@@ -87,12 +87,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasEnvironment>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasEnvironment.CreateFromDiscriminatorValue); } },
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_hostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_hostname.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_domain_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_domain_identifier.CreateFromDiscriminatorValue); } },
-                { "service", n => { Service = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasService>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasService.CreateFromDiscriminatorValue); } },
-                { "zone_id", n => { ZoneId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_identifier.CreateFromDiscriminatorValue); } },
-                { "zone_name", n => { ZoneName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_name.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetStringValue(); } },
+                { "zone_id", n => { ZoneId = n.GetStringValue(); } },
+                { "zone_name", n => { ZoneName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +102,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasEnvironment>("environment", Environment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_hostname>("hostname", Hostname);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_domain_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_schemasService>("service", Service);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_identifier>("zone_id", ZoneId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_zone_name>("zone_name", ZoneName);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteStringValue("hostname", Hostname);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("service", Service);
+            writer.WriteStringValue("zone_id", ZoneId);
+            writer.WriteStringValue("zone_name", ZoneName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

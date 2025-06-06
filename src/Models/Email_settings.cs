@@ -15,68 +15,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the settings have been created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>State of the zone settings for Email Routing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; private set; }
         /// <summary>Email Routing settings identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The date and time the settings have been modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>Domain of your zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Flag to check if the user skipped the configuration wizard.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_skipWizard? SkipWizard { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_skipWizard SkipWizard { get; set; }
-#endif
+        public bool? SkipWizard { get; private set; }
         /// <summary>Show the state of your account, and the type or configuration error.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_status Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_status? Status { get; private set; }
         /// <summary>Email Routing settings tag. (Deprecated, replaced by Email Routing settings identifier)</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_tag? Tag { get; set; }
+        public string? Tag { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_tag Tag { get; set; }
+        public string Tag { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_settings"/> and sets the default values.
@@ -103,14 +74,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_created.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_enabled.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_identifier.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_modified.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_name.CreateFromDiscriminatorValue); } },
-                { "skip_wizard", n => { SkipWizard = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_skipWizard>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_skipWizard.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_status.CreateFromDiscriminatorValue); } },
-                { "tag", n => { Tag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_tag.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "skip_wizard", n => { SkipWizard = n.GetBoolValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_status>(); } },
+                { "tag", n => { Tag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -120,14 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_enabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_modified>("modified", Modified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_skipWizard>("skip_wizard", SkipWizard);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_setting_tag>("tag", Tag);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

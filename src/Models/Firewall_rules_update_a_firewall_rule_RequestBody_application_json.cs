@@ -30,13 +30,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter Filter { get; set; }
 #endif
-        /// <summary>The unique identifier of the resource.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier? Id { get; set; }
+        public UntypedNode? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier Id { get; set; }
+        public UntypedNode Id { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_a_firewall_rule_RequestBody_application_json"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action.CreateFromDiscriminatorValue); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter>("filter", Filter);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasIdentifier>("id", Id);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

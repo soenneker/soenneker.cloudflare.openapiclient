@@ -15,36 +15,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the invite is no longer active.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasExpires_on? ExpiresOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasExpires_on ExpiresOn { get; set; }
-#endif
+        public DateTimeOffset? ExpiresOn { get; private set; }
         /// <summary>Invite identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invite_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invite_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The email address of the user who created the invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_by? InvitedBy { get; set; }
+        public string? InvitedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_by InvitedBy { get; set; }
+        public string InvitedBy { get; set; }
 #endif
         /// <summary>Email address of the user to add to the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_member_email? InvitedMemberEmail { get; set; }
+        public string? InvitedMemberEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_member_email InvitedMemberEmail { get; set; }
+        public string InvitedMemberEmail { get; set; }
 #endif
         /// <summary>ID of the user to add to the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,13 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string InvitedMemberId { get; private set; }
 #endif
         /// <summary>When the invite was sent.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_on? InvitedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_on InvitedOn { get; set; }
-#endif
+        public DateTimeOffset? InvitedOn { get; private set; }
         /// <summary>ID of the organization the user will be added to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,12 +103,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expires_on", n => { ExpiresOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasExpires_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasExpires_on.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invite_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invite_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "invited_by", n => { InvitedBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_by>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_by.CreateFromDiscriminatorValue); } },
-                { "invited_member_email", n => { InvitedMemberEmail = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_member_email>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_member_email.CreateFromDiscriminatorValue); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "invited_by", n => { InvitedBy = n.GetStringValue(); } },
+                { "invited_member_email", n => { InvitedMemberEmail = n.GetStringValue(); } },
                 { "invited_member_id", n => { InvitedMemberId = n.GetStringValue(); } },
-                { "invited_on", n => { InvitedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_on.CreateFromDiscriminatorValue); } },
+                { "invited_on", n => { InvitedOn = n.GetDateTimeOffsetValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
                 { "organization_is_enforcing_twofactor", n => { OrganizationIsEnforcingTwofactor = n.GetBoolValue(); } },
                 { "organization_name", n => { OrganizationName = n.GetStringValue(); } },
@@ -135,11 +123,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasExpires_on>("expires_on", ExpiresOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invite_componentsSchemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_by>("invited_by", InvitedBy);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_member_email>("invited_member_email", InvitedMemberEmail);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_invited_on>("invited_on", InvitedOn);
+            writer.WriteStringValue("invited_by", InvitedBy);
+            writer.WriteStringValue("invited_member_email", InvitedMemberEmail);
             writer.WriteBoolValue("organization_is_enforcing_twofactor", OrganizationIsEnforcingTwofactor);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_user_invite_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

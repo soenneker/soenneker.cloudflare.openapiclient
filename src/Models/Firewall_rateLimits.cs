@@ -33,26 +33,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An informative summary of the rate limit. This value is sanitized and any tags will be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>When true, indicates that the rate limit is currently disabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_disabled? Disabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_disabled Disabled { get; set; }
-#endif
+        public bool? Disabled { get; set; }
         /// <summary>The unique identifier of the rate limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_id? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_id Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Determines which traffic the rate limit counts towards the threshold.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,21 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match Match { get; set; }
 #endif
         /// <summary>The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_period? Period { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_period Period { get; set; }
-#endif
+        public double? Period { get; set; }
         /// <summary>The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_threshold? Threshold { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_threshold Threshold { get; set; }
-#endif
+        public double? Threshold { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rateLimits"/> and sets the default values.
         /// </summary>
@@ -105,12 +87,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action.CreateFromDiscriminatorValue); } },
                 { "bypass", n => { Bypass = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rules.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description.CreateFromDiscriminatorValue); } },
-                { "disabled", n => { Disabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_disabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_disabled.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_id.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "disabled", n => { Disabled = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "match", n => { Match = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match.CreateFromDiscriminatorValue); } },
-                { "period", n => { Period = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_period>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_period.CreateFromDiscriminatorValue); } },
-                { "threshold", n => { Threshold = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_threshold>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_threshold.CreateFromDiscriminatorValue); } },
+                { "period", n => { Period = n.GetDoubleValue(); } },
+                { "threshold", n => { Threshold = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -122,12 +104,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>("action", Action);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>("bypass", Bypass);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_disabled>("disabled", Disabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_id>("id", Id);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("disabled", Disabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match>("match", Match);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_period>("period", Period);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_threshold>("threshold", Threshold);
+            writer.WriteDoubleValue("period", Period);
+            writer.WriteDoubleValue("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

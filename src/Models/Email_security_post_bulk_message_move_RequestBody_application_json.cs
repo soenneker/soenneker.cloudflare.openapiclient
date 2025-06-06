@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The postfix_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId>? PostfixIds { get; set; }
+        public List<UntypedNode>? PostfixIds { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId> PostfixIds { get; set; }
+        public List<UntypedNode> PostfixIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_bulk_message_move_RequestBody_application_json"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_bulk_message_move_RequestBody_application_json_destination>(); } },
-                { "postfix_ids", n => { PostfixIds = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "postfix_ids", n => { PostfixIds = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_bulk_message_move_RequestBody_application_json_destination>("destination", Destination);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PostfixId>("postfix_ids", PostfixIds);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("postfix_ids", PostfixIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

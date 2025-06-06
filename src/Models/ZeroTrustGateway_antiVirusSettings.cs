@@ -16,29 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable anti-virus scanning on downloads.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_download_phase? EnabledDownloadPhase { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_download_phase EnabledDownloadPhase { get; set; }
-#endif
+        public bool? EnabledDownloadPhase { get; set; }
         /// <summary>Enable anti-virus scanning on uploads.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_upload_phase? EnabledUploadPhase { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_upload_phase EnabledUploadPhase { get; set; }
-#endif
+        public bool? EnabledUploadPhase { get; set; }
         /// <summary>Block requests for files that cannot be scanned.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fail_closed? FailClosed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fail_closed FailClosed { get; set; }
-#endif
+        public bool? FailClosed { get; set; }
         /// <summary>Configure a message to display on the user&apos;s device when an antivirus search is performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,9 +54,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled_download_phase", n => { EnabledDownloadPhase = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_download_phase>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_download_phase.CreateFromDiscriminatorValue); } },
-                { "enabled_upload_phase", n => { EnabledUploadPhase = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_upload_phase>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_upload_phase.CreateFromDiscriminatorValue); } },
-                { "fail_closed", n => { FailClosed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fail_closed>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fail_closed.CreateFromDiscriminatorValue); } },
+                { "enabled_download_phase", n => { EnabledDownloadPhase = n.GetBoolValue(); } },
+                { "enabled_upload_phase", n => { EnabledUploadPhase = n.GetBoolValue(); } },
+                { "fail_closed", n => { FailClosed = n.GetBoolValue(); } },
                 { "notification_settings", n => { NotificationSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_notification_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_notification_settings.CreateFromDiscriminatorValue); } },
             };
         }
@@ -85,9 +67,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_download_phase>("enabled_download_phase", EnabledDownloadPhase);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled_upload_phase>("enabled_upload_phase", EnabledUploadPhase);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fail_closed>("fail_closed", FailClosed);
+            writer.WriteBoolValue("enabled_download_phase", EnabledDownloadPhase);
+            writer.WriteBoolValue("enabled_upload_phase", EnabledUploadPhase);
+            writer.WriteBoolValue("fail_closed", FailClosed);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_notification_settings>("notification_settings", NotificationSettings);
             writer.WriteAdditionalData(AdditionalData);
         }

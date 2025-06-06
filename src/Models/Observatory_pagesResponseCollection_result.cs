@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region Region { get; set; }
 #endif
         /// <summary>The frequency of the test.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency? ScheduleFrequency { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency ScheduleFrequency { get; set; }
-#endif
         /// <summary>The tests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_url? Url { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_url Url { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_pagesResponseCollection_result"/> and sets the default values.
@@ -72,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "region", n => { Region = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region.CreateFromDiscriminatorValue); } },
-                { "scheduleFrequency", n => { ScheduleFrequency = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency.CreateFromDiscriminatorValue); } },
+                { "scheduleFrequency", n => { ScheduleFrequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>(); } },
                 { "tests", n => { Tests = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_page_test>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_page_test.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_url.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region>("region", Region);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>("scheduleFrequency", ScheduleFrequency);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>("scheduleFrequency", ScheduleFrequency);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_page_test>("tests", Tests);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_url>("url", Url);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

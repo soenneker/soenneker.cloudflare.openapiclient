@@ -21,45 +21,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_group> ApprovalGroups { get; set; }
 #endif
         /// <summary>Requires the user to request access from an administrator at the start of each session.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_required? ApprovalRequired { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_required ApprovalRequired { get; set; }
-#endif
+        public bool? ApprovalRequired { get; set; }
         /// <summary>Require this application to be served in an isolated browser for users matching this policy. &apos;Client Web Isolation&apos; must be on for the account in order to use this feature.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_isolation_required? IsolationRequired { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_isolation_required IsolationRequired { get; set; }
-#endif
+        public bool? IsolationRequired { get; set; }
         /// <summary>A custom message that will appear on the purpose justification screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt? PurposeJustificationPrompt { get; set; }
+        public string? PurposeJustificationPrompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt PurposeJustificationPrompt { get; set; }
+        public string PurposeJustificationPrompt { get; set; }
 #endif
         /// <summary>Require users to enter a justification when they log in to the application.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_required? PurposeJustificationRequired { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_required PurposeJustificationRequired { get; set; }
-#endif
+        public bool? PurposeJustificationRequired { get; set; }
         /// <summary>The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasSession_duration? SessionDuration { get; set; }
+        public string? SessionDuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasSession_duration SessionDuration { get; set; }
+        public string SessionDuration { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_req"/> and sets the default values.
+        /// </summary>
+        public Access_policy_req() : base()
+        {
+            SessionDuration = "24h";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,11 +68,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_group.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "approval_required", n => { ApprovalRequired = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_required>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_required.CreateFromDiscriminatorValue); } },
-                { "isolation_required", n => { IsolationRequired = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_isolation_required>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_isolation_required.CreateFromDiscriminatorValue); } },
-                { "purpose_justification_prompt", n => { PurposeJustificationPrompt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt.CreateFromDiscriminatorValue); } },
-                { "purpose_justification_required", n => { PurposeJustificationRequired = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_required>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_required.CreateFromDiscriminatorValue); } },
-                { "session_duration", n => { SessionDuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasSession_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasSession_duration.CreateFromDiscriminatorValue); } },
+                { "approval_required", n => { ApprovalRequired = n.GetBoolValue(); } },
+                { "isolation_required", n => { IsolationRequired = n.GetBoolValue(); } },
+                { "purpose_justification_prompt", n => { PurposeJustificationPrompt = n.GetStringValue(); } },
+                { "purpose_justification_required", n => { PurposeJustificationRequired = n.GetBoolValue(); } },
+                { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -95,11 +84,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_group>("approval_groups", ApprovalGroups);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_required>("approval_required", ApprovalRequired);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_isolation_required>("isolation_required", IsolationRequired);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt>("purpose_justification_prompt", PurposeJustificationPrompt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_required>("purpose_justification_required", PurposeJustificationRequired);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasSession_duration>("session_duration", SessionDuration);
+            writer.WriteBoolValue("approval_required", ApprovalRequired);
+            writer.WriteBoolValue("isolation_required", IsolationRequired);
+            writer.WriteStringValue("purpose_justification_prompt", PurposeJustificationPrompt);
+            writer.WriteBoolValue("purpose_justification_required", PurposeJustificationRequired);
+            writer.WriteStringValue("session_duration", SessionDuration);
         }
     }
 }

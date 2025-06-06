@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The dead_letter_queue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName? DeadLetterQueue { get; set; }
+        public string? DeadLetterQueue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName DeadLetterQueue { get; set; }
+        public string DeadLetterQueue { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "dead_letter_queue", n => { DeadLetterQueue = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName.CreateFromDiscriminatorValue); } },
+                { "dead_letter_queue", n => { DeadLetterQueue = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName>("dead_letter_queue", DeadLetterQueue);
+            writer.WriteStringValue("dead_letter_queue", DeadLetterQueue);
         }
     }
 }

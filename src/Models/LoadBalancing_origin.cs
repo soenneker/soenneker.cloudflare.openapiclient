@@ -17,27 +17,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address? Address { get; set; }
+        public string? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address Address { get; set; }
+        public string Address { get; set; }
 #endif
         /// <summary>This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_disabled_at? DisabledAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_disabled_at DisabledAt { get; set; }
-#endif
+        public DateTimeOffset? DisabledAt { get; private set; }
         /// <summary>Whether to enable (the default) this origin within the pool. Disabled origins will not receive traffic and are excluded from health checks. The origin will only be disabled for the current pool.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The request header is used to pass additional information with an HTTP request. Currently supported header is &apos;Host&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,35 +37,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A human-identifiable name for the origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The port for upstream connections. A value of 0 means the default port for the protocol will be used.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_port? Port { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_port Port { get; set; }
-#endif
+        public int? Port { get; set; }
         /// <summary>The virtual network subnet ID the origin belongs in. Virtual network must also belong to the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_virtual_network_id? VirtualNetworkId { get; set; }
+        public string? VirtualNetworkId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_virtual_network_id VirtualNetworkId { get; set; }
+        public string VirtualNetworkId { get; set; }
 #endif
         /// <summary>The weight of this origin relative to other origins in the pool. Based on the configured weight the total traffic is distributed among origins within the pool.- `origin_steering.policy=&quot;least_outstanding_requests&quot;`: Use weight to scale the origin&apos;s outstanding requests.- `origin_steering.policy=&quot;least_connections&quot;`: Use weight to scale the origin&apos;s open connections.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_weight? Weight { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_weight Weight { get; set; }
-#endif
+        public double? Weight { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin"/> and sets the default values.
         /// </summary>
@@ -103,14 +79,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address.CreateFromDiscriminatorValue); } },
-                { "disabled_at", n => { DisabledAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_disabled_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_disabled_at.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "disabled_at", n => { DisabledAt = n.GetDateTimeOffsetValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasHeader>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasHeader.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName.CreateFromDiscriminatorValue); } },
-                { "port", n => { Port = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_port.CreateFromDiscriminatorValue); } },
-                { "virtual_network_id", n => { VirtualNetworkId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_virtual_network_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_virtual_network_id.CreateFromDiscriminatorValue); } },
-                { "weight", n => { Weight = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_weight>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_weight.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "virtual_network_id", n => { VirtualNetworkId = n.GetStringValue(); } },
+                { "weight", n => { Weight = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -120,14 +96,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_disabled_at>("disabled_at", DisabledAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled>("enabled", Enabled);
+            writer.WriteStringValue("address", Address);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasHeader>("header", Header);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_port>("port", Port);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_virtual_network_id>("virtual_network_id", VirtualNetworkId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_weight>("weight", Weight);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("port", Port);
+            writer.WriteStringValue("virtual_network_id", VirtualNetworkId);
+            writer.WriteDoubleValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

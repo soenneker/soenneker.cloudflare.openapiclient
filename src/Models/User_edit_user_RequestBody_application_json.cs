@@ -17,42 +17,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The country in which the user lives.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country? Country { get; set; }
+        public string? Country { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country Country { get; set; }
+        public string Country { get; set; }
 #endif
         /// <summary>User&apos;s first name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name? FirstName { get; set; }
+        public string? FirstName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name FirstName { get; set; }
+        public string FirstName { get; set; }
 #endif
         /// <summary>User&apos;s last name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name? LastName { get; set; }
+        public string? LastName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name LastName { get; set; }
+        public string LastName { get; set; }
 #endif
         /// <summary>User&apos;s telephone number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone? Telephone { get; set; }
+        public string? Telephone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone Telephone { get; set; }
+        public string Telephone { get; set; }
 #endif
         /// <summary>The zipcode or postal code where the user lives.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode? Zipcode { get; set; }
+        public string? Zipcode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode Zipcode { get; set; }
+        public string Zipcode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User_edit_user_RequestBody_application_json"/> and sets the default values.
@@ -79,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "country", n => { Country = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country.CreateFromDiscriminatorValue); } },
-                { "first_name", n => { FirstName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name.CreateFromDiscriminatorValue); } },
-                { "last_name", n => { LastName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name.CreateFromDiscriminatorValue); } },
-                { "telephone", n => { Telephone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone.CreateFromDiscriminatorValue); } },
-                { "zipcode", n => { Zipcode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode.CreateFromDiscriminatorValue); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "first_name", n => { FirstName = n.GetStringValue(); } },
+                { "last_name", n => { LastName = n.GetStringValue(); } },
+                { "telephone", n => { Telephone = n.GetStringValue(); } },
+                { "zipcode", n => { Zipcode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_country>("country", Country);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_first_name>("first_name", FirstName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_name>("last_name", LastName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_telephone>("telephone", Telephone);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_zipcode>("zipcode", Zipcode);
+            writer.WriteStringValue("country", Country);
+            writer.WriteStringValue("first_name", FirstName);
+            writer.WriteStringValue("last_name", LastName);
+            writer.WriteStringValue("telephone", Telephone);
+            writer.WriteStringValue("zipcode", Zipcode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,35 +17,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An optional human provided description of the static route.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The next-hop IP Address for the static route.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nexthop? Nexthop { get; set; }
+        public string? Nexthop { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nexthop Nexthop { get; set; }
+        public string Nexthop { get; set; }
 #endif
         /// <summary>IP Prefix in Classless Inter-Domain Routing format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_prefix? Prefix { get; set; }
+        public string? Prefix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_prefix Prefix { get; set; }
+        public string Prefix { get; set; }
 #endif
         /// <summary>Priority of the static route.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_priority? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_priority Priority { get; set; }
-#endif
+        public int? Priority { get; set; }
         /// <summary>Used only for ECMP routes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,13 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_scope Scope { get; set; }
 #endif
         /// <summary>Optional weight of the ECMP scope - if provided.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_weight? Weight { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_weight Weight { get; set; }
-#endif
+        public int? Weight { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_create_route_request"/> and sets the default values.
         /// </summary>
@@ -87,12 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_description.CreateFromDiscriminatorValue); } },
-                { "nexthop", n => { Nexthop = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nexthop>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nexthop.CreateFromDiscriminatorValue); } },
-                { "prefix", n => { Prefix = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_prefix>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_prefix.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_priority>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_priority.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "nexthop", n => { Nexthop = n.GetStringValue(); } },
+                { "prefix", n => { Prefix = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
                 { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_scope>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_scope.CreateFromDiscriminatorValue); } },
-                { "weight", n => { Weight = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_weight>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_weight.CreateFromDiscriminatorValue); } },
+                { "weight", n => { Weight = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +90,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nexthop>("nexthop", Nexthop);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_prefix>("prefix", Prefix);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_priority>("priority", Priority);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("nexthop", Nexthop);
+            writer.WriteStringValue("prefix", Prefix);
+            writer.WriteIntValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_scope>("scope", Scope);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_weight>("weight", Weight);
+            writer.WriteIntValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

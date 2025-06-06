@@ -33,13 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat Nat { get; set; }
 #endif
         /// <summary>The physport property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port? Physport { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port Physport { get; set; }
-#endif
+        public int? Physport { get; set; }
         /// <summary>The routed_subnets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,13 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_static_addressing StaticAddressing { get; set; }
 #endif
         /// <summary>VLAN ID. Use zero for untagged.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag? VlanTag { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag VlanTag { get; set; }
-#endif
+        public int? VlanTag { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lans_add_single_request"/> and sets the default values.
         /// </summary>
@@ -92,10 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ha_link", n => { HaLink = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nat", n => { Nat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat.CreateFromDiscriminatorValue); } },
-                { "physport", n => { Physport = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port.CreateFromDiscriminatorValue); } },
+                { "physport", n => { Physport = n.GetIntValue(); } },
                 { "routed_subnets", n => { RoutedSubnets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_routed_subnet>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_routed_subnet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "static_addressing", n => { StaticAddressing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_static_addressing>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_static_addressing.CreateFromDiscriminatorValue); } },
-                { "vlan_tag", n => { VlanTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag.CreateFromDiscriminatorValue); } },
+                { "vlan_tag", n => { VlanTag = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -108,10 +96,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("ha_link", HaLink);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>("nat", Nat);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port>("physport", Physport);
+            writer.WriteIntValue("physport", Physport);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_routed_subnet>("routed_subnets", RoutedSubnets);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_static_addressing>("static_addressing", StaticAddressing);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag>("vlan_tag", VlanTag);
+            writer.WriteIntValue("vlan_tag", VlanTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

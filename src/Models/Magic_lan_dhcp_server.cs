@@ -17,34 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress? DhcpPoolEnd { get; set; }
+        public string? DhcpPoolEnd { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress DhcpPoolEnd { get; set; }
+        public string DhcpPoolEnd { get; set; }
 #endif
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress? DhcpPoolStart { get; set; }
+        public string? DhcpPoolStart { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress DhcpPoolStart { get; set; }
+        public string DhcpPoolStart { get; set; }
 #endif
         /// <summary>A valid IPv4 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress? DnsServer { get; set; }
+        public string? DnsServer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress DnsServer { get; set; }
+        public string DnsServer { get; set; }
 #endif
         /// <summary>The dns_servers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>? DnsServers { get; set; }
+        public List<string>? DnsServers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress> DnsServers { get; set; }
+        public List<string> DnsServers { get; set; }
 #endif
         /// <summary>Mapping of MAC addresses to IP addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,10 +79,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dhcp_pool_end", n => { DhcpPoolEnd = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress.CreateFromDiscriminatorValue); } },
-                { "dhcp_pool_start", n => { DhcpPoolStart = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress.CreateFromDiscriminatorValue); } },
-                { "dns_server", n => { DnsServer = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress.CreateFromDiscriminatorValue); } },
-                { "dns_servers", n => { DnsServers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "dhcp_pool_end", n => { DhcpPoolEnd = n.GetStringValue(); } },
+                { "dhcp_pool_start", n => { DhcpPoolStart = n.GetStringValue(); } },
+                { "dns_server", n => { DnsServer = n.GetStringValue(); } },
+                { "dns_servers", n => { DnsServers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "reservations", n => { Reservations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_server_reservations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_server_reservations.CreateFromDiscriminatorValue); } },
             };
         }
@@ -93,10 +93,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>("dhcp_pool_end", DhcpPoolEnd);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>("dhcp_pool_start", DhcpPoolStart);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>("dns_server", DnsServer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>("dns_servers", DnsServers);
+            writer.WriteStringValue("dhcp_pool_end", DhcpPoolEnd);
+            writer.WriteStringValue("dhcp_pool_start", DhcpPoolStart);
+            writer.WriteStringValue("dns_server", DnsServer);
+            writer.WriteCollectionOfPrimitiveValues<string>("dns_servers", DnsServers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_server_reservations>("reservations", Reservations);
             writer.WriteAdditionalData(AdditionalData);
         }

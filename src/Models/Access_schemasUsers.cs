@@ -13,95 +13,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>True if the user has authenticated with Cloudflare Access.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAccess_seat? AccessSeat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAccess_seat AccessSeat { get; set; }
-#endif
+        public bool? AccessSeat { get; set; }
         /// <summary>The number of active devices registered to the user.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_active_device_count? ActiveDeviceCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_active_device_count ActiveDeviceCount { get; set; }
-#endif
+        public double? ActiveDeviceCount { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The email of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail? Email { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail Email { get; set; }
+        public string Email { get; set; }
 #endif
         /// <summary>True if the user has logged into the WARP client.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGateway_seat? GatewaySeat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGateway_seat GatewaySeat { get; set; }
-#endif
+        public bool? GatewaySeat { get; set; }
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The time at which the user last successfully logged in.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_successful_login? LastSuccessfulLogin { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_successful_login LastSuccessfulLogin { get; set; }
-#endif
+        public DateTimeOffset? LastSuccessfulLogin { get; set; }
         /// <summary>The name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The unique API identifier for the Zero Trust seat.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSeat_uid? SeatUid { get; set; }
+        public string? SeatUid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSeat_uid SeatUid { get; set; }
+        public string SeatUid { get; set; }
 #endif
         /// <summary>The unique API identifier for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uid? Uid { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uid Uid { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp UpdatedAt { get; set; }
-#endif
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUsers"/> and sets the default values.
         /// </summary>
@@ -127,17 +91,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_seat", n => { AccessSeat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAccess_seat>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAccess_seat.CreateFromDiscriminatorValue); } },
-                { "active_device_count", n => { ActiveDeviceCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_active_device_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_active_device_count.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp.CreateFromDiscriminatorValue); } },
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail.CreateFromDiscriminatorValue); } },
-                { "gateway_seat", n => { GatewaySeat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGateway_seat>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGateway_seat.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid.CreateFromDiscriminatorValue); } },
-                { "last_successful_login", n => { LastSuccessfulLogin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_successful_login>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_successful_login.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "seat_uid", n => { SeatUid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSeat_uid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSeat_uid.CreateFromDiscriminatorValue); } },
-                { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uid.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp.CreateFromDiscriminatorValue); } },
+                { "access_seat", n => { AccessSeat = n.GetBoolValue(); } },
+                { "active_device_count", n => { ActiveDeviceCount = n.GetDoubleValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "gateway_seat", n => { GatewaySeat = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "last_successful_login", n => { LastSuccessfulLogin = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "seat_uid", n => { SeatUid = n.GetStringValue(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -147,17 +111,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAccess_seat>("access_seat", AccessSeat);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_active_device_count>("active_device_count", ActiveDeviceCount);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasEmail>("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasGateway_seat>("gateway_seat", GatewaySeat);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uuid>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_successful_login>("last_successful_login", LastSuccessfulLogin);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSeat_uid>("seat_uid", SeatUid);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_uid>("uid", Uid);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>("updated_at", UpdatedAt);
+            writer.WriteBoolValue("access_seat", AccessSeat);
+            writer.WriteDoubleValue("active_device_count", ActiveDeviceCount);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("email", Email);
+            writer.WriteBoolValue("gateway_seat", GatewaySeat);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("last_successful_login", LastSuccessfulLogin);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("seat_uid", SeatUid);
+            writer.WriteStringValue("uid", Uid);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

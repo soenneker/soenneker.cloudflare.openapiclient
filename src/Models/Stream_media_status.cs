@@ -18,35 +18,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies why the video failed to encode. This field is empty if the video is not in an `error` state. Preferred for programmatic use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode? ErrorReasonCode { get; set; }
+        public string? ErrorReasonCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode ErrorReasonCode { get; set; }
+        public string ErrorReasonCode { get; set; }
 #endif
         /// <summary>Specifies why the video failed to encode using a human readable error message in English. This field is empty if the video is not in an `error` state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText? ErrorReasonText { get; set; }
+        public string? ErrorReasonText { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText ErrorReasonText { get; set; }
+        public string ErrorReasonText { get; set; }
 #endif
         /// <summary>Indicates the size of the entire upload in bytes. The value must be a non-negative integer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete? PctComplete { get; set; }
+        public string? PctComplete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete PctComplete { get; set; }
+        public string PctComplete { get; set; }
 #endif
         /// <summary>Specifies the processing status for all quality levels for a video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? State { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state State { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_status"/> and sets the default values.
         /// </summary>
@@ -72,10 +66,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errorReasonCode", n => { ErrorReasonCode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode.CreateFromDiscriminatorValue); } },
-                { "errorReasonText", n => { ErrorReasonText = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText.CreateFromDiscriminatorValue); } },
-                { "pctComplete", n => { PctComplete = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state.CreateFromDiscriminatorValue); } },
+                { "errorReasonCode", n => { ErrorReasonCode = n.GetStringValue(); } },
+                { "errorReasonText", n => { ErrorReasonText = n.GetStringValue(); } },
+                { "pctComplete", n => { PctComplete = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(); } },
             };
         }
         /// <summary>
@@ -85,10 +79,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonCode>("errorReasonCode", ErrorReasonCode);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_errorReasonText>("errorReasonText", ErrorReasonText);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pctComplete>("pctComplete", PctComplete);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("state", State);
+            writer.WriteStringValue("errorReasonCode", ErrorReasonCode);
+            writer.WriteStringValue("errorReasonText", ErrorReasonText);
+            writer.WriteStringValue("pctComplete", PctComplete);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,19 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Last modification of DNS Firewall cluster</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_modified_on? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_modified_on ModifiedOn { get; set; }
-#endif
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "dns_firewall_ips", n => { DnsFirewallIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_identifier.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_modified_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_modified_on.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -68,8 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("dns_firewall_ips", DnsFirewallIps);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_modified_on>("modified_on", ModifiedOn);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
         }
     }
 }

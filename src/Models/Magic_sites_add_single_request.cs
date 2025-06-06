@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Magic Connector identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_connectorId? ConnectorId { get; set; }
+        public string? ConnectorId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_connectorId ConnectorId { get; set; }
+        public string ConnectorId { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,18 +43,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Magic Connector identifier tag. Used when high availability mode is on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_secondaryConnectorId? SecondaryConnectorId { get; set; }
+        public string? SecondaryConnectorId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_secondaryConnectorId SecondaryConnectorId { get; set; }
+        public string SecondaryConnectorId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_sites_add_single_request"/> and sets the default values.
@@ -81,12 +81,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connector_id", n => { ConnectorId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_connectorId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_connectorId.CreateFromDiscriminatorValue); } },
+                { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ha_mode", n => { HaMode = n.GetBoolValue(); } },
                 { "location", n => { Location = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteName.CreateFromDiscriminatorValue); } },
-                { "secondary_connector_id", n => { SecondaryConnectorId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_secondaryConnectorId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_secondaryConnectorId.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "secondary_connector_id", n => { SecondaryConnectorId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -96,12 +96,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_connectorId>("connector_id", ConnectorId);
+            writer.WriteStringValue("connector_id", ConnectorId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("ha_mode", HaMode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation>("location", Location);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_secondaryConnectorId>("secondary_connector_id", SecondaryConnectorId);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("secondary_connector_id", SecondaryConnectorId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

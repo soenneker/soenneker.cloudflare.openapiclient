@@ -15,20 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the share was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>Share Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Resource Metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,53 +33,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_meta Meta { get; set; }
 #endif
         /// <summary>When the share was modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; set; }
         /// <summary>Account identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id? ResourceAccountId { get; set; }
+        public string? ResourceAccountId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id ResourceAccountId { get; set; }
+        public string ResourceAccountId { get; set; }
 #endif
         /// <summary>Share Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id? ResourceId { get; set; }
+        public string? ResourceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id ResourceId { get; set; }
+        public string ResourceId { get; set; }
 #endif
         /// <summary>Resource Type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type? ResourceType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type ResourceType { get; set; }
-#endif
         /// <summary>Resource Version.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version? ResourceVersion { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version ResourceVersion { get; set; }
-#endif
+        public int? ResourceVersion { get; set; }
         /// <summary>Resource Status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_object"/> and sets the default values.
         /// </summary>
@@ -111,15 +81,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_id.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_meta.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified.CreateFromDiscriminatorValue); } },
-                { "resource_account_id", n => { ResourceAccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id.CreateFromDiscriminatorValue); } },
-                { "resource_id", n => { ResourceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id.CreateFromDiscriminatorValue); } },
-                { "resource_type", n => { ResourceType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type.CreateFromDiscriminatorValue); } },
-                { "resource_version", n => { ResourceVersion = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status.CreateFromDiscriminatorValue); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "resource_account_id", n => { ResourceAccountId = n.GetStringValue(); } },
+                { "resource_id", n => { ResourceId = n.GetStringValue(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>(); } },
+                { "resource_version", n => { ResourceVersion = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>(); } },
             };
         }
         /// <summary>
@@ -129,15 +99,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_id>("id", Id);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_meta>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_modified>("modified", Modified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_account_id>("resource_account_id", ResourceAccountId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_resource_id>("resource_id", ResourceId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>("resource_type", ResourceType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_version>("resource_version", ResourceVersion);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>("status", Status);
+            writer.WriteDateTimeOffsetValue("modified", Modified);
+            writer.WriteStringValue("resource_account_id", ResourceAccountId);
+            writer.WriteStringValue("resource_id", ResourceId);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>("resource_type", ResourceType);
+            writer.WriteIntValue("resource_version", ResourceVersion);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

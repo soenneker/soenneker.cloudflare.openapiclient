@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The log retention flag for Logpull API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_flag? Flag { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_flag Flag { get; set; }
-#endif
+        public bool? Flag { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_retention_flag"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "flag", n => { Flag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_flag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_flag.CreateFromDiscriminatorValue); } },
+                { "flag", n => { Flag = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_flag>("flag", Flag);
+            writer.WriteBoolValue("flag", Flag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

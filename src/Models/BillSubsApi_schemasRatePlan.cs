@@ -25,42 +25,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_currency? Currency { get; set; }
+        public string? Currency { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_currency Currency { get; set; }
+        public string Currency { get; private set; }
 #endif
         /// <summary>The duration of the plan subscription.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_duration? Duration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_duration Duration { get; set; }
-#endif
+        public double? Duration { get; set; }
         /// <summary>The frequency at which you will be billed for this plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency? Frequency { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency Frequency { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency? Frequency { get; private set; }
         /// <summary>Plan identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_ratePlan_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_ratePlan_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The plan name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasName? Name { get; set; }
+        public string? Name { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasName Name { get; set; }
+        public string Name { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasRatePlan"/> and sets the default values.
@@ -88,11 +76,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "components", n => { Components = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "currency", n => { Currency = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_currency>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_currency.CreateFromDiscriminatorValue); } },
-                { "duration", n => { Duration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_duration.CreateFromDiscriminatorValue); } },
-                { "frequency", n => { Frequency = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_ratePlan_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_ratePlan_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasName.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetDoubleValue(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency>(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -103,11 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue>("components", Components);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_currency>("currency", Currency);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_duration>("duration", Duration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency>("frequency", Frequency);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_ratePlan_componentsSchemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasName>("name", Name);
+            writer.WriteDoubleValue("duration", Duration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

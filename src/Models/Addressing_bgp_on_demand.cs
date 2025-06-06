@@ -15,37 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Prefix advertisement status to the Internet. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_advertised? Advertised { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_advertised Advertised { get; set; }
-#endif
+        public bool? Advertised { get; set; }
         /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable? AdvertisedModifiedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable AdvertisedModifiedAt { get; set; }
-#endif
+        public DateTimeOffset? AdvertisedModifiedAt { get; set; }
         /// <summary>Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_enabled? OnDemandEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_enabled OnDemandEnabled { get; set; }
-#endif
+        public bool? OnDemandEnabled { get; set; }
         /// <summary>Whether advertisement status of the prefix is locked, meaning it cannot be changed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_locked? OnDemandLocked { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_locked OnDemandLocked { get; set; }
-#endif
+        public bool? OnDemandLocked { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand"/> and sets the default values.
         /// </summary>
@@ -71,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "advertised", n => { Advertised = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_advertised>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_advertised.CreateFromDiscriminatorValue); } },
-                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable.CreateFromDiscriminatorValue); } },
-                { "on_demand_enabled", n => { OnDemandEnabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_enabled.CreateFromDiscriminatorValue); } },
-                { "on_demand_locked", n => { OnDemandLocked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_locked>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_locked.CreateFromDiscriminatorValue); } },
+                { "advertised", n => { Advertised = n.GetBoolValue(); } },
+                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "on_demand_enabled", n => { OnDemandEnabled = n.GetBoolValue(); } },
+                { "on_demand_locked", n => { OnDemandLocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +60,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_advertised>("advertised", Advertised);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_modified_at_nullable>("advertised_modified_at", AdvertisedModifiedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_enabled>("on_demand_enabled", OnDemandEnabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_on_demand_locked>("on_demand_locked", OnDemandLocked);
+            writer.WriteBoolValue("advertised", Advertised);
+            writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
+            writer.WriteBoolValue("on_demand_enabled", OnDemandEnabled);
+            writer.WriteBoolValue("on_demand_locked", OnDemandLocked);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

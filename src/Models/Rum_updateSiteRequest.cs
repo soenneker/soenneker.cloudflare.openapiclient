@@ -15,44 +15,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install? AutoInstall { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install AutoInstall { get; set; }
-#endif
+        public bool? AutoInstall { get; set; }
         /// <summary>Enables or disables RUM. This option can be used only when auto_install is set to true.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The hostname to use for gray-clouded sites.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_host? Host { get; set; }
+        public string? Host { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_host Host { get; set; }
+        public string Host { get; set; }
 #endif
         /// <summary>If enabled, the JavaScript snippet will not be injected for visitors from the EU.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_lite? Lite { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_lite Lite { get; set; }
-#endif
+        public bool? Lite { get; set; }
         /// <summary>The zone identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag? ZoneTag { get; set; }
+        public string? ZoneTag { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag ZoneTag { get; set; }
+        public string ZoneTag { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_updateSiteRequest"/> and sets the default values.
@@ -79,11 +61,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auto_install", n => { AutoInstall = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_enabled.CreateFromDiscriminatorValue); } },
-                { "host", n => { Host = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_host>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_host.CreateFromDiscriminatorValue); } },
-                { "lite", n => { Lite = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_lite>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_lite.CreateFromDiscriminatorValue); } },
-                { "zone_tag", n => { ZoneTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag.CreateFromDiscriminatorValue); } },
+                { "auto_install", n => { AutoInstall = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "lite", n => { Lite = n.GetBoolValue(); } },
+                { "zone_tag", n => { ZoneTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install>("auto_install", AutoInstall);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_enabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_host>("host", Host);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_lite>("lite", Lite);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag>("zone_tag", ZoneTag);
+            writer.WriteBoolValue("auto_install", AutoInstall);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("host", Host);
+            writer.WriteBoolValue("lite", Lite);
+            writer.WriteStringValue("zone_tag", ZoneTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

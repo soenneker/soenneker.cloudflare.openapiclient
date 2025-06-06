@@ -23,21 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group> ApprovalGroups { get; set; }
 #endif
         /// <summary>Requires the user to request access from an administrator at the start of each session.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_required? ApprovalRequired { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_required ApprovalRequired { get; set; }
-#endif
+        public bool? ApprovalRequired { get; set; }
         /// <summary>The action Access will take if a user matches this policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision? Decision { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision Decision { get; set; }
-#endif
         /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,45 +43,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule> Include { get; set; }
 #endif
         /// <summary>Require this application to be served in an isolated browser for users matching this policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIsolation_required? IsolationRequired { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIsolation_required IsolationRequired { get; set; }
-#endif
+        public bool? IsolationRequired { get; set; }
         /// <summary>The name of the Access policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policies_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policies_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The order of execution for this policy. Must be unique for each policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPrecedence? Precedence { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPrecedence Precedence { get; set; }
-#endif
+        public int? Precedence { get; set; }
         /// <summary>A custom message that will appear on the purpose justification screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt? PurposeJustificationPrompt { get; set; }
+        public string? PurposeJustificationPrompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt PurposeJustificationPrompt { get; set; }
+        public string PurposeJustificationPrompt { get; set; }
 #endif
         /// <summary>Require users to enter a justification when they log in to the application.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPurpose_justification_required? PurposeJustificationRequired { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPurpose_justification_required PurposeJustificationRequired { get; set; }
-#endif
+        public bool? PurposeJustificationRequired { get; set; }
         /// <summary>Rules evaluated with an AND logical operator. To match the policy, a user must meet all of the Require rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -128,15 +98,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "approval_required", n => { ApprovalRequired = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_required>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_required.CreateFromDiscriminatorValue); } },
-                { "decision", n => { Decision = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision.CreateFromDiscriminatorValue); } },
+                { "approval_required", n => { ApprovalRequired = n.GetBoolValue(); } },
+                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>(); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "isolation_required", n => { IsolationRequired = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIsolation_required>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIsolation_required.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policies_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policies_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "precedence", n => { Precedence = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPrecedence>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPrecedence.CreateFromDiscriminatorValue); } },
-                { "purpose_justification_prompt", n => { PurposeJustificationPrompt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt.CreateFromDiscriminatorValue); } },
-                { "purpose_justification_required", n => { PurposeJustificationRequired = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPurpose_justification_required>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPurpose_justification_required.CreateFromDiscriminatorValue); } },
+                { "isolation_required", n => { IsolationRequired = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "precedence", n => { Precedence = n.GetIntValue(); } },
+                { "purpose_justification_prompt", n => { PurposeJustificationPrompt = n.GetStringValue(); } },
+                { "purpose_justification_required", n => { PurposeJustificationRequired = n.GetBoolValue(); } },
                 { "require", n => { Require = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -148,15 +118,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group>("approval_groups", ApprovalGroups);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_required>("approval_required", ApprovalRequired);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>("decision", Decision);
+            writer.WriteBoolValue("approval_required", ApprovalRequired);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("exclude", Exclude);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("include", Include);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIsolation_required>("isolation_required", IsolationRequired);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policies_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPrecedence>("precedence", Precedence);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_purpose_justification_prompt>("purpose_justification_prompt", PurposeJustificationPrompt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPurpose_justification_required>("purpose_justification_required", PurposeJustificationRequired);
+            writer.WriteBoolValue("isolation_required", IsolationRequired);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("precedence", Precedence);
+            writer.WriteStringValue("purpose_justification_prompt", PurposeJustificationPrompt);
+            writer.WriteBoolValue("purpose_justification_required", PurposeJustificationRequired);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("require", Require);
             writer.WriteAdditionalData(AdditionalData);
         }

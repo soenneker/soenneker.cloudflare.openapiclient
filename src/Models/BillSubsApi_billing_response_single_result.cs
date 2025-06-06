@@ -121,10 +121,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Billing item identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The is_partner property</summary>
         public bool? IsPartner { get; set; }
@@ -325,7 +325,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enterprise_billing_email", n => { EnterpriseBillingEmail = n.GetStringValue(); } },
                 { "enterprise_primary_email", n => { EnterprisePrimaryEmail = n.GetStringValue(); } },
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "is_partner", n => { IsPartner = n.GetBoolValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
                 { "next_bill_date", n => { NextBillDate = n.GetDateTimeOffsetValue(); } },
@@ -373,7 +373,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("enterprise_billing_email", EnterpriseBillingEmail);
             writer.WriteStringValue("enterprise_primary_email", EnterprisePrimaryEmail);
             writer.WriteStringValue("first_name", FirstName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasIdentifier>("id", Id);
             writer.WriteBoolValue("is_partner", IsPartner);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteDateTimeOffsetValue("next_bill_date", NextBillDate);

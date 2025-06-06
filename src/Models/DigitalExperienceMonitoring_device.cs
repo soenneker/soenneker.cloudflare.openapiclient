@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare colo</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_colo? Colo { get; set; }
+        public string? Colo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_colo Colo { get; set; }
+        public string Colo { get; set; }
 #endif
         /// <summary>The connectionType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -143,10 +143,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The mode under which the WARP client is run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_mode? Mode { get; set; }
+        public string? Mode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_mode Mode { get; set; }
+        public string Mode { get; set; }
 #endif
         /// <summary>The networkRcvdBps property</summary>
         public long? NetworkRcvdBps { get; set; }
@@ -163,18 +163,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>User contact email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_personEmail? PersonEmail { get; set; }
+        public string? PersonEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_personEmail PersonEmail { get; set; }
+        public string PersonEmail { get; set; }
 #endif
         /// <summary>Operating system</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_platform? Platform { get; set; }
+        public string? Platform { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_platform Platform { get; set; }
+        public string Platform { get; set; }
 #endif
         /// <summary>The ramAvailableKb property</summary>
         public long? RamAvailableKb { get; set; }
@@ -191,28 +191,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Network status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_status? Status { get; set; }
+        public string? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_status Status { get; set; }
+        public string Status { get; set; }
 #endif
         /// <summary>The switchLocked property</summary>
         public bool? SwitchLocked { get; set; }
         /// <summary>Timestamp in ISO format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_timestamp? Timestamp { get; set; }
+        public string? Timestamp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_timestamp Timestamp { get; set; }
+        public string Timestamp { get; set; }
 #endif
         /// <summary>WARP client version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_version? Version { get; set; }
+        public string? Version { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_version Version { get; set; }
+        public string Version { get; set; }
 #endif
         /// <summary>The wifiStrengthDbm property</summary>
         public long? WifiStrengthDbm { get; set; }
@@ -245,7 +245,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "batteryCharging", n => { BatteryCharging = n.GetBoolValue(); } },
                 { "batteryCycles", n => { BatteryCycles = n.GetLongValue(); } },
                 { "batteryPct", n => { BatteryPct = n.GetFloatValue(); } },
-                { "colo", n => { Colo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_colo>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_colo.CreateFromDiscriminatorValue); } },
+                { "colo", n => { Colo = n.GetStringValue(); } },
                 { "connectionType", n => { ConnectionType = n.GetStringValue(); } },
                 { "cpuPct", n => { CpuPct = n.GetFloatValue(); } },
                 { "cpuPctByApp", n => { CpuPctByApp = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -265,19 +265,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ispIpv4", n => { IspIpv4 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_ip_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_ip_info.CreateFromDiscriminatorValue); } },
                 { "ispIpv6", n => { IspIpv6 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_ip_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_ip_info.CreateFromDiscriminatorValue); } },
                 { "metal", n => { Metal = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_mode.CreateFromDiscriminatorValue); } },
+                { "mode", n => { Mode = n.GetStringValue(); } },
                 { "networkRcvdBps", n => { NetworkRcvdBps = n.GetLongValue(); } },
                 { "networkSentBps", n => { NetworkSentBps = n.GetLongValue(); } },
                 { "networkSsid", n => { NetworkSsid = n.GetStringValue(); } },
-                { "personEmail", n => { PersonEmail = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_personEmail>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_personEmail.CreateFromDiscriminatorValue); } },
-                { "platform", n => { Platform = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_platform>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_platform.CreateFromDiscriminatorValue); } },
+                { "personEmail", n => { PersonEmail = n.GetStringValue(); } },
+                { "platform", n => { Platform = n.GetStringValue(); } },
                 { "ramAvailableKb", n => { RamAvailableKb = n.GetLongValue(); } },
                 { "ramUsedPct", n => { RamUsedPct = n.GetFloatValue(); } },
                 { "ramUsedPctByApp", n => { RamUsedPctByApp = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_status.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "switchLocked", n => { SwitchLocked = n.GetBoolValue(); } },
-                { "timestamp", n => { Timestamp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_timestamp.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_version.CreateFromDiscriminatorValue); } },
+                { "timestamp", n => { Timestamp = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
                 { "wifiStrengthDbm", n => { WifiStrengthDbm = n.GetLongValue(); } },
             };
         }
@@ -292,7 +292,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("batteryCharging", BatteryCharging);
             writer.WriteLongValue("batteryCycles", BatteryCycles);
             writer.WriteFloatValue("batteryPct", BatteryPct);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_colo>("colo", Colo);
+            writer.WriteStringValue("colo", Colo);
             writer.WriteStringValue("connectionType", ConnectionType);
             writer.WriteFloatValue("cpuPct", CpuPct);
             writer.WriteObjectValue<UntypedNode>("cpuPctByApp", CpuPctByApp);
@@ -312,19 +312,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_ip_info>("ispIpv4", IspIpv4);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_ip_info>("ispIpv6", IspIpv6);
             writer.WriteStringValue("metal", Metal);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_mode>("mode", Mode);
+            writer.WriteStringValue("mode", Mode);
             writer.WriteLongValue("networkRcvdBps", NetworkRcvdBps);
             writer.WriteLongValue("networkSentBps", NetworkSentBps);
             writer.WriteStringValue("networkSsid", NetworkSsid);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_personEmail>("personEmail", PersonEmail);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_platform>("platform", Platform);
+            writer.WriteStringValue("personEmail", PersonEmail);
+            writer.WriteStringValue("platform", Platform);
             writer.WriteLongValue("ramAvailableKb", RamAvailableKb);
             writer.WriteFloatValue("ramUsedPct", RamUsedPct);
             writer.WriteObjectValue<UntypedNode>("ramUsedPctByApp", RamUsedPctByApp);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_status>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteBoolValue("switchLocked", SwitchLocked);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_timestamp>("timestamp", Timestamp);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_version>("version", Version);
+            writer.WriteStringValue("timestamp", Timestamp);
+            writer.WriteStringValue("version", Version);
             writer.WriteLongValue("wifiStrengthDbm", WifiStrengthDbm);
             writer.WriteAdditionalData(AdditionalData);
         }

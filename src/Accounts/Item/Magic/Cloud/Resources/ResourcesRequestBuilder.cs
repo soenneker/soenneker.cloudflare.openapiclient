@@ -33,12 +33,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.cloud.resources.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder this[string position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("resource_id", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.cloud.resources.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
+        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("resource_id", position);
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
@@ -178,12 +191,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_id")]
-            public string[]? ResourceId { get; set; }
+            public Guid?[]? ResourceId { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_id")]
-            public string[] ResourceId { get; set; }
+            public Guid?[] ResourceId { get; set; }
 #endif
+            [Obsolete("This property is deprecated, use ResourceTypeAsMcnResourceType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_type")]
@@ -192,6 +206,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
 #else
             [QueryParameter("resource_type")]
             public string[] ResourceType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[]? ResourceTypeAsMcnResourceType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[] ResourceTypeAsMcnResourceType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

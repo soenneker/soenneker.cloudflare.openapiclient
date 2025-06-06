@@ -23,61 +23,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition Condition { get; set; }
 #endif
         /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on? ExpiresOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on ExpiresOn { get; set; }
-#endif
+        public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Token identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The time on which the token was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_issued_on? IssuedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_issued_on IssuedOn { get; set; }
-#endif
+        public DateTimeOffset? IssuedOn { get; private set; }
         /// <summary>Last time the token was used.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_used_on? LastUsedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_used_on LastUsedOn { get; set; }
-#endif
+        public DateTimeOffset? LastUsedOn { get; private set; }
         /// <summary>Last time the token was modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_modified_on? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_modified_on ModifiedOn { get; set; }
-#endif
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Token name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The time before which the token MUST NOT be accepted for processing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before? NotBefore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before NotBefore { get; set; }
-#endif
+        public DateTimeOffset? NotBefore { get; set; }
         /// <summary>List of access policies assigned to the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,13 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources> Policies { get; set; }
 #endif
         /// <summary>Status of the token.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_base"/> and sets the default values.
         /// </summary>
@@ -120,15 +84,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition.CreateFromDiscriminatorValue); } },
-                { "expires_on", n => { ExpiresOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier.CreateFromDiscriminatorValue); } },
-                { "issued_on", n => { IssuedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_issued_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_issued_on.CreateFromDiscriminatorValue); } },
-                { "last_used_on", n => { LastUsedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_used_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_used_on.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_modified_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_modified_on.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name.CreateFromDiscriminatorValue); } },
-                { "not_before", n => { NotBefore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before.CreateFromDiscriminatorValue); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "issued_on", n => { IssuedOn = n.GetDateTimeOffsetValue(); } },
+                { "last_used_on", n => { LastUsedOn = n.GetDateTimeOffsetValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>(); } },
             };
         }
         /// <summary>
@@ -139,15 +103,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition>("condition", Condition);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>("expires_on", ExpiresOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_issued_on>("issued_on", IssuedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_last_used_on>("last_used_on", LastUsedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_modified_on>("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>("not_before", NotBefore);
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources>("policies", Policies);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

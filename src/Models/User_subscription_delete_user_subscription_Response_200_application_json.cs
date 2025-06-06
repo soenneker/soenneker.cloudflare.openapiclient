@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Subscription identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasIdentifier? SubscriptionId { get; set; }
+        public string? SubscriptionId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasIdentifier SubscriptionId { get; set; }
+        public string SubscriptionId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User_subscription_delete_user_subscription_Response_200_application_json"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "subscription_id", n => { SubscriptionId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasIdentifier.CreateFromDiscriminatorValue); } },
+                { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasIdentifier>("subscription_id", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

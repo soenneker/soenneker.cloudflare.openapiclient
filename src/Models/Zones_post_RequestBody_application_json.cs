@@ -22,28 +22,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The domain name.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_name? Name { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_name Name { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>A full zone implies that DNS is hosted with Cloudflare. A partial zone istypically a partner-hosted zone or a CNAME setup.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_post_RequestBody_application_json"/> and sets the default values.
         /// </summary>
         public Zones_post_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
+            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type.Full;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,8 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_post_RequestBody_application_json_account>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_post_RequestBody_application_json_account.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_name.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type>(); } },
             };
         }
         /// <summary>
@@ -76,8 +71,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_post_RequestBody_application_json_account>("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type>("type", Type);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

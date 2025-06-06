@@ -33,51 +33,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Appends a &apos;_&apos; + a custom suffix to the end of Cloudflare Waiting Room&apos;s cookie name(__cf_waitingroom). If `cookie_suffix` is &quot;abcd&quot;, the cookie name will be `__cf_waitingroom_abcd`. This field is required if using `additional_routes`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix? CookieSuffix { get; set; }
+        public string? CookieSuffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix CookieSuffix { get; set; }
+        public string CookieSuffix { get; set; }
 #endif
         /// <summary>The created_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp? CreatedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp CreatedOn { get; set; }
-#endif
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Only available for the Waiting Room Advanced subscription. This is a template html file that will be rendered at the edge. If no custom_page_html is provided, the default waiting room will be used. The template is based on mustache ( https://mustache.github.io/ ). There are several variables that are evaluated by the Cloudflare edge:1. {{`waitTimeKnown`}} Acts like a boolean value that indicates the behavior to take when wait time is not available, for instance when queue_all is **true**.2. {{`waitTimeFormatted`}} Estimated wait time for the user. For example, five minutes. Alternatively, you can use:3. {{`waitTime`}} Number of minutes of estimated wait for a user.4. {{`waitTimeHours`}} Number of hours of estimated wait for a user (`Math.floor(waitTime/60)`).5. {{`waitTimeHourMinutes`}} Number of minutes above the `waitTimeHours` value (`waitTime%60`).6. {{`queueIsFull`}} Changes to **true** when no more people can be added to the queue.To view the full list of variables, look at the `cfWaitingRoom` object described under the `json_response_enabled` property in other Waiting Room API calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html? CustomPageHtml { get; set; }
+        public string? CustomPageHtml { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html CustomPageHtml { get; set; }
+        public string CustomPageHtml { get; set; }
 #endif
         /// <summary>The language of the default page template. If no default_template_language is provided, then `en-US` (English) will be used.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language? DefaultTemplateLanguage { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language DefaultTemplateLanguage { get; set; }
-#endif
         /// <summary>A note that you can use to add more details about the waiting room.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Only available for the Waiting Room Advanced subscription. Disables automatic renewal of session cookies. If `true`, an accepted user will have session_duration minutes to browse the site. After that, they will have to go through the waiting room again. If `false`, a user&apos;s session cookie will be automatically renewed on every request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal? DisableSessionRenewal { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal DisableSessionRenewal { get; set; }
-#endif
+        public bool? DisableSessionRenewal { get; set; }
         /// <summary>A list of enabled origin commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,145 +71,84 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The host name to which the waiting room will be applied (no wildcards). Please do not include the scheme (http:// or https://). The host and path combination must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_host? Host { get; set; }
+        public string? Host { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_host Host { get; set; }
+        public string Host { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_waiting_room_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_waiting_room_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Only available for the Waiting Room Advanced subscription. If `true`, requests to the waiting room with the header `Accept: application/json` will receive a JSON response object with information on the user&apos;s status in the waiting room as opposed to the configured static HTML page. This JSON response object has one property `cfWaitingRoom` which is an object containing the following fields:1. `inWaitingRoom`: Boolean indicating if the user is in the waiting room (always **true**).2. `waitTimeKnown`: Boolean indicating if the current estimated wait times are accurate. If **false**, they are not available.3. `waitTime`: Valid only when `waitTimeKnown` is **true**. Integer indicating the current estimated time in minutes the user will wait in the waiting room. When `queueingMethod` is **random**, this is set to `waitTime50Percentile`.4. `waitTime25Percentile`: Valid only when `queueingMethod` is **random** and `waitTimeKnown` is **true**. Integer indicating the current estimated maximum wait time for the 25% of users that gain entry the fastest (25th percentile).5. `waitTime50Percentile`: Valid only when `queueingMethod` is **random** and `waitTimeKnown` is **true**. Integer indicating the current estimated maximum wait time for the 50% of users that gain entry the fastest (50th percentile). In other words, half of the queued users are expected to let into the origin website before `waitTime50Percentile` and half are expected to be let in after it.6. `waitTime75Percentile`: Valid only when `queueingMethod` is **random** and `waitTimeKnown` is **true**. Integer indicating the current estimated maximum wait time for the 75% of users that gain entry the fastest (75th percentile).7. `waitTimeFormatted`: String displaying the `waitTime` formatted in English for users. If `waitTimeKnown` is **false**, `waitTimeFormatted` will display **unavailable**.8. `queueIsFull`: Boolean indicating if the waiting room&apos;s queue is currently full and not accepting new users at the moment.9. `queueAll`: Boolean indicating if all users will be queued in the waiting room and no one will be let into the origin website.10. `lastUpdated`: String displaying the timestamp as an ISO 8601 string of the user&apos;s last attempt to leave the waiting room and be let into the origin website. The user is able to make another attempt after `refreshIntervalSeconds` past this time. If the user makes a request too soon, it will be ignored and `lastUpdated` will not change.11. `refreshIntervalSeconds`: Integer indicating the number of seconds after `lastUpdated` until the user is able to make another attempt to leave the waiting room and be let into the origin website. When the `queueingMethod` is `reject`, there is no specified refresh time —\_it will always be **zero**.12. `queueingMethod`: The queueing method currently used by the waiting room. It is either **fifo**, **random**, **passthrough**, or **reject**.13. `isFIFOQueue`: Boolean indicating if the waiting room uses a FIFO (First-In-First-Out) queue.14. `isRandomQueue`: Boolean indicating if the waiting room uses a Random queue where users gain access randomly.15. `isPassthroughQueue`: Boolean indicating if the waiting room uses a passthrough queue. Keep in mind that when passthrough is enabled, this JSON response will only exist when `queueAll` is **true** or `isEventPrequeueing` is **true** because in all other cases requests will go directly to the origin.16. `isRejectQueue`: Boolean indicating if the waiting room uses a reject queue.17. `isEventActive`: Boolean indicating if an event is currently occurring. Events are able to change a waiting room&apos;s behavior during a specified period of time. For additional information, look at the event properties `prequeue_start_time`, `event_start_time`, and `event_end_time` in the documentation for creating waiting room events. Events are considered active between these start and end times, as well as during the prequeueing period if it exists.18. `isEventPrequeueing`: Valid only when `isEventActive` is **true**. Boolean indicating if an event is currently prequeueing users before it starts.19. `timeUntilEventStart`: Valid only when `isEventPrequeueing` is **true**. Integer indicating the number of minutes until the event starts.20. `timeUntilEventStartFormatted`: String displaying the `timeUntilEventStart` formatted in English for users. If `isEventPrequeueing` is **false**, `timeUntilEventStartFormatted` will display **unavailable**.21. `timeUntilEventEnd`: Valid only when `isEventActive` is **true**. Integer indicating the number of minutes until the event ends.22. `timeUntilEventEndFormatted`: String displaying the `timeUntilEventEnd` formatted in English for users. If `isEventActive` is **false**, `timeUntilEventEndFormatted` will display **unavailable**.23. `shuffleAtEventStart`: Valid only when `isEventActive` is **true**. Boolean indicating if the users in the prequeue are shuffled randomly when the event starts.24. `turnstile`: Empty when turnstile isn&apos;t enabled. String displaying an html tag to display the Turnstile widget. Please add the `{{{turnstile}}}` tag to the `custom_html` template to ensure the Turnstile widget appears.25. `infiniteQueue`: Boolean indicating whether the response is for a user in the infinite queue.An example cURL to a waiting room could be:curl -X GET &quot;https://example.com/waitingroom&quot; \-H &quot;Accept: application/json&quot;If `json_response_enabled` is **true** and the request hits the waiting room, an example JSON response when `queueingMethod` is **fifo** and no event is active could be:{&quot;cfWaitingRoom&quot;: {&quot;inWaitingRoom&quot;: true,&quot;waitTimeKnown&quot;: true,&quot;waitTime&quot;: 10,&quot;waitTime25Percentile&quot;: 0,&quot;waitTime50Percentile&quot;: 0,&quot;waitTime75Percentile&quot;: 0,&quot;waitTimeFormatted&quot;: &quot;10 minutes&quot;,&quot;queueIsFull&quot;: false,&quot;queueAll&quot;: false,&quot;lastUpdated&quot;: &quot;2020-08-03T23:46:00.000Z&quot;,&quot;refreshIntervalSeconds&quot;: 20,&quot;queueingMethod&quot;: &quot;fifo&quot;,&quot;isFIFOQueue&quot;: true,&quot;isRandomQueue&quot;: false,&quot;isPassthroughQueue&quot;: false,&quot;isRejectQueue&quot;: false,&quot;isEventActive&quot;: false,&quot;isEventPrequeueing&quot;: false,&quot;timeUntilEventStart&quot;: 0,&quot;timeUntilEventStartFormatted&quot;: &quot;unavailable&quot;,&quot;timeUntilEventEnd&quot;: 0,&quot;timeUntilEventEndFormatted&quot;: &quot;unavailable&quot;,&quot;shuffleAtEventStart&quot;: false}}If `json_response_enabled` is **true** and the request hits the waiting room, an example JSON response when `queueingMethod` is **random** and an event is active could be:{&quot;cfWaitingRoom&quot;: {&quot;inWaitingRoom&quot;: true,&quot;waitTimeKnown&quot;: true,&quot;waitTime&quot;: 10,&quot;waitTime25Percentile&quot;: 5,&quot;waitTime50Percentile&quot;: 10,&quot;waitTime75Percentile&quot;: 15,&quot;waitTimeFormatted&quot;: &quot;5 minutes to 15 minutes&quot;,&quot;queueIsFull&quot;: false,&quot;queueAll&quot;: false,&quot;lastUpdated&quot;: &quot;2020-08-03T23:46:00.000Z&quot;,&quot;refreshIntervalSeconds&quot;: 20,&quot;queueingMethod&quot;: &quot;random&quot;,&quot;isFIFOQueue&quot;: false,&quot;isRandomQueue&quot;: true,&quot;isPassthroughQueue&quot;: false,&quot;isRejectQueue&quot;: false,&quot;isEventActive&quot;: true,&quot;isEventPrequeueing&quot;: false,&quot;timeUntilEventStart&quot;: 0,&quot;timeUntilEventStartFormatted&quot;: &quot;unavailable&quot;,&quot;timeUntilEventEnd&quot;: 15,&quot;timeUntilEventEndFormatted&quot;: &quot;15 minutes&quot;,&quot;shuffleAtEventStart&quot;: true}}</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_json_response_enabled? JsonResponseEnabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_json_response_enabled JsonResponseEnabled { get; set; }
-#endif
+        public bool? JsonResponseEnabled { get; set; }
         /// <summary>The modified_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp ModifiedOn { get; set; }
-#endif
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>A unique name to identify the waiting room. Only alphanumeric characters, hyphens and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Sets the number of new users that will be let into the route every minute. This value is used as baseline for the number of users that are let in per minute. So it is possible that there is a little more or little less traffic coming to the route based on the traffic patterns at that time around the world.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute? NewUsersPerMinute { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute NewUsersPerMinute { get; set; }
-#endif
+        public int? NewUsersPerMinute { get; set; }
         /// <summary>An ISO 8601 timestamp that marks when the next event will begin queueing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_prequeue_start_time? NextEventPrequeueStartTime { get; set; }
+        public string? NextEventPrequeueStartTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_prequeue_start_time NextEventPrequeueStartTime { get; set; }
+        public string NextEventPrequeueStartTime { get; set; }
 #endif
         /// <summary>An ISO 8601 timestamp that marks when the next event will start.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_start_time? NextEventStartTime { get; set; }
+        public string? NextEventStartTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_start_time NextEventStartTime { get; set; }
+        public string NextEventStartTime { get; set; }
 #endif
         /// <summary>Sets the path within the host to enable the waiting room on. The waiting room will be enabled for all subpaths as well. If there are two waiting rooms on the same subpath, the waiting room for the most specific path will be chosen. Wildcards and query parameters are not supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path? Path { get; set; }
+        public string? Path { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path Path { get; set; }
+        public string Path { get; set; }
 #endif
         /// <summary>If queue_all is `true`, all the traffic that is coming to a route will be sent to the waiting room. No new traffic can get to the route once this field is set and estimated time will become unavailable.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all? QueueAll { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all QueueAll { get; set; }
-#endif
+        public bool? QueueAll { get; set; }
         /// <summary>Sets the queueing method used by the waiting room. Changing this parameter from the **default** queueing method is only available for the Waiting Room Advanced subscription. Regardless of the queueing method, if `queue_all` is enabled or an event is prequeueing, users in the waiting room will not be accepted to the origin. These users will always see a waiting room page that refreshes automatically. The valid queueing methods are:1. `fifo` **(default)**: First-In-First-Out queue where customers gain access in the order they arrived.2. `random`: Random queue where customers gain access randomly, regardless of arrival time.3. `passthrough`: Users will pass directly through the waiting room and into the origin website. As a result, any configured limits will not be respected while this is enabled. This method can be used as an alternative to disabling a waiting room (with `suspended`) so that analytics are still reported. This can be used if you wish to allow all traffic normally, but want to restrict traffic during a waiting room event, or vice versa.4. `reject`: Users will be immediately rejected from the waiting room. As a result, no users will reach the origin website while this is enabled. This can be used if you wish to reject all traffic while performing maintenance, block traffic during a specified period of time (an event), or block traffic while events are not occurring. Consider a waiting room used for vaccine distribution that only allows traffic during sign-up events, and otherwise blocks all traffic. For this case, the waiting room uses `reject`, and its events override this with `fifo`, `random`, or `passthrough`. When this queueing method is enabled and neither `queueAll` is enabled nor an event is prequeueing, the waiting room page **will not refresh automatically**.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method? QueueingMethod { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method QueueingMethod { get; set; }
-#endif
         /// <summary>HTTP status code returned to a user while in the queue.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code? QueueingStatusCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code QueueingStatusCode { get; set; }
-#endif
+        public int? QueueingStatusCode { get; set; }
         /// <summary>Lifetime of a cookie (in minutes) set by Cloudflare for users who get access to the route. If a user is not seen by Cloudflare again in that time period, they will be treated as a new user that visits the route.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration? SessionDuration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration SessionDuration { get; set; }
-#endif
+        public int? SessionDuration { get; set; }
         /// <summary>Suspends or allows traffic going to the waiting room. If set to `true`, the traffic will not go to the waiting room.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended? Suspended { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended Suspended { get; set; }
-#endif
+        public bool? Suspended { get; set; }
         /// <summary>Sets the total number of active user sessions on the route at a point in time. A route is a combination of host and path on which a waiting room is available. This value is used as a baseline for the total number of active user sessions on the route. It is possible to have a situation where there are more or less active users sessions on the route based on the traffic patterns at that time around the world.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users? TotalActiveUsers { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users TotalActiveUsers { get; set; }
-#endif
+        public int? TotalActiveUsers { get; set; }
         /// <summary>Which action to take when a bot is detected using Turnstile. `log` willhave no impact on queueing behavior, simply keeping track of how manybots are detected in Waiting Room Analytics. `infinite_queue` will sendbots to a false queueing state, where they will never reach yourorigin. `infinite_queue` requires Advanced Waiting Room.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action? TurnstileAction { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action TurnstileAction { get; set; }
-#endif
         /// <summary>Which Turnstile widget type to use for detecting bot traffic. See[the Turnstile documentation](https://developers.cloudflare.com/turnstile/concepts/widget/#widget-types)for the definitions of these widget types. Set to `off` to disable theTurnstile integration entirely. Setting this to anything other than`off` or `invisible` requires Advanced Waiting Room.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode? TurnstileMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode TurnstileMode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_waitingroom"/> and sets the default values.
         /// </summary>
         public Waitingroom_waitingroom()
         {
             AdditionalData = new Dictionary<string, object>();
+            DefaultTemplateLanguage = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language.EnUS;
+            Path = "/";
+            QueueingMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method.Fifo;
+            TurnstileAction = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action.Log;
+            TurnstileMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode.Invisible;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -249,30 +170,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "additional_routes", n => { AdditionalRoutes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cookie_attributes", n => { CookieAttributes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes.CreateFromDiscriminatorValue); } },
-                { "cookie_suffix", n => { CookieSuffix = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix.CreateFromDiscriminatorValue); } },
-                { "created_on", n => { CreatedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp.CreateFromDiscriminatorValue); } },
-                { "custom_page_html", n => { CustomPageHtml = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html.CreateFromDiscriminatorValue); } },
-                { "default_template_language", n => { DefaultTemplateLanguage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description.CreateFromDiscriminatorValue); } },
-                { "disable_session_renewal", n => { DisableSessionRenewal = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal.CreateFromDiscriminatorValue); } },
+                { "cookie_suffix", n => { CookieSuffix = n.GetStringValue(); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "custom_page_html", n => { CustomPageHtml = n.GetStringValue(); } },
+                { "default_template_language", n => { DefaultTemplateLanguage = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "disable_session_renewal", n => { DisableSessionRenewal = n.GetBoolValue(); } },
                 { "enabled_origin_commands", n => { EnabledOriginCommands = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "host", n => { Host = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_host>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_host.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_waiting_room_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_waiting_room_id.CreateFromDiscriminatorValue); } },
-                { "json_response_enabled", n => { JsonResponseEnabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_json_response_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_json_response_enabled.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_name.CreateFromDiscriminatorValue); } },
-                { "new_users_per_minute", n => { NewUsersPerMinute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute.CreateFromDiscriminatorValue); } },
-                { "next_event_prequeue_start_time", n => { NextEventPrequeueStartTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_prequeue_start_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_prequeue_start_time.CreateFromDiscriminatorValue); } },
-                { "next_event_start_time", n => { NextEventStartTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_start_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_start_time.CreateFromDiscriminatorValue); } },
-                { "path", n => { Path = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path.CreateFromDiscriminatorValue); } },
-                { "queue_all", n => { QueueAll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all.CreateFromDiscriminatorValue); } },
-                { "queueing_method", n => { QueueingMethod = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method.CreateFromDiscriminatorValue); } },
-                { "queueing_status_code", n => { QueueingStatusCode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code.CreateFromDiscriminatorValue); } },
-                { "session_duration", n => { SessionDuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration.CreateFromDiscriminatorValue); } },
-                { "suspended", n => { Suspended = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended.CreateFromDiscriminatorValue); } },
-                { "total_active_users", n => { TotalActiveUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users.CreateFromDiscriminatorValue); } },
-                { "turnstile_action", n => { TurnstileAction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action.CreateFromDiscriminatorValue); } },
-                { "turnstile_mode", n => { TurnstileMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode.CreateFromDiscriminatorValue); } },
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "json_response_enabled", n => { JsonResponseEnabled = n.GetBoolValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "new_users_per_minute", n => { NewUsersPerMinute = n.GetIntValue(); } },
+                { "next_event_prequeue_start_time", n => { NextEventPrequeueStartTime = n.GetStringValue(); } },
+                { "next_event_start_time", n => { NextEventStartTime = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "queue_all", n => { QueueAll = n.GetBoolValue(); } },
+                { "queueing_method", n => { QueueingMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>(); } },
+                { "queueing_status_code", n => { QueueingStatusCode = n.GetIntValue(); } },
+                { "session_duration", n => { SessionDuration = n.GetIntValue(); } },
+                { "suspended", n => { Suspended = n.GetBoolValue(); } },
+                { "total_active_users", n => { TotalActiveUsers = n.GetIntValue(); } },
+                { "turnstile_action", n => { TurnstileAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>(); } },
+                { "turnstile_mode", n => { TurnstileMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>(); } },
             };
         }
         /// <summary>
@@ -284,30 +205,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>("additional_routes", AdditionalRoutes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes>("cookie_attributes", CookieAttributes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_suffix>("cookie_suffix", CookieSuffix);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp>("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_custom_page_html>("custom_page_html", CustomPageHtml);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>("default_template_language", DefaultTemplateLanguage);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_disable_session_renewal>("disable_session_renewal", DisableSessionRenewal);
+            writer.WriteStringValue("cookie_suffix", CookieSuffix);
+            writer.WriteStringValue("custom_page_html", CustomPageHtml);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>("default_template_language", DefaultTemplateLanguage);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("disable_session_renewal", DisableSessionRenewal);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>("enabled_origin_commands", EnabledOriginCommands);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_host>("host", Host);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_waiting_room_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_json_response_enabled>("json_response_enabled", JsonResponseEnabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_timestamp>("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_new_users_per_minute>("new_users_per_minute", NewUsersPerMinute);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_prequeue_start_time>("next_event_prequeue_start_time", NextEventPrequeueStartTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_next_event_start_time>("next_event_start_time", NextEventStartTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_path>("path", Path);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queue_all>("queue_all", QueueAll);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>("queueing_method", QueueingMethod);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_status_code>("queueing_status_code", QueueingStatusCode);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_session_duration>("session_duration", SessionDuration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_suspended>("suspended", Suspended);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_total_active_users>("total_active_users", TotalActiveUsers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>("turnstile_action", TurnstileAction);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>("turnstile_mode", TurnstileMode);
+            writer.WriteStringValue("host", Host);
+            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("json_response_enabled", JsonResponseEnabled);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("new_users_per_minute", NewUsersPerMinute);
+            writer.WriteStringValue("next_event_prequeue_start_time", NextEventPrequeueStartTime);
+            writer.WriteStringValue("next_event_start_time", NextEventStartTime);
+            writer.WriteStringValue("path", Path);
+            writer.WriteBoolValue("queue_all", QueueAll);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_queueing_method>("queueing_method", QueueingMethod);
+            writer.WriteIntValue("queueing_status_code", QueueingStatusCode);
+            writer.WriteIntValue("session_duration", SessionDuration);
+            writer.WriteBoolValue("suspended", Suspended);
+            writer.WriteIntValue("total_active_users", TotalActiveUsers);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_action>("turnstile_action", TurnstileAction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_turnstile_mode>("turnstile_mode", TurnstileMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

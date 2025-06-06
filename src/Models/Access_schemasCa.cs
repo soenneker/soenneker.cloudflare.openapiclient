@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Application Audience (AUD) tag. Identifies the application associated with the CA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasAud? Aud { get; set; }
+        public string? Aud { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasAud Aud { get; set; }
+        public string Aud { get; private set; }
 #endif
         /// <summary>The ID of the CA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasId? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasId Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The public key to add to your SSH server configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_public_key? PublicKey { get; set; }
+        public string? PublicKey { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_public_key PublicKey { get; set; }
+        public string PublicKey { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasCa"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aud", n => { Aud = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasAud>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasAud.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasId.CreateFromDiscriminatorValue); } },
-                { "public_key", n => { PublicKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_public_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_public_key.CreateFromDiscriminatorValue); } },
+                { "aud", n => { Aud = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "public_key", n => { PublicKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasAud>("aud", Aud);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasId>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_public_key>("public_key", PublicKey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

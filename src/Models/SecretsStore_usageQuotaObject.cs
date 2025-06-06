@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of secrets the account is entitlted to use</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_quota? Quota { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_quota Quota { get; set; }
-#endif
+        public double? Quota { get; set; }
         /// <summary>The number of secrets the account is currently using</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_usage? Usage { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_usage Usage { get; set; }
-#endif
+        public double? Usage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_usageQuotaObject"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "quota", n => { Quota = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_quota>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_quota.CreateFromDiscriminatorValue); } },
-                { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_usage>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_usage.CreateFromDiscriminatorValue); } },
+                { "quota", n => { Quota = n.GetDoubleValue(); } },
+                { "usage", n => { Usage = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_quota>("quota", Quota);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_usage>("usage", Usage);
+            writer.WriteDoubleValue("quota", Quota);
+            writer.WriteDoubleValue("usage", Usage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

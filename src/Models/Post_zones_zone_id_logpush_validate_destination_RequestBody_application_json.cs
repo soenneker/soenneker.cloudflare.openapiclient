@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Uniquely identifies a resource (such as an s3 bucket) where data will be pushed. Additional configuration parameters supported by the destination may be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf? DestinationConf { get; set; }
+        public string? DestinationConf { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf DestinationConf { get; set; }
+        public string DestinationConf { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_zones_zone_id_logpush_validate_destination_RequestBody_application_json"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination_conf", n => { DestinationConf = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf.CreateFromDiscriminatorValue); } },
+                { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_destination_conf>("destination_conf", DestinationConf);
+            writer.WriteStringValue("destination_conf", DestinationConf);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

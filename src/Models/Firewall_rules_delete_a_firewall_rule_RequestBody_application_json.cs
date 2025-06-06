@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.</summary>
+        /// <summary>The delete_filter_if_unused property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_delete_filter_if_unused? DeleteFilterIfUnused { get; set; }
+        public UntypedNode? DeleteFilterIfUnused { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_delete_filter_if_unused DeleteFilterIfUnused { get; set; }
+        public UntypedNode DeleteFilterIfUnused { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_delete_a_firewall_rule_RequestBody_application_json"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delete_filter_if_unused", n => { DeleteFilterIfUnused = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_delete_filter_if_unused>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_delete_filter_if_unused.CreateFromDiscriminatorValue); } },
+                { "delete_filter_if_unused", n => { DeleteFilterIfUnused = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_delete_filter_if_unused>("delete_filter_if_unused", DeleteFilterIfUnused);
+            writer.WriteObjectValue<UntypedNode>("delete_filter_if_unused", DeleteFilterIfUnused);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

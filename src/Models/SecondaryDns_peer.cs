@@ -17,50 +17,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>IPv4/IPv6 address of primary or secondary nameserver, depending on what zone this peer is linked to. For primary zones this IP defines the IP of the secondary nameserver Cloudflare will NOTIFY upon zone changes. For secondary zones this IP defines the IP of the primary nameserver Cloudflare will send AXFR/IXFR requests to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip? Ip { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip Ip { get; set; }
+        public string Ip { get; set; }
 #endif
         /// <summary>Enable IXFR transfer protocol, default is AXFR. Only applicable to secondary zones.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ixfr_enable? IxfrEnable { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ixfr_enable IxfrEnable { get; set; }
-#endif
+        public bool? IxfrEnable { get; set; }
         /// <summary>The name of the peer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>DNS port of primary or secondary nameserver, depending on what zone this peer is linked to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_port? Port { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_port Port { get; set; }
-#endif
+        public double? Port { get; set; }
         /// <summary>TSIG authentication will be used for zone transfer if configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_tsig_id? TsigId { get; set; }
+        public string? TsigId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_tsig_id TsigId { get; set; }
+        public string TsigId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_peer"/> and sets the default values.
@@ -87,12 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip.CreateFromDiscriminatorValue); } },
-                { "ixfr_enable", n => { IxfrEnable = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ixfr_enable>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ixfr_enable.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "port", n => { Port = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_port.CreateFromDiscriminatorValue); } },
-                { "tsig_id", n => { TsigId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_tsig_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_tsig_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "ixfr_enable", n => { IxfrEnable = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetDoubleValue(); } },
+                { "tsig_id", n => { TsigId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ip>("ip", Ip);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_ixfr_enable>("ixfr_enable", IxfrEnable);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_port>("port", Port);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_tsig_id>("tsig_id", TsigId);
+            writer.WriteStringValue("ip", Ip);
+            writer.WriteBoolValue("ixfr_enable", IxfrEnable);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("port", Port);
+            writer.WriteStringValue("tsig_id", TsigId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

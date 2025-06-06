@@ -15,69 +15,57 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How often should a secondary zone auto refresh regardless of DNS NOTIFY.Not applicable for primary zones.</summary>
+        public double? AutoRefreshSeconds { get; set; }
+        /// <summary>The time for a specific event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_auto_refresh_seconds? AutoRefreshSeconds { get; set; }
+        public string? CheckedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_auto_refresh_seconds AutoRefreshSeconds { get; set; }
+        public string CheckedTime { get; set; }
 #endif
         /// <summary>The time for a specific event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time? CheckedTime { get; set; }
+        public string? CreatedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time CheckedTime { get; set; }
-#endif
-        /// <summary>The time for a specific event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time? CreatedTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time CreatedTime { get; set; }
+        public string CreatedTime { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The time for a specific event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time? ModifiedTime { get; set; }
+        public string? ModifiedTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time ModifiedTime { get; set; }
+        public string ModifiedTime { get; set; }
 #endif
         /// <summary>Zone name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>A list of peer tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier>? Peers { get; set; }
+        public List<string>? Peers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier> Peers { get; set; }
+        public List<string> Peers { get; set; }
 #endif
         /// <summary>The serial number of the SOA for the given zone.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_soa_serial? SoaSerial { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_soa_serial SoaSerial { get; set; }
-#endif
+        public double? SoaSerial { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_single_response_incoming_result"/> and sets the default values.
         /// </summary>
@@ -103,14 +91,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auto_refresh_seconds", n => { AutoRefreshSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_auto_refresh_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_auto_refresh_seconds.CreateFromDiscriminatorValue); } },
-                { "checked_time", n => { CheckedTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time.CreateFromDiscriminatorValue); } },
-                { "created_time", n => { CreatedTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier.CreateFromDiscriminatorValue); } },
-                { "modified_time", n => { ModifiedTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_name.CreateFromDiscriminatorValue); } },
-                { "peers", n => { Peers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "soa_serial", n => { SoaSerial = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_soa_serial>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_soa_serial.CreateFromDiscriminatorValue); } },
+                { "auto_refresh_seconds", n => { AutoRefreshSeconds = n.GetDoubleValue(); } },
+                { "checked_time", n => { CheckedTime = n.GetStringValue(); } },
+                { "created_time", n => { CreatedTime = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "peers", n => { Peers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "soa_serial", n => { SoaSerial = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -120,14 +108,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_auto_refresh_seconds>("auto_refresh_seconds", AutoRefreshSeconds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time>("checked_time", CheckedTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time>("created_time", CreatedTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_time>("modified_time", ModifiedTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_name>("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_identifier>("peers", Peers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_soa_serial>("soa_serial", SoaSerial);
+            writer.WriteDoubleValue("auto_refresh_seconds", AutoRefreshSeconds);
+            writer.WriteStringValue("checked_time", CheckedTime);
+            writer.WriteStringValue("created_time", CreatedTime);
+            writer.WriteStringValue("modified_time", ModifiedTime);
+            writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("peers", Peers);
+            writer.WriteDoubleValue("soa_serial", SoaSerial);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

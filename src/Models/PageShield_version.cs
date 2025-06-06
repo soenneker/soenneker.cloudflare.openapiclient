@@ -16,69 +16,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cryptomining score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score? CryptominingScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score CryptominingScore { get; set; }
-#endif
+        public int? CryptominingScore { get; set; }
         /// <summary>The dataflow score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score? DataflowScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score DataflowScore { get; set; }
-#endif
+        public int? DataflowScore { get; set; }
         /// <summary>The timestamp of when the script was last fetched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at? FetchedAt { get; set; }
+        public string? FetchedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at FetchedAt { get; set; }
+        public string FetchedAt { get; set; }
 #endif
         /// <summary>The computed hash of the analyzed script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash? Hash { get; set; }
+        public string? Hash { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash Hash { get; set; }
+        public string Hash { get; set; }
 #endif
         /// <summary>The integrity score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score? JsIntegrityScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score JsIntegrityScore { get; set; }
-#endif
+        public int? JsIntegrityScore { get; set; }
         /// <summary>The magecart score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score? MagecartScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score MagecartScore { get; set; }
-#endif
+        public int? MagecartScore { get; set; }
         /// <summary>The malware score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score? MalwareScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score MalwareScore { get; set; }
-#endif
+        public int? MalwareScore { get; set; }
         /// <summary>The obfuscation score of the JavaScript content.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score? ObfuscationScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score ObfuscationScore { get; set; }
-#endif
+        public int? ObfuscationScore { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_version"/> and sets the default values.
         /// </summary>
@@ -104,14 +68,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cryptomining_score", n => { CryptominingScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score.CreateFromDiscriminatorValue); } },
-                { "dataflow_score", n => { DataflowScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score.CreateFromDiscriminatorValue); } },
-                { "fetched_at", n => { FetchedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at.CreateFromDiscriminatorValue); } },
-                { "hash", n => { Hash = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash.CreateFromDiscriminatorValue); } },
-                { "js_integrity_score", n => { JsIntegrityScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score.CreateFromDiscriminatorValue); } },
-                { "magecart_score", n => { MagecartScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score.CreateFromDiscriminatorValue); } },
-                { "malware_score", n => { MalwareScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score.CreateFromDiscriminatorValue); } },
-                { "obfuscation_score", n => { ObfuscationScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score.CreateFromDiscriminatorValue); } },
+                { "cryptomining_score", n => { CryptominingScore = n.GetIntValue(); } },
+                { "dataflow_score", n => { DataflowScore = n.GetIntValue(); } },
+                { "fetched_at", n => { FetchedAt = n.GetStringValue(); } },
+                { "hash", n => { Hash = n.GetStringValue(); } },
+                { "js_integrity_score", n => { JsIntegrityScore = n.GetIntValue(); } },
+                { "magecart_score", n => { MagecartScore = n.GetIntValue(); } },
+                { "malware_score", n => { MalwareScore = n.GetIntValue(); } },
+                { "obfuscation_score", n => { ObfuscationScore = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -121,14 +85,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_cryptomining_score>("cryptomining_score", CryptominingScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_dataflow_score>("dataflow_score", DataflowScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_fetched_at>("fetched_at", FetchedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_hash>("hash", Hash);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_js_integrity_score>("js_integrity_score", JsIntegrityScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_magecart_score>("magecart_score", MagecartScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_malware_score>("malware_score", MalwareScore);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_obfuscation_score>("obfuscation_score", ObfuscationScore);
+            writer.WriteIntValue("cryptomining_score", CryptominingScore);
+            writer.WriteIntValue("dataflow_score", DataflowScore);
+            writer.WriteStringValue("fetched_at", FetchedAt);
+            writer.WriteStringValue("hash", Hash);
+            writer.WriteIntValue("js_integrity_score", JsIntegrityScore);
+            writer.WriteIntValue("magecart_score", MagecartScore);
+            writer.WriteIntValue("malware_score", MalwareScore);
+            writer.WriteIntValue("obfuscation_score", ObfuscationScore);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

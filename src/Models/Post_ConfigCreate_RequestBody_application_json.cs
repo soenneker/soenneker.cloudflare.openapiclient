@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines the number of days between each scan (0 = One-off scan).</summary>
+        /// <summary>The frequency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_frequency? Frequency { get; set; }
+        public UntypedNode? Frequency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_frequency Frequency { get; set; }
+        public UntypedNode Frequency { get; set; }
 #endif
         /// <summary>Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frequency", n => { Frequency = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_frequency>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_frequency.CreateFromDiscriminatorValue); } },
+                { "frequency", n => { Frequency = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "ips", n => { Ips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_frequency>("frequency", Frequency);
+            writer.WriteObjectValue<UntypedNode>("frequency", Frequency);
             writer.WriteCollectionOfPrimitiveValues<string>("ips", Ips);
             writer.WriteCollectionOfPrimitiveValues<string>("ports", Ports);
             writer.WriteAdditionalData(AdditionalData);

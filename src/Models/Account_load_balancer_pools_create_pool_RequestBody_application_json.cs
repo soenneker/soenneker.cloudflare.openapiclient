@@ -17,27 +17,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A human-readable description of the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_latitude? Latitude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_latitude Latitude { get; set; }
-#endif
+        public double? Latitude { get; set; }
         /// <summary>Configures load shedding policies and percentages for the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,44 +35,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding LoadShedding { get; set; }
 #endif
         /// <summary>The longitude of the data center containing the origins used in this pool in decimal degrees. If this is set, latitude must also be set.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_longitude? Longitude { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_longitude Longitude { get; set; }
-#endif
+        public double? Longitude { get; set; }
         /// <summary>The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_minimum_origins? MinimumOrigins { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_minimum_origins MinimumOrigins { get; set; }
-#endif
+        public int? MinimumOrigins { get; set; }
         /// <summary>The ID of the Monitor to use for checking the health of origins within this pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitor_id? Monitor { get; set; }
+        public string? Monitor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitor_id Monitor { get; set; }
+        public string Monitor { get; set; }
 #endif
         /// <summary>A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>This field is now deprecated. It has been moved to Cloudflare&apos;s Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_email? NotificationEmail { get; set; }
+        public string? NotificationEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_email NotificationEmail { get; set; }
+        public string NotificationEmail { get; set; }
 #endif
         /// <summary>Filter pool and origin health notifications by resource type or health status. Use null to reset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,15 +111,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasDescription.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_enabled.CreateFromDiscriminatorValue); } },
-                { "latitude", n => { Latitude = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_latitude>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_latitude.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "load_shedding", n => { LoadShedding = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding.CreateFromDiscriminatorValue); } },
-                { "longitude", n => { Longitude = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_longitude>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_longitude.CreateFromDiscriminatorValue); } },
-                { "minimum_origins", n => { MinimumOrigins = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_minimum_origins>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_minimum_origins.CreateFromDiscriminatorValue); } },
-                { "monitor", n => { Monitor = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitor_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitor_id.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_name.CreateFromDiscriminatorValue); } },
-                { "notification_email", n => { NotificationEmail = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_email>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_email.CreateFromDiscriminatorValue); } },
+                { "longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "minimum_origins", n => { MinimumOrigins = n.GetIntValue(); } },
+                { "monitor", n => { Monitor = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "notification_email", n => { NotificationEmail = n.GetStringValue(); } },
                 { "notification_filter", n => { NotificationFilter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter.CreateFromDiscriminatorValue); } },
                 { "origin_steering", n => { OriginSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering.CreateFromDiscriminatorValue); } },
                 { "origins", n => { Origins = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -156,15 +132,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_enabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_latitude>("latitude", Latitude);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding>("load_shedding", LoadShedding);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_longitude>("longitude", Longitude);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_minimum_origins>("minimum_origins", MinimumOrigins);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitor_id>("monitor", Monitor);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_email>("notification_email", NotificationEmail);
+            writer.WriteDoubleValue("longitude", Longitude);
+            writer.WriteIntValue("minimum_origins", MinimumOrigins);
+            writer.WriteStringValue("monitor", Monitor);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("notification_email", NotificationEmail);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter>("notification_filter", NotificationFilter);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin>("origins", Origins);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering>("origin_steering", OriginSteering);

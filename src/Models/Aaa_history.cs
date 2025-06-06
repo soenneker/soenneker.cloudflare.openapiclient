@@ -17,75 +17,63 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Message body included in the notification sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_body? AlertBody { get; set; }
+        public string? AlertBody { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_body AlertBody { get; set; }
+        public string AlertBody { get; set; }
 #endif
         /// <summary>Type of notification that has been dispatched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasAlert_type? AlertType { get; set; }
+        public string? AlertType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasAlert_type AlertType { get; set; }
+        public string AlertType { get; set; }
 #endif
         /// <summary>Description of the notification policy (if present).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>UUID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The mechanism to which the notification has been dispatched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism? Mechanism { get; set; }
+        public string? Mechanism { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism Mechanism { get; set; }
+        public string Mechanism { get; set; }
 #endif
         /// <summary>The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type? MechanismType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type MechanismType { get; set; }
-#endif
         /// <summary>Name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The unique identifier of a notification policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId? PolicyId { get; set; }
+        public string? PolicyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId PolicyId { get; set; }
+        public string PolicyId { get; set; }
 #endif
         /// <summary>Timestamp of when the notification was dispatched in ISO 8601 format.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent? Sent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent Sent { get; set; }
-#endif
+        public DateTimeOffset? Sent { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_history"/> and sets the default values.
         /// </summary>
@@ -111,15 +99,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alert_body", n => { AlertBody = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_body>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_body.CreateFromDiscriminatorValue); } },
-                { "alert_type", n => { AlertType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasAlert_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasAlert_type.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid.CreateFromDiscriminatorValue); } },
-                { "mechanism", n => { Mechanism = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism.CreateFromDiscriminatorValue); } },
-                { "mechanism_type", n => { MechanismType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName.CreateFromDiscriminatorValue); } },
-                { "policy_id", n => { PolicyId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId.CreateFromDiscriminatorValue); } },
-                { "sent", n => { Sent = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent.CreateFromDiscriminatorValue); } },
+                { "alert_body", n => { AlertBody = n.GetStringValue(); } },
+                { "alert_type", n => { AlertType = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "mechanism", n => { Mechanism = n.GetStringValue(); } },
+                { "mechanism_type", n => { MechanismType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "policy_id", n => { PolicyId = n.GetStringValue(); } },
+                { "sent", n => { Sent = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -129,15 +117,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_body>("alert_body", AlertBody);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasAlert_type>("alert_type", AlertType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_uuid>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism>("mechanism", Mechanism);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>("mechanism_type", MechanismType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_policyId>("policy_id", PolicyId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_sent>("sent", Sent);
+            writer.WriteStringValue("alert_body", AlertBody);
+            writer.WriteStringValue("alert_type", AlertType);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("mechanism", Mechanism);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>("mechanism_type", MechanismType);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("policy_id", PolicyId);
+            writer.WriteDateTimeOffsetValue("sent", Sent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

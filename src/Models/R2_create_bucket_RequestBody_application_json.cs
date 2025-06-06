@@ -15,35 +15,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Location of the bucket.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location? LocationHint { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location LocationHint { get; set; }
-#endif
         /// <summary>Name of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Storage class for newly uploaded objects, unless specified otherwise.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class? StorageClass { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class StorageClass { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_create_bucket_RequestBody_application_json"/> and sets the default values.
         /// </summary>
         public R2_create_bucket_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
+            StorageClass = global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class.Standard;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,9 +52,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "locationHint", n => { LocationHint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_name.CreateFromDiscriminatorValue); } },
-                { "storageClass", n => { StorageClass = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class.CreateFromDiscriminatorValue); } },
+                { "locationHint", n => { LocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "storageClass", n => { StorageClass = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class>(); } },
             };
         }
         /// <summary>
@@ -75,9 +64,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location>("locationHint", LocationHint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class>("storageClass", StorageClass);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location>("locationHint", LocationHint);
+            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class>("storageClass", StorageClass);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

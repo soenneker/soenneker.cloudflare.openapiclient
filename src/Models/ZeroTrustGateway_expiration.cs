@@ -22,10 +22,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The expires_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_timestamp? ExpiresAt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration_expires_at? ExpiresAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_timestamp ExpiresAt { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration_expires_at ExpiresAt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration"/> and sets the default values.
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "duration", n => { Duration = n.GetIntValue(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_timestamp.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration_expires_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration_expires_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("duration", Duration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_timestamp>("expires_at", ExpiresAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration_expires_at>("expires_at", ExpiresAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

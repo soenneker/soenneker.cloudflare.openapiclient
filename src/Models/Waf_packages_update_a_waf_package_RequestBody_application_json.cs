@@ -13,29 +13,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The default action performed by the rules in the WAF package.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode? ActionMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode ActionMode { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The sensitivity of the WAF package.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity? Sensitivity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity Sensitivity { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_packages_update_a_waf_package_RequestBody_application_json"/> and sets the default values.
         /// </summary>
         public Waf_packages_update_a_waf_package_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
+            ActionMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode.Challenge;
+            Sensitivity = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity.High;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,8 +45,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action_mode", n => { ActionMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode.CreateFromDiscriminatorValue); } },
-                { "sensitivity", n => { Sensitivity = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity.CreateFromDiscriminatorValue); } },
+                { "action_mode", n => { ActionMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>(); } },
+                { "sensitivity", n => { Sensitivity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>(); } },
             };
         }
         /// <summary>
@@ -66,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>("action_mode", ActionMode);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>("sensitivity", Sensitivity);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>("action_mode", ActionMode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>("sensitivity", Sensitivity);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

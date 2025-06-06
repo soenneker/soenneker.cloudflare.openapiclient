@@ -253,10 +253,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneWhois_domain_name? Domain { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneWhois_domain_name Domain { get; set; }
+        public string Domain { get; set; }
 #endif
         /// <summary>The expiration_date property</summary>
         public DateTimeOffset? ExpirationDate { get; set; }
@@ -736,7 +736,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_date", n => { CreatedDate = n.GetDateTimeOffsetValue(); } },
                 { "created_date_raw", n => { CreatedDateRaw = n.GetStringValue(); } },
                 { "dnssec", n => { Dnssec = n.GetBoolValue(); } },
-                { "domain", n => { Domain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneWhois_domain_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneWhois_domain_name.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
                 { "expiration_date", n => { ExpirationDate = n.GetDateTimeOffsetValue(); } },
                 { "expiration_date_raw", n => { ExpirationDateRaw = n.GetStringValue(); } },
                 { "extension", n => { Extension = n.GetStringValue(); } },
@@ -832,7 +832,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_date", CreatedDate);
             writer.WriteStringValue("created_date_raw", CreatedDateRaw);
             writer.WriteBoolValue("dnssec", Dnssec);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneWhois_domain_name>("domain", Domain);
+            writer.WriteStringValue("domain", Domain);
             writer.WriteDateTimeOffsetValue("expiration_date", ExpirationDate);
             writer.WriteStringValue("expiration_date_raw", ExpirationDateRaw);
             writer.WriteStringValue("extension", Extension);

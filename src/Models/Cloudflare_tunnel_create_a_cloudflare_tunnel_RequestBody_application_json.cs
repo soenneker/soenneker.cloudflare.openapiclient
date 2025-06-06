@@ -15,28 +15,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src? ConfigSrc { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src ConfigSrc { get; set; }
-#endif
         /// <summary>A user-friendly name for a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name Name { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.</summary>
+        /// <summary>The tunnel_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_secret? TunnelSecret { get; set; }
+        public UntypedNode? TunnelSecret { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_secret TunnelSecret { get; set; }
+        public UntypedNode TunnelSecret { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_create_a_cloudflare_tunnel_RequestBody_application_json"/> and sets the default values.
@@ -44,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Cloudflare_tunnel_create_a_cloudflare_tunnel_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
+            ConfigSrc = global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src.Local;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,9 +58,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config_src", n => { ConfigSrc = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name.CreateFromDiscriminatorValue); } },
-                { "tunnel_secret", n => { TunnelSecret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_secret>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_secret.CreateFromDiscriminatorValue); } },
+                { "config_src", n => { ConfigSrc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "tunnel_secret", n => { TunnelSecret = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>("config_src", ConfigSrc);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_secret>("tunnel_secret", TunnelSecret);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>("config_src", ConfigSrc);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<UntypedNode>("tunnel_secret", TunnelSecret);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

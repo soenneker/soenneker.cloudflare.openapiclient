@@ -15,28 +15,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Fallback sampling rate of flow messages being sent in packets per second. This should match the packet sampling rate configured on the router.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_default_sampling? DefaultSampling { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_default_sampling DefaultSampling { get; set; }
-#endif
+        public double? DefaultSampling { get; set; }
         /// <summary>The account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The router_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_router_ip>? RouterIps { get; set; }
+        public List<string>? RouterIps { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_router_ip> RouterIps { get; set; }
+        public List<string> RouterIps { get; set; }
 #endif
         /// <summary>The warp_devices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_sampling", n => { DefaultSampling = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_default_sampling>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_default_sampling.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_name.CreateFromDiscriminatorValue); } },
-                { "router_ips", n => { RouterIps = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_router_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_router_ip.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "default_sampling", n => { DefaultSampling = n.GetDoubleValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "router_ips", n => { RouterIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "warp_devices", n => { WarpDevices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -84,9 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_default_sampling>("default_sampling", DefaultSampling);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_name>("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_router_ip>("router_ips", RouterIps);
+            writer.WriteDoubleValue("default_sampling", DefaultSampling);
+            writer.WriteStringValue("name", Name);
+            writer.WriteCollectionOfPrimitiveValues<string>("router_ips", RouterIps);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device>("warp_devices", WarpDevices);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,61 +15,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier of a Cloudflare account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_account_identifier? AccountId { get; set; }
+        public string? AccountId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_account_identifier AccountId { get; set; }
+        public string AccountId { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>Name of LOA document. Max file size 10MB, and supported filetype is pdf.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_filename? Filename { get; set; }
+        public string? Filename { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_filename Filename { get; set; }
+        public string Filename { get; set; }
 #endif
         /// <summary>Identifier for the uploaded LOA document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_loa_document_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_loa_document_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>File size of the uploaded LOA document.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_size_bytes? SizeBytes { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_size_bytes SizeBytes { get; set; }
-#endif
+        public int? SizeBytes { get; set; }
         /// <summary>Whether the LOA has been verified by Cloudflare staff.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified? Verified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified Verified { get; set; }
-#endif
+        public bool? Verified { get; set; }
         /// <summary>Timestamp of the moment the LOA was marked as validated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified_at? VerifiedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified_at VerifiedAt { get; set; }
-#endif
+        public DateTimeOffset? VerifiedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_loa_upload_response_result"/> and sets the default values.
         /// </summary>
@@ -95,13 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_id", n => { AccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_account_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_account_identifier.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp.CreateFromDiscriminatorValue); } },
-                { "filename", n => { Filename = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_filename>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_filename.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_loa_document_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_loa_document_identifier.CreateFromDiscriminatorValue); } },
-                { "size_bytes", n => { SizeBytes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_size_bytes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_size_bytes.CreateFromDiscriminatorValue); } },
-                { "verified", n => { Verified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified.CreateFromDiscriminatorValue); } },
-                { "verified_at", n => { VerifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified_at.CreateFromDiscriminatorValue); } },
+                { "account_id", n => { AccountId = n.GetStringValue(); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "filename", n => { Filename = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "size_bytes", n => { SizeBytes = n.GetIntValue(); } },
+                { "verified", n => { Verified = n.GetBoolValue(); } },
+                { "verified_at", n => { VerifiedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +87,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_account_identifier>("account_id", AccountId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_filename>("filename", Filename);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_loa_document_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_size_bytes>("size_bytes", SizeBytes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified>("verified", Verified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_verified_at>("verified_at", VerifiedAt);
+            writer.WriteStringValue("account_id", AccountId);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteStringValue("filename", Filename);
+            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("size_bytes", SizeBytes);
+            writer.WriteBoolValue("verified", Verified);
+            writer.WriteDateTimeOffsetValue("verified_at", VerifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

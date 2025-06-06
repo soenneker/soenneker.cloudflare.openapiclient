@@ -26,29 +26,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The FQDN of the name server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name? NsName { get; set; }
+        public string? NsName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name NsName { get; set; }
+        public string NsName { get; set; }
 #endif
         /// <summary>The number of the set that this name server belongs to.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set? NsSet { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set NsSet { get; set; }
-#endif
+        public double? NsSet { get; set; }
         /// <summary>Verification status of the nameserver.</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS_status? Status { get; set; }
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_schemasIdentifier? ZoneTag { get; set; }
+        public string? ZoneTag { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_schemasIdentifier ZoneTag { get; set; }
+        public string ZoneTag { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS"/> and sets the default values.
@@ -76,10 +70,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dns_records", n => { DnsRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS_dns_records>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS_dns_records.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "ns_name", n => { NsName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name.CreateFromDiscriminatorValue); } },
-                { "ns_set", n => { NsSet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set.CreateFromDiscriminatorValue); } },
+                { "ns_name", n => { NsName = n.GetStringValue(); } },
+                { "ns_set", n => { NsSet = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS_status>(); } },
-                { "zone_tag", n => { ZoneTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_schemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_schemasIdentifier.CreateFromDiscriminatorValue); } },
+                { "zone_tag", n => { ZoneTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -90,10 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS_dns_records>("dns_records", DnsRecords);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_name>("ns_name", NsName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_ns_set>("ns_set", NsSet);
+            writer.WriteStringValue("ns_name", NsName);
+            writer.WriteDoubleValue("ns_set", NsSet);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_schemasIdentifier>("zone_tag", ZoneTag);
+            writer.WriteStringValue("zone_tag", ZoneTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

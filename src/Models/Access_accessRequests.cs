@@ -15,76 +15,64 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The event that occurred, such as a login attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_action? Action { get; set; }
+        public string? Action { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_action Action { get; set; }
+        public string Action { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The result of the authentication event.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_allowed? Allowed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_allowed Allowed { get; set; }
-#endif
+        public bool? Allowed { get; set; }
         /// <summary>The URL of the Access application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_domain? AppDomain { get; set; }
+        public string? AppDomain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_domain AppDomain { get; set; }
+        public string AppDomain { get; set; }
 #endif
         /// <summary>The unique identifier for the Access application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_uid? AppUid { get; set; }
+        public string? AppUid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_uid AppUid { get; set; }
+        public string AppUid { get; set; }
 #endif
         /// <summary>The IdP used to authenticate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_connection? Connection { get; set; }
+        public string? Connection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_connection Connection { get; set; }
+        public string Connection { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The IP address of the authenticating user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ip? IpAddress { get; set; }
+        public string? IpAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ip IpAddress { get; set; }
+        public string IpAddress { get; set; }
 #endif
         /// <summary>The unique identifier for the request to Cloudflare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ray_id? RayId { get; set; }
+        public string? RayId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ray_id RayId { get; set; }
+        public string RayId { get; set; }
 #endif
         /// <summary>The email address of the authenticating user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasEmail? UserEmail { get; set; }
+        public string? UserEmail { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasEmail UserEmail { get; set; }
+        public string UserEmail { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_accessRequests"/> and sets the default values.
@@ -111,15 +99,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_action.CreateFromDiscriminatorValue); } },
-                { "allowed", n => { Allowed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_allowed>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_allowed.CreateFromDiscriminatorValue); } },
-                { "app_domain", n => { AppDomain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_domain>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_domain.CreateFromDiscriminatorValue); } },
-                { "app_uid", n => { AppUid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_uid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_uid.CreateFromDiscriminatorValue); } },
-                { "connection", n => { Connection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_connection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_connection.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp.CreateFromDiscriminatorValue); } },
-                { "ip_address", n => { IpAddress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ip.CreateFromDiscriminatorValue); } },
-                { "ray_id", n => { RayId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ray_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ray_id.CreateFromDiscriminatorValue); } },
-                { "user_email", n => { UserEmail = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasEmail>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasEmail.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetStringValue(); } },
+                { "allowed", n => { Allowed = n.GetBoolValue(); } },
+                { "app_domain", n => { AppDomain = n.GetStringValue(); } },
+                { "app_uid", n => { AppUid = n.GetStringValue(); } },
+                { "connection", n => { Connection = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "ip_address", n => { IpAddress = n.GetStringValue(); } },
+                { "ray_id", n => { RayId = n.GetStringValue(); } },
+                { "user_email", n => { UserEmail = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -129,15 +117,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_action>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_allowed>("allowed", Allowed);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_domain>("app_domain", AppDomain);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_uid>("app_uid", AppUid);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_connection>("connection", Connection);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ip>("ip_address", IpAddress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ray_id>("ray_id", RayId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_componentsSchemasEmail>("user_email", UserEmail);
+            writer.WriteStringValue("action", Action);
+            writer.WriteBoolValue("allowed", Allowed);
+            writer.WriteStringValue("app_domain", AppDomain);
+            writer.WriteStringValue("app_uid", AppUid);
+            writer.WriteStringValue("connection", Connection);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("ip_address", IpAddress);
+            writer.WriteStringValue("ray_id", RayId);
+            writer.WriteStringValue("user_email", UserEmail);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

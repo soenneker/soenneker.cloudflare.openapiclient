@@ -23,21 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The destination_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_id? DestinationId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_id DestinationId { get; set; }
-#endif
+        public Guid? DestinationId { get; set; }
         /// <summary>The destination_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type? DestinationType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type DestinationType { get; set; }
-#endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,13 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_errors Errors { get; set; }
 #endif
         /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_id? Id { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_id Id { get; set; }
-#endif
+        public Guid? Id { get; set; }
         /// <summary>The includes_discoveries_until property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,13 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Policy { get; set; }
 #endif
         /// <summary>The update_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode? UpdateMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode UpdateMode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync"/> and sets the default values.
         /// </summary>
@@ -136,17 +112,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "destination_id", n => { DestinationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_id.CreateFromDiscriminatorValue); } },
-                { "destination_type", n => { DestinationType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type.CreateFromDiscriminatorValue); } },
+                { "destination_id", n => { DestinationId = n.GetGuidValue(); } },
+                { "destination_type", n => { DestinationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type>(); } },
                 { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_errors.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
                 { "includes_discoveries_until", n => { IncludesDiscoveriesUntil = n.GetStringValue(); } },
                 { "last_attempted_update_at", n => { LastAttemptedUpdateAt = n.GetStringValue(); } },
                 { "last_successful_update_at", n => { LastSuccessfulUpdateAt = n.GetStringValue(); } },
                 { "last_user_update_at", n => { LastUserUpdateAt = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetStringValue(); } },
-                { "update_mode", n => { UpdateMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode.CreateFromDiscriminatorValue); } },
+                { "update_mode", n => { UpdateMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode>(); } },
             };
         }
         /// <summary>
@@ -157,17 +133,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_id>("destination_id", DestinationId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type>("destination_type", DestinationType);
+            writer.WriteGuidValue("destination_id", DestinationId);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type>("destination_type", DestinationType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_id>("id", Id);
+            writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("includes_discoveries_until", IncludesDiscoveriesUntil);
             writer.WriteStringValue("last_attempted_update_at", LastAttemptedUpdateAt);
             writer.WriteStringValue("last_successful_update_at", LastSuccessfulUpdateAt);
             writer.WriteStringValue("last_user_update_at", LastUserUpdateAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("policy", Policy);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode>("update_mode", UpdateMode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode>("update_mode", UpdateMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,61 +15,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Do not validate the certificate when monitor use HTTPS. This parameter is currently only valid for HTTP and HTTPS monitors.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_allow_insecure? AllowInsecure { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_allow_insecure AllowInsecure { get; set; }
-#endif
+        public bool? AllowInsecure { get; set; }
         /// <summary>To be marked unhealthy the monitored origin must fail this healthcheck N consecutive times.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_down? ConsecutiveDown { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_down ConsecutiveDown { get; set; }
-#endif
+        public int? ConsecutiveDown { get; set; }
         /// <summary>To be marked healthy the monitored origin must pass this healthcheck N consecutive times.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_up? ConsecutiveUp { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_up ConsecutiveUp { get; set; }
-#endif
+        public int? ConsecutiveUp { get; set; }
         /// <summary>Object description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>A case-insensitive sub-string to look for in the response body. If this string is not found, the origin will be marked as unhealthy. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_body? ExpectedBody { get; set; }
+        public string? ExpectedBody { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_body ExpectedBody { get; set; }
+        public string ExpectedBody { get; set; }
 #endif
         /// <summary>The expected HTTP response code or code range of the health check. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_codes? ExpectedCodes { get; set; }
+        public string? ExpectedCodes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_codes ExpectedCodes { get; set; }
+        public string ExpectedCodes { get; set; }
 #endif
         /// <summary>Follow redirects if returned by the origin. This parameter is only valid for HTTP and HTTPS monitors.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_follow_redirects? FollowRedirects { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_follow_redirects FollowRedirects { get; set; }
-#endif
+        public bool? FollowRedirects { get; set; }
         /// <summary>The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,75 +55,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_header Header { get; set; }
 #endif
         /// <summary>The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_interval? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_interval Interval { get; set; }
-#endif
+        public int? Interval { get; set; }
         /// <summary>The method to use for the health check. This defaults to &apos;GET&apos; for HTTP/HTTPS based checks and &apos;connection_established&apos; for TCP based health checks.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_method? Method { get; set; }
+        public string? Method { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_method Method { get; set; }
+        public string Method { get; set; }
 #endif
         /// <summary>The endpoint path you want to conduct a health check against. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_path? Path { get; set; }
+        public string? Path { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_path Path { get; set; }
+        public string Path { get; set; }
 #endif
         /// <summary>The port number to connect to for the health check. Required for TCP, UDP, and SMTP checks. HTTP and HTTPS checks should only define the port when using a non-standard port (HTTP: default 80, HTTPS: default 443).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_port? Port { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_port Port { get; set; }
-#endif
+        public int? Port { get; set; }
         /// <summary>Assign this monitor to emulate the specified zone while probing. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone? ProbeZone { get; set; }
+        public string? ProbeZone { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone ProbeZone { get; set; }
+        public string ProbeZone { get; set; }
 #endif
         /// <summary>The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries? Retries { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries Retries { get; set; }
-#endif
+        public int? Retries { get; set; }
         /// <summary>The timeout (in seconds) before marking the health check as failed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout? Timeout { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout Timeout { get; set; }
-#endif
+        public int? Timeout { get; set; }
         /// <summary>The protocol to use for the health check. Currently supported protocols are &apos;HTTP&apos;,&apos;HTTPS&apos;, &apos;TCP&apos;, &apos;ICMP-PING&apos;, &apos;UDP-ICMP&apos;, and &apos;SMTP&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitorEditable"/> and sets the default values.
         /// </summary>
         public LoadBalancing_monitorEditable()
         {
             AdditionalData = new Dictionary<string, object>();
+            Method = "GET";
+            Path = "/";
+            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type.Http;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -167,22 +116,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_insecure", n => { AllowInsecure = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_allow_insecure>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_allow_insecure.CreateFromDiscriminatorValue); } },
-                { "consecutive_down", n => { ConsecutiveDown = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_down>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_down.CreateFromDiscriminatorValue); } },
-                { "consecutive_up", n => { ConsecutiveUp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_up>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_up.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_description.CreateFromDiscriminatorValue); } },
-                { "expected_body", n => { ExpectedBody = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_body>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_body.CreateFromDiscriminatorValue); } },
-                { "expected_codes", n => { ExpectedCodes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_codes>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_codes.CreateFromDiscriminatorValue); } },
-                { "follow_redirects", n => { FollowRedirects = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_follow_redirects>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_follow_redirects.CreateFromDiscriminatorValue); } },
+                { "allow_insecure", n => { AllowInsecure = n.GetBoolValue(); } },
+                { "consecutive_down", n => { ConsecutiveDown = n.GetIntValue(); } },
+                { "consecutive_up", n => { ConsecutiveUp = n.GetIntValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "expected_body", n => { ExpectedBody = n.GetStringValue(); } },
+                { "expected_codes", n => { ExpectedCodes = n.GetStringValue(); } },
+                { "follow_redirects", n => { FollowRedirects = n.GetBoolValue(); } },
                 { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_header>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_header.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_interval>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_interval.CreateFromDiscriminatorValue); } },
-                { "method", n => { Method = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_method>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_method.CreateFromDiscriminatorValue); } },
-                { "path", n => { Path = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_path>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_path.CreateFromDiscriminatorValue); } },
-                { "port", n => { Port = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_port.CreateFromDiscriminatorValue); } },
-                { "probe_zone", n => { ProbeZone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone.CreateFromDiscriminatorValue); } },
-                { "retries", n => { Retries = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries.CreateFromDiscriminatorValue); } },
-                { "timeout", n => { Timeout = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetIntValue(); } },
+                { "method", n => { Method = n.GetStringValue(); } },
+                { "path", n => { Path = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "probe_zone", n => { ProbeZone = n.GetStringValue(); } },
+                { "retries", n => { Retries = n.GetIntValue(); } },
+                { "timeout", n => { Timeout = n.GetIntValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>(); } },
             };
         }
         /// <summary>
@@ -192,22 +141,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_allow_insecure>("allow_insecure", AllowInsecure);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_down>("consecutive_down", ConsecutiveDown);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_consecutive_up>("consecutive_up", ConsecutiveUp);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_body>("expected_body", ExpectedBody);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_expected_codes>("expected_codes", ExpectedCodes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_follow_redirects>("follow_redirects", FollowRedirects);
+            writer.WriteBoolValue("allow_insecure", AllowInsecure);
+            writer.WriteIntValue("consecutive_down", ConsecutiveDown);
+            writer.WriteIntValue("consecutive_up", ConsecutiveUp);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("expected_body", ExpectedBody);
+            writer.WriteStringValue("expected_codes", ExpectedCodes);
+            writer.WriteBoolValue("follow_redirects", FollowRedirects);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_header>("header", Header);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_interval>("interval", Interval);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_method>("method", Method);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_path>("path", Path);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_port>("port", Port);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_probe_zone>("probe_zone", ProbeZone);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_retries>("retries", Retries);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_timeout>("timeout", Timeout);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>("type", Type);
+            writer.WriteIntValue("interval", Interval);
+            writer.WriteStringValue("method", Method);
+            writer.WriteStringValue("path", Path);
+            writer.WriteIntValue("port", Port);
+            writer.WriteStringValue("probe_zone", ProbeZone);
+            writer.WriteIntValue("retries", Retries);
+            writer.WriteIntValue("timeout", Timeout);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

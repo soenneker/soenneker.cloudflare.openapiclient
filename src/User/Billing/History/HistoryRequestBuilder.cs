@@ -102,15 +102,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.History
             [QueryParameter("action")]
             public string Action { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("occurred_at")]
-            public string? OccurredAt { get; set; }
-#nullable restore
-#else
-            [QueryParameter("occurred_at")]
-            public string OccurredAt { get; set; }
-#endif
+            public DateTimeOffset? OccurredAt { get; set; }
             [Obsolete("This property is deprecated, use OrderAsUserBillingHistoryDeprecatedBillingHistoryDetailsParamOrder instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

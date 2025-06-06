@@ -17,58 +17,40 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address? Address { get; set; }
+        public string? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address Address { get; set; }
+        public string Address { get; set; }
 #endif
         /// <summary>Whether the origin has changed health status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originChanged? Changed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originChanged Changed { get; set; }
-#endif
+        public bool? Changed { get; set; }
         /// <summary>Whether to enable (the default) this origin within the pool. Disabled origins will not receive traffic and are excluded from health checks. The origin will only be disabled for the current pool.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>Failure reason for un-healthy origin health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originFailureReason? FailureReason { get; set; }
+        public string? FailureReason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originFailureReason FailureReason { get; set; }
+        public string FailureReason { get; set; }
 #endif
         /// <summary>Whether the origin is reported as healthy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originHealthy? Healthy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originHealthy Healthy { get; set; }
-#endif
+        public bool? Healthy { get; set; }
         /// <summary>The IP address (IPv4 or IPv6) of the origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originIp? Ip { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originIp Ip { get; set; }
+        public string Ip { get; set; }
 #endif
         /// <summary>A human-identifiable name for the origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originAnalytics"/> and sets the default values.
@@ -95,13 +77,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address.CreateFromDiscriminatorValue); } },
-                { "changed", n => { Changed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originChanged>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originChanged.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled.CreateFromDiscriminatorValue); } },
-                { "failure_reason", n => { FailureReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originFailureReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originFailureReason.CreateFromDiscriminatorValue); } },
-                { "healthy", n => { Healthy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originHealthy>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originHealthy.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originIp>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originIp.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "changed", n => { Changed = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "failure_reason", n => { FailureReason = n.GetStringValue(); } },
+                { "healthy", n => { Healthy = n.GetBoolValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +93,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_address>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originChanged>("changed", Changed);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasEnabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originFailureReason>("failure_reason", FailureReason);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originHealthy>("healthy", Healthy);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originIp>("ip", Ip);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasName>("name", Name);
+            writer.WriteStringValue("address", Address);
+            writer.WriteBoolValue("changed", Changed);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("failure_reason", FailureReason);
+            writer.WriteBoolValue("healthy", Healthy);
+            writer.WriteStringValue("ip", Ip);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

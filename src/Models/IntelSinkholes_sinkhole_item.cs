@@ -25,22 +25,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The date and time when the sinkhole was created</summary>
         public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>The unique identifier for the sinkhole</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_id? Id { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_id Id { get; set; }
-#endif
+        public int? Id { get; set; }
         /// <summary>The date and time when the sinkhole was last modified</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The name of the sinkhole</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The name of the R2 bucket to store results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,9 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetIntValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "r2_bucket", n => { R2Bucket = n.GetStringValue(); } },
                 { "r2_id", n => { R2Id = n.GetStringValue(); } },
             };
@@ -101,9 +95,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_tag", AccountTag);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_id>("id", Id);
+            writer.WriteIntValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.IntelSinkholes_name>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("r2_bucket", R2Bucket);
             writer.WriteStringValue("r2_id", R2Id);
             writer.WriteAdditionalData(AdditionalData);

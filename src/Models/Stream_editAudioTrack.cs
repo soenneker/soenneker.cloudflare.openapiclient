@@ -15,20 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Denotes whether the audio track will be played by default in a player.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default? Default { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default Default { get; set; }
-#endif
+        public bool? Default { get; set; }
         /// <summary>A string to uniquely identify the track amongst other audio track labels for the specified video.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label? Label { get; set; }
+        public string? Label { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label Label { get; set; }
+        public string Label { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_editAudioTrack"/> and sets the default values.
@@ -55,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default", n => { Default = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default.CreateFromDiscriminatorValue); } },
-                { "label", n => { Label = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label.CreateFromDiscriminatorValue); } },
+                { "default", n => { Default = n.GetBoolValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_default>("default", Default);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_label>("label", Label);
+            writer.WriteBoolValue("default", Default);
+            writer.WriteStringValue("label", Label);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

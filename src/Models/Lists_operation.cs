@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique operation ID of the asynchronous action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The current status of the asynchronous operation.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_status? Status { get; private set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "completed", n => { Completed = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_status>(); } },
             };
         }
@@ -78,7 +78,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id>("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

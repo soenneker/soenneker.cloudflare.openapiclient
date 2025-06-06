@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Used to filter rows by one or more dimensions. Filters can be combined using OR and AND boolean logic. AND takes precedence over OR in all the expressions. The OR operator is defined using a comma (,) or OR keyword surrounded by whitespace. The AND operator is defined using a semicolon (;) or AND keyword surrounded by whitespace. Note that the semicolon is a reserved character in URLs (rfc1738) and needs to be percent-encoded as %3B. Comparison options are:Operator                  | Name                            | URL Encoded--------------------------|---------------------------------|--------------------------==                        | Equals                          | %3D%3D!=                        | Does not equals                 | !%3D\&gt;                        | Greater Than                    | %3E\&lt;                        | Less Than                       | %3C\&gt;=                       | Greater than or equal to        | %3E%3D\&lt;=                       | Less than or equal to           | %3C%3D</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_filters? Filters { get; set; }
+        public string? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_filters Filters { get; set; }
+        public string Filters { get; set; }
 #endif
         /// <summary>Limit number of returned metrics.</summary>
         public double? Limit { get; set; }
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dimensions", n => { Dimensions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>(global::Soenneker.Cloudflare.OpenApiClient.Models.Current.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_filters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetStringValue(); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
                 { "metrics", n => { Metrics = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>(global::Soenneker.Cloudflare.OpenApiClient.Models.Current.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "since", n => { Since = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_since>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_since.CreateFromDiscriminatorValue); } },
@@ -106,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>("dimensions", Dimensions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_filters>("filters", Filters);
+            writer.WriteStringValue("filters", Filters);
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>("metrics", Metrics);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_since>("since", Since);

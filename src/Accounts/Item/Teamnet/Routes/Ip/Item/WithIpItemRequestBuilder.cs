@@ -93,15 +93,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Ip.Ite
             /// <summary>When the virtual_network_id parameter is not provided the request filter will default search routes that are in the default virtual network for the account. If this parameter is set to false, the search will include routes that do not have a virtual network.</summary>
             [QueryParameter("default_virtual_network_fallback")]
             public bool? DefaultVirtualNetworkFallback { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("virtual_network_id")]
-            public string? VirtualNetworkId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("virtual_network_id")]
-            public string VirtualNetworkId { get; set; }
-#endif
+            public Guid? VirtualNetworkId { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

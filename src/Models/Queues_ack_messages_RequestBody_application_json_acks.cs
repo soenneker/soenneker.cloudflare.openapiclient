@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An ID that represents an &quot;in-flight&quot; message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.</summary>
+        /// <summary>The lease_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_leaseId? LeaseId { get; set; }
+        public UntypedNode? LeaseId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_leaseId LeaseId { get; set; }
+        public UntypedNode LeaseId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Queues_ack_messages_RequestBody_application_json_acks"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "lease_id", n => { LeaseId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_leaseId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_leaseId.CreateFromDiscriminatorValue); } },
+                { "lease_id", n => { LeaseId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_leaseId>("lease_id", LeaseId);
+            writer.WriteObjectValue<UntypedNode>("lease_id", LeaseId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

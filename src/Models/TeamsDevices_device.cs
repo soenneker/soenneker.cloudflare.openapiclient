@@ -23,133 +23,110 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the device was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>True if the device was deleted.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted? Deleted { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted Deleted { get; set; }
-#endif
+        public bool? Deleted { get; set; }
         /// <summary>The device_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_type? DeviceType { get; set; }
+        public string? DeviceType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_type DeviceType { get; set; }
+        public string DeviceType { get; set; }
 #endif
         /// <summary>The gateway_device_id property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_device_id? GatewayDeviceId { get; set; }
+        public string? GatewayDeviceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_device_id GatewayDeviceId { get; set; }
+        public string GatewayDeviceId { get; set; }
 #endif
         /// <summary>Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>IPv4 or IPv6 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip? Ip { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip Ip { get; set; }
+        public string Ip { get; set; }
 #endif
         /// <summary>The device&apos;s public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key? Key { get; set; }
+        public string? Key { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key Key { get; set; }
+        public string Key { get; set; }
 #endif
         /// <summary>Type of the key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key_type? KeyType { get; set; }
+        public string? KeyType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key_type KeyType { get; set; }
+        public string KeyType { get; set; }
 #endif
         /// <summary>When the device last connected to Cloudflare services.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_last_seen? LastSeen { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_last_seen LastSeen { get; set; }
-#endif
+        public DateTimeOffset? LastSeen { get; set; }
         /// <summary>The device mac address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_mac_address? MacAddress { get; set; }
+        public string? MacAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_mac_address MacAddress { get; set; }
+        public string MacAddress { get; set; }
 #endif
         /// <summary>The device model name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_model? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_model Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>The device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The operating system version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version? OsVersion { get; set; }
+        public string? OsVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version OsVersion { get; set; }
+        public string OsVersion { get; set; }
 #endif
         /// <summary>The device serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_serial_number? SerialNumber { get; set; }
+        public string? SerialNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_serial_number SerialNumber { get; set; }
+        public string SerialNumber { get; set; }
 #endif
         /// <summary>Type of the tunnel connection used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_type? TunnelType { get; set; }
+        public string? TunnelType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_type TunnelType { get; set; }
+        public string TunnelType { get; set; }
 #endif
         /// <summary>When the device was updated.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_updated? Updated { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_updated Updated { get; set; }
-#endif
+        public DateTimeOffset? Updated { get; set; }
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -161,10 +138,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The WARP client version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_version? Version { get; set; }
+        public string? Version { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_version Version { get; set; }
+        public string Version { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device"/> and sets the default values.
@@ -192,24 +169,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_account>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_account.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created.CreateFromDiscriminatorValue); } },
-                { "deleted", n => { Deleted = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted.CreateFromDiscriminatorValue); } },
-                { "device_type", n => { DeviceType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_type.CreateFromDiscriminatorValue); } },
-                { "gateway_device_id", n => { GatewayDeviceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_device_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_device_id.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip.CreateFromDiscriminatorValue); } },
-                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key.CreateFromDiscriminatorValue); } },
-                { "key_type", n => { KeyType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key_type.CreateFromDiscriminatorValue); } },
-                { "last_seen", n => { LastSeen = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_last_seen>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_last_seen.CreateFromDiscriminatorValue); } },
-                { "mac_address", n => { MacAddress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_mac_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_mac_address.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_model.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasName.CreateFromDiscriminatorValue); } },
-                { "os_version", n => { OsVersion = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version.CreateFromDiscriminatorValue); } },
-                { "serial_number", n => { SerialNumber = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_serial_number>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_serial_number.CreateFromDiscriminatorValue); } },
-                { "tunnel_type", n => { TunnelType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_type.CreateFromDiscriminatorValue); } },
-                { "updated", n => { Updated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_updated>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_updated.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "deleted", n => { Deleted = n.GetBoolValue(); } },
+                { "device_type", n => { DeviceType = n.GetStringValue(); } },
+                { "gateway_device_id", n => { GatewayDeviceId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
+                { "key_type", n => { KeyType = n.GetStringValue(); } },
+                { "last_seen", n => { LastSeen = n.GetDateTimeOffsetValue(); } },
+                { "mac_address", n => { MacAddress = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "os_version", n => { OsVersion = n.GetStringValue(); } },
+                { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
+                { "tunnel_type", n => { TunnelType = n.GetStringValue(); } },
+                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_user>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_user.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_version.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -220,24 +197,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_account>("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deleted>("deleted", Deleted);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_type>("device_type", DeviceType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_device_id>("gateway_device_id", GatewayDeviceId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_ip>("ip", Ip);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key>("key", Key);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_key_type>("key_type", KeyType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_last_seen>("last_seen", LastSeen);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_mac_address>("mac_address", MacAddress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_model>("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version>("os_version", OsVersion);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_serial_number>("serial_number", SerialNumber);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_type>("tunnel_type", TunnelType);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_updated>("updated", Updated);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteBoolValue("deleted", Deleted);
+            writer.WriteStringValue("device_type", DeviceType);
+            writer.WriteStringValue("gateway_device_id", GatewayDeviceId);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("ip", Ip);
+            writer.WriteStringValue("key", Key);
+            writer.WriteStringValue("key_type", KeyType);
+            writer.WriteDateTimeOffsetValue("last_seen", LastSeen);
+            writer.WriteStringValue("mac_address", MacAddress);
+            writer.WriteStringValue("model", Model);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("os_version", OsVersion);
+            writer.WriteStringValue("serial_number", SerialNumber);
+            writer.WriteStringValue("tunnel_type", TunnelType);
+            writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_user>("user", User);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_version>("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name? Domain { get; set; }
+        public string? Domain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name Domain { get; set; }
+        public string Domain { get; set; }
 #endif
         /// <summary>The inherited_content_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Domain from which `inherited_content_categories` and `inherited_risk_types` are inherited, if applicable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from? InheritedFrom { get; set; }
+        public string? InheritedFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from InheritedFrom { get; set; }
+        public string InheritedFrom { get; set; }
 #endif
         /// <summary>The inherited_risk_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,13 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id> InheritedRiskTypes { get; set; }
 #endif
         /// <summary>Global Cloudflare 100k ranking for the last 30 days, if available for the hostname. The top ranked domain is 1, the lowest ranked domain is 100,000.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_popularity_rank? PopularityRank { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_popularity_rank PopularityRank { get; set; }
-#endif
+        public int? PopularityRank { get; set; }
         /// <summary>Specifies a list of references to one or more IP addresses or domain names that the domain name currently resolves to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,13 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_resolves_to_ref> ResolvesToRefs { get; set; }
 #endif
         /// <summary>Hostname risk score, which is a value between 0 (lowest risk) to 1 (highest risk).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_risk_score? RiskScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_risk_score RiskScore { get; set; }
-#endif
+        public double? RiskScore { get; set; }
         /// <summary>The risk_types property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,13 +118,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "additional_information", n => { AdditionalInformation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_additional_information>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_additional_information.CreateFromDiscriminatorValue); } },
                 { "application", n => { Application = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_application>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_application.CreateFromDiscriminatorValue); } },
                 { "content_categories", n => { ContentCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Submit>(global::Soenneker.Cloudflare.OpenApiClient.Models.Submit.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "domain", n => { Domain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name.CreateFromDiscriminatorValue); } },
+                { "domain", n => { Domain = n.GetStringValue(); } },
                 { "inherited_content_categories", n => { InheritedContentCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "inherited_from", n => { InheritedFrom = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from.CreateFromDiscriminatorValue); } },
+                { "inherited_from", n => { InheritedFrom = n.GetStringValue(); } },
                 { "inherited_risk_types", n => { InheritedRiskTypes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "popularity_rank", n => { PopularityRank = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_popularity_rank>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_popularity_rank.CreateFromDiscriminatorValue); } },
+                { "popularity_rank", n => { PopularityRank = n.GetIntValue(); } },
                 { "resolves_to_refs", n => { ResolvesToRefs = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_resolves_to_ref>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_resolves_to_ref.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "risk_score", n => { RiskScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_risk_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_risk_score.CreateFromDiscriminatorValue); } },
+                { "risk_score", n => { RiskScore = n.GetDoubleValue(); } },
                 { "risk_types", n => { RiskTypes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -150,13 +138,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_additional_information>("additional_information", AdditionalInformation);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_application>("application", Application);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Submit>("content_categories", ContentCategories);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_domain_name>("domain", Domain);
+            writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>("inherited_content_categories", InheritedContentCategories);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_inherited_from>("inherited_from", InheritedFrom);
+            writer.WriteStringValue("inherited_from", InheritedFrom);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>("inherited_risk_types", InheritedRiskTypes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_popularity_rank>("popularity_rank", PopularityRank);
+            writer.WriteIntValue("popularity_rank", PopularityRank);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_resolves_to_ref>("resolves_to_refs", ResolvesToRefs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_risk_score>("risk_score", RiskScore);
+            writer.WriteDoubleValue("risk_score", RiskScore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_category_with_super_category_id>("risk_types", RiskTypes);
             writer.WriteAdditionalData(AdditionalData);
         }

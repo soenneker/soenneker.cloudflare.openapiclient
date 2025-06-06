@@ -17,28 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether or not the server should base64 decode the value before storing it. Useful for writing values that wouldn&apos;t otherwise be valid JSON strings, such as images.</summary>
         public bool? Base64 { get; set; }
         /// <summary>The time, measured in number of seconds since the UNIX epoch, at which the key should expire.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration? Expiration { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration Expiration { get; set; }
-#endif
+        public double? Expiration { get; set; }
         /// <summary>The number of seconds for which the key should be visible before it expires. At least 60.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration_ttl? ExpirationTtl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration_ttl ExpirationTtl { get; set; }
-#endif
+        public double? ExpirationTtl { get; set; }
         /// <summary>A key&apos;s name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk? Key { get; set; }
+        public string? Key { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk Key { get; set; }
+        public string Key { get; set; }
 #endif
         /// <summary>Arbitrary JSON that is associated with a key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,9 +70,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "base64", n => { Base64 = n.GetBoolValue(); } },
-                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration.CreateFromDiscriminatorValue); } },
-                { "expiration_ttl", n => { ExpirationTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration_ttl.CreateFromDiscriminatorValue); } },
-                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetDoubleValue(); } },
+                { "expiration_ttl", n => { ExpirationTtl = n.GetDoubleValue(); } },
+                { "key", n => { Key = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -97,9 +85,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("base64", Base64);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration>("expiration", Expiration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_expiration_ttl>("expiration_ttl", ExpirationTtl);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk>("key", Key);
+            writer.WriteDoubleValue("expiration", Expiration);
+            writer.WriteDoubleValue("expiration_ttl", ExpirationTtl);
+            writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata>("metadata", Metadata);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

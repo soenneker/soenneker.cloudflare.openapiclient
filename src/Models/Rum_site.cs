@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If enabled, the JavaScript snippet is automatically injected for orange-clouded sites.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install? AutoInstall { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install AutoInstall { get; set; }
-#endif
+        public bool? AutoInstall { get; set; }
         /// <summary>The created property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_timestamp? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_timestamp Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>A list of rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,26 +37,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Web Analytics site identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag? SiteTag { get; set; }
+        public string? SiteTag { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag SiteTag { get; set; }
+        public string SiteTag { get; set; }
 #endif
         /// <summary>The Web Analytics site token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_token? SiteToken { get; set; }
+        public string? SiteToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_token SiteToken { get; set; }
+        public string SiteToken { get; set; }
 #endif
         /// <summary>Encoded JavaScript snippet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_snippet? Snippet { get; set; }
+        public string? Snippet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_snippet Snippet { get; set; }
+        public string Snippet { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site"/> and sets the default values.
@@ -95,13 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auto_install", n => { AutoInstall = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_timestamp.CreateFromDiscriminatorValue); } },
+                { "auto_install", n => { AutoInstall = n.GetBoolValue(); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ruleset", n => { Ruleset = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset.CreateFromDiscriminatorValue); } },
-                { "site_tag", n => { SiteTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag.CreateFromDiscriminatorValue); } },
-                { "site_token", n => { SiteToken = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_token>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_token.CreateFromDiscriminatorValue); } },
-                { "snippet", n => { Snippet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_snippet>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_snippet.CreateFromDiscriminatorValue); } },
+                { "site_tag", n => { SiteTag = n.GetStringValue(); } },
+                { "site_token", n => { SiteToken = n.GetStringValue(); } },
+                { "snippet", n => { Snippet = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +99,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_auto_install>("auto_install", AutoInstall);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_timestamp>("created", Created);
+            writer.WriteBoolValue("auto_install", AutoInstall);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule>("rules", Rules);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset>("ruleset", Ruleset);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_tag>("site_tag", SiteTag);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_site_token>("site_token", SiteToken);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_snippet>("snippet", Snippet);
+            writer.WriteStringValue("site_tag", SiteTag);
+            writer.WriteStringValue("site_token", SiteToken);
+            writer.WriteStringValue("snippet", Snippet);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of days between key rotations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days? KeyRotationIntervalDays { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days KeyRotationIntervalDays { get; set; }
-#endif
+        public double? KeyRotationIntervalDays { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_configuration_update_the_access_key_configuration_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key_rotation_interval_days", n => { KeyRotationIntervalDays = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days.CreateFromDiscriminatorValue); } },
+                { "key_rotation_interval_days", n => { KeyRotationIntervalDays = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days>("key_rotation_interval_days", KeyRotationIntervalDays);
+            writer.WriteDoubleValue("key_rotation_interval_days", KeyRotationIntervalDays);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

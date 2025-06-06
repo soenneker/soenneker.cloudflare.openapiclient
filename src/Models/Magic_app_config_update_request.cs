@@ -15,37 +15,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Magic account app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id? AccountAppId { get; set; }
+        public string? AccountAppId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id AccountAppId { get; set; }
+        public string AccountAppId { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to breakout traffic to the app&apos;s endpoints directly. Null preserves default behavior.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_breakout? Breakout { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_breakout Breakout { get; set; }
-#endif
+        public bool? Breakout { get; set; }
         /// <summary>Managed app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app_id? ManagedAppId { get; set; }
+        public string? ManagedAppId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app_id ManagedAppId { get; set; }
+        public string ManagedAppId { get; set; }
 #endif
         /// <summary>Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_priority? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_priority Priority { get; set; }
-#endif
+        public int? Priority { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_config_update_request"/> and sets the default values.
         /// </summary>
@@ -71,10 +59,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_app_id", n => { AccountAppId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id.CreateFromDiscriminatorValue); } },
-                { "breakout", n => { Breakout = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_breakout>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_breakout.CreateFromDiscriminatorValue); } },
-                { "managed_app_id", n => { ManagedAppId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app_id.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_priority>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_priority.CreateFromDiscriminatorValue); } },
+                { "account_app_id", n => { AccountAppId = n.GetStringValue(); } },
+                { "breakout", n => { Breakout = n.GetBoolValue(); } },
+                { "managed_app_id", n => { ManagedAppId = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app_id>("account_app_id", AccountAppId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_breakout>("breakout", Breakout);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app_id>("managed_app_id", ManagedAppId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app_priority>("priority", Priority);
+            writer.WriteStringValue("account_app_id", AccountAppId);
+            writer.WriteBoolValue("breakout", Breakout);
+            writer.WriteStringValue("managed_app_id", ManagedAppId);
+            writer.WriteIntValue("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

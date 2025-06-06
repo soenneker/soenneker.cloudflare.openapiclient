@@ -17,19 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique subdomain assigned to your Zero Trust organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAuth_domain? AuthDomain { get; set; }
+        public string? AuthDomain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAuth_domain AuthDomain { get; set; }
+        public string AuthDomain { get; set; }
 #endif
         /// <summary>Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only? IsUiReadOnly { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only IsUiReadOnly { get; set; }
-#endif
+        public bool? IsUiReadOnly { get; set; }
         /// <summary>The login_design property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,26 +35,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The name of your Zero Trust organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_organizations_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_organizations_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>A description of the reason why the UI read only field is being toggled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ui_read_only_toggle_reason? UiReadOnlyToggleReason { get; set; }
+        public string? UiReadOnlyToggleReason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ui_read_only_toggle_reason UiReadOnlyToggleReason { get; set; }
+        public string UiReadOnlyToggleReason { get; set; }
 #endif
         /// <summary>The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUser_seat_expiration_inactive_time? UserSeatExpirationInactiveTime { get; set; }
+        public string? UserSeatExpirationInactiveTime { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUser_seat_expiration_inactive_time UserSeatExpirationInactiveTime { get; set; }
+        public string UserSeatExpirationInactiveTime { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_level_zero_trust_organization_create_your_zero_trust_organization_RequestBody_application_json"/> and sets the default values.
@@ -87,12 +81,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_domain", n => { AuthDomain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAuth_domain>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAuth_domain.CreateFromDiscriminatorValue); } },
-                { "is_ui_read_only", n => { IsUiReadOnly = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only.CreateFromDiscriminatorValue); } },
+                { "auth_domain", n => { AuthDomain = n.GetStringValue(); } },
+                { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
                 { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_organizations_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_organizations_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "ui_read_only_toggle_reason", n => { UiReadOnlyToggleReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ui_read_only_toggle_reason>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ui_read_only_toggle_reason.CreateFromDiscriminatorValue); } },
-                { "user_seat_expiration_inactive_time", n => { UserSeatExpirationInactiveTime = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUser_seat_expiration_inactive_time>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUser_seat_expiration_inactive_time.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "ui_read_only_toggle_reason", n => { UiReadOnlyToggleReason = n.GetStringValue(); } },
+                { "user_seat_expiration_inactive_time", n => { UserSeatExpirationInactiveTime = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +96,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasAuth_domain>("auth_domain", AuthDomain);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasIs_ui_read_only>("is_ui_read_only", IsUiReadOnly);
+            writer.WriteStringValue("auth_domain", AuthDomain);
+            writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design>("login_design", LoginDesign);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_organizations_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_ui_read_only_toggle_reason>("ui_read_only_toggle_reason", UiReadOnlyToggleReason);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasUser_seat_expiration_inactive_time>("user_seat_expiration_inactive_time", UserSeatExpirationInactiveTime);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("ui_read_only_toggle_reason", UiReadOnlyToggleReason);
+            writer.WriteStringValue("user_seat_expiration_inactive_time", UserSeatExpirationInactiveTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

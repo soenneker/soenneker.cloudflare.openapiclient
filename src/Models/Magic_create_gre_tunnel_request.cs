@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The IP address assigned to the Cloudflare side of the GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_gre_endpoint? CloudflareGreEndpoint { get; set; }
+        public string? CloudflareGreEndpoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_gre_endpoint CloudflareGreEndpoint { get; set; }
+        public string CloudflareGreEndpoint { get; set; }
 #endif
         /// <summary>The IP address assigned to the customer side of the GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_gre_endpoint? CustomerGreEndpoint { get; set; }
+        public string? CustomerGreEndpoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_gre_endpoint CustomerGreEndpoint { get; set; }
+        public string CustomerGreEndpoint { get; set; }
 #endif
         /// <summary>An optional description of the GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,35 +49,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address? InterfaceAddress { get; set; }
+        public string? InterfaceAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address InterfaceAddress { get; set; }
+        public string InterfaceAddress { get; set; }
 #endif
         /// <summary>Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_mtu? Mtu { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_mtu Mtu { get; set; }
-#endif
+        public int? Mtu { get; set; }
         /// <summary>The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Time To Live (TTL) in number of hops of the GRE tunnel.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ttl? Ttl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ttl Ttl { get; set; }
-#endif
+        public int? Ttl { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_create_gre_tunnel_request"/> and sets the default values.
         /// </summary>
@@ -103,14 +91,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cloudflare_gre_endpoint", n => { CloudflareGreEndpoint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_gre_endpoint>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_gre_endpoint.CreateFromDiscriminatorValue); } },
-                { "customer_gre_endpoint", n => { CustomerGreEndpoint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_gre_endpoint>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_gre_endpoint.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasDescription.CreateFromDiscriminatorValue); } },
+                { "cloudflare_gre_endpoint", n => { CloudflareGreEndpoint = n.GetStringValue(); } },
+                { "customer_gre_endpoint", n => { CustomerGreEndpoint = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check.CreateFromDiscriminatorValue); } },
-                { "interface_address", n => { InterfaceAddress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address.CreateFromDiscriminatorValue); } },
-                { "mtu", n => { Mtu = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_mtu>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_mtu.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel_name.CreateFromDiscriminatorValue); } },
-                { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ttl.CreateFromDiscriminatorValue); } },
+                { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
+                { "mtu", n => { Mtu = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "ttl", n => { Ttl = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -120,14 +108,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_cloudflare_gre_endpoint>("cloudflare_gre_endpoint", CloudflareGreEndpoint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_customer_gre_endpoint>("customer_gre_endpoint", CustomerGreEndpoint);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_schemasDescription>("description", Description);
+            writer.WriteStringValue("cloudflare_gre_endpoint", CloudflareGreEndpoint);
+            writer.WriteStringValue("customer_gre_endpoint", CustomerGreEndpoint);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>("health_check", HealthCheck);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interface_address>("interface_address", InterfaceAddress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_mtu>("mtu", Mtu);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ttl>("ttl", Ttl);
+            writer.WriteStringValue("interface_address", InterfaceAddress);
+            writer.WriteIntValue("mtu", Mtu);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("ttl", Ttl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

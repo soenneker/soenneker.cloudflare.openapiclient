@@ -118,15 +118,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report
             [QueryParameter("filters")]
             public string Filters { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("limit")]
-            public string? Limit { get; set; }
-#nullable restore
-#else
-            [QueryParameter("limit")]
-            public string Limit { get; set; }
-#endif
+            public int? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("metrics")]
@@ -136,15 +129,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report
             [QueryParameter("metrics")]
             public string Metrics { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("since")]
-            public string? Since { get; set; }
-#nullable restore
-#else
-            [QueryParameter("since")]
-            public string Since { get; set; }
-#endif
+            public DateTimeOffset? Since { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort")]
@@ -154,15 +140,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("until")]
-            public string? Until { get; set; }
-#nullable restore
-#else
-            [QueryParameter("until")]
-            public string Until { get; set; }
-#endif
+            public DateTimeOffset? Until { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

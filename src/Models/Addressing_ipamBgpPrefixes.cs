@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Autonomous System Number (ASN) the prefix will be advertised under.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn? Asn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn Asn { get; set; }
-#endif
+        public int? Asn { get; set; }
         /// <summary>Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count? AsnPrependCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count AsnPrependCount { get; set; }
-#endif
+        public int? AsnPrependCount { get; set; }
         /// <summary>The bgp_signal_opts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,35 +29,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IP Prefix in Classless Inter-Domain Routing format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr? Cidr { get; set; }
+        public string? Cidr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr Cidr { get; set; }
+        public string Cidr { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp? CreatedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp CreatedAt { get; set; }
-#endif
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Identifier of BGP Prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The modified_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp? ModifiedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp ModifiedAt { get; set; }
-#endif
+        public DateTimeOffset? ModifiedAt { get; set; }
         /// <summary>The on_demand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,13 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand OnDemand { get; set; }
 #endif
         /// <summary>Controls whether the BGP prefix is automatically withdrawn when prefix is withdrawn from Magic routing table (for Magic Transit customers using Direct CNI)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route? WithdrawIfNoRoute { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route WithdrawIfNoRoute { get; set; }
-#endif
+        public bool? WithdrawIfNoRoute { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamBgpPrefixes"/> and sets the default values.
         /// </summary>
@@ -111,15 +81,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asn", n => { Asn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn.CreateFromDiscriminatorValue); } },
-                { "asn_prepend_count", n => { AsnPrependCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count.CreateFromDiscriminatorValue); } },
+                { "asn", n => { Asn = n.GetIntValue(); } },
+                { "asn_prepend_count", n => { AsnPrependCount = n.GetIntValue(); } },
                 { "bgp_signal_opts", n => { BgpSignalOpts = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_signal_opts>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_signal_opts.CreateFromDiscriminatorValue); } },
-                { "cidr", n => { Cidr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_identifier.CreateFromDiscriminatorValue); } },
-                { "modified_at", n => { ModifiedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp.CreateFromDiscriminatorValue); } },
+                { "cidr", n => { Cidr = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "on_demand", n => { OnDemand = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand.CreateFromDiscriminatorValue); } },
-                { "withdraw_if_no_route", n => { WithdrawIfNoRoute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route.CreateFromDiscriminatorValue); } },
+                { "withdraw_if_no_route", n => { WithdrawIfNoRoute = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -129,15 +99,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn>("asn", Asn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count>("asn_prepend_count", AsnPrependCount);
+            writer.WriteIntValue("asn", Asn);
+            writer.WriteIntValue("asn_prepend_count", AsnPrependCount);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_signal_opts>("bgp_signal_opts", BgpSignalOpts);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>("cidr", Cidr);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_timestamp>("modified_at", ModifiedAt);
+            writer.WriteStringValue("cidr", Cidr);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand>("on_demand", OnDemand);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route>("withdraw_if_no_route", WithdrawIfNoRoute);
+            writer.WriteBoolValue("withdraw_if_no_route", WithdrawIfNoRoute);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

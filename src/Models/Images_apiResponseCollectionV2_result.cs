@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Continuation token to fetch next page. Passed as a query param when requesting List V2 api endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_continuation_token? ContinuationToken { get; set; }
+        public string? ContinuationToken { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_continuation_token ContinuationToken { get; set; }
+        public string ContinuationToken { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_apiResponseCollectionV2_result"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "continuation_token", n => { ContinuationToken = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_continuation_token>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_continuation_token.CreateFromDiscriminatorValue); } },
+                { "continuation_token", n => { ContinuationToken = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_continuation_token>("continuation_token", ContinuationToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

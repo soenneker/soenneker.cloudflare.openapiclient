@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Bucket { get; set; }
 #endif
         /// <summary>The jurisdiction property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_Jurisdiction? Jurisdiction { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_Jurisdiction Jurisdiction { get; set; }
-#endif
         /// <summary>The pathPrefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
-                { "jurisdiction", n => { Jurisdiction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_Jurisdiction>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_Jurisdiction.CreateFromDiscriminatorValue); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_Jurisdiction>(); } },
                 { "pathPrefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "vendor", n => { Vendor = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3_vendor>(); } },
             };
@@ -79,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_Jurisdiction>("jurisdiction", Jurisdiction);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_Jurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("pathPrefix", PathPrefix);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3_vendor>("vendor", Vendor);
             writer.WriteAdditionalData(AdditionalData);

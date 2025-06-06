@@ -145,12 +145,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_id")]
-            public string[]? ResourceId { get; set; }
+            public Guid?[]? ResourceId { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_id")]
-            public string[] ResourceId { get; set; }
+            public Guid?[] ResourceId { get; set; }
 #endif
+            [Obsolete("This property is deprecated, use ResourceTypeAsMcnResourceType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_type")]
@@ -159,6 +160,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
 #else
             [QueryParameter("resource_type")]
             public string[] ResourceType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[]? ResourceTypeAsMcnResourceType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[] ResourceTypeAsMcnResourceType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

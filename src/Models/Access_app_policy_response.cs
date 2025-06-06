@@ -13,13 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The order of execution for this policy. Must be unique for each policy within an app.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_precedence? Precedence { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_precedence Precedence { get; set; }
-#endif
+        public int? Precedence { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "precedence", n => { Precedence = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_precedence>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_precedence.CreateFromDiscriminatorValue); } },
+                { "precedence", n => { Precedence = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -49,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_precedence>("precedence", Precedence);
+            writer.WriteIntValue("precedence", Precedence);
         }
     }
 }

@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the live input was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>Indicates the number of days after which the live inputs recordings will be deleted. When a stream completes and the recording is ready, the value is used to calculate a scheduled deletion date for that recording. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion? DeleteRecordingAfterDays { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion DeleteRecordingAfterDays { get; set; }
-#endif
+        public double? DeleteRecordingAfterDays { get; set; }
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing live inputs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,20 +27,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata Meta { get; set; }
 #endif
         /// <summary>The date and time the live input was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; set; }
         /// <summary>A unique identifier for a live input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier? Uid { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier Uid { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_object_without_url"/> and sets the default values.
@@ -79,11 +61,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created.CreateFromDiscriminatorValue); } },
-                { "deleteRecordingAfterDays", n => { DeleteRecordingAfterDays = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "deleteRecordingAfterDays", n => { DeleteRecordingAfterDays = n.GetDoubleValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified.CreateFromDiscriminatorValue); } },
-                { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier.CreateFromDiscriminatorValue); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -93,11 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion>("deleteRecordingAfterDays", DeleteRecordingAfterDays);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteDoubleValue("deleteRecordingAfterDays", DeleteRecordingAfterDays);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified>("modified", Modified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier>("uid", Uid);
+            writer.WriteDateTimeOffsetValue("modified", Modified);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

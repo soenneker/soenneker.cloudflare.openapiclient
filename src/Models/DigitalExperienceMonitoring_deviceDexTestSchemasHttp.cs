@@ -25,34 +25,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Additional details about the test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Determines whether or not the test is active.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasEnabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasEnabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>How often the test will run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasInterval? Interval { get; set; }
+        public string? Interval { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasInterval Interval { get; set; }
+        public string Interval { get; set; }
 #endif
         /// <summary>The name of the DEX test. Must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The targeted property</summary>
         public bool? Targeted { get; set; }
@@ -67,10 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for the test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_schemasTestId? TestId { get; set; }
+        public string? TestId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_schemasTestId TestId { get; set; }
+        public string TestId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasHttp"/> and sets the default values.
@@ -98,13 +92,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasData>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasDescription.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasEnabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasEnabled.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasInterval>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasInterval.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasName.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "interval", n => { Interval = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_dex_target_policy>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_dex_target_policy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targeted", n => { Targeted = n.GetBoolValue(); } },
-                { "test_id", n => { TestId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_schemasTestId>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_schemasTestId.CreateFromDiscriminatorValue); } },
+                { "test_id", n => { TestId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -115,13 +109,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasData>("data", Data);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasEnabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasInterval>("interval", Interval);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasName>("name", Name);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("interval", Interval);
+            writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("targeted", Targeted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_dex_target_policy>("target_policies", TargetPolicies);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_schemasTestId>("test_id", TestId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

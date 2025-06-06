@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Web Analytics rule identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The inclusive property</summary>
         public bool? Inclusive { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule_identifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "inclusive", n => { Inclusive = n.GetBoolValue(); } },
                 { "is_paused", n => { IsPaused = n.GetBoolValue(); } },
                 { "paths", n => { Paths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("host", Host);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rule_identifier>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("inclusive", Inclusive);
             writer.WriteBoolValue("is_paused", IsPaused);
             writer.WriteCollectionOfPrimitiveValues<string>("paths", Paths);

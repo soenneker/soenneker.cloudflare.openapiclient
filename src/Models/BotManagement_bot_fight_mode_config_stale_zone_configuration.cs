@@ -16,53 +16,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates that the zone&apos;s wordpress optimization for SBFM is turned on.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress_turned_on? OptimizeWordpress { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress_turned_on OptimizeWordpress { get; set; }
-#endif
+        public bool? OptimizeWordpress { get; set; }
         /// <summary>Indicates that the zone&apos;s definitely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated_turned_on? SbfmDefinitelyAutomated { get; set; }
+        public string? SbfmDefinitelyAutomated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated_turned_on SbfmDefinitelyAutomated { get; set; }
+        public string SbfmDefinitelyAutomated { get; set; }
 #endif
         /// <summary>Indicates that the zone&apos;s likely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on? SbfmLikelyAutomated { get; set; }
+        public string? SbfmLikelyAutomated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on SbfmLikelyAutomated { get; set; }
+        public string SbfmLikelyAutomated { get; set; }
 #endif
         /// <summary>Indicates that the zone&apos;s static resource protection is turned on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection_turned_on? SbfmStaticResourceProtection { get; set; }
+        public string? SbfmStaticResourceProtection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection_turned_on SbfmStaticResourceProtection { get; set; }
+        public string SbfmStaticResourceProtection { get; set; }
 #endif
         /// <summary>Indicates that the zone&apos;s verified bot requests are being blocked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots_turned_on? SbfmVerifiedBots { get; set; }
+        public string? SbfmVerifiedBots { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots_turned_on SbfmVerifiedBots { get; set; }
+        public string SbfmVerifiedBots { get; set; }
 #endif
         /// <summary>Indicates that the zone&apos;s session score tracking is disabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score_turned_off? SuppressSessionScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score_turned_off SuppressSessionScore { get; set; }
-#endif
+        public bool? SuppressSessionScore { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config_stale_zone_configuration"/> and sets the default values.
         /// </summary>
@@ -88,12 +76,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "optimize_wordpress", n => { OptimizeWordpress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress_turned_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress_turned_on.CreateFromDiscriminatorValue); } },
-                { "sbfm_definitely_automated", n => { SbfmDefinitelyAutomated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated_turned_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated_turned_on.CreateFromDiscriminatorValue); } },
-                { "sbfm_likely_automated", n => { SbfmLikelyAutomated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on.CreateFromDiscriminatorValue); } },
-                { "sbfm_static_resource_protection", n => { SbfmStaticResourceProtection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection_turned_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection_turned_on.CreateFromDiscriminatorValue); } },
-                { "sbfm_verified_bots", n => { SbfmVerifiedBots = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots_turned_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots_turned_on.CreateFromDiscriminatorValue); } },
-                { "suppress_session_score", n => { SuppressSessionScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score_turned_off>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score_turned_off.CreateFromDiscriminatorValue); } },
+                { "optimize_wordpress", n => { OptimizeWordpress = n.GetBoolValue(); } },
+                { "sbfm_definitely_automated", n => { SbfmDefinitelyAutomated = n.GetStringValue(); } },
+                { "sbfm_likely_automated", n => { SbfmLikelyAutomated = n.GetStringValue(); } },
+                { "sbfm_static_resource_protection", n => { SbfmStaticResourceProtection = n.GetStringValue(); } },
+                { "sbfm_verified_bots", n => { SbfmVerifiedBots = n.GetStringValue(); } },
+                { "suppress_session_score", n => { SuppressSessionScore = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -103,12 +91,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_optimize_wordpress_turned_on>("optimize_wordpress", OptimizeWordpress);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated_turned_on>("sbfm_definitely_automated", SbfmDefinitelyAutomated);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_automated_turned_on>("sbfm_likely_automated", SbfmLikelyAutomated);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_static_resource_protection_turned_on>("sbfm_static_resource_protection", SbfmStaticResourceProtection);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots_turned_on>("sbfm_verified_bots", SbfmVerifiedBots);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score_turned_off>("suppress_session_score", SuppressSessionScore);
+            writer.WriteBoolValue("optimize_wordpress", OptimizeWordpress);
+            writer.WriteStringValue("sbfm_definitely_automated", SbfmDefinitelyAutomated);
+            writer.WriteStringValue("sbfm_likely_automated", SbfmLikelyAutomated);
+            writer.WriteStringValue("sbfm_static_resource_protection", SbfmStaticResourceProtection);
+            writer.WriteStringValue("sbfm_verified_bots", SbfmVerifiedBots);
+            writer.WriteBoolValue("suppress_session_score", SuppressSessionScore);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -91,15 +91,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Live
         public partial class LiveRequestBuilderGetQueryParameters 
         {
             /// <summary>Number of minutes before current time</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("since_minutes")]
-            public string? SinceMinutes { get; set; }
-#nullable restore
-#else
-            [QueryParameter("since_minutes")]
-            public string SinceMinutes { get; set; }
-#endif
+            public double? SinceMinutes { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

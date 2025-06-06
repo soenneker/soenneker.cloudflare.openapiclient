@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of DHCP server IPs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>? ServerAddresses { get; set; }
+        public List<string>? ServerAddresses { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress> ServerAddresses { get; set; }
+        public List<string> ServerAddresses { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_dhcp_relay"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "server_addresses", n => { ServerAddresses = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "server_addresses", n => { ServerAddresses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_ipAddress>("server_addresses", ServerAddresses);
+            writer.WriteCollectionOfPrimitiveValues<string>("server_addresses", ServerAddresses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

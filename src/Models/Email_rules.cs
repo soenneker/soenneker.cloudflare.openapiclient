@@ -23,20 +23,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Routing rule status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>Routing rule identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Matching patterns to forward to your actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,26 +43,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Routing rule name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Priority of the routing rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_priority? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_priority Priority { get; set; }
-#endif
+        public double? Priority { get; set; }
         /// <summary>Routing rule tag. (Deprecated, replaced by routing rule identifier)</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_tag? Tag { get; set; }
+        public string? Tag { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_tag Tag { get; set; }
+        public string Tag { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rules"/> and sets the default values.
@@ -96,12 +85,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_action.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_enabled.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_identifier.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "matchers", n => { Matchers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_matcher>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_matcher.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_name.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_priority>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_priority.CreateFromDiscriminatorValue); } },
-                { "tag", n => { Tag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_tag.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
+                { "tag", n => { Tag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,12 +101,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_action>("actions", Actions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_enabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_identifier>("id", Id);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_matcher>("matchers", Matchers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_priority>("priority", Priority);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_tag>("tag", Tag);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

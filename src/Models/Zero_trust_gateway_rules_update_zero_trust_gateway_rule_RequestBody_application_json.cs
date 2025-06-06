@@ -13,39 +13,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to preform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action? Action { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action Action { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The wirefilter expression used for device posture check matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture? DevicePosture { get; set; }
+        public string? DevicePosture { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture DevicePosture { get; set; }
+        public string DevicePosture { get; set; }
 #endif
         /// <summary>True if the rule is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled? Enabled { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled Enabled { get; set; }
-#endif
+        public bool? Enabled { get; set; }
         /// <summary>The expiration time stamp and default duration of a DNS policy. Takesprecedence over the policy&apos;s `schedule` configuration, if any.This does not apply to HTTP or network policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,27 +53,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The wirefilter expression used for identity matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_identity? Identity { get; set; }
+        public string? Identity { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_identity Identity { get; set; }
+        public string Identity { get; set; }
 #endif
         /// <summary>The name of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Precedence sets the order of your rules. Lower values indicate higher precedence. At each processing phase, applicable rules are evaluated in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) docs on how to manage precedence via Terraform.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_precedence? Precedence { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_precedence Precedence { get; set; }
-#endif
+        public int? Precedence { get; set; }
         /// <summary>Additional settings that modify the rule&apos;s action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,10 +87,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The wirefilter expression used for traffic matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_traffic? Traffic { get; set; }
+        public string? Traffic { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_traffic Traffic { get; set; }
+        public string Traffic { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rules_update_zero_trust_gateway_rule_RequestBody_application_json"/> and sets the default values.
@@ -135,18 +117,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription.CreateFromDiscriminatorValue); } },
-                { "device_posture", n => { DevicePosture = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "device_posture", n => { DevicePosture = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration.CreateFromDiscriminatorValue); } },
                 { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_>()?.AsList(); } },
-                { "identity", n => { Identity = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_identity>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_identity.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasName.CreateFromDiscriminatorValue); } },
-                { "precedence", n => { Precedence = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_precedence>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_precedence.CreateFromDiscriminatorValue); } },
+                { "identity", n => { Identity = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "precedence", n => { Precedence = n.GetIntValue(); } },
                 { "rule_settings", n => { RuleSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule.CreateFromDiscriminatorValue); } },
-                { "traffic", n => { Traffic = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_traffic>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_traffic.CreateFromDiscriminatorValue); } },
+                { "traffic", n => { Traffic = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -156,18 +138,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_device_posture>("device_posture", DevicePosture);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_enabled>("enabled", Enabled);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("device_posture", DevicePosture);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>("expiration", Expiration);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_>("filters", Filters);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_identity>("identity", Identity);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_precedence>("precedence", Precedence);
+            writer.WriteStringValue("identity", Identity);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("precedence", Precedence);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings>("rule_settings", RuleSettings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule>("schedule", Schedule);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_traffic>("traffic", Traffic);
+            writer.WriteStringValue("traffic", Traffic);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

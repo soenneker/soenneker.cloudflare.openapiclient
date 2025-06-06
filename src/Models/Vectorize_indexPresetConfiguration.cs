@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the preset to use for the index.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset? Preset { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset Preset { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPresetConfiguration"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "preset", n => { Preset = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset.CreateFromDiscriminatorValue); } },
+                { "preset", n => { Preset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset>(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset>("preset", Preset);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset>("preset", Preset);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

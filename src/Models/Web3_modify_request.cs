@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify an optional description of the hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Specify the DNSLink value used if the target is ipfs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink? Dnslink { get; set; }
+        public string? Dnslink { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink Dnslink { get; set; }
+        public string Dnslink { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_modify_request"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description.CreateFromDiscriminatorValue); } },
-                { "dnslink", n => { Dnslink = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "dnslink", n => { Dnslink = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_dnslink>("dnslink", Dnslink);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("dnslink", Dnslink);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cloudflare Images allowed usage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_allowed? Allowed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_allowed Allowed { get; set; }
-#endif
+        public double? Allowed { get; private set; }
         /// <summary>Cloudflare Images current usage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_current? Current { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_current Current { get; set; }
-#endif
+        public double? Current { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_count"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed", n => { Allowed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_allowed>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_allowed.CreateFromDiscriminatorValue); } },
-                { "current", n => { Current = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_current>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_current.CreateFromDiscriminatorValue); } },
+                { "allowed", n => { Allowed = n.GetDoubleValue(); } },
+                { "current", n => { Current = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +54,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_allowed>("allowed", Allowed);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_current>("current", Current);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

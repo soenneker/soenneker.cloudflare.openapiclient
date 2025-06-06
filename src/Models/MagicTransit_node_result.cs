@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>AS number associated with the node object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_asn? Asn { get; set; }
+        public string? Asn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_asn Asn { get; set; }
+        public string Asn { get; set; }
 #endif
         /// <summary>IP address of the node.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_ip? Ip { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_ip Ip { get; set; }
+        public string Ip { get; set; }
 #endif
         /// <summary>Field appears if there is an additional annotation printed when the probe returns. Field also appears when running a GRE+ICMP traceroute to denote which traceroute a node comes from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,53 +39,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Labels { get; set; }
 #endif
         /// <summary>Maximum RTT in ms.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_rtt_ms? MaxRttMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_rtt_ms MaxRttMs { get; set; }
-#endif
+        public double? MaxRttMs { get; set; }
         /// <summary>Mean RTT in ms.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_mean_rtt_ms? MeanRttMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_mean_rtt_ms MeanRttMs { get; set; }
-#endif
+        public double? MeanRttMs { get; set; }
         /// <summary>Minimum RTT in ms.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_min_rtt_ms? MinRttMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_min_rtt_ms MinRttMs { get; set; }
-#endif
+        public double? MinRttMs { get; set; }
         /// <summary>Host name of the address, this may be the same as the IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Number of packets with a response from this node.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_count? PacketCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_count PacketCount { get; set; }
-#endif
+        public int? PacketCount { get; set; }
         /// <summary>Standard deviation of the RTTs in ms.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_std_dev_rtt_ms? StdDevRttMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_std_dev_rtt_ms StdDevRttMs { get; set; }
-#endif
+        public double? StdDevRttMs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result"/> and sets the default values.
         /// </summary>
@@ -111,15 +81,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asn", n => { Asn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_asn>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_asn.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_ip.CreateFromDiscriminatorValue); } },
+                { "asn", n => { Asn = n.GetStringValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "max_rtt_ms", n => { MaxRttMs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_rtt_ms>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_rtt_ms.CreateFromDiscriminatorValue); } },
-                { "mean_rtt_ms", n => { MeanRttMs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_mean_rtt_ms>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_mean_rtt_ms.CreateFromDiscriminatorValue); } },
-                { "min_rtt_ms", n => { MinRttMs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_min_rtt_ms>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_min_rtt_ms.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_name.CreateFromDiscriminatorValue); } },
-                { "packet_count", n => { PacketCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_count.CreateFromDiscriminatorValue); } },
-                { "std_dev_rtt_ms", n => { StdDevRttMs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_std_dev_rtt_ms>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_std_dev_rtt_ms.CreateFromDiscriminatorValue); } },
+                { "max_rtt_ms", n => { MaxRttMs = n.GetDoubleValue(); } },
+                { "mean_rtt_ms", n => { MeanRttMs = n.GetDoubleValue(); } },
+                { "min_rtt_ms", n => { MinRttMs = n.GetDoubleValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "packet_count", n => { PacketCount = n.GetIntValue(); } },
+                { "std_dev_rtt_ms", n => { StdDevRttMs = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -129,15 +99,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_asn>("asn", Asn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_ip>("ip", Ip);
+            writer.WriteStringValue("asn", Asn);
+            writer.WriteStringValue("ip", Ip);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_max_rtt_ms>("max_rtt_ms", MaxRttMs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_mean_rtt_ms>("mean_rtt_ms", MeanRttMs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_min_rtt_ms>("min_rtt_ms", MinRttMs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_count>("packet_count", PacketCount);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_std_dev_rtt_ms>("std_dev_rtt_ms", StdDevRttMs);
+            writer.WriteDoubleValue("max_rtt_ms", MaxRttMs);
+            writer.WriteDoubleValue("mean_rtt_ms", MeanRttMs);
+            writer.WriteDoubleValue("min_rtt_ms", MinRttMs);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("packet_count", PacketCount);
+            writer.WriteDoubleValue("std_dev_rtt_ms", StdDevRttMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

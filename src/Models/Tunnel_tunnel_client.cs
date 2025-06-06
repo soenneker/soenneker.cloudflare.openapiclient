@@ -18,19 +18,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cloudflared OS architecture used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_arch? Arch { get; set; }
+        public string? Arch { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_arch Arch { get; set; }
+        public string Arch { get; set; }
 #endif
         /// <summary>The version of the remote tunnel configuration. Used internally to sync cloudflared with the Zero Trust dashboard.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_version? ConfigVersion { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_version ConfigVersion { get; set; }
-#endif
+        public int? ConfigVersion { get; set; }
         /// <summary>The Cloudflare Tunnel connections between your origin and Cloudflare&apos;s edge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,28 +42,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Features { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id? Id { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id Id { get; set; }
-#endif
+        public Guid? Id { get; private set; }
         /// <summary>Timestamp of when the tunnel connection was started.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_run_at? RunAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_run_at RunAt { get; set; }
-#endif
+        public DateTimeOffset? RunAt { get; set; }
         /// <summary>The cloudflared version used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version? Version { get; set; }
+        public string? Version { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version Version { get; set; }
+        public string Version { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_client"/> and sets the default values.
@@ -96,13 +78,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "arch", n => { Arch = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_arch>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_arch.CreateFromDiscriminatorValue); } },
-                { "config_version", n => { ConfigVersion = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_version.CreateFromDiscriminatorValue); } },
+                { "arch", n => { Arch = n.GetStringValue(); } },
+                { "config_version", n => { ConfigVersion = n.GetIntValue(); } },
                 { "conns", n => { Conns = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id.CreateFromDiscriminatorValue); } },
-                { "run_at", n => { RunAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_run_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_run_at.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "run_at", n => { RunAt = n.GetDateTimeOffsetValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,13 +94,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_arch>("arch", Arch);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_version>("config_version", ConfigVersion);
+            writer.WriteStringValue("arch", Arch);
+            writer.WriteIntValue("config_version", ConfigVersion);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>("conns", Conns);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_run_at>("run_at", RunAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version>("version", Version);
+            writer.WriteDateTimeOffsetValue("run_at", RunAt);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

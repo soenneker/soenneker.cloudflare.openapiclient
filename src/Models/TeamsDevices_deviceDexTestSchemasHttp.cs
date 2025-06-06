@@ -22,37 +22,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasData Data { get; set; }
 #endif
-        /// <summary>Additional details about the test.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasDescription? Description { get; set; }
+        public UntypedNode? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasDescription Description { get; set; }
+        public UntypedNode Description { get; set; }
 #endif
-        /// <summary>Determines whether or not the test is active.</summary>
+        /// <summary>The enabled property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasEnabled? Enabled { get; set; }
+        public UntypedNode? Enabled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasEnabled Enabled { get; set; }
+        public UntypedNode Enabled { get; set; }
 #endif
-        /// <summary>How often the test will run.</summary>
+        /// <summary>The interval property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasInterval? Interval { get; set; }
+        public UntypedNode? Interval { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasInterval Interval { get; set; }
+        public UntypedNode Interval { get; set; }
 #endif
-        /// <summary>The name of the DEX test. Must be unique.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasName? Name { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasName Name { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>The targeted property</summary>
         public bool? Targeted { get; set; }
@@ -64,13 +64,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_dex_target_policy> TargetPolicies { get; set; }
 #endif
-        /// <summary>The unique identifier for the test.</summary>
+        /// <summary>The test_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasTestId? TestId { get; set; }
+        public UntypedNode? TestId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasTestId TestId { get; set; }
+        public UntypedNode TestId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasHttp"/> and sets the default values.
@@ -98,13 +98,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasData>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasDescription.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasEnabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasEnabled.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasInterval>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasInterval.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasName.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "target_policies", n => { TargetPolicies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_dex_target_policy>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_dex_target_policy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "targeted", n => { Targeted = n.GetBoolValue(); } },
-                { "test_id", n => { TestId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasTestId>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasTestId.CreateFromDiscriminatorValue); } },
+                { "test_id", n => { TestId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -115,13 +115,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasData>("data", Data);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasEnabled>("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasInterval>("interval", Interval);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_deviceDexTestSchemasName>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("description", Description);
+            writer.WriteObjectValue<UntypedNode>("enabled", Enabled);
+            writer.WriteObjectValue<UntypedNode>("interval", Interval);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteBoolValue("targeted", Targeted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_dex_target_policy>("target_policies", TargetPolicies);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasTestId>("test_id", TestId);
+            writer.WriteObjectValue<UntypedNode>("test_id", TestId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

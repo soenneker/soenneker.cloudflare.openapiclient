@@ -18,18 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The secret key to use for playback via RTMPS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_stream_key? StreamKey { get; set; }
+        public string? StreamKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_stream_key StreamKey { get; set; }
+        public string StreamKey { get; set; }
 #endif
         /// <summary>The URL used to play live video over RTMPS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_url? Url { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_url Url { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "streamKey", n => { StreamKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_stream_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_stream_key.CreateFromDiscriminatorValue); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_url.CreateFromDiscriminatorValue); } },
+                { "streamKey", n => { StreamKey = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_stream_key>("streamKey", StreamKey);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps_url>("url", Url);
+            writer.WriteStringValue("streamKey", StreamKey);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

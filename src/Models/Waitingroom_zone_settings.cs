@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow verified search engine crawlers to bypass all waiting rooms on this zone.Verified search engine crawlers will not be tracked or counted by the waiting room system,and will not appear in waiting room analytics.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_search_engine_crawler_bypass? SearchEngineCrawlerBypass { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_search_engine_crawler_bypass SearchEngineCrawlerBypass { get; set; }
-#endif
+        public bool? SearchEngineCrawlerBypass { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_zone_settings"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "search_engine_crawler_bypass", n => { SearchEngineCrawlerBypass = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_search_engine_crawler_bypass>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_search_engine_crawler_bypass.CreateFromDiscriminatorValue); } },
+                { "search_engine_crawler_bypass", n => { SearchEngineCrawlerBypass = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_search_engine_crawler_bypass>("search_engine_crawler_bypass", SearchEngineCrawlerBypass);
+            writer.WriteBoolValue("search_engine_crawler_bypass", SearchEngineCrawlerBypass);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

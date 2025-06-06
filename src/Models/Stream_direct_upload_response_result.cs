@@ -15,20 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion? ScheduledDeletion { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion ScheduledDeletion { get; set; }
-#endif
+        public DateTimeOffset? ScheduledDeletion { get; set; }
         /// <summary>A Cloudflare-generated unique identifier for a media item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier? Uid { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier Uid { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>The URL an unauthenticated upload can use for a single `HTTP POST multipart/form-data` request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,8 +65,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scheduledDeletion", n => { ScheduledDeletion = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion.CreateFromDiscriminatorValue); } },
-                { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier.CreateFromDiscriminatorValue); } },
+                { "scheduledDeletion", n => { ScheduledDeletion = n.GetDateTimeOffsetValue(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
                 { "uploadURL", n => { UploadURL = n.GetStringValue(); } },
                 { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarks>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarks.CreateFromDiscriminatorValue); } },
             };
@@ -84,8 +78,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion>("scheduledDeletion", ScheduledDeletion);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_identifier>("uid", Uid);
+            writer.WriteDateTimeOffsetValue("scheduledDeletion", ScheduledDeletion);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("uploadURL", UploadURL);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarks>("watermark", Watermark);
             writer.WriteAdditionalData(AdditionalData);

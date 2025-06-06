@@ -118,15 +118,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuesRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("dismissed")]
-            public string? Dismissed { get; set; }
-#nullable restore
-#else
-            [QueryParameter("dismissed")]
-            public string Dismissed { get; set; }
-#endif
+            public bool? Dismissed { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_class")]
@@ -145,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
             [QueryParameter("issue_class%7Eneq")]
             public string[] IssueClassNeq { get; set; }
 #endif
+            [Obsolete("This property is deprecated, use IssueTypeAsSecurityCenterIssueType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type")]
@@ -156,12 +150,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("issue_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeAsSecurityCenterIssueType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeAsSecurityCenterIssueType { get; set; }
+#endif
+            [Obsolete("This property is deprecated, use IssueTypeNeqAsSecurityCenterIssueType instead")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("issue_type%7Eneq")]
             public string[]? IssueTypeNeq { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type%7Eneq")]
             public string[] IssueTypeNeq { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("issue_type%7Eneq")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeNeqAsSecurityCenterIssueType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("issue_type%7Eneq")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeNeqAsSecurityCenterIssueType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

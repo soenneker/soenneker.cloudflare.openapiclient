@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IP Prefix in Classless Inter-Domain Routing format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr? Cidr { get; set; }
+        public string? Cidr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr Cidr { get; set; }
+        public string Cidr { get; set; }
 #endif
         /// <summary>Account identifier for the account to which prefix is being delegated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier? DelegatedAccountId { get; set; }
+        public string? DelegatedAccountId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier DelegatedAccountId { get; set; }
+        public string DelegatedAccountId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_prefix_delegation_create_prefix_delegation_RequestBody_application_json"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cidr", n => { Cidr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr.CreateFromDiscriminatorValue); } },
-                { "delegated_account_id", n => { DelegatedAccountId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier.CreateFromDiscriminatorValue); } },
+                { "cidr", n => { Cidr = n.GetStringValue(); } },
+                { "delegated_account_id", n => { DelegatedAccountId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>("cidr", Cidr);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_delegated_account_identifier>("delegated_account_id", DelegatedAccountId);
+            writer.WriteStringValue("cidr", Cidr);
+            writer.WriteStringValue("delegated_account_id", DelegatedAccountId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

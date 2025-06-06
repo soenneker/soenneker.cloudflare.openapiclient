@@ -17,27 +17,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Comma-separated list of fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields? Fields { get; set; }
+        public string? Fields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields Fields { get; set; }
+        public string Fields { get; set; }
 #endif
         /// <summary>Filters to drill down into specific events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter? Filter { get; set; }
+        public string? Filter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter Filter { get; set; }
+        public string Filter { get; set; }
 #endif
         /// <summary>The sample parameter is the sample rate of the records set by the client: &quot;sample&quot;: 1 is 100% of records &quot;sample&quot;: 10 is 10% and so on.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample? Sample { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample Sample { get; set; }
-#endif
+        public int? Sample { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_zones_zone_id_logpush_edge_jobs_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -63,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields.CreateFromDiscriminatorValue); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter.CreateFromDiscriminatorValue); } },
-                { "sample", n => { Sample = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample.CreateFromDiscriminatorValue); } },
+                { "fields", n => { Fields = n.GetStringValue(); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
+                { "sample", n => { Sample = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_fields>("fields", Fields);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_schemasFilter>("filter", Filter);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_sample>("sample", Sample);
+            writer.WriteStringValue("fields", Fields);
+            writer.WriteStringValue("filter", Filter);
+            writer.WriteIntValue("sample", Sample);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

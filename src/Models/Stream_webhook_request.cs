@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The URL where webhooks will be sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_notificationUrl? NotificationUrl { get; set; }
+        public string? NotificationUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_notificationUrl NotificationUrl { get; set; }
+        public string NotificationUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_webhook_request"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "notificationUrl", n => { NotificationUrl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_notificationUrl>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_notificationUrl.CreateFromDiscriminatorValue); } },
+                { "notificationUrl", n => { NotificationUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_notificationUrl>("notificationUrl", NotificationUrl);
+            writer.WriteStringValue("notificationUrl", NotificationUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

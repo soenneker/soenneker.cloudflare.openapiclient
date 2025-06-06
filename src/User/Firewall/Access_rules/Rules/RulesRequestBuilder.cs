@@ -190,6 +190,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
 #endif
             [QueryParameter("match")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_list_ip_access_rules_Param_match? MatchAsIpAccessRulesForAUserListIpAccessRulesParamMatch { get; set; }
+            [Obsolete("This property is deprecated, use ModeAsFirewallSchemasMode instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mode")]
@@ -199,6 +200,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
             [QueryParameter("mode")]
             public string Mode { get; set; }
 #endif
+            [QueryParameter("mode")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? ModeAsFirewallSchemasMode { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("notes")]

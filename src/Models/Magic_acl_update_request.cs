@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The desired forwarding action for this ACL policy. If set to &quot;false&quot;, the policy will forward traffic to Cloudflare. If set to &quot;true&quot;, the policy will forward traffic locally on the Magic Connector. If not included in request, will default to false.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_forward_locally? ForwardLocally { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_forward_locally ForwardLocally { get; set; }
-#endif
+        public bool? ForwardLocally { get; set; }
         /// <summary>The lan_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,13 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_acl_update_request_protocols?> Protocols { get; set; }
 #endif
         /// <summary>The desired traffic direction for this ACL policy. If set to &quot;false&quot;, the policy will allow bidirectional traffic. If set to &quot;true&quot;, the policy will only allow traffic in one direction. If not included in request, will default to false.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_unidirectional? Unidirectional { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_unidirectional Unidirectional { get; set; }
-#endif
+        public bool? Unidirectional { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_acl_update_request"/> and sets the default values.
         /// </summary>
@@ -96,12 +84,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "forward_locally", n => { ForwardLocally = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_forward_locally>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_forward_locally.CreateFromDiscriminatorValue); } },
+                { "forward_locally", n => { ForwardLocally = n.GetBoolValue(); } },
                 { "lan_1", n => { Lan1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration.CreateFromDiscriminatorValue); } },
                 { "lan_2", n => { Lan2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "protocols", n => { Protocols = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_acl_update_request_protocols>()?.AsList(); } },
-                { "unidirectional", n => { Unidirectional = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_unidirectional>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_unidirectional.CreateFromDiscriminatorValue); } },
+                { "unidirectional", n => { Unidirectional = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -112,12 +100,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_forward_locally>("forward_locally", ForwardLocally);
+            writer.WriteBoolValue("forward_locally", ForwardLocally);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>("lan_1", Lan1);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>("lan_2", Lan2);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_acl_update_request_protocols>("protocols", Protocols);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_unidirectional>("unidirectional", Unidirectional);
+            writer.WriteBoolValue("unidirectional", Unidirectional);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -34,10 +34,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Snippet identifying name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_snippet_name? SnippetName { get; set; }
+        public string? SnippetName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_snippet_name SnippetName { get; set; }
+        public string SnippetName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_snippet"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
-                { "snippet_name", n => { SnippetName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_snippet_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_snippet_name.CreateFromDiscriminatorValue); } },
+                { "snippet_name", n => { SnippetName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_on", CreatedOn);
             writer.WriteStringValue("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_snippet_name>("snippet_name", SnippetName);
+            writer.WriteStringValue("snippet_name", SnippetName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

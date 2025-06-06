@@ -97,6 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         public partial class SubnetsRequestBuilderGetQueryParameters 
         {
             /// <summary>If set, only include subnets in the given address family - `v4` or `v6`</summary>
+            [Obsolete("This property is deprecated, use AddressFamilyAsTunnelAddressFamily instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("address_family")]
@@ -106,6 +107,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             [QueryParameter("address_family")]
             public string AddressFamily { get; set; }
 #endif
+            /// <summary>If set, only include subnets in the given address family - `v4` or `v6`</summary>
+            [QueryParameter("address_family")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_address_family? AddressFamilyAsTunnelAddressFamily { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("comment")]
@@ -147,24 +151,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             [QueryParameter("network")]
             public string Network { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("page")]
-            public string? Page { get; set; }
-#nullable restore
-#else
-            [QueryParameter("page")]
-            public string Page { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public double? Page { get; set; }
             [QueryParameter("per_page")]
-            public string? PerPage { get; set; }
-#nullable restore
-#else
-            [QueryParameter("per_page")]
-            public string PerPage { get; set; }
-#endif
+            public double? PerPage { get; set; }
             [Obsolete("This property is deprecated, use SortOrderAsZeroTrustNetworksSubnetsListParamSortOrder instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

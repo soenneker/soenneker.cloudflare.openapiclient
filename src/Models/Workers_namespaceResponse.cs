@@ -17,59 +17,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier? CreatedBy { get; set; }
+        public string? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier CreatedBy { get; set; }
+        public string CreatedBy { get; set; }
 #endif
         /// <summary>When the script was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on? CreatedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on CreatedOn { get; set; }
-#endif
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier? ModifiedBy { get; set; }
+        public string? ModifiedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier ModifiedBy { get; set; }
+        public string ModifiedBy { get; set; }
 #endif
         /// <summary>When the script was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on ModifiedOn { get; set; }
-#endif
+        public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_uuid? NamespaceId { get; set; }
+        public string? NamespaceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_uuid NamespaceId { get; set; }
+        public string NamespaceId { get; set; }
 #endif
         /// <summary>Name of the Workers for Platforms dispatch namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name? NamespaceName { get; set; }
+        public string? NamespaceName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name NamespaceName { get; set; }
+        public string NamespaceName { get; set; }
 #endif
         /// <summary>The current number of scripts in this Dispatch Namespace.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_count? ScriptCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_count ScriptCount { get; set; }
-#endif
+        public int? ScriptCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespaceResponse"/> and sets the default values.
         /// </summary>
@@ -95,13 +77,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_by", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier.CreateFromDiscriminatorValue); } },
-                { "created_on", n => { CreatedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on.CreateFromDiscriminatorValue); } },
-                { "modified_by", n => { ModifiedBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier.CreateFromDiscriminatorValue); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on.CreateFromDiscriminatorValue); } },
-                { "namespace_id", n => { NamespaceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_uuid.CreateFromDiscriminatorValue); } },
-                { "namespace_name", n => { NamespaceName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name.CreateFromDiscriminatorValue); } },
-                { "script_count", n => { ScriptCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_count.CreateFromDiscriminatorValue); } },
+                { "created_by", n => { CreatedBy = n.GetStringValue(); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "modified_by", n => { ModifiedBy = n.GetStringValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "namespace_id", n => { NamespaceId = n.GetStringValue(); } },
+                { "namespace_name", n => { NamespaceName = n.GetStringValue(); } },
+                { "script_count", n => { ScriptCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier>("created_by", CreatedBy);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_created_on>("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_identifier>("modified_by", ModifiedBy);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_modified_on>("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_uuid>("namespace_id", NamespaceId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_dispatch_namespace_name>("namespace_name", NamespaceName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_count>("script_count", ScriptCount);
+            writer.WriteStringValue("created_by", CreatedBy);
+            writer.WriteStringValue("modified_by", ModifiedBy);
+            writer.WriteStringValue("namespace_id", NamespaceId);
+            writer.WriteStringValue("namespace_name", NamespaceName);
+            writer.WriteIntValue("script_count", ScriptCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

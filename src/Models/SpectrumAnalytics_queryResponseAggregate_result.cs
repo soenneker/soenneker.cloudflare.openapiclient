@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The appID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_identifier? AppID { get; set; }
+        public string? AppID { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_identifier AppID { get; set; }
+        public string AppID { get; set; }
 #endif
         /// <summary>Number of bytes sent</summary>
         public double? BytesEgress { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appID", n => { AppID = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_identifier.CreateFromDiscriminatorValue); } },
+                { "appID", n => { AppID = n.GetStringValue(); } },
                 { "bytesEgress", n => { BytesEgress = n.GetDoubleValue(); } },
                 { "bytesIngress", n => { BytesIngress = n.GetDoubleValue(); } },
                 { "connections", n => { Connections = n.GetDoubleValue(); } },
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_identifier>("appID", AppID);
+            writer.WriteStringValue("appID", AppID);
             writer.WriteDoubleValue("bytesEgress", BytesEgress);
             writer.WriteDoubleValue("bytesIngress", BytesIngress);
             writer.WriteDoubleValue("connections", Connections);

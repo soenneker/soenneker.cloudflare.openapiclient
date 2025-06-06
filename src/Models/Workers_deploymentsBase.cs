@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_deployment_identifier? Id { get; private set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_deployment_identifier Id { get; private set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_deploymentsBase_annotations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_deploymentsBase_annotations.CreateFromDiscriminatorValue); } },
                 { "author_email", n => { AuthorEmail = n.GetStringValue(); } },
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_deployment_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_deployment_identifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "strategy", n => { Strategy = n.GetStringValue(); } },
             };

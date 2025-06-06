@@ -25,21 +25,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user-defined identifier for the media creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator? Creator { get; set; }
+        public string? Creator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator Creator { get; set; }
+        public string Creator { get; set; }
 #endif
         /// <summary>The date and time after upload when videos will not be accepted.</summary>
         public DateTimeOffset? Expiry { get; set; }
         /// <summary>The maximum duration in seconds for a video upload. Can be set for a video that is not yet uploaded to limit its duration. Uploads that exceed the specified duration will fail during processing. A value of `-1` means the value is unknown.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds? MaxDurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds MaxDurationSeconds { get; set; }
-#endif
+        public int? MaxDurationSeconds { get; set; }
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,29 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata Meta { get; set; }
 #endif
         /// <summary>Indicates whether the video can be a accessed using the UID. When set to `true`, a signed token must be generated with a signing key to view the video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs? RequireSignedURLs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs RequireSignedURLs { get; set; }
-#endif
+        public bool? RequireSignedURLs { get; set; }
         /// <summary>Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion? ScheduledDeletion { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion ScheduledDeletion { get; set; }
-#endif
+        public DateTimeOffset? ScheduledDeletion { get; set; }
         /// <summary>The timestamp for a thumbnail image calculated as a percentage value of the video&apos;s duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct? ThumbnailTimestampPct { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct ThumbnailTimestampPct { get; set; }
-#endif
+        public double? ThumbnailTimestampPct { get; set; }
         /// <summary>The watermark property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,13 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "creator", n => { Creator = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator.CreateFromDiscriminatorValue); } },
+                { "creator", n => { Creator = n.GetStringValue(); } },
                 { "expiry", n => { Expiry = n.GetDateTimeOffsetValue(); } },
-                { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds.CreateFromDiscriminatorValue); } },
+                { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata.CreateFromDiscriminatorValue); } },
-                { "requireSignedURLs", n => { RequireSignedURLs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs.CreateFromDiscriminatorValue); } },
-                { "scheduledDeletion", n => { ScheduledDeletion = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion.CreateFromDiscriminatorValue); } },
-                { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct.CreateFromDiscriminatorValue); } },
+                { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
+                { "scheduledDeletion", n => { ScheduledDeletion = n.GetDateTimeOffsetValue(); } },
+                { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetDoubleValue(); } },
                 { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_at_upload>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_at_upload.CreateFromDiscriminatorValue); } },
             };
         }
@@ -125,13 +101,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_creator>("creator", Creator);
+            writer.WriteStringValue("creator", Creator);
             writer.WriteDateTimeOffsetValue("expiry", Expiry);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_maxDurationSeconds>("maxDurationSeconds", MaxDurationSeconds);
+            writer.WriteIntValue("maxDurationSeconds", MaxDurationSeconds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_requireSignedURLs>("requireSignedURLs", RequireSignedURLs);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_scheduledDeletion>("scheduledDeletion", ScheduledDeletion);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_thumbnailTimestampPct>("thumbnailTimestampPct", ThumbnailTimestampPct);
+            writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
+            writer.WriteDateTimeOffsetValue("scheduledDeletion", ScheduledDeletion);
+            writer.WriteDoubleValue("thumbnailTimestampPct", ThumbnailTimestampPct);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermark_at_upload>("watermark", Watermark);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The queue_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName? QueueName { get; set; }
+        public string? QueueName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName QueueName { get; set; }
+        public string QueueName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Queues_create_RequestBody_application_json"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "queue_name", n => { QueueName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName.CreateFromDiscriminatorValue); } },
+                { "queue_name", n => { QueueName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueName>("queue_name", QueueName);
+            writer.WriteStringValue("queue_name", QueueName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

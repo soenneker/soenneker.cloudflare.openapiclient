@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Gateway internal ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_tag? GatewayTag { get; set; }
+        public string? GatewayTag { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_tag GatewayTag { get; set; }
+        public string GatewayTag { get; set; }
 #endif
         /// <summary>Cloudflare account ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_cf_account_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_cf_account_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The name of the provider. Usually Cloudflare.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_provider_name? ProviderName { get; set; }
+        public string? ProviderName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_provider_name ProviderName { get; set; }
+        public string ProviderName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_account_result"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "gateway_tag", n => { GatewayTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_tag.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_cf_account_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_cf_account_id.CreateFromDiscriminatorValue); } },
-                { "provider_name", n => { ProviderName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_provider_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_provider_name.CreateFromDiscriminatorValue); } },
+                { "gateway_tag", n => { GatewayTag = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "provider_name", n => { ProviderName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_tag>("gateway_tag", GatewayTag);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_cf_account_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_provider_name>("provider_name", ProviderName);
+            writer.WriteStringValue("gateway_tag", GatewayTag);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("provider_name", ProviderName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

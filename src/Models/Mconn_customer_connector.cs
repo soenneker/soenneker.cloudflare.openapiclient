@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_uuid? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_uuid Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The interrupt_window_duration_hours property</summary>
         public double? InterruptWindowDurationHours { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "activated", n => { Activated = n.GetBoolValue(); } },
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_uuid.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "interrupt_window_duration_hours", n => { InterruptWindowDurationHours = n.GetDoubleValue(); } },
                 { "interrupt_window_hour_of_day", n => { InterruptWindowHourOfDay = n.GetDoubleValue(); } },
                 { "last_heartbeat", n => { LastHeartbeat = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("activated", Activated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device>("device", Device);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_uuid>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("interrupt_window_duration_hours", InterruptWindowDurationHours);
             writer.WriteDoubleValue("interrupt_window_hour_of_day", InterruptWindowHourOfDay);
             writer.WriteStringValue("last_heartbeat", LastHeartbeat);

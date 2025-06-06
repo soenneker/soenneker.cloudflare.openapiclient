@@ -49,13 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source Source { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus Status { get; set; }
-#endif
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "overwrite", n => { Overwrite = n.GetBoolValue(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_target.CreateFromDiscriminatorValue); } },
             };
         }
@@ -110,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("overwrite", Overwrite);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source>("source", Source);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_target>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }

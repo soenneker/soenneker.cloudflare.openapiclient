@@ -15,77 +15,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The total number of auth-ids seen across this calculation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_auth_id_tokens? AuthIdTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_auth_id_tokens AuthIdTokens { get; set; }
-#endif
+        public int? AuthIdTokens { get; private set; }
         /// <summary>The number of data points used for the threshold suggestion calculation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_data_points? DataPoints { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_data_points DataPoints { get; set; }
-#endif
+        public int? DataPoints { get; private set; }
         /// <summary>The last_updated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_timestamp? LastUpdated { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_timestamp LastUpdated { get; set; }
-#endif
+        public DateTimeOffset? LastUpdated { get; set; }
         /// <summary>The p50 quantile of requests (in period_seconds).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p50? P50 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p50 P50 { get; set; }
-#endif
+        public int? P50 { get; private set; }
         /// <summary>The p90 quantile of requests (in period_seconds).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p90? P90 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p90 P90 { get; set; }
-#endif
+        public int? P90 { get; private set; }
         /// <summary>The p99 quantile of requests (in period_seconds).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p99? P99 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p99 P99 { get; set; }
-#endif
+        public int? P99 { get; private set; }
         /// <summary>The period over which this threshold is suggested.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_period_seconds? PeriodSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_period_seconds PeriodSeconds { get; set; }
-#endif
+        public int? PeriodSeconds { get; private set; }
         /// <summary>The estimated number of requests covered by these calculations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_requests? Requests { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_requests Requests { get; set; }
-#endif
+        public int? Requests { get; private set; }
         /// <summary>The suggested threshold in requests done by the same auth_id or period_seconds.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_suggested_threshold? SuggestedThreshold { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_suggested_threshold SuggestedThreshold { get; set; }
-#endif
+        public int? SuggestedThreshold { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_thresholds_thresholds"/> and sets the default values.
         /// </summary>
@@ -111,15 +57,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_id_tokens", n => { AuthIdTokens = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_auth_id_tokens>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_auth_id_tokens.CreateFromDiscriminatorValue); } },
-                { "data_points", n => { DataPoints = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_data_points>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_data_points.CreateFromDiscriminatorValue); } },
-                { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_timestamp.CreateFromDiscriminatorValue); } },
-                { "p50", n => { P50 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p50>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p50.CreateFromDiscriminatorValue); } },
-                { "p90", n => { P90 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p90>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p90.CreateFromDiscriminatorValue); } },
-                { "p99", n => { P99 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p99>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p99.CreateFromDiscriminatorValue); } },
-                { "period_seconds", n => { PeriodSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_period_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_period_seconds.CreateFromDiscriminatorValue); } },
-                { "requests", n => { Requests = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_requests>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_requests.CreateFromDiscriminatorValue); } },
-                { "suggested_threshold", n => { SuggestedThreshold = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_suggested_threshold>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_suggested_threshold.CreateFromDiscriminatorValue); } },
+                { "auth_id_tokens", n => { AuthIdTokens = n.GetIntValue(); } },
+                { "data_points", n => { DataPoints = n.GetIntValue(); } },
+                { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
+                { "p50", n => { P50 = n.GetIntValue(); } },
+                { "p90", n => { P90 = n.GetIntValue(); } },
+                { "p99", n => { P99 = n.GetIntValue(); } },
+                { "period_seconds", n => { PeriodSeconds = n.GetIntValue(); } },
+                { "requests", n => { Requests = n.GetIntValue(); } },
+                { "suggested_threshold", n => { SuggestedThreshold = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -129,15 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_auth_id_tokens>("auth_id_tokens", AuthIdTokens);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_data_points>("data_points", DataPoints);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_timestamp>("last_updated", LastUpdated);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p50>("p50", P50);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p90>("p90", P90);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_p99>("p99", P99);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_period_seconds>("period_seconds", PeriodSeconds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_requests>("requests", Requests);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_suggested_threshold>("suggested_threshold", SuggestedThreshold);
+            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

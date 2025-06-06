@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of vector identifiers to retrieve from the index indicated by the path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_vectorIdentifier>? Ids { get; set; }
+        public List<string>? Ids { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_vectorIdentifier> Ids { get; set; }
+        public List<string> Ids { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexGetVectorsByIdRequest"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ids", n => { Ids = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_vectorIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_vectorIdentifier.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_vectorIdentifier>("ids", Ids);
+            writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

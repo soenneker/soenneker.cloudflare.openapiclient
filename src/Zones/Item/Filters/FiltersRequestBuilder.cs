@@ -280,15 +280,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
 #endif
             [QueryParameter("page")]
             public double? Page { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("paused")]
-            public string? Paused { get; set; }
-#nullable restore
-#else
-            [QueryParameter("paused")]
-            public string Paused { get; set; }
-#endif
+            public bool? Paused { get; set; }
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

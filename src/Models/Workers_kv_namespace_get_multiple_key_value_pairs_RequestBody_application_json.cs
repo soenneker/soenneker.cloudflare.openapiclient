@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of keys to retrieve (maximum 100)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk>? Keys { get; set; }
+        public List<string>? Keys { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk> Keys { get; set; }
+        public List<string> Keys { get; set; }
 #endif
         /// <summary>Whether to parse JSON values in the response</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_RequestBody_application_json_type? Type { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keys", n => { Keys = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_RequestBody_application_json_type>(); } },
                 { "withMetadata", n => { WithMetadata = n.GetBoolValue(); } },
             };
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key_name_bulk>("keys", Keys);
+            writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_RequestBody_application_json_type>("type", Type);
             writer.WriteBoolValue("withMetadata", WithMetadata);
             writer.WriteAdditionalData(AdditionalData);

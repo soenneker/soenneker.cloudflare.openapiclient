@@ -13,13 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_auto_update_model? AutoUpdateModel { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_auto_update_model AutoUpdateModel { get; set; }
-#endif
+        public bool? AutoUpdateModel { get; set; }
         /// <summary>A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config_stale_zone_configuration StaleZoneConfiguration { get; private set; }
 #endif
         /// <summary>Whether to disable tracking the highest bot score for a session in the Bot Management cookie.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score? SuppressSessionScore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score SuppressSessionScore { get; set; }
-#endif
+        public bool? SuppressSessionScore { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -54,9 +42,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "auto_update_model", n => { AutoUpdateModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_auto_update_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_auto_update_model.CreateFromDiscriminatorValue); } },
+                { "auto_update_model", n => { AutoUpdateModel = n.GetBoolValue(); } },
                 { "stale_zone_configuration", n => { StaleZoneConfiguration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config_stale_zone_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config_stale_zone_configuration.CreateFromDiscriminatorValue); } },
-                { "suppress_session_score", n => { SuppressSessionScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score.CreateFromDiscriminatorValue); } },
+                { "suppress_session_score", n => { SuppressSessionScore = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -67,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_auto_update_model>("auto_update_model", AutoUpdateModel);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_suppress_session_score>("suppress_session_score", SuppressSessionScore);
+            writer.WriteBoolValue("auto_update_model", AutoUpdateModel);
+            writer.WriteBoolValue("suppress_session_score", SuppressSessionScore);
         }
     }
 }

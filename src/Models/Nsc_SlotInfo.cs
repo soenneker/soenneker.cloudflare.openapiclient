@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Customer account tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag? Account { get; set; }
+        public string? Account { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag Account { get; set; }
+        public string Account { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag.CreateFromDiscriminatorValue); } },
+                { "account", n => { Account = n.GetStringValue(); } },
                 { "facility", n => { Facility = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_FacilityInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_FacilityInfo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "occupied", n => { Occupied = n.GetBoolValue(); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_AccountTag>("account", Account);
+            writer.WriteStringValue("account", Account);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_FacilityInfo>("facility", Facility);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("occupied", Occupied);

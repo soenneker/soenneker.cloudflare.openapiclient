@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IP Prefix in Classless Inter-Domain Routing format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr? Cidr { get; set; }
+        public string? Cidr { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr Cidr { get; set; }
+        public string Cidr { get; set; }
 #endif
         /// <summary>Identifier of a Service on the Cloudflare network. Available services and their IDs may be found in the**List Services** endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_service_identifier? ServiceId { get; set; }
+        public string? ServiceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_service_identifier ServiceId { get; set; }
+        public string ServiceId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_create_binding_request"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cidr", n => { Cidr = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr.CreateFromDiscriminatorValue); } },
-                { "service_id", n => { ServiceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_service_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_service_identifier.CreateFromDiscriminatorValue); } },
+                { "cidr", n => { Cidr = n.GetStringValue(); } },
+                { "service_id", n => { ServiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_cidr>("cidr", Cidr);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_service_identifier>("service_id", ServiceId);
+            writer.WriteStringValue("cidr", Cidr);
+            writer.WriteStringValue("service_id", ServiceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

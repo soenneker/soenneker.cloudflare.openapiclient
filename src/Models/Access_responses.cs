@@ -47,13 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string IdpResourceId { get; set; }
 #endif
         /// <summary>The logged_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp? LoggedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp LoggedAt { get; set; }
-#endif
+        public DateTimeOffset? LoggedAt { get; set; }
         /// <summary>The JSON-encoded string body of the SCIM request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "error_description", n => { ErrorDescription = n.GetStringValue(); } },
                 { "idp_id", n => { IdpId = n.GetStringValue(); } },
                 { "idp_resource_id", n => { IdpResourceId = n.GetStringValue(); } },
-                { "logged_at", n => { LoggedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp.CreateFromDiscriminatorValue); } },
+                { "logged_at", n => { LoggedAt = n.GetDateTimeOffsetValue(); } },
                 { "request_body", n => { RequestBody = n.GetStringValue(); } },
                 { "request_method", n => { RequestMethod = n.GetStringValue(); } },
                 { "resource_group_name", n => { ResourceGroupName = n.GetStringValue(); } },
@@ -151,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("error_description", ErrorDescription);
             writer.WriteStringValue("idp_id", IdpId);
             writer.WriteStringValue("idp_resource_id", IdpResourceId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_timestamp>("logged_at", LoggedAt);
+            writer.WriteDateTimeOffsetValue("logged_at", LoggedAt);
             writer.WriteStringValue("request_body", RequestBody);
             writer.WriteStringValue("request_method", RequestMethod);
             writer.WriteStringValue("resource_group_name", ResourceGroupName);

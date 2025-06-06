@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline Result { get; set; }
 #endif
-        /// <summary>Indicates whether the API call was successful.</summary>
+        /// <summary>The success property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess? Success { get; set; }
+        public UntypedNode? Success { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess Success { get; set; }
+        public UntypedNode Success { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_Response_200_application_json"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline.CreateFromDiscriminatorValue); } },
-                { "success", n => { Success = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess.CreateFromDiscriminatorValue); } },
+                { "success", n => { Success = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess>("success", Success);
+            writer.WriteObjectValue<UntypedNode>("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

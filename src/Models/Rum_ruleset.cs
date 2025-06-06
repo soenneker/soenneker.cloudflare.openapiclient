@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Web Analytics ruleset identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The zone_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The zone identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag? ZoneTag { get; set; }
+        public string? ZoneTag { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag ZoneTag { get; set; }
+        public string ZoneTag { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset"/> and sets the default values.
@@ -66,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset_identifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "zone_name", n => { ZoneName = n.GetStringValue(); } },
-                { "zone_tag", n => { ZoneTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag.CreateFromDiscriminatorValue); } },
+                { "zone_tag", n => { ZoneTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_ruleset_identifier>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("zone_name", ZoneName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_zone_tag>("zone_tag", ZoneTag);
+            writer.WriteStringValue("zone_tag", ZoneTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

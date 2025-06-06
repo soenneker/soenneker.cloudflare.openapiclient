@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the number of dimensions for the index</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensions? Dimensions { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensions Dimensions { get; set; }
-#endif
+        public int? Dimensions { get; set; }
         /// <summary>Specifies the type of metric to use calculating distance.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric? Metric { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric Metric { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dimensions", n => { Dimensions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensions.CreateFromDiscriminatorValue); } },
-                { "metric", n => { Metric = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric.CreateFromDiscriminatorValue); } },
+                { "dimensions", n => { Dimensions = n.GetIntValue(); } },
+                { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>(); } },
             };
         }
         /// <summary>
@@ -66,8 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensions>("dimensions", Dimensions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>("metric", Metric);
+            writer.WriteIntValue("dimensions", Dimensions);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>("metric", Metric);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,36 +15,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time a signing key was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_signing_key_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_signing_key_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_schemasIdentifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_schemasIdentifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The signing key in JWK format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_jwk? Jwk { get; set; }
+        public string? Jwk { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_jwk Jwk { get; set; }
+        public string Jwk { get; set; }
 #endif
         /// <summary>The signing key in PEM format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pem? Pem { get; set; }
+        public string? Pem { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pem Pem { get; set; }
+        public string Pem { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_keys"/> and sets the default values.
@@ -71,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_signing_key_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_signing_key_created.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_schemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_schemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "jwk", n => { Jwk = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_jwk>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_jwk.CreateFromDiscriminatorValue); } },
-                { "pem", n => { Pem = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pem>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pem.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "jwk", n => { Jwk = n.GetStringValue(); } },
+                { "pem", n => { Pem = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_signing_key_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_schemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_jwk>("jwk", Jwk);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_pem>("pem", Pem);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("jwk", Jwk);
+            writer.WriteStringValue("pem", Pem);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

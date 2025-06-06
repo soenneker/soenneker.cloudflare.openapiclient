@@ -15,69 +15,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to allow devices to leave the organization.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allowed_to_leave? AllowedToLeave { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allowed_to_leave AllowedToLeave { get; set; }
-#endif
+        public bool? AllowedToLeave { get; set; }
         /// <summary>Whether to allow the user to switch WARP between modes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_mode_switch? AllowModeSwitch { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_mode_switch AllowModeSwitch { get; set; }
-#endif
+        public bool? AllowModeSwitch { get; set; }
         /// <summary>Whether to receive update notifications when a new version of the client is available.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_updates? AllowUpdates { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_updates AllowUpdates { get; set; }
-#endif
+        public bool? AllowUpdates { get; set; }
         /// <summary>The amount of time in seconds to reconnect after having been disabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_auto_connect? AutoConnect { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_auto_connect AutoConnect { get; set; }
-#endif
+        public double? AutoConnect { get; set; }
         /// <summary>Turn on the captive portal after the specified amount of time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_captive_portal? CaptivePortal { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_captive_portal CaptivePortal { get; set; }
-#endif
+        public double? CaptivePortal { get; set; }
         /// <summary>Whether the policy is the default policy for an account.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_default? Default { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_default Default { get; set; }
-#endif
+        public bool? Default { get; set; }
         /// <summary>A description of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disable_auto_fallback? DisableAutoFallback { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disable_auto_fallback DisableAutoFallback { get; set; }
-#endif
+        public bool? DisableAutoFallback { get; set; }
         /// <summary>Whether the policy will be applied to matching devices.</summary>
         public bool? Enabled { get; set; }
         /// <summary>List of routes excluded in the WARP client&apos;s tunnel.</summary>
@@ -89,13 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel> Exclude { get; set; }
 #endif
         /// <summary>Whether to add Microsoft IPs to Split Tunnel exclusions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_office_ips? ExcludeOfficeIps { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_office_ips ExcludeOfficeIps { get; set; }
-#endif
+        public bool? ExcludeOfficeIps { get; set; }
         /// <summary>The fallback_domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,10 +59,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The gateway_unique_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_unique_id? GatewayUniqueId { get; set; }
+        public string? GatewayUniqueId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_unique_id GatewayUniqueId { get; set; }
+        public string GatewayUniqueId { get; set; }
 #endif
         /// <summary>List of routes included in the WARP client&apos;s tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,28 +73,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel_include> Include { get; set; }
 #endif
         /// <summary>The amount of time in minutes a user is allowed access to their LAN. A value of 0 will allow LAN access until the next WARP reconnection, such as a reboot or a laptop waking from sleep. Note that this field is omitted from the response if null or unset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_minutes? LanAllowMinutes { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_minutes LanAllowMinutes { get; set; }
-#endif
+        public double? LanAllowMinutes { get; set; }
         /// <summary>The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_subnet_size? LanAllowSubnetSize { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_subnet_size LanAllowSubnetSize { get; set; }
-#endif
+        public double? LanAllowSubnetSize { get; set; }
         /// <summary>The wirefilter expression to match devices. Available values: &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.service_token_uuid&quot;, &quot;identity.saml_attributes&quot;, &quot;network&quot;, &quot;os.name&quot;, &quot;os.version&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasMatch? Match { get; set; }
+        public string? Match { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasMatch Match { get; set; }
+        public string Match { get; set; }
 #endif
         /// <summary>The name of the device settings profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,35 +95,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The policy_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasUuid? PolicyId { get; set; }
+        public string? PolicyId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasUuid PolicyId { get; set; }
+        public string PolicyId { get; set; }
 #endif
         /// <summary>The precedence of the policy. Lower values indicate higher precedence. Policies will be evaluated in ascending order of this field.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_precedence? Precedence { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_precedence Precedence { get; set; }
-#endif
+        public double? Precedence { get; set; }
         /// <summary>Determines if the operating system will register WARP&apos;s local interface IP with your on-premises DNS server.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_register_interface_ip_with_dns? RegisterInterfaceIpWithDns { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_register_interface_ip_with_dns RegisterInterfaceIpWithDns { get; set; }
-#endif
+        public bool? RegisterInterfaceIpWithDns { get; set; }
         /// <summary>Determines whether the WARP client indicates to SCCM that it is inside a VPN boundary. (Windows only).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sccm_vpn_boundary_support? SccmVpnBoundarySupport { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sccm_vpn_boundary_support SccmVpnBoundarySupport { get; set; }
-#endif
+        public bool? SccmVpnBoundarySupport { get; set; }
         /// <summary>The service_mode_v2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -195,19 +117,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The URL to launch when the Send Feedback button is clicked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_support_url? SupportUrl { get; set; }
+        public string? SupportUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_support_url SupportUrl { get; set; }
+        public string SupportUrl { get; set; }
 #endif
         /// <summary>Whether to allow the user to turn off the WARP switch and disconnect the client.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_switch_locked? SwitchLocked { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_switch_locked SwitchLocked { get; set; }
-#endif
+        public bool? SwitchLocked { get; set; }
         /// <summary>The target_tests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -219,10 +135,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Determines which tunnel protocol to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_protocol? TunnelProtocol { get; set; }
+        public string? TunnelProtocol { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_protocol TunnelProtocol { get; set; }
+        public string TunnelProtocol { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_policy"/> and sets the default values.
@@ -249,33 +165,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_mode_switch", n => { AllowModeSwitch = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_mode_switch>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_mode_switch.CreateFromDiscriminatorValue); } },
-                { "allow_updates", n => { AllowUpdates = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_updates>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_updates.CreateFromDiscriminatorValue); } },
-                { "allowed_to_leave", n => { AllowedToLeave = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allowed_to_leave>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allowed_to_leave.CreateFromDiscriminatorValue); } },
-                { "auto_connect", n => { AutoConnect = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_auto_connect>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_auto_connect.CreateFromDiscriminatorValue); } },
-                { "captive_portal", n => { CaptivePortal = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_captive_portal>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_captive_portal.CreateFromDiscriminatorValue); } },
-                { "default", n => { Default = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_default>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_default.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasDescription>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasDescription.CreateFromDiscriminatorValue); } },
-                { "disable_auto_fallback", n => { DisableAutoFallback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disable_auto_fallback>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disable_auto_fallback.CreateFromDiscriminatorValue); } },
+                { "allow_mode_switch", n => { AllowModeSwitch = n.GetBoolValue(); } },
+                { "allow_updates", n => { AllowUpdates = n.GetBoolValue(); } },
+                { "allowed_to_leave", n => { AllowedToLeave = n.GetBoolValue(); } },
+                { "auto_connect", n => { AutoConnect = n.GetDoubleValue(); } },
+                { "captive_portal", n => { CaptivePortal = n.GetDoubleValue(); } },
+                { "default", n => { Default = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "disable_auto_fallback", n => { DisableAutoFallback = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "exclude_office_ips", n => { ExcludeOfficeIps = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_office_ips>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_office_ips.CreateFromDiscriminatorValue); } },
+                { "exclude_office_ips", n => { ExcludeOfficeIps = n.GetBoolValue(); } },
                 { "fallback_domains", n => { FallbackDomains = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "gateway_unique_id", n => { GatewayUniqueId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_unique_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_unique_id.CreateFromDiscriminatorValue); } },
+                { "gateway_unique_id", n => { GatewayUniqueId = n.GetStringValue(); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel_include>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel_include.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "lan_allow_minutes", n => { LanAllowMinutes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_minutes>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_minutes.CreateFromDiscriminatorValue); } },
-                { "lan_allow_subnet_size", n => { LanAllowSubnetSize = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_subnet_size>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_subnet_size.CreateFromDiscriminatorValue); } },
-                { "match", n => { Match = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasMatch>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasMatch.CreateFromDiscriminatorValue); } },
+                { "lan_allow_minutes", n => { LanAllowMinutes = n.GetDoubleValue(); } },
+                { "lan_allow_subnet_size", n => { LanAllowSubnetSize = n.GetDoubleValue(); } },
+                { "match", n => { Match = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "policy_id", n => { PolicyId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasUuid.CreateFromDiscriminatorValue); } },
-                { "precedence", n => { Precedence = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_precedence>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_precedence.CreateFromDiscriminatorValue); } },
-                { "register_interface_ip_with_dns", n => { RegisterInterfaceIpWithDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_register_interface_ip_with_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_register_interface_ip_with_dns.CreateFromDiscriminatorValue); } },
-                { "sccm_vpn_boundary_support", n => { SccmVpnBoundarySupport = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sccm_vpn_boundary_support>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sccm_vpn_boundary_support.CreateFromDiscriminatorValue); } },
+                { "policy_id", n => { PolicyId = n.GetStringValue(); } },
+                { "precedence", n => { Precedence = n.GetDoubleValue(); } },
+                { "register_interface_ip_with_dns", n => { RegisterInterfaceIpWithDns = n.GetBoolValue(); } },
+                { "sccm_vpn_boundary_support", n => { SccmVpnBoundarySupport = n.GetBoolValue(); } },
                 { "service_mode_v2", n => { ServiceModeV2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_service_mode_v2>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_service_mode_v2.CreateFromDiscriminatorValue); } },
-                { "support_url", n => { SupportUrl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_support_url>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_support_url.CreateFromDiscriminatorValue); } },
-                { "switch_locked", n => { SwitchLocked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_switch_locked>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_switch_locked.CreateFromDiscriminatorValue); } },
+                { "support_url", n => { SupportUrl = n.GetStringValue(); } },
+                { "switch_locked", n => { SwitchLocked = n.GetBoolValue(); } },
                 { "target_tests", n => { TargetTests = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_target_dex_test>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_target_dex_test.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tunnel_protocol", n => { TunnelProtocol = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_protocol>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_protocol.CreateFromDiscriminatorValue); } },
+                { "tunnel_protocol", n => { TunnelProtocol = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -285,33 +201,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allowed_to_leave>("allowed_to_leave", AllowedToLeave);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_mode_switch>("allow_mode_switch", AllowModeSwitch);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_allow_updates>("allow_updates", AllowUpdates);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_auto_connect>("auto_connect", AutoConnect);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_captive_portal>("captive_portal", CaptivePortal);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_default>("default", Default);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disable_auto_fallback>("disable_auto_fallback", DisableAutoFallback);
+            writer.WriteBoolValue("allowed_to_leave", AllowedToLeave);
+            writer.WriteBoolValue("allow_mode_switch", AllowModeSwitch);
+            writer.WriteBoolValue("allow_updates", AllowUpdates);
+            writer.WriteDoubleValue("auto_connect", AutoConnect);
+            writer.WriteDoubleValue("captive_portal", CaptivePortal);
+            writer.WriteBoolValue("default", Default);
+            writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("disable_auto_fallback", DisableAutoFallback);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel>("exclude", Exclude);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_office_ips>("exclude_office_ips", ExcludeOfficeIps);
+            writer.WriteBoolValue("exclude_office_ips", ExcludeOfficeIps);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain>("fallback_domains", FallbackDomains);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_gateway_unique_id>("gateway_unique_id", GatewayUniqueId);
+            writer.WriteStringValue("gateway_unique_id", GatewayUniqueId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel_include>("include", Include);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_minutes>("lan_allow_minutes", LanAllowMinutes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_lan_allow_subnet_size>("lan_allow_subnet_size", LanAllowSubnetSize);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasMatch>("match", Match);
+            writer.WriteDoubleValue("lan_allow_minutes", LanAllowMinutes);
+            writer.WriteDoubleValue("lan_allow_subnet_size", LanAllowSubnetSize);
+            writer.WriteStringValue("match", Match);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasUuid>("policy_id", PolicyId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_precedence>("precedence", Precedence);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_register_interface_ip_with_dns>("register_interface_ip_with_dns", RegisterInterfaceIpWithDns);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sccm_vpn_boundary_support>("sccm_vpn_boundary_support", SccmVpnBoundarySupport);
+            writer.WriteStringValue("policy_id", PolicyId);
+            writer.WriteDoubleValue("precedence", Precedence);
+            writer.WriteBoolValue("register_interface_ip_with_dns", RegisterInterfaceIpWithDns);
+            writer.WriteBoolValue("sccm_vpn_boundary_support", SccmVpnBoundarySupport);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_service_mode_v2>("service_mode_v2", ServiceModeV2);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_support_url>("support_url", SupportUrl);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_switch_locked>("switch_locked", SwitchLocked);
+            writer.WriteStringValue("support_url", SupportUrl);
+            writer.WriteBoolValue("switch_locked", SwitchLocked);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_target_dex_test>("target_tests", TargetTests);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tunnel_protocol>("tunnel_protocol", TunnelProtocol);
+            writer.WriteStringValue("tunnel_protocol", TunnelProtocol);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

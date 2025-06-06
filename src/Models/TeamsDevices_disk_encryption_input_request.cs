@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> CheckDisks { get; set; }
 #endif
         /// <summary>Whether to check all disks for encryption.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_requireAll? RequireAll { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_requireAll RequireAll { get; set; }
-#endif
+        public bool? RequireAll { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disk_encryption_input_request"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "checkDisks", n => { CheckDisks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "requireAll", n => { RequireAll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_requireAll>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_requireAll.CreateFromDiscriminatorValue); } },
+                { "requireAll", n => { RequireAll = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("checkDisks", CheckDisks);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_requireAll>("requireAll", RequireAll);
+            writer.WriteBoolValue("requireAll", RequireAll);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

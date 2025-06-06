@@ -15,53 +15,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the destination address has been created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; private set; }
         /// <summary>The contact email address of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email? Email { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email Email { get; set; }
+        public string Email { get; set; }
 #endif
         /// <summary>Destination address identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_identifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_identifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>The date and time the destination address was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; private set; }
         /// <summary>Destination address tag. (Deprecated, replaced by destination address identifier)</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_tag? Tag { get; set; }
+        public string? Tag { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_tag Tag { get; set; }
+        public string Tag { get; private set; }
 #endif
         /// <summary>The date and time the destination address has been verified. Null means not verified yet.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_verified? Verified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_verified Verified { get; set; }
-#endif
+        public DateTimeOffset? Verified { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_addresses"/> and sets the default values.
         /// </summary>
@@ -87,12 +70,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_created.CreateFromDiscriminatorValue); } },
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_identifier.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_modified.CreateFromDiscriminatorValue); } },
-                { "tag", n => { Tag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_tag.CreateFromDiscriminatorValue); } },
-                { "verified", n => { Verified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_verified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_verified.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "tag", n => { Tag = n.GetStringValue(); } },
+                { "verified", n => { Verified = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email>("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_modified>("modified", Modified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_destination_address_tag>("tag", Tag);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_verified>("verified", Verified);
+            writer.WriteStringValue("email", Email);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,19 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Indicates whether the variant can access an image without a signature, regardless of image access control.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_neverRequireSignedURLs? NeverRequireSignedURLs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_neverRequireSignedURLs NeverRequireSignedURLs { get; set; }
-#endif
+        public bool? NeverRequireSignedURLs { get; set; }
         /// <summary>Allows you to define image resizing sizes for different use cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,8 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_identifier.CreateFromDiscriminatorValue); } },
-                { "neverRequireSignedURLs", n => { NeverRequireSignedURLs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_neverRequireSignedURLs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_neverRequireSignedURLs.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "neverRequireSignedURLs", n => { NeverRequireSignedURLs = n.GetBoolValue(); } },
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_options.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,8 +69,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_identifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_neverRequireSignedURLs>("neverRequireSignedURLs", NeverRequireSignedURLs);
+            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("neverRequireSignedURLs", NeverRequireSignedURLs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_options>("options", Options);
             writer.WriteAdditionalData(AdditionalData);
         }

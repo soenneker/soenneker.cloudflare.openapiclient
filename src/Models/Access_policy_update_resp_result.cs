@@ -17,83 +17,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The UUID of the policy test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_test_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_test_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The percentage of (processed) users approved based on policy evaluation results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_approved? PercentApproved { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_approved PercentApproved { get; set; }
-#endif
+        public int? PercentApproved { get; set; }
         /// <summary>The percentage of (processed) users blocked based on policy evaluation results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked? PercentBlocked { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked PercentBlocked { get; set; }
-#endif
+        public int? PercentBlocked { get; set; }
         /// <summary>The percentage of (processed) users errored based on policy evaluation results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored? PercentErrored { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored PercentErrored { get; set; }
-#endif
+        public int? PercentErrored { get; set; }
         /// <summary>The percentage of users processed so far (of the entire user base).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed? PercentUsersProcessed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed PercentUsersProcessed { get; set; }
-#endif
+        public int? PercentUsersProcessed { get; set; }
         /// <summary>The status of the policy test.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status Status { get; set; }
-#endif
         /// <summary>The total number of users in the user base.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users? TotalUsers { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users TotalUsers { get; set; }
-#endif
+        public int? TotalUsers { get; set; }
         /// <summary>The number of (processed) users approved based on policy evaluation results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved? UsersApproved { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved UsersApproved { get; set; }
-#endif
+        public int? UsersApproved { get; set; }
         /// <summary>The number of (processed) users blocked based on policy evaluation results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked? UsersBlocked { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked UsersBlocked { get; set; }
-#endif
+        public int? UsersBlocked { get; set; }
         /// <summary>The number of (processed) users errored based on policy evaluation results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_errored? UsersErrored { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_errored UsersErrored { get; set; }
-#endif
+        public int? UsersErrored { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_update_resp_result"/> and sets the default values.
         /// </summary>
@@ -119,16 +65,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_test_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_test_id.CreateFromDiscriminatorValue); } },
-                { "percent_approved", n => { PercentApproved = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_approved>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_approved.CreateFromDiscriminatorValue); } },
-                { "percent_blocked", n => { PercentBlocked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked.CreateFromDiscriminatorValue); } },
-                { "percent_errored", n => { PercentErrored = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored.CreateFromDiscriminatorValue); } },
-                { "percent_users_processed", n => { PercentUsersProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status.CreateFromDiscriminatorValue); } },
-                { "total_users", n => { TotalUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users.CreateFromDiscriminatorValue); } },
-                { "users_approved", n => { UsersApproved = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved.CreateFromDiscriminatorValue); } },
-                { "users_blocked", n => { UsersBlocked = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked.CreateFromDiscriminatorValue); } },
-                { "users_errored", n => { UsersErrored = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_errored>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_errored.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "percent_approved", n => { PercentApproved = n.GetIntValue(); } },
+                { "percent_blocked", n => { PercentBlocked = n.GetIntValue(); } },
+                { "percent_errored", n => { PercentErrored = n.GetIntValue(); } },
+                { "percent_users_processed", n => { PercentUsersProcessed = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>(); } },
+                { "total_users", n => { TotalUsers = n.GetIntValue(); } },
+                { "users_approved", n => { UsersApproved = n.GetIntValue(); } },
+                { "users_blocked", n => { UsersBlocked = n.GetIntValue(); } },
+                { "users_errored", n => { UsersErrored = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -138,16 +84,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_test_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_approved>("percent_approved", PercentApproved);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_blocked>("percent_blocked", PercentBlocked);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_errored>("percent_errored", PercentErrored);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_percent_users_processed>("percent_users_processed", PercentUsersProcessed);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_total_users>("total_users", TotalUsers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_approved>("users_approved", UsersApproved);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_blocked>("users_blocked", UsersBlocked);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_errored>("users_errored", UsersErrored);
+            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("percent_approved", PercentApproved);
+            writer.WriteIntValue("percent_blocked", PercentBlocked);
+            writer.WriteIntValue("percent_errored", PercentErrored);
+            writer.WriteIntValue("percent_users_processed", PercentUsersProcessed);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>("status", Status);
+            writer.WriteIntValue("total_users", TotalUsers);
+            writer.WriteIntValue("users_approved", UsersApproved);
+            writer.WriteIntValue("users_blocked", UsersBlocked);
+            writer.WriteIntValue("users_errored", UsersErrored);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

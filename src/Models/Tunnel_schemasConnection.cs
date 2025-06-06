@@ -15,63 +15,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UUID of the Cloudflare Tunnel connector.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_client_id? ClientId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_client_id ClientId { get; set; }
-#endif
+        public Guid? ClientId { get; private set; }
         /// <summary>The cloudflared version used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version? ClientVersion { get; set; }
+        public string? ClientVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version ClientVersion { get; set; }
+        public string ClientVersion { get; set; }
 #endif
         /// <summary>The Cloudflare data center used for this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_colo_name? ColoName { get; set; }
+        public string? ColoName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_colo_name ColoName { get; set; }
+        public string ColoName { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id? Id { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id Id { get; set; }
-#endif
+        public Guid? Id { get; private set; }
         /// <summary>Cloudflare continues to track connections for several minutes after they disconnect. This is an optimization to improve latency and reliability of reconnecting.  If `true`, the connection has disconnected but is still being tracked. If `false`, the connection is actively serving traffic.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_pending_reconnect? IsPendingReconnect { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_pending_reconnect IsPendingReconnect { get; set; }
-#endif
+        public bool? IsPendingReconnect { get; set; }
         /// <summary>Timestamp of when the connection was established.</summary>
         public DateTimeOffset? OpenedAt { get; set; }
         /// <summary>The public IP address of the host running cloudflared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_ip? OriginIp { get; set; }
+        public string? OriginIp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_ip OriginIp { get; set; }
+        public string OriginIp { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id? Uuid { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id Uuid { get; set; }
-#endif
+        public Guid? Uuid { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection"/> and sets the default values.
         /// </summary>
@@ -97,14 +73,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "client_id", n => { ClientId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_client_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_client_id.CreateFromDiscriminatorValue); } },
-                { "client_version", n => { ClientVersion = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version.CreateFromDiscriminatorValue); } },
-                { "colo_name", n => { ColoName = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_colo_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_colo_name.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id.CreateFromDiscriminatorValue); } },
-                { "is_pending_reconnect", n => { IsPendingReconnect = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_pending_reconnect>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_pending_reconnect.CreateFromDiscriminatorValue); } },
+                { "client_id", n => { ClientId = n.GetGuidValue(); } },
+                { "client_version", n => { ClientVersion = n.GetStringValue(); } },
+                { "colo_name", n => { ColoName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "is_pending_reconnect", n => { IsPendingReconnect = n.GetBoolValue(); } },
                 { "opened_at", n => { OpenedAt = n.GetDateTimeOffsetValue(); } },
-                { "origin_ip", n => { OriginIp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_ip.CreateFromDiscriminatorValue); } },
-                { "uuid", n => { Uuid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id.CreateFromDiscriminatorValue); } },
+                { "origin_ip", n => { OriginIp = n.GetStringValue(); } },
+                { "uuid", n => { Uuid = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -114,14 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_client_id>("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_version>("client_version", ClientVersion);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_colo_name>("colo_name", ColoName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_is_pending_reconnect>("is_pending_reconnect", IsPendingReconnect);
+            writer.WriteStringValue("client_version", ClientVersion);
+            writer.WriteStringValue("colo_name", ColoName);
+            writer.WriteBoolValue("is_pending_reconnect", IsPendingReconnect);
             writer.WriteDateTimeOffsetValue("opened_at", OpenedAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_ip>("origin_ip", OriginIp);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_connection_id>("uuid", Uuid);
+            writer.WriteStringValue("origin_ip", OriginIp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

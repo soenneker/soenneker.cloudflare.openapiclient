@@ -17,27 +17,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specify the CID or content path of content to block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_content? Content { get; set; }
+        public string? Content { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_content Content { get; set; }
+        public string Content { get; set; }
 #endif
         /// <summary>Specify an optional description of the content list entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Specify the type of content list entry to block.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_create_request"/> and sets the default values.
         /// </summary>
@@ -63,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_content>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_content.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_content>("content", Content);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>("type", Type);
+            writer.WriteStringValue("content", Content);
+            writer.WriteStringValue("description", Description);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

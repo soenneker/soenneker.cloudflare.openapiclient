@@ -15,29 +15,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of days until the next key rotation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_days_until_next_rotation? DaysUntilNextRotation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_days_until_next_rotation DaysUntilNextRotation { get; set; }
-#endif
+        public double? DaysUntilNextRotation { get; private set; }
         /// <summary>The number of days between key rotations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days? KeyRotationIntervalDays { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days KeyRotationIntervalDays { get; set; }
-#endif
+        public double? KeyRotationIntervalDays { get; set; }
         /// <summary>The timestamp of the previous key rotation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_key_rotation_at? LastKeyRotationAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_key_rotation_at LastKeyRotationAt { get; set; }
-#endif
+        public DateTimeOffset? LastKeyRotationAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_config"/> and sets the default values.
         /// </summary>
@@ -63,9 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "days_until_next_rotation", n => { DaysUntilNextRotation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_days_until_next_rotation>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_days_until_next_rotation.CreateFromDiscriminatorValue); } },
-                { "key_rotation_interval_days", n => { KeyRotationIntervalDays = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days.CreateFromDiscriminatorValue); } },
-                { "last_key_rotation_at", n => { LastKeyRotationAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_key_rotation_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_key_rotation_at.CreateFromDiscriminatorValue); } },
+                { "days_until_next_rotation", n => { DaysUntilNextRotation = n.GetDoubleValue(); } },
+                { "key_rotation_interval_days", n => { KeyRotationIntervalDays = n.GetDoubleValue(); } },
+                { "last_key_rotation_at", n => { LastKeyRotationAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_days_until_next_rotation>("days_until_next_rotation", DaysUntilNextRotation);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_rotation_interval_days>("key_rotation_interval_days", KeyRotationIntervalDays);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_last_key_rotation_at>("last_key_rotation_at", LastKeyRotationAt);
+            writer.WriteDoubleValue("key_rotation_interval_days", KeyRotationIntervalDays);
+            writer.WriteDateTimeOffsetValue("last_key_rotation_at", LastKeyRotationAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

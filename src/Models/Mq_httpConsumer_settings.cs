@@ -15,37 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The maximum number of messages to include in a batch.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_batchSize? BatchSize { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_batchSize BatchSize { get; set; }
-#endif
+        public double? BatchSize { get; set; }
         /// <summary>The maximum number of retries</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_maxRetries? MaxRetries { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_maxRetries MaxRetries { get; set; }
-#endif
+        public double? MaxRetries { get; set; }
         /// <summary>The number of seconds to delay before making the message available for another attempt.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_retryDelay? RetryDelay { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_retryDelay RetryDelay { get; set; }
-#endif
+        public double? RetryDelay { get; set; }
         /// <summary>The number of milliseconds that a message is exclusively leased. After the timeout, the message becomes available for another attempt.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_visibilityTimeout? VisibilityTimeoutMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_visibilityTimeout VisibilityTimeoutMs { get; set; }
-#endif
+        public double? VisibilityTimeoutMs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer_settings"/> and sets the default values.
         /// </summary>
@@ -71,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "batch_size", n => { BatchSize = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_batchSize>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_batchSize.CreateFromDiscriminatorValue); } },
-                { "max_retries", n => { MaxRetries = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_maxRetries>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_maxRetries.CreateFromDiscriminatorValue); } },
-                { "retry_delay", n => { RetryDelay = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_retryDelay>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_retryDelay.CreateFromDiscriminatorValue); } },
-                { "visibility_timeout_ms", n => { VisibilityTimeoutMs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_visibilityTimeout>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_visibilityTimeout.CreateFromDiscriminatorValue); } },
+                { "batch_size", n => { BatchSize = n.GetDoubleValue(); } },
+                { "max_retries", n => { MaxRetries = n.GetDoubleValue(); } },
+                { "retry_delay", n => { RetryDelay = n.GetDoubleValue(); } },
+                { "visibility_timeout_ms", n => { VisibilityTimeoutMs = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +60,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_batchSize>("batch_size", BatchSize);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_maxRetries>("max_retries", MaxRetries);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_retryDelay>("retry_delay", RetryDelay);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_visibilityTimeout>("visibility_timeout_ms", VisibilityTimeoutMs);
+            writer.WriteDoubleValue("batch_size", BatchSize);
+            writer.WriteDoubleValue("max_retries", MaxRetries);
+            writer.WriteDoubleValue("retry_delay", RetryDelay);
+            writer.WriteDoubleValue("visibility_timeout_ms", VisibilityTimeoutMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

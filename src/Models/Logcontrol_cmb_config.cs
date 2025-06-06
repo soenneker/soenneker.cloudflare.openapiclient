@@ -15,20 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow out of region access</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_allow_out_of_region_access? AllowOutOfRegionAccess { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_allow_out_of_region_access AllowOutOfRegionAccess { get; set; }
-#endif
+        public bool? AllowOutOfRegionAccess { get; set; }
         /// <summary>Name of the region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_regions? Regions { get; set; }
+        public string? Regions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_regions Regions { get; set; }
+        public string Regions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_cmb_config"/> and sets the default values.
@@ -55,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_out_of_region_access", n => { AllowOutOfRegionAccess = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_allow_out_of_region_access>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_allow_out_of_region_access.CreateFromDiscriminatorValue); } },
-                { "regions", n => { Regions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_regions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_regions.CreateFromDiscriminatorValue); } },
+                { "allow_out_of_region_access", n => { AllowOutOfRegionAccess = n.GetBoolValue(); } },
+                { "regions", n => { Regions = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_allow_out_of_region_access>("allow_out_of_region_access", AllowOutOfRegionAccess);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_regions>("regions", Regions);
+            writer.WriteBoolValue("allow_out_of_region_access", AllowOutOfRegionAccess);
+            writer.WriteStringValue("regions", Regions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

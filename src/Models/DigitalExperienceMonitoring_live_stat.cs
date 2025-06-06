@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of unique devices</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_uniqueDevicesTotal? UniqueDevicesTotal { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_uniqueDevicesTotal UniqueDevicesTotal { get; set; }
-#endif
+        public double? UniqueDevicesTotal { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "uniqueDevicesTotal", n => { UniqueDevicesTotal = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_uniqueDevicesTotal>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_uniqueDevicesTotal.CreateFromDiscriminatorValue); } },
+                { "uniqueDevicesTotal", n => { UniqueDevicesTotal = n.GetDoubleValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -66,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_uniqueDevicesTotal>("uniqueDevicesTotal", UniqueDevicesTotal);
+            writer.WriteDoubleValue("uniqueDevicesTotal", UniqueDevicesTotal);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

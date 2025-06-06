@@ -21,10 +21,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_identifier? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_identifier Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Extra Cloudflare-specific information about the record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comment_modified_on", n => { CommentModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_identifier.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordResponse_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordResponse_meta.CreateFromDiscriminatorValue); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "proxiable", n => { Proxiable = n.GetBoolValue(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_identifier>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("proxiable", Proxiable);
             writer.WriteAdditionalData(AdditionalData);
         }

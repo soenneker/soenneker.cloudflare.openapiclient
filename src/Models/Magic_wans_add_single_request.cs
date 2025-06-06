@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The physport property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port? Physport { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port Physport { get; set; }
-#endif
+        public int? Physport { get; set; }
         /// <summary>The priority property</summary>
         public int? Priority { get; set; }
         /// <summary>(optional) if omitted, use DHCP. Submit secondary_address when site is in high availability mode.</summary>
@@ -41,13 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_wan_static_addressing StaticAddressing { get; set; }
 #endif
         /// <summary>VLAN ID. Use zero for untagged.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag? VlanTag { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag VlanTag { get; set; }
-#endif
+        public int? VlanTag { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_wans_add_single_request"/> and sets the default values.
         /// </summary>
@@ -74,10 +62,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "physport", n => { Physport = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port.CreateFromDiscriminatorValue); } },
+                { "physport", n => { Physport = n.GetIntValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "static_addressing", n => { StaticAddressing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_wan_static_addressing>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_wan_static_addressing.CreateFromDiscriminatorValue); } },
-                { "vlan_tag", n => { VlanTag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag.CreateFromDiscriminatorValue); } },
+                { "vlan_tag", n => { VlanTag = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -88,10 +76,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_port>("physport", Physport);
+            writer.WriteIntValue("physport", Physport);
             writer.WriteIntValue("priority", Priority);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_wan_static_addressing>("static_addressing", StaticAddressing);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_vlan_tag>("vlan_tag", VlanTag);
+            writer.WriteIntValue("vlan_tag", VlanTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

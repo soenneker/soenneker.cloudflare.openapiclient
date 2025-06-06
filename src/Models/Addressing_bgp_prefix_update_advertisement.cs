@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count? AsnPrependCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count AsnPrependCount { get; set; }
-#endif
+        public int? AsnPrependCount { get; set; }
         /// <summary>The on_demand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,13 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_update_advertisement_on_demand OnDemand { get; set; }
 #endif
         /// <summary>Controls whether the BGP prefix is automatically withdrawn when prefix is withdrawn from Magic routing table (for Magic Transit customers using Direct CNI)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route? WithdrawIfNoRoute { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route WithdrawIfNoRoute { get; set; }
-#endif
+        public bool? WithdrawIfNoRoute { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_update_advertisement"/> and sets the default values.
         /// </summary>
@@ -63,9 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asn_prepend_count", n => { AsnPrependCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count.CreateFromDiscriminatorValue); } },
+                { "asn_prepend_count", n => { AsnPrependCount = n.GetIntValue(); } },
                 { "on_demand", n => { OnDemand = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_update_advertisement_on_demand>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_update_advertisement_on_demand.CreateFromDiscriminatorValue); } },
-                { "withdraw_if_no_route", n => { WithdrawIfNoRoute = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route.CreateFromDiscriminatorValue); } },
+                { "withdraw_if_no_route", n => { WithdrawIfNoRoute = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_asn_prepend_count>("asn_prepend_count", AsnPrependCount);
+            writer.WriteIntValue("asn_prepend_count", AsnPrependCount);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_prefix_update_advertisement_on_demand>("on_demand", OnDemand);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_withdraw_if_no_route>("withdraw_if_no_route", WithdrawIfNoRoute);
+            writer.WriteBoolValue("withdraw_if_no_route", WithdrawIfNoRoute);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

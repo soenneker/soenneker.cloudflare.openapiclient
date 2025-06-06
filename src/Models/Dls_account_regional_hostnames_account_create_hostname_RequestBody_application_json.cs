@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_hostname? Hostname { get; set; }
+        public string? Hostname { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_hostname Hostname { get; set; }
+        public string Hostname { get; set; }
 #endif
-        /// <summary>Identifying key for the region</summary>
+        /// <summary>The region_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_region_key? RegionKey { get; set; }
+        public UntypedNode? RegionKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_region_key RegionKey { get; set; }
+        public UntypedNode RegionKey { get; set; }
 #endif
-        /// <summary>Configure which routing method to use for the regional hostname</summary>
+        /// <summary>The routing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_routing? Routing { get; set; }
+        public UntypedNode? Routing { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_routing Routing { get; set; }
+        public UntypedNode Routing { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_account_regional_hostnames_account_create_hostname_RequestBody_application_json"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_hostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_hostname.CreateFromDiscriminatorValue); } },
-                { "region_key", n => { RegionKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_region_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_region_key.CreateFromDiscriminatorValue); } },
-                { "routing", n => { Routing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_routing>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_routing.CreateFromDiscriminatorValue); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
+                { "region_key", n => { RegionKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "routing", n => { Routing = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_hostname>("hostname", Hostname);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_region_key>("region_key", RegionKey);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_routing>("routing", Routing);
+            writer.WriteStringValue("hostname", Hostname);
+            writer.WriteObjectValue<UntypedNode>("region_key", RegionKey);
+            writer.WriteObjectValue<UntypedNode>("routing", Routing);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

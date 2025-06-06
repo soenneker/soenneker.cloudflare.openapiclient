@@ -17,51 +17,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines an informative summary of what the rule group does.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_description? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_description Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Defines the unique identifier of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_componentsSchemasIdentifier? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_componentsSchemasIdentifier Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Defines the number of rules within the group that have been modified from their default configuration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_modified_rules_count? ModifiedRulesCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_modified_rules_count ModifiedRulesCount { get; set; }
-#endif
+        public double? ModifiedRulesCount { get; private set; }
         /// <summary>Defines the name of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_name? Name { get; set; }
+        public string? Name { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_name Name { get; set; }
+        public string Name { get; private set; }
 #endif
         /// <summary>Defines the unique identifier of a WAF package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier? PackageId { get; set; }
+        public string? PackageId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier PackageId { get; set; }
+        public string PackageId { get; private set; }
 #endif
         /// <summary>Defines the number of rules in the current rule group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rules_count? RulesCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rules_count RulesCount { get; set; }
-#endif
+        public double? RulesCount { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_group"/> and sets the default values.
         /// </summary>
@@ -87,12 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_description.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_componentsSchemasIdentifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_componentsSchemasIdentifier.CreateFromDiscriminatorValue); } },
-                { "modified_rules_count", n => { ModifiedRulesCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_modified_rules_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_modified_rules_count.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_name.CreateFromDiscriminatorValue); } },
-                { "package_id", n => { PackageId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier.CreateFromDiscriminatorValue); } },
-                { "rules_count", n => { RulesCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rules_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rules_count.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "modified_rules_count", n => { ModifiedRulesCount = n.GetDoubleValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "package_id", n => { PackageId = n.GetStringValue(); } },
+                { "rules_count", n => { RulesCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -102,12 +90,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_componentsSchemasIdentifier>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_modified_rules_count>("modified_rules_count", ModifiedRulesCount);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_identifier>("package_id", PackageId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rules_count>("rules_count", RulesCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

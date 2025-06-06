@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique operation ID of the asynchronous action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id? OperationId { get; set; }
+        public string? OperationId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id OperationId { get; set; }
+        public string OperationId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse_result"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id.CreateFromDiscriminatorValue); } },
+                { "operation_id", n => { OperationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_id>("operation_id", OperationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

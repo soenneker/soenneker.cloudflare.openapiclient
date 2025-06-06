@@ -36,10 +36,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The success property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess? Success { get; set; }
+        public UntypedNode? Success { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess Success { get; set; }
+        public UntypedNode Success { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "results", n => { Results = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_results>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_results.CreateFromDiscriminatorValue); } },
-                { "success", n => { Success = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess.CreateFromDiscriminatorValue); } },
+                { "success", n => { Success = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_errors>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_results>("results", Results);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workerPipelinesCommonSuccess>("success", Success);
+            writer.WriteObjectValue<UntypedNode>("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

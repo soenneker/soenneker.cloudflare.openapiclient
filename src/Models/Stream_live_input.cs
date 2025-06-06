@@ -16,21 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the live input was created.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created? Created { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>Indicates the number of days after which the live inputs recordings will be deleted. When a stream completes and the recording is ready, the value is used to calculate a scheduled deletion date for that recording. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion? DeleteRecordingAfterDays { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion DeleteRecordingAfterDays { get; set; }
-#endif
+        public double? DeleteRecordingAfterDays { get; set; }
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing live inputs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,13 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata Meta { get; set; }
 #endif
         /// <summary>The date and time the live input was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified? Modified { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified Modified { get; set; }
-#endif
+        public DateTimeOffset? Modified { get; set; }
         /// <summary>Records the input to a Cloudflare Stream video. Behavior depends on the mode. In most cases, the video will initially be viewable as a live video and transition to on-demand after a condition is satisfied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,20 +70,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt SrtPlayback { get; set; }
 #endif
         /// <summary>The connection status of a live input.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status Status { get; set; }
-#endif
         /// <summary>A unique identifier for a live input.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier? Uid { get; set; }
+        public string? Uid { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier Uid { get; set; }
+        public string Uid { get; set; }
 #endif
         /// <summary>Details for streaming to a live input using WebRTC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,17 +120,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created.CreateFromDiscriminatorValue); } },
-                { "deleteRecordingAfterDays", n => { DeleteRecordingAfterDays = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "deleteRecordingAfterDays", n => { DeleteRecordingAfterDays = n.GetDoubleValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata.CreateFromDiscriminatorValue); } },
-                { "modified", n => { Modified = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified.CreateFromDiscriminatorValue); } },
+                { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_settings.CreateFromDiscriminatorValue); } },
                 { "rtmps", n => { Rtmps = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_rtmps>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_rtmps.CreateFromDiscriminatorValue); } },
                 { "rtmpsPlayback", n => { RtmpsPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps.CreateFromDiscriminatorValue); } },
                 { "srt", n => { Srt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_srt>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_srt.CreateFromDiscriminatorValue); } },
                 { "srtPlayback", n => { SrtPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status.CreateFromDiscriminatorValue); } },
-                { "uid", n => { Uid = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>(); } },
+                { "uid", n => { Uid = n.GetStringValue(); } },
                 { "webRTC", n => { WebRTC = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_webrtc>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_webrtc.CreateFromDiscriminatorValue); } },
                 { "webRTCPlayback", n => { WebRTCPlayback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_webrtc>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_webrtc.CreateFromDiscriminatorValue); } },
             };
@@ -166,17 +142,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_created>("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_deletion>("deleteRecordingAfterDays", DeleteRecordingAfterDays);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteDoubleValue("deleteRecordingAfterDays", DeleteRecordingAfterDays);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata>("meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_modified>("modified", Modified);
+            writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_settings>("recording", Recording);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_rtmps>("rtmps", Rtmps);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_rtmps>("rtmpsPlayback", RtmpsPlayback);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_srt>("srt", Srt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_srt>("srtPlayback", SrtPlayback);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_identifier>("uid", Uid);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_status>("status", Status);
+            writer.WriteStringValue("uid", Uid);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_webrtc>("webRTC", WebRTC);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback_webrtc>("webRTCPlayback", WebRTCPlayback);
             writer.WriteAdditionalData(AdditionalData);

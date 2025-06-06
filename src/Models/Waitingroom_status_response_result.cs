@@ -15,45 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated_queued_users property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_queued_users? EstimatedQueuedUsers { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_queued_users EstimatedQueuedUsers { get; set; }
-#endif
+        public int? EstimatedQueuedUsers { get; set; }
         /// <summary>The estimated_total_active_users property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users? EstimatedTotalActiveUsers { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users EstimatedTotalActiveUsers { get; set; }
-#endif
+        public int? EstimatedTotalActiveUsers { get; set; }
         /// <summary>The event_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id? EventId { get; set; }
+        public string? EventId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id EventId { get; set; }
+        public string EventId { get; set; }
 #endif
         /// <summary>The max_estimated_time_minutes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes? MaxEstimatedTimeMinutes { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes MaxEstimatedTimeMinutes { get; set; }
-#endif
+        public int? MaxEstimatedTimeMinutes { get; set; }
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status Status { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response_result"/> and sets the default values.
         /// </summary>
@@ -79,11 +55,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "estimated_queued_users", n => { EstimatedQueuedUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_queued_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_queued_users.CreateFromDiscriminatorValue); } },
-                { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users.CreateFromDiscriminatorValue); } },
-                { "event_id", n => { EventId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id.CreateFromDiscriminatorValue); } },
-                { "max_estimated_time_minutes", n => { MaxEstimatedTimeMinutes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status.CreateFromDiscriminatorValue); } },
+                { "estimated_queued_users", n => { EstimatedQueuedUsers = n.GetIntValue(); } },
+                { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetIntValue(); } },
+                { "event_id", n => { EventId = n.GetStringValue(); } },
+                { "max_estimated_time_minutes", n => { MaxEstimatedTimeMinutes = n.GetIntValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>(); } },
             };
         }
         /// <summary>
@@ -93,11 +69,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_queued_users>("estimated_queued_users", EstimatedQueuedUsers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_estimated_total_active_users>("estimated_total_active_users", EstimatedTotalActiveUsers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_event_id>("event_id", EventId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_max_estimated_time_minutes>("max_estimated_time_minutes", MaxEstimatedTimeMinutes);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>("status", Status);
+            writer.WriteIntValue("estimated_queued_users", EstimatedQueuedUsers);
+            writer.WriteIntValue("estimated_total_active_users", EstimatedTotalActiveUsers);
+            writer.WriteStringValue("event_id", EventId);
+            writer.WriteIntValue("max_estimated_time_minutes", MaxEstimatedTimeMinutes);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

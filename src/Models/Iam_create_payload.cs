@@ -23,29 +23,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition Condition { get; set; }
 #endif
         /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on? ExpiresOn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on ExpiresOn { get; set; }
-#endif
+        public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Token name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The time before which the token MUST NOT be accepted for processing.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before? NotBefore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before NotBefore { get; set; }
-#endif
+        public DateTimeOffset? NotBefore { get; set; }
         /// <summary>List of access policies assigned to the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,9 +68,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition.CreateFromDiscriminatorValue); } },
-                { "expires_on", n => { ExpiresOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name.CreateFromDiscriminatorValue); } },
-                { "not_before", n => { NotBefore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before.CreateFromDiscriminatorValue); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -94,9 +82,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_condition>("condition", Condition);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_expires_on>("expires_on", ExpiresOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_not_before>("not_before", NotBefore);
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
+            writer.WriteStringValue("name", Name);
+            writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources>("policies", Policies);
             writer.WriteAdditionalData(AdditionalData);
         }

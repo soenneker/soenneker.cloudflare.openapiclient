@@ -15,36 +15,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the certificate is a CA or leaf certificate.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ca? Ca { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ca Ca { get; set; }
-#endif
+        public bool? Ca { get; set; }
         /// <summary>The uploaded root CA certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificates? Certificates { get; set; }
+        public string? Certificates { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificates Certificates { get; set; }
+        public string Certificates { get; set; }
 #endif
         /// <summary>Optional unique name for the certificate. Only used for human readability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasName Name { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust&apos;s block page.</summary>
+        /// <summary>The private_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasPrivate_key? PrivateKey { get; set; }
+        public UntypedNode? PrivateKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasPrivate_key PrivateKey { get; set; }
+        public UntypedNode PrivateKey { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate_RequestBody_application_json"/> and sets the default values.
@@ -71,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ca", n => { Ca = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ca>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ca.CreateFromDiscriminatorValue); } },
-                { "certificates", n => { Certificates = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificates>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificates.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasName>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasName.CreateFromDiscriminatorValue); } },
-                { "private_key", n => { PrivateKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasPrivate_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasPrivate_key.CreateFromDiscriminatorValue); } },
+                { "ca", n => { Ca = n.GetBoolValue(); } },
+                { "certificates", n => { Certificates = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "private_key", n => { PrivateKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ca>("ca", Ca);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificates>("certificates", Certificates);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasPrivate_key>("private_key", PrivateKey);
+            writer.WriteBoolValue("ca", Ca);
+            writer.WriteStringValue("certificates", Certificates);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<UntypedNode>("private_key", PrivateKey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

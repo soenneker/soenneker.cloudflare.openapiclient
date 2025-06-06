@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_type? Type { get; set; }
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_format>(); } },
                 { "key_base64", n => { KeyBase64 = n.GetStringValue(); } },
                 { "key_jwk", n => { KeyJwk = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_key_jwk>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_key_jwk.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_type>(); } },
                 { "usages", n => { Usages = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_usages>()?.AsList(); } },
             };
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_format>("format", Format);
             writer.WriteStringValue("key_base64", KeyBase64);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_key_jwk>("key_jwk", KeyJwk);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_name>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_type>("type", Type);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key_usages>("usages", Usages);
             writer.WriteAdditionalData(AdditionalData);
