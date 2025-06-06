@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Rum : IAdditionalDataHolder, IParsable
+    public partial class DomainHistory : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,21 +25,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Message { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rum"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory"/> and sets the default values.
         /// </summary>
-        public Rum()
+        public DomainHistory()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rum"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Rum CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Rum();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DomainHistory();
         }
         /// <summary>
         /// The deserialization information for the current model
