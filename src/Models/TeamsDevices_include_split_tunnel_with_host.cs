@@ -14,21 +14,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A description of the Split Tunnel item, displayed in the client UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public UntypedNode Description { get; set; }
+        public string Description { get; set; }
 #endif
-        /// <summary>The host property</summary>
+        /// <summary>The domain name to include in the tunnel. If `host` is present, `address` must not be present.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Host { get; set; }
+        public string? Host { get; set; }
 #nullable restore
 #else
-        public UntypedNode Host { get; set; }
+        public string Host { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_include_split_tunnel_with_host"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "host", n => { Host = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("description", Description);
-            writer.WriteObjectValue<UntypedNode>("host", Host);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("host", Host);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

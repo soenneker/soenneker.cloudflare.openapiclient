@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The router_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? RouterIps { get; set; }
+        public List<string>? RouterIps { get; set; }
 #nullable restore
 #else
-        public List<UntypedNode> RouterIps { get; set; }
+        public List<string> RouterIps { get; set; }
 #endif
         /// <summary>The warp_devices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "default_sampling", n => { DefaultSampling = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "router_ips", n => { RouterIps = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "router_ips", n => { RouterIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "warp_devices", n => { WarpDevices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("default_sampling", DefaultSampling);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("router_ips", RouterIps);
+            writer.WriteCollectionOfPrimitiveValues<string>("router_ips", RouterIps);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device>("warp_devices", WarpDevices);
             writer.WriteAdditionalData(AdditionalData);
         }

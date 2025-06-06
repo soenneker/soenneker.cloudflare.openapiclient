@@ -14,61 +14,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The address property</summary>
+        /// <summary>The IP address (IPv4 or IPv6) of the origin, or its publicly addressable hostname. Hostnames entered here should resolve directly to the origin, and not be a hostname proxied by Cloudflare. To set an internal/reserved address, virtual_network_id must also be set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Address { get; set; }
+        public string? Address { get; set; }
 #nullable restore
 #else
-        public UntypedNode Address { get; set; }
+        public string Address { get; set; }
 #endif
-        /// <summary>The changed property</summary>
+        /// <summary>Whether the origin has changed health status.</summary>
+        public bool? Changed { get; set; }
+        /// <summary>Whether to enable (the default) this origin within the pool. Disabled origins will not receive traffic and are excluded from health checks. The origin will only be disabled for the current pool.</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>Failure reason for un-healthy origin health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Changed { get; set; }
+        public string? FailureReason { get; set; }
 #nullable restore
 #else
-        public UntypedNode Changed { get; set; }
+        public string FailureReason { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
+        /// <summary>Whether the origin is reported as healthy.</summary>
+        public bool? Healthy { get; set; }
+        /// <summary>The IP address (IPv4 or IPv6) of the origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Enabled { get; set; }
+        public string? Ip { get; set; }
 #nullable restore
 #else
-        public UntypedNode Enabled { get; set; }
+        public string Ip { get; set; }
 #endif
-        /// <summary>The failure_reason property</summary>
+        /// <summary>A human-identifiable name for the origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? FailureReason { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public UntypedNode FailureReason { get; set; }
-#endif
-        /// <summary>The healthy property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Healthy { get; set; }
-#nullable restore
-#else
-        public UntypedNode Healthy { get; set; }
-#endif
-        /// <summary>The ip property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Ip { get; set; }
-#nullable restore
-#else
-        public UntypedNode Ip { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Name { get; set; }
-#nullable restore
-#else
-        public UntypedNode Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_originAnalytics"/> and sets the default values.
@@ -95,13 +77,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "changed", n => { Changed = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "enabled", n => { Enabled = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "failure_reason", n => { FailureReason = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "healthy", n => { Healthy = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "ip", n => { Ip = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "changed", n => { Changed = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "failure_reason", n => { FailureReason = n.GetStringValue(); } },
+                { "healthy", n => { Healthy = n.GetBoolValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,13 +93,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("address", Address);
-            writer.WriteObjectValue<UntypedNode>("changed", Changed);
-            writer.WriteObjectValue<UntypedNode>("enabled", Enabled);
-            writer.WriteObjectValue<UntypedNode>("failure_reason", FailureReason);
-            writer.WriteObjectValue<UntypedNode>("healthy", Healthy);
-            writer.WriteObjectValue<UntypedNode>("ip", Ip);
-            writer.WriteObjectValue<UntypedNode>("name", Name);
+            writer.WriteStringValue("address", Address);
+            writer.WriteBoolValue("changed", Changed);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("failure_reason", FailureReason);
+            writer.WriteBoolValue("healthy", Healthy);
+            writer.WriteStringValue("ip", Ip);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

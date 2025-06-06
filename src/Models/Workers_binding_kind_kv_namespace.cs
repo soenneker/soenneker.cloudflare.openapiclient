@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The namespace_id property</summary>
+        /// <summary>Namespace identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? NamespaceId { get; set; }
+        public string? NamespaceId { get; set; }
 #nullable restore
 #else
-        public UntypedNode NamespaceId { get; set; }
+        public string NamespaceId { get; set; }
 #endif
         /// <summary>The kind of resource that the binding provides.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace_type? Type { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace_id", n => { NamespaceId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "namespace_id", n => { NamespaceId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace_type>(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UntypedNode>("namespace_id", NamespaceId);
+            writer.WriteStringValue("namespace_id", NamespaceId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

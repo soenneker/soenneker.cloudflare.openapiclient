@@ -22,21 +22,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The externalId property</summary>
+        /// <summary>The IdP-generated Id of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ExternalId { get; set; }
+        public string? ExternalId { get; set; }
 #nullable restore
 #else
-        public UntypedNode ExternalId { get; set; }
+        public string ExternalId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique Cloudflare-generated Id of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public UntypedNode Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The metadata of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,8 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "externalId", n => { ExternalId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_meta.CreateFromDiscriminatorValue); } },
                 { "schemas", n => { Schemas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -94,8 +94,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<UntypedNode>("externalId", ExternalId);
-            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteStringValue("externalId", ExternalId);
+            writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_meta>("meta", Meta);
             writer.WriteCollectionOfPrimitiveValues<string>("schemas", Schemas);
             writer.WriteAdditionalData(AdditionalData);

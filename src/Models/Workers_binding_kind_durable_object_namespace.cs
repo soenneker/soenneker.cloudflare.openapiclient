@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The namespace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? NamespaceId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id? NamespaceId { get; set; }
 #nullable restore
 #else
-        public UntypedNode NamespaceId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id NamespaceId { get; set; }
 #endif
         /// <summary>The script where the Durable Object is defined, if it is external to this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "namespace_id", n => { NamespaceId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "namespace_id", n => { NamespaceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id.CreateFromDiscriminatorValue); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_type>(); } },
             };
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("class_name", ClassName);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UntypedNode>("namespace_id", NamespaceId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id>("namespace_id", NamespaceId);
             writer.WriteStringValue("script_name", ScriptName);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

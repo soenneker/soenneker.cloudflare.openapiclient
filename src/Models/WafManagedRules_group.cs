@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Defines an informative summary of what the rule group does.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Description { get; set; }
+        public string? Description { get; private set; }
 #nullable restore
 #else
-        public UntypedNode Description { get; set; }
+        public string Description { get; private set; }
 #endif
         /// <summary>Defines the unique identifier of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,14 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>The modified_rules_count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ModifiedRulesCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode ModifiedRulesCount { get; set; }
-#endif
+        /// <summary>Defines the number of rules within the group that have been modified from their default configuration.</summary>
+        public double? ModifiedRulesCount { get; private set; }
         /// <summary>Defines the name of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,14 +48,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PackageId { get; private set; }
 #endif
-        /// <summary>The rules_count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? RulesCount { get; set; }
-#nullable restore
-#else
-        public UntypedNode RulesCount { get; set; }
-#endif
+        /// <summary>Defines the number of rules in the current rule group.</summary>
+        public double? RulesCount { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_group"/> and sets the default values.
         /// </summary>
@@ -87,12 +75,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_rules_count", n => { ModifiedRulesCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "modified_rules_count", n => { ModifiedRulesCount = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "package_id", n => { PackageId = n.GetStringValue(); } },
-                { "rules_count", n => { RulesCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "rules_count", n => { RulesCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -102,9 +90,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("description", Description);
-            writer.WriteObjectValue<UntypedNode>("modified_rules_count", ModifiedRulesCount);
-            writer.WriteObjectValue<UntypedNode>("rules_count", RulesCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

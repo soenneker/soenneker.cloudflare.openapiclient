@@ -18,18 +18,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of colo names for the ECMP scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? ColoNames { get; set; }
+        public List<string>? ColoNames { get; set; }
 #nullable restore
 #else
-        public List<UntypedNode> ColoNames { get; set; }
+        public List<string> ColoNames { get; set; }
 #endif
         /// <summary>List of colo regions for the ECMP scope.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? ColoRegions { get; set; }
+        public List<string>? ColoRegions { get; set; }
 #nullable restore
 #else
-        public List<UntypedNode> ColoRegions { get; set; }
+        public List<string> ColoRegions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_scope"/> and sets the default values.
@@ -56,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "colo_names", n => { ColoNames = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
-                { "colo_regions", n => { ColoRegions = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "colo_names", n => { ColoNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "colo_regions", n => { ColoRegions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("colo_names", ColoNames);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("colo_regions", ColoRegions);
+            writer.WriteCollectionOfPrimitiveValues<string>("colo_names", ColoNames);
+            writer.WriteCollectionOfPrimitiveValues<string>("colo_regions", ColoRegions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

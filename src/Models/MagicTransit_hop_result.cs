@@ -22,30 +22,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result> Nodes { get; set; }
 #endif
-        /// <summary>The packets_lost property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PacketsLost { get; set; }
-#nullable restore
-#else
-        public UntypedNode PacketsLost { get; set; }
-#endif
-        /// <summary>The packets_sent property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PacketsSent { get; set; }
-#nullable restore
-#else
-        public UntypedNode PacketsSent { get; set; }
-#endif
-        /// <summary>The packets_ttl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PacketsTtl { get; set; }
-#nullable restore
-#else
-        public UntypedNode PacketsTtl { get; set; }
-#endif
+        /// <summary>Number of packets where no response was received.</summary>
+        public int? PacketsLost { get; set; }
+        /// <summary>Number of packets sent with specified TTL.</summary>
+        public int? PacketsSent { get; set; }
+        /// <summary>The time to live (TTL).</summary>
+        public int? PacketsTtl { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result"/> and sets the default values.
         /// </summary>
@@ -72,9 +54,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "nodes", n => { Nodes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "packets_lost", n => { PacketsLost = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "packets_sent", n => { PacketsSent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "packets_ttl", n => { PacketsTtl = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "packets_lost", n => { PacketsLost = n.GetIntValue(); } },
+                { "packets_sent", n => { PacketsSent = n.GetIntValue(); } },
+                { "packets_ttl", n => { PacketsTtl = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +67,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result>("nodes", Nodes);
-            writer.WriteObjectValue<UntypedNode>("packets_lost", PacketsLost);
-            writer.WriteObjectValue<UntypedNode>("packets_sent", PacketsSent);
-            writer.WriteObjectValue<UntypedNode>("packets_ttl", PacketsTtl);
+            writer.WriteIntValue("packets_lost", PacketsLost);
+            writer.WriteIntValue("packets_sent", PacketsSent);
+            writer.WriteIntValue("packets_ttl", PacketsTtl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

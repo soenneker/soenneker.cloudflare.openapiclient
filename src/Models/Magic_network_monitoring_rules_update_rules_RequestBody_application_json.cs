@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The prefixes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Prefixes { get; set; }
+        public List<string>? Prefixes { get; set; }
 #nullable restore
 #else
-        public List<UntypedNode> Prefixes { get; set; }
+        public List<string> Prefixes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_rules_RequestBody_application_json"/> and sets the default values.
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "packet_threshold", n => { PacketThreshold = n.GetDoubleValue(); } },
-                { "prefixes", n => { Prefixes = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "prefixes", n => { Prefixes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("packet_threshold", PacketThreshold);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("prefixes", Prefixes);
+            writer.WriteCollectionOfPrimitiveValues<string>("prefixes", Prefixes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

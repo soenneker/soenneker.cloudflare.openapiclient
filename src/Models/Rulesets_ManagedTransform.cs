@@ -18,22 +18,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Managed Transforms that this Managed Transform conflicts with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? ConflictsWith { get; private set; }
+        public List<string>? ConflictsWith { get; private set; }
 #nullable restore
 #else
-        public List<UntypedNode> ConflictsWith { get; private set; }
+        public List<string> ConflictsWith { get; private set; }
 #endif
         /// <summary>Whether the Managed Transform is enabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>Whether the Managed Transform conflicts with the currently-enabled Managed Transforms.</summary>
         public bool? HasConflict { get; private set; }
-        /// <summary>The id property</summary>
+        /// <summary>The human-readable identifier of the Managed Transform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public UntypedNode Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ManagedTransform"/> and sets the default values.
@@ -60,10 +60,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conflicts_with", n => { ConflictsWith = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "conflicts_with", n => { ConflictsWith = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "has_conflict", n => { HasConflict = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

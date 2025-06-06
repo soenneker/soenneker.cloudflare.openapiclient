@@ -14,53 +14,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The available property</summary>
+        /// <summary>Shows if a domain is available for transferring into Cloudflare Registrar.</summary>
+        public bool? Available { get; set; }
+        /// <summary>Indicates if the domain can be registered as a new domain.</summary>
+        public bool? CanRegister { get; set; }
+        /// <summary>Shows time of creation.</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Shows name of current registrar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Available { get; set; }
+        public string? CurrentRegistrar { get; set; }
 #nullable restore
 #else
-        public UntypedNode Available { get; set; }
+        public string CurrentRegistrar { get; set; }
 #endif
-        /// <summary>The can_register property</summary>
+        /// <summary>Shows when domain name registration expires.</summary>
+        public DateTimeOffset? ExpiresAt { get; set; }
+        /// <summary>Domain identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CanRegister { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public UntypedNode CanRegister { get; set; }
-#endif
-        /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CreatedAt { get; set; }
-#nullable restore
-#else
-        public UntypedNode CreatedAt { get; set; }
-#endif
-        /// <summary>The current_registrar property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CurrentRegistrar { get; set; }
-#nullable restore
-#else
-        public UntypedNode CurrentRegistrar { get; set; }
-#endif
-        /// <summary>The expires_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ExpiresAt { get; set; }
-#nullable restore
-#else
-        public UntypedNode ExpiresAt { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Id { get; set; }
-#nullable restore
-#else
-        public UntypedNode Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Shows whether a registrar lock is in place for a domain.</summary>
         public bool? Locked { get; set; }
@@ -72,22 +48,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registrant_contact RegistrantContact { get; set; }
 #endif
-        /// <summary>The registry_statuses property</summary>
+        /// <summary>A comma-separated list of registry status codes. A full list of status codes can be found at [EPP Status Codes](https://www.icann.org/resources/pages/epp-status-codes-2014-06-16-en).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RegistryStatuses { get; set; }
+        public string? RegistryStatuses { get; set; }
 #nullable restore
 #else
-        public UntypedNode RegistryStatuses { get; set; }
+        public string RegistryStatuses { get; set; }
 #endif
-        /// <summary>The supported_tld property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? SupportedTld { get; set; }
-#nullable restore
-#else
-        public UntypedNode SupportedTld { get; set; }
-#endif
+        /// <summary>Whether a particular TLD is currently supported by Cloudflare Registrar. Refer to [TLD Policies](https://www.cloudflare.com/tld-policies/) for a list of supported TLDs.</summary>
+        public bool? SupportedTld { get; set; }
         /// <summary>Statuses for domain transfers into Cloudflare Registrar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,14 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in TransferIn { get; set; }
 #endif
-        /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? UpdatedAt { get; set; }
-#nullable restore
-#else
-        public UntypedNode UpdatedAt { get; set; }
-#endif
+        /// <summary>Last updated.</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_domains"/> and sets the default values.
         /// </summary>
@@ -129,18 +93,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "available", n => { Available = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "can_register", n => { CanRegister = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "created_at", n => { CreatedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "current_registrar", n => { CurrentRegistrar = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "available", n => { Available = n.GetBoolValue(); } },
+                { "can_register", n => { CanRegister = n.GetBoolValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "current_registrar", n => { CurrentRegistrar = n.GetStringValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "locked", n => { Locked = n.GetBoolValue(); } },
                 { "registrant_contact", n => { RegistrantContact = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registrant_contact>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registrant_contact.CreateFromDiscriminatorValue); } },
-                { "registry_statuses", n => { RegistryStatuses = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "supported_tld", n => { SupportedTld = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "registry_statuses", n => { RegistryStatuses = n.GetStringValue(); } },
+                { "supported_tld", n => { SupportedTld = n.GetBoolValue(); } },
                 { "transfer_in", n => { TransferIn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in>(global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -150,18 +114,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("available", Available);
-            writer.WriteObjectValue<UntypedNode>("can_register", CanRegister);
-            writer.WriteObjectValue<UntypedNode>("created_at", CreatedAt);
-            writer.WriteObjectValue<UntypedNode>("current_registrar", CurrentRegistrar);
-            writer.WriteObjectValue<UntypedNode>("expires_at", ExpiresAt);
-            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteBoolValue("available", Available);
+            writer.WriteBoolValue("can_register", CanRegister);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("current_registrar", CurrentRegistrar);
+            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteBoolValue("locked", Locked);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_registrant_contact>("registrant_contact", RegistrantContact);
-            writer.WriteObjectValue<UntypedNode>("registry_statuses", RegistryStatuses);
-            writer.WriteObjectValue<UntypedNode>("supported_tld", SupportedTld);
+            writer.WriteStringValue("registry_statuses", RegistryStatuses);
+            writer.WriteBoolValue("supported_tld", SupportedTld);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_transfer_in>("transfer_in", TransferIn);
-            writer.WriteObjectValue<UntypedNode>("updated_at", UpdatedAt);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

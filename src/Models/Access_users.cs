@@ -40,13 +40,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ExternalId { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique Cloudflare-generated Id of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public UntypedNode Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The metadata of the SCIM resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_emails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_emails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_meta.CreateFromDiscriminatorValue); } },
                 { "schemas", n => { Schemas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -109,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_emails>("emails", Emails);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_meta>("meta", Meta);
             writer.WriteCollectionOfPrimitiveValues<string>("schemas", Schemas);
             writer.WriteAdditionalData(AdditionalData);

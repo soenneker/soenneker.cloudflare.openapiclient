@@ -44,13 +44,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The last_updated property</summary>
         public DateTimeOffset? LastUpdated { get; private set; }
-        /// <summary>The version property</summary>
+        /// <summary>The version of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Version { get; set; }
+        public string? Version { get; set; }
 #nullable restore
 #else
-        public UntypedNode Version { get; set; }
+        public string Version { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_result"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
-                { "version", n => { Version = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<UntypedNode>("version", Version);
+            writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The compatibility_flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? CompatibilityFlags { get; set; }
+        public List<string>? CompatibilityFlags { get; set; }
 #nullable restore
 #else
-        public List<UntypedNode> CompatibilityFlags { get; set; }
+        public List<string> CompatibilityFlags { get; set; }
 #endif
         /// <summary>Limits to apply for this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "compatibility_date", n => { CompatibilityDate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem_compatibility_date>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem_compatibility_date.CreateFromDiscriminatorValue); } },
-                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_limits>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_limits.CreateFromDiscriminatorValue); } },
                 { "logpush", n => { Logpush = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem_logpush>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem_logpush.CreateFromDiscriminatorValue); } },
                 { "migrations", n => { Migrations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem.Workers_scriptAndVersionSettingsItem_migrations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem.Workers_scriptAndVersionSettingsItem_migrations.CreateFromDiscriminatorValue); } },
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>("bindings", Bindings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem_compatibility_date>("compatibility_date", CompatibilityDate);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("compatibility_flags", CompatibilityFlags);
+            writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_limits>("limits", Limits);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem_logpush>("logpush", Logpush);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptAndVersionSettingsItem.Workers_scriptAndVersionSettingsItem_migrations>("migrations", Migrations);
