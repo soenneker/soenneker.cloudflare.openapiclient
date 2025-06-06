@@ -50,10 +50,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CompatibilityFlags { get; set; }
+        public List<UntypedNode>? CompatibilityFlags { get; set; }
 #nullable restore
 #else
-        public List<string> CompatibilityFlags { get; set; }
+        public List<UntypedNode> CompatibilityFlags { get; set; }
 #endif
         /// <summary>Retain assets which exist for a previously uploaded Worker version; used in lieu of providing a completion token.</summary>
         public bool? KeepAssets { get; set; }
@@ -146,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "body_part", n => { BodyPart = n.GetStringValue(); } },
                 { "compatibility_date", n => { CompatibilityDate = n.GetStringValue(); } },
-                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "keep_assets", n => { KeepAssets = n.GetBoolValue(); } },
                 { "keep_bindings", n => { KeepBindings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
@@ -170,7 +170,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>("bindings", Bindings);
             writer.WriteStringValue("body_part", BodyPart);
             writer.WriteStringValue("compatibility_date", CompatibilityDate);
-            writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("compatibility_flags", CompatibilityFlags);
             writer.WriteBoolValue("keep_assets", KeepAssets);
             writer.WriteCollectionOfPrimitiveValues<string>("keep_bindings", KeepBindings);
             writer.WriteBoolValue("logpush", Logpush);

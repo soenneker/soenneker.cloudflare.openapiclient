@@ -24,13 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The tunnel_secret property</summary>
+        /// <summary>Sets the password required to run a locally-managed tunnel. Must be at least 32 bytes and encoded as a base64 string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TunnelSecret { get; set; }
+        public string? TunnelSecret { get; set; }
 #nullable restore
 #else
-        public UntypedNode TunnelSecret { get; set; }
+        public string TunnelSecret { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_create_a_cloudflare_tunnel_RequestBody_application_json"/> and sets the default values.
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "config_src", n => { ConfigSrc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "tunnel_secret", n => { TunnelSecret = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "tunnel_secret", n => { TunnelSecret = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>("config_src", ConfigSrc);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UntypedNode>("tunnel_secret", TunnelSecret);
+            writer.WriteStringValue("tunnel_secret", TunnelSecret);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

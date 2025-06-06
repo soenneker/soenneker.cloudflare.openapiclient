@@ -14,17 +14,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Controls whether the membership can be deleted via the API or not.</summary>
-        public bool? CanDelete { get; private set; }
-        /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The identifier for the membership (eg. a zone or account tag).</summary>
+        /// <summary>The can_delete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier { get; set; }
+        public UntypedNode? CanDelete { get; set; }
 #nullable restore
 #else
-        public string Identifier { get; set; }
+        public UntypedNode CanDelete { get; set; }
+#endif
+        /// <summary>The created_at property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The identifier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Identifier { get; set; }
+#nullable restore
+#else
+        public UntypedNode Identifier { get; set; }
 #endif
         /// <summary>The type of the membership.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind? Kind { get; set; }
@@ -53,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "can_delete", n => { CanDelete = n.GetBoolValue(); } },
+                { "can_delete", n => { CanDelete = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "identifier", n => { Identifier = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>(); } },
             };
         }
@@ -66,8 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<UntypedNode>("can_delete", CanDelete);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("identifier", Identifier);
+            writer.WriteObjectValue<UntypedNode>("identifier", Identifier);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>("kind", Kind);
             writer.WriteAdditionalData(AdditionalData);
         }

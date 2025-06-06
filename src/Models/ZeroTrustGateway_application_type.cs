@@ -24,15 +24,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The identifier for the type of this application. There can be many applications with the same type. This refers to the `id` of a returned application type.</summary>
-        public int? Id { get; set; }
-        /// <summary>The name of the application or application type.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public UntypedNode? Id { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public UntypedNode Id { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Name { get; set; }
+#nullable restore
+#else
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_application_type"/> and sets the default values.
@@ -61,8 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,8 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

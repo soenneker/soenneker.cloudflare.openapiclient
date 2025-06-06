@@ -14,27 +14,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>True if the category is in beta and subject to change.</summary>
-        public bool? Beta { get; set; }
+        /// <summary>The beta property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Beta { get; set; }
+#nullable restore
+#else
+        public UntypedNode Beta { get; set; }
+#endif
         /// <summary>Which account types are allowed to create policies based on this category. `blocked` categories are blocked unconditionally for all accounts. `removalPending` categories can be removed from policies but not added. `noBlock` categories cannot be blocked.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class? Class { get; set; }
-        /// <summary>A short summary of domains in the category.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public UntypedNode? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public UntypedNode Description { get; set; }
 #endif
-        /// <summary>The identifier for this category. There is only one category per ID.</summary>
-        public int? Id { get; set; }
-        /// <summary>The name of the category.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public UntypedNode? Id { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public UntypedNode Id { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Name { get; set; }
+#nullable restore
+#else
+        public UntypedNode Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_subcategory"/> and sets the default values.
@@ -61,11 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "beta", n => { Beta = n.GetBoolValue(); } },
+                { "beta", n => { Beta = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "class", n => { Class = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,11 +87,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("beta", Beta);
+            writer.WriteObjectValue<UntypedNode>("beta", Beta);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>("class", Class);
-            writer.WriteStringValue("description", Description);
-            writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<UntypedNode>("description", Description);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

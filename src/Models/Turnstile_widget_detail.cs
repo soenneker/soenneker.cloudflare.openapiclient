@@ -15,24 +15,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bot_fight_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? BotFightMode { get; set; }
-#nullable restore
-#else
-        public UntypedNode BotFightMode { get; set; }
-#endif
+        /// <summary>If bot_fight_mode is set to `true`, Cloudflare issues computationallyexpensive challenges in response to malicious bots (ENT only).</summary>
+        public bool? BotFightMode { get; set; }
         /// <summary>If Turnstile is embedded on a Cloudflare site and the widget should grant challenge clearance,this setting can determine the clearance level to be set</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level? ClearanceLevel { get; set; }
-        /// <summary>The created_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? CreatedOn { get; set; }
-#nullable restore
-#else
-        public UntypedNode CreatedOn { get; set; }
-#endif
+        /// <summary>When the widget was created.</summary>
+        public DateTimeOffset? CreatedOn { get; private set; }
         /// <summary>The domains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,57 +29,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Domains { get; set; }
 #endif
-        /// <summary>The ephemeral_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? EphemeralId { get; set; }
-#nullable restore
-#else
-        public UntypedNode EphemeralId { get; set; }
-#endif
+        /// <summary>Return the Ephemeral ID in /siteverify (ENT only).</summary>
+        public bool? EphemeralId { get; set; }
         /// <summary>Widget Mode</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode? Mode { get; set; }
-        /// <summary>The modified_on property</summary>
+        /// <summary>When the widget was modified.</summary>
+        public DateTimeOffset? ModifiedOn { get; private set; }
+        /// <summary>Human readable widget name. Not unique. Cloudflare suggests that youset this to a meaningful string to make it easier to identify yourwidget, and where it is used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ModifiedOn { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public UntypedNode ModifiedOn { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Name { get; set; }
-#nullable restore
-#else
-        public UntypedNode Name { get; set; }
-#endif
-        /// <summary>The offlabel property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Offlabel { get; set; }
-#nullable restore
-#else
-        public UntypedNode Offlabel { get; set; }
-#endif
+        /// <summary>Do not show any Cloudflare branding on the widget (ENT only).</summary>
+        public bool? Offlabel { get; set; }
         /// <summary>Region where this widget can be used. This cannot be changed after creation.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region? Region { get; set; }
-        /// <summary>The secret property</summary>
+        /// <summary>Secret key for this widget.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Secret { get; set; }
+        public string? Secret { get; set; }
 #nullable restore
 #else
-        public UntypedNode Secret { get; set; }
+        public string Secret { get; set; }
 #endif
-        /// <summary>The sitekey property</summary>
+        /// <summary>Widget item identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Sitekey { get; set; }
+        public string? Sitekey { get; set; }
 #nullable restore
 #else
-        public UntypedNode Sitekey { get; set; }
+        public string Sitekey { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_detail"/> and sets the default values.
@@ -119,18 +89,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bot_fight_mode", n => { BotFightMode = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "bot_fight_mode", n => { BotFightMode = n.GetBoolValue(); } },
                 { "clearance_level", n => { ClearanceLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level>(); } },
-                { "created_on", n => { CreatedOn = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ephemeral_id", n => { EphemeralId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ephemeral_id", n => { EphemeralId = n.GetBoolValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode>(); } },
-                { "modified_on", n => { ModifiedOn = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "offlabel", n => { Offlabel = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "offlabel", n => { Offlabel = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region>(); } },
-                { "secret", n => { Secret = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "sitekey", n => { Sitekey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "secret", n => { Secret = n.GetStringValue(); } },
+                { "sitekey", n => { Sitekey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -140,18 +110,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("bot_fight_mode", BotFightMode);
+            writer.WriteBoolValue("bot_fight_mode", BotFightMode);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_clearance_level>("clearance_level", ClearanceLevel);
-            writer.WriteObjectValue<UntypedNode>("created_on", CreatedOn);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
-            writer.WriteObjectValue<UntypedNode>("ephemeral_id", EphemeralId);
+            writer.WriteBoolValue("ephemeral_id", EphemeralId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_widget_mode>("mode", Mode);
-            writer.WriteObjectValue<UntypedNode>("modified_on", ModifiedOn);
-            writer.WriteObjectValue<UntypedNode>("name", Name);
-            writer.WriteObjectValue<UntypedNode>("offlabel", Offlabel);
+            writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("offlabel", Offlabel);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Turnstile_region>("region", Region);
-            writer.WriteObjectValue<UntypedNode>("secret", Secret);
-            writer.WriteObjectValue<UntypedNode>("sitekey", Sitekey);
+            writer.WriteStringValue("secret", Secret);
+            writer.WriteStringValue("sitekey", Sitekey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

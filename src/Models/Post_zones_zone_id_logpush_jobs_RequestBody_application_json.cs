@@ -26,13 +26,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Flag that indicates if the job is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The filter property</summary>
+        /// <summary>The filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/filters/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Filter { get; set; }
+        public string? Filter { get; set; }
 #nullable restore
 #else
-        public UntypedNode Filter { get; set; }
+        public string Filter { get; set; }
 #endif
         /// <summary>This field is deprecated. Please use `max_upload_*` parameters instead. The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</summary>
         [Obsolete("")]
@@ -70,13 +70,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options OutputOptions { get; set; }
 #endif
-        /// <summary>The ownership_challenge property</summary>
+        /// <summary>Ownership challenge token to prove destination ownership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? OwnershipChallenge { get; set; }
+        public string? OwnershipChallenge { get; set; }
 #nullable restore
 #else
-        public UntypedNode OwnershipChallenge { get; set; }
+        public string OwnershipChallenge { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_zones_zone_id_logpush_jobs_RequestBody_application_json"/> and sets the default values.
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dataset", n => { Dataset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>(); } },
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "filter", n => { Filter = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetStringValue(); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
                 { "logpull_options", n => { LogpullOptions = n.GetStringValue(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "max_upload_records", n => { MaxUploadRecords = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "output_options", n => { OutputOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options.CreateFromDiscriminatorValue); } },
-                { "ownership_challenge", n => { OwnershipChallenge = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ownership_challenge", n => { OwnershipChallenge = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>("dataset", Dataset);
             writer.WriteStringValue("destination_conf", DestinationConf);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<UntypedNode>("filter", Filter);
+            writer.WriteStringValue("filter", Filter);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
             writer.WriteStringValue("logpull_options", LogpullOptions);
@@ -139,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("max_upload_records", MaxUploadRecords);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options>("output_options", OutputOptions);
-            writer.WriteObjectValue<UntypedNode>("ownership_challenge", OwnershipChallenge);
+            writer.WriteStringValue("ownership_challenge", OwnershipChallenge);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

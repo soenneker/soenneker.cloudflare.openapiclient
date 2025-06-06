@@ -14,40 +14,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The max_ttl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? MaxTtl { get; set; }
-#nullable restore
-#else
-        public UntypedNode MaxTtl { get; set; }
-#endif
-        /// <summary>The packets_per_ttl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PacketsPerTtl { get; set; }
-#nullable restore
-#else
-        public UntypedNode PacketsPerTtl { get; set; }
-#endif
+        /// <summary>Max TTL.</summary>
+        public int? MaxTtl { get; set; }
+        /// <summary>Number of packets sent at each TTL.</summary>
+        public int? PacketsPerTtl { get; set; }
         /// <summary>Type of packet sent.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type? PacketType { get; set; }
-        /// <summary>The port property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Port { get; set; }
-#nullable restore
-#else
-        public UntypedNode Port { get; set; }
-#endif
-        /// <summary>The wait_time property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? WaitTime { get; set; }
-#nullable restore
-#else
-        public UntypedNode WaitTime { get; set; }
-#endif
+        /// <summary>For UDP and TCP, specifies the destination port. For ICMP, specifies the initial ICMP sequence value. Default value 0 will choose the best value to use for each protocol.</summary>
+        public int? Port { get; set; }
+        /// <summary>Set the time (in seconds) to wait for a response to a probe.</summary>
+        public int? WaitTime { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_options"/> and sets the default values.
         /// </summary>
@@ -74,11 +50,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max_ttl", n => { MaxTtl = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "max_ttl", n => { MaxTtl = n.GetIntValue(); } },
                 { "packet_type", n => { PacketType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>(); } },
-                { "packets_per_ttl", n => { PacketsPerTtl = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "port", n => { Port = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "wait_time", n => { WaitTime = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "packets_per_ttl", n => { PacketsPerTtl = n.GetIntValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "wait_time", n => { WaitTime = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -88,11 +64,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("max_ttl", MaxTtl);
-            writer.WriteObjectValue<UntypedNode>("packets_per_ttl", PacketsPerTtl);
+            writer.WriteIntValue("max_ttl", MaxTtl);
+            writer.WriteIntValue("packets_per_ttl", PacketsPerTtl);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>("packet_type", PacketType);
-            writer.WriteObjectValue<UntypedNode>("port", Port);
-            writer.WriteObjectValue<UntypedNode>("wait_time", WaitTime);
+            writer.WriteIntValue("port", Port);
+            writer.WriteIntValue("wait_time", WaitTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

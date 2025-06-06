@@ -16,13 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method? BundleMethod { get; set; }
-        /// <summary>The certificate property</summary>
+        /// <summary>The zone&apos;s SSL certificate or SSL certificate and intermediate(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Certificate { get; set; }
+        public string? Certificate { get; set; }
 #nullable restore
 #else
-        public UntypedNode Certificate { get; set; }
+        public string Certificate { get; set; }
 #endif
         /// <summary>The keyless SSL name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,13 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Host { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The keyless SSL name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public UntypedNode Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The keyless SSL port used to communicate between Cloudflare and the client&apos;s Keyless SSL server.</summary>
         public double? Port { get; set; }
@@ -77,9 +77,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method>(); } },
-                { "certificate", n => { Certificate = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "port", n => { Port = n.GetDoubleValue(); } },
                 { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel.CreateFromDiscriminatorValue); } },
             };
@@ -92,9 +92,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method>("bundle_method", BundleMethod);
-            writer.WriteObjectValue<UntypedNode>("certificate", Certificate);
+            writer.WriteStringValue("certificate", Certificate);
             writer.WriteStringValue("host", Host);
-            writer.WriteObjectValue<UntypedNode>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("port", Port);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>("tunnel", Tunnel);
             writer.WriteAdditionalData(AdditionalData);

@@ -16,13 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Allow or deny operations against the resources.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_effect? Effect { get; set; }
-        /// <summary>Policy identifier.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public UntypedNode? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public UntypedNode Id { get; set; }
 #endif
         /// <summary>A set of permission groups that are specified to the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "effect", n => { Effect = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_effect>(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "permission_groups", n => { PermissionGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resources.CreateFromDiscriminatorValue); } },
             };
@@ -79,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_effect>("effect", Effect);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group>("permission_groups", PermissionGroups);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resources>("resources", Resources);
             writer.WriteAdditionalData(AdditionalData);

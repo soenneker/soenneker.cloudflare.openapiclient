@@ -12,21 +12,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Access_seats : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>True if the seat is part of Access.</summary>
-        public bool? AccessSeat { get; set; }
+        /// <summary>The access_seat property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? AccessSeat { get; set; }
+#nullable restore
+#else
+        public UntypedNode AccessSeat { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>True if the seat is part of Gateway.</summary>
-        public bool? GatewaySeat { get; set; }
-        /// <summary>The unique API identifier for the Zero Trust seat.</summary>
+        /// <summary>The gateway_seat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SeatUid { get; set; }
+        public UntypedNode? GatewaySeat { get; set; }
 #nullable restore
 #else
-        public string SeatUid { get; set; }
+        public UntypedNode GatewaySeat { get; set; }
+#endif
+        /// <summary>The seat_uid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SeatUid { get; set; }
+#nullable restore
+#else
+        public UntypedNode SeatUid { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -55,10 +67,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_seat", n => { AccessSeat = n.GetBoolValue(); } },
+                { "access_seat", n => { AccessSeat = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "gateway_seat", n => { GatewaySeat = n.GetBoolValue(); } },
-                { "seat_uid", n => { SeatUid = n.GetStringValue(); } },
+                { "gateway_seat", n => { GatewaySeat = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "seat_uid", n => { SeatUid = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -69,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("access_seat", AccessSeat);
+            writer.WriteObjectValue<UntypedNode>("access_seat", AccessSeat);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteBoolValue("gateway_seat", GatewaySeat);
-            writer.WriteStringValue("seat_uid", SeatUid);
+            writer.WriteObjectValue<UntypedNode>("gateway_seat", GatewaySeat);
+            writer.WriteObjectValue<UntypedNode>("seat_uid", SeatUid);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

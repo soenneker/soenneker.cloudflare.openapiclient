@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration Configuration { get; set; }
 #endif
-        /// <summary>An informative summary of the rule.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public UntypedNode? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public UntypedNode Description { get; set; }
 #endif
         /// <summary>The unique identifier of the User Agent Blocking rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasMode>(); } },
                 { "paused", n => { Paused = n.GetBoolValue(); } },
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration>("configuration", Configuration);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<UntypedNode>("description", Description);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasMode>("mode", Mode);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteAdditionalData(AdditionalData);

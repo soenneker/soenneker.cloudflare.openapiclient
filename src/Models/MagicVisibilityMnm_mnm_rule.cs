@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The prefixes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Prefixes { get; set; }
+        public List<UntypedNode>? Prefixes { get; set; }
 #nullable restore
 #else
-        public List<string> Prefixes { get; set; }
+        public List<UntypedNode> Prefixes { get; set; }
 #endif
         /// <summary>Prefix match type to be applied for a prefix auto advertisement when using an advanced_ddos rule.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match? PrefixMatch { get; set; }
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "packet_threshold", n => { PacketThreshold = n.GetDoubleValue(); } },
                 { "prefix_match", n => { PrefixMatch = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match>(); } },
-                { "prefixes", n => { Prefixes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "prefixes", n => { Prefixes = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type>(); } },
                 { "zscore_sensitivity", n => { ZscoreSensitivity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity>(); } },
                 { "zscore_target", n => { ZscoreTarget = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_target>(); } },
@@ -106,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("packet_threshold", PacketThreshold);
-            writer.WriteCollectionOfPrimitiveValues<string>("prefixes", Prefixes);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("prefixes", Prefixes);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_prefix_match>("prefix_match", PrefixMatch);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_type>("type", Type);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_zscore_sensitivity>("zscore_sensitivity", ZscoreSensitivity);

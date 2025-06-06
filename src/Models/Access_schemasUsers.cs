@@ -12,24 +12,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Access_schemasUsers : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>True if the user has authenticated with Cloudflare Access.</summary>
-        public bool? AccessSeat { get; set; }
-        /// <summary>The number of active devices registered to the user.</summary>
-        public double? ActiveDeviceCount { get; set; }
+        /// <summary>The access_seat property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? AccessSeat { get; set; }
+#nullable restore
+#else
+        public UntypedNode AccessSeat { get; set; }
+#endif
+        /// <summary>The active_device_count property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? ActiveDeviceCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode ActiveDeviceCount { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The email of the user.</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public UntypedNode? Email { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public UntypedNode Email { get; set; }
 #endif
-        /// <summary>True if the user has logged into the WARP client.</summary>
-        public bool? GatewaySeat { get; set; }
+        /// <summary>The gateway_seat property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? GatewaySeat { get; set; }
+#nullable restore
+#else
+        public UntypedNode GatewaySeat { get; set; }
+#endif
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,31 +56,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The time at which the user last successfully logged in.</summary>
-        public DateTimeOffset? LastSuccessfulLogin { get; set; }
-        /// <summary>The name of the user.</summary>
+        /// <summary>The last_successful_login property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public UntypedNode? LastSuccessfulLogin { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public UntypedNode LastSuccessfulLogin { get; set; }
 #endif
-        /// <summary>The unique API identifier for the Zero Trust seat.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SeatUid { get; set; }
+        public UntypedNode? Name { get; set; }
 #nullable restore
 #else
-        public string SeatUid { get; set; }
+        public UntypedNode Name { get; set; }
 #endif
-        /// <summary>The unique API identifier for the user.</summary>
+        /// <summary>The seat_uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uid { get; set; }
+        public UntypedNode? SeatUid { get; set; }
 #nullable restore
 #else
-        public string Uid { get; set; }
+        public UntypedNode SeatUid { get; set; }
+#endif
+        /// <summary>The uid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Uid { get; set; }
+#nullable restore
+#else
+        public UntypedNode Uid { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -91,16 +115,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "access_seat", n => { AccessSeat = n.GetBoolValue(); } },
-                { "active_device_count", n => { ActiveDeviceCount = n.GetDoubleValue(); } },
+                { "access_seat", n => { AccessSeat = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "active_device_count", n => { ActiveDeviceCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "gateway_seat", n => { GatewaySeat = n.GetBoolValue(); } },
+                { "email", n => { Email = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "gateway_seat", n => { GatewaySeat = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "last_successful_login", n => { LastSuccessfulLogin = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "seat_uid", n => { SeatUid = n.GetStringValue(); } },
-                { "uid", n => { Uid = n.GetStringValue(); } },
+                { "last_successful_login", n => { LastSuccessfulLogin = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "seat_uid", n => { SeatUid = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "uid", n => { Uid = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -111,16 +135,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("access_seat", AccessSeat);
-            writer.WriteDoubleValue("active_device_count", ActiveDeviceCount);
+            writer.WriteObjectValue<UntypedNode>("access_seat", AccessSeat);
+            writer.WriteObjectValue<UntypedNode>("active_device_count", ActiveDeviceCount);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("email", Email);
-            writer.WriteBoolValue("gateway_seat", GatewaySeat);
+            writer.WriteObjectValue<UntypedNode>("email", Email);
+            writer.WriteObjectValue<UntypedNode>("gateway_seat", GatewaySeat);
             writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("last_successful_login", LastSuccessfulLogin);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("seat_uid", SeatUid);
-            writer.WriteStringValue("uid", Uid);
+            writer.WriteObjectValue<UntypedNode>("last_successful_login", LastSuccessfulLogin);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("seat_uid", SeatUid);
+            writer.WriteObjectValue<UntypedNode>("uid", Uid);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

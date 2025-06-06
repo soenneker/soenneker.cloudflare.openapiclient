@@ -16,32 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn property</summary>
         public int? Asn { get; set; }
-        /// <summary>The count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Count { get; set; }
-#nullable restore
-#else
-        public UntypedNode Count { get; set; }
-#endif
+        /// <summary>Total results returned based on your search parameters.</summary>
+        public double? Count { get; set; }
         /// <summary>The ip_count_total property</summary>
         public int? IpCountTotal { get; set; }
-        /// <summary>The page property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Page { get; set; }
-#nullable restore
-#else
-        public UntypedNode Page { get; set; }
-#endif
-        /// <summary>The per_page property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? PerPage { get; set; }
-#nullable restore
-#else
-        public UntypedNode PerPage { get; set; }
-#endif
+        /// <summary>Current page within paginated list of results.</summary>
+        public double? Page { get; set; }
+        /// <summary>Number of results per page of results.</summary>
+        public double? PerPage { get; set; }
         /// <summary>The subnets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,10 +58,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "asn", n => { Asn = n.GetIntValue(); } },
-                { "count", n => { Count = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "count", n => { Count = n.GetDoubleValue(); } },
                 { "ip_count_total", n => { IpCountTotal = n.GetIntValue(); } },
-                { "page", n => { Page = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "per_page", n => { PerPage = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "page", n => { Page = n.GetDoubleValue(); } },
+                { "per_page", n => { PerPage = n.GetDoubleValue(); } },
                 { "subnets", n => { Subnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -91,10 +73,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("asn", Asn);
-            writer.WriteObjectValue<UntypedNode>("count", Count);
+            writer.WriteDoubleValue("count", Count);
             writer.WriteIntValue("ip_count_total", IpCountTotal);
-            writer.WriteObjectValue<UntypedNode>("page", Page);
-            writer.WriteObjectValue<UntypedNode>("per_page", PerPage);
+            writer.WriteDoubleValue("page", Page);
+            writer.WriteDoubleValue("per_page", PerPage);
             writer.WriteCollectionOfPrimitiveValues<string>("subnets", Subnets);
             writer.WriteAdditionalData(AdditionalData);
         }

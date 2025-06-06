@@ -14,29 +14,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Message body included in the notification sent.</summary>
+        /// <summary>The alert_body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertBody { get; set; }
+        public UntypedNode? AlertBody { get; set; }
 #nullable restore
 #else
-        public string AlertBody { get; set; }
+        public UntypedNode AlertBody { get; set; }
 #endif
-        /// <summary>Type of notification that has been dispatched.</summary>
+        /// <summary>The alert_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertType { get; set; }
+        public UntypedNode? AlertType { get; set; }
 #nullable restore
 #else
-        public string AlertType { get; set; }
+        public UntypedNode AlertType { get; set; }
 #endif
-        /// <summary>Description of the notification policy (if present).</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public UntypedNode? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public UntypedNode Description { get; set; }
 #endif
         /// <summary>UUID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,13 +46,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The mechanism to which the notification has been dispatched.</summary>
+        /// <summary>The mechanism property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mechanism { get; set; }
+        public UntypedNode? Mechanism { get; set; }
 #nullable restore
 #else
-        public string Mechanism { get; set; }
+        public UntypedNode Mechanism { get; set; }
 #endif
         /// <summary>The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type? MechanismType { get; set; }
@@ -72,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PolicyId { get; set; }
 #endif
-        /// <summary>Timestamp of when the notification was dispatched in ISO 8601 format.</summary>
-        public DateTimeOffset? Sent { get; set; }
+        /// <summary>The sent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Sent { get; set; }
+#nullable restore
+#else
+        public UntypedNode Sent { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_history"/> and sets the default values.
         /// </summary>
@@ -99,15 +105,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alert_body", n => { AlertBody = n.GetStringValue(); } },
-                { "alert_type", n => { AlertType = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "alert_body", n => { AlertBody = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "alert_type", n => { AlertType = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mechanism", n => { Mechanism = n.GetStringValue(); } },
+                { "mechanism", n => { Mechanism = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "mechanism_type", n => { MechanismType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "policy_id", n => { PolicyId = n.GetStringValue(); } },
-                { "sent", n => { Sent = n.GetDateTimeOffsetValue(); } },
+                { "sent", n => { Sent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -117,15 +123,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("alert_body", AlertBody);
-            writer.WriteStringValue("alert_type", AlertType);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<UntypedNode>("alert_body", AlertBody);
+            writer.WriteObjectValue<UntypedNode>("alert_type", AlertType);
+            writer.WriteObjectValue<UntypedNode>("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("mechanism", Mechanism);
+            writer.WriteObjectValue<UntypedNode>("mechanism", Mechanism);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>("mechanism_type", MechanismType);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("policy_id", PolicyId);
-            writer.WriteDateTimeOffsetValue("sent", Sent);
+            writer.WriteObjectValue<UntypedNode>("sent", Sent);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

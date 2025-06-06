@@ -30,17 +30,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Currency { get; private set; }
 #endif
-        /// <summary>The duration of the plan subscription.</summary>
-        public double? Duration { get; set; }
-        /// <summary>The frequency at which you will be billed for this plan.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency? Frequency { get; private set; }
-        /// <summary>Plan identifier tag.</summary>
+        /// <summary>The duration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public UntypedNode? Duration { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public UntypedNode Duration { get; set; }
+#endif
+        /// <summary>The frequency at which you will be billed for this plan.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency? Frequency { get; private set; }
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Id { get; set; }
+#nullable restore
+#else
+        public UntypedNode Id { get; set; }
 #endif
         /// <summary>The plan name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,9 +83,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "components", n => { Components = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "duration", n => { Duration = n.GetDoubleValue(); } },
+                { "duration", n => { Duration = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency>(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -91,7 +97,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue>("components", Components);
-            writer.WriteDoubleValue("duration", Duration);
+            writer.WriteObjectValue<UntypedNode>("duration", Duration);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

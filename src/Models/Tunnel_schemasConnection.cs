@@ -24,18 +24,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ClientVersion { get; set; }
 #endif
-        /// <summary>The Cloudflare data center used for this connection.</summary>
+        /// <summary>The colo_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ColoName { get; set; }
+        public UntypedNode? ColoName { get; set; }
 #nullable restore
 #else
-        public string ColoName { get; set; }
+        public UntypedNode ColoName { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
         public Guid? Id { get; private set; }
-        /// <summary>Cloudflare continues to track connections for several minutes after they disconnect. This is an optimization to improve latency and reliability of reconnecting.  If `true`, the connection has disconnected but is still being tracked. If `false`, the connection is actively serving traffic.</summary>
-        public bool? IsPendingReconnect { get; set; }
+        /// <summary>The is_pending_reconnect property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? IsPendingReconnect { get; set; }
+#nullable restore
+#else
+        public UntypedNode IsPendingReconnect { get; set; }
+#endif
         /// <summary>Timestamp of when the connection was established.</summary>
         public DateTimeOffset? OpenedAt { get; set; }
         /// <summary>The public IP address of the host running cloudflared.</summary>
@@ -75,9 +81,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "client_id", n => { ClientId = n.GetGuidValue(); } },
                 { "client_version", n => { ClientVersion = n.GetStringValue(); } },
-                { "colo_name", n => { ColoName = n.GetStringValue(); } },
+                { "colo_name", n => { ColoName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "is_pending_reconnect", n => { IsPendingReconnect = n.GetBoolValue(); } },
+                { "is_pending_reconnect", n => { IsPendingReconnect = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "opened_at", n => { OpenedAt = n.GetDateTimeOffsetValue(); } },
                 { "origin_ip", n => { OriginIp = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
@@ -91,8 +97,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_version", ClientVersion);
-            writer.WriteStringValue("colo_name", ColoName);
-            writer.WriteBoolValue("is_pending_reconnect", IsPendingReconnect);
+            writer.WriteObjectValue<UntypedNode>("colo_name", ColoName);
+            writer.WriteObjectValue<UntypedNode>("is_pending_reconnect", IsPendingReconnect);
             writer.WriteDateTimeOffsetValue("opened_at", OpenedAt);
             writer.WriteStringValue("origin_ip", OriginIp);
             writer.WriteAdditionalData(AdditionalData);

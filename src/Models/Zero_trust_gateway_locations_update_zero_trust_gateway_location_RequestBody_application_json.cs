@@ -16,13 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>True if the location is the default location.</summary>
         public bool? ClientDefault { get; set; }
-        /// <summary>The dns_destination_ips_id property</summary>
+        /// <summary>The identifier of the pair of IPv4 addresses assigned to this location. When creating a location, if this field is absent or set with null, the pair of shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When updating a location, if the field is absent or set with null, the pre-assigned pair remains unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DnsDestinationIpsId { get; set; }
+        public string? DnsDestinationIpsId { get; set; }
 #nullable restore
 #else
-        public UntypedNode DnsDestinationIpsId { get; set; }
+        public string DnsDestinationIpsId { get; set; }
 #endif
         /// <summary>True if the location needs to resolve EDNS queries.</summary>
         public bool? EcsSupport { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_default", n => { ClientDefault = n.GetBoolValue(); } },
-                { "dns_destination_ips_id", n => { DnsDestinationIpsId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "dns_destination_ips_id", n => { DnsDestinationIpsId = n.GetStringValue(); } },
                 { "ecs_support", n => { EcsSupport = n.GetBoolValue(); } },
                 { "endpoints", n => { Endpoints = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("client_default", ClientDefault);
-            writer.WriteObjectValue<UntypedNode>("dns_destination_ips_id", DnsDestinationIpsId);
+            writer.WriteStringValue("dns_destination_ips_id", DnsDestinationIpsId);
             writer.WriteBoolValue("ecs_support", EcsSupport);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>("endpoints", Endpoints);
             writer.WriteStringValue("name", Name);

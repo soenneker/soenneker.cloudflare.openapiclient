@@ -22,21 +22,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Hostname { get; set; }
 #endif
-        /// <summary>The region_key property</summary>
+        /// <summary>Identifying key for the region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? RegionKey { get; set; }
+        public string? RegionKey { get; set; }
 #nullable restore
 #else
-        public UntypedNode RegionKey { get; set; }
+        public string RegionKey { get; set; }
 #endif
-        /// <summary>The routing property</summary>
+        /// <summary>Configure which routing method to use for the regional hostname</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Routing { get; set; }
+        public string? Routing { get; set; }
 #nullable restore
 #else
-        public UntypedNode Routing { get; set; }
+        public string Routing { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_account_regional_hostnames_account_create_hostname_RequestBody_application_json"/> and sets the default values.
@@ -64,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
-                { "region_key", n => { RegionKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "routing", n => { Routing = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "region_key", n => { RegionKey = n.GetStringValue(); } },
+                { "routing", n => { Routing = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("hostname", Hostname);
-            writer.WriteObjectValue<UntypedNode>("region_key", RegionKey);
-            writer.WriteObjectValue<UntypedNode>("routing", Routing);
+            writer.WriteStringValue("region_key", RegionKey);
+            writer.WriteStringValue("routing", Routing);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

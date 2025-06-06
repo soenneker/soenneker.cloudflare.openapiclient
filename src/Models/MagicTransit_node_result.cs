@@ -14,21 +14,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>AS number associated with the node object.</summary>
+        /// <summary>The asn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Asn { get; set; }
+        public UntypedNode? Asn { get; set; }
 #nullable restore
 #else
-        public string Asn { get; set; }
+        public UntypedNode Asn { get; set; }
 #endif
-        /// <summary>IP address of the node.</summary>
+        /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip { get; set; }
+        public UntypedNode? Ip { get; set; }
 #nullable restore
 #else
-        public string Ip { get; set; }
+        public UntypedNode Ip { get; set; }
 #endif
         /// <summary>Field appears if there is an additional annotation printed when the probe returns. Field also appears when running a GRE+ICMP traceroute to denote which traceroute a node comes from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,24 +38,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Labels { get; set; }
 #endif
-        /// <summary>Maximum RTT in ms.</summary>
-        public double? MaxRttMs { get; set; }
-        /// <summary>Mean RTT in ms.</summary>
-        public double? MeanRttMs { get; set; }
-        /// <summary>Minimum RTT in ms.</summary>
-        public double? MinRttMs { get; set; }
-        /// <summary>Host name of the address, this may be the same as the IP address.</summary>
+        /// <summary>The max_rtt_ms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public UntypedNode? MaxRttMs { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public UntypedNode MaxRttMs { get; set; }
 #endif
-        /// <summary>Number of packets with a response from this node.</summary>
-        public int? PacketCount { get; set; }
-        /// <summary>Standard deviation of the RTTs in ms.</summary>
-        public double? StdDevRttMs { get; set; }
+        /// <summary>The mean_rtt_ms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MeanRttMs { get; set; }
+#nullable restore
+#else
+        public UntypedNode MeanRttMs { get; set; }
+#endif
+        /// <summary>The min_rtt_ms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? MinRttMs { get; set; }
+#nullable restore
+#else
+        public UntypedNode MinRttMs { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Name { get; set; }
+#nullable restore
+#else
+        public UntypedNode Name { get; set; }
+#endif
+        /// <summary>The packet_count property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? PacketCount { get; set; }
+#nullable restore
+#else
+        public UntypedNode PacketCount { get; set; }
+#endif
+        /// <summary>The std_dev_rtt_ms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? StdDevRttMs { get; set; }
+#nullable restore
+#else
+        public UntypedNode StdDevRttMs { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_node_result"/> and sets the default values.
         /// </summary>
@@ -81,15 +111,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asn", n => { Asn = n.GetStringValue(); } },
-                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "asn", n => { Asn = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ip", n => { Ip = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "max_rtt_ms", n => { MaxRttMs = n.GetDoubleValue(); } },
-                { "mean_rtt_ms", n => { MeanRttMs = n.GetDoubleValue(); } },
-                { "min_rtt_ms", n => { MinRttMs = n.GetDoubleValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "packet_count", n => { PacketCount = n.GetIntValue(); } },
-                { "std_dev_rtt_ms", n => { StdDevRttMs = n.GetDoubleValue(); } },
+                { "max_rtt_ms", n => { MaxRttMs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "mean_rtt_ms", n => { MeanRttMs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "min_rtt_ms", n => { MinRttMs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "packet_count", n => { PacketCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "std_dev_rtt_ms", n => { StdDevRttMs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -99,15 +129,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("asn", Asn);
-            writer.WriteStringValue("ip", Ip);
+            writer.WriteObjectValue<UntypedNode>("asn", Asn);
+            writer.WriteObjectValue<UntypedNode>("ip", Ip);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
-            writer.WriteDoubleValue("max_rtt_ms", MaxRttMs);
-            writer.WriteDoubleValue("mean_rtt_ms", MeanRttMs);
-            writer.WriteDoubleValue("min_rtt_ms", MinRttMs);
-            writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("packet_count", PacketCount);
-            writer.WriteDoubleValue("std_dev_rtt_ms", StdDevRttMs);
+            writer.WriteObjectValue<UntypedNode>("max_rtt_ms", MaxRttMs);
+            writer.WriteObjectValue<UntypedNode>("mean_rtt_ms", MeanRttMs);
+            writer.WriteObjectValue<UntypedNode>("min_rtt_ms", MinRttMs);
+            writer.WriteObjectValue<UntypedNode>("name", Name);
+            writer.WriteObjectValue<UntypedNode>("packet_count", PacketCount);
+            writer.WriteObjectValue<UntypedNode>("std_dev_rtt_ms", StdDevRttMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

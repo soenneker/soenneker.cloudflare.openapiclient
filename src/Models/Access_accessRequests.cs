@@ -12,67 +12,73 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Access_accessRequests : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The event that occurred, such as a login attempt.</summary>
+        /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get; set; }
+        public UntypedNode? Action { get; set; }
 #nullable restore
 #else
-        public string Action { get; set; }
+        public UntypedNode Action { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The result of the authentication event.</summary>
-        public bool? Allowed { get; set; }
-        /// <summary>The URL of the Access application.</summary>
+        /// <summary>The allowed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDomain { get; set; }
+        public UntypedNode? Allowed { get; set; }
 #nullable restore
 #else
-        public string AppDomain { get; set; }
+        public UntypedNode Allowed { get; set; }
 #endif
-        /// <summary>The unique identifier for the Access application.</summary>
+        /// <summary>The app_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUid { get; set; }
+        public UntypedNode? AppDomain { get; set; }
 #nullable restore
 #else
-        public string AppUid { get; set; }
+        public UntypedNode AppDomain { get; set; }
 #endif
-        /// <summary>The IdP used to authenticate.</summary>
+        /// <summary>The app_uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Connection { get; set; }
+        public UntypedNode? AppUid { get; set; }
 #nullable restore
 #else
-        public string Connection { get; set; }
+        public UntypedNode AppUid { get; set; }
+#endif
+        /// <summary>The connection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Connection { get; set; }
+#nullable restore
+#else
+        public UntypedNode Connection { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The IP address of the authenticating user.</summary>
+        /// <summary>The ip_address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress { get; set; }
+        public UntypedNode? IpAddress { get; set; }
 #nullable restore
 #else
-        public string IpAddress { get; set; }
+        public UntypedNode IpAddress { get; set; }
 #endif
-        /// <summary>The unique identifier for the request to Cloudflare.</summary>
+        /// <summary>The ray_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RayId { get; set; }
+        public UntypedNode? RayId { get; set; }
 #nullable restore
 #else
-        public string RayId { get; set; }
+        public UntypedNode RayId { get; set; }
 #endif
-        /// <summary>The email address of the authenticating user.</summary>
+        /// <summary>The user_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserEmail { get; set; }
+        public UntypedNode? UserEmail { get; set; }
 #nullable restore
 #else
-        public string UserEmail { get; set; }
+        public UntypedNode UserEmail { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_accessRequests"/> and sets the default values.
@@ -99,15 +105,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "allowed", n => { Allowed = n.GetBoolValue(); } },
-                { "app_domain", n => { AppDomain = n.GetStringValue(); } },
-                { "app_uid", n => { AppUid = n.GetStringValue(); } },
-                { "connection", n => { Connection = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "allowed", n => { Allowed = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "app_domain", n => { AppDomain = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "app_uid", n => { AppUid = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "connection", n => { Connection = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "ip_address", n => { IpAddress = n.GetStringValue(); } },
-                { "ray_id", n => { RayId = n.GetStringValue(); } },
-                { "user_email", n => { UserEmail = n.GetStringValue(); } },
+                { "ip_address", n => { IpAddress = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ray_id", n => { RayId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "user_email", n => { UserEmail = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -117,15 +123,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("action", Action);
-            writer.WriteBoolValue("allowed", Allowed);
-            writer.WriteStringValue("app_domain", AppDomain);
-            writer.WriteStringValue("app_uid", AppUid);
-            writer.WriteStringValue("connection", Connection);
+            writer.WriteObjectValue<UntypedNode>("action", Action);
+            writer.WriteObjectValue<UntypedNode>("allowed", Allowed);
+            writer.WriteObjectValue<UntypedNode>("app_domain", AppDomain);
+            writer.WriteObjectValue<UntypedNode>("app_uid", AppUid);
+            writer.WriteObjectValue<UntypedNode>("connection", Connection);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("ip_address", IpAddress);
-            writer.WriteStringValue("ray_id", RayId);
-            writer.WriteStringValue("user_email", UserEmail);
+            writer.WriteObjectValue<UntypedNode>("ip_address", IpAddress);
+            writer.WriteObjectValue<UntypedNode>("ray_id", RayId);
+            writer.WriteObjectValue<UntypedNode>("user_email", UserEmail);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

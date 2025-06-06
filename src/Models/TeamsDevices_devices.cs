@@ -54,13 +54,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MacAddress { get; set; }
 #endif
-        /// <summary>The device manufacturer name.</summary>
+        /// <summary>The manufacturer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer { get; set; }
+        public UntypedNode? Manufacturer { get; set; }
 #nullable restore
 #else
-        public string Manufacturer { get; set; }
+        public UntypedNode Manufacturer { get; set; }
 #endif
         /// <summary>The device model name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,21 +78,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The Linux distro name.</summary>
+        /// <summary>The os_distro_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDistroName { get; set; }
+        public UntypedNode? OsDistroName { get; set; }
 #nullable restore
 #else
-        public string OsDistroName { get; set; }
+        public UntypedNode OsDistroName { get; set; }
 #endif
-        /// <summary>The Linux distro revision.</summary>
+        /// <summary>The os_distro_revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDistroRevision { get; set; }
+        public UntypedNode? OsDistroRevision { get; set; }
 #nullable restore
 #else
-        public string OsDistroRevision { get; set; }
+        public UntypedNode OsDistroRevision { get; set; }
 #endif
         /// <summary>The operating system version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,16 +102,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OsVersion { get; set; }
 #endif
-        /// <summary>The operating system version extra parameter.</summary>
+        /// <summary>The os_version_extra property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersionExtra { get; set; }
+        public UntypedNode? OsVersionExtra { get; set; }
 #nullable restore
 #else
-        public string OsVersionExtra { get; set; }
+        public UntypedNode OsVersionExtra { get; set; }
 #endif
-        /// <summary>When the device was revoked.</summary>
-        public DateTimeOffset? RevokedAt { get; set; }
+        /// <summary>The revoked_at property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? RevokedAt { get; set; }
+#nullable restore
+#else
+        public UntypedNode RevokedAt { get; set; }
+#endif
         /// <summary>The device serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,14 +177,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "last_seen", n => { LastSeen = n.GetDateTimeOffsetValue(); } },
                 { "mac_address", n => { MacAddress = n.GetStringValue(); } },
-                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "os_distro_name", n => { OsDistroName = n.GetStringValue(); } },
-                { "os_distro_revision", n => { OsDistroRevision = n.GetStringValue(); } },
+                { "os_distro_name", n => { OsDistroName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "os_distro_revision", n => { OsDistroRevision = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "os_version", n => { OsVersion = n.GetStringValue(); } },
-                { "os_version_extra", n => { OsVersionExtra = n.GetStringValue(); } },
-                { "revoked_at", n => { RevokedAt = n.GetDateTimeOffsetValue(); } },
+                { "os_version_extra", n => { OsVersionExtra = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "revoked_at", n => { RevokedAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
                 { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_user>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_user.CreateFromDiscriminatorValue); } },
@@ -200,14 +206,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("key", Key);
             writer.WriteDateTimeOffsetValue("last_seen", LastSeen);
             writer.WriteStringValue("mac_address", MacAddress);
-            writer.WriteStringValue("manufacturer", Manufacturer);
+            writer.WriteObjectValue<UntypedNode>("manufacturer", Manufacturer);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("os_distro_name", OsDistroName);
-            writer.WriteStringValue("os_distro_revision", OsDistroRevision);
+            writer.WriteObjectValue<UntypedNode>("os_distro_name", OsDistroName);
+            writer.WriteObjectValue<UntypedNode>("os_distro_revision", OsDistroRevision);
             writer.WriteStringValue("os_version", OsVersion);
-            writer.WriteStringValue("os_version_extra", OsVersionExtra);
-            writer.WriteDateTimeOffsetValue("revoked_at", RevokedAt);
+            writer.WriteObjectValue<UntypedNode>("os_version_extra", OsVersionExtra);
+            writer.WriteObjectValue<UntypedNode>("revoked_at", RevokedAt);
             writer.WriteStringValue("serial_number", SerialNumber);
             writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_user>("user", User);

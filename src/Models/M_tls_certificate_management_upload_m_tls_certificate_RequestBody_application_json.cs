@@ -32,13 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The private_key property</summary>
+        /// <summary>The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust&apos;s block page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PrivateKey { get; set; }
+        public string? PrivateKey { get; set; }
 #nullable restore
 #else
-        public UntypedNode PrivateKey { get; set; }
+        public string PrivateKey { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate_RequestBody_application_json"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ca", n => { Ca = n.GetBoolValue(); } },
                 { "certificates", n => { Certificates = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "private_key", n => { PrivateKey = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "private_key", n => { PrivateKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("ca", Ca);
             writer.WriteStringValue("certificates", Certificates);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UntypedNode>("private_key", PrivateKey);
+            writer.WriteStringValue("private_key", PrivateKey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

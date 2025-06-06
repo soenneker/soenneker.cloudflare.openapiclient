@@ -38,13 +38,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A unique identifier for the audit log entry.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public UntypedNode? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public UntypedNode Id { get; set; }
 #endif
         /// <summary>Provides raw information about the request and response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_account>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_account.CreateFromDiscriminatorValue); } },
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_action.CreateFromDiscriminatorValue); } },
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_actor>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_actor.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_raw>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_raw.CreateFromDiscriminatorValue); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_resource>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_resource.CreateFromDiscriminatorValue); } },
                 { "zone", n => { Zone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_zone>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_zone.CreateFromDiscriminatorValue); } },
@@ -114,6 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_account>("account", Account);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_actor>("actor", Actor);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_raw>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_resource>("resource", Resource);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2_zone>("zone", Zone);

@@ -43,18 +43,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? Routes { get; set; }
+        public List<UntypedNode>? Routes { get; set; }
 #nullable restore
 #else
-        public List<Guid?> Routes { get; set; }
+        public List<UntypedNode> Routes { get; set; }
 #endif
         /// <summary>The tunnels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? Tunnels { get; set; }
+        public List<UntypedNode>? Tunnels { get; set; }
 #nullable restore
 #else
-        public List<Guid?> Tunnels { get; set; }
+        public List<UntypedNode> Tunnels { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status"/> and sets the default values.
@@ -85,8 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "lifecycle_errors", n => { LifecycleErrors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status_lifecycle_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status_lifecycle_errors.CreateFromDiscriminatorValue); } },
                 { "lifecycle_state", n => { LifecycleState = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_lifecycle_state>(); } },
                 { "plan_progress", n => { PlanProgress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_plan_progress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_plan_progress.CreateFromDiscriminatorValue); } },
-                { "routes", n => { Routes = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "tunnels", n => { Tunnels = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "routes", n => { Routes = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "tunnels", n => { Tunnels = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -100,8 +100,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status_lifecycle_errors>("lifecycle_errors", LifecycleErrors);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_lifecycle_state>("lifecycle_state", LifecycleState);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_plan_progress>("plan_progress", PlanProgress);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("routes", Routes);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("tunnels", Tunnels);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("routes", Routes);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("tunnels", Tunnels);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

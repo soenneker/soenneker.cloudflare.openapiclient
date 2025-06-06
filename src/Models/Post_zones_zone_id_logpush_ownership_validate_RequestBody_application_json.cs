@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DestinationConf { get; set; }
 #endif
-        /// <summary>The ownership_challenge property</summary>
+        /// <summary>Ownership challenge token to prove destination ownership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? OwnershipChallenge { get; set; }
+        public string? OwnershipChallenge { get; set; }
 #nullable restore
 #else
-        public UntypedNode OwnershipChallenge { get; set; }
+        public string OwnershipChallenge { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_zones_zone_id_logpush_ownership_validate_RequestBody_application_json"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
-                { "ownership_challenge", n => { OwnershipChallenge = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ownership_challenge", n => { OwnershipChallenge = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destination_conf", DestinationConf);
-            writer.WriteObjectValue<UntypedNode>("ownership_challenge", OwnershipChallenge);
+            writer.WriteStringValue("ownership_challenge", OwnershipChallenge);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

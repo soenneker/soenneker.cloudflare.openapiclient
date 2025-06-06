@@ -12,18 +12,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class BillSubsApi_billingHistory : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The billing item action.</summary>
+        /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get; private set; }
+        public UntypedNode? Action { get; set; }
 #nullable restore
 #else
-        public string Action { get; private set; }
+        public UntypedNode Action { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The amount associated with this billing item.</summary>
-        public double? Amount { get; private set; }
+        /// <summary>The amount property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Amount { get; set; }
+#nullable restore
+#else
+        public UntypedNode Amount { get; set; }
+#endif
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,13 +38,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Currency { get; private set; }
 #endif
-        /// <summary>The billing item description.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; private set; }
+        public UntypedNode? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; private set; }
+        public UntypedNode Description { get; set; }
 #endif
         /// <summary>Billing item identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,13 +56,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the billing item was created.</summary>
         public DateTimeOffset? OccurredAt { get; private set; }
-        /// <summary>The billing item type.</summary>
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; private set; }
+        public UntypedNode? Type { get; set; }
 #nullable restore
 #else
-        public string Type { get; private set; }
+        public UntypedNode Type { get; set; }
 #endif
         /// <summary>The zone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,13 +97,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "amount", n => { Amount = n.GetDoubleValue(); } },
+                { "action", n => { Action = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "zone", n => { Zone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasZone>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasZone.CreateFromDiscriminatorValue); } },
             };
         }
@@ -108,6 +114,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<UntypedNode>("action", Action);
+            writer.WriteObjectValue<UntypedNode>("amount", Amount);
+            writer.WriteObjectValue<UntypedNode>("description", Description);
+            writer.WriteObjectValue<UntypedNode>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasZone>("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }

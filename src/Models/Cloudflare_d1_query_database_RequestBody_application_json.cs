@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Params { get; set; }
 #endif
-        /// <summary>The sql property</summary>
+        /// <summary>Your SQL query. Supports multiple statements, joined by semicolons, which will be executed as a batch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Sql { get; set; }
+        public string? Sql { get; set; }
 #nullable restore
 #else
-        public UntypedNode Sql { get; set; }
+        public string Sql { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_d1_query_database_RequestBody_application_json"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "params", n => { Params = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sql", n => { Sql = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "sql", n => { Sql = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("params", Params);
-            writer.WriteObjectValue<UntypedNode>("sql", Sql);
+            writer.WriteStringValue("sql", Sql);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

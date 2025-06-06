@@ -40,8 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_summary TargetSummary { get; set; }
 #endif
-        /// <summary>Total time of traceroute in ms.</summary>
-        public int? TracerouteTimeMs { get; set; }
+        /// <summary>The traceroute_time_ms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? TracerouteTimeMs { get; set; }
+#nullable restore
+#else
+        public UntypedNode TracerouteTimeMs { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_colo_result"/> and sets the default values.
         /// </summary>
@@ -71,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "error", n => { Error = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_error>(); } },
                 { "hops", n => { Hops = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "target_summary", n => { TargetSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_summary>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_summary.CreateFromDiscriminatorValue); } },
-                { "traceroute_time_ms", n => { TracerouteTimeMs = n.GetIntValue(); } },
+                { "traceroute_time_ms", n => { TracerouteTimeMs = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_error>("error", Error);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result>("hops", Hops);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_summary>("target_summary", TargetSummary);
-            writer.WriteIntValue("traceroute_time_ms", TracerouteTimeMs);
+            writer.WriteObjectValue<UntypedNode>("traceroute_time_ms", TracerouteTimeMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

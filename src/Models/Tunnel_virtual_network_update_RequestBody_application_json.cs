@@ -22,14 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>The is_default_network property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? IsDefaultNetwork { get; set; }
-#nullable restore
-#else
-        public UntypedNode IsDefaultNetwork { get; set; }
-#endif
+        /// <summary>If `true`, this virtual network is the default for the account.</summary>
+        public bool? IsDefaultNetwork { get; set; }
         /// <summary>A user-friendly name for the virtual network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "is_default_network", n => { IsDefaultNetwork = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "is_default_network", n => { IsDefaultNetwork = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -76,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<UntypedNode>("is_default_network", IsDefaultNetwork);
+            writer.WriteBoolValue("is_default_network", IsDefaultNetwork);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

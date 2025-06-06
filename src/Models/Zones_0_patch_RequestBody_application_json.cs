@@ -14,14 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The paused property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Paused { get; set; }
-#nullable restore
-#else
-        public UntypedNode Paused { get; set; }
-#endif
+        /// <summary>Indicates whether the zone is only using Cloudflare DNS services. Atrue value means the zone will not receive security or performancebenefits.</summary>
+        public bool? Paused { get; set; }
         /// <summary>(Deprecated) Please use the `/zones/{zone_id}/subscription` APIto update a zone&apos;s plan. Changing this value will create/cancelassociated subscriptions. To view available plans for this zone,see Zone Plans.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "paused", n => { Paused = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
                 { "plan", n => { Plan = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_RequestBody_application_json_plan>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_RequestBody_application_json_plan.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_RequestBody_application_json_type>(); } },
                 { "vanity_name_servers", n => { VanityNameServers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -78,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("paused", Paused);
+            writer.WriteBoolValue("paused", Paused);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_RequestBody_application_json_plan>("plan", Plan);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_RequestBody_application_json_type>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("vanity_name_servers", VanityNameServers);

@@ -14,109 +14,109 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Address.</summary>
+        /// <summary>The address property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address { get; set; }
+        public UntypedNode? Address { get; set; }
 #nullable restore
 #else
-        public string Address { get; set; }
+        public UntypedNode Address { get; set; }
 #endif
-        /// <summary>Optional address line for unit, floor, suite, etc.</summary>
+        /// <summary>The address2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address2 { get; set; }
+        public UntypedNode? Address2 { get; set; }
 #nullable restore
 #else
-        public string Address2 { get; set; }
+        public UntypedNode Address2 { get; set; }
 #endif
-        /// <summary>City.</summary>
+        /// <summary>The city property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public UntypedNode? City { get; set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public UntypedNode City { get; set; }
 #endif
-        /// <summary>The country in which the user lives.</summary>
+        /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; set; }
+        public UntypedNode? Country { get; set; }
 #nullable restore
 #else
-        public string Country { get; set; }
+        public UntypedNode Country { get; set; }
 #endif
-        /// <summary>The contact email address of the user.</summary>
+        /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public UntypedNode? Email { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public UntypedNode Email { get; set; }
 #endif
-        /// <summary>Contact fax number.</summary>
+        /// <summary>The fax property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fax { get; set; }
+        public UntypedNode? Fax { get; set; }
 #nullable restore
 #else
-        public string Fax { get; set; }
+        public UntypedNode Fax { get; set; }
 #endif
-        /// <summary>User&apos;s first name</summary>
+        /// <summary>The first_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName { get; set; }
+        public UntypedNode? FirstName { get; set; }
 #nullable restore
 #else
-        public string FirstName { get; set; }
+        public UntypedNode FirstName { get; set; }
 #endif
-        /// <summary>Contact Identifier.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public UntypedNode? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public UntypedNode Id { get; set; }
 #endif
-        /// <summary>User&apos;s last name</summary>
+        /// <summary>The last_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName { get; set; }
+        public UntypedNode? LastName { get; set; }
 #nullable restore
 #else
-        public string LastName { get; set; }
+        public UntypedNode LastName { get; set; }
 #endif
-        /// <summary>Name of organization.</summary>
+        /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Organization { get; set; }
+        public UntypedNode? Organization { get; set; }
 #nullable restore
 #else
-        public string Organization { get; set; }
+        public UntypedNode Organization { get; set; }
 #endif
-        /// <summary>User&apos;s telephone number</summary>
+        /// <summary>The phone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone { get; set; }
+        public UntypedNode? Phone { get; set; }
 #nullable restore
 #else
-        public string Phone { get; set; }
+        public UntypedNode Phone { get; set; }
 #endif
-        /// <summary>State.</summary>
+        /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public UntypedNode? State { get; set; }
 #nullable restore
 #else
-        public string State { get; set; }
+        public UntypedNode State { get; set; }
 #endif
-        /// <summary>The zipcode or postal code where the user lives.</summary>
+        /// <summary>The zip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Zip { get; set; }
+        public UntypedNode? Zip { get; set; }
 #nullable restore
 #else
-        public string Zip { get; set; }
+        public UntypedNode Zip { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RegistrarApi_contact_properties"/> and sets the default values.
@@ -143,19 +143,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetStringValue(); } },
-                { "address2", n => { Address2 = n.GetStringValue(); } },
-                { "city", n => { City = n.GetStringValue(); } },
-                { "country", n => { Country = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "fax", n => { Fax = n.GetStringValue(); } },
-                { "first_name", n => { FirstName = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "last_name", n => { LastName = n.GetStringValue(); } },
-                { "organization", n => { Organization = n.GetStringValue(); } },
-                { "phone", n => { Phone = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
-                { "zip", n => { Zip = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "address2", n => { Address2 = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "city", n => { City = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "country", n => { Country = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "fax", n => { Fax = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "first_name", n => { FirstName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "last_name", n => { LastName = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "phone", n => { Phone = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "zip", n => { Zip = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -165,18 +165,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("address", Address);
-            writer.WriteStringValue("address2", Address2);
-            writer.WriteStringValue("city", City);
-            writer.WriteStringValue("country", Country);
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("fax", Fax);
-            writer.WriteStringValue("first_name", FirstName);
-            writer.WriteStringValue("last_name", LastName);
-            writer.WriteStringValue("organization", Organization);
-            writer.WriteStringValue("phone", Phone);
-            writer.WriteStringValue("state", State);
-            writer.WriteStringValue("zip", Zip);
+            writer.WriteObjectValue<UntypedNode>("address", Address);
+            writer.WriteObjectValue<UntypedNode>("address2", Address2);
+            writer.WriteObjectValue<UntypedNode>("city", City);
+            writer.WriteObjectValue<UntypedNode>("country", Country);
+            writer.WriteObjectValue<UntypedNode>("email", Email);
+            writer.WriteObjectValue<UntypedNode>("fax", Fax);
+            writer.WriteObjectValue<UntypedNode>("first_name", FirstName);
+            writer.WriteObjectValue<UntypedNode>("id", Id);
+            writer.WriteObjectValue<UntypedNode>("last_name", LastName);
+            writer.WriteObjectValue<UntypedNode>("organization", Organization);
+            writer.WriteObjectValue<UntypedNode>("phone", Phone);
+            writer.WriteObjectValue<UntypedNode>("state", State);
+            writer.WriteObjectValue<UntypedNode>("zip", Zip);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

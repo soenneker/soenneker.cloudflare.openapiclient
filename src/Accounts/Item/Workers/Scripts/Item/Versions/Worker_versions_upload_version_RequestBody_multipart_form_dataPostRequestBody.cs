@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// <summary>Flags that enable or disable certain features in the Workers runtime. Used to enable upcoming features or opt in or out of specific changes not included in a `compatibility_date`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CompatibilityFlags { get; set; }
+        public List<UntypedNode>? CompatibilityFlags { get; set; }
 #nullable restore
 #else
-        public List<string> CompatibilityFlags { get; set; }
+        public List<UntypedNode> CompatibilityFlags { get; set; }
 #endif
         /// <summary>List of binding types to keep from previous_upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.Worker_versions_upload_version_RequestBody_multipart_form_dataPostRequestBody_annotations>(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.Worker_versions_upload_version_RequestBody_multipart_form_dataPostRequestBody_annotations.CreateFromDiscriminatorValue); } },
                 { "bindings", n => { Bindings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "compatibility_date", n => { CompatibilityDate = n.GetStringValue(); } },
-                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "keep_bindings", n => { KeepBindings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "main_module", n => { MainModule = n.GetStringValue(); } },
                 { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>(); } },
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.Worker_versions_upload_version_RequestBody_multipart_form_dataPostRequestBody_annotations>("annotations", Annotations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>("bindings", Bindings);
             writer.WriteStringValue("compatibility_date", CompatibilityDate);
-            writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("compatibility_flags", CompatibilityFlags);
             writer.WriteCollectionOfPrimitiveValues<string>("keep_bindings", KeepBindings);
             writer.WriteStringValue("main_module", MainModule);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model>("usage_model", UsageModel);

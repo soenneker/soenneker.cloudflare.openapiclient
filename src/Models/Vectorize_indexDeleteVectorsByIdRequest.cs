@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of vector identifiers to delete from the index indicated by the path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get; set; }
+        public List<UntypedNode>? Ids { get; set; }
 #nullable restore
 #else
-        public List<string> Ids { get; set; }
+        public List<UntypedNode> Ids { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDeleteVectorsByIdRequest"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("ids", Ids);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
