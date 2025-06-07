@@ -37,21 +37,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events
         /// Retrieves the BGP route leak events.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Response_200_application_json"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Response_200_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Response_200_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Response_400_application_json.CreateFromDiscriminatorValue },
@@ -62,22 +60,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events
         /// Retrieves the BGP route leak events.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -115,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events
             [QueryParameter("eventId")]
             public int? EventId { get; set; }
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsRadarGetBgpRouteLeakEventsParamFormat instead")]
+            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("format")]
@@ -127,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Param_format? FormatAsRadarGetBgpRouteLeakEventsParamFormat { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
             /// <summary>ASN that is causing or affected by a route leak event.</summary>
             [QueryParameter("involvedAsn")]
             public int? InvolvedAsn { get; set; }
@@ -151,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Sorts results by the specified field.</summary>
-            [Obsolete("This property is deprecated, use SortByAsRadarGetBgpRouteLeakEventsParamSortBy instead")]
+            [Obsolete("This property is deprecated, use SortByAsGetSortByQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]
@@ -163,9 +158,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events
 #endif
             /// <summary>Sorts results by the specified field.</summary>
             [QueryParameter("sortBy")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Param_sortBy? SortByAsRadarGetBgpRouteLeakEventsParamSortBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.GetSortByQueryParameterType? SortByAsGetSortByQueryParameterType { get; set; }
             /// <summary>Sort order.</summary>
-            [Obsolete("This property is deprecated, use SortOrderAsRadarGetBgpRouteLeakEventsParamSortOrder instead")]
+            [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortOrder")]
@@ -177,7 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events
 #endif
             /// <summary>Sort order.</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bgp_route_leak_events_Param_sortOrder? SortOrderAsRadarGetBgpRouteLeakEventsParamSortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks.Events.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

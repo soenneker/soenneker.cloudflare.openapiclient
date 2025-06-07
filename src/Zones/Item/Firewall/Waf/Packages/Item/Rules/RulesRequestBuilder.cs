@@ -51,44 +51,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
         /// Fetches WAF rules in a WAF package.**Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_Response_4XX_application_json">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_Response_4XX_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches WAF rules in a WAF package.**Note:** Applies only to the [previous version of WAF managed rules](https://developers.cloudflare.com/support/firewall/managed-rules-web-application-firewall-waf/understanding-waf-managed-rules-web-application-firewall/).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
             [QueryParameter("description")]
             public string Description { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use DirectionAsWafRulesListWafRulesParamDirection instead")]
+            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("direction")]
@@ -127,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
             public string Direction { get; set; }
 #endif
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_Param_direction? DirectionAsWafRulesListWafRulesParamDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("group_id")]
@@ -137,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
             [QueryParameter("group_id")]
             public string GroupId { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use MatchAsWafRulesListWafRulesParamMatch instead")]
+            [Obsolete("This property is deprecated, use MatchAsGetMatchQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("match")]
@@ -148,8 +148,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
             public string Match { get; set; }
 #endif
             [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_Param_match? MatchAsWafRulesListWafRulesParamMatch { get; set; }
-            [Obsolete("This property is deprecated, use ModeAsWafRulesListWafRulesParamMode instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.GetMatchQueryParameterType? MatchAsGetMatchQueryParameterType { get; set; }
+            [Obsolete("This property is deprecated, use ModeAsGetModeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mode")]
@@ -160,8 +160,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
             public string Mode { get; set; }
 #endif
             [QueryParameter("mode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_Param_mode? ModeAsWafRulesListWafRulesParamMode { get; set; }
-            [Obsolete("This property is deprecated, use OrderAsWafRulesListWafRulesParamOrder instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.GetModeQueryParameterType? ModeAsGetModeQueryParameterType { get; set; }
+            [Obsolete("This property is deprecated, use OrderAsGetOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order")]
@@ -172,7 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
             public string Order { get; set; }
 #endif
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_rules_list_waf_rules_Param_order? OrderAsWafRulesListWafRulesParamOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("per_page")]

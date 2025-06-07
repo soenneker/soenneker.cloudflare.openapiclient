@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The TLS10 property</summary>
+        /// <summary>The TLS_1_0 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TLS10 { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> TLS10 { get; set; }
 #endif
-        /// <summary>The TLS11 property</summary>
+        /// <summary>The TLS_1_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TLS11 { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> TLS11 { get; set; }
 #endif
-        /// <summary>The TLS12 property</summary>
+        /// <summary>The TLS_1_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TLS12 { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> TLS12 { get; set; }
 #endif
-        /// <summary>The TLS13 property</summary>
+        /// <summary>The TLS_1_3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TLS13 { get; set; }
@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "TLS 1.0", n => { TLS10 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "TLS 1.1", n => { TLS11 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "TLS 1.2", n => { TLS12 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "TLS 1.3", n => { TLS13 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "TLS_1_0", n => { TLS10 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "TLS_1_1", n => { TLS11 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "TLS_1_2", n => { TLS12 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "TLS_1_3", n => { TLS13 = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("TLS 1.0", TLS10);
-            writer.WriteCollectionOfPrimitiveValues<string>("TLS 1.1", TLS11);
-            writer.WriteCollectionOfPrimitiveValues<string>("TLS 1.2", TLS12);
-            writer.WriteCollectionOfPrimitiveValues<string>("TLS 1.3", TLS13);
+            writer.WriteCollectionOfPrimitiveValues<string>("TLS_1_0", TLS10);
+            writer.WriteCollectionOfPrimitiveValues<string>("TLS_1_1", TLS11);
+            writer.WriteCollectionOfPrimitiveValues<string>("TLS_1_2", TLS12);
+            writer.WriteCollectionOfPrimitiveValues<string>("TLS_1_3", TLS13);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

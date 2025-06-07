@@ -43,21 +43,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
         /// Lists a history of published Zaraz configuration records for a zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zarazHistoryResponse"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zarazHistoryResponse?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_identifier_zaraz_history_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zarazHistoryResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zarazHistoryResponse> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_identifier_zaraz_history_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zarazHistoryResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_apiResponseCommonFailure.CreateFromDiscriminatorValue },
@@ -93,22 +91,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
         /// Lists a history of published Zaraz configuration records for a zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_identifier_zaraz_history_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_identifier_zaraz_history_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -155,7 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
             [QueryParameter("offset")]
             public int? Offset { get; set; }
             /// <summary>The field to sort by. Default is updated_at.</summary>
-            [Obsolete("This property is deprecated, use SortFieldAsGetZonesZoneIdentifierZarazHistoryParamSortField instead")]
+            [Obsolete("This property is deprecated, use SortFieldAsGetSortFieldQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortField")]
@@ -167,9 +162,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
 #endif
             /// <summary>The field to sort by. Default is updated_at.</summary>
             [QueryParameter("sortField")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_identifier_zaraz_history_Param_sortField? SortFieldAsGetZonesZoneIdentifierZarazHistoryParamSortField { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.GetSortFieldQueryParameterType? SortFieldAsGetSortFieldQueryParameterType { get; set; }
             /// <summary>Sorting order. Default is DESC.</summary>
-            [Obsolete("This property is deprecated, use SortOrderAsGetZonesZoneIdentifierZarazHistoryParamSortOrder instead")]
+            [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortOrder")]
@@ -181,7 +176,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History
 #endif
             /// <summary>Sorting order. Default is DESC.</summary>
             [QueryParameter("sortOrder")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_identifier_zaraz_history_Param_sortOrder? SortOrderAsGetZonesZoneIdentifierZarazHistoryParamSortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.GetSortOrderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

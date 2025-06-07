@@ -37,21 +37,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device
         /// Retrieves the distribution of HTTP requests by device type over time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Response_200_application_json"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Response_200_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Response_200_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Response_400_application_json.CreateFromDiscriminatorValue },
@@ -62,22 +60,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device
         /// Retrieves the distribution of HTTP requests by device type over time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.Device_typeRequestBuilder.Device_typeRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -96,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device
         public partial class Device_typeRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsRadarGetHttpTimeseriesGroupByDeviceTypeParamAggInterval instead")]
+            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("aggInterval")]
@@ -108,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device
 #endif
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
             [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Param_aggInterval? AggIntervalAsRadarGetHttpTimeseriesGroupByDeviceTypeParamAggInterval { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
             /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -202,7 +197,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsRadarGetHttpTimeseriesGroupByDeviceTypeParamFormat instead")]
+            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("format")]
@@ -214,7 +209,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_device_type_Param_format? FormatAsRadarGetHttpTimeseriesGroupByDeviceTypeParamFormat { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_type.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
             /// <summary>Filters results by HTTP protocol (HTTP vs. HTTPS).</summary>
             [Obsolete("This property is deprecated, use HttpProtocolAsGetHttpProtocolQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

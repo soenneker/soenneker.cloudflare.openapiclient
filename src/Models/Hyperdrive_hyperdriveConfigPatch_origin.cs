@@ -14,32 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set the name of your origin database.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Database { get; set; }
-#nullable restore
-#else
-        public string Database { get; set; }
-#endif
-        /// <summary>Set the password needed to access your origin database. The API never returns this write-only value.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Password { get; set; }
-#nullable restore
-#else
-        public string Password { get; set; }
-#endif
-        /// <summary>Specifies the URL scheme used to connect to your origin database.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveScheme? Scheme { get; set; }
-        /// <summary>Set the user of your origin database.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? User { get; set; }
-#nullable restore
-#else
-        public string User { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfigPatch_origin"/> and sets the default values.
         /// </summary>
@@ -65,10 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "database", n => { Database = n.GetStringValue(); } },
-                { "password", n => { Password = n.GetStringValue(); } },
-                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveScheme>(); } },
-                { "user", n => { User = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,10 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("database", Database);
-            writer.WriteStringValue("password", Password);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveScheme>("scheme", Scheme);
-            writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

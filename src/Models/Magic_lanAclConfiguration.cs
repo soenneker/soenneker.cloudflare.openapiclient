@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of subnet IPs within the LAN that will be included in the ACL. If no subnets are provided, communication on any subnets on this LAN are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Subnets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet>? Subnets { get; set; }
 #nullable restore
 #else
-        public List<string> Subnets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet> Subnets { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "lan_name", n => { LanName = n.GetStringValue(); } },
                 { "port_ranges", n => { PortRanges = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "subnets", n => { Subnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "subnets", n => { Subnets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("lan_name", LanName);
             writer.WriteCollectionOfPrimitiveValues<string>("port_ranges", PortRanges);
             writer.WriteCollectionOfPrimitiveValues<int?>("ports", Ports);
-            writer.WriteCollectionOfPrimitiveValues<string>("subnets", Subnets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_aclSubnet>("subnets", Subnets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -36,47 +36,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
         /// <summary>
         /// List WARP configuration and enablement toggle change events by device.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">Fallback request body schema</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Response_200_application_json"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Response_200_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Response_200_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List WARP configuration and enablement toggle change events by device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.WarpChangeEventsRequestBuilder.WarpChangeEventsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -131,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
             /// <summary>Sort response by event timestamp.</summary>
-            [Obsolete("This property is deprecated, use SortOrderAsListWarpChangeEventsParamSortOrder instead")]
+            [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort_order")]
@@ -143,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
 #endif
             /// <summary>Sort response by event timestamp.</summary>
             [QueryParameter("sort_order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Param_sort_order? SortOrderAsListWarpChangeEventsParamSortOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.GetSort_orderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
             /// <summary>End time for the query in ISO (RFC3339 - ISO 8601) format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
             public string To { get; set; }
 #endif
             /// <summary>Filter events by type toggle value. Applicable to type=&apos;toggle&apos; events only.</summary>
-            [Obsolete("This property is deprecated, use ToggleAsListWarpChangeEventsParamToggle instead")]
+            [Obsolete("This property is deprecated, use ToggleAsGetToggleQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("toggle")]
@@ -167,9 +163,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
 #endif
             /// <summary>Filter events by type toggle value. Applicable to type=&apos;toggle&apos; events only.</summary>
             [QueryParameter("toggle")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Param_toggle? ToggleAsListWarpChangeEventsParamToggle { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.GetToggleQueryParameterType? ToggleAsGetToggleQueryParameterType { get; set; }
             /// <summary>Filter events by type &apos;config&apos; or &apos;toggle&apos;</summary>
-            [Obsolete("This property is deprecated, use TypeAsListWarpChangeEventsParamType instead")]
+            [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type")]
@@ -181,7 +177,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
 #endif
             /// <summary>Filter events by type &apos;config&apos; or &apos;toggle&apos;</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_Param_type? TypeAsListWarpChangeEventsParamType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

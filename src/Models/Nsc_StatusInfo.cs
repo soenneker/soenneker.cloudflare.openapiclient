@@ -7,44 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember4"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Nsc_StatusInfo : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class Nsc_StatusInfo : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember1? NscStatusInfoMember1 { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember1 NscStatusInfoMember1 { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember2? NscStatusInfoMember2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember2 NscStatusInfoMember2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember3? NscStatusInfoMember3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember3 NscStatusInfoMember3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember4? NscStatusInfoMember4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember4 NscStatusInfoMember4 { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfo"/> and sets the default values.
+        /// </summary>
+        public Nsc_StatusInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,25 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("state")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfo();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.NscStatusInfoMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.NscStatusInfoMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember2();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.NscStatusInfoMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember3();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.NscStatusInfoMember4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember4();
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,23 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(NscStatusInfoMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return NscStatusInfoMember1.GetFieldDeserializers();
-            }
-            else if(NscStatusInfoMember2 != null)
-            {
-                return NscStatusInfoMember2.GetFieldDeserializers();
-            }
-            else if(NscStatusInfoMember3 != null)
-            {
-                return NscStatusInfoMember3.GetFieldDeserializers();
-            }
-            else if(NscStatusInfoMember4 != null)
-            {
-                return NscStatusInfoMember4.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -104,22 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(NscStatusInfoMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember1>(null, NscStatusInfoMember1);
-            }
-            else if(NscStatusInfoMember2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember2>(null, NscStatusInfoMember2);
-            }
-            else if(NscStatusInfoMember3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember3>(null, NscStatusInfoMember3);
-            }
-            else if(NscStatusInfoMember4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_StatusInfoMember4>(null, NscStatusInfoMember4);
-            }
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

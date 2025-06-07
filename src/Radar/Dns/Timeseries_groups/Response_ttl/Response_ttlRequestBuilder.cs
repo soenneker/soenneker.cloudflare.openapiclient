@@ -37,21 +37,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
         /// Retrieves the distribution of DNS queries by minimum answer TTL over time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Response_200_application_json"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Response_200_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Response_200_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Response_400_application_json.CreateFromDiscriminatorValue },
@@ -62,22 +60,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
         /// Retrieves the distribution of DNS queries by minimum answer TTL over time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder.Response_ttlRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -96,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
         public partial class Response_ttlRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsRadarGetDnsTimeseriesGroupByResponseTtlParamAggInterval instead")]
+            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("aggInterval")]
@@ -108,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
 #endif
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
             [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Param_aggInterval? AggIntervalAsRadarGetDnsTimeseriesGroupByResponseTtlParamAggInterval { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
             /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -160,7 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsRadarGetDnsTimeseriesGroupByResponseTtlParamFormat instead")]
+            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("format")]
@@ -172,7 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Param_format? FormatAsRadarGetDnsTimeseriesGroupByResponseTtlParamFormat { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -197,7 +192,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
             [QueryParameter("nodata")]
             public bool? Nodata { get; set; }
             /// <summary>Filters results by DNS transport protocol.</summary>
-            [Obsolete("This property is deprecated, use ProtocolAsRadarGetDnsTimeseriesGroupByResponseTtlParamProtocol instead")]
+            [Obsolete("This property is deprecated, use ProtocolAsGetProtocolQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("protocol")]
@@ -209,9 +204,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
 #endif
             /// <summary>Filters results by DNS transport protocol.</summary>
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Param_protocol? ProtocolAsRadarGetDnsTimeseriesGroupByResponseTtlParamProtocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.GetProtocolQueryParameterType? ProtocolAsGetProtocolQueryParameterType { get; set; }
             /// <summary>Filters results by DNS query type.</summary>
-            [Obsolete("This property is deprecated, use QueryTypeAsRadarGetDnsTimeseriesGroupByResponseTtlParamQueryType instead")]
+            [Obsolete("This property is deprecated, use QueryTypeAsGetQueryTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("queryType")]
@@ -223,9 +218,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
 #endif
             /// <summary>Filters results by DNS query type.</summary>
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Param_queryType? QueryTypeAsRadarGetDnsTimeseriesGroupByResponseTtlParamQueryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.GetQueryTypeQueryParameterType? QueryTypeAsGetQueryTypeQueryParameterType { get; set; }
             /// <summary>Filters results by DNS response code.</summary>
-            [Obsolete("This property is deprecated, use ResponseCodeAsRadarGetDnsTimeseriesGroupByResponseTtlParamResponseCode instead")]
+            [Obsolete("This property is deprecated, use ResponseCodeAsGetResponseCodeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("responseCode")]
@@ -237,7 +232,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Respons
 #endif
             /// <summary>Filters results by DNS response code.</summary>
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_timeseries_group_by_response_ttl_Param_responseCode? ResponseCodeAsRadarGetDnsTimeseriesGroupByResponseTtlParamResponseCode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.GetResponseCodeQueryParameterType? ResponseCodeAsGetResponseCodeQueryParameterType { get; set; }
             /// <summary>Filters results by country code top-level domain (ccTLD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

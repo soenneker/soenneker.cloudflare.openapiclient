@@ -9,9 +9,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull : global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_object, IParsable
+    public partial class TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CertId { get; set; }
+#nullable restore
+#else
+        public string CertId { get; set; }
+#endif
+        /// <summary>The hostname certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Certificate { get; set; }
+#nullable restore
+#else
+        public string Certificate { get; set; }
+#endif
+        /// <summary>Status of the certificate or the association.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus? CertStatus { get; private set; }
+        /// <summary>The time when the certificate was updated.</summary>
+        public DateTimeOffset? CertUpdatedAt { get; private set; }
+        /// <summary>The time when the certificate was uploaded.</summary>
+        public DateTimeOffset? CertUploadedOn { get; set; }
+        /// <summary>The time when the certificate was created.</summary>
+        public DateTimeOffset? CreatedAt { get; private set; }
+        /// <summary>Indicates whether hostname-level authenticated origin pulls is enabled. A null value voids the association.</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The date when the certificate expires.</summary>
+        public DateTimeOffset? ExpiresOn { get; private set; }
+        /// <summary>The hostname on the origin for which the client certificate uploaded will be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Hostname { get; set; }
+#nullable restore
+#else
+        public string Hostname { get; set; }
+#endif
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -19,6 +57,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>The certificate authority that issued the certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Issuer { get; private set; }
+#nullable restore
+#else
+        public string Issuer { get; private set; }
 #endif
         /// <summary>The hostname certificate&apos;s private key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,12 +74,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PrivateKey { get; set; }
 #endif
+        /// <summary>The serial number on the uploaded certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SerialNumber { get; set; }
+#nullable restore
+#else
+        public string SerialNumber { get; set; }
+#endif
+        /// <summary>The type of hash used for the certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Signature { get; private set; }
+#nullable restore
+#else
+        public string Signature { get; private set; }
+#endif
+        /// <summary>Status of the certificate or the association.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus? Status { get; private set; }
+        /// <summary>The time when the certificate was updated.</summary>
+        public DateTimeOffset? UpdatedAt { get; private set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull"/> and sets the default values.
+        /// </summary>
+        public TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull();
@@ -42,24 +115,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "cert_id", n => { CertId = n.GetStringValue(); } },
+                { "cert_status", n => { CertStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>(); } },
+                { "cert_updated_at", n => { CertUpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "cert_uploaded_on", n => { CertUploadedOn = n.GetDateTimeOffsetValue(); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
+                { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostnameAuthenticatedOriginPull_componentsSchemasStatus>(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("cert_id", CertId);
+            writer.WriteStringValue("certificate", Certificate);
+            writer.WriteDateTimeOffsetValue("cert_uploaded_on", CertUploadedOn);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("private_key", PrivateKey);
+            writer.WriteStringValue("serial_number", SerialNumber);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

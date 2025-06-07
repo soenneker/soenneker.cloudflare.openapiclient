@@ -7,20 +7,174 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Fallback request body schema
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class Brapi_post_Screenshot_RequestBody_application_json : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
+        /// <summary>The maximum duration allowed for the browser action to complete after the page has loaded (such as taking screenshots, extracting content, or generating PDFs). If this time limit is exceeded, the action stops and returns a timeout error.</summary>
+        public double? ActionTimeout { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Adds a `&lt;script&gt;` tag into the page with the desired URL or content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addScriptTag>? AddScriptTag { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addScriptTag> AddScriptTag { get; set; }
+#endif
+        /// <summary>Adds a `&lt;link rel=&quot;stylesheet&quot;&gt;` tag into the page with the desired URL or a `&lt;style type=&quot;text/css&quot;&gt;` tag with the content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addStyleTag>? AddStyleTag { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addStyleTag> AddStyleTag { get; set; }
+#endif
+        /// <summary>Only allow requests that match the provided regex patterns, eg. &apos;/^.*\.(css)&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AllowRequestPattern { get; set; }
+#nullable restore
+#else
+        public List<string> AllowRequestPattern { get; set; }
+#endif
+        /// <summary>Only allow requests that match the provided resource types, eg. &apos;image&apos; or &apos;script&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AllowResourceTypes { get; set; }
+#nullable restore
+#else
+        public List<string> AllowResourceTypes { get; set; }
+#endif
+        /// <summary>Provide credentials for HTTP authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_authenticate? Authenticate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_authenticate Authenticate { get; set; }
+#endif
+        /// <summary>Attempt to proceed when &apos;awaited&apos; events fail or timeout.</summary>
+        public bool? BestAttempt { get; set; }
+        /// <summary>Check [options](https://pptr.dev/api/puppeteer.page.setcookie).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_cookies>? Cookies { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_cookies> Cookies { get; set; }
+#endif
+        /// <summary>The emulateMediaType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EmulateMediaType { get; set; }
+#nullable restore
+#else
+        public string EmulateMediaType { get; set; }
+#endif
+        /// <summary>Check [options](https://pptr.dev/api/puppeteer.gotooptions).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_gotoOptions? GotoOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_gotoOptions GotoOptions { get; set; }
+#endif
+        /// <summary>Set the content of the page, eg: `&lt;h1&gt;Hello World!!&lt;/h1&gt;`. Either `html` or `url` must be set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Html { get; set; }
+#nullable restore
+#else
+        public string Html { get; set; }
+#endif
+        /// <summary>Block undesired requests that match the provided regex patterns, eg. &apos;/^.*\.(css)&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RejectRequestPattern { get; set; }
+#nullable restore
+#else
+        public List<string> RejectRequestPattern { get; set; }
+#endif
+        /// <summary>Block undesired requests that match the provided resource types, eg. &apos;image&apos; or &apos;script&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? RejectResourceTypes { get; set; }
+#nullable restore
+#else
+        public List<string> RejectResourceTypes { get; set; }
+#endif
+        /// <summary>Check [options](https://pptr.dev/api/puppeteer.screenshotoptions).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_screenshotOptions? ScreenshotOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_screenshotOptions ScreenshotOptions { get; set; }
+#endif
+        /// <summary>The scrollPage property</summary>
+        public bool? ScrollPage { get; set; }
+        /// <summary>The selector property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Selector { get; set; }
+#nullable restore
+#else
+        public string Selector { get; set; }
+#endif
+        /// <summary>The setExtraHTTPHeaders property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_setExtraHTTPHeaders? SetExtraHTTPHeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_setExtraHTTPHeaders SetExtraHTTPHeaders { get; set; }
+#endif
+        /// <summary>The setJavaScriptEnabled property</summary>
+        public bool? SetJavaScriptEnabled { get; set; }
+        /// <summary>URL to navigate to, eg. `https://example.com`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
+        /// <summary>The userAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserAgent { get; set; }
+#nullable restore
+#else
+        public string UserAgent { get; set; }
+#endif
+        /// <summary>Check [options](https://pptr.dev/api/puppeteer.page.setviewport).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_viewport? Viewport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_viewport Viewport { get; set; }
+#endif
+        /// <summary>Wait for the selector to appear in page. Check [options](https://pptr.dev/api/puppeteer.page.waitforselector).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_waitForSelector? WaitForSelector { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_waitForSelector WaitForSelector { get; set; }
+#endif
+        /// <summary>Waits for a specified timeout before continuing.</summary>
+        public double? WaitForTimeout { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json"/> and sets the default values.
         /// </summary>
         public Brapi_post_Screenshot_RequestBody_application_json()
         {
             AdditionalData = new Dictionary<string, object>();
+            UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +194,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actionTimeout", n => { ActionTimeout = n.GetDoubleValue(); } },
+                { "addScriptTag", n => { AddScriptTag = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addScriptTag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addScriptTag.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "addStyleTag", n => { AddStyleTag = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addStyleTag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addStyleTag.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "allowRequestPattern", n => { AllowRequestPattern = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "allowResourceTypes", n => { AllowResourceTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "authenticate", n => { Authenticate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_authenticate>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_authenticate.CreateFromDiscriminatorValue); } },
+                { "bestAttempt", n => { BestAttempt = n.GetBoolValue(); } },
+                { "cookies", n => { Cookies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_cookies>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_cookies.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "emulateMediaType", n => { EmulateMediaType = n.GetStringValue(); } },
+                { "gotoOptions", n => { GotoOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_gotoOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_gotoOptions.CreateFromDiscriminatorValue); } },
+                { "html", n => { Html = n.GetStringValue(); } },
+                { "rejectRequestPattern", n => { RejectRequestPattern = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rejectResourceTypes", n => { RejectResourceTypes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "screenshotOptions", n => { ScreenshotOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_screenshotOptions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_screenshotOptions.CreateFromDiscriminatorValue); } },
+                { "scrollPage", n => { ScrollPage = n.GetBoolValue(); } },
+                { "selector", n => { Selector = n.GetStringValue(); } },
+                { "setExtraHTTPHeaders", n => { SetExtraHTTPHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_setExtraHTTPHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_setExtraHTTPHeaders.CreateFromDiscriminatorValue); } },
+                { "setJavaScriptEnabled", n => { SetJavaScriptEnabled = n.GetBoolValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "viewport", n => { Viewport = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_viewport>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_viewport.CreateFromDiscriminatorValue); } },
+                { "waitForSelector", n => { WaitForSelector = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_waitForSelector>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_waitForSelector.CreateFromDiscriminatorValue); } },
+                { "waitForTimeout", n => { WaitForTimeout = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +226,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("actionTimeout", ActionTimeout);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addScriptTag>("addScriptTag", AddScriptTag);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_addStyleTag>("addStyleTag", AddStyleTag);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowRequestPattern", AllowRequestPattern);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowResourceTypes", AllowResourceTypes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_authenticate>("authenticate", Authenticate);
+            writer.WriteBoolValue("bestAttempt", BestAttempt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_cookies>("cookies", Cookies);
+            writer.WriteStringValue("emulateMediaType", EmulateMediaType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_gotoOptions>("gotoOptions", GotoOptions);
+            writer.WriteStringValue("html", Html);
+            writer.WriteCollectionOfPrimitiveValues<string>("rejectRequestPattern", RejectRequestPattern);
+            writer.WriteCollectionOfPrimitiveValues<string>("rejectResourceTypes", RejectResourceTypes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_screenshotOptions>("screenshotOptions", ScreenshotOptions);
+            writer.WriteBoolValue("scrollPage", ScrollPage);
+            writer.WriteStringValue("selector", Selector);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_setExtraHTTPHeaders>("setExtraHTTPHeaders", SetExtraHTTPHeaders);
+            writer.WriteBoolValue("setJavaScriptEnabled", SetJavaScriptEnabled);
+            writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("userAgent", UserAgent);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_viewport>("viewport", Viewport);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_RequestBody_application_json_waitForSelector>("waitForSelector", WaitForSelector);
+            writer.WriteDoubleValue("waitForTimeout", WaitForTimeout);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

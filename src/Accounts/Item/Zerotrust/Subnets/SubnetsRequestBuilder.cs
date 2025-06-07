@@ -43,42 +43,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         /// Lists and filters subnets in an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_Response_4XX_application_json">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_Response_4XX_application_json.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists and filters subnets in an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder.SubnetsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -155,7 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             public double? Page { get; set; }
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
-            [Obsolete("This property is deprecated, use SortOrderAsZeroTrustNetworksSubnetsListParamSortOrder instead")]
+            [Obsolete("This property is deprecated, use SortOrderAsGetSortOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sort_order")]
@@ -166,8 +166,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             public string SortOrder { get; set; }
 #endif
             [QueryParameter("sort_order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_Param_sort_order? SortOrderAsZeroTrustNetworksSubnetsListParamSortOrder { get; set; }
-            [Obsolete("This property is deprecated, use SubnetTypesAsZeroTrustNetworksSubnetsListParamSubnetTypes instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.GetSort_orderQueryParameterType? SortOrderAsGetSortOrderQueryParameterType { get; set; }
+            [Obsolete("This property is deprecated, use SubnetTypesAsGetSubnetTypesQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("subnet_types")]
@@ -178,7 +178,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             public string SubnetTypes { get; set; }
 #endif
             [QueryParameter("subnet_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_networks_subnets_list_Param_subnet_types? SubnetTypesAsZeroTrustNetworksSubnetsListParamSubnetTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.GetSubnet_typesQueryParameterType? SubnetTypesAsGetSubnetTypesQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

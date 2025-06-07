@@ -31,14 +31,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TlsSockaddr { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_response"/> and sets the default values.
         /// </summary>
@@ -66,7 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
                 { "tls_sockaddr", n => { TlsSockaddr = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +69,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("sha256", Sha256);
             writer.WriteStringValue("tls_sockaddr", TlsSockaddr);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

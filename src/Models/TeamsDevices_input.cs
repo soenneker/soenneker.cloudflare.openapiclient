@@ -8,163 +8,28 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_access_serial_number_list_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_application_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_carbonblack_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_crowdstrike_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_custom_s2s_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disk_encryption_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_domain_joined_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_file_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_firewall_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_intune_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_kolide_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_s2s_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tanium_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_unique_client_id_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_workspace_one_input_request"/>
+    /// The value to be checked against.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class TeamsDevices_input : IComposedTypeWrapper, IParsable
+    public partial class TeamsDevices_input : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_access_serial_number_list_input_request"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_access_serial_number_list_input_request? TeamsDevicesAccessSerialNumberListInputRequest { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_access_serial_number_list_input_request TeamsDevicesAccessSerialNumberListInputRequest { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_application_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_application_input_request? TeamsDevicesApplicationInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_application_input_request TeamsDevicesApplicationInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_carbonblack_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_carbonblack_input_request? TeamsDevicesCarbonblackInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_carbonblack_input_request TeamsDevicesCarbonblackInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_input_request? TeamsDevicesClientCertificateInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_input_request TeamsDevicesClientCertificateInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request? TeamsDevicesClientCertificateV2InputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request TeamsDevicesClientCertificateV2InputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_crowdstrike_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_crowdstrike_input_request? TeamsDevicesCrowdstrikeInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_crowdstrike_input_request TeamsDevicesCrowdstrikeInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_custom_s2s_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_custom_s2s_input_request? TeamsDevicesCustomS2sInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_custom_s2s_input_request TeamsDevicesCustomS2sInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disk_encryption_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disk_encryption_input_request? TeamsDevicesDiskEncryptionInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disk_encryption_input_request TeamsDevicesDiskEncryptionInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_domain_joined_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_domain_joined_input_request? TeamsDevicesDomainJoinedInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_domain_joined_input_request TeamsDevicesDomainJoinedInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_file_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_file_input_request? TeamsDevicesFileInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_file_input_request TeamsDevicesFileInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_firewall_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_firewall_input_request? TeamsDevicesFirewallInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_firewall_input_request TeamsDevicesFirewallInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_intune_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_intune_input_request? TeamsDevicesIntuneInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_intune_input_request TeamsDevicesIntuneInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_kolide_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_kolide_input_request? TeamsDevicesKolideInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_kolide_input_request TeamsDevicesKolideInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version_input_request? TeamsDevicesOsVersionInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version_input_request TeamsDevicesOsVersionInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_input_request? TeamsDevicesSentineloneInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_input_request TeamsDevicesSentineloneInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_s2s_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_s2s_input_request? TeamsDevicesSentineloneS2sInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_s2s_input_request TeamsDevicesSentineloneS2sInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tanium_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tanium_input_request? TeamsDevicesTaniumInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tanium_input_request TeamsDevicesTaniumInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_unique_client_id_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_unique_client_id_input_request? TeamsDevicesUniqueClientIdInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_unique_client_id_input_request TeamsDevicesUniqueClientIdInputRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_workspace_one_input_request"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_workspace_one_input_request? TeamsDevicesWorkspaceOneInputRequest { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_workspace_one_input_request TeamsDevicesWorkspaceOneInputRequest { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input"/> and sets the default values.
+        /// </summary>
+        public TeamsDevices_input()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -173,85 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input();
-            if("teams-devices_access_serial_number_list_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesAccessSerialNumberListInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_access_serial_number_list_input_request();
-            }
-            else if("teams-devices_application_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesApplicationInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_application_input_request();
-            }
-            else if("teams-devices_carbonblack_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesCarbonblackInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_carbonblack_input_request();
-            }
-            else if("teams-devices_client_certificate_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesClientCertificateInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_input_request();
-            }
-            else if("teams-devices_client_certificate_v2_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesClientCertificateV2InputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request();
-            }
-            else if("teams-devices_crowdstrike_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesCrowdstrikeInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_crowdstrike_input_request();
-            }
-            else if("teams-devices_custom_s2s_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesCustomS2sInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_custom_s2s_input_request();
-            }
-            else if("teams-devices_disk_encryption_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesDiskEncryptionInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disk_encryption_input_request();
-            }
-            else if("teams-devices_domain_joined_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesDomainJoinedInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_domain_joined_input_request();
-            }
-            else if("teams-devices_file_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesFileInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_file_input_request();
-            }
-            else if("teams-devices_firewall_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesFirewallInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_firewall_input_request();
-            }
-            else if("teams-devices_intune_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesIntuneInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_intune_input_request();
-            }
-            else if("teams-devices_kolide_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesKolideInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_kolide_input_request();
-            }
-            else if("teams-devices_os_version_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesOsVersionInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version_input_request();
-            }
-            else if("teams-devices_sentinelone_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesSentineloneInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_input_request();
-            }
-            else if("teams-devices_sentinelone_s2s_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesSentineloneS2sInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_s2s_input_request();
-            }
-            else if("teams-devices_tanium_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesTaniumInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tanium_input_request();
-            }
-            else if("teams-devices_unique_client_id_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesUniqueClientIdInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_unique_client_id_input_request();
-            }
-            else if("teams-devices_workspace_one_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TeamsDevicesWorkspaceOneInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_workspace_one_input_request();
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -259,83 +46,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TeamsDevicesAccessSerialNumberListInputRequest != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return TeamsDevicesAccessSerialNumberListInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesApplicationInputRequest != null)
-            {
-                return TeamsDevicesApplicationInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesCarbonblackInputRequest != null)
-            {
-                return TeamsDevicesCarbonblackInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesClientCertificateInputRequest != null)
-            {
-                return TeamsDevicesClientCertificateInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesClientCertificateV2InputRequest != null)
-            {
-                return TeamsDevicesClientCertificateV2InputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesCrowdstrikeInputRequest != null)
-            {
-                return TeamsDevicesCrowdstrikeInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesCustomS2sInputRequest != null)
-            {
-                return TeamsDevicesCustomS2sInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesDiskEncryptionInputRequest != null)
-            {
-                return TeamsDevicesDiskEncryptionInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesDomainJoinedInputRequest != null)
-            {
-                return TeamsDevicesDomainJoinedInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesFileInputRequest != null)
-            {
-                return TeamsDevicesFileInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesFirewallInputRequest != null)
-            {
-                return TeamsDevicesFirewallInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesIntuneInputRequest != null)
-            {
-                return TeamsDevicesIntuneInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesKolideInputRequest != null)
-            {
-                return TeamsDevicesKolideInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesOsVersionInputRequest != null)
-            {
-                return TeamsDevicesOsVersionInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesSentineloneInputRequest != null)
-            {
-                return TeamsDevicesSentineloneInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesSentineloneS2sInputRequest != null)
-            {
-                return TeamsDevicesSentineloneS2sInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesTaniumInputRequest != null)
-            {
-                return TeamsDevicesTaniumInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesUniqueClientIdInputRequest != null)
-            {
-                return TeamsDevicesUniqueClientIdInputRequest.GetFieldDeserializers();
-            }
-            else if(TeamsDevicesWorkspaceOneInputRequest != null)
-            {
-                return TeamsDevicesWorkspaceOneInputRequest.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -344,82 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(TeamsDevicesAccessSerialNumberListInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_access_serial_number_list_input_request>(null, TeamsDevicesAccessSerialNumberListInputRequest);
-            }
-            else if(TeamsDevicesApplicationInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_application_input_request>(null, TeamsDevicesApplicationInputRequest);
-            }
-            else if(TeamsDevicesCarbonblackInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_carbonblack_input_request>(null, TeamsDevicesCarbonblackInputRequest);
-            }
-            else if(TeamsDevicesClientCertificateInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_input_request>(null, TeamsDevicesClientCertificateInputRequest);
-            }
-            else if(TeamsDevicesClientCertificateV2InputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request>(null, TeamsDevicesClientCertificateV2InputRequest);
-            }
-            else if(TeamsDevicesCrowdstrikeInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_crowdstrike_input_request>(null, TeamsDevicesCrowdstrikeInputRequest);
-            }
-            else if(TeamsDevicesCustomS2sInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_custom_s2s_input_request>(null, TeamsDevicesCustomS2sInputRequest);
-            }
-            else if(TeamsDevicesDiskEncryptionInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_disk_encryption_input_request>(null, TeamsDevicesDiskEncryptionInputRequest);
-            }
-            else if(TeamsDevicesDomainJoinedInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_domain_joined_input_request>(null, TeamsDevicesDomainJoinedInputRequest);
-            }
-            else if(TeamsDevicesFileInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_file_input_request>(null, TeamsDevicesFileInputRequest);
-            }
-            else if(TeamsDevicesFirewallInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_firewall_input_request>(null, TeamsDevicesFirewallInputRequest);
-            }
-            else if(TeamsDevicesIntuneInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_intune_input_request>(null, TeamsDevicesIntuneInputRequest);
-            }
-            else if(TeamsDevicesKolideInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_kolide_input_request>(null, TeamsDevicesKolideInputRequest);
-            }
-            else if(TeamsDevicesOsVersionInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_os_version_input_request>(null, TeamsDevicesOsVersionInputRequest);
-            }
-            else if(TeamsDevicesSentineloneInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_input_request>(null, TeamsDevicesSentineloneInputRequest);
-            }
-            else if(TeamsDevicesSentineloneS2sInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_sentinelone_s2s_input_request>(null, TeamsDevicesSentineloneS2sInputRequest);
-            }
-            else if(TeamsDevicesTaniumInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_tanium_input_request>(null, TeamsDevicesTaniumInputRequest);
-            }
-            else if(TeamsDevicesUniqueClientIdInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_unique_client_id_input_request>(null, TeamsDevicesUniqueClientIdInputRequest);
-            }
-            else if(TeamsDevicesWorkspaceOneInputRequest != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_workspace_one_input_request>(null, TeamsDevicesWorkspaceOneInputRequest);
-            }
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

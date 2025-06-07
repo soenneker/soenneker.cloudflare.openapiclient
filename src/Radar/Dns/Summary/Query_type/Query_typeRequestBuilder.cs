@@ -37,21 +37,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
         /// Retrieves the distribution of DNS queries by type.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Response_200_application_json"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Response_200_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Response_200_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Response_400_application_json.CreateFromDiscriminatorValue },
@@ -62,22 +60,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
         /// Retrieves the distribution of DNS queries by type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.Query_typeRequestBuilder.Query_typeRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -146,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsRadarGetDnsSummaryByQueryTypeParamFormat instead")]
+            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("format")]
@@ -158,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Param_format? FormatAsRadarGetDnsSummaryByQueryTypeParamFormat { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
             /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
@@ -186,7 +181,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
             [QueryParameter("nodata")]
             public bool? Nodata { get; set; }
             /// <summary>Filters results by DNS transport protocol.</summary>
-            [Obsolete("This property is deprecated, use ProtocolAsRadarGetDnsSummaryByQueryTypeParamProtocol instead")]
+            [Obsolete("This property is deprecated, use ProtocolAsGetProtocolQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("protocol")]
@@ -198,9 +193,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
 #endif
             /// <summary>Filters results by DNS transport protocol.</summary>
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Param_protocol? ProtocolAsRadarGetDnsSummaryByQueryTypeParamProtocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.GetProtocolQueryParameterType? ProtocolAsGetProtocolQueryParameterType { get; set; }
             /// <summary>Filters results by DNS response code.</summary>
-            [Obsolete("This property is deprecated, use ResponseCodeAsRadarGetDnsSummaryByQueryTypeParamResponseCode instead")]
+            [Obsolete("This property is deprecated, use ResponseCodeAsGetResponseCodeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("responseCode")]
@@ -212,7 +207,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type
 #endif
             /// <summary>Filters results by DNS response code.</summary>
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_query_type_Param_responseCode? ResponseCodeAsRadarGetDnsSummaryByQueryTypeParamResponseCode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type.GetResponseCodeQueryParameterType? ResponseCodeAsGetResponseCodeQueryParameterType { get; set; }
             /// <summary>Filters results by country code top-level domain (ccTLD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

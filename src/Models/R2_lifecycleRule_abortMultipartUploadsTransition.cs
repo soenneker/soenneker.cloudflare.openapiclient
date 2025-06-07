@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The condition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleAgeCondition? Condition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_abortMultipartUploadsTransition_condition? Condition { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleAgeCondition Condition { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_abortMultipartUploadsTransition_condition Condition { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_abortMultipartUploadsTransition"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleAgeCondition>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleAgeCondition.CreateFromDiscriminatorValue); } },
+                { "condition", n => { Condition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_abortMultipartUploadsTransition_condition>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_abortMultipartUploadsTransition_condition.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleAgeCondition>("condition", Condition);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_abortMultipartUploadsTransition_condition>("condition", Condition);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

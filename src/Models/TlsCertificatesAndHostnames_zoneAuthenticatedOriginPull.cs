@@ -9,11 +9,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull : global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificateObject, IParsable
+    public partial class TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The zone&apos;s leaf certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Certificate { get; set; }
+#nullable restore
+#else
+        public string Certificate { get; set; }
+#endif
         /// <summary>Indicates whether zone-level authenticated origin pulls is enabled.</summary>
         public bool? Enabled { get; set; }
+        /// <summary>When the certificate from the authority expires.</summary>
+        public DateTimeOffset? ExpiresOn { get; private set; }
+        /// <summary>Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The certificate authority that issued the certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Issuer { get; private set; }
+#nullable restore
+#else
+        public string Issuer { get; private set; }
+#endif
         /// <summary>The zone&apos;s private key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,12 +50,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PrivateKey { get; set; }
 #endif
+        /// <summary>The type of hash used for the certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Signature { get; private set; }
+#nullable restore
+#else
+        public string Signature { get; private set; }
+#endif
+        /// <summary>Status of the certificate activation.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus? Status { get; set; }
+        /// <summary>This is the time the certificate was uploaded.</summary>
+        public DateTimeOffset? UploadedOn { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull"/> and sets the default values.
+        /// </summary>
+        public TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull();
@@ -36,24 +83,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus>(); } },
+                { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("certificate", Certificate);
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("private_key", PrivateKey);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_zoneAuthenticatedOriginPull_componentsSchemasStatus>("status", Status);
+            writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

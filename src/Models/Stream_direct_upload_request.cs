@@ -62,7 +62,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Stream_direct_upload_request()
         {
             AdditionalData = new Dictionary<string, object>();
-            Expiry = DateTimeOffset.Now.AddMinutes(30);
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

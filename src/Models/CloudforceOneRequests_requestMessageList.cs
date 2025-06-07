@@ -15,9 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Retrieve mes  ges created after this time.</summary>
-        public DateTimeOffset? After { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? After { get; set; }
+#nullable restore
+#else
+        public UntypedNode After { get; set; }
+#endif
         /// <summary>Retrieve messages created before this time.</summary>
-        public DateTimeOffset? Before { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Before { get; set; }
+#nullable restore
+#else
+        public UntypedNode Before { get; set; }
+#endif
         /// <summary>Page number of results.</summary>
         public int? Page { get; set; }
         /// <summary>Number of results per page.</summary>
@@ -57,8 +69,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "after", n => { After = n.GetDateTimeOffsetValue(); } },
-                { "before", n => { Before = n.GetDateTimeOffsetValue(); } },
+                { "after", n => { After = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "before", n => { Before = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "per_page", n => { PerPage = n.GetIntValue(); } },
                 { "sort_by", n => { SortBy = n.GetStringValue(); } },
@@ -72,8 +84,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("after", After);
-            writer.WriteDateTimeOffsetValue("before", Before);
+            writer.WriteObjectValue<UntypedNode>("after", After);
+            writer.WriteObjectValue<UntypedNode>("before", Before);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
             writer.WriteStringValue("sort_by", SortBy);

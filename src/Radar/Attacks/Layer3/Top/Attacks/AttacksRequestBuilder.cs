@@ -37,21 +37,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
         /// Retrieves the top layer 3 attacks from origin to target location. Values are a percentage out of the total layer 3 attacks (with billing country). You can optionally limit the number of attacks by origin/target location (useful if all the top attacks are from or to the same location).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Response_200_application_json"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Response_404_application_json">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Response_200_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Response_200_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Response_404_application_json.CreateFromDiscriminatorValue },
@@ -62,22 +60,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
         /// Retrieves the top layer 3 attacks from origin to target location. Values are a percentage out of the total layer 3 attacks (with billing country). You can optionally limit the number of attacks by origin/target location (useful if all the top attacks are from or to the same location).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.AttacksRequestBuilder.AttacksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -136,7 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsRadarGetAttacksLayer3TopAttacksParamFormat instead")]
+            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("format")]
@@ -148,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Param_format? FormatAsRadarGetAttacksLayer3TopAttacksParamFormat { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
             [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,7 +169,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>Specifies whether the `limitPerLocation` applies to the source or target location.</summary>
-            [Obsolete("This property is deprecated, use LimitDirectionAsRadarGetAttacksLayer3TopAttacksParamLimitDirection instead")]
+            [Obsolete("This property is deprecated, use LimitDirectionAsGetLimitDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("limitDirection")]
@@ -186,7 +181,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
 #endif
             /// <summary>Specifies whether the `limitPerLocation` applies to the source or target location.</summary>
             [QueryParameter("limitDirection")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Param_limitDirection? LimitDirectionAsRadarGetAttacksLayer3TopAttacksParamLimitDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.GetLimitDirectionQueryParameterType? LimitDirectionAsGetLimitDirectionQueryParameterType { get; set; }
             /// <summary>Limits the number of attacks per origin/target (refer to `limitDirection` parameter) location.</summary>
             [QueryParameter("limitPerLocation")]
             public int? LimitPerLocation { get; set; }
@@ -201,7 +196,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
             public string[] Location { get; set; }
 #endif
             /// <summary>Orders results based on attack magnitude, defined by total mitigated bytes or total mitigated attacks.</summary>
-            [Obsolete("This property is deprecated, use MagnitudeAsRadarGetAttacksLayer3TopAttacksParamMagnitude instead")]
+            [Obsolete("This property is deprecated, use MagnitudeAsGetMagnitudeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("magnitude")]
@@ -213,7 +208,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
 #endif
             /// <summary>Orders results based on attack magnitude, defined by total mitigated bytes or total mitigated attacks.</summary>
             [QueryParameter("magnitude")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Param_magnitude? MagnitudeAsRadarGetAttacksLayer3TopAttacksParamMagnitude { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.GetMagnitudeQueryParameterType? MagnitudeAsGetMagnitudeQueryParameterType { get; set; }
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -225,7 +220,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
             public string[] Name { get; set; }
 #endif
             /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-            [Obsolete("This property is deprecated, use NormalizationAsRadarGetAttacksLayer3TopAttacksParamNormalization instead")]
+            [Obsolete("This property is deprecated, use NormalizationAsGetNormalizationQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("normalization")]
@@ -237,7 +232,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks
 #endif
             /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
             [QueryParameter("normalization")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_top_attacks_Param_normalization? NormalizationAsRadarGetAttacksLayer3TopAttacksParamNormalization { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Top.Attacks.GetNormalizationQueryParameterType? NormalizationAsGetNormalizationQueryParameterType { get; set; }
             /// <summary>Filters the results by layer 3/4 protocol.</summary>
             [Obsolete("This property is deprecated, use ProtocolAsGetProtocolQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -50,21 +50,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// Delete Gateway Logs
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Response_200_application_json"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Response_200_application_json?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Response_200_application_json?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Response_200_application_json> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Response_200_application_json> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Response_400_application_json.CreateFromDiscriminatorValue },
@@ -75,21 +73,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// List Gateway Logs
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Response_200_application_json"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Response_400_application_json">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Response_200_application_json?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Response_200_application_json?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Response_200_application_json> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Response_200_application_json> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Response_400_application_json.CreateFromDiscriminatorValue },
@@ -100,44 +96,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// Delete Gateway Logs
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
         /// List Gateway Logs
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -166,7 +156,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
 #endif
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-            [Obsolete("This property is deprecated, use OrderByAsAigConfigDeleteGatewayLogsParamOrderBy instead")]
+            [Obsolete("This property is deprecated, use OrderByAsDeleteOrderByQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -177,8 +167,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             public string OrderBy { get; set; }
 #endif
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Param_order_by? OrderByAsAigConfigDeleteGatewayLogsParamOrderBy { get; set; }
-            [Obsolete("This property is deprecated, use OrderByDirectionAsAigConfigDeleteGatewayLogsParamOrderByDirection instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.DeleteOrder_byQueryParameterType? OrderByAsDeleteOrderByQueryParameterType { get; set; }
+            [Obsolete("This property is deprecated, use OrderByDirectionAsDeleteOrderByDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by_direction")]
@@ -189,7 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             public string OrderByDirection { get; set; }
 #endif
             [QueryParameter("order_by_direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_delete_gateway_logs_Param_order_by_direction? OrderByDirectionAsAigConfigDeleteGatewayLogsParamOrderByDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.DeleteOrder_by_directionQueryParameterType? OrderByDirectionAsDeleteOrderByDirectionQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -205,9 +195,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogsRequestBuilderGetQueryParameters 
         {
+            [Obsolete("")]
             [QueryParameter("cached")]
             public bool? Cached { get; set; }
-            [Obsolete("This property is deprecated, use DirectionAsAigConfigListGatewayLogsParamDirection instead")]
+            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("direction")]
@@ -217,10 +208,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("direction")]
             public string Direction { get; set; }
 #endif
+            [Obsolete("")]
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Param_direction? DirectionAsAigConfigListGatewayLogsParamDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            [Obsolete("")]
             [QueryParameter("end_date")]
             public DateTimeOffset? EndDate { get; set; }
+            [Obsolete("")]
             [QueryParameter("feedback")]
             public double? Feedback { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -232,28 +226,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("filters")]
             public string[] Filters { get; set; }
 #endif
+            [Obsolete("")]
             [QueryParameter("max_cost")]
             public double? MaxCost { get; set; }
+            [Obsolete("")]
             [QueryParameter("max_duration")]
             public double? MaxDuration { get; set; }
+            [Obsolete("")]
             [QueryParameter("max_tokens_in")]
             public double? MaxTokensIn { get; set; }
+            [Obsolete("")]
             [QueryParameter("max_tokens_out")]
             public double? MaxTokensOut { get; set; }
+            [Obsolete("")]
             [QueryParameter("max_total_tokens")]
             public double? MaxTotalTokens { get; set; }
             [QueryParameter("meta_info")]
             public bool? MetaInfo { get; set; }
+            [Obsolete("")]
             [QueryParameter("min_cost")]
             public double? MinCost { get; set; }
+            [Obsolete("")]
             [QueryParameter("min_duration")]
             public double? MinDuration { get; set; }
+            [Obsolete("")]
             [QueryParameter("min_tokens_in")]
             public double? MinTokensIn { get; set; }
+            [Obsolete("")]
             [QueryParameter("min_tokens_out")]
             public double? MinTokensOut { get; set; }
+            [Obsolete("")]
             [QueryParameter("min_total_tokens")]
             public double? MinTotalTokens { get; set; }
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("model")]
@@ -263,6 +268,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("model")]
             public string Model { get; set; }
 #endif
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("model_type")]
@@ -272,7 +278,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("model_type")]
             public string ModelType { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use OrderByAsAigConfigListGatewayLogsParamOrderBy instead")]
+            [Obsolete("This property is deprecated, use OrderByAsGetOrderByQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -283,8 +289,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             public string OrderBy { get; set; }
 #endif
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Param_order_by? OrderByAsAigConfigListGatewayLogsParamOrderBy { get; set; }
-            [Obsolete("This property is deprecated, use OrderByDirectionAsAigConfigListGatewayLogsParamOrderByDirection instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.GetOrder_byQueryParameterType? OrderByAsGetOrderByQueryParameterType { get; set; }
+            [Obsolete("This property is deprecated, use OrderByDirectionAsGetOrderByDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by_direction")]
@@ -295,11 +301,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             public string OrderByDirection { get; set; }
 #endif
             [QueryParameter("order_by_direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_logs_Param_order_by_direction? OrderByDirectionAsAigConfigListGatewayLogsParamOrderByDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Logs.GetOrder_by_directionQueryParameterType? OrderByDirectionAsGetOrderByDirectionQueryParameterType { get; set; }
             [QueryParameter("page")]
             public int? Page { get; set; }
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("provider")]
@@ -309,6 +316,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("provider")]
             public string Provider { get; set; }
 #endif
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("request_content_type")]
@@ -318,6 +326,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("request_content_type")]
             public string RequestContentType { get; set; }
 #endif
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("response_content_type")]
@@ -336,8 +345,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
+            [Obsolete("")]
             [QueryParameter("start_date")]
             public DateTimeOffset? StartDate { get; set; }
+            [Obsolete("")]
             [QueryParameter("success")]
             public bool? Success { get; set; }
         }

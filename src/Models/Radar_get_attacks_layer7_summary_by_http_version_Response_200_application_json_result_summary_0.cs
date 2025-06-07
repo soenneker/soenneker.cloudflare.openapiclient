@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The HTTP1X property</summary>
+        /// <summary>The HTTP_1_x property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HTTP1X { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string HTTP1X { get; set; }
 #endif
-        /// <summary>The HTTP2 property</summary>
+        /// <summary>The HTTP_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HTTP2 { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string HTTP2 { get; set; }
 #endif
-        /// <summary>The HTTP3 property</summary>
+        /// <summary>The HTTP_3 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HTTP3 { get; set; }
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "HTTP/1.x", n => { HTTP1X = n.GetStringValue(); } },
-                { "HTTP/2", n => { HTTP2 = n.GetStringValue(); } },
-                { "HTTP/3", n => { HTTP3 = n.GetStringValue(); } },
+                { "HTTP_1_x", n => { HTTP1X = n.GetStringValue(); } },
+                { "HTTP_2", n => { HTTP2 = n.GetStringValue(); } },
+                { "HTTP_3", n => { HTTP3 = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("HTTP/1.x", HTTP1X);
-            writer.WriteStringValue("HTTP/2", HTTP2);
-            writer.WriteStringValue("HTTP/3", HTTP3);
+            writer.WriteStringValue("HTTP_1_x", HTTP1X);
+            writer.WriteStringValue("HTTP_2", HTTP2);
+            writer.WriteStringValue("HTTP_3", HTTP3);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

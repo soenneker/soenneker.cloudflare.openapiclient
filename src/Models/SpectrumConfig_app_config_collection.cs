@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result? Result { get; set; }
+        public UntypedNode? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result Result { get; set; }
+        public UntypedNode Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,74 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result>("result", Result);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SpectrumConfig_app_config_collection_result : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config>? SpectrumConfigAppConfig { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config> SpectrumConfigAppConfig { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config>? SpectrumConfigPaygoAppConfig { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config> SpectrumConfigPaygoAppConfig { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config_collection.SpectrumConfig_app_config_collection_result();
-                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config> spectrumConfigAppConfigValue)
-                {
-                    result.SpectrumConfigAppConfig = spectrumConfigAppConfigValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config> spectrumConfigPaygoAppConfigValue)
-                {
-                    result.SpectrumConfigPaygoAppConfig = spectrumConfigPaygoAppConfigValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(SpectrumConfigAppConfig != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config>(null, SpectrumConfigAppConfig);
-                }
-                else if(SpectrumConfigPaygoAppConfig != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_paygo_app_config>(null, SpectrumConfigPaygoAppConfig);
-                }
-            }
+            writer.WriteObjectValue<UntypedNode>("result", Result);
         }
     }
 }

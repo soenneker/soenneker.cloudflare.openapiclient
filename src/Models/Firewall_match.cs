@@ -39,14 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_response Response { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match"/> and sets the default values.
         /// </summary>
@@ -75,7 +67,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_headers.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "request", n => { Request = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_request>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_request.CreateFromDiscriminatorValue); } },
                 { "response", n => { Response = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_response.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +79,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_headers>("headers", Headers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_request>("request", Request);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match_response>("response", Response);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source>? Source { get; set; }
+        public UntypedNode? Source { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source> Source { get; set; }
+        public UntypedNode Source { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_destination>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_destination.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "source", n => { Source = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,83 +77,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_destination>("destination", Destination);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source>("source", Source);
+            writer.WriteObjectValue<UntypedNode>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_binding_source"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_http_source"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_binding_source"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_binding_source? CloudflarePipelinesWorkersPipelinesBindingSource { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_binding_source CloudflarePipelinesWorkersPipelinesBindingSource { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_http_source"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_http_source? CloudflarePipelinesWorkersPipelinesHttpSource { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_http_source CloudflarePipelinesWorkersPipelinesHttpSource { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json.PutV4AccountsByAccount_idPipelinesByPipeline_name_RequestBody_application_json_source();
-                if("binding".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CloudflarePipelinesWorkersPipelinesBindingSource = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_binding_source();
-                }
-                else if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CloudflarePipelinesWorkersPipelinesHttpSource = new global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_http_source();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(CloudflarePipelinesWorkersPipelinesBindingSource != null)
-                {
-                    return CloudflarePipelinesWorkersPipelinesBindingSource.GetFieldDeserializers();
-                }
-                else if(CloudflarePipelinesWorkersPipelinesHttpSource != null)
-                {
-                    return CloudflarePipelinesWorkersPipelinesHttpSource.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(CloudflarePipelinesWorkersPipelinesBindingSource != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_binding_source>(null, CloudflarePipelinesWorkersPipelinesBindingSource);
-                }
-                else if(CloudflarePipelinesWorkersPipelinesHttpSource != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workers_pipelines_http_source>(null, CloudflarePipelinesWorkersPipelinesHttpSource);
-                }
-            }
         }
     }
 }

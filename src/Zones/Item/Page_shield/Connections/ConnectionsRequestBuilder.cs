@@ -50,21 +50,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
         /// Lists all connections detected by Page Shield.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneConnectionsResponse"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneConnectionsResponse?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_connections_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneConnectionsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneConnectionsResponse> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_connections_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_listZoneConnectionsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
@@ -75,22 +73,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
         /// Lists all connections detected by Page Shield.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_connections_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_connections_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -108,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConnectionsRequestBuilderGetQueryParameters 
         {
-            [Obsolete("This property is deprecated, use DirectionAsPageShieldListConnectionsParamDirection instead")]
+            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("direction")]
@@ -119,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
             public string Direction { get; set; }
 #endif
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_connections_Param_direction? DirectionAsPageShieldListConnectionsParamDirection { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
             [QueryParameter("exclude_cdn_cgi")]
             public bool? ExcludeCdnCgi { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
             [QueryParameter("exclude_urls")]
             public string ExcludeUrls { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ExportAsPageShieldListConnectionsParamExport instead")]
+            [Obsolete("This property is deprecated, use ExportAsGetExportQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("export")]
@@ -142,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
             public string Export { get; set; }
 #endif
             [QueryParameter("export")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_connections_Param_export? ExportAsPageShieldListConnectionsParamExport { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.GetExportQueryParameterType? ExportAsGetExportQueryParameterType { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("hosts")]
@@ -152,7 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
             [QueryParameter("hosts")]
             public string Hosts { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use OrderByAsPageShieldListConnectionsParamOrderBy instead")]
+            [Obsolete("This property is deprecated, use OrderByAsGetOrderByQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -163,7 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections
             public string OrderBy { get; set; }
 #endif
             [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_list_connections_Param_order_by? OrderByAsPageShieldListConnectionsParamOrderBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Connections.GetOrder_byQueryParameterType? OrderByAsGetOrderByQueryParameterType { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page")]

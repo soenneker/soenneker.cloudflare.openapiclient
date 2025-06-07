@@ -39,14 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_response"/> and sets the default values.
         /// </summary>
@@ -75,7 +67,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "api_url", n => { ApiUrl = n.GetStringValue(); } },
                 { "auth_url", n => { AuthUrl = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +79,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("api_url", ApiUrl);
             writer.WriteStringValue("auth_url", AuthUrl);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

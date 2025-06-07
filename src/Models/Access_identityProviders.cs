@@ -7,124 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onelogin"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onetimepin"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_pingone"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_saml"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_yandex"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Access_identityProviders : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class Access_identityProviders : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD? AccessAzureAD { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD AccessAzureAD { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify? AccessCentrify { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify AccessCentrify { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook? AccessFacebook { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook AccessFacebook { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github? AccessGithub { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github AccessGithub { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google? AccessGoogle { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google AccessGoogle { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps? AccessGoogleApps { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps AccessGoogleApps { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin? AccessLinkedin { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin AccessLinkedin { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc? AccessOidc { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc AccessOidc { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta? AccessOkta { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta AccessOkta { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onelogin"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onelogin? AccessOnelogin { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onelogin AccessOnelogin { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onetimepin"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onetimepin? AccessOnetimepin { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onetimepin AccessOnetimepin { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_pingone"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_pingone? AccessPingone { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_pingone AccessPingone { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_saml"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_saml? AccessSaml { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_saml AccessSaml { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_yandex"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_yandex? AccessYandex { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_yandex AccessYandex { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identityProviders"/> and sets the default values.
+        /// </summary>
+        public Access_identityProviders()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -133,22 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identityProviders CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identityProviders();
-            result.AccessAzureAD = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD();
-            result.AccessCentrify = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify();
-            result.AccessFacebook = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook();
-            result.AccessGithub = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github();
-            result.AccessGoogle = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google();
-            result.AccessGoogleApps = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps();
-            result.AccessLinkedin = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin();
-            result.AccessOidc = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc();
-            result.AccessOkta = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta();
-            result.AccessOnelogin = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onelogin();
-            result.AccessOnetimepin = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onetimepin();
-            result.AccessPingone = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_pingone();
-            result.AccessSaml = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_saml();
-            result.AccessYandex = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_yandex();
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identityProviders();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,11 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AccessAzureAD != null || AccessCentrify != null || AccessFacebook != null || AccessGithub != null || AccessGoogle != null || AccessGoogleApps != null || AccessLinkedin != null || AccessOidc != null || AccessOkta != null || AccessOnelogin != null || AccessOnetimepin != null || AccessPingone != null || AccessSaml != null || AccessYandex != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AccessAzureAD, AccessCentrify, AccessFacebook, AccessGithub, AccessGoogle, AccessGoogleApps, AccessLinkedin, AccessOidc, AccessOkta, AccessOnelogin, AccessOnetimepin, AccessPingone, AccessSaml, AccessYandex);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -169,7 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD>(null, AccessAzureAD, AccessCentrify, AccessFacebook, AccessGithub, AccessGoogle, AccessGoogleApps, AccessLinkedin, AccessOidc, AccessOkta, AccessOnelogin, AccessOnetimepin, AccessPingone, AccessSaml, AccessYandex);
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

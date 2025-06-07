@@ -8,35 +8,28 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember3"/>
+    /// Reorder the position of a rule
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Waitingroom_rule_position : IComposedTypeWrapper, IParsable
+    public partial class Waitingroom_rule_position : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember1? WaitingroomRulePositionMember1 { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember1 WaitingroomRulePositionMember1 { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember2? WaitingroomRulePositionMember2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember2 WaitingroomRulePositionMember2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember3? WaitingroomRulePositionMember3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember3 WaitingroomRulePositionMember3 { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_position"/> and sets the default values.
+        /// </summary>
+        public Waitingroom_rule_position()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_position CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_position();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WaitingroomRulePositionMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WaitingroomRulePositionMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember2();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WaitingroomRulePositionMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember3();
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_position();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +46,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WaitingroomRulePositionMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return WaitingroomRulePositionMember1.GetFieldDeserializers();
-            }
-            else if(WaitingroomRulePositionMember2 != null)
-            {
-                return WaitingroomRulePositionMember2.GetFieldDeserializers();
-            }
-            else if(WaitingroomRulePositionMember3 != null)
-            {
-                return WaitingroomRulePositionMember3.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(WaitingroomRulePositionMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember1>(null, WaitingroomRulePositionMember1);
-            }
-            else if(WaitingroomRulePositionMember2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember2>(null, WaitingroomRulePositionMember2);
-            }
-            else if(WaitingroomRulePositionMember3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_rule_positionMember3>(null, WaitingroomRulePositionMember3);
-            }
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

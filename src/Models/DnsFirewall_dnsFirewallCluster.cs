@@ -47,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The upstream_ips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UpstreamIps { get; set; }
+        public UntypedNode? UpstreamIps { get; set; }
 #nullable restore
 #else
-        public List<string> UpstreamIps { get; set; }
+        public UntypedNode UpstreamIps { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallCluster"/> and sets the default values.
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "negative_cache_ttl", n => { NegativeCacheTtl = n.GetDoubleValue(); } },
                 { "ratelimit", n => { Ratelimit = n.GetDoubleValue(); } },
                 { "retries", n => { Retries = n.GetDoubleValue(); } },
-                { "upstream_ips", n => { UpstreamIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "upstream_ips", n => { UpstreamIps = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("negative_cache_ttl", NegativeCacheTtl);
             writer.WriteDoubleValue("ratelimit", Ratelimit);
             writer.WriteDoubleValue("retries", Retries);
-            writer.WriteCollectionOfPrimitiveValues<string>("upstream_ips", UpstreamIps);
+            writer.WriteObjectValue<UntypedNode>("upstream_ips", UpstreamIps);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

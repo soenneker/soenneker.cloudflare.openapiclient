@@ -7,14 +7,19 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Fallback request body schema
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class Registrar_domains_update_domain_RequestBody_application_json : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Auto-renew controls whether subscription is automatically renewed upon domain expiration.</summary>
+        public bool? AutoRenew { get; set; }
+        /// <summary>Shows whether a registrar lock is in place for a domain.</summary>
+        public bool? Locked { get; set; }
+        /// <summary>Privacy option controls redacting WHOIS information.</summary>
+        public bool? Privacy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Registrar_domains_update_domain_RequestBody_application_json"/> and sets the default values.
         /// </summary>
@@ -40,6 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_renew", n => { AutoRenew = n.GetBoolValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
+                { "privacy", n => { Privacy = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_renew", AutoRenew);
+            writer.WriteBoolValue("locked", Locked);
+            writer.WriteBoolValue("privacy", Privacy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

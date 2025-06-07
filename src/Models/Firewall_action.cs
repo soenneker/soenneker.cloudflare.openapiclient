@@ -27,14 +27,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The time in seconds during which Cloudflare will perform the mitigation action. Must be an integer value greater than or equal to the period.Notes: If &quot;mode&quot; is &quot;challenge&quot;, &quot;managed_challenge&quot;, or &quot;js_challenge&quot;, Cloudflare will use the zone&apos;s Challenge Passage time and you should not provide this value.</summary>
         public double? Timeout { get; set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action"/> and sets the default values.
         /// </summary>
@@ -63,7 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode>(); } },
                 { "response", n => { Response = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,7 +67,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_mode>("mode", Mode);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response>("response", Response);
             writer.WriteDoubleValue("timeout", Timeout);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

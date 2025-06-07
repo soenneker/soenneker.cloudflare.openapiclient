@@ -15,13 +15,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Retrieve requests completed after this time.</summary>
-        public DateTimeOffset? CompletedAfter { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CompletedAfter { get; set; }
+#nullable restore
+#else
+        public UntypedNode CompletedAfter { get; set; }
+#endif
         /// <summary>Retrieve requests completed before this time.</summary>
-        public DateTimeOffset? CompletedBefore { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CompletedBefore { get; set; }
+#nullable restore
+#else
+        public UntypedNode CompletedBefore { get; set; }
+#endif
         /// <summary>Retrieve requests created after this time.</summary>
-        public DateTimeOffset? CreatedAfter { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CreatedAfter { get; set; }
+#nullable restore
+#else
+        public UntypedNode CreatedAfter { get; set; }
+#endif
         /// <summary>Retrieve requests created before this time.</summary>
-        public DateTimeOffset? CreatedBefore { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? CreatedBefore { get; set; }
+#nullable restore
+#else
+        public UntypedNode CreatedBefore { get; set; }
+#endif
         /// <summary>Page number of results.</summary>
         public int? Page { get; set; }
         /// <summary>Number of results per page.</summary>
@@ -71,10 +95,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed_after", n => { CompletedAfter = n.GetDateTimeOffsetValue(); } },
-                { "completed_before", n => { CompletedBefore = n.GetDateTimeOffsetValue(); } },
-                { "created_after", n => { CreatedAfter = n.GetDateTimeOffsetValue(); } },
-                { "created_before", n => { CreatedBefore = n.GetDateTimeOffsetValue(); } },
+                { "completed_after", n => { CompletedAfter = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "completed_before", n => { CompletedBefore = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "created_after", n => { CreatedAfter = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "created_before", n => { CreatedBefore = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "per_page", n => { PerPage = n.GetIntValue(); } },
                 { "request_type", n => { RequestType = n.GetStringValue(); } },
@@ -90,10 +114,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("completed_after", CompletedAfter);
-            writer.WriteDateTimeOffsetValue("completed_before", CompletedBefore);
-            writer.WriteDateTimeOffsetValue("created_after", CreatedAfter);
-            writer.WriteDateTimeOffsetValue("created_before", CreatedBefore);
+            writer.WriteObjectValue<UntypedNode>("completed_after", CompletedAfter);
+            writer.WriteObjectValue<UntypedNode>("completed_before", CompletedBefore);
+            writer.WriteObjectValue<UntypedNode>("created_after", CreatedAfter);
+            writer.WriteObjectValue<UntypedNode>("created_before", CreatedBefore);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
             writer.WriteStringValue("request_type", RequestType);

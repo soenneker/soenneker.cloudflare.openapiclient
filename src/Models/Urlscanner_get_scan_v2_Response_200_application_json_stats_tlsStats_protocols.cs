@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The TLS13AES_128_GCM property</summary>
+        /// <summary>The TLS_1_3___AES_128_GCM property</summary>
         public double? TLS13AES128GCM { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_Response_200_application_json_stats_tlsStats_protocols"/> and sets the default values.
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "TLS 1.3 / AES_128_GCM", n => { TLS13AES128GCM = n.GetDoubleValue(); } },
+                { "TLS_1_3___AES_128_GCM", n => { TLS13AES128GCM = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("TLS 1.3 / AES_128_GCM", TLS13AES128GCM);
+            writer.WriteDoubleValue("TLS_1_3___AES_128_GCM", TLS13AES128GCM);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

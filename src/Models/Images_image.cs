@@ -45,10 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Object specifying available variants for an image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Variants { get; private set; }
+        public UntypedNode? Variants { get; private set; }
 #nullable restore
 #else
-        public List<string> Variants { get; private set; }
+        public UntypedNode Variants { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image"/> and sets the default values.
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_metadata.CreateFromDiscriminatorValue); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
                 { "uploaded", n => { Uploaded = n.GetDateTimeOffsetValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "variants", n => { Variants = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

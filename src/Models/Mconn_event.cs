@@ -7,140 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember10"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember11"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember12"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember13"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember14"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember15"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember16"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember9"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Mconn_event : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class Mconn_event : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember1? MconnEventMember1 { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember1 MconnEventMember1 { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember10"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember10? MconnEventMember10 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember10 MconnEventMember10 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember11"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember11? MconnEventMember11 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember11 MconnEventMember11 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember12"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember12? MconnEventMember12 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember12 MconnEventMember12 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember13"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember13? MconnEventMember13 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember13 MconnEventMember13 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember14"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember14? MconnEventMember14 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember14 MconnEventMember14 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember15"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember15? MconnEventMember15 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember15 MconnEventMember15 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember16"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember16? MconnEventMember16 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember16 MconnEventMember16 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember2? MconnEventMember2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember2 MconnEventMember2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember3? MconnEventMember3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember3 MconnEventMember3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember4? MconnEventMember4 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember4 MconnEventMember4 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember5"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember5? MconnEventMember5 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember5 MconnEventMember5 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember6"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember6? MconnEventMember6 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember6 MconnEventMember6 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember7"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember7? MconnEventMember7 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember7 MconnEventMember7 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember8"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember8? MconnEventMember8 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember8 MconnEventMember8 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember9"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember9? MconnEventMember9 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember9 MconnEventMember9 { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_event"/> and sets the default values.
+        /// </summary>
+        public Mconn_event()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -149,73 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_event CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_event();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember10 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember10();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember11 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember11();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember12 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember12();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember13 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember13();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember14 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember14();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember15 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember15();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember16 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember16();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember2();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember3();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember4();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember5();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember6 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember6();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember7 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember7();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember8 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember8();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MconnEventMember9 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember9();
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_event();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -223,71 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MconnEventMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return MconnEventMember1.GetFieldDeserializers();
-            }
-            else if(MconnEventMember10 != null)
-            {
-                return MconnEventMember10.GetFieldDeserializers();
-            }
-            else if(MconnEventMember11 != null)
-            {
-                return MconnEventMember11.GetFieldDeserializers();
-            }
-            else if(MconnEventMember12 != null)
-            {
-                return MconnEventMember12.GetFieldDeserializers();
-            }
-            else if(MconnEventMember13 != null)
-            {
-                return MconnEventMember13.GetFieldDeserializers();
-            }
-            else if(MconnEventMember14 != null)
-            {
-                return MconnEventMember14.GetFieldDeserializers();
-            }
-            else if(MconnEventMember15 != null)
-            {
-                return MconnEventMember15.GetFieldDeserializers();
-            }
-            else if(MconnEventMember16 != null)
-            {
-                return MconnEventMember16.GetFieldDeserializers();
-            }
-            else if(MconnEventMember2 != null)
-            {
-                return MconnEventMember2.GetFieldDeserializers();
-            }
-            else if(MconnEventMember3 != null)
-            {
-                return MconnEventMember3.GetFieldDeserializers();
-            }
-            else if(MconnEventMember4 != null)
-            {
-                return MconnEventMember4.GetFieldDeserializers();
-            }
-            else if(MconnEventMember5 != null)
-            {
-                return MconnEventMember5.GetFieldDeserializers();
-            }
-            else if(MconnEventMember6 != null)
-            {
-                return MconnEventMember6.GetFieldDeserializers();
-            }
-            else if(MconnEventMember7 != null)
-            {
-                return MconnEventMember7.GetFieldDeserializers();
-            }
-            else if(MconnEventMember8 != null)
-            {
-                return MconnEventMember8.GetFieldDeserializers();
-            }
-            else if(MconnEventMember9 != null)
-            {
-                return MconnEventMember9.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -296,70 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(MconnEventMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember1>(null, MconnEventMember1);
-            }
-            else if(MconnEventMember10 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember10>(null, MconnEventMember10);
-            }
-            else if(MconnEventMember11 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember11>(null, MconnEventMember11);
-            }
-            else if(MconnEventMember12 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember12>(null, MconnEventMember12);
-            }
-            else if(MconnEventMember13 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember13>(null, MconnEventMember13);
-            }
-            else if(MconnEventMember14 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember14>(null, MconnEventMember14);
-            }
-            else if(MconnEventMember15 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember15>(null, MconnEventMember15);
-            }
-            else if(MconnEventMember16 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember16>(null, MconnEventMember16);
-            }
-            else if(MconnEventMember2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember2>(null, MconnEventMember2);
-            }
-            else if(MconnEventMember3 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember3>(null, MconnEventMember3);
-            }
-            else if(MconnEventMember4 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember4>(null, MconnEventMember4);
-            }
-            else if(MconnEventMember5 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember5>(null, MconnEventMember5);
-            }
-            else if(MconnEventMember6 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember6>(null, MconnEventMember6);
-            }
-            else if(MconnEventMember7 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember7>(null, MconnEventMember7);
-            }
-            else if(MconnEventMember8 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember8>(null, MconnEventMember8);
-            }
-            else if(MconnEventMember9 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_eventMember9>(null, MconnEventMember9);
-            }
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

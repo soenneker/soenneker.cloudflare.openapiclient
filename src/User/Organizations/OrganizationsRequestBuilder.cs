@@ -51,22 +51,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
         /// Lists organizations the user is associated with.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_organization_response"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_organization_response?> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_organization_response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_organization_response> GetAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_organization_response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToGetRequestInformation(body, requestConfiguration);
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure.CreateFromDiscriminatorValue },
@@ -77,23 +75,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
         /// Lists organizations the user is associated with.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_RequestBody_application_json body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -112,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrganizationsRequestBuilderGetQueryParameters 
         {
-            [Obsolete("This property is deprecated, use DirectionAsUserSOrganizationsListOrganizationsParamDirection instead")]
+            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("direction")]
@@ -123,8 +118,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
             public string Direction { get; set; }
 #endif
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_Param_direction? DirectionAsUserSOrganizationsListOrganizationsParamDirection { get; set; }
-            [Obsolete("This property is deprecated, use MatchAsUserSOrganizationsListOrganizationsParamMatch instead")]
+            public global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            [Obsolete("This property is deprecated, use MatchAsGetMatchQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("match")]
@@ -135,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
             public string Match { get; set; }
 #endif
             [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_Param_match? MatchAsUserSOrganizationsListOrganizationsParamMatch { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.GetMatchQueryParameterType? MatchAsGetMatchQueryParameterType { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -145,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use OrderAsUserSOrganizationsListOrganizationsParamOrder instead")]
+            [Obsolete("This property is deprecated, use OrderAsGetOrderQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order")]
@@ -156,12 +151,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
             public string Order { get; set; }
 #endif
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_Param_order? OrderAsUserSOrganizationsListOrganizationsParamOrder { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
-            [Obsolete("This property is deprecated, use StatusAsUserSOrganizationsListOrganizationsParamStatus instead")]
+            [Obsolete("This property is deprecated, use StatusAsGetStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("status")]
@@ -172,7 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations
             public string Status { get; set; }
 #endif
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_list_organizations_Param_status? StatusAsUserSOrganizationsListOrganizationsParamStatus { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.GetStatusQueryParameterType? StatusAsGetStatusQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

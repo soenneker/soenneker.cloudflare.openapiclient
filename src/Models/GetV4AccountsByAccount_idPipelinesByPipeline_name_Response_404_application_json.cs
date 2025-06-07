@@ -34,7 +34,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_results Results { get; set; }
 #endif
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Success { get; set; }
+#nullable restore
+#else
+        public UntypedNode Success { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json"/> and sets the default values.
         /// </summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "results", n => { Results = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_results>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_results.CreateFromDiscriminatorValue); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
+                { "success", n => { Success = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -74,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_errors>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesByPipeline_name_Response_404_application_json_results>("results", Results);
-            writer.WriteBoolValue("success", Success);
+            writer.WriteObjectValue<UntypedNode>("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

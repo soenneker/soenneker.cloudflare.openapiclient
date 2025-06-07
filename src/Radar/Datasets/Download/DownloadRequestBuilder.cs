@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download
         public partial class DownloadRequestBuilderPostQueryParameters 
         {
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsRadarPostReportsDatasetDownloadUrlParamFormat instead")]
+            [Obsolete("This property is deprecated, use FormatAsPostFormatQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("format")]
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_post_reports_dataset_download_url_Param_format? FormatAsRadarPostReportsDatasetDownloadUrlParamFormat { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.Download.PostFormatQueryParameterType? FormatAsPostFormatQueryParameterType { get; set; }
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

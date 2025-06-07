@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The OneOneOneOne property</summary>
+        /// <summary>The One_1_1_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port>? OneOneOneOne { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port>? One111 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port> OneOneOneOne { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port> One111 { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_GetOpenPorts_Response_200_application_json_result"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "1.1.1.1", n => { OneOneOneOne = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "1_1_1_1", n => { One111 = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port>("1.1.1.1", OneOneOneOne);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOnePortScanApi_port>("1_1_1_1", One111);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

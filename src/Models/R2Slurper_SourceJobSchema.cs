@@ -7,36 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_GCSSourceSchema"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_R2SourceSchema"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_S3SourceSchema"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class R2Slurper_SourceJobSchema : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class R2Slurper_SourceJobSchema : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_GCSSourceSchema"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_GCSSourceSchema? R2SlurperGCSSourceSchema { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_GCSSourceSchema R2SlurperGCSSourceSchema { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_R2SourceSchema"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_R2SourceSchema? R2SlurperR2SourceSchema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_R2SourceSchema R2SlurperR2SourceSchema { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_S3SourceSchema"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_S3SourceSchema? R2SlurperS3SourceSchema { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_S3SourceSchema R2SlurperS3SourceSchema { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_SourceJobSchema"/> and sets the default values.
+        /// </summary>
+        public R2Slurper_SourceJobSchema()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,21 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_SourceJobSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_SourceJobSchema();
-            if("r2-slurper_GCSSourceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.R2SlurperGCSSourceSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_GCSSourceSchema();
-            }
-            else if("r2-slurper_R2SourceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.R2SlurperR2SourceSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_R2SourceSchema();
-            }
-            else if("r2-slurper_S3SourceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.R2SlurperS3SourceSchema = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_S3SourceSchema();
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_SourceJobSchema();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,19 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(R2SlurperGCSSourceSchema != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return R2SlurperGCSSourceSchema.GetFieldDeserializers();
-            }
-            else if(R2SlurperR2SourceSchema != null)
-            {
-                return R2SlurperR2SourceSchema.GetFieldDeserializers();
-            }
-            else if(R2SlurperS3SourceSchema != null)
-            {
-                return R2SlurperS3SourceSchema.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,18 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(R2SlurperGCSSourceSchema != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_GCSSourceSchema>(null, R2SlurperGCSSourceSchema);
-            }
-            else if(R2SlurperR2SourceSchema != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_R2SourceSchema>(null, R2SlurperR2SourceSchema);
-            }
-            else if(R2SlurperS3SourceSchema != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_S3SourceSchema>(null, R2SlurperS3SourceSchema);
-            }
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

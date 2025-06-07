@@ -97,14 +97,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Status of the hostname&apos;s SSL certificates.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_status? Status { get; private set; }
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>Level of validation to be used for this hostname. Domain validation (dv) must be used.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_type? Type { get; set; }
         /// <summary>The time the custom certificate was uploaded.</summary>
         public DateTimeOffset? UploadedOn { get; set; }
         /// <summary>Domain validation errors that have been received by the certificate authority (CA).</summary>
@@ -165,7 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslsettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslsettings.CreateFromDiscriminatorValue); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_status>(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_type>(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
                 { "validation_errors", n => { ValidationErrors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "validation_records", n => { ValidationRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_record>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_record.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -192,7 +186,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("serial_number", SerialNumber);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslsettings>("settings", Settings);
             writer.WriteStringValue("signature", Signature);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_type>("type", Type);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_errors>("validation_errors", ValidationErrors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_record>("validation_records", ValidationRecords);

@@ -7,52 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_api_routing"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_parameter_schemas"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_schema_info"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_thresholds"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ApiShield_operation_features : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class ApiShield_operation_features : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_api_routing"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_api_routing? ApiShieldOperationFeatureApiRouting { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_api_routing ApiShieldOperationFeatureApiRouting { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals? ApiShieldOperationFeatureConfidenceIntervals { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals ApiShieldOperationFeatureConfidenceIntervals { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_parameter_schemas"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_parameter_schemas? ApiShieldOperationFeatureParameterSchemas { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_parameter_schemas ApiShieldOperationFeatureParameterSchemas { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_schema_info"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_schema_info? ApiShieldOperationFeatureSchemaInfo { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_schema_info ApiShieldOperationFeatureSchemaInfo { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_thresholds"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_thresholds? ApiShieldOperationFeatureThresholds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_thresholds ApiShieldOperationFeatureThresholds { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_features"/> and sets the default values.
+        /// </summary>
+        public ApiShield_operation_features()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,13 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_features CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_features();
-            result.ApiShieldOperationFeatureApiRouting = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_api_routing();
-            result.ApiShieldOperationFeatureConfidenceIntervals = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals();
-            result.ApiShieldOperationFeatureParameterSchemas = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_parameter_schemas();
-            result.ApiShieldOperationFeatureSchemaInfo = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_schema_info();
-            result.ApiShieldOperationFeatureThresholds = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_thresholds();
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_features();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,11 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ApiShieldOperationFeatureApiRouting != null || ApiShieldOperationFeatureConfidenceIntervals != null || ApiShieldOperationFeatureParameterSchemas != null || ApiShieldOperationFeatureSchemaInfo != null || ApiShieldOperationFeatureThresholds != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ApiShieldOperationFeatureApiRouting, ApiShieldOperationFeatureConfidenceIntervals, ApiShieldOperationFeatureParameterSchemas, ApiShieldOperationFeatureSchemaInfo, ApiShieldOperationFeatureThresholds);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -88,7 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_api_routing>(null, ApiShieldOperationFeatureApiRouting, ApiShieldOperationFeatureConfidenceIntervals, ApiShieldOperationFeatureParameterSchemas, ApiShieldOperationFeatureSchemaInfo, ApiShieldOperationFeatureThresholds);
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

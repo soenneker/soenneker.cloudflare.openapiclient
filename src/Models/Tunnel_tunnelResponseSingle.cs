@@ -41,63 +41,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_warp_connector_tunnel"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Tunnel_tunnelResponseSingle_result : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel? TunnelCfdTunnel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel TunnelCfdTunnel { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_warp_connector_tunnel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_warp_connector_tunnel? TunnelWarpConnectorTunnel { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_warp_connector_tunnel TunnelWarpConnectorTunnel { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnelResponseSingle.Tunnel_tunnelResponseSingle_result"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnelResponseSingle.Tunnel_tunnelResponseSingle_result CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnelResponseSingle.Tunnel_tunnelResponseSingle_result();
-                result.TunnelCfdTunnel = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel();
-                result.TunnelWarpConnectorTunnel = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_warp_connector_tunnel();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TunnelCfdTunnel != null || TunnelWarpConnectorTunnel != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TunnelCfdTunnel, TunnelWarpConnectorTunnel);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel>(null, TunnelCfdTunnel, TunnelWarpConnectorTunnel);
-            }
-        }
     }
 }
 #pragma warning restore CS0618

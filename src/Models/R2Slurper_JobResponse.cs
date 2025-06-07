@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source? Source { get; set; }
+        public UntypedNode? Source { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source Source { get; set; }
+        public UntypedNode Source { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus? Status { get; set; }
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "finishedAt", n => { FinishedAt = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "overwrite", n => { Overwrite = n.GetBoolValue(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>(); } },
                 { "target", n => { Target = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_target.CreateFromDiscriminatorValue); } },
             };
@@ -103,105 +103,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("finishedAt", FinishedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("overwrite", Overwrite);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source>("source", Source);
+            writer.WriteObjectValue<UntypedNode>("source", Source);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_target>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class R2Slurper_JobResponse_source : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember1? R2SlurperJobResponseSourceMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember1 R2SlurperJobResponseSourceMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember2? R2SlurperJobResponseSourceMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember2 R2SlurperJobResponseSourceMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3? R2SlurperJobResponseSourceMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3 R2SlurperJobResponseSourceMember3 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse.R2Slurper_JobResponse_source();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.R2SlurperJobResponseSourceMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.R2SlurperJobResponseSourceMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember2();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.R2SlurperJobResponseSourceMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(R2SlurperJobResponseSourceMember1 != null)
-                {
-                    return R2SlurperJobResponseSourceMember1.GetFieldDeserializers();
-                }
-                else if(R2SlurperJobResponseSourceMember2 != null)
-                {
-                    return R2SlurperJobResponseSourceMember2.GetFieldDeserializers();
-                }
-                else if(R2SlurperJobResponseSourceMember3 != null)
-                {
-                    return R2SlurperJobResponseSourceMember3.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(R2SlurperJobResponseSourceMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember1>(null, R2SlurperJobResponseSourceMember1);
-                }
-                else if(R2SlurperJobResponseSourceMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember2>(null, R2SlurperJobResponseSourceMember2);
-                }
-                else if(R2SlurperJobResponseSourceMember3 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobResponse_sourceMember3>(null, R2SlurperJobResponseSourceMember3);
-                }
-            }
         }
     }
 }

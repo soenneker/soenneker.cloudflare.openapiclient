@@ -9,75 +9,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Mq_consumer : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
+    public partial class Mq_consumer : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A Resource identifier.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConsumerId { get; private set; }
-#nullable restore
-#else
-        public string ConsumerId { get; private set; }
-#endif
-        /// <summary>The created_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CreatedOn { get; private set; }
-#nullable restore
-#else
-        public string CreatedOn { get; private set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer? MqHttpConsumer { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer MqHttpConsumer { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer? MqWorkerConsumer { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer MqWorkerConsumer { get; set; }
-#endif
-        /// <summary>A Resource identifier.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? QueueId { get; private set; }
-#nullable restore
-#else
-        public string QueueId { get; private set; }
-#endif
-        /// <summary>The script property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script? Script { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script Script { get; set; }
-#endif
-        /// <summary>The script_name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script_name? ScriptName { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script_name ScriptName { get; set; }
-#endif
-        /// <summary>The settings property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_settings? Settings { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_settings Settings { get; set; }
-#endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,45 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer();
-            if("mq_http-consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqHttpConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer();
-            }
-            else if("mq_worker-consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqWorkerConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Script = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ScriptName = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script_name();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Settings = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_settings();
-            }
-            else if(parseNode.GetStringValue() is string consumerIdValue)
-            {
-                result.ConsumerId = consumerIdValue;
-            }
-            else if(parseNode.GetStringValue() is string createdOnValue)
-            {
-                result.CreatedOn = createdOnValue;
-            }
-            else if(parseNode.GetStringValue() is string queueIdValue)
-            {
-                result.QueueId = queueIdValue;
-            }
-            else if(parseNode.GetStringValue() is string typeValue)
-            {
-                result.Type = typeValue;
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,27 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MqHttpConsumer != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return MqHttpConsumer.GetFieldDeserializers();
-            }
-            else if(MqWorkerConsumer != null)
-            {
-                return MqWorkerConsumer.GetFieldDeserializers();
-            }
-            else if(Script != null)
-            {
-                return Script.GetFieldDeserializers();
-            }
-            else if(ScriptName != null)
-            {
-                return ScriptName.GetFieldDeserializers();
-            }
-            else if(Settings != null)
-            {
-                return Settings.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -176,42 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(MqHttpConsumer != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer>(null, MqHttpConsumer);
-            }
-            else if(MqWorkerConsumer != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer>(null, MqWorkerConsumer);
-            }
-            else if(Script != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script>(null, Script);
-            }
-            else if(ScriptName != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_script_name>(null, ScriptName);
-            }
-            else if(Settings != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_settings>(null, Settings);
-            }
-            else if(ConsumerId != null)
-            {
-                writer.WriteStringValue(null, ConsumerId);
-            }
-            else if(CreatedOn != null)
-            {
-                writer.WriteStringValue(null, CreatedOn);
-            }
-            else if(QueueId != null)
-            {
-                writer.WriteStringValue(null, QueueId);
-            }
-            else if(Type != null)
-            {
-                writer.WriteStringValue(null, Type);
-            }
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -39,7 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancing_session_affinity_attributes()
         {
             AdditionalData = new Dictionary<string, object>();
-            Headers = new List<string> { "none" };
             Samesite = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity_attributes_samesite.Auto;
             Secure = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity_attributes_secure.Auto;
             ZeroDowntimeFailover = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity_attributes_zero_downtime_failover.None;

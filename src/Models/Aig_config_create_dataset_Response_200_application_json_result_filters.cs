@@ -21,10 +21,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public List<string> Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_Response_200_application_json_result_filters"/> and sets the default values.
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "key", n => { Key = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_Response_200_application_json_result_filters_key>(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_Response_200_application_json_result_filters_operator>(); } },
-                { "value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_Response_200_application_json_result_filters_key>("key", Key);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_Response_200_application_json_result_filters_operator>("operator", Operator);
-            writer.WriteCollectionOfPrimitiveValues<string>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
