@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The example_com property</summary>
+        /// <summary>The exampleCom property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_example_com? ExampleCom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_exampleCom? ExampleCom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_example_com ExampleCom { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_exampleCom ExampleCom { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "example_com", n => { ExampleCom = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_example_com>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_example_com.CreateFromDiscriminatorValue); } },
+                { "example.com", n => { ExampleCom = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_exampleCom>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_exampleCom.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_example_com>("example_com", ExampleCom);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_Response_200_application_json_result_scan_domains_exampleCom>("example.com", ExampleCom);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

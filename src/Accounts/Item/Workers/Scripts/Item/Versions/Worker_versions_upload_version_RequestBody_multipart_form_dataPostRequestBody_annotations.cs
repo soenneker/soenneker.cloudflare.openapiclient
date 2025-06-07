@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "workers_message", n => { WorkersMessage = n.GetStringValue(); } },
-                { "workers_tag", n => { WorkersTag = n.GetStringValue(); } },
+                { "workers/message", n => { WorkersMessage = n.GetStringValue(); } },
+                { "workers/tag", n => { WorkersTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("workers_message", WorkersMessage);
-            writer.WriteStringValue("workers_tag", WorkersTag);
+            writer.WriteStringValue("workers/message", WorkersMessage);
+            writer.WriteStringValue("workers/tag", WorkersTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

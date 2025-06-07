@@ -52,9 +52,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "none", n => { None = n.GetIntValue(); } },
                 { "TLSv1", n => { TLSv1 = n.GetIntValue(); } },
-                { "TLSv1_1", n => { TLSv11 = n.GetIntValue(); } },
-                { "TLSv1_2", n => { TLSv12 = n.GetIntValue(); } },
-                { "TLSv1_3", n => { TLSv13 = n.GetIntValue(); } },
+                { "TLSv1.1", n => { TLSv11 = n.GetIntValue(); } },
+                { "TLSv1.2", n => { TLSv12 = n.GetIntValue(); } },
+                { "TLSv1.3", n => { TLSv13 = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -66,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("none", None);
             writer.WriteIntValue("TLSv1", TLSv1);
-            writer.WriteIntValue("TLSv1_1", TLSv11);
-            writer.WriteIntValue("TLSv1_2", TLSv12);
-            writer.WriteIntValue("TLSv1_3", TLSv13);
+            writer.WriteIntValue("TLSv1.1", TLSv11);
+            writer.WriteIntValue("TLSv1.2", TLSv12);
+            writer.WriteIntValue("TLSv1.3", TLSv13);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

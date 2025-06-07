@@ -37,7 +37,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryUpdateType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryUpdateType();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "dlp_EntryUpdate" => new global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryUpdate(),
+                _ => new global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryUpdateType(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

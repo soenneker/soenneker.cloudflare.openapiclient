@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "HTTP_1_x", n => { HTTP1X = n.GetStringValue(); } },
-                { "HTTP_2", n => { HTTP2 = n.GetStringValue(); } },
-                { "HTTP_3", n => { HTTP3 = n.GetStringValue(); } },
+                { "HTTP/1.x", n => { HTTP1X = n.GetStringValue(); } },
+                { "HTTP/2", n => { HTTP2 = n.GetStringValue(); } },
+                { "HTTP/3", n => { HTTP3 = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("HTTP_1_x", HTTP1X);
-            writer.WriteStringValue("HTTP_2", HTTP2);
-            writer.WriteStringValue("HTTP_3", HTTP3);
+            writer.WriteStringValue("HTTP/1.x", HTTP1X);
+            writer.WriteStringValue("HTTP/2", HTTP2);
+            writer.WriteStringValue("HTTP/3", HTTP3);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

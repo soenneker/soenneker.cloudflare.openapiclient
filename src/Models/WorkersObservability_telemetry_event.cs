@@ -21,13 +21,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Dataset { get; set; }
 #endif
-        /// <summary>The _metadata property</summary>
+        /// <summary>The Metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event__metadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event__metadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata Metadata { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,10 +66,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
-                { "_metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event__metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event__metadata.CreateFromDiscriminatorValue); } },
+                { "$metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
-                { "_workers", n => { Workers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "$workers", n => { Workers = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,10 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataset", Dataset);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event__metadata>("_metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata>("$metadata", Metadata);
             writer.WriteObjectValue<UntypedNode>("source", Source);
             writer.WriteIntValue("timestamp", Timestamp);
-            writer.WriteObjectValue<UntypedNode>("_workers", Workers);
+            writer.WriteObjectValue<UntypedNode>("$workers", Workers);
         }
     }
 }

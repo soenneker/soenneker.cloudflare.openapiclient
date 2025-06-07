@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "workers_message", n => { WorkersMessage = n.GetStringValue(); } },
+                { "workers/message", n => { WorkersMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("workers_message", WorkersMessage);
+            writer.WriteStringValue("workers/message", WorkersMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

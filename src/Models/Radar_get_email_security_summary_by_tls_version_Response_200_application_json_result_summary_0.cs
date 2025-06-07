@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "TLS_1_0", n => { TLS10 = n.GetStringValue(); } },
-                { "TLS_1_1", n => { TLS11 = n.GetStringValue(); } },
-                { "TLS_1_2", n => { TLS12 = n.GetStringValue(); } },
-                { "TLS_1_3", n => { TLS13 = n.GetStringValue(); } },
+                { "TLS 1.0", n => { TLS10 = n.GetStringValue(); } },
+                { "TLS 1.1", n => { TLS11 = n.GetStringValue(); } },
+                { "TLS 1.2", n => { TLS12 = n.GetStringValue(); } },
+                { "TLS 1.3", n => { TLS13 = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("TLS_1_0", TLS10);
-            writer.WriteStringValue("TLS_1_1", TLS11);
-            writer.WriteStringValue("TLS_1_2", TLS12);
-            writer.WriteStringValue("TLS_1_3", TLS13);
+            writer.WriteStringValue("TLS 1.0", TLS10);
+            writer.WriteStringValue("TLS 1.1", TLS11);
+            writer.WriteStringValue("TLS 1.2", TLS12);
+            writer.WriteStringValue("TLS 1.3", TLS13);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
