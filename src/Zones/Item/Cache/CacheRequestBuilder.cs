@@ -12,15 +12,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System;
-using System.Threading;
-
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
 {
     /// <summary>
     /// Builds and executes requests for operations under \zones\{identifier-id}\cache
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CacheRequestBuilder : BaseRequestBuilder, ICacheRequestBuilder
+    public partial class CacheRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The cache_reserve property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve.Cache_reserveRequestBuilder Cache_reserve
@@ -67,85 +65,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/cache", rawUrl)
         {
-        }
-
-        /// <summary>
-        /// Gets the cache settings for a zone
-        /// </summary>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <returns>A <see cref="Task{T}"/> of type <see cref="CacheSettings"/></returns>
-        public async Task<CacheSettings> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<CacheSettings>(requestInfo, CacheSettings.CreateFromDiscriminatorValue, default, cancellationToken);
-        }
-
-        /// <summary>
-        /// Updates the cache settings for a zone
-        /// </summary>
-        /// <param name="body">The cache settings to update</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <returns>A <see cref="Task{T}"/> of type <see cref="CacheSettings"/></returns>
-        public async Task<CacheSettings> PutAsync(CacheSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-            if (body == null) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<CacheSettings>(requestInfo, CacheSettings.CreateFromDiscriminatorValue, default, cancellationToken);
-        }
-
-        /// <summary>
-        /// Returns a request information object for the GET request
-        /// </summary>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-            var requestInfo = new RequestInformation
-            {
-                HttpMethod = Method.GET,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            requestInfo.Headers.Add("Accept", "application/json");
-            if (requestConfiguration != null)
-            {
-                var requestConfig = new RequestConfiguration<DefaultQueryParameters>();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-
-        /// <summary>
-        /// Returns a request information object for the PUT request
-        /// </summary>
-        /// <param name="body">The cache settings to update</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        public RequestInformation ToPutRequestInformation(CacheSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-            if (body == null) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation
-            {
-                HttpMethod = Method.PUT,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            if (requestConfiguration != null)
-            {
-                var requestConfig = new RequestConfiguration<DefaultQueryParameters>();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
         }
     }
 }
