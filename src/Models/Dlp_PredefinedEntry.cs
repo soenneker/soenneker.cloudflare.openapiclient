@@ -9,53 +9,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Ssl_automatic_mode : IAdditionalDataHolder, IParsable
+    public partial class Dlp_PredefinedEntry : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The code property</summary>
-        public int? Code { get; set; }
-        /// <summary>The documentation_url property</summary>
+        /// <summary>The confidence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentationUrl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryConfidence? Confidence { get; set; }
 #nullable restore
 #else
-        public string DocumentationUrl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryConfidence Confidence { get; set; }
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>The enabled property</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The id property</summary>
+        public Guid? Id { get; set; }
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Name { get; set; }
 #endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode_source? Source { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode_source Source { get; set; }
-#endif
+        /// <summary>The profile_id property</summary>
+        public Guid? ProfileId { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry"/> and sets the default values.
         /// </summary>
-        public Ssl_automatic_mode()
+        public Dlp_PredefinedEntry()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,10 +61,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetIntValue(); } },
-                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode_source.CreateFromDiscriminatorValue); } },
+                { "confidence", n => { Confidence = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryConfidence>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryConfidence.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "profile_id", n => { ProfileId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -78,10 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("code", Code);
-            writer.WriteStringValue("documentation_url", DocumentationUrl);
-            writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_automatic_mode_source>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryConfidence>("confidence", Confidence);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteGuidValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteGuidValue("profile_id", ProfileId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

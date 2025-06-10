@@ -16,8 +16,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryUpdate"/> and sets the default values.
         /// </summary>
@@ -44,7 +42,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteGuidValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

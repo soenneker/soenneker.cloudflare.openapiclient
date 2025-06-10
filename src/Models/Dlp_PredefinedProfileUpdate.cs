@@ -38,10 +38,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryUpdate>? Entries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedProfileEntryUpdate>? Entries { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryUpdate> Entries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedProfileEntryUpdate> Entries { get; set; }
 #endif
         /// <summary>The ocr_enabled property</summary>
         public bool? OcrEnabled { get; set; }
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowed_match_count", n => { AllowedMatchCount = n.GetIntValue(); } },
                 { "confidence_threshold", n => { ConfidenceThreshold = n.GetStringValue(); } },
                 { "context_awareness", n => { ContextAwareness = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_ContextAwareness>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_ContextAwareness.CreateFromDiscriminatorValue); } },
-                { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryUpdate>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryUpdate.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedProfileEntryUpdate>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedProfileEntryUpdate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ocr_enabled", n => { OcrEnabled = n.GetBoolValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("allowed_match_count", AllowedMatchCount);
             writer.WriteStringValue("confidence_threshold", ConfidenceThreshold);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_ContextAwareness>("context_awareness", ContextAwareness);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryUpdate>("entries", Entries);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedProfileEntryUpdate>("entries", Entries);
             writer.WriteBoolValue("ocr_enabled", OcrEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

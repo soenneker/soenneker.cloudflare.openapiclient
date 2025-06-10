@@ -9,35 +9,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SecondaryDns_result_info : IAdditionalDataHolder, IParsable
+    public partial class Flag_source : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Total number of results for the requested service</summary>
-        public double? Count { get; set; }
-        /// <summary>Current page within paginated list of results</summary>
-        public double? Page { get; set; }
-        /// <summary>Number of results per page of results</summary>
-        public double? PerPage { get; set; }
-        /// <summary>Total results available without any search parameters</summary>
-        public double? TotalCount { get; set; }
+        /// <summary>The pointer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Pointer { get; set; }
+#nullable restore
+#else
+        public string Pointer { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_result_info"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Flag_source"/> and sets the default values.
         /// </summary>
-        public SecondaryDns_result_info()
+        public Flag_source()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_result_info"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Flag_source"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_result_info CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Flag_source CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_result_info();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Flag_source();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,10 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetDoubleValue(); } },
-                { "page", n => { Page = n.GetDoubleValue(); } },
-                { "per_page", n => { PerPage = n.GetDoubleValue(); } },
-                { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
+                { "pointer", n => { Pointer = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,10 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("count", Count);
-            writer.WriteDoubleValue("page", Page);
-            writer.WriteDoubleValue("per_page", PerPage);
-            writer.WriteDoubleValue("total_count", TotalCount);
+            writer.WriteStringValue("pointer", Pointer);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

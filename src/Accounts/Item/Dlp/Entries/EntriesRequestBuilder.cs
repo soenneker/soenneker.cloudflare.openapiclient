@@ -3,7 +3,10 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Integration;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +21,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntriesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The custom property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom.CustomRequestBuilder Custom
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom.CustomRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The integration property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Integration.IntegrationRequestBuilder Integration
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Integration.IntegrationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The predefined property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.PredefinedRequestBuilder Predefined
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefined.PredefinedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dlp.entries.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Item.WithEntry_ItemRequestBuilder"/></returns>
