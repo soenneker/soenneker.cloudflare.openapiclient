@@ -8,13 +8,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
     public enum GetActor_typeNotQueryParameterType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "account")]
+        #pragma warning disable CS1591
+        Account,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cloudflare_admin")]
         #pragma warning disable CS1591
         Cloudflare_admin,
         #pragma warning restore CS1591
-        [EnumMember(Value = "account")]
+        [EnumMember(Value = "system")]
         #pragma warning disable CS1591
-        Account,
+        System,
         #pragma warning restore CS1591
         [EnumMember(Value = "user")]
         #pragma warning disable CS1591

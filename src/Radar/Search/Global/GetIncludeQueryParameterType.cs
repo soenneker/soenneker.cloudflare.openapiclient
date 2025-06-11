@@ -8,21 +8,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
     public enum GetIncludeQueryParameterType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "SPECIAL_EVENTS")]
+        [EnumMember(Value = "ASNS")]
         #pragma warning disable CS1591
-        SPECIAL_EVENTS,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NOTEBOOKS")]
-        #pragma warning disable CS1591
-        NOTEBOOKS,
+        ASNS,
         #pragma warning restore CS1591
         [EnumMember(Value = "LOCATIONS")]
         #pragma warning disable CS1591
         LOCATIONS,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ASNS")]
+        [EnumMember(Value = "NOTEBOOKS")]
         #pragma warning disable CS1591
-        ASNS,
+        NOTEBOOKS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SPECIAL_EVENTS")]
+        #pragma warning disable CS1591
+        SPECIAL_EVENTS,
         #pragma warning restore CS1591
     }
 }

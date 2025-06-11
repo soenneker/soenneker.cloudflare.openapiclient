@@ -35,5 +35,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         OVERLAPPED_PERCENTAGE,
         #pragma warning restore CS1591
+        [EnumMember(Value = "RATIO")]
+        #pragma warning disable CS1591
+        RATIO,
+        #pragma warning restore CS1591
     }
 }

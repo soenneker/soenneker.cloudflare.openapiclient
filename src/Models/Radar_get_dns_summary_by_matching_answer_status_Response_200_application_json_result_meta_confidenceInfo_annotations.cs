@@ -31,8 +31,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The endTime property</summary>
-        public DateTimeOffset? EndTime { get; set; }
+        /// <summary>The endDate property</summary>
+        public DateTimeOffset? EndDate { get; set; }
         /// <summary>The eventType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,8 +51,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LinkedUrl { get; set; }
 #endif
-        /// <summary>The startTime property</summary>
-        public DateTimeOffset? StartTime { get; set; }
+        /// <summary>The startDate property</summary>
+        public DateTimeOffset? StartDate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_dns_summary_by_matching_answer_status_Response_200_application_json_result_meta_confidenceInfo_annotations"/> and sets the default values.
         /// </summary>
@@ -80,11 +80,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dataSource", n => { DataSource = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "endTime", n => { EndTime = n.GetDateTimeOffsetValue(); } },
+                { "endDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "eventType", n => { EventType = n.GetStringValue(); } },
                 { "isInstantaneous", n => { IsInstantaneous = n.GetBoolValue(); } },
                 { "linkedUrl", n => { LinkedUrl = n.GetStringValue(); } },
-                { "startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
+                { "startDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -96,11 +96,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataSource", DataSource);
             writer.WriteStringValue("description", Description);
-            writer.WriteDateTimeOffsetValue("endTime", EndTime);
+            writer.WriteDateTimeOffsetValue("endDate", EndDate);
             writer.WriteStringValue("eventType", EventType);
             writer.WriteBoolValue("isInstantaneous", IsInstantaneous);
             writer.WriteStringValue("linkedUrl", LinkedUrl);
-            writer.WriteDateTimeOffsetValue("startTime", StartTime);
+            writer.WriteDateTimeOffsetValue("startDate", StartDate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

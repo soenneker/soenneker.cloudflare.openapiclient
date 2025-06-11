@@ -42,13 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string MessageEscaped { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_status Status { get; set; }
-#endif
+        public double? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json"/> and sets the default values.
         /// </summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_status.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -90,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_errors>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_v2_Response_429_application_json_status>("status", Status);
+            writer.WriteDoubleValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

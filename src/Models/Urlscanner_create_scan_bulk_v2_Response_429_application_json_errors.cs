@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Detail { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_bulk_v2_Response_429_application_json_errors_status? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_bulk_v2_Response_429_application_json_errors_status Status { get; set; }
-#endif
+        public double? Status { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "detail", n => { Detail = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_bulk_v2_Response_429_application_json_errors_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_bulk_v2_Response_429_application_json_errors_status.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetDoubleValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -76,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detail", Detail);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_create_scan_bulk_v2_Response_429_application_json_errors_status>("status", Status);
+            writer.WriteDoubleValue("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

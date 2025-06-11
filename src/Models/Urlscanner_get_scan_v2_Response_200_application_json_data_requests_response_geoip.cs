@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ll property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_Response_200_application_json_data_requests_response_geoip_ll>? Ll { get; set; }
+        public List<double?>? Ll { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_Response_200_application_json_data_requests_response_geoip_ll> Ll { get; set; }
+        public List<double?> Ll { get; set; }
 #endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "country_name", n => { CountryName = n.GetStringValue(); } },
                 { "geonameId", n => { GeonameId = n.GetStringValue(); } },
-                { "ll", n => { Ll = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_Response_200_application_json_data_requests_response_geoip_ll>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_Response_200_application_json_data_requests_response_geoip_ll.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ll", n => { Ll = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("country_name", CountryName);
             writer.WriteStringValue("geonameId", GeonameId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_Response_200_application_json_data_requests_response_geoip_ll>("ll", Ll);
+            writer.WriteCollectionOfPrimitiveValues<double?>("ll", Ll);
             writer.WriteStringValue("region", Region);
             writer.WriteAdditionalData(AdditionalData);
         }
