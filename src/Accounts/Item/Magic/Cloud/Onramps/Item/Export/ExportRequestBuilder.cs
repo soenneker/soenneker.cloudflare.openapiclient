@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Onramps.I
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/zip");
+            requestInfo.Headers.TryAdd("Accept", "application/zip, application/json");
             return requestInfo;
         }
         /// <summary>

@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "image/png");
+            requestInfo.Headers.TryAdd("Accept", "image/png, application/json");
             return requestInfo;
         }
         /// <summary>

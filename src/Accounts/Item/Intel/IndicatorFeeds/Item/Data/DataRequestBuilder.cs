@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "text/csv");
+            requestInfo.Headers.TryAdd("Accept", "text/csv, application/json");
             return requestInfo;
         }
         /// <summary>

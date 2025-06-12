@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of regions from which to run health checks. Null means every Cloudflare data center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_>? CheckRegions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_?>? CheckRegions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_> CheckRegions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_?> CheckRegions { get; set; }
 #endif
         /// <summary>A human-readable description of the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "check_regions", n => { CheckRegions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_>(global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "check_regions", n => { CheckRegions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disabled_at", n => { DisabledAt = n.GetDateTimeOffsetValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -144,7 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_>("check_regions", CheckRegions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_>("check_regions", CheckRegions);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("latitude", Latitude);

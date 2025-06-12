@@ -108,6 +108,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>version number of the rule</summary>
         public int? Version { get; private set; }
+        /// <summary>Warning for a misconfigured rule, if any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WarningStatus { get; private set; }
+#nullable restore
+#else
+        public string WarningStatus { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_rules"/> and sets the default values.
         /// </summary>
@@ -150,6 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "traffic", n => { Traffic = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
+                { "warning_status", n => { WarningStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>

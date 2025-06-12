@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Pdf
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/pdf");
+            requestInfo.Headers.TryAdd("Accept", "application/pdf, application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

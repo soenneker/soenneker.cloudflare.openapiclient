@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.Dow
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/zip");
+            requestInfo.Headers.TryAdd("Accept", "application/zip, application/json");
             return requestInfo;
         }
         /// <summary>

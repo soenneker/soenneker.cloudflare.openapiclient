@@ -31,6 +31,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_antiVirusSettings Antivirus { get; set; }
 #endif
+        /// <summary>Setting to enable App Control</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_appControlSettings? AppControlSettings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_appControlSettings AppControlSettings { get; set; }
+#endif
         /// <summary>Block page layout settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,6 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "activity_log", n => { ActivityLog = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_activityLogSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_activityLogSettings.CreateFromDiscriminatorValue); } },
                 { "antivirus", n => { Antivirus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_antiVirusSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_antiVirusSettings.CreateFromDiscriminatorValue); } },
+                { "app-control-settings", n => { AppControlSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_appControlSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_appControlSettings.CreateFromDiscriminatorValue); } },
                 { "block_page", n => { BlockPage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_blockPageSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_blockPageSettings.CreateFromDiscriminatorValue); } },
                 { "body_scanning", n => { BodyScanning = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_bodyScanningSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_bodyScanningSettings.CreateFromDiscriminatorValue); } },
                 { "browser_isolation", n => { BrowserIsolation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_browserIsolationSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_browserIsolationSettings.CreateFromDiscriminatorValue); } },
@@ -169,6 +178,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_activityLogSettings>("activity_log", ActivityLog);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_antiVirusSettings>("antivirus", Antivirus);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_appControlSettings>("app-control-settings", AppControlSettings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_blockPageSettings>("block_page", BlockPage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_bodyScanningSettings>("body_scanning", BodyScanning);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_browserIsolationSettings>("browser_isolation", BrowserIsolation);

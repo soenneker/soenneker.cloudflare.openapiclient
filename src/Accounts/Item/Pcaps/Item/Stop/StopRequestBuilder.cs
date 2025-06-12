@@ -72,6 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Stop
 #endif
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

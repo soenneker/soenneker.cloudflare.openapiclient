@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_docume
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/pdf");
+            requestInfo.Headers.TryAdd("Accept", "application/pdf, application/json");
             return requestInfo;
         }
         /// <summary>
