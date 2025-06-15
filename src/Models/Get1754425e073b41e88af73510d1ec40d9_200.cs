@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Get36a90f034ea240b3a030fac7c16f3a44_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommon, IParsable
+    public partial class Get1754425e073b41e88af73510d1ec40d9_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommon, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
@@ -23,12 +23,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get36a90f034ea240b3a030fac7c16f3a44_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get1754425e073b41e88af73510d1ec40d9_200"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Get36a90f034ea240b3a030fac7c16f3a44_200 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Get1754425e073b41e88af73510d1ec40d9_200 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Get36a90f034ea240b3a030fac7c16f3a44_200();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Get1754425e073b41e88af73510d1ec40d9_200();
         }
         /// <summary>
         /// The deserialization information for the current model
