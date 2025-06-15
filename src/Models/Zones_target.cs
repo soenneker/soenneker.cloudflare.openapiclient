@@ -15,16 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The constraint of a target.</summary>
+        /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_constraint? Constraint { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_constraint Constraint { get; set; }
+        public string Type { get; set; }
 #endif
-        /// <summary>A target based on the URL of the request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_target? Target { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target"/> and sets the default values.
         /// </summary>
@@ -50,8 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "constraint", n => { Constraint = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_constraint>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_constraint.CreateFromDiscriminatorValue); } },
-                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_target>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_constraint>("constraint", Constraint);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target_target>("target", Target);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

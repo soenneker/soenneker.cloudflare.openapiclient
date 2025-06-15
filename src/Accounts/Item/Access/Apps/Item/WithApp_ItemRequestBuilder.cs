@@ -112,18 +112,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item
         /// <summary>
         /// Updates an Access application.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_Response_200_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_Response_200_application_json?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_200?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_Response_200_application_json> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_200> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_app_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -132,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Access_applications_update_an_access_application_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an application from Access.

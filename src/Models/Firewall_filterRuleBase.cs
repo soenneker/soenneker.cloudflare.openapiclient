@@ -39,10 +39,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The products property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>? Products { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules?>? Products { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules> Products { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules?> Products { get; set; }
 #endif
         /// <summary>A short reference tag. Allows you to select related firewall rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "paused", n => { Paused = n.GetBoolValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
-                { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "products", n => { Products = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>()?.AsList(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
             };
         }
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteDoubleValue("priority", Priority);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>("products", Products);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>("products", Products);
             writer.WriteStringValue("ref", Ref);
             writer.WriteAdditionalData(AdditionalData);
         }

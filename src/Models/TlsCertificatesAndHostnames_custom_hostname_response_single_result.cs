@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TlsCertificatesAndHostnames_custom_hostname_response_single_result : global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customHostname, IParsable
+    public partial class TlsCertificatesAndHostnames_custom_hostname_response_single_result : global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customhostname, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

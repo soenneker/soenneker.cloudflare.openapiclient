@@ -19,18 +19,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item> Messages { get; set; }
 #endif
         /// <summary>The number of the name server set to assign to the zone.</summary>
         public double? NsSet { get; set; }
@@ -70,8 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns>(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns>(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ns_set", n => { NsSet = n.GetDoubleValue(); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_result_info.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -85,8 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ns>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>("messages", Messages);
             writer.WriteDoubleValue("ns_set", NsSet);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_result_info>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);

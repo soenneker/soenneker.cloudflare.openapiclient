@@ -44,11 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_id_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_id_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_id_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_id_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -94,11 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmarks_componentsSchemasSingle_response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__delete_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -187,11 +187,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__create_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -210,11 +210,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.Item
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application_RequestBody_application_json body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_bookmark_applications___deprecated__update_a_bookmark_application body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

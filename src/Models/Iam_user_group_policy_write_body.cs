@@ -19,18 +19,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A set of permission groups that are specified to the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups>? PermissionGroups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group_ids_item>? PermissionGroups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups> PermissionGroups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group_ids_item> PermissionGroups { get; set; }
 #endif
         /// <summary>A set of resource groups that are specified to the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups>? ResourceGroups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group_ids_item>? ResourceGroups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups> ResourceGroups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group_ids_item> ResourceGroups { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_user_group_policy_write_body"/> and sets the default values.
@@ -58,8 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access", n => { Access = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access>(); } },
-                { "permission_groups", n => { PermissionGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups>(global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "resource_groups", n => { ResourceGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups>(global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "permission_groups", n => { PermissionGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group_ids_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group_ids_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "resource_groups", n => { ResourceGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group_ids_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group_ids_item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -70,8 +70,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_access>("access", Access);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups>("permission_groups", PermissionGroups);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.User_groups>("resource_groups", ResourceGroups);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_permission_group_ids_item>("permission_groups", PermissionGroups);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group_ids_item>("resource_groups", ResourceGroups);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTP methods to match. You can specify a subset (for example, `[&apos;POST&apos;,&apos;PUT&apos;]`) or all methods (`[&apos;_ALL_&apos;]`). This field is optional when creating a rate limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>? Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules?>? Methods { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules> Methods { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules?> Methods { get; set; }
 #endif
         /// <summary>The HTTP schemes to match. You can specify one scheme (`[&apos;HTTPS&apos;]`), both schemes (`[&apos;HTTP&apos;,&apos;HTTPS&apos;]`), or all schemes (`[&apos;_ALL_&apos;]`). This field is optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "methods", n => { Methods = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "methods", n => { Methods = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>()?.AsList(); } },
                 { "schemes", n => { Schemes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>("methods", Methods);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>("methods", Methods);
             writer.WriteCollectionOfPrimitiveValues<string>("schemes", Schemes);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

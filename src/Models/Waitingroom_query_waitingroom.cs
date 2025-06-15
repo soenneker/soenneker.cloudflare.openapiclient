@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Only available for the Waiting Room Advanced subscription. Additional hostname and path combinations to which this waiting room will be applied. There is an implied wildcard at the end of the path. The hostname and path combination must be unique to this and all other waiting rooms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>? AdditionalRoutes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_additional_routes_item>? AdditionalRoutes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms> AdditionalRoutes { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_additional_routes_item> AdditionalRoutes { get; set; }
 #endif
         /// <summary>Configures cookie attributes for the waiting room cookie. This encrypted cookie stores a user&apos;s status in the waiting room, such as queue position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,10 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of enabled origin commands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>? EnabledOriginCommands { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms?>? EnabledOriginCommands { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms> EnabledOriginCommands { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms?> EnabledOriginCommands { get; set; }
 #endif
         /// <summary>The host name to which the waiting room will be applied (no wildcards). Please do not include the scheme (http:// or https://). The host and path combination must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,14 +140,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additional_routes", n => { AdditionalRoutes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "additional_routes", n => { AdditionalRoutes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_additional_routes_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_additional_routes_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cookie_attributes", n => { CookieAttributes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes.CreateFromDiscriminatorValue); } },
                 { "cookie_suffix", n => { CookieSuffix = n.GetStringValue(); } },
                 { "custom_page_html", n => { CustomPageHtml = n.GetStringValue(); } },
                 { "default_template_language", n => { DefaultTemplateLanguage = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disable_session_renewal", n => { DisableSessionRenewal = n.GetBoolValue(); } },
-                { "enabled_origin_commands", n => { EnabledOriginCommands = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "enabled_origin_commands", n => { EnabledOriginCommands = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>()?.AsList(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "json_response_enabled", n => { JsonResponseEnabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -170,14 +170,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>("additional_routes", AdditionalRoutes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_additional_routes_item>("additional_routes", AdditionalRoutes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_cookie_attributes>("cookie_attributes", CookieAttributes);
             writer.WriteStringValue("cookie_suffix", CookieSuffix);
             writer.WriteStringValue("custom_page_html", CustomPageHtml);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_default_template_language>("default_template_language", DefaultTemplateLanguage);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disable_session_renewal", DisableSessionRenewal);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>("enabled_origin_commands", EnabledOriginCommands);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waiting_rooms>("enabled_origin_commands", EnabledOriginCommands);
             writer.WriteStringValue("host", Host);
             writer.WriteBoolValue("json_response_enabled", JsonResponseEnabled);
             writer.WriteStringValue("name", Name);

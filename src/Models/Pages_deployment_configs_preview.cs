@@ -15,134 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Constellation bindings used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_ai_bindings? AiBindings { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_ai_bindings AiBindings { get; set; }
-#endif
-        /// <summary>Analytics Engine bindings used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_analytics_engine_datasets? AnalyticsEngineDatasets { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_analytics_engine_datasets AnalyticsEngineDatasets { get; set; }
-#endif
-        /// <summary>Browser bindings used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_browsers? Browsers { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_browsers Browsers { get; set; }
-#endif
-        /// <summary>Compatibility date used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CompatibilityDate { get; set; }
-#nullable restore
-#else
-        public string CompatibilityDate { get; set; }
-#endif
-        /// <summary>Compatibility flags used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? CompatibilityFlags { get; set; }
-#nullable restore
-#else
-        public List<string> CompatibilityFlags { get; set; }
-#endif
-        /// <summary>D1 databases used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_d1_databases? D1Databases { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_d1_databases D1Databases { get; set; }
-#endif
-        /// <summary>Durable Object namespaces used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_durable_object_namespaces? DurableObjectNamespaces { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_durable_object_namespaces DurableObjectNamespaces { get; set; }
-#endif
-        /// <summary>Environment variables used for builds and Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_env_vars? EnvVars { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_env_vars EnvVars { get; set; }
-#endif
-        /// <summary>Hyperdrive bindings used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_hyperdrive_bindings? HyperdriveBindings { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_hyperdrive_bindings HyperdriveBindings { get; set; }
-#endif
-        /// <summary>KV namespaces used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_kv_namespaces? KvNamespaces { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_kv_namespaces KvNamespaces { get; set; }
-#endif
-        /// <summary>mTLS bindings used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_mtls_certificates? MtlsCertificates { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_mtls_certificates MtlsCertificates { get; set; }
-#endif
-        /// <summary>Placement setting used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_placement? Placement { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_placement Placement { get; set; }
-#endif
-        /// <summary>Queue Producer bindings used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_queue_producers? QueueProducers { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_queue_producers QueueProducers { get; set; }
-#endif
-        /// <summary>R2 buckets used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_r2_buckets? R2Buckets { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_r2_buckets R2Buckets { get; set; }
-#endif
-        /// <summary>Services used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_services? Services { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_services Services { get; set; }
-#endif
-        /// <summary>Vectorize bindings used for Pages Functions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_vectorize_bindings? VectorizeBindings { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_vectorize_bindings VectorizeBindings { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview"/> and sets the default values.
         /// </summary>
@@ -168,22 +40,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ai_bindings", n => { AiBindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_ai_bindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_ai_bindings.CreateFromDiscriminatorValue); } },
-                { "analytics_engine_datasets", n => { AnalyticsEngineDatasets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_analytics_engine_datasets>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_analytics_engine_datasets.CreateFromDiscriminatorValue); } },
-                { "browsers", n => { Browsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_browsers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_browsers.CreateFromDiscriminatorValue); } },
-                { "compatibility_date", n => { CompatibilityDate = n.GetStringValue(); } },
-                { "compatibility_flags", n => { CompatibilityFlags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "d1_databases", n => { D1Databases = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_d1_databases>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_d1_databases.CreateFromDiscriminatorValue); } },
-                { "durable_object_namespaces", n => { DurableObjectNamespaces = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_durable_object_namespaces>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_durable_object_namespaces.CreateFromDiscriminatorValue); } },
-                { "env_vars", n => { EnvVars = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_env_vars>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_env_vars.CreateFromDiscriminatorValue); } },
-                { "hyperdrive_bindings", n => { HyperdriveBindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_hyperdrive_bindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_hyperdrive_bindings.CreateFromDiscriminatorValue); } },
-                { "kv_namespaces", n => { KvNamespaces = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_kv_namespaces>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_kv_namespaces.CreateFromDiscriminatorValue); } },
-                { "mtls_certificates", n => { MtlsCertificates = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_mtls_certificates>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_mtls_certificates.CreateFromDiscriminatorValue); } },
-                { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_placement>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_placement.CreateFromDiscriminatorValue); } },
-                { "queue_producers", n => { QueueProducers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_queue_producers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_queue_producers.CreateFromDiscriminatorValue); } },
-                { "r2_buckets", n => { R2Buckets = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_r2_buckets>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_r2_buckets.CreateFromDiscriminatorValue); } },
-                { "services", n => { Services = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_services>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_services.CreateFromDiscriminatorValue); } },
-                { "vectorize_bindings", n => { VectorizeBindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_vectorize_bindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_vectorize_bindings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -193,22 +49,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_ai_bindings>("ai_bindings", AiBindings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_analytics_engine_datasets>("analytics_engine_datasets", AnalyticsEngineDatasets);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_browsers>("browsers", Browsers);
-            writer.WriteStringValue("compatibility_date", CompatibilityDate);
-            writer.WriteCollectionOfPrimitiveValues<string>("compatibility_flags", CompatibilityFlags);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_d1_databases>("d1_databases", D1Databases);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_durable_object_namespaces>("durable_object_namespaces", DurableObjectNamespaces);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_env_vars>("env_vars", EnvVars);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_hyperdrive_bindings>("hyperdrive_bindings", HyperdriveBindings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_kv_namespaces>("kv_namespaces", KvNamespaces);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_mtls_certificates>("mtls_certificates", MtlsCertificates);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_placement>("placement", Placement);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_queue_producers>("queue_producers", QueueProducers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_r2_buckets>("r2_buckets", R2Buckets);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_services>("services", Services);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs_preview_vectorize_bindings>("vectorize_bindings", VectorizeBindings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

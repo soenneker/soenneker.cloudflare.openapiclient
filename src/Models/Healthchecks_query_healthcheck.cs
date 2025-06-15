@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of regions from which to run health checks. Null means Cloudflare will pick a default region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>? CheckRegions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks?>? CheckRegions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks> CheckRegions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks?> CheckRegions { get; set; }
 #endif
         /// <summary>The number of consecutive fails required from a health check before changing the health to unhealthy.</summary>
         public int? ConsecutiveFails { get; set; }
@@ -109,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "address", n => { Address = n.GetStringValue(); } },
-                { "check_regions", n => { CheckRegions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "check_regions", n => { CheckRegions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>()?.AsList(); } },
                 { "consecutive_fails", n => { ConsecutiveFails = n.GetIntValue(); } },
                 { "consecutive_successes", n => { ConsecutiveSuccesses = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -131,7 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>("check_regions", CheckRegions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>("check_regions", CheckRegions);
             writer.WriteIntValue("consecutive_fails", ConsecutiveFails);
             writer.WriteIntValue("consecutive_successes", ConsecutiveSuccesses);
             writer.WriteStringValue("description", Description);

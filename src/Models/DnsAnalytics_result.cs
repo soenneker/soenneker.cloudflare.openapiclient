@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array with one row per combination of dimension values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Report>? Data { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_data_item>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Report> Data { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_data_item> Data { get; set; }
 #endif
         /// <summary>Number of seconds between current time and last processed event, in another words how many seconds of data could be missing.</summary>
         public double? DataLag { get; set; }
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Report>(global::Soenneker.Cloudflare.OpenApiClient.Models.Report.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_data_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_data_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data_lag", n => { DataLag = n.GetDoubleValue(); } },
                 { "max", n => { Max = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_result_max>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_result_max.CreateFromDiscriminatorValue); } },
                 { "min", n => { Min = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_result_min>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_result_min.CreateFromDiscriminatorValue); } },
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Report>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_data_item>("data", Data);
             writer.WriteDoubleValue("data_lag", DataLag);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_result_max>("max", Max);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_result_min>("min", Min);

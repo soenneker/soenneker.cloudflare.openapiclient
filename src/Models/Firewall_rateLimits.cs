@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Criteria specifying when the current rate limit should be bypassed. You can specify that the rate limit should not apply to one or more URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>? Bypass { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_bypass_item>? Bypass { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules> Bypass { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_bypass_item> Bypass { get; set; }
 #endif
         /// <summary>An informative summary of the rate limit. This value is sanitized and any tags will be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action.CreateFromDiscriminatorValue); } },
-                { "bypass", n => { Bypass = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "bypass", n => { Bypass = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_bypass_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_bypass_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>("action", Action);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules>("bypass", Bypass);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_bypass_item>("bypass", Bypass);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match>("match", Match);

@@ -51,10 +51,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Transitions to change the storage class of objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_storageClassTransitions>? StorageClassTransitions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleStorageTransition>? StorageClassTransitions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_storageClassTransitions> StorageClassTransitions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleStorageTransition> StorageClassTransitions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule"/> and sets the default values.
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "deleteObjectsTransition", n => { DeleteObjectsTransition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_deleteObjectsTransition>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_deleteObjectsTransition.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "storageClassTransitions", n => { StorageClassTransitions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_storageClassTransitions>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_storageClassTransitions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "storageClassTransitions", n => { StorageClassTransitions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleStorageTransition>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleStorageTransition.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_deleteObjectsTransition>("deleteObjectsTransition", DeleteObjectsTransition);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule_storageClassTransitions>("storageClassTransitions", StorageClassTransitions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleStorageTransition>("storageClassTransitions", StorageClassTransitions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

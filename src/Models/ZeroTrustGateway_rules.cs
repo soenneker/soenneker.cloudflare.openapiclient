@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The protocol or layer to evaluate the traffic, identity, and device posture expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway>? Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway?>? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway> Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway?> Filters { get; set; }
 #endif
         /// <summary>The API resource UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "device_posture", n => { DevicePosture = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration.CreateFromDiscriminatorValue); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway>(global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "identity", n => { Identity = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -173,7 +173,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("device_posture", DevicePosture);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>("expiration", Expiration);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway>("filters", Filters);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway>("filters", Filters);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("identity", Identity);
             writer.WriteStringValue("name", Name);

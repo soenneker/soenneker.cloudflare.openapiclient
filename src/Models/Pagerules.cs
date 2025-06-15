@@ -14,32 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The code property</summary>
-        public int? Code { get; set; }
-        /// <summary>The documentation_url property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DocumentationUrl { get; set; }
-#nullable restore
-#else
-        public string DocumentationUrl { get; set; }
-#endif
-        /// <summary>The message property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Message { get; set; }
-#nullable restore
-#else
-        public string Message { get; set; }
-#endif
-        /// <summary>The source property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pagerules_source? Source { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pagerules_source Source { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pagerules"/> and sets the default values.
         /// </summary>
@@ -65,10 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "code", n => { Code = n.GetIntValue(); } },
-                { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pagerules_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pagerules_source.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,10 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("code", Code);
-            writer.WriteStringValue("documentation_url", DocumentationUrl);
-            writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pagerules_source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

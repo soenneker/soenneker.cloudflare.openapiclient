@@ -61,18 +61,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Request
         /// <summary>
         /// List Priority Intelligence Requirements
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_Response_200_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_Response_200_application_json?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priorityList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priorityList body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_Response_200_application_json> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priorityList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priorityList body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Request
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_apiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_priority_list_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List Priority Intelligence Requirements

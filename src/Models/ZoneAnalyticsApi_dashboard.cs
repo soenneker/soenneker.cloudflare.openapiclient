@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Time deltas containing metadata about each bucket of time. The number of buckets (resolution) is determined by the amount of time between the since and until parameters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Colos>? Timeseries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_timeseries_item>? Timeseries { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Colos> Timeseries { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_timeseries_item> Timeseries { get; set; }
 #endif
         /// <summary>Breakdown of totals by data type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "timeseries", n => { Timeseries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Colos>(global::Soenneker.Cloudflare.OpenApiClient.Models.Colos.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "timeseries", n => { Timeseries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_timeseries_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_timeseries_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_totals>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_totals.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Colos>("timeseries", Timeseries);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_timeseries_item>("timeseries", Timeseries);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZoneAnalyticsApi_totals>("totals", Totals);
             writer.WriteAdditionalData(AdditionalData);
         }

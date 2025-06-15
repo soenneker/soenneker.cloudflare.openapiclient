@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings
         /// <summary>
         /// Returns a list of settings (and their details) that Page Rules can apply to matching requests.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_Response_200_application_json"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasApiResponseCommonFailure">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_Response_200_application_json?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_Response_200_application_json> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_Response_200_application_json>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_Response_200_application_json.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Available_page_rules_settings_list_available_page_rules_settings_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a list of settings (and their details) that Page Rules can apply to matching requests.
