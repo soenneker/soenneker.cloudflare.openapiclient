@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.Item
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Device_managed_networks_delete_device_managed_network_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasResponse_collection?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Device_managed_networks_delete_device_managed_network body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasResponse_collection?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.Item.WithNetwork_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasResponse_collection> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Device_managed_networks_delete_device_managed_network body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_componentsSchemasResponse_collection> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.Item.WithNetwork_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -114,11 +114,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Device_managed_networks_delete_device_managed_network body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.Item.WithNetwork_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Device_managed_networks_delete_device_managed_network body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks.Item.WithNetwork_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

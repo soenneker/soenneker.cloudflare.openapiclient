@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         /// Updates the priority of existing firewall rules.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection"/></returns>
-        /// <param name="body">Fallback request body schema</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_priority_of_firewall_rules_4XX">When receiving a 4XX status code</exception>
@@ -153,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         /// Updates one or more existing firewall rules.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection"/></returns>
-        /// <param name="body">Fallback request body schema</param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_firewall_rules_4XX">When receiving a 4XX status code</exception>
@@ -222,7 +222,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         /// Updates the priority of existing firewall rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -268,7 +268,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         /// Updates one or more existing firewall rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

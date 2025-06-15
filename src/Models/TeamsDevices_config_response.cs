@@ -15,6 +15,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The Workspace One API URL provided in the Workspace One Admin Dashboard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ApiUrl { get; set; }
+#nullable restore
+#else
+        public string ApiUrl { get; set; }
+#endif
+        /// <summary>The Workspace One Authorization URL depending on your region.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthUrl { get; set; }
+#nullable restore
+#else
+        public string AuthUrl { get; set; }
+#endif
+        /// <summary>The Workspace One client ID provided in the Workspace One Admin Dashboard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientId { get; set; }
+#nullable restore
+#else
+        public string ClientId { get; set; }
+#endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "api_url", n => { ApiUrl = n.GetStringValue(); } },
+                { "auth_url", n => { AuthUrl = n.GetStringValue(); } },
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -58,6 +85,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("api_url", ApiUrl);
+            writer.WriteStringValue("auth_url", AuthUrl);
+            writer.WriteStringValue("client_id", ClientId);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

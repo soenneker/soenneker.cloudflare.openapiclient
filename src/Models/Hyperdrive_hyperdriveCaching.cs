@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingDisabled"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingEnabled"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Hyperdrive_hyperdriveCaching : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Hyperdrive_hyperdriveCaching : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingDisabled"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingDisabled? HyperdriveHyperdriveCachingDisabled { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingDisabled HyperdriveHyperdriveCachingDisabled { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCaching"/> and sets the default values.
-        /// </summary>
-        public Hyperdrive_hyperdriveCaching()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingEnabled"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingEnabled? HyperdriveHyperdriveCachingEnabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingEnabled HyperdriveHyperdriveCachingEnabled { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCaching CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCaching();
+            var mappingValue = parseNode.GetChildNode("disabled")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCaching();
+            if("hyperdrive_hyperdrive-caching-disabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.HyperdriveHyperdriveCachingDisabled = new global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingDisabled();
+            }
+            else if("hyperdrive_hyperdrive-caching-enabled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.HyperdriveHyperdriveCachingEnabled = new global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingEnabled();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(HyperdriveHyperdriveCachingDisabled != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return HyperdriveHyperdriveCachingDisabled.GetFieldDeserializers();
+            }
+            else if(HyperdriveHyperdriveCachingEnabled != null)
+            {
+                return HyperdriveHyperdriveCachingEnabled.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(HyperdriveHyperdriveCachingDisabled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingDisabled>(null, HyperdriveHyperdriveCachingDisabled);
+            }
+            else if(HyperdriveHyperdriveCachingEnabled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveCachingEnabled>(null, HyperdriveHyperdriveCachingEnabled);
+            }
         }
     }
 }

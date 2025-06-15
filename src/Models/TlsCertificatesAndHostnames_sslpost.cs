@@ -55,8 +55,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslsettings Settings { get; set; }
 #endif
-        /// <summary>Level of validation to be used for this hostname. Domain validation (dv) must be used.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_type? Type { get; set; }
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>Indicates whether the certificate covers a wildcard.</summary>
         public bool? Wildcard { get; set; }
         /// <summary>
@@ -93,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "custom_key", n => { CustomKey = n.GetStringValue(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_method>(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslsettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslsettings.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_type>(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
                 { "wildcard", n => { Wildcard = n.GetBoolValue(); } },
             };
         }
@@ -112,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("custom_key", CustomKey);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_method>("method", Method);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslsettings>("settings", Settings);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_type>("type", Type);
+            writer.WriteStringValue("type", Type);
             writer.WriteBoolValue("wildcard", Wildcard);
             writer.WriteAdditionalData(AdditionalData);
         }

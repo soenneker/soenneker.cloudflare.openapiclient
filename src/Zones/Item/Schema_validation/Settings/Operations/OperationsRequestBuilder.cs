@@ -103,11 +103,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchResponse?> PatchAsOperationsPatchResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Schema_validation_bulk_edit_per_operation_settings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchResponse?> PatchAsOperationsPatchResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchResponse> PatchAsOperationsPatchResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Schema_validation_bulk_edit_per_operation_settings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchResponse> PatchAsOperationsPatchResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -129,11 +129,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         [Obsolete("This method is obsolete. Use PatchAsOperationsPatchResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsResponse?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Schema_validation_bulk_edit_per_operation_settings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsResponse?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsResponse> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Schema_validation_bulk_edit_per_operation_settings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsResponse> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -171,11 +171,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Schema_validation_bulk_edit_per_operation_settings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Schema_validation_bulk_edit_per_operation_settings body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.OperationsPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

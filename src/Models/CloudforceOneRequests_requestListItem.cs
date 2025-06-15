@@ -15,21 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Request completion time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Completed { get; set; }
-#nullable restore
-#else
-        public UntypedNode Completed { get; set; }
-#endif
+        public DateTimeOffset? Completed { get; set; }
         /// <summary>Request creation time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Created { get; set; }
-#nullable restore
-#else
-        public UntypedNode Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,13 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Tokens for the request.</summary>
         public int? Tokens { get; set; }
         /// <summary>Request last updated time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Updated { get; set; }
-#nullable restore
-#else
-        public UntypedNode Updated { get; set; }
-#endif
+        public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem"/> and sets the default values.
         /// </summary>
@@ -105,8 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed", n => { Completed = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "created", n => { Created = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "completed", n => { Completed = n.GetDateTimeOffsetValue(); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message_tokens", n => { MessageTokens = n.GetIntValue(); } },
                 { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>(); } },
@@ -116,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "summary", n => { Summary = n.GetStringValue(); } },
                 { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
                 { "tokens", n => { Tokens = n.GetIntValue(); } },
-                { "updated", n => { Updated = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -126,8 +108,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("completed", Completed);
-            writer.WriteObjectValue<UntypedNode>("created", Created);
+            writer.WriteDateTimeOffsetValue("completed", Completed);
+            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("message_tokens", MessageTokens);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>("priority", Priority);
@@ -137,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("summary", Summary);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
             writer.WriteIntValue("tokens", Tokens);
-            writer.WriteObjectValue<UntypedNode>("updated", Updated);
+            writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

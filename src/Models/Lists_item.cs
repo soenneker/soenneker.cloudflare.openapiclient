@@ -7,86 +7,38 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect"/>, <see cref="int"/>, <see cref="string"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Lists_item : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Lists_item : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines a non-negative 32 bit integer.</summary>
-        public int? Asn { get; set; }
-        /// <summary>Defines an informative summary of the list item.</summary>
+        /// <summary>Composed type representation for type <see cref="int"/></summary>
+        public int? Integer { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname? ListsItemHostname { get; set; }
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname ListsItemHostname { get; set; }
 #endif
-        /// <summary>The RFC 3339 timestamp of when the item was created.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedOn { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect? ListsItemRedirect { get; set; }
 #nullable restore
 #else
-        public string CreatedOn { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect ListsItemRedirect { get; set; }
 #endif
-        /// <summary>Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).</summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname? Hostname { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname Hostname { get; set; }
+        public string String { get; set; }
 #endif
-        /// <summary>The unique ID of the list.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; private set; }
-#nullable restore
-#else
-        public string Id { get; private set; }
-#endif
-        /// <summary>An IPv4 address, an IPv4 CIDR, or an IPv6 CIDR. IPv6 CIDRs are limited to a maximum of /64.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Ip { get; set; }
-#nullable restore
-#else
-        public string Ip { get; set; }
-#endif
-        /// <summary>The RFC 3339 timestamp of when the item was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifiedOn { get; private set; }
-#nullable restore
-#else
-        public string ModifiedOn { get; private set; }
-#endif
-        /// <summary>The definition of the redirect.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect? Redirect { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect Redirect { get; set; }
-#endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item"/> and sets the default values.
-        /// </summary>
-        public Lists_item()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -95,7 +47,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item();
+            if("lists_item_hostname".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsItemHostname = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname();
+            }
+            else if("lists_item_redirect".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsItemRedirect = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect();
+            }
+            else if(parseNode.GetIntValue() is int integerValue)
+            {
+                result.Integer = integerValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,18 +73,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListsItemHostname != null)
             {
-                { "asn", n => { Asn = n.GetIntValue(); } },
-                { "comment", n => { Comment = n.GetStringValue(); } },
-                { "created_on", n => { CreatedOn = n.GetStringValue(); } },
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "ip", n => { Ip = n.GetStringValue(); } },
-                { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
-                { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return ListsItemHostname.GetFieldDeserializers();
+            }
+            else if(ListsItemRedirect != null)
+            {
+                return ListsItemRedirect.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -123,13 +90,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("asn", Asn);
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>("hostname", Hostname);
-            writer.WriteStringValue("ip", Ip);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>("redirect", Redirect);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ListsItemHostname != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>(null, ListsItemHostname);
+            }
+            else if(ListsItemRedirect != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>(null, ListsItemRedirect);
+            }
+            else if(Integer != null)
+            {
+                writer.WriteIntValue(null, Integer);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
         }
     }
 }

@@ -49,11 +49,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates__4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates__200?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates_ body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates__200?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates__200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates_ body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates__200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates_ body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname___and_any_issued_ssl_certificates_ body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.WithCustom_hostname_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

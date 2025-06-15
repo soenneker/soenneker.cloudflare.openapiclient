@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Priority creation time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Created { get; set; }
-#nullable restore
-#else
-        public UntypedNode Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,13 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
         /// <summary>Priority last updated time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Updated { get; set; }
-#nullable restore
-#else
-        public UntypedNode Updated { get; set; }
-#endif
+        public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priorityItem"/> and sets the default values.
         /// </summary>
@@ -83,13 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "requirement", n => { Requirement = n.GetStringValue(); } },
                 { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
-                { "updated", n => { Updated = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -99,13 +87,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("created", Created);
+            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("requirement", Requirement);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
-            writer.WriteObjectValue<UntypedNode>("updated", Updated);
+            writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

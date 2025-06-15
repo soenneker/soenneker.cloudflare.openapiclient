@@ -31,25 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Content { get; set; }
 #endif
         /// <summary>Defines the message creation time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Created { get; set; }
-#nullable restore
-#else
-        public UntypedNode Created { get; set; }
-#endif
+        public DateTimeOffset? Created { get; set; }
         /// <summary>Message ID.</summary>
         public int? Id { get; set; }
         /// <summary>Whether the message is a follow-on request.</summary>
         public bool? IsFollowOnRequest { get; set; }
         /// <summary>Defines the message last updated time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? Updated { get; set; }
-#nullable restore
-#else
-        public UntypedNode Updated { get; set; }
-#endif
+        public DateTimeOffset? Updated { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem"/> and sets the default values.
         /// </summary>
@@ -77,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "is_follow_on_request", n => { IsFollowOnRequest = n.GetBoolValue(); } },
-                { "updated", n => { Updated = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -92,10 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("author", Author);
             writer.WriteStringValue("content", Content);
-            writer.WriteObjectValue<UntypedNode>("created", Created);
+            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("is_follow_on_request", IsFollowOnRequest);
-            writer.WriteObjectValue<UntypedNode>("updated", Updated);
+            writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

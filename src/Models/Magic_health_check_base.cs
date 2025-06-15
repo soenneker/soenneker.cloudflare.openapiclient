@@ -21,10 +21,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The destination address in a request type health check. After the healthcheck is decapsulated at the customer end of the tunnel, the ICMP echo will be forwarded to this address. This field defaults to `customer_gre_endpoint address`. This field is ignored for bidirectional healthchecks as the interface_address (not assigned to the Cloudflare side of the tunnel) is used as the target. Must be in object form if the x-magic-new-hc-target header is set to true and string form if x-magic-new-hc-target is absent or set to false.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target? Target { get; set; }
 #nullable restore
 #else
-        public UntypedNode Target { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target Target { get; set; }
 #endif
         /// <summary>The type of healthcheck to run, reply or request. The default value is `reply`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base_type? Type { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "rate", n => { Rate = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base_rate>(); } },
-                { "target", n => { Target = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base_type>(); } },
             };
         }
@@ -70,9 +70,80 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base_rate>("rate", Rate);
-            writer.WriteObjectValue<UntypedNode>("target", Target);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target>("target", Target);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Magic_health_check_base_target : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target? MagicHealthCheckTarget { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target MagicHealthCheckTarget { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.Magic_health_check_base_target();
+                if("magic_health_check_target".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
+                    result.MagicHealthCheckTarget = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target();
+                }
+                else if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(MagicHealthCheckTarget != null)
+                {
+                    return MagicHealthCheckTarget.GetFieldDeserializers();
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(MagicHealthCheckTarget != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target>(null, MagicHealthCheckTarget);
+                }
+                else if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+            }
         }
     }
 }

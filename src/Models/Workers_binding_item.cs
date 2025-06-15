@@ -8,28 +8,195 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A binding to allow the Worker to communicate with resources.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Workers_binding_item : IAdditionalDataHolder, IParsable
+    public partial class Workers_binding_item : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai? WorkersBindingKindAi { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai WorkersBindingKindAi { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item"/> and sets the default values.
-        /// </summary>
-        public Workers_binding_item()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine? WorkersBindingKindAnalyticsEngine { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine WorkersBindingKindAnalyticsEngine { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets? WorkersBindingKindAssets { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets WorkersBindingKindAssets { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser? WorkersBindingKindBrowser { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser WorkersBindingKindBrowser { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1? WorkersBindingKindD1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1 WorkersBindingKindD1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace? WorkersBindingKindDispatchNamespace { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace WorkersBindingKindDispatchNamespace { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace? WorkersBindingKindDurableObjectNamespace { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace WorkersBindingKindDurableObjectNamespace { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive? WorkersBindingKindHyperdrive { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive WorkersBindingKindHyperdrive { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json? WorkersBindingKindJson { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json WorkersBindingKindJson { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace? WorkersBindingKindKvNamespace { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace WorkersBindingKindKvNamespace { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate? WorkersBindingKindMtlsCertificate { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate WorkersBindingKindMtlsCertificate { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines? WorkersBindingKindPipelines { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines WorkersBindingKindPipelines { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text? WorkersBindingKindPlainText { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text WorkersBindingKindPlainText { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue? WorkersBindingKindQueue { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue WorkersBindingKindQueue { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket? WorkersBindingKindR2Bucket { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket WorkersBindingKindR2Bucket { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key? WorkersBindingKindSecretKey { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key WorkersBindingKindSecretKey { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret? WorkersBindingKindSecretsStoreSecret { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret WorkersBindingKindSecretsStoreSecret { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text? WorkersBindingKindSecretText { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text WorkersBindingKindSecretText { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service? WorkersBindingKindService { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service WorkersBindingKindService { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer? WorkersBindingKindTailConsumer { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer WorkersBindingKindTailConsumer { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize? WorkersBindingKindVectorize { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize WorkersBindingKindVectorize { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata? WorkersBindingKindVersionMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata WorkersBindingKindVersionMetadata { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow? WorkersBindingKindWorkflow { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow WorkersBindingKindWorkflow { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +205,101 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item();
+            if("ai".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindAi = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai();
+            }
+            else if("analytics_engine".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindAnalyticsEngine = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine();
+            }
+            else if("assets".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindAssets = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets();
+            }
+            else if("browser".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindBrowser = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser();
+            }
+            else if("d1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindD1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1();
+            }
+            else if("dispatch_namespace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindDispatchNamespace = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace();
+            }
+            else if("durable_object_namespace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindDurableObjectNamespace = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace();
+            }
+            else if("hyperdrive".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindHyperdrive = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive();
+            }
+            else if("json".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindJson = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json();
+            }
+            else if("kv_namespace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindKvNamespace = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace();
+            }
+            else if("mtls_certificate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindMtlsCertificate = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate();
+            }
+            else if("pipelines".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindPipelines = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines();
+            }
+            else if("plain_text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindPlainText = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text();
+            }
+            else if("queue".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindQueue = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue();
+            }
+            else if("r2_bucket".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindR2Bucket = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket();
+            }
+            else if("secret_key".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindSecretKey = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key();
+            }
+            else if("secret_text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindSecretText = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text();
+            }
+            else if("secrets_store_secret".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindSecretsStoreSecret = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret();
+            }
+            else if("service".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindService = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service();
+            }
+            else if("tail_consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindTailConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer();
+            }
+            else if("vectorize".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindVectorize = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize();
+            }
+            else if("version_metadata".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindVersionMetadata = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata();
+            }
+            else if("workers_binding_kind_workflow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindWorkflow = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,10 +307,99 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorkersBindingKindAi != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return WorkersBindingKindAi.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindAnalyticsEngine != null)
+            {
+                return WorkersBindingKindAnalyticsEngine.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindAssets != null)
+            {
+                return WorkersBindingKindAssets.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindBrowser != null)
+            {
+                return WorkersBindingKindBrowser.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindD1 != null)
+            {
+                return WorkersBindingKindD1.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindDispatchNamespace != null)
+            {
+                return WorkersBindingKindDispatchNamespace.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindDurableObjectNamespace != null)
+            {
+                return WorkersBindingKindDurableObjectNamespace.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindHyperdrive != null)
+            {
+                return WorkersBindingKindHyperdrive.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindJson != null)
+            {
+                return WorkersBindingKindJson.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindKvNamespace != null)
+            {
+                return WorkersBindingKindKvNamespace.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindMtlsCertificate != null)
+            {
+                return WorkersBindingKindMtlsCertificate.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindPipelines != null)
+            {
+                return WorkersBindingKindPipelines.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindPlainText != null)
+            {
+                return WorkersBindingKindPlainText.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindQueue != null)
+            {
+                return WorkersBindingKindQueue.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindR2Bucket != null)
+            {
+                return WorkersBindingKindR2Bucket.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindSecretKey != null)
+            {
+                return WorkersBindingKindSecretKey.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindSecretsStoreSecret != null)
+            {
+                return WorkersBindingKindSecretsStoreSecret.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindSecretText != null)
+            {
+                return WorkersBindingKindSecretText.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindService != null)
+            {
+                return WorkersBindingKindService.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindTailConsumer != null)
+            {
+                return WorkersBindingKindTailConsumer.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindVectorize != null)
+            {
+                return WorkersBindingKindVectorize.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindVersionMetadata != null)
+            {
+                return WorkersBindingKindVersionMetadata.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindWorkflow != null)
+            {
+                return WorkersBindingKindWorkflow.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,8 +408,98 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(WorkersBindingKindAi != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai>(null, WorkersBindingKindAi);
+            }
+            else if(WorkersBindingKindAnalyticsEngine != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine>(null, WorkersBindingKindAnalyticsEngine);
+            }
+            else if(WorkersBindingKindAssets != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets>(null, WorkersBindingKindAssets);
+            }
+            else if(WorkersBindingKindBrowser != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser>(null, WorkersBindingKindBrowser);
+            }
+            else if(WorkersBindingKindD1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1>(null, WorkersBindingKindD1);
+            }
+            else if(WorkersBindingKindDispatchNamespace != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace>(null, WorkersBindingKindDispatchNamespace);
+            }
+            else if(WorkersBindingKindDurableObjectNamespace != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace>(null, WorkersBindingKindDurableObjectNamespace);
+            }
+            else if(WorkersBindingKindHyperdrive != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive>(null, WorkersBindingKindHyperdrive);
+            }
+            else if(WorkersBindingKindJson != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json>(null, WorkersBindingKindJson);
+            }
+            else if(WorkersBindingKindKvNamespace != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace>(null, WorkersBindingKindKvNamespace);
+            }
+            else if(WorkersBindingKindMtlsCertificate != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate>(null, WorkersBindingKindMtlsCertificate);
+            }
+            else if(WorkersBindingKindPipelines != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines>(null, WorkersBindingKindPipelines);
+            }
+            else if(WorkersBindingKindPlainText != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text>(null, WorkersBindingKindPlainText);
+            }
+            else if(WorkersBindingKindQueue != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue>(null, WorkersBindingKindQueue);
+            }
+            else if(WorkersBindingKindR2Bucket != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket>(null, WorkersBindingKindR2Bucket);
+            }
+            else if(WorkersBindingKindSecretKey != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key>(null, WorkersBindingKindSecretKey);
+            }
+            else if(WorkersBindingKindSecretsStoreSecret != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret>(null, WorkersBindingKindSecretsStoreSecret);
+            }
+            else if(WorkersBindingKindSecretText != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text>(null, WorkersBindingKindSecretText);
+            }
+            else if(WorkersBindingKindService != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service>(null, WorkersBindingKindService);
+            }
+            else if(WorkersBindingKindTailConsumer != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer>(null, WorkersBindingKindTailConsumer);
+            }
+            else if(WorkersBindingKindVectorize != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize>(null, WorkersBindingKindVectorize);
+            }
+            else if(WorkersBindingKindVersionMetadata != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata>(null, WorkersBindingKindVersionMetadata);
+            }
+            else if(WorkersBindingKindWorkflow != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow>(null, WorkersBindingKindWorkflow);
+            }
         }
     }
 }

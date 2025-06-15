@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_address"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_host"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class TeamsDevices_split_tunnel : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class TeamsDevices_split_tunnel : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_address"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_address? TeamsDevicesExcludeSplitTunnelWithAddress { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_address TeamsDevicesExcludeSplitTunnelWithAddress { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel"/> and sets the default values.
-        /// </summary>
-        public TeamsDevices_split_tunnel()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_host"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_host? TeamsDevicesExcludeSplitTunnelWithHost { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_host TeamsDevicesExcludeSplitTunnelWithHost { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_split_tunnel();
+            if("teams-devices_exclude_split_tunnel_with_address".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesExcludeSplitTunnelWithAddress = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_address();
+            }
+            else if("teams-devices_exclude_split_tunnel_with_host".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesExcludeSplitTunnelWithHost = new global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_host();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(TeamsDevicesExcludeSplitTunnelWithAddress != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return TeamsDevicesExcludeSplitTunnelWithAddress.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesExcludeSplitTunnelWithHost != null)
+            {
+                return TeamsDevicesExcludeSplitTunnelWithHost.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(TeamsDevicesExcludeSplitTunnelWithAddress != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_address>(null, TeamsDevicesExcludeSplitTunnelWithAddress);
+            }
+            else if(TeamsDevicesExcludeSplitTunnelWithHost != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_exclude_split_tunnel_with_host>(null, TeamsDevicesExcludeSplitTunnelWithHost);
+            }
         }
     }
 }

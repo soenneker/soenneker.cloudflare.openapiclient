@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember1? WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember1 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember1 WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember1 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta"/> and sets the default values.
-        /// </summary>
-        public Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember2? WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember2 WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember2 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta();
+            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember1();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember1 != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember1.GetFieldDeserializers();
+            }
+            else if(WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember2 != null)
+            {
+                return WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember1>(null, WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember1);
+            }
+            else if(WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_betaMember2>(null, WorkersAiPostRunHfNexusflowStarlingLm7bBetaMember2);
+            }
         }
     }
 }

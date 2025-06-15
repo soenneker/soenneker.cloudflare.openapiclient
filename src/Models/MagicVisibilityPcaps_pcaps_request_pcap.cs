@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_full"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_simple"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MagicVisibilityPcaps_pcaps_request_pcap : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class MagicVisibilityPcaps_pcaps_request_pcap : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_full"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_full? MagicVisibilityPcapsPcapsRequestFull { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_full MagicVisibilityPcapsPcapsRequestFull { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_pcap"/> and sets the default values.
-        /// </summary>
-        public MagicVisibilityPcaps_pcaps_request_pcap()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_simple"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_simple? MagicVisibilityPcapsPcapsRequestSimple { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_simple MagicVisibilityPcapsPcapsRequestSimple { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_pcap CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_pcap();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_pcap();
+            result.MagicVisibilityPcapsPcapsRequestFull = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_full();
+            result.MagicVisibilityPcapsPcapsRequestSimple = new global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_simple();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(MagicVisibilityPcapsPcapsRequestFull != null || MagicVisibilityPcapsPcapsRequestSimple != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MagicVisibilityPcapsPcapsRequestFull, MagicVisibilityPcapsPcapsRequestSimple);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_full>(null, MagicVisibilityPcapsPcapsRequestFull, MagicVisibilityPcapsPcapsRequestSimple);
         }
     }
 }

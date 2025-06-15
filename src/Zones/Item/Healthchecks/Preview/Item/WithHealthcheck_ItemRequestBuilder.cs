@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.Ite
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Health_checks_delete_preview_health_check_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_id_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Health_checks_delete_preview_health_check body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_id_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.Item.WithHealthcheck_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_id_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Health_checks_delete_preview_health_check body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_id_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.Item.WithHealthcheck_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -89,11 +89,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Health_checks_delete_preview_health_check body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.Item.WithHealthcheck_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Health_checks_delete_preview_health_check body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.Preview.Item.WithHealthcheck_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

@@ -44,11 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.I
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override_200?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override_200?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.Item.WithOverrides_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override_200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override_200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.Item.WithOverrides_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -118,11 +118,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.I
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.Item.WithOverrides_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_overrides_delete_a_waf_override body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Overrides.Item.WithOverrides_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

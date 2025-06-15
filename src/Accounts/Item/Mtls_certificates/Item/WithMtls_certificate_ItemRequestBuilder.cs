@@ -49,11 +49,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Ite
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_delete_m_tls_certificate_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_single?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_delete_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_single?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Item.WithMtls_certificate_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_single> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_delete_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_single> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Item.WithMtls_certificate_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -95,11 +95,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_delete_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Item.WithMtls_certificate_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_delete_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Item.WithMtls_certificate_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

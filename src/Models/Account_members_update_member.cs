@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Account_members_update_member : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Account_members_update_member : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies? IamUpdateMemberWithPolicies { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies IamUpdateMemberWithPolicies { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Account_members_update_member"/> and sets the default values.
-        /// </summary>
-        public Account_members_update_member()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles? IamUpdateMemberWithRoles { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles IamUpdateMemberWithRoles { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Account_members_update_member CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Account_members_update_member();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Account_members_update_member();
+            if("iam_update-member-with-policies".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.IamUpdateMemberWithPolicies = new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies();
+            }
+            else if("iam_update-member-with-roles".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.IamUpdateMemberWithRoles = new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(IamUpdateMemberWithPolicies != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return IamUpdateMemberWithPolicies.GetFieldDeserializers();
+            }
+            else if(IamUpdateMemberWithRoles != null)
+            {
+                return IamUpdateMemberWithRoles.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(IamUpdateMemberWithPolicies != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies>(null, IamUpdateMemberWithPolicies);
+            }
+            else if(IamUpdateMemberWithRoles != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles>(null, IamUpdateMemberWithRoles);
+            }
         }
     }
 }

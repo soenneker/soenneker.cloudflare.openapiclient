@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_settings_response_single?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_routing_settings_enable_email_routing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_settings_response_single?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnablePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_settings_response_single> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_routing_settings_enable_email_routing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_email_settings_response_single> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnablePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -63,11 +63,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_routing_settings_enable_email_routing body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnablePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_routing_settings_enable_email_routing body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnablePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

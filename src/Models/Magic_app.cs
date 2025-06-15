@@ -8,28 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Collection of Hostnames and/or IP Subnets to associate with traffic decisions.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Magic_app : IAdditionalDataHolder, IParsable
+    public partial class Magic_app : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app? MagicAccountApp { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app MagicAccountApp { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app"/> and sets the default values.
-        /// </summary>
-        public Magic_app()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app? MagicManagedApp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app MagicManagedApp { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_app();
+            if("magic_account_app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MagicAccountApp = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app();
+            }
+            else if("magic_managed_app".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.MagicManagedApp = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(MagicAccountApp != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return MagicAccountApp.GetFieldDeserializers();
+            }
+            else if(MagicManagedApp != null)
+            {
+                return MagicManagedApp.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(MagicAccountApp != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_account_app>(null, MagicAccountApp);
+            }
+            else if(MagicManagedApp != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_managed_app>(null, MagicManagedApp);
+            }
         }
     }
 }

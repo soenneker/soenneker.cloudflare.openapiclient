@@ -7,28 +7,76 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ChildrenAbuseReport"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_DMCAReport"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_GeneralReport"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_NCSEIReport"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_PhishingReport"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_RegistrarWhoisReport"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ThreatReport"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_TrademarkReport"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AbuseReports_SubmitReportRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AbuseReports_SubmitReportRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ChildrenAbuseReport"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ChildrenAbuseReport? AbuseReportsChildrenAbuseReport { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ChildrenAbuseReport AbuseReportsChildrenAbuseReport { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_SubmitReportRequest"/> and sets the default values.
-        /// </summary>
-        public AbuseReports_SubmitReportRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_DMCAReport"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_DMCAReport? AbuseReportsDMCAReport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_DMCAReport AbuseReportsDMCAReport { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_GeneralReport"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_GeneralReport? AbuseReportsGeneralReport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_GeneralReport AbuseReportsGeneralReport { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_NCSEIReport"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_NCSEIReport? AbuseReportsNCSEIReport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_NCSEIReport AbuseReportsNCSEIReport { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_PhishingReport"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_PhishingReport? AbuseReportsPhishingReport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_PhishingReport AbuseReportsPhishingReport { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_RegistrarWhoisReport"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_RegistrarWhoisReport? AbuseReportsRegistrarWhoisReport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_RegistrarWhoisReport AbuseReportsRegistrarWhoisReport { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ThreatReport"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ThreatReport? AbuseReportsThreatReport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ThreatReport AbuseReportsThreatReport { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_TrademarkReport"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_TrademarkReport? AbuseReportsTrademarkReport { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_TrademarkReport AbuseReportsTrademarkReport { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +85,41 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_SubmitReportRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_SubmitReportRequest();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_SubmitReportRequest();
+            if("abuse-reports_ChildrenAbuseReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsChildrenAbuseReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ChildrenAbuseReport();
+            }
+            else if("abuse-reports_DMCAReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsDMCAReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_DMCAReport();
+            }
+            else if("abuse-reports_GeneralReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsGeneralReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_GeneralReport();
+            }
+            else if("abuse-reports_NCSEIReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsNCSEIReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_NCSEIReport();
+            }
+            else if("abuse-reports_PhishingReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsPhishingReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_PhishingReport();
+            }
+            else if("abuse-reports_RegistrarWhoisReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsRegistrarWhoisReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_RegistrarWhoisReport();
+            }
+            else if("abuse-reports_ThreatReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsThreatReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ThreatReport();
+            }
+            else if("abuse-reports_TrademarkReport".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AbuseReportsTrademarkReport = new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_TrademarkReport();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +127,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AbuseReportsChildrenAbuseReport != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return AbuseReportsChildrenAbuseReport.GetFieldDeserializers();
+            }
+            else if(AbuseReportsDMCAReport != null)
+            {
+                return AbuseReportsDMCAReport.GetFieldDeserializers();
+            }
+            else if(AbuseReportsGeneralReport != null)
+            {
+                return AbuseReportsGeneralReport.GetFieldDeserializers();
+            }
+            else if(AbuseReportsNCSEIReport != null)
+            {
+                return AbuseReportsNCSEIReport.GetFieldDeserializers();
+            }
+            else if(AbuseReportsPhishingReport != null)
+            {
+                return AbuseReportsPhishingReport.GetFieldDeserializers();
+            }
+            else if(AbuseReportsRegistrarWhoisReport != null)
+            {
+                return AbuseReportsRegistrarWhoisReport.GetFieldDeserializers();
+            }
+            else if(AbuseReportsThreatReport != null)
+            {
+                return AbuseReportsThreatReport.GetFieldDeserializers();
+            }
+            else if(AbuseReportsTrademarkReport != null)
+            {
+                return AbuseReportsTrademarkReport.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +168,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AbuseReportsChildrenAbuseReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ChildrenAbuseReport>(null, AbuseReportsChildrenAbuseReport);
+            }
+            else if(AbuseReportsDMCAReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_DMCAReport>(null, AbuseReportsDMCAReport);
+            }
+            else if(AbuseReportsGeneralReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_GeneralReport>(null, AbuseReportsGeneralReport);
+            }
+            else if(AbuseReportsNCSEIReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_NCSEIReport>(null, AbuseReportsNCSEIReport);
+            }
+            else if(AbuseReportsPhishingReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_PhishingReport>(null, AbuseReportsPhishingReport);
+            }
+            else if(AbuseReportsRegistrarWhoisReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_RegistrarWhoisReport>(null, AbuseReportsRegistrarWhoisReport);
+            }
+            else if(AbuseReportsThreatReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ThreatReport>(null, AbuseReportsThreatReport);
+            }
+            else if(AbuseReportsTrademarkReport != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_TrademarkReport>(null, AbuseReportsTrademarkReport);
+            }
         }
     }
 }

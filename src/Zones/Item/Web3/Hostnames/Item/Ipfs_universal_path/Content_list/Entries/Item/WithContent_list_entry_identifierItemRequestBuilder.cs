@@ -44,11 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_ipfs_universal_path_gateway_content_list_entry_5XX">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_ipfs_universal_path_gateway_content_list_entry body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContent_list_entry_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_ipfs_universal_path_gateway_content_list_entry body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContent_list_entry_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_ipfs_universal_path_gateway_content_list_entry body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContent_list_entry_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_ipfs_universal_path_gateway_content_list_entry body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries.Item.WithContent_list_entry_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

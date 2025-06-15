@@ -31,6 +31,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ContentType { get; set; }
 #endif
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_custom_response"/> and sets the default values.
         /// </summary>
@@ -58,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "body", n => { Body = n.GetStringValue(); } },
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("body", Body);
             writer.WriteStringValue("content_type", ContentType);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

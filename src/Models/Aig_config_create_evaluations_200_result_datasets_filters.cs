@@ -21,10 +21,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Value { get; set; }
+        public List<string>? Value { get; set; }
 #nullable restore
 #else
-        public UntypedNode Value { get; set; }
+        public List<string> Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_evaluations_200_result_datasets_filters"/> and sets the default values.
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "key", n => { Key = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_evaluations_200_result_datasets_filters_key>(); } },
                 { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_evaluations_200_result_datasets_filters_operator>(); } },
-                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_evaluations_200_result_datasets_filters_key>("key", Key);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_evaluations_200_result_datasets_filters_operator>("operator", Operator);
-            writer.WriteObjectValue<UntypedNode>("value", Value);
+            writer.WriteCollectionOfPrimitiveValues<string>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,14 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Fallback request body schema
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class Magic_gre_tunnels_update_multiple_gre_tunnels : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnels_update_multiple_gre_tunnels_id? Id { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnels_update_multiple_gre_tunnels_id Id { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnels_update_multiple_gre_tunnels"/> and sets the default values.
         /// </summary>
@@ -40,6 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnels_update_multiple_gre_tunnels_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnels_update_multiple_gre_tunnels_id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnels_update_multiple_gre_tunnels_id>("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

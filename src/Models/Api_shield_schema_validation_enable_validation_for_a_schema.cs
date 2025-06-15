@@ -15,7 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The validation_enabled property</summary>
-        public bool? ValidationEnabled { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_validation_enabled? ValidationEnabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_validation_enabled ValidationEnabled { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema"/> and sets the default values.
         /// </summary>
@@ -41,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "validation_enabled", n => { ValidationEnabled = n.GetBoolValue(); } },
+                { "validation_enabled", n => { ValidationEnabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_validation_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_validation_enabled.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("validation_enabled", ValidationEnabled);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_enable_validation_for_a_schema_validation_enabled>("validation_enabled", ValidationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

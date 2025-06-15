@@ -8,28 +8,27 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A secret value accessible through a binding.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Workers_secret : IAdditionalDataHolder, IParsable
+    public partial class Workers_secret : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key? WorkersBindingKindSecretKey { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key WorkersBindingKindSecretKey { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_secret"/> and sets the default values.
-        /// </summary>
-        public Workers_secret()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text? WorkersBindingKindSecretText { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text WorkersBindingKindSecretText { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_secret CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_secret();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_secret();
+            if("secret_key".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindSecretKey = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key();
+            }
+            else if("secret_text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersBindingKindSecretText = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorkersBindingKindSecretKey != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return WorkersBindingKindSecretKey.GetFieldDeserializers();
+            }
+            else if(WorkersBindingKindSecretText != null)
+            {
+                return WorkersBindingKindSecretText.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -58,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(WorkersBindingKindSecretKey != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key>(null, WorkersBindingKindSecretKey);
+            }
+            else if(WorkersBindingKindSecretText != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text>(null, WorkersBindingKindSecretText);
+            }
         }
     }
 }

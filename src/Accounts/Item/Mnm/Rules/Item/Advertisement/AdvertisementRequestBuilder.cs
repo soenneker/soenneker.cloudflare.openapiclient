@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Item.Advert
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_advertisement_for_rule_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_advertisement_single_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_advertisement_for_rule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_advertisement_single_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Item.Advertisement.AdvertisementPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_advertisement_single_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_advertisement_for_rule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_advertisement_single_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Item.Advertisement.AdvertisementPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Item.Advert
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_advertisement_for_rule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Item.Advertisement.AdvertisementPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_advertisement_for_rule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules.Item.Advertisement.AdvertisementPatchRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

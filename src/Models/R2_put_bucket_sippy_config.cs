@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class R2_put_bucket_sippy_config : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class R2_put_bucket_sippy_config : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws? R2EnableSippyAws { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws R2EnableSippyAws { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_put_bucket_sippy_config"/> and sets the default values.
-        /// </summary>
-        public R2_put_bucket_sippy_config()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs? R2EnableSippyGcs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs R2EnableSippyGcs { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.R2_put_bucket_sippy_config CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.R2_put_bucket_sippy_config();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2_put_bucket_sippy_config();
+            if("r2_enable_sippy_aws".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.R2EnableSippyAws = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws();
+            }
+            else if("r2_enable_sippy_gcs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.R2EnableSippyGcs = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(R2EnableSippyAws != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return R2EnableSippyAws.GetFieldDeserializers();
+            }
+            else if(R2EnableSippyGcs != null)
+            {
+                return R2EnableSippyGcs.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(R2EnableSippyAws != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws>(null, R2EnableSippyAws);
+            }
+            else if(R2EnableSippyGcs != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs>(null, R2EnableSippyGcs);
+            }
         }
     }
 }

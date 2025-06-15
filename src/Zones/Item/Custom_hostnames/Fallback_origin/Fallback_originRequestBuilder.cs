@@ -43,11 +43,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_fallback_origin_for_a_zone_delete_fallback_origin_for_custom_hostnames_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fallback_origin_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_fallback_origin_for_a_zone_delete_fallback_origin_for_custom_hostnames body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fallback_origin_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fallback_origin_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_fallback_origin_for_a_zone_delete_fallback_origin_for_custom_hostnames body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_fallback_origin_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -114,11 +114,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_fallback_origin_for_a_zone_delete_fallback_origin_for_custom_hostnames body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_fallback_origin_for_a_zone_delete_fallback_origin_for_custom_hostnames body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallback_origin.Fallback_originDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

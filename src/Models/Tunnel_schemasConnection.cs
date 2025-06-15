@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The public IP address of the host running cloudflared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? OriginIp { get; set; }
+        public string? OriginIp { get; set; }
 #nullable restore
 #else
-        public UntypedNode OriginIp { get; set; }
+        public string OriginIp { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
         public Guid? Uuid { get; private set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_pending_reconnect", n => { IsPendingReconnect = n.GetBoolValue(); } },
                 { "opened_at", n => { OpenedAt = n.GetDateTimeOffsetValue(); } },
-                { "origin_ip", n => { OriginIp = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "origin_ip", n => { OriginIp = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
             };
         }
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("colo_name", ColoName);
             writer.WriteBoolValue("is_pending_reconnect", IsPendingReconnect);
             writer.WriteDateTimeOffsetValue("opened_at", OpenedAt);
-            writer.WriteObjectValue<UntypedNode>("origin_ip", OriginIp);
+            writer.WriteStringValue("origin_ip", OriginIp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

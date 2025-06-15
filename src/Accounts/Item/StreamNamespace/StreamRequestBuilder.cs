@@ -120,22 +120,43 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         /// <summary>
         /// Initiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostResponse"/></returns>
         /// <param name="body">Fallback request body schema</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus_201?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostResponse?> PostAsStreamPostResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus_201> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostResponse> PostAsStreamPostResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus_201>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus_201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Initiates a video upload using the TUS protocol. On success, the server responds with a status code 201 (created) and includes a `location` header to indicate where the content should be uploaded. Refer to https://tus.io for protocol details.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamResponse"/></returns>
+        /// <param name="body">Fallback request body schema</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("This method is obsolete. Use PostAsStreamPostResponseAsync instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists up to 1000 videos from a single request. For a specific range, refer to the optional parameters.
@@ -164,11 +185,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_videos_initiate_video_uploads_using_tus body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

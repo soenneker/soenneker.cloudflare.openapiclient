@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Rows { get; set; }
+        public UntypedNode? Rows { get; set; }
 #nullable restore
 #else
-        public List<UntypedNode> Rows { get; set; }
+        public UntypedNode Rows { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1_rawResultResponse_results"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "columns", n => { Columns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "rows", n => { Rows = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "rows", n => { Rows = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("columns", Columns);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("rows", Rows);
+            writer.WriteObjectValue<UntypedNode>("rows", Rows);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

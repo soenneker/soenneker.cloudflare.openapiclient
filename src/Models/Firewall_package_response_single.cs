@@ -9,11 +9,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Firewall_package_response_single : IAdditionalDataHolder, IParsable
+    public partial class Firewall_package_response_single : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle? FirewallApiResponseSingle { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle FirewallApiResponseSingle { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_singleMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_singleMember1? FirewallPackageResponseSingleMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_singleMember1 FirewallPackageResponseSingleMember1 { get; set; }
+#endif
+        /// <summary>The result property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single_result? Result { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single_result Result { get; set; }
+#endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +61,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single();
+            if("firewall_api-response-single".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FirewallApiResponseSingle = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FirewallPackageResponseSingleMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_singleMember1();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single_result();
+            }
+            else if(parseNode.GetStringValue() is string typeValue)
+            {
+                result.Type = typeValue;
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +87,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(FirewallApiResponseSingle != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return FirewallApiResponseSingle.GetFieldDeserializers();
+            }
+            else if(FirewallPackageResponseSingleMember1 != null)
+            {
+                return FirewallPackageResponseSingleMember1.GetFieldDeserializers();
+            }
+            else if(Result != null)
+            {
+                return Result.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,7 +108,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
+            if(FirewallApiResponseSingle != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle>(null, FirewallApiResponseSingle);
+            }
+            else if(FirewallPackageResponseSingleMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_singleMember1>(null, FirewallPackageResponseSingleMember1);
+            }
+            else if(Result != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single_result>(null, Result);
+            }
+            else if(Type != null)
+            {
+                writer.WriteStringValue(null, Type);
+            }
             writer.WriteAdditionalData(AdditionalData);
         }
     }

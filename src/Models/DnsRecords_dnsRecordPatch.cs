@@ -9,11 +9,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class DnsRecords_dnsRecordPatch : IAdditionalDataHolder, IParsable
+    public partial class DnsRecords_dnsRecordPatch : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithData"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithData? DnsRecordsDnsRecordWithData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithData DnsRecordsDnsRecordWithData { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithoutData"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithoutData? DnsRecordsDnsRecordWithoutData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithoutData DnsRecordsDnsRecordWithoutData { get; set; }
+#endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,7 +53,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPatch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPatch();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPatch();
+            if(parseNode.GetStringValue() is string typeValue)
+            {
+                result.Type = typeValue;
+            }
+            else {
+                result.DnsRecordsDnsRecordWithData = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithData();
+                result.DnsRecordsDnsRecordWithoutData = new global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithoutData();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +70,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DnsRecordsDnsRecordWithData != null || DnsRecordsDnsRecordWithoutData != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DnsRecordsDnsRecordWithData, DnsRecordsDnsRecordWithoutData);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,7 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
+            if(Type != null)
+            {
+                writer.WriteStringValue(null, Type);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordWithData>(null, DnsRecordsDnsRecordWithData, DnsRecordsDnsRecordWithoutData);
+            }
             writer.WriteAdditionalData(AdditionalData);
         }
     }

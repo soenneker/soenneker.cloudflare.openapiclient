@@ -7,28 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_anomaly_rule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_allow_rule"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_deny_rule"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class WafManagedRules_rule : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class WafManagedRules_rule : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_anomaly_rule"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_anomaly_rule? WafManagedRulesAnomalyRule { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_anomaly_rule WafManagedRulesAnomalyRule { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule"/> and sets the default values.
-        /// </summary>
-        public WafManagedRules_rule()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_allow_rule"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_allow_rule? WafManagedRulesTraditionalAllowRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_allow_rule WafManagedRulesTraditionalAllowRule { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_deny_rule"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_deny_rule? WafManagedRulesTraditionalDenyRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_deny_rule WafManagedRulesTraditionalDenyRule { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_rule();
+            if("waf-managed-rules_anomaly_rule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WafManagedRulesAnomalyRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_anomaly_rule();
+            }
+            else if("waf-managed-rules_traditional_allow_rule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WafManagedRulesTraditionalAllowRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_allow_rule();
+            }
+            else if("waf-managed-rules_traditional_deny_rule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WafManagedRulesTraditionalDenyRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_deny_rule();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WafManagedRulesAnomalyRule != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return WafManagedRulesAnomalyRule.GetFieldDeserializers();
+            }
+            else if(WafManagedRulesTraditionalAllowRule != null)
+            {
+                return WafManagedRulesTraditionalAllowRule.GetFieldDeserializers();
+            }
+            else if(WafManagedRulesTraditionalDenyRule != null)
+            {
+                return WafManagedRulesTraditionalDenyRule.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(WafManagedRulesAnomalyRule != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_anomaly_rule>(null, WafManagedRulesAnomalyRule);
+            }
+            else if(WafManagedRulesTraditionalAllowRule != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_allow_rule>(null, WafManagedRulesTraditionalAllowRule);
+            }
+            else if(WafManagedRulesTraditionalDenyRule != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_traditional_deny_rule>(null, WafManagedRulesTraditionalDenyRule);
+            }
         }
     }
 }

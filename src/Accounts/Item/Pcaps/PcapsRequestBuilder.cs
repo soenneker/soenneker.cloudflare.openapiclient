@@ -58,7 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_collection_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_pcap_collection_list_packet_capture_requests_default">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_collection_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -69,11 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_pcap_collection_list_packet_capture_requests_default.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_collection_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_collection_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_collection_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_collection_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new PCAP request for account.
@@ -82,7 +77,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_pcap_collection_create_pcap_request_default">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_single_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_request_pcap body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -94,11 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_pcap_collection_create_pcap_request_default.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_single_response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all packet capture requests for an account.
