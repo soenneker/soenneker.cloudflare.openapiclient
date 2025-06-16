@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Events.Summary
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\spectrum\analytics\events\summary
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\spectrum\analytics\events\summary
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
+        public SummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Event
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
+        public SummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum/analytics/events/summary{?dimensions*,filters*,metrics*,since*,sort*,until*}", rawUrl)
         {
         }
         /// <summary>

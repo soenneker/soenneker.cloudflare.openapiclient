@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\rulesets\phases\{ruleset_phase}
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\rulesets\phases\{ruleset_phase}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRuleset_phaseItemRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRuleset_phaseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rulesets/phases/{ruleset_phase}", pathParameters)
+        public WithRuleset_phaseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/phases/{ruleset_phase}", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRuleset_phaseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rulesets/phases/{ruleset_phase}", rawUrl)
+        public WithRuleset_phaseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/phases/{ruleset_phase}", rawUrl)
         {
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report.Bytime
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\dns_analytics\report\bytime
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\dns_analytics\report\bytime
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BytimeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report.Byt
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BytimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/dns_analytics/report/bytime{?dimensions*,filters*,limit*,metrics*,since*,sort*,time_delta*,until*}", pathParameters)
+        public BytimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/dns_analytics/report/bytime{?dimensions*,filters*,limit*,metrics*,since*,sort*,time_delta*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_analytics.Report.Byt
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BytimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/dns_analytics/report/bytime{?dimensions*,filters*,limit*,metrics*,since*,sort*,time_delta*,until*}", rawUrl)
+        public BytimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/dns_analytics/report/bytime{?dimensions*,filters*,limit*,metrics*,since*,sort*,time_delta*,until*}", rawUrl)
         {
         }
         /// <summary>

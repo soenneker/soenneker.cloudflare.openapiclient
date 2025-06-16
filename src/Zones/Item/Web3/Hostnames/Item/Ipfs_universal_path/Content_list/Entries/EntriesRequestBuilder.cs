@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs_universal_path.Content_list.Entries
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\web3\hostnames\{identifier}\ipfs_universal_path\content_list\entries
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\web3\hostnames\{identifier}\ipfs_universal_path\content_list\entries
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntriesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", pathParameters)
+        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.Ipfs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", rawUrl)
+        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries", rawUrl)
         {
         }
         /// <summary>

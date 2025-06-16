@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Certificate_pack.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\custom_hostnames\{custom_hostname_id}\certificate_pack\{certificate_pack_id}
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\custom_hostnames\{custom_hostname_id}\certificate_pack\{certificate_pack_id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithCertificate_pack_ItemRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCertificate_pack_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}", pathParameters)
+        public WithCertificate_pack_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithCertificate_pack_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}", rawUrl)
+        public WithCertificate_pack_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames/{custom_hostname_id}/certificate_pack/{certificate_pack_id}", rawUrl)
         {
         }
     }

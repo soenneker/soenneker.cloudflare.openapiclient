@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Entrypoint
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\rulesets\phases\{ruleset_phase}\entrypoint
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\rulesets\phases\{ruleset_phase}\entrypoint
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntrypointRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Ent
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntrypointRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint", pathParameters)
+        public EntrypointRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Phases.Item.Ent
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntrypointRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint", rawUrl)
+        public EntrypointRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint", rawUrl)
         {
         }
         /// <summary>

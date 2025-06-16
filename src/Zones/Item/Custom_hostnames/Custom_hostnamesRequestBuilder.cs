@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\custom_hostnames
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\custom_hostnames
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Custom_hostnamesRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/custom_hostnames{?direction*,hostname*,id*,order*,page*,per_page*,ssl*}", pathParameters)
+        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?direction*,hostname*,id*,order*,page*,per_page*,ssl*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/custom_hostnames{?direction*,hostname*,id*,order*,page*,per_page*,ssl*}", rawUrl)
+        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?direction*,hostname*,id*,order*,page*,per_page*,ssl*}", rawUrl)
         {
         }
         /// <summary>

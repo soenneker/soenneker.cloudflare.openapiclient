@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Hostname_associations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\certificate_authorities\hostname_associations
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\certificate_authorities\hostname_associations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Hostname_associationsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Hostname_associationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/certificate_authorities/hostname_associations{?mtls_certificate_id*}", pathParameters)
+        public Hostname_associationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/certificate_authorities/hostname_associations{?mtls_certificate_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Hostname_associationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/certificate_authorities/hostname_associations{?mtls_certificate_id*}", rawUrl)
+        public Hostname_associationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/certificate_authorities/hostname_associations{?mtls_certificate_id*}", rawUrl)
         {
         }
         /// <summary>

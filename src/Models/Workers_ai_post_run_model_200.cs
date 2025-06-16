@@ -61,12 +61,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="System.Byte[]"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember9"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember1&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember4&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember5&gt;
+        /// Composed type wrapper for classes <see cref="byte[]"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember9"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember1&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember4&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember5&gt;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workers_ai_post_run_model_200_result : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="System.Byte[]"/></summary>
+            /// <summary>Composed type representation for type <see cref="byte[]"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             public byte[]? Binary { get; set; }

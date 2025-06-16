@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\rate_limits
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\rate_limits
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Rate_limitsRequestBuilder : BaseRequestBuilder
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Rate_limitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rate_limits{?page*,per_page*}", pathParameters)
+        public Rate_limitsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rate_limits{?page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Rate_limitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rate_limits{?page*,per_page*}", rawUrl)
+        public Rate_limitsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rate_limits{?page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

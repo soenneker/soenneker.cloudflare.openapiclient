@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\rulesets\{ruleset_id}\versions\{ruleset_version}
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\rulesets\{ruleset_id}\versions\{ruleset_version}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRuleset_versionItemRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.I
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRuleset_versionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}", pathParameters)
+        public WithRuleset_versionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.I
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRuleset_versionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}", rawUrl)
+        public WithRuleset_versionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}", rawUrl)
         {
         }
         /// <summary>

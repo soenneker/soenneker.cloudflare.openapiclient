@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Aggregate.Current
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\spectrum\analytics\aggregate\current
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\spectrum\analytics\aggregate\current
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CurrentRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Aggre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CurrentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/spectrum/analytics/aggregate/current{?appID*,colo_name*}", pathParameters)
+        public CurrentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum/analytics/aggregate/current{?appID*,colo_name*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum.Analytics.Aggre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CurrentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/spectrum/analytics/aggregate/current{?appID*,colo_name*}", rawUrl)
+        public CurrentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/spectrum/analytics/aggregate/current{?appID*,colo_name*}", rawUrl)
         {
         }
         /// <summary>

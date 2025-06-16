@@ -12,6 +12,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Rulesets_RequestRule : IAdditionalDataHolder, IComposedTypeWrapper, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Action { get; set; }
+#nullable restore
+#else
+        public string Action { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_BlockRule"/></summary>
@@ -158,14 +166,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule RulesetsSkipRule { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule"/> and sets the default values.
         /// </summary>
@@ -255,9 +255,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.RulesetsSkipRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule();
             }
-            else if(parseNode.GetStringValue() is string typeValue)
+            else if(parseNode.GetStringValue() is string actionValue)
             {
-                result.Type = typeValue;
+                result.Action = actionValue;
             }
             return result;
         }
@@ -420,9 +420,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule>(null, RulesetsSkipRule);
             }
-            else if(Type != null)
+            else if(Action != null)
             {
-                writer.WriteStringValue(null, Type);
+                writer.WriteStringValue(null, Action);
             }
             writer.WriteAdditionalData(AdditionalData);
         }

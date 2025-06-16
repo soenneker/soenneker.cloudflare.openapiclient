@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\page_shield\scripts
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\page_shield\scripts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScriptsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScriptsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/page_shield/scripts{?direction*,exclude_cdn_cgi*,exclude_duplicates*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", pathParameters)
+        public ScriptsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/page_shield/scripts{?direction*,exclude_cdn_cgi*,exclude_duplicates*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Scripts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScriptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/page_shield/scripts{?direction*,exclude_cdn_cgi*,exclude_duplicates*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", rawUrl)
+        public ScriptsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/page_shield/scripts{?direction*,exclude_cdn_cgi*,exclude_duplicates*,exclude_urls*,export*,hosts*,order_by*,page*,page_url*,per_page*,prioritize_malicious*,status*,urls*}", rawUrl)
         {
         }
         /// <summary>

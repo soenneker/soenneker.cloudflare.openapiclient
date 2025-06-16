@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\schema_validation\schemas\{schema_id}\operations
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\schema_validation\schemas\{schema_id}\operations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OperationsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OperationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/schema_validation/schemas/{schema_id}/operations{?endpoint*,feature*,host*,method*,operation_status*,page*,per_page*}", pathParameters)
+        public OperationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/schema_validation/schemas/{schema_id}/operations{?endpoint*,feature*,host*,method*,operation_status*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/schema_validation/schemas/{schema_id}/operations{?endpoint*,feature*,host*,method*,operation_status*,page*,per_page*}", rawUrl)
+        public OperationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/schema_validation/schemas/{schema_id}/operations{?endpoint*,feature*,host*,method*,operation_status*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

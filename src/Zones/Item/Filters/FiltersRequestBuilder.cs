@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\filters
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\filters
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FiltersRequestBuilder : BaseRequestBuilder
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FiltersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/filters{?description*,expression*,id*,page*,paused*,per_page*,ref*}", pathParameters)
+        public FiltersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/filters{?description*,expression*,id*,page*,paused*,per_page*,ref*}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FiltersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/filters{?description*,expression*,id*,page*,paused*,per_page*,ref*}", rawUrl)
+        public FiltersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/filters{?description*,expression*,id*,page*,paused*,per_page*,ref*}", rawUrl)
         {
         }
         /// <summary>

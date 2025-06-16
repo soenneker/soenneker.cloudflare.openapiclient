@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\content-upload-scan
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\content-upload-scan
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentUploadScanRequestBuilder : BaseRequestBuilder
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentUploadScanRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/content-upload-scan", pathParameters)
+        public ContentUploadScanRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/content-upload-scan", pathParameters)
         {
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ContentUploadScanRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/content-upload-scan", rawUrl)
+        public ContentUploadScanRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/content-upload-scan", rawUrl)
         {
         }
     }

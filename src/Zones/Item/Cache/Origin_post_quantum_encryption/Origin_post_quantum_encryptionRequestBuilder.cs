@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\cache\origin_post_quantum_encryption
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\cache\origin_post_quantum_encryption
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Origin_post_quantum_encryptionRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantu
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Origin_post_quantum_encryptionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/cache/origin_post_quantum_encryption", pathParameters)
+        public Origin_post_quantum_encryptionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/cache/origin_post_quantum_encryption", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantu
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Origin_post_quantum_encryptionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/cache/origin_post_quantum_encryption", rawUrl)
+        public Origin_post_quantum_encryptionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/cache/origin_post_quantum_encryption", rawUrl)
         {
         }
         /// <summary>

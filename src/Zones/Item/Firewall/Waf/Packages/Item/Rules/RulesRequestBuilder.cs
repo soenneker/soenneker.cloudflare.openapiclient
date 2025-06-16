@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.Item.Rules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\firewall\waf\packages\{package_id}\rules
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\firewall\waf\packages\{package_id}\rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/waf/packages/{package_id}/rules{?description*,direction*,group_id*,match*,mode*,order*,page*,per_page*,priority*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/firewall/waf/packages/{package_id}/rules{?description*,direction*,group_id*,match*,mode*,order*,page*,per_page*,priority*}", pathParameters)
         {
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.Packages.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/firewall/waf/packages/{package_id}/rules{?description*,direction*,group_id*,match*,mode*,order*,page*,per_page*,priority*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/firewall/waf/packages/{package_id}/rules{?description*,direction*,group_id*,match*,mode*,order*,page*,per_page*,priority*}", rawUrl)
         {
         }
         /// <summary>

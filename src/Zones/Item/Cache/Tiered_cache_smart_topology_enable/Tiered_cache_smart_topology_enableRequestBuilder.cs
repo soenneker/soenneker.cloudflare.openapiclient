@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\cache\tiered_cache_smart_topology_enable
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\cache\tiered_cache_smart_topology_enable
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Tiered_cache_smart_topology_enableRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Tiered_cache_smart_topology_enableRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/cache/tiered_cache_smart_topology_enable", pathParameters)
+        public Tiered_cache_smart_topology_enableRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/cache/tiered_cache_smart_topology_enable", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Tiered_cache_smart_topology_enableRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/cache/tiered_cache_smart_topology_enable", rawUrl)
+        public Tiered_cache_smart_topology_enableRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/cache/tiered_cache_smart_topology_enable", rawUrl)
         {
         }
         /// <summary>

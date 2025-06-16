@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Severity
 {
     /// <summary>
-    /// Builds and executes requests for operations under \zones\{identifier-id}\security-center\insights\severity
+    /// Builds and executes requests for operations under \zones\{zone_identifier-id}\security-center\insights\severity
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SeverityRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeverityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/security-center/insights/severity{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
+        public SeverityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/security-center/insights/severity{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SeverityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{identifier%2Did}/security-center/insights/severity{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
+        public SeverityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/security-center/insights/severity{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
         {
         }
         /// <summary>
