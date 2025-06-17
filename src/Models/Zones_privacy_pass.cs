@@ -14,9 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_privacy_pass : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Strongly‐typed enum value</summary>
-        public new Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value? Value { get; set; } = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value.Off;
-
+        /// <summary>Value of the Privacy Pass v1 (deprecated) zone setting</summary>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass"/> and sets the default values.
         /// </summary>
@@ -40,9 +40,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            var map = new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers());
-            map["value"] = n => { Value = n.GetEnumValue<Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value>(); };
-            return map;
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value>(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -52,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value>("value", Value);
         }
     }
 }

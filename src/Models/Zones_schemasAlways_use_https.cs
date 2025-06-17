@@ -13,6 +13,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_schemasAlways_use_https : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
+        /// <summary>The value property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasAlways_use_https_value? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,6 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasAlways_use_https_value>(); } },
             };
         }
         /// <summary>
@@ -41,6 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasAlways_use_https_value>("value", Value);
         }
     }
 }

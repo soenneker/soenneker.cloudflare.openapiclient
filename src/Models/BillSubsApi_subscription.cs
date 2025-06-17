@@ -14,14 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The app property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_subscription_app? App { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_subscription_app App { get; set; }
-#endif
         /// <summary>The list of add-ons subscribed to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +89,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "app", n => { App = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_subscription_app>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_subscription_app.CreateFromDiscriminatorValue); } },
                 { "component_values", n => { ComponentValues = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_component_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_component_value.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "current_period_end", n => { CurrentPeriodEnd = n.GetDateTimeOffsetValue(); } },
@@ -117,7 +108,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_subscription_app>("app", App);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_component_value>("component_values", ComponentValues);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_frequency>("frequency", Frequency);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_rate_plan>("rate_plan", RatePlan);

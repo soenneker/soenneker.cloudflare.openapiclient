@@ -13,11 +13,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_development_mode : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Strongly‐typed enum value</summary>
-        public new Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value? Value { get; set; } = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value.Off;
-
         /// <summary>Value of the zone setting.Notes: The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is false.</summary>
         public double? TimeRemaining { get; private set; }
+        /// <summary>Value of the zone setting.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode"/> and sets the default values.
         /// </summary>
@@ -44,6 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "time_remaining", n => { TimeRemaining = n.GetDoubleValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value>(); } },
             };
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value>("value", Value);
         }
     }
 }

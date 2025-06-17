@@ -13,6 +13,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_security_header : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_header_value? Value { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_header_value Value { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,6 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_header_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_header_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -41,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_header_value>("value", Value);
         }
     }
 }

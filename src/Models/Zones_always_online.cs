@@ -13,9 +13,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_always_online : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Strongly‐typed enum value</summary>
-        public new Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value? Value { get; set; } = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value.On;
-
+        /// <summary>Value of the zone setting.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online"/> and sets the default values.
         /// </summary>
@@ -39,9 +38,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            var map = new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers());
-            map["value"] = n => { Value = n.GetEnumValue<Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value>(); };
-            return map;
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value>(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value>("value", Value);
         }
     }
 }

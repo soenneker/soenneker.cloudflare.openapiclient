@@ -13,16 +13,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Speed_cloudflare_fonts : global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_base, IParsable
     {
-        /// <summary>Strongly‐typed enum value</summary>
-        public new Soenneker.Cloudflare.OpenApiClient.Models.Speed_cloudflare_fonts_value? Value { get; set; } = global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_cloudflare_fonts_value.Off;
-
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_cloudflare_fonts"/> and sets the default values.
-        /// </summary>
-        public Speed_cloudflare_fonts() : base()
-        {
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_cloudflare_fonts_value.Off;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,9 +29,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            var map = new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers());
-            map["value"] = n => { Value = n.GetEnumValue<Soenneker.Cloudflare.OpenApiClient.Models.Speed_cloudflare_fonts_value>(); };
-            return map;
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            {
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -51,7 +41,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Soenneker.Cloudflare.OpenApiClient.Models.Speed_cloudflare_fonts_value>("value", Value);
         }
     }
 }
