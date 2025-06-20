@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember4"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember5"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dlp_NewSharedEntry : IComposedTypeWrapper, IParsable
@@ -45,6 +45,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember4 DlpNewSharedEntryMember4 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember5"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember5? DlpNewSharedEntryMember5 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember5 DlpNewSharedEntryMember5 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -71,6 +79,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.DlpNewSharedEntryMember4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember4();
             }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DlpNewSharedEntryMember5 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember5();
+            }
             return result;
         }
         /// <summary>
@@ -94,6 +106,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(DlpNewSharedEntryMember4 != null)
             {
                 return DlpNewSharedEntryMember4.GetFieldDeserializers();
+            }
+            else if(DlpNewSharedEntryMember5 != null)
+            {
+                return DlpNewSharedEntryMember5.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -119,6 +135,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(DlpNewSharedEntryMember4 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember4>(null, DlpNewSharedEntryMember4);
+            }
+            else if(DlpNewSharedEntryMember5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntryMember5>(null, DlpNewSharedEntryMember5);
             }
         }
     }

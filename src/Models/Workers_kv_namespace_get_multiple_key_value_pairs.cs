@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Array of keys to retrieve (maximum 100)</summary>
+        /// <summary>Array of keys to retrieve (maximum of 100).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Keys { get; set; }
@@ -22,9 +22,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Keys { get; set; }
 #endif
-        /// <summary>Whether to parse JSON values in the response</summary>
+        /// <summary>Whether to parse JSON values in the response.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_type? Type { get; set; }
-        /// <summary>Whether to include metadata in the response</summary>
+        /// <summary>Whether to include metadata in the response.</summary>
         public bool? WithMetadata { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs"/> and sets the default values.

@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The time, measured in number of seconds since the UNIX epoch, at which the key will expire. This property is omitted for keys that will not expire.</summary>
         public double? Expiration { get; set; }
-        /// <summary>Arbitrary JSON that is associated with a key.</summary>
+        /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata? Metadata { get; set; }

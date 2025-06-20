@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Workers_kv_namespace_read_the_metadata_for_a_key_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommon, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Arbitrary JSON that is associated with a key.</summary>
+        /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata? Result { get; set; }

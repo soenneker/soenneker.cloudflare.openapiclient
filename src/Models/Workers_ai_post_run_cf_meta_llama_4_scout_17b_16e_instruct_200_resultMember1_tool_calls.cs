@@ -14,21 +14,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The arguments passed to be passed to the tool call request</summary>
+        /// <summary>Details of the function tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_arguments? Arguments { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function? Function { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_arguments Arguments { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function Function { get; set; }
 #endif
-        /// <summary>The name of the tool to be called</summary>
+        /// <summary>The tool call id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Id { get; set; }
+#endif
+        /// <summary>Specifies the type of tool (e.g., &apos;function&apos;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls"/> and sets the default values.
@@ -55,8 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "arguments", n => { Arguments = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_arguments>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_arguments.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "function", n => { Function = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_arguments>("arguments", Arguments);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function>("function", Function);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

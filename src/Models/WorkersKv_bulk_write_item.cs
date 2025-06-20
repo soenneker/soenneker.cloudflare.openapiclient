@@ -14,11 +14,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether or not the server should base64 decode the value before storing it. Useful for writing values that wouldn&apos;t otherwise be valid JSON strings, such as images.</summary>
+        /// <summary>Indicates whether or not the server should base64 decode the value before storing it. Useful for writing values that wouldn&apos;t otherwise be valid JSON strings, such as images.</summary>
         public bool? Base64 { get; set; }
-        /// <summary>The time, measured in number of seconds since the UNIX epoch, at which the key should expire.</summary>
+        /// <summary>Expires the key at a certain time, measured in number of seconds since the UNIX epoch.</summary>
         public double? Expiration { get; set; }
-        /// <summary>The number of seconds for which the key should be visible before it expires. At least 60.</summary>
+        /// <summary>Expires the key after a number of seconds. Must be at least 60.</summary>
         public double? ExpirationTtl { get; set; }
         /// <summary>A key&apos;s name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>Arbitrary JSON that is associated with a key.</summary>
+        /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata? Metadata { get; set; }

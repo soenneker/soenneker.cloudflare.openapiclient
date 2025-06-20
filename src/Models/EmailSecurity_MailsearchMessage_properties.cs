@@ -14,7 +14,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The allowlisted_pattern_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AllowlistedPatternType { get; set; }
+#nullable restore
+#else
+        public string AllowlistedPatternType { get; set; }
+#endif
         /// <summary>The whitelisted_pattern_type property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WhitelistedPatternType { get; set; }
@@ -47,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowlisted_pattern_type", n => { AllowlistedPatternType = n.GetStringValue(); } },
                 { "whitelisted_pattern_type", n => { WhitelistedPatternType = n.GetStringValue(); } },
             };
         }
@@ -57,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("allowlisted_pattern_type", AllowlistedPatternType);
             writer.WriteStringValue("whitelisted_pattern_type", WhitelistedPatternType);
             writer.WriteAdditionalData(AdditionalData);
         }

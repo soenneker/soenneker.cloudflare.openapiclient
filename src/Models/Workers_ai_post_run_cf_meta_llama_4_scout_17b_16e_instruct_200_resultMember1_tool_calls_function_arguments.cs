@@ -7,29 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// The arguments passed to be passed to the tool call request
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Workers_ai_post_run_cf_facebook_triton_detr_resnet_50_400_result : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function_arguments : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_triton_detr_resnet_50_400_result"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function_arguments"/> and sets the default values.
         /// </summary>
-        public Workers_ai_post_run_cf_facebook_triton_detr_resnet_50_400_result()
+        public Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function_arguments()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_triton_detr_resnet_50_400_result"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function_arguments"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_triton_detr_resnet_50_400_result CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function_arguments CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_triton_detr_resnet_50_400_result();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200_resultMember1_tool_calls_function_arguments();
         }
         /// <summary>
         /// The deserialization information for the current model

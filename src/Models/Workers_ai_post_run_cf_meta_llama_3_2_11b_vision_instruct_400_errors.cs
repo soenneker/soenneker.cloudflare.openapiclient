@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_400_errors : IAdditionalDataHolder, IParsable
+    public partial class Workers_ai_post_run_cf_meta_llama_3_2_11b_vision_instruct_400_errors : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,21 +31,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Message { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_400_errors"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_3_2_11b_vision_instruct_400_errors"/> and sets the default values.
         /// </summary>
-        public Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_400_errors()
+        public Workers_ai_post_run_cf_meta_llama_3_2_11b_vision_instruct_400_errors()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_400_errors"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_3_2_11b_vision_instruct_400_errors"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_400_errors CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_3_2_11b_vision_instruct_400_errors CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_400_errors();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_3_2_11b_vision_instruct_400_errors();
         }
         /// <summary>
         /// The deserialization information for the current model

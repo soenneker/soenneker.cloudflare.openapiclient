@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Requested keys are paired with their values and metadata in an object
+    /// Requested keys are paired with their values and metadata in an object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkersKv_bulkGetResultWithMetadata_values : IAdditionalDataHolder, IParsable

@@ -55,22 +55,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Task { get; set; }
 #endif
         /// <summary>Preprocess the audio with a voice activity detection model.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VadFilter { get; set; }
-#nullable restore
-#else
-        public string VadFilter { get; set; }
-#endif
+        public bool? VadFilter { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_whisper_large_v3_turbo"/> and sets the default values.
         /// </summary>
         public Workers_ai_post_run_cf_openai_whisper_large_v3_turbo()
         {
             AdditionalData = new Dictionary<string, object>();
-            Language = "en";
             Task = "transcribe";
-            VadFilter = "false";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -95,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "language", n => { Language = n.GetStringValue(); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
                 { "task", n => { Task = n.GetStringValue(); } },
-                { "vad_filter", n => { VadFilter = n.GetStringValue(); } },
+                { "vad_filter", n => { VadFilter = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -110,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("language", Language);
             writer.WriteStringValue("prefix", Prefix);
             writer.WriteStringValue("task", Task);
-            writer.WriteStringValue("vad_filter", VadFilter);
+            writer.WriteBoolValue("vad_filter", VadFilter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

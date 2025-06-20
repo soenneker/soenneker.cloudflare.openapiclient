@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Whether to parse JSON values in the response</summary>
+    /// <summary>Whether to parse JSON values in the response.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Workers_kv_namespace_get_multiple_key_value_pairs_type
     {
