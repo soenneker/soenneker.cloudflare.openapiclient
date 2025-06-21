@@ -92,14 +92,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.events.item collection</summary>
         /// <param name="position">Event UUID.</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Dataset_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Dataset_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dataset_%2Did", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Dataset_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

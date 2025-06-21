@@ -44,10 +44,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_result_info? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_list_dns_firewall_clusters_4XX_result_info? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_result_info ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_list_dns_firewall_clusters_4XX_result_info ResultInfo { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_result_info.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_list_dns_firewall_clusters_4XX_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_list_dns_firewall_clusters_4XX_result_info.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>("messages", Messages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_result_info>("result_info", ResultInfo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_list_dns_firewall_clusters_4XX_result_info>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
