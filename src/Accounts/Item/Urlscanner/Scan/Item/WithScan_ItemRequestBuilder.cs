@@ -20,11 +20,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item
     public partial class WithScan_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The har property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.Har.HarRequestBuilder Har
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.Har.HarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The screenshot property</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.Screenshot.ScreenshotRequestBuilder Screenshot
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.Screenshot.ScreenshotRequestBuilder(PathParameters, RequestAdapter);
@@ -53,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_404">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.WithScan_ItemRequestBuilder.WithScan_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,6 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.WithScan_ItemRequestBuilder.WithScan_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -94,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.WithScan_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.WithScan_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.Item.WithScan_ItemRequestBuilder(rawUrl, RequestAdapter);
