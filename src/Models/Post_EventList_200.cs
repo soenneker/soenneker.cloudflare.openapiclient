@@ -40,8 +40,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The categoryId property</summary>
-        public double? CategoryId { get; set; }
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,7 +215,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "attacker", n => { Attacker = n.GetStringValue(); } },
                 { "attackerCountry", n => { AttackerCountry = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
-                { "categoryId", n => { CategoryId = n.GetDoubleValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetDoubleValue(); } },
@@ -253,7 +250,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("attacker", Attacker);
             writer.WriteStringValue("attackerCountry", AttackerCountry);
             writer.WriteStringValue("category", Category);
-            writer.WriteDoubleValue("categoryId", CategoryId);
             writer.WriteStringValue("date", Date);
             writer.WriteStringValue("event", Event);
             writer.WriteDoubleValue("id", Id);

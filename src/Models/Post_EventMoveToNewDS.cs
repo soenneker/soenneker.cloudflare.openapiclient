@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The destID property</summary>
+        /// <summary>The destDatasetId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestID { get; set; }
+        public string? DestDatasetId { get; set; }
 #nullable restore
 #else
-        public string DestID { get; set; }
+        public string DestDatasetId { get; set; }
 #endif
         /// <summary>The eventIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destID", n => { DestID = n.GetStringValue(); } },
+                { "destDatasetId", n => { DestDatasetId = n.GetStringValue(); } },
                 { "eventIds", n => { EventIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destID", DestID);
+            writer.WriteStringValue("destDatasetId", DestDatasetId);
             writer.WriteCollectionOfPrimitiveValues<string>("eventIds", EventIds);
             writer.WriteAdditionalData(AdditionalData);
         }
