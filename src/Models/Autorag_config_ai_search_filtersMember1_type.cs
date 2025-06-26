@@ -5,7 +5,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum Air_config_ai_search_filtersMember2_filters_type
+    public enum Autorag_config_ai_search_filtersMember1_type
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "eq")]

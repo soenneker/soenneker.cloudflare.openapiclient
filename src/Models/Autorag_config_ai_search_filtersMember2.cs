@@ -9,37 +9,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Air_config_ai_search_200 : IAdditionalDataHolder, IParsable
+    public partial class Autorag_config_ai_search_filtersMember2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The result property</summary>
+        /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_filters>? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_filters> Filters { get; set; }
 #endif
-        /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2"/> and sets the default values.
         /// </summary>
-        public Air_config_ai_search_200()
+        public Autorag_config_ai_search_filtersMember2()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result.CreateFromDiscriminatorValue); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_filters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_type>(); } },
             };
         }
         /// <summary>
@@ -60,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result>("result", Result);
-            writer.WriteBoolValue("success", Success);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_filters>("filters", Filters);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember2_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

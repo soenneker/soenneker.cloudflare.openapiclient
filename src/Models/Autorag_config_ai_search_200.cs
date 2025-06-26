@@ -9,43 +9,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Air_config_ai_search_200_result_data_content : IAdditionalDataHolder, IParsable
+    public partial class Autorag_config_ai_search_200 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The text property</summary>
+        /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200_result? Result { get; set; }
 #nullable restore
 #else
-        public string Text { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200_result Result { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        /// <summary>The success property</summary>
+        public bool? Success { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result_data_content"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200"/> and sets the default values.
         /// </summary>
-        public Air_config_ai_search_200_result_data_content()
+        public Autorag_config_ai_search_200()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result_data_content"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result_data_content CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_200_result_data_content();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200_result.CreateFromDiscriminatorValue); } },
+                { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("text", Text);
-            writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_200_result>("result", Result);
+            writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

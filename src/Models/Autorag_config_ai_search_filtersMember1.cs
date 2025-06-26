@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Air_config_ai_search_filtersMember2_filters : IAdditionalDataHolder, IParsable
+    public partial class Autorag_config_ai_search_filtersMember1 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -23,31 +23,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Key { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1_type? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1"/> and sets the default values.
         /// </summary>
-        public Air_config_ai_search_filtersMember2_filters()
+        public Autorag_config_ai_search_filtersMember1()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,8 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1_type>(); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,15 +70,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="bool"/>, <see cref="double"/>, <see cref="string"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Air_config_ai_search_filtersMember2_filters_value : IComposedTypeWrapper, IParsable
+        public partial class Autorag_config_ai_search_filtersMember1_value : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="bool"/></summary>
             public bool? Boolean { get; set; }
@@ -95,12 +95,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value"/></returns>
+            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Air_config_ai_search_filtersMember2_filters.Air_config_ai_search_filtersMember2_filters_value();
+                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_filtersMember1.Autorag_config_ai_search_filtersMember1_value();
                 if(parseNode.GetBoolValue() is bool booleanValue)
                 {
                     result.Boolean = booleanValue;
