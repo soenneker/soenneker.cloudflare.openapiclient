@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2 WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember3? WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember3 WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +55,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2();
             }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember3();
+            }
             return result;
         }
         /// <summary>
@@ -62,6 +74,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2 != null)
             {
                 return WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2.GetFieldDeserializers();
+            }
+            else if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember3 != null)
+            {
+                return WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,6 +95,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2>(null, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2);
+            }
+            else if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember3>(null, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember3);
             }
         }
     }

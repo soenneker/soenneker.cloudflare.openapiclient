@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration Configuration { get; set; }
 #endif
+        /// <summary>An informative summary of the rule. This value is sanitized and any tags will be removed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>The unique identifier of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,6 +40,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The action to apply to a matched request.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? Mode { get; set; }
+        /// <summary>When true, indicates that the rule is currently paused.</summary>
+        public bool? Paused { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User_agent_blocking_rules_update_a_user_agent_blocking_rule"/> and sets the default values.
         /// </summary>
@@ -58,8 +68,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>(); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -70,7 +82,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>("configuration", Configuration);
+            writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>("mode", Mode);
+            writer.WriteBoolValue("paused", Paused);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

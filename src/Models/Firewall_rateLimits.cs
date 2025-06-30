@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_bypass_item> Bypass { get; set; }
 #endif
-        /// <summary>An informative summary of the rate limit. This value is sanitized and any tags will be removed.</summary>
+        /// <summary>An informative summary of the rule. This value is sanitized and any tags will be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }

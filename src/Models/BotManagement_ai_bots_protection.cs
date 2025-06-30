@@ -15,5 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Disabled,
         #pragma warning restore CS1591
+        [EnumMember(Value = "only_on_ad_pages")]
+        #pragma warning disable CS1591
+        Only_on_ad_pages,
+        #pragma warning restore CS1591
     }
 }

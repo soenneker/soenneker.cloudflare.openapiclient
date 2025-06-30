@@ -58,14 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Deprecated field. Please use &apos;aka&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NameLong { get; set; }
-#nullable restore
-#else
-        public string NameLong { get; set; }
-#endif
         /// <summary>The orgName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,7 +122,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "countryName", n => { CountryName = n.GetStringValue(); } },
                 { "estimatedUsers", n => { EstimatedUsers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_by_id_200_result_asn_estimatedUsers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_by_id_200_result_asn_estimatedUsers.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "nameLong", n => { NameLong = n.GetStringValue(); } },
                 { "orgName", n => { OrgName = n.GetStringValue(); } },
                 { "related", n => { Related = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_by_id_200_result_asn_related>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_by_id_200_result_asn_related.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
@@ -151,7 +142,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("countryName", CountryName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_by_id_200_result_asn_estimatedUsers>("estimatedUsers", EstimatedUsers);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("nameLong", NameLong);
             writer.WriteStringValue("orgName", OrgName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_asn_by_id_200_result_asn_related>("related", Related);
             writer.WriteStringValue("source", Source);

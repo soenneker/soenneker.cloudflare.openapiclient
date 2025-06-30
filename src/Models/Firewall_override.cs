@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>When true, indicates that the WAF package is currently paused.</summary>
+        /// <summary>When true, indicates that the rule is currently paused.</summary>
         public bool? Paused { get; set; }
         /// <summary>The relative priority of the current URI-based WAF override when multiple overrides match a single URL. A lower number indicates higher priority. Higher priority overrides may overwrite values set by lower priority overrides.</summary>
         public double? Priority { get; set; }

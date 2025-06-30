@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Ua_rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ua_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/firewall/ua_rules{?description*,description_search*,page*,per_page*,ua_search*}", pathParameters)
+        public Ua_rulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/firewall/ua_rules{?description*,page*,paused*,per_page*,user_agent*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Ua_rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ua_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/firewall/ua_rules{?description*,description_search*,page*,per_page*,ua_search*}", rawUrl)
+        public Ua_rulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/firewall/ua_rules{?description*,page*,paused*,per_page*,user_agent*}", rawUrl)
         {
         }
         /// <summary>
@@ -159,27 +159,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Ua_rules
             [QueryParameter("description")]
             public string Description { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("description_search")]
-            public string? DescriptionSearch { get; set; }
-#nullable restore
-#else
-            [QueryParameter("description_search")]
-            public string DescriptionSearch { get; set; }
-#endif
             [QueryParameter("page")]
             public double? Page { get; set; }
+            [QueryParameter("paused")]
+            public bool? Paused { get; set; }
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("ua_search")]
-            public string? UaSearch { get; set; }
+            [QueryParameter("user_agent")]
+            public string? UserAgent { get; set; }
 #nullable restore
 #else
-            [QueryParameter("ua_search")]
-            public string UaSearch { get; set; }
+            [QueryParameter("user_agent")]
+            public string UserAgent { get; set; }
 #endif
         }
         /// <summary>

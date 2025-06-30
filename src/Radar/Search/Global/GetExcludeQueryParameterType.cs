@@ -12,6 +12,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
         #pragma warning disable CS1591
         ASNS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "BOTS")]
+        #pragma warning disable CS1591
+        BOTS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LOCATIONS")]
         #pragma warning disable CS1591
         LOCATIONS,
