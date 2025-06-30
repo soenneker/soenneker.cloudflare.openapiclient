@@ -46,12 +46,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LogpullOptions { get; set; }
 #endif
-        /// <summary>The maximum uncompressed file size of a batch of logs. This setting value must be between `5 MB` and `1 GB`, or `0` to disable it. Note that you cannot set a minimum file size; this means that log files may be much smaller than this batch size. This parameter is not available for jobs with `edge` as its kind.</summary>
-        public int? MaxUploadBytes { get; set; }
-        /// <summary>The maximum interval in seconds for log batches. This setting must be between 30 and 300 seconds (5 minutes), or `0` to disable it. Note that you cannot specify a minimum interval for log batches; this means that log files may be sent in shorter intervals than this. This parameter is only used for jobs with `edge` as its kind.</summary>
-        public int? MaxUploadIntervalSeconds { get; set; }
-        /// <summary>The maximum number of log lines per batch. This setting must be between 1000 and 1,000,000 lines, or `0` to disable it. Note that you cannot specify a minimum number of log lines per batch; this means that log files may contain many fewer lines than this. This parameter is not available for jobs with `edge` as its kind.</summary>
-        public int? MaxUploadRecords { get; set; }
+        /// <summary>The maximum uncompressed file size of a batch of logs. This setting value must be between `5 MB` and `1 GB`, or `0` to disable it. Note that you cannot set a minimum file size; this means that log files may be much smaller than this batch size.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes? MaxUploadBytes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes MaxUploadBytes { get; set; }
+#endif
+        /// <summary>The maximum interval in seconds for log batches. This setting must be between 30 and 300 seconds (5 minutes), or `0` to disable it. Note that you cannot specify a minimum interval for log batches; this means that log files may be sent in shorter intervals than this.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds? MaxUploadIntervalSeconds { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds MaxUploadIntervalSeconds { get; set; }
+#endif
+        /// <summary>The maximum number of log lines per batch. This setting must be between 1000 and 1,000,000 lines, or `0` to disable it. Note that you cannot specify a minimum number of log lines per batch; this means that log files may contain many fewer lines than this.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_records? MaxUploadRecords { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_records MaxUploadRecords { get; set; }
+#endif
         /// <summary>Optional human readable job name. Not unique. Cloudflare suggests that you set this to a meaningful string, like the domain name, to make it easier to identify your job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,9 +126,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
                 { "logpull_options", n => { LogpullOptions = n.GetStringValue(); } },
-                { "max_upload_bytes", n => { MaxUploadBytes = n.GetIntValue(); } },
-                { "max_upload_interval_seconds", n => { MaxUploadIntervalSeconds = n.GetIntValue(); } },
-                { "max_upload_records", n => { MaxUploadRecords = n.GetIntValue(); } },
+                { "max_upload_bytes", n => { MaxUploadBytes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes.CreateFromDiscriminatorValue); } },
+                { "max_upload_interval_seconds", n => { MaxUploadIntervalSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds.CreateFromDiscriminatorValue); } },
+                { "max_upload_records", n => { MaxUploadRecords = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_records>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_records.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "output_options", n => { OutputOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options.CreateFromDiscriminatorValue); } },
                 { "ownership_challenge", n => { OwnershipChallenge = n.GetStringValue(); } },
@@ -129,9 +147,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
             writer.WriteStringValue("logpull_options", LogpullOptions);
-            writer.WriteIntValue("max_upload_bytes", MaxUploadBytes);
-            writer.WriteIntValue("max_upload_interval_seconds", MaxUploadIntervalSeconds);
-            writer.WriteIntValue("max_upload_records", MaxUploadRecords);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>("max_upload_bytes", MaxUploadBytes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>("max_upload_interval_seconds", MaxUploadIntervalSeconds);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_records>("max_upload_records", MaxUploadRecords);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options>("output_options", OutputOptions);
             writer.WriteStringValue("ownership_challenge", OwnershipChallenge);
