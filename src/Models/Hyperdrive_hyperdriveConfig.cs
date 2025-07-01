@@ -58,6 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfig_origin Origin { get; set; }
 #endif
+        /// <summary>The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.</summary>
+        public int? OriginConnectionLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfig"/> and sets the default values.
         /// </summary>
@@ -90,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mtls", n => { Mtls = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveMtls>(global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveMtls.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfig_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfig_origin.CreateFromDiscriminatorValue); } },
+                { "origin_connection_limit", n => { OriginConnectionLimit = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -103,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveMtls>("mtls", Mtls);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveConfig_origin>("origin", Origin);
+            writer.WriteIntValue("origin_connection_limit", OriginConnectionLimit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

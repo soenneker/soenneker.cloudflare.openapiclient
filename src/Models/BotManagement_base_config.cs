@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enable rule to block AI Scrapers and Crawlers.</summary>
+        /// <summary>Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection? AiBotsProtection { get; set; }
         /// <summary>Enable rule to punish AI Scrapers and Crawlers via a link maze.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection? CrawlerProtection { get; set; }

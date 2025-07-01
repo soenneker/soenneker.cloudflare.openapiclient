@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_fetch_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_fetch_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update Connector
+        /// Edit Connector to update specific properties
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_response"/></returns>
         /// <param name="body">The request body</param>
@@ -198,7 +198,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update Connector
+        /// Edit Connector to update specific properties
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
