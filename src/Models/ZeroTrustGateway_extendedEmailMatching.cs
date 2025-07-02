@@ -17,6 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable matching all variants of user emails (with + or . modifiers) used as criteria in Firewall policies.</summary>
         public bool? Enabled { get; set; }
+        /// <summary>This setting was shared via the Orgs API and cannot be edited by the current account</summary>
+        public bool? ReadOnly { get; private set; }
+        /// <summary>Account tag of account that shared this setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceAccount { get; private set; }
+#nullable restore
+#else
+        public string SourceAccount { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_extendedEmailMatching"/> and sets the default values.
         /// </summary>
@@ -43,6 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
+                { "source_account", n => { SourceAccount = n.GetStringValue(); } },
             };
         }
         /// <summary>

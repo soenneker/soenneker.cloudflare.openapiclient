@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string InstanceId { get; set; }
 #endif
+        /// <summary>The instance_retention property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention? InstanceRetention { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention InstanceRetention { get; set; }
+#endif
         /// <summary>The params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
+                { "instance_retention", n => { InstanceRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention.CreateFromDiscriminatorValue); } },
                 { "params", n => { Params = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_params>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_params.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("instance_id", InstanceId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention>("instance_retention", InstanceRetention);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_params>("params", Params);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -77,6 +77,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>This setting was shared via the Orgs API and cannot be edited by the current account</summary>
+        public bool? ReadOnly { get; private set; }
+        /// <summary>Account tag of account that shared this setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceAccount { get; private set; }
+#nullable restore
+#else
+        public string SourceAccount { get; private set; }
+#endif
         /// <summary>If mode is customized_block_page: suppress detailed info at the bottom of the block page.</summary>
         public bool? SuppressFooter { get; set; }
         /// <summary>If mode is redirect_uri: URI to which the user should be redirected.</summary>
@@ -123,6 +133,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mailto_subject", n => { MailtoSubject = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_blockPageSettings_mode>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
+                { "source_account", n => { SourceAccount = n.GetStringValue(); } },
                 { "suppress_footer", n => { SuppressFooter = n.GetBoolValue(); } },
                 { "target_uri", n => { TargetUri = n.GetStringValue(); } },
             };
