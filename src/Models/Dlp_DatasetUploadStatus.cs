@@ -16,6 +16,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Uploading,
         #pragma warning restore CS1591
+        [EnumMember(Value = "pending")]
+        #pragma warning disable CS1591
+        Pending,
+        #pragma warning restore CS1591
         [EnumMember(Value = "processing")]
         #pragma warning disable CS1591
         Processing,

@@ -224,7 +224,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Filters by the last_seen timestamp - returns only registrations last seen after this timestamp.</summary>
+            /// <summary>Filter by the last_seen timestamp - returns only registrations last seen after this timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("seen_after")]
@@ -234,7 +234,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             [QueryParameter("seen_after")]
             public string SeenAfter { get; set; }
 #endif
-            /// <summary>Filters by the last_seen timestamp - returns only registrations last seen before this timestamp.</summary>
+            /// <summary>Filter by the last_seen timestamp - returns only registrations last seen before this timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("seen_before")]

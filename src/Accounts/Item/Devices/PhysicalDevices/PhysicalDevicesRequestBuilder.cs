@@ -164,7 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
-            /// <summary>Filters by the last_seen timestamp - returns only devices last seen after this timestamp.</summary>
+            /// <summary>Filter by the last_seen timestamp - returns only devices last seen after this timestamp.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("seen_after")]
