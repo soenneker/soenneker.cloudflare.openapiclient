@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.EndpointHealthchecks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.Traceroute;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DiagnosticsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The endpointHealthchecks property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.EndpointHealthchecks.EndpointHealthchecksRequestBuilder EndpointHealthchecks
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.EndpointHealthchecks.EndpointHealthchecksRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The traceroute property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.Traceroute.TracerouteRequestBuilder Traceroute
         {

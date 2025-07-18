@@ -16,6 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
         #pragma warning disable CS1591
         BOTS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CERTIFICATE_AUTHORITIES")]
+        #pragma warning disable CS1591
+        CERTIFICATE_AUTHORITIES,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CERTIFICATE_LOGS")]
+        #pragma warning disable CS1591
+        CERTIFICATE_LOGS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "LOCATIONS")]
         #pragma warning disable CS1591
         LOCATIONS,
@@ -23,10 +31,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
         [EnumMember(Value = "NOTEBOOKS")]
         #pragma warning disable CS1591
         NOTEBOOKS,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SPECIAL_EVENTS")]
-        #pragma warning disable CS1591
-        SPECIAL_EVENTS,
         #pragma warning restore CS1591
     }
 }

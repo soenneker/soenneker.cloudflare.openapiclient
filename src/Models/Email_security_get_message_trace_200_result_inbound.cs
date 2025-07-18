@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TraceLine> Lines { get; set; }
 #endif
+        /// <summary>The pending property</summary>
+        public bool? Pending { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_trace_200_result_inbound"/> and sets the default values.
         /// </summary>
@@ -48,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "lines", n => { Lines = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TraceLine>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TraceLine.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pending", n => { Pending = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TraceLine>("lines", Lines);
+            writer.WriteBoolValue("pending", Pending);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

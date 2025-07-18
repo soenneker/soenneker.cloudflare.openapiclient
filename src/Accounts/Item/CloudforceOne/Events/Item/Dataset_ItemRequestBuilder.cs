@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Delete;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Insight;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Move;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Raw;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -30,11 +29,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Insight.InsightRequestBuilder Insight
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Insight.InsightRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The move property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Move.MoveRequestBuilder Move
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The raw property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Raw.RawRequestBuilder Raw

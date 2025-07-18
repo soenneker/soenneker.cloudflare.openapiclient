@@ -10,6 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// <summary>
     /// Scan the context of predefined entries to only return matches surrounded by keywords.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dlp_ContextAwareness : IAdditionalDataHolder, IParsable
     {

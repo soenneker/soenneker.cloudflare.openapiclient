@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Smart_routing
         {
         }
         /// <summary>
-        /// Get Argo Smart Routing setting
+        /// Retrieves the value of Argo Smart Routing enablement setting.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,10 +57,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Smart_routing
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates enablement of Argo Smart Routing.
+        /// Configures the value of the Argo Smart Routing enablement setting.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_response_single"/></returns>
-        /// <param name="body">Update enablement of Argo Smart Routing</param>
+        /// <param name="body">Configures the enablement of Argo Smart Routing.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_patch_argo_smart_routing_setting_4XX">When receiving a 4XX status code</exception>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Smart_routing
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Argo Smart Routing setting
+        /// Retrieves the value of Argo Smart Routing enablement setting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,10 +101,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Smart_routing
             return requestInfo;
         }
         /// <summary>
-        /// Updates enablement of Argo Smart Routing.
+        /// Configures the value of the Argo Smart Routing enablement setting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Update enablement of Argo Smart Routing</param>
+        /// <param name="body">Configures the enablement of Argo Smart Routing.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

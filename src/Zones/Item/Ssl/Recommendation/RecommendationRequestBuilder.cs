@@ -36,31 +36,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation
         /// <summary>
         /// Retrieve the SSL/TLS Recommender&apos;s recommendation for a zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl__tls_mode_recommendation_ssl__tls_recommendation_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_apiResponseSingleId"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl__tls_mode_recommendation_ssl__tls_recommendation_4xx">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl__tls_mode_recommendation_ssl__tls_recommendation_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_apiResponseSingleId?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl__tls_mode_recommendation_ssl__tls_recommendation_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_apiResponseSingleId> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl__tls_mode_recommendation_ssl__tls_recommendation_4xx.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_apiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl__tls_mode_recommendation_ssl__tls_recommendation_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl__tls_mode_recommendation_ssl__tls_recommendation_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_apiResponseSingleId>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_apiResponseSingleId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the SSL/TLS Recommender&apos;s recommendation for a zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder(rawUrl, RequestAdapter);

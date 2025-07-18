@@ -58,6 +58,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The final_disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel? FinalDisposition { get; set; }
+        /// <summary>The findings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings>? Findings { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings> Findings { get; set; }
+#endif
         /// <summary>The from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -198,6 +206,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "detection_reasons", n => { DetectionReasons = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "edf_hash", n => { EdfHash = n.GetStringValue(); } },
                 { "final_disposition", n => { FinalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>(); } },
+                { "findings", n => { Findings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from", n => { From = n.GetStringValue(); } },
                 { "from_name", n => { FromName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -229,6 +238,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("detection_reasons", DetectionReasons);
             writer.WriteStringValue("edf_hash", EdfHash);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("final_disposition", FinalDisposition);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings>("findings", Findings);
             writer.WriteStringValue("from", From);
             writer.WriteStringValue("from_name", FromName);
             writer.WriteStringValue("id", Id);

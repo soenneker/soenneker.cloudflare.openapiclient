@@ -20,5 +20,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         #pragma warning disable CS1591
         Zones,
         #pragma warning restore CS1591
+        [EnumMember(Value = "memberships")]
+        #pragma warning disable CS1591
+        Memberships,
+        #pragma warning restore CS1591
     }
 }

@@ -14,23 +14,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowlisted_pattern_type property</summary>
+        /// <summary>The allowlisted_pattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllowlistedPatternType { get; set; }
+        public string? AllowlistedPattern { get; set; }
 #nullable restore
 #else
-        public string AllowlistedPatternType { get; set; }
+        public string AllowlistedPattern { get; set; }
+#endif
+        /// <summary>The allowlisted_pattern_type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_allowlisted_pattern_type? AllowlistedPatternType { get; set; }
+        /// <summary>The blocklisted_message property</summary>
+        public bool? BlocklistedMessage { get; set; }
+        /// <summary>The blocklisted_pattern property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BlocklistedPattern { get; set; }
+#nullable restore
+#else
+        public string BlocklistedPattern { get; set; }
 #endif
         /// <summary>The whitelisted_pattern_type property</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WhitelistedPatternType { get; set; }
-#nullable restore
-#else
-        public string WhitelistedPatternType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_whitelisted_pattern_type? WhitelistedPatternType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties"/> and sets the default values.
         /// </summary>
@@ -56,8 +61,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowlisted_pattern_type", n => { AllowlistedPatternType = n.GetStringValue(); } },
-                { "whitelisted_pattern_type", n => { WhitelistedPatternType = n.GetStringValue(); } },
+                { "allowlisted_pattern", n => { AllowlistedPattern = n.GetStringValue(); } },
+                { "allowlisted_pattern_type", n => { AllowlistedPatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_allowlisted_pattern_type>(); } },
+                { "blocklisted_message", n => { BlocklistedMessage = n.GetBoolValue(); } },
+                { "blocklisted_pattern", n => { BlocklistedPattern = n.GetStringValue(); } },
+                { "whitelisted_pattern_type", n => { WhitelistedPatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_whitelisted_pattern_type>(); } },
             };
         }
         /// <summary>
@@ -67,8 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("allowlisted_pattern_type", AllowlistedPatternType);
-            writer.WriteStringValue("whitelisted_pattern_type", WhitelistedPatternType);
+            writer.WriteStringValue("allowlisted_pattern", AllowlistedPattern);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_allowlisted_pattern_type>("allowlisted_pattern_type", AllowlistedPatternType);
+            writer.WriteBoolValue("blocklisted_message", BlocklistedMessage);
+            writer.WriteStringValue("blocklisted_pattern", BlocklistedPattern);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_whitelisted_pattern_type>("whitelisted_pattern_type", WhitelistedPatternType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

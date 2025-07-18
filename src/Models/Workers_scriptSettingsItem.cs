@@ -14,14 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The logpush property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptSettingsItem_logpush? Logpush { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptSettingsItem_logpush Logpush { get; set; }
-#endif
+        /// <summary>Whether Logpush is turned on for the Worker.</summary>
+        public bool? Logpush { get; set; }
         /// <summary>The observability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "logpush", n => { Logpush = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptSettingsItem_logpush>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptSettingsItem_logpush.CreateFromDiscriminatorValue); } },
+                { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability.CreateFromDiscriminatorValue); } },
                 { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptSettingsItem_logpush>("logpush", Logpush);
+            writer.WriteBoolValue("logpush", Logpush);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability>("observability", Observability);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_tail_consumers_script>("tail_consumers", TailConsumers);
             writer.WriteAdditionalData(AdditionalData);

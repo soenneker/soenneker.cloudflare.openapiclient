@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerprints;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits;
@@ -25,6 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder Datasets
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The document_fingerprints property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerprints.Document_fingerprintsRequestBuilder Document_fingerprints
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerprints.Document_fingerprintsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The email property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.EmailRequestBuilder Email

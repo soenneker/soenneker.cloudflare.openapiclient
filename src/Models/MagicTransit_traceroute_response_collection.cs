@@ -9,9 +9,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MagicTransit_traceroute_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_apiResponseCollection, IParsable
+    public partial class MagicTransit_traceroute_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_apiResponseCommon, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The result property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_result>? Result { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_result> Result { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_result.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -40,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_result>("result", Result);
         }
     }
 }

@@ -31,5 +31,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Error,
         #pragma warning restore CS1591
+        [EnumMember(Value = "live-inprogress")]
+        #pragma warning disable CS1591
+        LiveInprogress,
+        #pragma warning restore CS1591
     }
 }

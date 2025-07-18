@@ -27,6 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ConfidenceThreshold { get; set; }
 #endif
         /// <summary>Scan the context of predefined entries to only return matches surrounded by keywords.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_ContextAwareness? ContextAwareness { get; set; }
@@ -74,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Dlp_NewCustomProfile()
         {
             AdditionalData = new Dictionary<string, object>();
+            ConfidenceThreshold = "low";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

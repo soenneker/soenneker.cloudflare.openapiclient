@@ -78,8 +78,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The rule cannot be shared via the Orgs API</summary>
+        public bool? NotSharable { get; private set; }
         /// <summary>Precedence sets the order of your rules. Lower values indicate higher precedence. At each processing phase, applicable rules are evaluated in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) docs on how to manage precedence via Terraform.</summary>
         public int? Precedence { get; set; }
+        /// <summary>The rule was shared via the Orgs API and cannot be edited by the current account</summary>
+        public bool? ReadOnly { get; private set; }
         /// <summary>Additional settings that modify the rule&apos;s action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,6 +99,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule Schedule { get; set; }
+#endif
+        /// <summary>account tag of account that created the rule</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SourceAccount { get; private set; }
+#nullable restore
+#else
+        public string SourceAccount { get; private set; }
 #endif
         /// <summary>The wirefilter expression used for traffic matching.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -152,9 +164,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "identity", n => { Identity = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "not_sharable", n => { NotSharable = n.GetBoolValue(); } },
                 { "precedence", n => { Precedence = n.GetIntValue(); } },
+                { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
                 { "rule_settings", n => { RuleSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule.CreateFromDiscriminatorValue); } },
+                { "source_account", n => { SourceAccount = n.GetStringValue(); } },
                 { "traffic", n => { Traffic = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },

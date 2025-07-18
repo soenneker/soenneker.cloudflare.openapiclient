@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_purge_4XX_result Result { get; set; }
 #endif
-        /// <summary>Whether the API call was successful.</summary>
+        /// <summary>Indicates the API call&apos;s success or failure.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_purge_4XX"/> and sets the default values.

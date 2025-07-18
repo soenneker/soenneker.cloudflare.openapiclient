@@ -68,6 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Workers_scriptResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            UsageModel = global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_usage_model.Standard;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

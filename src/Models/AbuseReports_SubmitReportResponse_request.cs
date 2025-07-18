@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class AbuseReports_SubmitReportResponse_request : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The abuse report type</summary>
+        /// <summary>The abuse report type.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_ReportType? Act { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

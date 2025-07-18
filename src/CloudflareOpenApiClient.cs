@@ -7,14 +7,15 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Cloudflare.OpenApiClient.Accounts;
-using Soenneker.Cloudflare.OpenApiClient.Api;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
+using Soenneker.Cloudflare.OpenApiClient.Internal;
 using Soenneker.Cloudflare.OpenApiClient.Ips;
 using Soenneker.Cloudflare.OpenApiClient.Live;
 using Soenneker.Cloudflare.OpenApiClient.Memberships;
 using Soenneker.Cloudflare.OpenApiClient.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Radar;
 using Soenneker.Cloudflare.OpenApiClient.Ready;
+using Soenneker.Cloudflare.OpenApiClient.SignedUrl;
 using Soenneker.Cloudflare.OpenApiClient.User;
 using Soenneker.Cloudflare.OpenApiClient.Zones;
 using System.Collections.Generic;
@@ -34,15 +35,15 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The api property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Api.ApiRequestBuilder Api
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Api.ApiRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder Certificates
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The internal property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Internal.InternalRequestBuilder Internal
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Internal.InternalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ips property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Ips.IpsRequestBuilder Ips
@@ -73,6 +74,11 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Ready.ReadyRequestBuilder Ready
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Ready.ReadyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The signedUrl property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.SignedUrl.SignedUrlRequestBuilder SignedUrl
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.SignedUrl.SignedUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The user property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder User

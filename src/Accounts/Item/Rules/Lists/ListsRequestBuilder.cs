@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new list of the specified type.
+        /// Creates a new list of the specified kind.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listResponseCollection"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new list of the specified type.
+        /// Creates a new list of the specified kind.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

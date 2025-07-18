@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rumSiteResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rumSiteResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Toggles RUM on/off for an existing zone
+        /// Toggles RUM on/off for an existing zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rum_rumSiteResponseSingle"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum
             return requestInfo;
         }
         /// <summary>
-        /// Toggles RUM on/off for an existing zone
+        /// Toggles RUM on/off for an existing zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

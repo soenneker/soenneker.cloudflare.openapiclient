@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Current state of RUM. Returns On, Off, or Manual</summary>
+        /// <summary>Current state of RUM. Returns On, Off, or Manual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

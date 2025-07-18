@@ -2,8 +2,25 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Alerts;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brands;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Clear;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.DomainInfo;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoMatches;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Matches;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.RecentSubmissions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Refute;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.ScanLogo;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.ScanPage;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Search;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.SubmissionInfo;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Submit;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.TotalQueries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.TrackedDomains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.UrlInfo;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Verify;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,15 +33,100 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrandProtectionRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The alerts property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Alerts.AlertsRequestBuilder Alerts
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The brands property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brands.BrandsRequestBuilder Brands
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brands.BrandsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The clear property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Clear.ClearRequestBuilder Clear
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Clear.ClearRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The domainInfo property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.DomainInfo.DomainInfoRequestBuilder DomainInfo
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.DomainInfo.DomainInfoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The logoMatches property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoMatches.LogoMatchesRequestBuilder LogoMatches
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoMatches.LogoMatchesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The logos property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder Logos
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The matches property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Matches.MatchesRequestBuilder Matches
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Matches.MatchesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The queries property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queries.QueriesRequestBuilder Queries
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queries.QueriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The recentSubmissions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.RecentSubmissions.RecentSubmissionsRequestBuilder RecentSubmissions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.RecentSubmissions.RecentSubmissionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The refute property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Refute.RefuteRequestBuilder Refute
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Refute.RefuteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scanLogo property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.ScanLogo.ScanLogoRequestBuilder ScanLogo
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.ScanLogo.ScanLogoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scanPage property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.ScanPage.ScanPageRequestBuilder ScanPage
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.ScanPage.ScanPageRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The search property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Search.SearchRequestBuilder Search
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The submissionInfo property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.SubmissionInfo.SubmissionInfoRequestBuilder SubmissionInfo
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.SubmissionInfo.SubmissionInfoRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The submit property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Submit.SubmitRequestBuilder Submit
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Submit.SubmitRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The totalQueries property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.TotalQueries.TotalQueriesRequestBuilder TotalQueries
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.TotalQueries.TotalQueriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The trackedDomains property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.TrackedDomains.TrackedDomainsRequestBuilder TrackedDomains
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.TrackedDomains.TrackedDomainsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The urlInfo property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.UrlInfo.UrlInfoRequestBuilder UrlInfo
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.UrlInfo.UrlInfoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The verify property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Verify.VerifyRequestBuilder Verify
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Verify.VerifyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.BrandProtectionRequestBuilder"/> and sets the default values.

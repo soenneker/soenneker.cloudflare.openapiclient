@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Integrati
         {
         }
         /// <summary>
-        /// This will update an existing integration entry
+        /// Integration entries can&apos;t be created, this will update an existing integration entryThis is needed for our generated terraform API
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_create_integration_entry_200"/></returns>
         /// <param name="body">Struct for creating a new predefined or integration entry. Predefined or integration entriescan not be updated via the API so these fields will simply update the entry&apos;s settings</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Integrati
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_create_integration_entry_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_create_integration_entry_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will update an existing integration entry
+        /// Integration entries can&apos;t be created, this will update an existing integration entryThis is needed for our generated terraform API
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Struct for creating a new predefined or integration entry. Predefined or integration entriescan not be updated via the API so these fields will simply update the entry&apos;s settings</param>

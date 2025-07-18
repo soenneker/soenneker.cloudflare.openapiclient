@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttacksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/top/attacks{?asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,limit*,limitDirection*,limitPerLocation*,location*,magnitude*,mitigationProduct*,name*,normalization*}", pathParameters)
+        public AttacksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/top/attacks{?asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,limit*,limitDirection*,limitPerLocation*,location*,mitigationProduct*,name*,normalization*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttacksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/top/attacks{?asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,limit*,limitDirection*,limitPerLocation*,location*,magnitude*,mitigationProduct*,name*,normalization*}", rawUrl)
+        public AttacksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/attacks/layer7/top/attacks{?asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,limit*,limitDirection*,limitPerLocation*,location*,mitigationProduct*,name*,normalization*}", rawUrl)
         {
         }
         /// <summary>
@@ -184,20 +184,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks
             [QueryParameter("location")]
             public string[] Location { get; set; }
 #endif
-            /// <summary>Deprecated parameter. Future support includes only attack magnitude defined by total mitigated requests (MITIGATED_REQUESTS).</summary>
-            [Obsolete("This property is deprecated, use MagnitudeAsGetMagnitudeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("magnitude")]
-            public string? Magnitude { get; set; }
-#nullable restore
-#else
-            [QueryParameter("magnitude")]
-            public string Magnitude { get; set; }
-#endif
-            /// <summary>Deprecated parameter. Future support includes only attack magnitude defined by total mitigated requests (MITIGATED_REQUESTS).</summary>
-            [QueryParameter("magnitude")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks.GetMagnitudeQueryParameterType? MagnitudeAsGetMagnitudeQueryParameterType { get; set; }
             /// <summary>Filters the results by layer 7 mitigation product.</summary>
             [Obsolete("This property is deprecated, use MitigationProductAsGetMitigationProductQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

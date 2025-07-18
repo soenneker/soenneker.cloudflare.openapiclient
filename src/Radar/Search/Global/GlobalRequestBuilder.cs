@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
         {
         }
         /// <summary>
-        /// Searches for locations, autonomous systems, reports, and bots.
+        /// Searches for locations, autonomous systems, reports, bots, certificate logs, and certificate authorities.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_search_global_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_search_global_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_search_global_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Searches for locations, autonomous systems, reports, and bots.
+        /// Searches for locations, autonomous systems, reports, bots, certificate logs, and certificate authorities.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global.GlobalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Searches for locations, autonomous systems, reports, and bots.
+        /// Searches for locations, autonomous systems, reports, bots, certificate logs, and certificate authorities.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GlobalRequestBuilderGetQueryParameters 
@@ -152,7 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
             /// <summary>Limits the number of objects per search category.</summary>
             [QueryParameter("limitPerGroup")]
             public double? LimitPerGroup { get; set; }
-            /// <summary>Search for locations, autonomous systems and reports.</summary>
+            /// <summary>String used to perform the search operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

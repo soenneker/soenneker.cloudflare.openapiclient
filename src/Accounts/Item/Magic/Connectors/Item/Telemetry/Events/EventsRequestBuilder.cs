@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,limit*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,limit*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", rawUrl)
         {
         }
         /// <summary>
@@ -128,6 +128,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
 #endif
             [QueryParameter("from")]
             public double? From { get; set; }
+            /// <summary>Filter by event kind</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("k")]
+            public string? K { get; set; }
+#nullable restore
+#else
+            [QueryParameter("k")]
+            public string K { get; set; }
+#endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
             [QueryParameter("to")]

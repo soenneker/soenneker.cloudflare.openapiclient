@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Update enablement of Argo Smart Routing
+    /// Configures the enablement of Argo Smart Routing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ArgoConfig_patch : IAdditionalDataHolder, IParsable

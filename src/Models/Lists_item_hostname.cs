@@ -15,6 +15,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Only applies to wildcard hostnames (e.g., *.example.com). When true (default), only subdomains are blocked. When false, both the root domain and subdomains are blocked.</summary>
+        public bool? ExcludeExactHostname { get; set; }
         /// <summary>The url_hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "exclude_exact_hostname", n => { ExcludeExactHostname = n.GetBoolValue(); } },
                 { "url_hostname", n => { UrlHostname = n.GetStringValue(); } },
             };
         }
@@ -58,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("exclude_exact_hostname", ExcludeExactHostname);
             writer.WriteStringValue("url_hostname", UrlHostname);
             writer.WriteAdditionalData(AdditionalData);
         }

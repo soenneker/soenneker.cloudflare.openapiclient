@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dream
         /// <summary>
         /// Execute @cf/lykon/dreamshaper-8-lcm model.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dreamshaper8Lcm.Dreamshaper8LcmRequestBuilder.Dreamshaper8LcmRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dreamshaper8Lcm.Dreamshaper8LcmRequestBuilder.Dreamshaper8LcmRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dreamshaper8Lcm.Dreamshaper8LcmRequestBuilder.Dreamshaper8LcmRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dreamshaper8Lcm.Dreamshaper8LcmRequestBuilder.Dreamshaper8LcmRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dream
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Execute @cf/lykon/dreamshaper-8-lcm model.
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dream
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "image/png, application/json");
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }

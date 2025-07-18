@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Trusted_domainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/trusted_domains{?direction*,is_recent*,is_similarity*,order*,page*,per_page*,search*}", pathParameters)
+        public Trusted_domainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/trusted_domains{?direction*,is_recent*,is_similarity*,order*,page*,pattern*,per_page*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Trusted_domainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/trusted_domains{?direction*,is_recent*,is_similarity*,order*,page*,per_page*,search*}", rawUrl)
+        public Trusted_domainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/trusted_domains{?direction*,is_recent*,is_similarity*,order*,page*,pattern*,per_page*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -194,6 +194,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             /// <summary>The page number of paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("pattern")]
+            public string? Pattern { get; set; }
+#nullable restore
+#else
+            [QueryParameter("pattern")]
+            public string Pattern { get; set; }
+#endif
             /// <summary>The number of results per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
