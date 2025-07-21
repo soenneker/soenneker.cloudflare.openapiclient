@@ -7,46 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Lists_operation : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Lists_operation : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The RFC 3339 timestamp of when the operation was completed.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Completed { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember1? ListsOperationMember1 { get; set; }
 #nullable restore
 #else
-        public string Completed { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember1 ListsOperationMember1 { get; set; }
 #endif
-        /// <summary>A message describing the error when the status is `failed`.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember2? ListsOperationMember2 { get; set; }
 #nullable restore
 #else
-        public string Error { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember2 ListsOperationMember2 { get; set; }
 #endif
-        /// <summary>The unique operation ID of the asynchronous action.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember3? ListsOperationMember3 { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember3 ListsOperationMember3 { get; set; }
 #endif
-        /// <summary>The current status of the asynchronous operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_status? Status { get; private set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation"/> and sets the default values.
-        /// </summary>
-        public Lists_operation()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +45,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation();
+            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsOperationMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember1();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsOperationMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember2();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsOperationMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember3();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +67,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListsOperationMember1 != null)
             {
-                { "completed", n => { Completed = n.GetStringValue(); } },
-                { "error", n => { Error = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation_status>(); } },
-            };
+                return ListsOperationMember1.GetFieldDeserializers();
+            }
+            else if(ListsOperationMember2 != null)
+            {
+                return ListsOperationMember2.GetFieldDeserializers();
+            }
+            else if(ListsOperationMember3 != null)
+            {
+                return ListsOperationMember3.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,7 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            if(ListsOperationMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember1>(null, ListsOperationMember1);
+            }
+            else if(ListsOperationMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember2>(null, ListsOperationMember2);
+            }
+            else if(ListsOperationMember3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operationMember3>(null, ListsOperationMember3);
+            }
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The number of items in the list.</summary>
         public double? NumItems { get; set; }
-        /// <summary>The number of [filters](/operations/filters-list-filters) referencing the list.</summary>
+        /// <summary>The number of [filters](/api/resources/filters/) referencing the list.</summary>
         public double? NumReferencingFilters { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list"/> and sets the default values.
