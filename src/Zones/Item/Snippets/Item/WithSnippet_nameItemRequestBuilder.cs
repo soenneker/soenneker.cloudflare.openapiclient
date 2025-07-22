@@ -40,84 +40,164 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item
         {
         }
         /// <summary>
-        /// Delete Snippet
+        /// Deletes a snippet belonging to the zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_200?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameDeleteResponse?> DeleteAsWithSnippet_nameDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_200> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameDeleteResponse> DeleteAsWithSnippet_nameDeleteResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_delete_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameDeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Snippet
+        /// Deletes a snippet belonging to the zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError">When receiving a 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use DeleteAsWithSnippet_nameDeleteResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Fetches a snippet belonging to the zone.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameGetResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError">When receiving a 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameGetResponse?> GetAsWithSnippet_nameGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameGetResponse> GetAsWithSnippet_nameGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Put Snippet
+        /// Fetches a snippet belonging to the zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_200"/></returns>
-        /// <param name="body">The request body</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_4XX">When receiving a 4XX status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_5XX">When receiving a 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError">When receiving a 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use GetAsWithSnippet_nameGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_200?> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_200> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Creates or updates a snippet belonging to the zone.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_namePutResponse"/></returns>
+        /// <param name="body">A snippet object.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError">When receiving a 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_namePutResponse?> PutAsWithSnippet_namePutResponseAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_namePutResponse> PutAsWithSnippet_namePutResponseAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_4XX.CreateFromDiscriminatorValue },
-                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_5XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_snippets_snippet_put_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_namePutResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_namePutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Snippet
+        /// Creates or updates a snippet belonging to the zone.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse"/></returns>
+        /// <param name="body">A snippet object.</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError">When receiving a 5XX status code</exception>
+        [Obsolete("This method is obsolete. Use PutAsWithSnippet_namePutResponseAsync instead.")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse?> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name4XXError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithSnippet_name5XXError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.WithSnippet_nameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes a snippet belonging to the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +216,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Snippet
+        /// Fetches a snippet belonging to the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -155,10 +235,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Put Snippet
+        /// Creates or updates a snippet belonging to the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">A snippet object.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

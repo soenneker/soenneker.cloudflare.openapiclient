@@ -108,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public ZeroTrustGateway_locations()
         {
             AdditionalData = new Dictionary<string, object>();
+            DnsDestinationIpsId = "0e4a32c6-6fb8-4858-9296-98f51631e8e6";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

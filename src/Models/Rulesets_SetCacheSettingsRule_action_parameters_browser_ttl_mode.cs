@@ -19,5 +19,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Override_origin,
         #pragma warning restore CS1591
+        [EnumMember(Value = "bypass")]
+        #pragma warning disable CS1591
+        Bypass,
+        #pragma warning restore CS1591
     }
 }

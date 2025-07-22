@@ -9,29 +9,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AbuseReports_CSAMReport : IAdditionalDataHolder, IParsable
+    public partial class AbuseReports_CSAMReport : global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_BaseReportFields, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The act property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_act? Act { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Any additional comments about the infringement not exceeding 2000 characters</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Comments { get; set; }
-#nullable restore
-#else
-        public string Comments { get; set; }
-#endif
-        /// <summary>Text not exceeding 100 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Company { get; set; }
-#nullable restore
-#else
-        public string Company { get; set; }
-#endif
         /// <summary>Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,22 +19,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string Country { get; set; }
-#endif
-        /// <summary>A valid email of the abuse reporter. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get; set; }
-#nullable restore
-#else
-        public string Email { get; set; }
-#endif
-        /// <summary>Should match the value provided in `email`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email2 { get; set; }
-#nullable restore
-#else
-        public string Email2 { get; set; }
 #endif
         /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_host_notification? HostNotification { get; set; }
@@ -66,71 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Justification { get; set; }
 #endif
-        /// <summary>Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
         /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_ncmec_notification? NcmecNotification { get; set; }
         /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_owner_notification? OwnerNotification { get; set; }
-        /// <summary>Text containing 2 characters</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ReportedCountry { get; set; }
-#nullable restore
-#else
-        public string ReportedCountry { get; set; }
-#endif
-        /// <summary>Text not exceeding 255 characters</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ReportedUserAgent { get; set; }
-#nullable restore
-#else
-        public string ReportedUserAgent { get; set; }
-#endif
-        /// <summary>Text not exceeding 20 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Tele { get; set; }
-#nullable restore
-#else
-        public string Tele { get; set; }
-#endif
-        /// <summary>Text not exceeding 255 characters</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Title { get; set; }
-#nullable restore
-#else
-        public string Title { get; set; }
-#endif
-        /// <summary>A list of valid URLs separated by ‘\n’ (new line character). The list of the URLs should not exceed 250 URLs. All URLs should have the same hostname. Each URL should be unique. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Urls { get; set; }
-#nullable restore
-#else
-        public string Urls { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport"/> and sets the default values.
-        /// </summary>
-        public AbuseReports_CSAMReport()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport();
@@ -139,52 +48,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "act", n => { Act = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_act>(); } },
-                { "comments", n => { Comments = n.GetStringValue(); } },
-                { "company", n => { Company = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "email2", n => { Email2 = n.GetStringValue(); } },
                 { "host_notification", n => { HostNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_host_notification>(); } },
                 { "justification", n => { Justification = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
                 { "ncmec_notification", n => { NcmecNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_ncmec_notification>(); } },
                 { "owner_notification", n => { OwnerNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_owner_notification>(); } },
-                { "reported_country", n => { ReportedCountry = n.GetStringValue(); } },
-                { "reported_user_agent", n => { ReportedUserAgent = n.GetStringValue(); } },
-                { "tele", n => { Tele = n.GetStringValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "urls", n => { Urls = n.GetStringValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_act>("act", Act);
-            writer.WriteStringValue("comments", Comments);
-            writer.WriteStringValue("company", Company);
+            base.Serialize(writer);
             writer.WriteStringValue("country", Country);
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("email2", Email2);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_host_notification>("host_notification", HostNotification);
             writer.WriteStringValue("justification", Justification);
-            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_ncmec_notification>("ncmec_notification", NcmecNotification);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReports_CSAMReport_owner_notification>("owner_notification", OwnerNotification);
-            writer.WriteStringValue("reported_country", ReportedCountry);
-            writer.WriteStringValue("reported_user_agent", ReportedUserAgent);
-            writer.WriteStringValue("tele", Tele);
-            writer.WriteStringValue("title", Title);
-            writer.WriteStringValue("urls", Urls);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

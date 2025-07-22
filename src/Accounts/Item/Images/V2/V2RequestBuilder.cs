@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,per_page*,sort_order*}", pathParameters)
+        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,per_page*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,per_page*,sort_order*}", rawUrl)
+        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,per_page*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
@@ -104,6 +104,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
 #else
             [QueryParameter("continuation_token")]
             public string ContinuationToken { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("creator")]
+            public string? Creator { get; set; }
+#nullable restore
+#else
+            [QueryParameter("creator")]
+            public string Creator { get; set; }
 #endif
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }

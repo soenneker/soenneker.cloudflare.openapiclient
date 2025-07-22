@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Can set the creator field with an internal user ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Creator { get; set; }
+#nullable restore
+#else
+        public string Creator { get; set; }
+#endif
         /// <summary>User modifiable key-value store. Can be used for keeping references to another system of record for managing images. No change if not specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "creator", n => { Creator = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_patch_request_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_patch_request_metadata.CreateFromDiscriminatorValue); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
             };
@@ -60,6 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("creator", Creator);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_patch_request_metadata>("metadata", Metadata);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteAdditionalData(AdditionalData);
