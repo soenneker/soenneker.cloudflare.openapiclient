@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The action to preform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
+    /// <summary>The action to perform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ZeroTrustGateway_action
     {

@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the record was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
         /// <summary>Whether the record can be proxied by Cloudflare or not.</summary>
-        public bool? Proxiable { get; set; }
+        public bool? Proxiable { get; private set; }
         /// <summary>When the record tags were last modified. Omitted if there are no tags.</summary>
         public DateTimeOffset? TagsModifiedOn { get; private set; }
         /// <summary>
@@ -82,7 +82,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("proxiable", Proxiable);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

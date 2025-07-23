@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DnsDestinationIpsId { get; set; }
 #endif
-        /// <summary>The uuid identifier of the IPv6 block brought to the gateway, so that this location&apos;s IPv6 address is allocated from the Bring Your Own Ipv6(BYOIPv6) block and not from the standard CloudFlare IPv6 block.</summary>
+        /// <summary>The uuid identifier of the IPv6 block brought to the gateway, so that this location&apos;s IPv6 address is allocated from the Bring Your Own Ipv6(BYOIPv6) block and not from the standard Cloudflare IPv6 block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DnsDestinationIpv6BlockId { get; set; }

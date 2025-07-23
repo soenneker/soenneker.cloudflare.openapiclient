@@ -18,6 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Asn { get; set; }
         /// <summary>Number of times to prepend the Cloudflare ASN to the BGP AS-Path attribute</summary>
         public int? AsnPrependCount { get; set; }
+        /// <summary>Determines if Cloudflare advertises a BYOIP BGP prefix even when there is no matching BGP prefix in the Magic routing table. When true, Cloudflare will automatically withdraw the BGP prefix when there are no matching BGP routes, and will resume advertising when there is at least one matching BGP route.</summary>
+        public bool? AutoAdvertiseWithdraw { get; set; }
         /// <summary>The bgp_signal_opts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,8 +56,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand OnDemand { get; set; }
 #endif
-        /// <summary>Controls whether the BGP prefix is automatically withdrawn when prefix is withdrawn from Magic routing table (for Magic Transit customers using Direct CNI)</summary>
-        public bool? WithdrawIfNoRoute { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamBgpPrefixes"/> and sets the default values.
         /// </summary>
@@ -83,13 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "asn", n => { Asn = n.GetIntValue(); } },
                 { "asn_prepend_count", n => { AsnPrependCount = n.GetIntValue(); } },
+                { "auto_advertise_withdraw", n => { AutoAdvertiseWithdraw = n.GetBoolValue(); } },
                 { "bgp_signal_opts", n => { BgpSignalOpts = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_signal_opts>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_signal_opts.CreateFromDiscriminatorValue); } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "on_demand", n => { OnDemand = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand.CreateFromDiscriminatorValue); } },
-                { "withdraw_if_no_route", n => { WithdrawIfNoRoute = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -101,13 +101,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("asn", Asn);
             writer.WriteIntValue("asn_prepend_count", AsnPrependCount);
+            writer.WriteBoolValue("auto_advertise_withdraw", AutoAdvertiseWithdraw);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_signal_opts>("bgp_signal_opts", BgpSignalOpts);
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand>("on_demand", OnDemand);
-            writer.WriteBoolValue("withdraw_if_no_route", WithdrawIfNoRoute);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

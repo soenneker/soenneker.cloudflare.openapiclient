@@ -93,8 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Logpush_output_options()
         {
             AdditionalData = new Dictionary<string, object>();
-            OutputType = global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options_output_type.Ndjson;
-            TimestampFormat = global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options_timestamp_format.Unixnano;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

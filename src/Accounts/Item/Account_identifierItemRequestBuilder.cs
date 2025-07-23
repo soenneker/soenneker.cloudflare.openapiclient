@@ -32,6 +32,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_subscriptions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive;
@@ -234,6 +235,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.Event_notificationsRequestBuilder Event_notifications
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.Event_notificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The event_subscriptions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_subscriptions.Event_subscriptionsRequestBuilder Event_subscriptions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_subscriptions.Event_subscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The firewall property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.FirewallRequestBuilder Firewall
