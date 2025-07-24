@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubmissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/submissions{?end*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,submission_id*,type*}", pathParameters)
+        public SubmissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/submissions{?end*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,status*,submission_id*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubmissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/submissions{?end*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,submission_id*,type*}", rawUrl)
+        public SubmissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/submissions{?end*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,status*,submission_id*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -138,6 +138,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
             /// <summary>The beginning of the search date range.Defaults to `now - 30 days`.</summary>
             [QueryParameter("start")]
             public DateTimeOffset? Start { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("status")]
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("submission_id")]

@@ -97,13 +97,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TargetUri { get; set; }
 #endif
+        /// <summary>Version number of the setting</summary>
+        public int? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_blockPageSettings"/> and sets the default values.
         /// </summary>
         public ZeroTrustGateway_blockPageSettings()
         {
             AdditionalData = new Dictionary<string, object>();
-            Mode = global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_blockPageSettings_mode.Customized_block_page;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -137,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "source_account", n => { SourceAccount = n.GetStringValue(); } },
                 { "suppress_footer", n => { SuppressFooter = n.GetBoolValue(); } },
                 { "target_uri", n => { TargetUri = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

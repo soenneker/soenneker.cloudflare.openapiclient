@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders.Batch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders.Item;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Block_sendersRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The batch property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders.Batch.BatchRequestBuilder Batch
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.emailSecurity.settings.block_senders.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders.Item.WithPattern_ItemRequestBuilder"/></returns>

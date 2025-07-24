@@ -12,10 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Quarantine_release,
         #pragma warning restore CS1591
-        [EnumMember(Value = "blocked_sender")]
-        #pragma warning disable CS1591
-        Blocked_sender,
-        #pragma warning restore CS1591
         [EnumMember(Value = "acceptable_sender")]
         #pragma warning disable CS1591
         Acceptable_sender,

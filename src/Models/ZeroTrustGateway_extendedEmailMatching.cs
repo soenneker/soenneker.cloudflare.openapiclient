@@ -27,6 +27,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SourceAccount { get; private set; }
 #endif
+        /// <summary>Version number of the setting</summary>
+        public int? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_extendedEmailMatching"/> and sets the default values.
         /// </summary>
@@ -55,6 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "read_only", n => { ReadOnly = n.GetBoolValue(); } },
                 { "source_account", n => { SourceAccount = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

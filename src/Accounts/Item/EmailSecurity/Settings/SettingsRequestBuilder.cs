@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Al
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Impersonation_registry;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Sending_domain_restrictions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains;
 using System.Collections.Generic;
 using System.IO;
@@ -38,6 +39,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Impersonation_registry.Impersonation_registryRequestBuilder Impersonation_registry
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Impersonation_registry.Impersonation_registryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sending_domain_restrictions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Sending_domain_restrictions.Sending_domain_restrictionsRequestBuilder Sending_domain_restrictions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Sending_domain_restrictions.Sending_domain_restrictionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The trusted_domains property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Trusted_domains.Trusted_domainsRequestBuilder Trusted_domains

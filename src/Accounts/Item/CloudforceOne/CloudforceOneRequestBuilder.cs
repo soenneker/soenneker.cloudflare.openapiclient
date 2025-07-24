@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Binary;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudforceOneRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The binary property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Binary.BinaryRequestBuilder Binary
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Binary.BinaryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The events property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.EventsRequestBuilder Events
         {

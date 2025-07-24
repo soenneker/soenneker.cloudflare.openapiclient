@@ -9,27 +9,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Client_certificate_for_a_zone_list_hostname_associations_4XX_result : IAdditionalDataHolder, IParsable
+    public partial class Email_security_batch_sending_domain_restrictions_2004XXError_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Client_certificate_for_a_zone_list_hostname_associations_4XX_result"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_sending_domain_restrictions_2004XXError_result"/> and sets the default values.
         /// </summary>
-        public Client_certificate_for_a_zone_list_hostname_associations_4XX_result()
+        public Email_security_batch_sending_domain_restrictions_2004XXError_result()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Client_certificate_for_a_zone_list_hostname_associations_4XX_result"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_sending_domain_restrictions_2004XXError_result"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Client_certificate_for_a_zone_list_hostname_associations_4XX_result CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_sending_domain_restrictions_2004XXError_result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Client_certificate_for_a_zone_list_hostname_associations_4XX_result();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_sending_domain_restrictions_2004XXError_result();
         }
         /// <summary>
         /// The deserialization information for the current model
