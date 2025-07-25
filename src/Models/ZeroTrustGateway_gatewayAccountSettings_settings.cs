@@ -96,6 +96,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_hostSelectorSettings HostSelector { get; set; }
 #endif
+        /// <summary>Setting to define inspection settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_inspectionSettings? Inspection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_inspectionSettings Inspection { get; set; }
+#endif
         /// <summary>Protocol Detection settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +163,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "extended_email_matching", n => { ExtendedEmailMatching = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_extendedEmailMatching>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_extendedEmailMatching.CreateFromDiscriminatorValue); } },
                 { "fips", n => { Fips = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fipsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fipsSettings.CreateFromDiscriminatorValue); } },
                 { "host_selector", n => { HostSelector = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_hostSelectorSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_hostSelectorSettings.CreateFromDiscriminatorValue); } },
+                { "inspection", n => { Inspection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_inspectionSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_inspectionSettings.CreateFromDiscriminatorValue); } },
                 { "protocol_detection", n => { ProtocolDetection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_protocolDetection>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_protocolDetection.CreateFromDiscriminatorValue); } },
                 { "sandbox", n => { Sandbox = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_sandbox>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_sandbox.CreateFromDiscriminatorValue); } },
                 { "tls_decrypt", n => { TlsDecrypt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_tlsSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_tlsSettings.CreateFromDiscriminatorValue); } },
@@ -177,6 +186,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_extendedEmailMatching>("extended_email_matching", ExtendedEmailMatching);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fipsSettings>("fips", Fips);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_hostSelectorSettings>("host_selector", HostSelector);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_inspectionSettings>("inspection", Inspection);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_protocolDetection>("protocol_detection", ProtocolDetection);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_sandbox>("sandbox", Sandbox);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_tlsSettings>("tls_decrypt", TlsDecrypt);

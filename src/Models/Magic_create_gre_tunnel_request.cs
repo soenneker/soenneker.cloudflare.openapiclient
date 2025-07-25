@@ -54,6 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string InterfaceAddress { get; set; }
 #endif
+        /// <summary>A 127 bit IPV6 prefix from within the virtual_subnet6 prefix space with the address being the first IP of the subnet and not same as the address of virtual_subnet6. Eg if virtual_subnet6 is 2606:54c1:7:0:a9fe:12d2::/127 , interface_address6 could be 2606:54c1:7:0:a9fe:12d2:1:200/127</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InterfaceAddress6 { get; set; }
+#nullable restore
+#else
+        public string InterfaceAddress6 { get; set; }
+#endif
         /// <summary>Maximum Transmission Unit (MTU) in bytes for the GRE tunnel. The minimum value is 576.</summary>
         public int? Mtu { get; set; }
         /// <summary>The name of the tunnel. The name cannot contain spaces or special characters, must be 15 characters or less, and cannot share a name with another GRE tunnel.</summary>
@@ -96,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check.CreateFromDiscriminatorValue); } },
                 { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
+                { "interface_address6", n => { InterfaceAddress6 = n.GetStringValue(); } },
                 { "mtu", n => { Mtu = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
@@ -113,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>("health_check", HealthCheck);
             writer.WriteStringValue("interface_address", InterfaceAddress);
+            writer.WriteStringValue("interface_address6", InterfaceAddress6);
             writer.WriteIntValue("mtu", Mtu);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("ttl", Ttl);

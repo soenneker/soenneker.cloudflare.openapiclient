@@ -12,14 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Post_BinDBPost_200 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountIds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? AccountIds { get; set; }
-#nullable restore
-#else
-        public List<string> AccountIds { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The content_type property</summary>
@@ -30,18 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ContentType { get; set; }
 #endif
-        /// <summary>The filenames property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Filenames { get; set; }
-#nullable restore
-#else
-        public List<string> Filenames { get; set; }
-#endif
-        /// <summary>The first_seen property</summary>
-        public double? FirstSeen { get; set; }
-        /// <summary>The is_private property</summary>
-        public bool? IsPrivate { get; set; }
         /// <summary>The md5 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,11 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountIds", n => { AccountIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
-                { "filenames", n => { Filenames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "first_seen", n => { FirstSeen = n.GetDoubleValue(); } },
-                { "is_private", n => { IsPrivate = n.GetBoolValue(); } },
                 { "md5", n => { Md5 = n.GetStringValue(); } },
                 { "sha1", n => { Sha1 = n.GetStringValue(); } },
                 { "sha256", n => { Sha256 = n.GetStringValue(); } },
@@ -108,11 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("accountIds", AccountIds);
             writer.WriteStringValue("content_type", ContentType);
-            writer.WriteCollectionOfPrimitiveValues<string>("filenames", Filenames);
-            writer.WriteDoubleValue("first_seen", FirstSeen);
-            writer.WriteBoolValue("is_private", IsPrivate);
             writer.WriteStringValue("md5", Md5);
             writer.WriteStringValue("sha1", Sha1);
             writer.WriteStringValue("sha256", Sha256);

@@ -9,27 +9,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Dls_account_regional_hostnames_account_list_hostnames_4XX_result : IAdditionalDataHolder, IParsable
+    public partial class Post_CreateEventRelationship : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The childId property</summary>
+        public Guid? ChildId { get; set; }
+        /// <summary>The parentId property</summary>
+        public Guid? ParentId { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_account_regional_hostnames_account_list_hostnames_4XX_result"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship"/> and sets the default values.
         /// </summary>
-        public Dls_account_regional_hostnames_account_list_hostnames_4XX_result()
+        public Post_CreateEventRelationship()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_account_regional_hostnames_account_list_hostnames_4XX_result"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_account_regional_hostnames_account_list_hostnames_4XX_result CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_account_regional_hostnames_account_list_hostnames_4XX_result();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "childId", n => { ChildId = n.GetGuidValue(); } },
+                { "parentId", n => { ParentId = n.GetGuidValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type>(); } },
             };
         }
         /// <summary>
@@ -48,6 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("childId", ChildId);
+            writer.WriteGuidValue("parentId", ParentId);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

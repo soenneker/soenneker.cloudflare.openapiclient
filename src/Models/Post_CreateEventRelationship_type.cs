@@ -5,24 +5,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum Current
+    public enum Post_CreateEventRelationship_type
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "event")]
+        [EnumMember(Value = "related_to")]
         #pragma warning disable CS1591
-        Event,
+        Related_to,
         #pragma warning restore CS1591
-        [EnumMember(Value = "appID")]
+        [EnumMember(Value = "caused_by")]
         #pragma warning disable CS1591
-        AppID,
+        Caused_by,
         #pragma warning restore CS1591
-        [EnumMember(Value = "coloName")]
+        [EnumMember(Value = "attributed_to")]
         #pragma warning disable CS1591
-        ColoName,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ipVersion")]
-        #pragma warning disable CS1591
-        IpVersion,
+        Attributed_to,
         #pragma warning restore CS1591
     }
 }
