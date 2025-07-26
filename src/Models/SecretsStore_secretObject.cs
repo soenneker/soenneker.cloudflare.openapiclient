@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Freeform text describing the secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; private set; }
+        public string? Comment { get; set; }
 #nullable restore
 #else
-        public string Comment { get; private set; }
+        public string Comment { get; set; }
 #endif
         /// <summary>Whenthe secret was created.</summary>
         public DateTimeOffset? Created { get; private set; }
@@ -93,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

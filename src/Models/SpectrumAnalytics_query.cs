@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Can be used to break down the data by given attributes. Options are: Dimension                 | Name                            | Example--------------------------|---------------------------------|--------------------------event                     | Connection Event                | connect, progress, disconnect, originError, clientFilteredappID                     | Application ID                  | 40d67c87c6cd4b889a4fd57805225e85coloName                  | Colo Name                       | SFOipVersion                 | IP version used by the client   | 4, 6.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime?>? Dimensions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Current?>? Dimensions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime?> Dimensions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Current?> Dimensions { get; set; }
 #endif
         /// <summary>Used to filter rows by one or more dimensions. Filters can be combined using OR and AND boolean logic. AND takes precedence over OR in all the expressions. The OR operator is defined using a comma (,) or OR keyword surrounded by whitespace. The AND operator is defined using a semicolon (;) or AND keyword surrounded by whitespace. Note that the semicolon is a reserved character in URLs (rfc1738) and needs to be percent-encoded as %3B. Comparison options are:Operator                  | Name                            | URL Encoded--------------------------|---------------------------------|--------------------------==                        | Equals                          | %3D%3D!=                        | Does not equals                 | !%3D\&gt;                        | Greater Than                    | %3E\&lt;                        | Less Than                       | %3C\&gt;=                       | Greater than or equal to        | %3E%3D\&lt;=                       | Less than or equal to           | %3C%3D</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>One or more metrics to compute. Options are: Metric                    | Name                                | Example                  | Unit--------------------------|-------------------------------------|--------------------------|--------------------------count                     | Count of total events               | 1000                     | CountbytesIngress              | Sum of ingress bytes                | 1000                     | SumbytesEgress               | Sum of egress bytes                 | 1000                     | SumdurationAvg               | Average connection duration         | 1.0                      | Time in millisecondsdurationMedian            | Median connection duration          | 1.0                      | Time in millisecondsduration90th              | 90th percentile connection duration | 1.0                      | Time in millisecondsduration99th              | 99th percentile connection duration | 1.0                      | Time in milliseconds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime?>? Metrics { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Current?>? Metrics { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime?> Metrics { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Current?> Metrics { get; set; }
 #endif
         /// <summary>The since property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dimensions", n => { Dimensions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime>()?.AsList(); } },
+                { "dimensions", n => { Dimensions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>()?.AsList(); } },
                 { "filters", n => { Filters = n.GetStringValue(); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
-                { "metrics", n => { Metrics = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime>()?.AsList(); } },
+                { "metrics", n => { Metrics = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>()?.AsList(); } },
                 { "since", n => { Since = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_since>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_since.CreateFromDiscriminatorValue); } },
                 { "sort", n => { Sort = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "until", n => { Until = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_until>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_until.CreateFromDiscriminatorValue); } },
@@ -105,10 +105,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime>("dimensions", Dimensions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>("dimensions", Dimensions);
             writer.WriteStringValue("filters", Filters);
             writer.WriteDoubleValue("limit", Limit);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bytime>("metrics", Metrics);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Current>("metrics", Metrics);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_since>("since", Since);
             writer.WriteCollectionOfPrimitiveValues<string>("sort", Sort);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_until>("until", Until);
