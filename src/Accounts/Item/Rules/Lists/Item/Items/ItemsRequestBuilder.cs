@@ -298,42 +298,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         {
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember4"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_comment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_comment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_comment"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Lists_itemsUpdateRequestCollection : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember1"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember1? ListsItemsUpdateRequestCollectionMember1 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment? ListsListItemAsnComment { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember1 ListsItemsUpdateRequestCollectionMember1 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment ListsListItemAsnComment { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember2"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_comment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember2? ListsItemsUpdateRequestCollectionMember2 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_comment? ListsListItemHostnameComment { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember2 ListsItemsUpdateRequestCollectionMember2 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_comment ListsListItemHostnameComment { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember3"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_comment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember3? ListsItemsUpdateRequestCollectionMember3 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_comment? ListsListItemIpComment { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember3 ListsItemsUpdateRequestCollectionMember3 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_comment ListsListItemIpComment { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember4"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_comment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember4? ListsItemsUpdateRequestCollectionMember4 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_comment? ListsListItemRedirectComment { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember4 ListsItemsUpdateRequestCollectionMember4 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_comment ListsListItemRedirectComment { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -345,21 +345,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("lists_list_item_asn_comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.ListsItemsUpdateRequestCollectionMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember1();
+                    result.ListsListItemAsnComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("lists_list_item_hostname_comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.ListsItemsUpdateRequestCollectionMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember2();
+                    result.ListsListItemHostnameComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_comment();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("lists_list_item_ip_comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.ListsItemsUpdateRequestCollectionMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember3();
+                    result.ListsListItemIpComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_comment();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("lists_list_item_redirect_comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.ListsItemsUpdateRequestCollectionMember4 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember4();
+                    result.ListsListItemRedirectComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_comment();
                 }
                 return result;
             }
@@ -369,21 +369,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(ListsItemsUpdateRequestCollectionMember1 != null)
+                if(ListsListItemAsnComment != null)
                 {
-                    return ListsItemsUpdateRequestCollectionMember1.GetFieldDeserializers();
+                    return ListsListItemAsnComment.GetFieldDeserializers();
                 }
-                else if(ListsItemsUpdateRequestCollectionMember2 != null)
+                else if(ListsListItemHostnameComment != null)
                 {
-                    return ListsItemsUpdateRequestCollectionMember2.GetFieldDeserializers();
+                    return ListsListItemHostnameComment.GetFieldDeserializers();
                 }
-                else if(ListsItemsUpdateRequestCollectionMember3 != null)
+                else if(ListsListItemIpComment != null)
                 {
-                    return ListsItemsUpdateRequestCollectionMember3.GetFieldDeserializers();
+                    return ListsListItemIpComment.GetFieldDeserializers();
                 }
-                else if(ListsItemsUpdateRequestCollectionMember4 != null)
+                else if(ListsListItemRedirectComment != null)
                 {
-                    return ListsItemsUpdateRequestCollectionMember4.GetFieldDeserializers();
+                    return ListsListItemRedirectComment.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -394,21 +394,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(ListsItemsUpdateRequestCollectionMember1 != null)
+                if(ListsListItemAsnComment != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember1>(null, ListsItemsUpdateRequestCollectionMember1);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment>(null, ListsListItemAsnComment);
                 }
-                else if(ListsItemsUpdateRequestCollectionMember2 != null)
+                else if(ListsListItemHostnameComment != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember2>(null, ListsItemsUpdateRequestCollectionMember2);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_comment>(null, ListsListItemHostnameComment);
                 }
-                else if(ListsItemsUpdateRequestCollectionMember3 != null)
+                else if(ListsListItemIpComment != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember3>(null, ListsItemsUpdateRequestCollectionMember3);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_comment>(null, ListsListItemIpComment);
                 }
-                else if(ListsItemsUpdateRequestCollectionMember4 != null)
+                else if(ListsListItemRedirectComment != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsUpdateRequestCollectionMember4>(null, ListsItemsUpdateRequestCollectionMember4);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_comment>(null, ListsListItemRedirectComment);
                 }
             }
         }

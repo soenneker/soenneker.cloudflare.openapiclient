@@ -7,78 +7,44 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_full"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_full"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_full"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_full"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Lists_item : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Lists_item : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines a non-negative 32 bit integer.</summary>
-        public int? Asn { get; set; }
-        /// <summary>Defines an informative summary of the list item.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_full"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_full? ListsListItemAsnFull { get; set; }
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_full ListsListItemAsnFull { get; set; }
 #endif
-        /// <summary>The RFC 3339 timestamp of when the item was created.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_full"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedOn { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_full? ListsListItemHostnameFull { get; set; }
 #nullable restore
 #else
-        public string CreatedOn { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_full ListsListItemHostnameFull { get; set; }
 #endif
-        /// <summary>Valid characters for hostnames are ASCII(7) letters from a to z, the digits from 0 to 9, wildcards (*), and the hyphen (-).</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_full"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname? Hostname { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_full? ListsListItemIpFull { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname Hostname { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_full ListsListItemIpFull { get; set; }
 #endif
-        /// <summary>The unique ID of the list.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_full"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_full? ListsListItemRedirectFull { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_full ListsListItemRedirectFull { get; set; }
 #endif
-        /// <summary>An IPv4 address, an IPv4 CIDR, an IPv6 address, or an IPv6 CIDR.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Ip { get; set; }
-#nullable restore
-#else
-        public string Ip { get; set; }
-#endif
-        /// <summary>The RFC 3339 timestamp of when the item was last modified.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifiedOn { get; private set; }
-#nullable restore
-#else
-        public string ModifiedOn { get; private set; }
-#endif
-        /// <summary>The definition of the redirect.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect? Redirect { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect Redirect { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item"/> and sets the default values.
-        /// </summary>
-        public Lists_item()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -87,7 +53,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item();
+            if("lists_list_item_asn_full".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsListItemAsnFull = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_full();
+            }
+            else if("lists_list_item_hostname_full".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsListItemHostnameFull = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_full();
+            }
+            else if("lists_list_item_ip_full".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsListItemIpFull = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_full();
+            }
+            else if("lists_list_item_redirect_full".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ListsListItemRedirectFull = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_full();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,17 +79,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ListsListItemAsnFull != null)
             {
-                { "asn", n => { Asn = n.GetIntValue(); } },
-                { "comment", n => { Comment = n.GetStringValue(); } },
-                { "created_on", n => { CreatedOn = n.GetStringValue(); } },
-                { "hostname", n => { Hostname = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "ip", n => { Ip = n.GetStringValue(); } },
-                { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
-                { "redirect", n => { Redirect = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect.CreateFromDiscriminatorValue); } },
-            };
+                return ListsListItemAsnFull.GetFieldDeserializers();
+            }
+            else if(ListsListItemHostnameFull != null)
+            {
+                return ListsListItemHostnameFull.GetFieldDeserializers();
+            }
+            else if(ListsListItemIpFull != null)
+            {
+                return ListsListItemIpFull.GetFieldDeserializers();
+            }
+            else if(ListsListItemRedirectFull != null)
+            {
+                return ListsListItemRedirectFull.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -114,12 +104,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("asn", Asn);
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_hostname>("hostname", Hostname);
-            writer.WriteStringValue("ip", Ip);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_item_redirect>("redirect", Redirect);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ListsListItemAsnFull != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_full>(null, ListsListItemAsnFull);
+            }
+            else if(ListsListItemHostnameFull != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_full>(null, ListsListItemHostnameFull);
+            }
+            else if(ListsListItemIpFull != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_full>(null, ListsListItemIpFull);
+            }
+            else if(ListsListItemRedirectFull != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_full>(null, ListsListItemRedirectFull);
+            }
         }
     }
 }
