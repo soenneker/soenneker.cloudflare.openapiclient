@@ -8,34 +8,34 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_completed_bulk_operation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_failed_bulk_operation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_pending_or_running_bulk_operation"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_completed"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_failed"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_pending_or_running"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Lists_operation : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_completed_bulk_operation"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_completed"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_completed_bulk_operation? ListsCompletedBulkOperation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_completed? ListsBulkOperationCompleted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_completed_bulk_operation ListsCompletedBulkOperation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_completed ListsBulkOperationCompleted { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_failed_bulk_operation"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_failed"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_failed_bulk_operation? ListsFailedBulkOperation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_failed? ListsBulkOperationFailed { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_failed_bulk_operation ListsFailedBulkOperation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_failed ListsBulkOperationFailed { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_pending_or_running_bulk_operation"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_pending_or_running"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_pending_or_running_bulk_operation? ListsPendingOrRunningBulkOperation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_pending_or_running? ListsBulkOperationPendingOrRunning { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_pending_or_running_bulk_operation ListsPendingOrRunningBulkOperation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_pending_or_running ListsBulkOperationPendingOrRunning { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,17 +47,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_operation();
-            if("lists_completed_bulk_operation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("lists_bulk_operation_completed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListsCompletedBulkOperation = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_completed_bulk_operation();
+                result.ListsBulkOperationCompleted = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_completed();
             }
-            else if("lists_failed_bulk_operation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("lists_bulk_operation_failed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListsFailedBulkOperation = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_failed_bulk_operation();
+                result.ListsBulkOperationFailed = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_failed();
             }
-            else if("lists_pending_or_running_bulk_operation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("lists_bulk_operation_pending_or_running".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListsPendingOrRunningBulkOperation = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_pending_or_running_bulk_operation();
+                result.ListsBulkOperationPendingOrRunning = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_pending_or_running();
             }
             return result;
         }
@@ -67,17 +67,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ListsCompletedBulkOperation != null)
+            if(ListsBulkOperationCompleted != null)
             {
-                return ListsCompletedBulkOperation.GetFieldDeserializers();
+                return ListsBulkOperationCompleted.GetFieldDeserializers();
             }
-            else if(ListsFailedBulkOperation != null)
+            else if(ListsBulkOperationFailed != null)
             {
-                return ListsFailedBulkOperation.GetFieldDeserializers();
+                return ListsBulkOperationFailed.GetFieldDeserializers();
             }
-            else if(ListsPendingOrRunningBulkOperation != null)
+            else if(ListsBulkOperationPendingOrRunning != null)
             {
-                return ListsPendingOrRunningBulkOperation.GetFieldDeserializers();
+                return ListsBulkOperationPendingOrRunning.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,17 +88,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(ListsCompletedBulkOperation != null)
+            if(ListsBulkOperationCompleted != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_completed_bulk_operation>(null, ListsCompletedBulkOperation);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_completed>(null, ListsBulkOperationCompleted);
             }
-            else if(ListsFailedBulkOperation != null)
+            else if(ListsBulkOperationFailed != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_failed_bulk_operation>(null, ListsFailedBulkOperation);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_failed>(null, ListsBulkOperationFailed);
             }
-            else if(ListsPendingOrRunningBulkOperation != null)
+            else if(ListsBulkOperationPendingOrRunning != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_pending_or_running_bulk_operation>(null, ListsPendingOrRunningBulkOperation);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_bulk_operation_pending_or_running>(null, ListsBulkOperationPendingOrRunning);
             }
         }
     }
