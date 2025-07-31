@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string WorkersMessage { get; set; }
 #endif
+        /// <summary>Operation that triggered the creation of the deployment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkersTriggeredBy { get; private set; }
+#nullable restore
+#else
+        public string WorkersTriggeredBy { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_deployment_annotations"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "workers/message", n => { WorkersMessage = n.GetStringValue(); } },
+                { "workers/triggered_by", n => { WorkersTriggeredBy = n.GetStringValue(); } },
             };
         }
         /// <summary>

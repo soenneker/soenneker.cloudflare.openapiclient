@@ -139,18 +139,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules
         /// Updates all snippet rules belonging to the zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutResponse"/></returns>
-        /// <param name="body">A list of snippet rules.</param>
+        /// <param name="body">A snippet rules object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Snippet_rules4XXError">When receiving a 4XX status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Snippet_rules5XXError">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutResponse?> PutAsSnippet_rulesPutResponseAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_SnippetRules_item> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutResponse?> PutAsSnippet_rulesPutResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutResponse> PutAsSnippet_rulesPutResponseAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_SnippetRules_item> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutResponse> PutAsSnippet_rulesPutResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -166,7 +166,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules
         /// Updates all snippet rules belonging to the zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesResponse"/></returns>
-        /// <param name="body">A list of snippet rules.</param>
+        /// <param name="body">A snippet rules object.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Snippet_rules4XXError">When receiving a 4XX status code</exception>
@@ -174,11 +174,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules
         [Obsolete("This method is obsolete. Use PutAsSnippet_rulesPutResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesResponse?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_SnippetRules_item> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesResponse> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_SnippetRules_item> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -232,15 +232,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules
         /// Updates all snippet rules belonging to the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A list of snippet rules.</param>
+        /// <param name="body">A snippet rules object.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_SnippetRules_item> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_SnippetRules_item> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules.Snippet_rulesPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

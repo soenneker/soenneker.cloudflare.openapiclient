@@ -44,6 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Dls_account_regional_hostnames_account_create_hostname()
         {
             AdditionalData = new Dictionary<string, object>();
+            Routing = "dns";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
