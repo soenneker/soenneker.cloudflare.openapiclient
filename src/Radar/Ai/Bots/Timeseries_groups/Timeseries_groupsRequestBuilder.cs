@@ -2,7 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.User_agent;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,10 +15,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The user_agent property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.User_agent.User_agentRequestBuilder User_agent
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.ai.bots.timeseries_groups.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item.WithDimensionItemRequestBuilder this[string position]
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.User_agent.User_agentRequestBuilder(PathParameters, RequestAdapter);
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.

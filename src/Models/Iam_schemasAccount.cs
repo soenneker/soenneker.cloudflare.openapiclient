@@ -9,15 +9,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Iam_schemasAccount : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account, IParsable
+    public partial class Iam_schemasAccount : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Timestamp for the creation of the account</summary>
+        public DateTimeOffset? CreatedOn { get; private set; }
+        /// <summary>Identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>Account name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Account settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount_settings? Settings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount_settings Settings { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount"/> and sets the default values.
+        /// </summary>
+        public Iam_schemasAccount()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount();
@@ -26,20 +61,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount_settings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemasAccount_settings>("settings", Settings);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

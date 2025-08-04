@@ -8,6 +8,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.As112;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bots;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ct;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Datasets;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email;
@@ -63,6 +64,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.BotsRequestBuilder Bots
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.BotsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ct property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.CtRequestBuilder Ct
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.CtRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The datasets property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Datasets.DatasetsRequestBuilder Datasets

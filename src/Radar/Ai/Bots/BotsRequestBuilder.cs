@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.SummaryRequestBuilder Summary
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.SummaryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The timeseries property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.TimeseriesRequestBuilder Timeseries
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries_groups property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups

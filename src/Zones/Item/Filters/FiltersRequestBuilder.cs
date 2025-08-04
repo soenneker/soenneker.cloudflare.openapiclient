@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FiltersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/filters{?description*,expression*,id*,page*,paused*,per_page*,ref*}", pathParameters)
+        public FiltersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/filters?id={id}{&description*,expression*,page*,paused*,per_page*,ref*}", pathParameters)
         {
         }
         /// <summary>
@@ -44,29 +44,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FiltersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/filters{?description*,expression*,id*,page*,paused*,per_page*,ref*}", rawUrl)
+        public FiltersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/filters?id={id}{&description*,expression*,page*,paused*,per_page*,ref*}", rawUrl)
         {
         }
         /// <summary>
         /// Deletes one or more existing filters.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterDeleteResponseCollection"/></returns>
-        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_delete_filters_4XX">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterDeleteResponseCollection?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_delete_filters body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterDeleteResponseCollection?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder.FiltersRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterDeleteResponseCollection> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_delete_filters body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterDeleteResponseCollection> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder.FiltersRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_delete_filters_4XX.CreateFromDiscriminatorValue },
@@ -108,11 +106,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters_200?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters_200> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -134,11 +132,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterResponseCollection?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_update_filters body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterResponseCollection?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRuleUpdateRequest> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterResponseCollection> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_update_filters body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterResponseCollection> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRuleUpdateRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -153,23 +151,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         /// Deletes one or more existing filters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_delete_filters body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder.FiltersRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_delete_filters body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder.FiltersRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/zones/{zone_identifier%2Did}/filters?id={id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -187,7 +182,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder.FiltersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/zones/{zone_identifier%2Did}/filters{?description*,expression*,id*,page*,paused*,per_page*,ref*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -201,15 +196,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/zones/{zone_identifier%2Did}/filters", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -224,15 +219,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_update_filters body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRuleUpdateRequest> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_update_filters body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRuleUpdateRequest> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/zones/{zone_identifier%2Did}/filters", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -249,11 +244,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
+        /// Deletes one or more existing filters.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class FiltersRequestBuilderDeleteQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("id")]
+            public string[]? Id { get; set; }
+#nullable restore
+#else
+            [QueryParameter("id")]
+            public string[] Id { get; set; }
+#endif
+        }
+        /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FiltersRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
+        public partial class FiltersRequestBuilderDeleteRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder.FiltersRequestBuilderDeleteQueryParameters>
         {
         }
         /// <summary>

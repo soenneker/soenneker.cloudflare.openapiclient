@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember8"/>, <see cref="string"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember4"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember5"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember9"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Workers_ai_post_run_model : IComposedTypeWrapper, IParsable
@@ -85,6 +85,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember8 WorkersAiPostRunModelMember8 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember9"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember9? WorkersAiPostRunModelMember9 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember9 WorkersAiPostRunModelMember9 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -126,6 +134,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkersAiPostRunModelMember8 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember8();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersAiPostRunModelMember9 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember9();
             }
             else if(parseNode.GetStringValue() is string stringValue)
             {
@@ -171,6 +183,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return WorkersAiPostRunModelMember8.GetFieldDeserializers();
             }
+            else if(WorkersAiPostRunModelMember9 != null)
+            {
+                return WorkersAiPostRunModelMember9.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -211,6 +227,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(WorkersAiPostRunModelMember8 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember8>(null, WorkersAiPostRunModelMember8);
+            }
+            else if(WorkersAiPostRunModelMember9 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_modelMember9>(null, WorkersAiPostRunModelMember9);
             }
             else if(String != null)
             {

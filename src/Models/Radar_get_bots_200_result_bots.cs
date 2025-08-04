@@ -54,6 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
+        /// <summary>The userAgentPatterns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? UserAgentPatterns { get; set; }
+#nullable restore
+#else
+        public List<string> UserAgentPatterns { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_bots_200_result_bots"/> and sets the default values.
         /// </summary>
@@ -84,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
+                { "userAgentPatterns", n => { UserAgentPatterns = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -98,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("operator", Operator);
             writer.WriteStringValue("slug", Slug);
+            writer.WriteCollectionOfPrimitiveValues<string>("userAgentPatterns", UserAgentPatterns);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

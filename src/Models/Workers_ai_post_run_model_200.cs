@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="byte[]"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember9"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember1&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember4&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember5&gt;
+        /// Composed type wrapper for classes <see cref="byte[]"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember10"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember3"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember6"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember7"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember9"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember1&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember4&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember5&gt;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workers_ai_post_run_model_200_result : IComposedTypeWrapper, IParsable
@@ -89,6 +89,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
             public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember1> WorkersAiPostRunModel200ResultMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember10"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember10? WorkersAiPostRunModel200ResultMember10 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember10 WorkersAiPostRunModel200ResultMember10 { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,6 +174,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200.Workers_ai_post_run_model_200_result();
                 if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
+                    result.WorkersAiPostRunModel200ResultMember10 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember10();
+                }
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                {
                     result.WorkersAiPostRunModel200ResultMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -216,7 +228,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(WorkersAiPostRunModel200ResultMember2 != null)
+                if(WorkersAiPostRunModel200ResultMember10 != null)
+                {
+                    return WorkersAiPostRunModel200ResultMember10.GetFieldDeserializers();
+                }
+                else if(WorkersAiPostRunModel200ResultMember2 != null)
                 {
                     return WorkersAiPostRunModel200ResultMember2.GetFieldDeserializers();
                 }
@@ -249,7 +265,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(WorkersAiPostRunModel200ResultMember2 != null)
+                if(WorkersAiPostRunModel200ResultMember10 != null)
+                {
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember10>(null, WorkersAiPostRunModel200ResultMember10);
+                }
+                else if(WorkersAiPostRunModel200ResultMember2 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2>(null, WorkersAiPostRunModel200ResultMember2);
                 }
