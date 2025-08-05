@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", pathParameters)
+        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", rawUrl)
+        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -131,6 +131,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
 #endif
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
             [Obsolete("This property is deprecated, use RequestMethodAsGetRequestMethodQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

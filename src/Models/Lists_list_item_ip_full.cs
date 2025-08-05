@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>The RFC 3339 timestamp of when the item was created.</summary>
+        /// <summary>The RFC 3339 timestamp of when the list was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedOn { get; private set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Ip { get; set; }
 #endif
-        /// <summary>The RFC 3339 timestamp of when the item was last modified.</summary>
+        /// <summary>The RFC 3339 timestamp of when the list was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifiedOn { get; private set; }

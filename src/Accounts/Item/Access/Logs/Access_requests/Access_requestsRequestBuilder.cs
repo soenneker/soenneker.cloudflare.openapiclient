@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,since*,until*}", pathParameters)
+        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,page*,per_page*,since*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,since*,until*}", rawUrl)
+        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,page*,per_page*,since*,until*}", rawUrl)
         {
         }
         /// <summary>
@@ -107,6 +107,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>The maximum number of log entries to retrieve.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
             /// <summary>The earliest event timestamp to query.</summary>
             [QueryParameter("since")]
             public DateTimeOffset? Since { get; set; }

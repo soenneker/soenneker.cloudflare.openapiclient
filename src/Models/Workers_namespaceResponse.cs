@@ -52,6 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The current number of scripts in this Dispatch Namespace.</summary>
         public int? ScriptCount { get; set; }
+        /// <summary>Whether the Workers in the namespace are executed in a &quot;trusted&quot; manner. When a Worker is trusted, it has access to the shared caches for the zone in the Cache API, and has access to the `request.cf` object on incoming Requests. When a Worker is untrusted, caches are not shared across the zone, and `request.cf` is undefined. By default, Workers in a namespace are &quot;untrusted&quot;.</summary>
+        public bool? TrustedWorkers { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespaceResponse"/> and sets the default values.
         /// </summary>
@@ -84,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "namespace_id", n => { NamespaceId = n.GetStringValue(); } },
                 { "namespace_name", n => { NamespaceName = n.GetStringValue(); } },
                 { "script_count", n => { ScriptCount = n.GetIntValue(); } },
+                { "trusted_workers", n => { TrustedWorkers = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -98,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("namespace_id", NamespaceId);
             writer.WriteStringValue("namespace_name", NamespaceName);
             writer.WriteIntValue("script_count", ScriptCount);
+            writer.WriteBoolValue("trusted_workers", TrustedWorkers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
