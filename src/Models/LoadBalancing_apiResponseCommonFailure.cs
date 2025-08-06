@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_apiResponseCommonFailure_result Result { get; set; }
 #endif
-        /// <summary>Whether the API call was successful</summary>
+        /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_apiResponseCommonFailure"/> and sets the default values.

@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.GptOss120b;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.GptOss20b;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whisper;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperTinyEn;
@@ -17,6 +19,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OpenaiRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The gptOss120b property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.GptOss120b.GptOss120bRequestBuilder GptOss120b
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.GptOss120b.GptOss120bRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The gptOss20b property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.GptOss20b.GptOss20bRequestBuilder GptOss20b
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.GptOss20b.GptOss20bRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The whisper property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whisper.WhisperRequestBuilder Whisper
         {

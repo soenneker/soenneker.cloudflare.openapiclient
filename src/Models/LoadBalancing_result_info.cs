@@ -14,15 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Total number of results on the current page</summary>
+        /// <summary>Total number of results on the current page.</summary>
         public double? Count { get; set; }
-        /// <summary>Current page within paginated list of results</summary>
+        /// <summary>Current page within paginated list of results.</summary>
         public double? Page { get; set; }
-        /// <summary>Number of results per page</summary>
+        /// <summary>Number of results per page.</summary>
         public double? PerPage { get; set; }
-        /// <summary>Total results available without any search parameters</summary>
+        /// <summary>Total results available without any search parameters.</summary>
         public double? TotalCount { get; set; }
-        /// <summary>Total number of pages available</summary>
+        /// <summary>Total number of pages available.</summary>
         public double? TotalPages { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_result_info"/> and sets the default values.

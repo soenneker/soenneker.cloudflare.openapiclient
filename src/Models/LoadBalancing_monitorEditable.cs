@@ -94,8 +94,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancing_monitorEditable()
         {
             AdditionalData = new Dictionary<string, object>();
-            Method = "GET";
-            Path = "/";
             Type = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type.Http;
         }
         /// <summary>

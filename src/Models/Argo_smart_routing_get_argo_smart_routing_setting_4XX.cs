@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_get_argo_smart_routing_setting_4XX_result Result { get; set; }
 #endif
-        /// <summary>Describes a successful API response.</summary>
+        /// <summary>Describes a failed API response.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_get_argo_smart_routing_setting_4XX"/> and sets the default values.

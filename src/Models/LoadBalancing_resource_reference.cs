@@ -28,10 +28,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The resource_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ResourceId { get; set; }
+        public string? ResourceId { get; set; }
 #nullable restore
 #else
-        public UntypedNode ResourceId { get; set; }
+        public string ResourceId { get; set; }
 #endif
         /// <summary>The human-identifiable name of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "reference_type", n => { ReferenceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_resource_reference_reference_type>(); } },
                 { "references", n => { References = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_resource_reference_references>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_resource_reference_references.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "resource_id", n => { ResourceId = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_name", n => { ResourceName = n.GetStringValue(); } },
                 { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_resource_reference_resource_type>(); } },
             };
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_resource_reference_references>("references", References);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_resource_reference_reference_type>("reference_type", ReferenceType);
-            writer.WriteObjectValue<UntypedNode>("resource_id", ResourceId);
+            writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteStringValue("resource_name", ResourceName);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_resource_reference_resource_type>("resource_type", ResourceType);
             writer.WriteAdditionalData(AdditionalData);

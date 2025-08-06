@@ -36,12 +36,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_patch_argo_smart_routing_setting_4XX_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_api_response_common_failure_result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_patch_argo_smart_routing_setting_4XX_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_api_response_common_failure_result Result { get; set; }
 #endif
-        /// <summary>Describes a successful API response.</summary>
+        /// <summary>Describes a failed API response.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_patch_argo_smart_routing_setting_4XX"/> and sets the default values.
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_patch_argo_smart_routing_setting_4XX_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_patch_argo_smart_routing_setting_4XX_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_api_response_common_failure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_api_response_common_failure_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_messages_item>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_messages_item>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_smart_routing_patch_argo_smart_routing_setting_4XX_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_api_response_common_failure_result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

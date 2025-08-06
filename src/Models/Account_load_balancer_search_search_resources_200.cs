@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_result_info ResultInfo { get; set; }
 #endif
-        /// <summary>Whether the API call was successful</summary>
+        /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_search_search_resources_200"/> and sets the default values.

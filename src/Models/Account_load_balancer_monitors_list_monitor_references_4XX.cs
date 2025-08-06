@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_monitors_list_monitor_references_4XX_result> Result { get; set; }
 #endif
-        /// <summary>Whether the API call was successful</summary>
+        /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_monitors_list_monitor_references_4XX"/> and sets the default values.

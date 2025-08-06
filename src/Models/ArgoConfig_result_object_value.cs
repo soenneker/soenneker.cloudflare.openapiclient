@@ -5,12 +5,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum R2Slurper_R2TargetSchema_vendor
+    public enum ArgoConfig_result_object_value
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "r2")]
+        [EnumMember(Value = "on")]
         #pragma warning disable CS1591
-        R2,
+        On,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "off")]
+        #pragma warning disable CS1591
+        Off,
         #pragma warning restore CS1591
     }
 }
