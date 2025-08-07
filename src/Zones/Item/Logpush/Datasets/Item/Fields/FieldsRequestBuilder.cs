@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Datasets.Item.Fi
         {
         }
         /// <summary>
-        /// Lists all fields available for a dataset. The response result is an object with key-value pairs, where keys are field names, and values are descriptions.
+        /// Lists all fields available for a dataset. The response result is. an object with key-value pairs, where keys are field names, and values are descriptions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpush_field_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Datasets.Item.Fi
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpush_field_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpush_field_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Lists all fields available for a dataset. The response result is an object with key-value pairs, where keys are field names, and values are descriptions.
+        /// Lists all fields available for a dataset. The response result is. an object with key-value pairs, where keys are field names, and values are descriptions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

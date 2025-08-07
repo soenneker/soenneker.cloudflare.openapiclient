@@ -52,6 +52,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? RewriteQuery { get; set; }
         /// <summary>The stream property</summary>
         public bool? Stream { get; set; }
+        /// <summary>The system_prompt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SystemPrompt { get; set; }
+#nullable restore
+#else
+        public string SystemPrompt { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search"/> and sets the default values.
         /// </summary>
@@ -84,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ranking_options", n => { RankingOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_ranking_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_ranking_options.CreateFromDiscriminatorValue); } },
                 { "rewrite_query", n => { RewriteQuery = n.GetBoolValue(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
+                { "system_prompt", n => { SystemPrompt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -100,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_ranking_options>("ranking_options", RankingOptions);
             writer.WriteBoolValue("rewrite_query", RewriteQuery);
             writer.WriteBoolValue("stream", Stream);
+            writer.WriteStringValue("system_prompt", SystemPrompt);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

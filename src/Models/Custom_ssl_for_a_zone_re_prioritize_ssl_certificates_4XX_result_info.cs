@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TlsCertificatesAndHostnames_result_info : IAdditionalDataHolder, IParsable
+    public partial class Custom_ssl_for_a_zone_re_prioritize_ssl_certificates_4XX_result_info : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -23,21 +23,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Total results available without any search parameters.</summary>
         public double? TotalCount { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_result_info"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_re_prioritize_ssl_certificates_4XX_result_info"/> and sets the default values.
         /// </summary>
-        public TlsCertificatesAndHostnames_result_info()
+        public Custom_ssl_for_a_zone_re_prioritize_ssl_certificates_4XX_result_info()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_result_info"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_re_prioritize_ssl_certificates_4XX_result_info"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_result_info CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_re_prioritize_ssl_certificates_4XX_result_info CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_result_info();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_re_prioritize_ssl_certificates_4XX_result_info();
         }
         /// <summary>
         /// The deserialization information for the current model

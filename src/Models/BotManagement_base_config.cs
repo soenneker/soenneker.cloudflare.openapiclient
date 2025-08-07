@@ -20,6 +20,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection? CrawlerProtection { get; set; }
         /// <summary>Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).</summary>
         public bool? EnableJs { get; set; }
+        /// <summary>Enable cloudflare managed robots.txt. If an existing robots.txt is detected, then managed robots.txt will be prepended to the existing robots.txt.</summary>
+        public bool? IsRobotsTxtManaged { get; set; }
         /// <summary>A read-only field that indicates whether the zone currently is running the latest ML model.</summary>
         public bool? UsingLatestModel { get; private set; }
         /// <summary>
@@ -50,6 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ai_bots_protection", n => { AiBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>(); } },
                 { "crawler_protection", n => { CrawlerProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>(); } },
                 { "enable_js", n => { EnableJs = n.GetBoolValue(); } },
+                { "is_robots_txt_managed", n => { IsRobotsTxtManaged = n.GetBoolValue(); } },
                 { "using_latest_model", n => { UsingLatestModel = n.GetBoolValue(); } },
             };
         }
@@ -63,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>("ai_bots_protection", AiBotsProtection);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>("crawler_protection", CrawlerProtection);
             writer.WriteBoolValue("enable_js", EnableJs);
+            writer.WriteBoolValue("is_robots_txt_managed", IsRobotsTxtManaged);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

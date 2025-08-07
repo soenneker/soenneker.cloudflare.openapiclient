@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queries.Bulk;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queri
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueriesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulk property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queries.Bulk.BulkRequestBuilder Bulk
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queries.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Queries.QueriesRequestBuilder"/> and sets the default values.
         /// </summary>

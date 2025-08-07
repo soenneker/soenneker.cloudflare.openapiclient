@@ -9,27 +9,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Secrets_store_list_4XX_result : IAdditionalDataHolder, IParsable
+    public partial class Radar_get_ai_bots_timeseries_group_by_user_agent_200_result_meta_dateRange : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Adjusted end of date range.</summary>
+        public DateTimeOffset? EndTime { get; set; }
+        /// <summary>Adjusted start of date range.</summary>
+        public DateTimeOffset? StartTime { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_list_4XX_result"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_group_by_user_agent_200_result_meta_dateRange"/> and sets the default values.
         /// </summary>
-        public Secrets_store_list_4XX_result()
+        public Radar_get_ai_bots_timeseries_group_by_user_agent_200_result_meta_dateRange()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_list_4XX_result"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_group_by_user_agent_200_result_meta_dateRange"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_list_4XX_result CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_group_by_user_agent_200_result_meta_dateRange CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_list_4XX_result();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_group_by_user_agent_200_result_meta_dateRange();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "endTime", n => { EndTime = n.GetDateTimeOffsetValue(); } },
+                { "startTime", n => { StartTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("endTime", EndTime);
+            writer.WriteDateTimeOffsetValue("startTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
