@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_messages_item> Messages { get; set; }
 #endif
-        /// <summary>The zone transfer status of a primary zone</summary>
+        /// <summary>The zone transfer status of a primary zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Result { get; set; }

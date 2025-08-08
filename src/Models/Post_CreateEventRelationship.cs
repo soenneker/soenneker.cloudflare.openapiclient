@@ -16,6 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The childId property</summary>
         public Guid? ChildId { get; set; }
+        /// <summary>The datasetId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DatasetId { get; set; }
+#nullable restore
+#else
+        public string DatasetId { get; set; }
+#endif
         /// <summary>The parentId property</summary>
         public Guid? ParentId { get; set; }
         /// <summary>The type property</summary>
@@ -46,6 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "childId", n => { ChildId = n.GetGuidValue(); } },
+                { "datasetId", n => { DatasetId = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetGuidValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type>(); } },
             };
@@ -58,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("childId", ChildId);
+            writer.WriteStringValue("datasetId", DatasetId);
             writer.WriteGuidValue("parentId", ParentId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

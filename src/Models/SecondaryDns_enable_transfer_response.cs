@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class SecondaryDns_enable_transfer_response : global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_apiResponseSingle, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The zone transfer status of a primary zone</summary>
+        /// <summary>The zone transfer status of a primary zone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Result { get; set; }
