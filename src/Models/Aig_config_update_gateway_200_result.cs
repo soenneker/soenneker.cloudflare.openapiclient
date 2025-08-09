@@ -72,6 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? RateLimitingLimit { get; set; }
         /// <summary>The rate_limiting_technique property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_rate_limiting_technique? RateLimitingTechnique { get; set; }
+        /// <summary>The store_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StoreId { get; set; }
+#nullable restore
+#else
+        public string StoreId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result"/> and sets the default values.
         /// </summary>
@@ -114,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rate_limiting_interval", n => { RateLimitingInterval = n.GetIntValue(); } },
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_rate_limiting_technique>(); } },
+                { "store_id", n => { StoreId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -140,6 +149,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("rate_limiting_interval", RateLimitingInterval);
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
+            writer.WriteStringValue("store_id", StoreId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
