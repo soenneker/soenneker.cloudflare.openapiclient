@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Verification status of the nameserver.</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS_status? Status { get; set; }
-        /// <summary>Identifier</summary>
+        /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ZoneTag { get; set; }

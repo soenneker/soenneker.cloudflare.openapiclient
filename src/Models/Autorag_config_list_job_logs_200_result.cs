@@ -14,48 +14,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ended_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EndedAt { get; set; }
-#nullable restore
-#else
-        public string EndedAt { get; set; }
-#endif
-        /// <summary>The end_reason property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EndReason { get; set; }
-#nullable restore
-#else
-        public string EndReason { get; set; }
-#endif
+        /// <summary>The created_at property</summary>
+        public double? CreatedAt { get; set; }
         /// <summary>The id property</summary>
+        public int? Id { get; set; }
+        /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Message { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Message { get; set; }
 #endif
-        /// <summary>The last_seen_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastSeenAt { get; set; }
-#nullable restore
-#else
-        public string LastSeenAt { get; set; }
-#endif
-        /// <summary>The source property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_list_job_logs_200_result_source? Source { get; set; }
-        /// <summary>The started_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StartedAt { get; set; }
-#nullable restore
-#else
-        public string StartedAt { get; set; }
-#endif
+        /// <summary>The message_type property</summary>
+        public int? MessageType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_list_job_logs_200_result"/> and sets the default values.
         /// </summary>
@@ -81,12 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_reason", n => { EndReason = n.GetStringValue(); } },
-                { "ended_at", n => { EndedAt = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "last_seen_at", n => { LastSeenAt = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_list_job_logs_200_result_source>(); } },
-                { "started_at", n => { StartedAt = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "message_type", n => { MessageType = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -96,12 +66,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("ended_at", EndedAt);
-            writer.WriteStringValue("end_reason", EndReason);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("last_seen_at", LastSeenAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_list_job_logs_200_result_source>("source", Source);
-            writer.WriteStringValue("started_at", StartedAt);
+            writer.WriteDoubleValue("created_at", CreatedAt);
+            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("message", Message);
+            writer.WriteIntValue("message_type", MessageType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

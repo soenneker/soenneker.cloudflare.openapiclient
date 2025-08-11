@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CreatedOn { get; private set; }
 #endif
-        /// <summary>The unique ID of the list.</summary>
+        /// <summary>Defines the unique ID of the item in the List.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; private set; }

@@ -44,6 +44,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Managed_headers;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets;
@@ -272,6 +273,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder Pagerules
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.PagerulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The payPerCrawl property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl.PayPerCrawlRequestBuilder PayPerCrawl
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl.PayPerCrawlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The purge_cache property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache.Purge_cacheRequestBuilder Purge_cache

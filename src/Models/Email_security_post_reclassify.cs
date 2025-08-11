@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EmlContent { get; set; }
 #endif
+        /// <summary>The escalated_submission_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EscalatedSubmissionId { get; set; }
+#nullable restore
+#else
+        public string EscalatedSubmissionId { get; set; }
+#endif
         /// <summary>The expected_disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_reclassify_expected_disposition? ExpectedDisposition { get; set; }
         /// <summary>
@@ -50,6 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "eml_content", n => { EmlContent = n.GetStringValue(); } },
+                { "escalated_submission_id", n => { EscalatedSubmissionId = n.GetStringValue(); } },
                 { "expected_disposition", n => { ExpectedDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_reclassify_expected_disposition>(); } },
             };
         }
@@ -61,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("eml_content", EmlContent);
+            writer.WriteStringValue("escalated_submission_id", EscalatedSubmissionId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_reclassify_expected_disposition>("expected_disposition", ExpectedDisposition);
             writer.WriteAdditionalData(AdditionalData);
         }

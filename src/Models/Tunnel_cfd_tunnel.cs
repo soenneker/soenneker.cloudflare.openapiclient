@@ -23,6 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src? ConfigSrc { get; set; }
         /// <summary>The Cloudflare Tunnel connections between your origin and Cloudflare&apos;s edge.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>If `true`, the tunnel can be configured remotely from the Zero Trust dashboard. If `false`, the tunnel must be configured locally on the origin machine.</summary>
+        [Obsolete("")]
         public bool? RemoteConfig { get; set; }
         /// <summary>The status of the tunnel. Valid values are `inactive` (tunnel has never been run), `degraded` (tunnel is active and able to serve traffic but in an unhealthy state), `healthy` (tunnel is active and able to serve traffic), or `down` (tunnel can not serve traffic as it has no connections to the Cloudflare Edge).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status? Status { get; set; }
@@ -70,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Tunnel_cfd_tunnel()
         {
             AdditionalData = new Dictionary<string, object>();
+            ConfigSrc = global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src.Local;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -90,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_tag", n => { AccountTag = n.GetStringValue(); } },
+                { "config_src", n => { ConfigSrc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>(); } },
                 { "connections", n => { Connections = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conns_active_at", n => { ConnsActiveAt = n.GetDateTimeOffsetValue(); } },
                 { "conns_inactive_at", n => { ConnsInactiveAt = n.GetDateTimeOffsetValue(); } },
@@ -110,6 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>("config_src", ConfigSrc);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>("connections", Connections);
             writer.WriteDateTimeOffsetValue("conns_active_at", ConnsActiveAt);
             writer.WriteDateTimeOffsetValue("conns_inactive_at", ConnsInactiveAt);

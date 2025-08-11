@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_CustomNS Result { get; set; }
 #endif
-        /// <summary>Whether the API call was successful</summary>
+        /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Account_level_custom_nameservers_add_account_custom_nameserver_4XX"/> and sets the default values.

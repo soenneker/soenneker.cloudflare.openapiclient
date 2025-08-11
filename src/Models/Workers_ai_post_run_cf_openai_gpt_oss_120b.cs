@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b.Workers_ai_post_run_cf_openai_gpt_oss_120b_input Input { get; set; }
 #endif
+        /// <summary>The reasoning property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_reasoning? Reasoning { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_reasoning Reasoning { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b.Workers_ai_post_run_cf_openai_gpt_oss_120b_input>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b.Workers_ai_post_run_cf_openai_gpt_oss_120b_input.CreateFromDiscriminatorValue); } },
+                { "reasoning", n => { Reasoning = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_reasoning>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_reasoning.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b.Workers_ai_post_run_cf_openai_gpt_oss_120b_input>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_reasoning>("reasoning", Reasoning);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

@@ -15,6 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Audit_logs,
         #pragma warning restore CS1591
+        [EnumMember(Value = "audit_logs_v2")]
+        #pragma warning disable CS1591
+        Audit_logs_v2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "biso_user_actions")]
         #pragma warning disable CS1591
         Biso_user_actions,

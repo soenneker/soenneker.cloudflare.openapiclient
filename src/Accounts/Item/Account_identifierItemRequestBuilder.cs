@@ -48,6 +48,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Members;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues;
@@ -315,6 +316,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.PagesRequestBuilder Pages
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The payPerCrawl property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.PayPerCrawlRequestBuilder PayPerCrawl
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.PayPerCrawlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pcaps property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.PcapsRequestBuilder Pcaps
