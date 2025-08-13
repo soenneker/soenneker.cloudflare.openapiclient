@@ -12,5 +12,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Count,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cost")]
+        #pragma warning disable CS1591
+        Cost,
+        #pragma warning restore CS1591
     }
 }

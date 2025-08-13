@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The deployment status of the certificate on Cloudflare&apos;s edge. Certificates in the &apos;available&apos; (previously called &apos;active&apos;) state may be used for Gateway TLS interception.</summary>
+    /// <summary>The read only deployment status of the certificate on Cloudflare&apos;s edge. Certificates in the &apos;available&apos; (previously called &apos;active&apos;) state may be used for Gateway TLS interception.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ZeroTrustGateway_binding_status
     {

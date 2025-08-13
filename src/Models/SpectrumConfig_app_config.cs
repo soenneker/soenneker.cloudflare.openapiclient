@@ -76,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public SpectrumConfig_app_config() : base()
         {
             ProxyProtocol = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol.Off;
+            Tls = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls.Off;
             TrafficType = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type.Direct;
         }
         /// <summary>
