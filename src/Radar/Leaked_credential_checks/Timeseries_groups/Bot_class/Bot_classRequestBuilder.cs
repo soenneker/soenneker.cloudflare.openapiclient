@@ -91,39 +91,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Time
         public partial class Bot_classRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("aggInterval")]
-            public string? AggInterval { get; set; }
-#nullable restore
-#else
-            [QueryParameter("aggInterval")]
-            public string AggInterval { get; set; }
-#endif
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
-            /// <summary>Filters results by compromised credential status (clean vs. compromised).</summary>
-            [Obsolete("This property is deprecated, use CompromisedAsGetCompromisedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("compromised")]
-            public string[]? Compromised { get; set; }
-#nullable restore
-#else
-            [QueryParameter("compromised")]
-            public string[] Compromised { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetAggIntervalQueryParameterType? AggInterval { get; set; }
             /// <summary>Filters results by compromised credential status (clean vs. compromised).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("compromised")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetCompromisedQueryParameterType[]? CompromisedAsGetCompromisedQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetCompromisedQueryParameterType[]? Compromised { get; set; }
 #nullable restore
 #else
             [QueryParameter("compromised")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetCompromisedQueryParameterType[] CompromisedAsGetCompromisedQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetCompromisedQueryParameterType[] Compromised { get; set; }
 #endif
             /// <summary>End of the date range (inclusive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,19 +134,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Time
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -179,14 +146,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Time
             [QueryParameter("name")]
             public string[] Name { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Bot_classRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class.Bot_classRequestBuilder.Bot_classRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

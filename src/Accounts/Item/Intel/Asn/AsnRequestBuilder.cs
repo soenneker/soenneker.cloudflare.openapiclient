@@ -27,19 +27,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item.WithAsnItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.intel.asn.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item.WithAsnItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item.WithAsnItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("asn", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item.WithAsnItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.AsnRequestBuilder"/> and sets the default values.
         /// </summary>

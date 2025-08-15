@@ -111,25 +111,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item
             public string[] Bot { get; set; }
 #endif
             /// <summary>Filters results by bot category.</summary>
-            [Obsolete("This property is deprecated, use BotCategoryAsGetBotCategoryQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("botCategory")]
-            public string[]? BotCategory { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotCategoryQueryParameterType[]? BotCategory { get; set; }
 #nullable restore
 #else
             [QueryParameter("botCategory")]
-            public string[] BotCategory { get; set; }
-#endif
-            /// <summary>Filters results by bot category.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("botCategory")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotCategoryQueryParameterType[]? BotCategoryAsGetBotCategoryQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("botCategory")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotCategoryQueryParameterType[] BotCategoryAsGetBotCategoryQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotCategoryQueryParameterType[] BotCategory { get; set; }
 #endif
             /// <summary>Filters results by bot operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,25 +131,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item
             public string[] BotOperator { get; set; }
 #endif
             /// <summary>Filters results by bot verification status (Verified vs. Unverified).</summary>
-            [Obsolete("This property is deprecated, use BotVerificationStatusAsGetBotVerificationStatusQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("botVerificationStatus")]
-            public string[]? BotVerificationStatus { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotVerificationStatusQueryParameterType[]? BotVerificationStatus { get; set; }
 #nullable restore
 #else
             [QueryParameter("botVerificationStatus")]
-            public string[] BotVerificationStatus { get; set; }
-#endif
-            /// <summary>Filters results by bot verification status (Verified vs. Unverified).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("botVerificationStatus")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotVerificationStatusQueryParameterType[]? BotVerificationStatusAsGetBotVerificationStatusQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("botVerificationStatus")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotVerificationStatusQueryParameterType[] BotVerificationStatusAsGetBotVerificationStatusQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotVerificationStatusQueryParameterType[] BotVerificationStatus { get; set; }
 #endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -203,19 +181,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
@@ -239,14 +206,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item
             [QueryParameter("name")]
             public string[] Name { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithDimensionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

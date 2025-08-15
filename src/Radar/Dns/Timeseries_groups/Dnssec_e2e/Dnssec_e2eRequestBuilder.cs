@@ -91,19 +91,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_
         public partial class Dnssec_e2eRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("aggInterval")]
-            public string? AggInterval { get; set; }
-#nullable restore
-#else
-            [QueryParameter("aggInterval")]
-            public string AggInterval { get; set; }
-#endif
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetAggIntervalQueryParameterType? AggInterval { get; set; }
             /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,19 +144,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,47 +170,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_
             [QueryParameter("nodata")]
             public bool? Nodata { get; set; }
             /// <summary>Filters results by DNS transport protocol.</summary>
-            [Obsolete("This property is deprecated, use ProtocolAsGetProtocolQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("protocol")]
-            public string? Protocol { get; set; }
-#nullable restore
-#else
-            [QueryParameter("protocol")]
-            public string Protocol { get; set; }
-#endif
-            /// <summary>Filters results by DNS transport protocol.</summary>
-            [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetProtocolQueryParameterType? ProtocolAsGetProtocolQueryParameterType { get; set; }
-            /// <summary>Filters results by DNS query type.</summary>
-            [Obsolete("This property is deprecated, use QueryTypeAsGetQueryTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("queryType")]
-            public string? QueryType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("queryType")]
-            public string QueryType { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetProtocolQueryParameterType? Protocol { get; set; }
             /// <summary>Filters results by DNS query type.</summary>
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetQueryTypeQueryParameterType? QueryTypeAsGetQueryTypeQueryParameterType { get; set; }
-            /// <summary>Filters results by DNS response code.</summary>
-            [Obsolete("This property is deprecated, use ResponseCodeAsGetResponseCodeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("responseCode")]
-            public string? ResponseCode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("responseCode")]
-            public string ResponseCode { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetQueryTypeQueryParameterType? QueryType { get; set; }
             /// <summary>Filters results by DNS response code.</summary>
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetResponseCodeQueryParameterType? ResponseCodeAsGetResponseCodeQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.GetResponseCodeQueryParameterType? ResponseCode { get; set; }
             /// <summary>Filters results by country code top-level domain (ccTLD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,14 +188,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_
             [QueryParameter("tld")]
             public string[] Tld { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Dnssec_e2eRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.Dnssec_e2eRequestBuilder.Dnssec_e2eRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

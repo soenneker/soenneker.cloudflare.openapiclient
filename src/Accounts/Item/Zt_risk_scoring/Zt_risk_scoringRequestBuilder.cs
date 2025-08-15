@@ -45,19 +45,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.zt_risk_scoring.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("user_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.WithUser_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Zt_risk_scoringRequestBuilder"/> and sets the default values.
         /// </summary>

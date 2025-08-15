@@ -152,18 +152,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
         {
             [QueryParameter("diff")]
             public bool? Diff { get; set; }
-            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-            [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.GetDirectionQueryParameterType? Direction { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endpoint")]
@@ -191,32 +181,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
             [QueryParameter("method")]
             public string[] Method { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use OrderAsGetOrderQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("order")]
-            public string? Order { get; set; }
-#nullable restore
-#else
-            [QueryParameter("order")]
-            public string Order { get; set; }
-#endif
-            [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
-            /// <summary>Filter results to only include discovery results sourced from a particular discovery engine  * `ML` - Discovered operations that were sourced using ML API Discovery  * `SessionIdentifier` - Discovered operations that were sourced using Session Identifier API Discovery</summary>
-            [Obsolete("This property is deprecated, use OriginAsApiShieldApiDiscoveryOrigin instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("origin")]
-            public string? Origin { get; set; }
-#nullable restore
-#else
-            [QueryParameter("origin")]
-            public string Origin { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.GetOrderQueryParameterType? Order { get; set; }
             /// <summary>Filter results to only include discovery results sourced from a particular discovery engine  * `ML` - Discovered operations that were sourced using ML API Discovery  * `SessionIdentifier` - Discovered operations that were sourced using Session Identifier API Discovery</summary>
             [QueryParameter("origin")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin? OriginAsApiShieldApiDiscoveryOrigin { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin? Origin { get; set; }
             /// <summary>Page number of paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -224,35 +193,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter results to only include discovery results in a particular state. States are as follows  * `review` - Discovered operations that are not saved into API Shield Endpoint Management  * `saved` - Discovered operations that are already saved into API Shield Endpoint Management  * `ignored` - Discovered operations that have been marked as ignored</summary>
-            [Obsolete("This property is deprecated, use StateAsApiShieldApiDiscoveryState instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("state")]
-            public string? State { get; set; }
-#nullable restore
-#else
-            [QueryParameter("state")]
-            public string State { get; set; }
-#endif
-            /// <summary>Filter results to only include discovery results in a particular state. States are as follows  * `review` - Discovered operations that are not saved into API Shield Endpoint Management  * `saved` - Discovered operations that are already saved into API Shield Endpoint Management  * `ignored` - Discovered operations that have been marked as ignored</summary>
-            [QueryParameter("state")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_state? StateAsApiShieldApiDiscoveryState { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OperationsRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_state? State { get; set; }
         }
     }
 }

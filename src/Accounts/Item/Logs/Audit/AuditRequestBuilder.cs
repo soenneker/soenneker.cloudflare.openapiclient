@@ -108,119 +108,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             [QueryParameter("account_name%2Enot")]
             public string[] AccountNameNot { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ActionResultAsGetActionResultQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("action_result")]
-            public string[]? ActionResult { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[]? ActionResult { get; set; }
 #nullable restore
 #else
             [QueryParameter("action_result")]
-            public string[] ActionResult { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("action_result")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[]? ActionResultAsGetActionResultQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("action_result")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[] ActionResultAsGetActionResultQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use ActionResultNotAsGetActionResultNotQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("action_result%2Enot")]
-            public string[]? ActionResultNot { get; set; }
-#nullable restore
-#else
-            [QueryParameter("action_result%2Enot")]
-            public string[] ActionResultNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultQueryParameterType[] ActionResult { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("action_result%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[]? ActionResultNotAsGetActionResultNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[]? ActionResultNot { get; set; }
 #nullable restore
 #else
             [QueryParameter("action_result%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[] ActionResultNotAsGetActionResultNotQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use ActionTypeAsGetActionTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("action_type")]
-            public string[]? ActionType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("action_type")]
-            public string[] ActionType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_resultNotQueryParameterType[] ActionResultNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("action_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[]? ActionTypeAsGetActionTypeQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[]? ActionType { get; set; }
 #nullable restore
 #else
             [QueryParameter("action_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[] ActionTypeAsGetActionTypeQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use ActionTypeNotAsGetActionTypeNotQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("action_type%2Enot")]
-            public string[]? ActionTypeNot { get; set; }
-#nullable restore
-#else
-            [QueryParameter("action_type%2Enot")]
-            public string[] ActionTypeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeQueryParameterType[] ActionType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("action_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[]? ActionTypeNotAsGetActionTypeNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[]? ActionTypeNot { get; set; }
 #nullable restore
 #else
             [QueryParameter("action_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[] ActionTypeNotAsGetActionTypeNotQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use ActorContextAsGetActorContextQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("actor_context")]
-            public string[]? ActorContext { get; set; }
-#nullable restore
-#else
-            [QueryParameter("actor_context")]
-            public string[] ActorContext { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetAction_typeNotQueryParameterType[] ActionTypeNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_context")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[]? ActorContextAsGetActorContextQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[]? ActorContext { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_context")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[] ActorContextAsGetActorContextQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use ActorContextNotAsGetActorContextNotQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("actor_context%2Enot")]
-            public string[]? ActorContextNot { get; set; }
-#nullable restore
-#else
-            [QueryParameter("actor_context%2Enot")]
-            public string[] ActorContextNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextQueryParameterType[] ActorContext { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_context%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[]? ActorContextNotAsGetActorContextNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[]? ActorContextNot { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_context%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[] ActorContextNotAsGetActorContextNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_contextNotQueryParameterType[] ActorContextNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -312,43 +252,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             [QueryParameter("actor_token_name%2Enot")]
             public string[] ActorTokenNameNot { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ActorTypeAsGetActorTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_type")]
-            public string[]? ActorType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[]? ActorType { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_type")]
-            public string[] ActorType { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("actor_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[]? ActorTypeAsGetActorTypeQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("actor_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[] ActorTypeAsGetActorTypeQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use ActorTypeNotAsGetActorTypeNotQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("actor_type%2Enot")]
-            public string[]? ActorTypeNot { get; set; }
-#nullable restore
-#else
-            [QueryParameter("actor_type%2Enot")]
-            public string[] ActorTypeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeQueryParameterType[] ActorType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("actor_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[]? ActorTypeNotAsGetActorTypeNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[]? ActorTypeNot { get; set; }
 #nullable restore
 #else
             [QueryParameter("actor_type%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[] ActorTypeNotAsGetActorTypeNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[] ActorTypeNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -380,18 +300,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-            [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetDirectionQueryParameterType? Direction { get; set; }
             [QueryParameter("limit")]
             public double? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -502,43 +412,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             [QueryParameter("resource_product%2Enot")]
             public string[] ResourceProductNot { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ResourceScopeAsGetResourceScopeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_scope")]
-            public string[]? ResourceScope { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[]? ResourceScope { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_scope")]
-            public string[] ResourceScope { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("resource_scope")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[]? ResourceScopeAsGetResourceScopeQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("resource_scope")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[] ResourceScopeAsGetResourceScopeQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use ResourceScopeNotAsGetResourceScopeNotQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("resource_scope%2Enot")]
-            public string[]? ResourceScopeNot { get; set; }
-#nullable restore
-#else
-            [QueryParameter("resource_scope%2Enot")]
-            public string[] ResourceScopeNot { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeQueryParameterType[] ResourceScope { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_scope%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[]? ResourceScopeNotAsGetResourceScopeNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[]? ResourceScopeNot { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_scope%2Enot")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[] ResourceScopeNotAsGetResourceScopeNotQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetResource_scopeNotQueryParameterType[] ResourceScopeNot { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -597,14 +487,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             [QueryParameter("zone_name%2Enot")]
             public string[] ZoneNameNot { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AuditRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

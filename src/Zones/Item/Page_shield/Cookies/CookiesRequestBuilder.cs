@@ -103,18 +103,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CookiesRequestBuilderGetQueryParameters 
         {
-            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-            [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetDirectionQueryParameterType? Direction { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("domain")]
@@ -124,18 +114,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
             [QueryParameter("domain")]
             public string Domain { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use ExportAsGetExportQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("export")]
-            public string? Export { get; set; }
-#nullable restore
-#else
-            [QueryParameter("export")]
-            public string Export { get; set; }
-#endif
-            [QueryParameter("export")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetExportQueryParameterType? ExportAsGetExportQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetExportQueryParameterType? Export { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("hosts")]
@@ -156,18 +136,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use OrderByAsGetOrderByQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("order_by")]
-            public string? OrderBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("order_by")]
-            public string OrderBy { get; set; }
-#endif
-            [QueryParameter("order_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetOrder_byQueryParameterType? OrderByAsGetOrderByQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetOrder_byQueryParameterType? OrderBy { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page")]
@@ -197,40 +167,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
 #endif
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
-            [Obsolete("This property is deprecated, use SameSiteAsGetSameSiteQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("same_site")]
-            public string? SameSite { get; set; }
-#nullable restore
-#else
-            [QueryParameter("same_site")]
-            public string SameSite { get; set; }
-#endif
-            [QueryParameter("same_site")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetSame_siteQueryParameterType? SameSiteAsGetSameSiteQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetSame_siteQueryParameterType? SameSite { get; set; }
             [QueryParameter("secure")]
             public bool? Secure { get; set; }
-            [Obsolete("This property is deprecated, use TypeAsGetTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
-            [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetTypeQueryParameterType? TypeAsGetTypeQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CookiesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.CookiesRequestBuilder.CookiesRequestBuilderGetQueryParameters>
-        {
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies.GetTypeQueryParameterType? Type { get; set; }
         }
     }
 }

@@ -42,11 +42,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsGetResponse?> GetAsOperationsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsGetResponse> GetAsOperationsGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsOperationsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves all operations from the schema. Operations that already exist in API Shield Endpoint Management will be returned as full operations.
@@ -124,25 +100,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             public string Endpoint { get; set; }
 #endif
             /// <summary>Add feature(s) to the results. The feature name that is given here corresponds to the resulting feature object. Have a look at the top-level object description for more details on the specific meaning.</summary>
-            [Obsolete("This property is deprecated, use FeatureAsGetFeatureQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("feature")]
-            public string[]? Feature { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.GetFeatureQueryParameterType[]? Feature { get; set; }
 #nullable restore
 #else
             [QueryParameter("feature")]
-            public string[] Feature { get; set; }
-#endif
-            /// <summary>Add feature(s) to the results. The feature name that is given here corresponds to the resulting feature object. Have a look at the top-level object description for more details on the specific meaning.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("feature")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.GetFeatureQueryParameterType[]? FeatureAsGetFeatureQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("feature")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.GetFeatureQueryParameterType[] FeatureAsGetFeatureQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.GetFeatureQueryParameterType[] Feature { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,33 +128,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             public string[] Method { get; set; }
 #endif
             /// <summary>Filter results by whether operations exist in Web Asset Management or not. `new` will just return operations from the schema that do not exist otherwise. `existing` will just return operations from the schema that already exist.</summary>
-            [Obsolete("This property is deprecated, use OperationStatusAsGetOperationStatusQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("operation_status")]
-            public string? OperationStatus { get; set; }
-#nullable restore
-#else
-            [QueryParameter("operation_status")]
-            public string OperationStatus { get; set; }
-#endif
-            /// <summary>Filter results by whether operations exist in Web Asset Management or not. `new` will just return operations from the schema that do not exist otherwise. `existing` will just return operations from the schema that already exist.</summary>
-            [QueryParameter("operation_status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.GetOperation_statusQueryParameterType? OperationStatusAsGetOperationStatusQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.GetOperation_statusQueryParameterType? OperationStatus { get; set; }
             /// <summary>Page number of paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>Maximum number of results per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OperationsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.Operations.OperationsRequestBuilder.OperationsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

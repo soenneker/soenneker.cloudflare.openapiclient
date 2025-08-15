@@ -64,11 +64,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationGetResponse?> GetAsUrl_normalizationGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationGetResponse> GetAsUrl_normalizationGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -77,30 +77,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Fetches the current URL Normalization settings.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError">When receiving a 4XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsUrl_normalizationGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the URL Normalization settings.
@@ -112,11 +88,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationPutResponse?> PutAsUrl_normalizationPutResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationPutResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationPutResponse> PutAsUrl_normalizationPutResponseAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationPutResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -126,32 +102,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationPutResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Updates the URL Normalization settings.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse"/></returns>
-        /// <param name="body">A URL Normalization object.</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError">When receiving a 4XX status code</exception>
-        [Obsolete("This method is obsolete. Use PutAsUrl_normalizationPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_UrlNormalization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Url_normalization4XXError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the URL Normalization settings.
@@ -221,30 +171,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Url_normalizationRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Url_normalizationRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Url_normalizationRequestBuilderPutRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

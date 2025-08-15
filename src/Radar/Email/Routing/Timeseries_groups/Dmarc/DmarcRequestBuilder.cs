@@ -91,39 +91,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
         public partial class DmarcRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("aggInterval")]
-            public string? AggInterval { get; set; }
-#nullable restore
-#else
-            [QueryParameter("aggInterval")]
-            public string AggInterval { get; set; }
-#endif
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
-            /// <summary>Filters results by ARC (Authenticated Received Chain) validation.</summary>
-            [Obsolete("This property is deprecated, use ArcAsGetArcQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("arc")]
-            public string[]? Arc { get; set; }
-#nullable restore
-#else
-            [QueryParameter("arc")]
-            public string[] Arc { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetAggIntervalQueryParameterType? AggInterval { get; set; }
             /// <summary>Filters results by ARC (Authenticated Received Chain) validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("arc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetArcQueryParameterType[]? ArcAsGetArcQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetArcQueryParameterType[]? Arc { get; set; }
 #nullable restore
 #else
             [QueryParameter("arc")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetArcQueryParameterType[] ArcAsGetArcQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetArcQueryParameterType[] Arc { get; set; }
 #endif
             /// <summary>End of the date range (inclusive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,81 +134,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Filters results by DKIM (DomainKeys Identified Mail) validation status.</summary>
-            [Obsolete("This property is deprecated, use DkimAsGetDkimQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dkim")]
-            public string[]? Dkim { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetDkimQueryParameterType[]? Dkim { get; set; }
 #nullable restore
 #else
             [QueryParameter("dkim")]
-            public string[] Dkim { get; set; }
-#endif
-            /// <summary>Filters results by DKIM (DomainKeys Identified Mail) validation status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("dkim")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetDkimQueryParameterType[]? DkimAsGetDkimQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("dkim")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetDkimQueryParameterType[] DkimAsGetDkimQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by encryption status (encrypted vs. not-encrypted).</summary>
-            [Obsolete("This property is deprecated, use EncryptedAsGetEncryptedQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("encrypted")]
-            public string[]? Encrypted { get; set; }
-#nullable restore
-#else
-            [QueryParameter("encrypted")]
-            public string[] Encrypted { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetDkimQueryParameterType[] Dkim { get; set; }
 #endif
             /// <summary>Filters results by encryption status (encrypted vs. not-encrypted).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("encrypted")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetEncryptedQueryParameterType[]? EncryptedAsGetEncryptedQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetEncryptedQueryParameterType[]? Encrypted { get; set; }
 #nullable restore
 #else
             [QueryParameter("encrypted")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetEncryptedQueryParameterType[] EncryptedAsGetEncryptedQueryParameterType { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetEncryptedQueryParameterType[] Encrypted { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
-            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
-            [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ipVersion")]
-            public string[]? IpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ipVersion")]
-            public string[] IpVersion { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetIpVersionQueryParameterType[]? IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetIpVersionQueryParameterType[] IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetIpVersionQueryParameterType[] IpVersion { get; set; }
 #endif
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -243,34 +177,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
             public string[] Name { get; set; }
 #endif
             /// <summary>Filters results by SPF (Sender Policy Framework) validation status.</summary>
-            [Obsolete("This property is deprecated, use SpfAsGetSpfQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("spf")]
-            public string[]? Spf { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetSpfQueryParameterType[]? Spf { get; set; }
 #nullable restore
 #else
             [QueryParameter("spf")]
-            public string[] Spf { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetSpfQueryParameterType[] Spf { get; set; }
 #endif
-            /// <summary>Filters results by SPF (Sender Policy Framework) validation status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("spf")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetSpfQueryParameterType[]? SpfAsGetSpfQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("spf")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.GetSpfQueryParameterType[] SpfAsGetSpfQueryParameterType { get; set; }
-#endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DmarcRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.DmarcRequestBuilder.DmarcRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

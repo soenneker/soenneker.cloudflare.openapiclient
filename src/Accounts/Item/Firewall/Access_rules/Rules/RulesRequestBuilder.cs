@@ -150,18 +150,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 
         {
-            [Obsolete("This property is deprecated, use ConfigurationTargetAsGetConfigurationTargetQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("configuration%2Etarget")]
-            public string? ConfigurationTarget { get; set; }
-#nullable restore
-#else
-            [QueryParameter("configuration%2Etarget")]
-            public string ConfigurationTarget { get; set; }
-#endif
-            [QueryParameter("configuration%2Etarget")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetConfigurationTargetQueryParameterType? ConfigurationTargetAsGetConfigurationTargetQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetConfigurationTargetQueryParameterType? ConfigurationTarget { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("configuration%2Evalue")]
@@ -171,42 +161,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             [QueryParameter("configuration%2Evalue")]
             public string ConfigurationValue { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-            [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
-            [Obsolete("This property is deprecated, use MatchAsGetMatchQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetDirectionQueryParameterType? Direction { get; set; }
             [QueryParameter("match")]
-            public string? Match { get; set; }
-#nullable restore
-#else
-            [QueryParameter("match")]
-            public string Match { get; set; }
-#endif
-            [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetMatchQueryParameterType? MatchAsGetMatchQueryParameterType { get; set; }
-            [Obsolete("This property is deprecated, use ModeAsFirewallSchemasMode instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetMatchQueryParameterType? Match { get; set; }
             [QueryParameter("mode")]
-            public string? Mode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("mode")]
-            public string Mode { get; set; }
-#endif
-            [QueryParameter("mode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? ModeAsFirewallSchemasMode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? Mode { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("notes")]
@@ -216,38 +176,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             [QueryParameter("notes")]
             public string Notes { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use OrderAsGetOrderQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("order")]
-            public string? Order { get; set; }
-#nullable restore
-#else
-            [QueryParameter("order")]
-            public string Order { get; set; }
-#endif
-            [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetOrderQueryParameterType? OrderAsGetOrderQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetOrderQueryParameterType? Order { get; set; }
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RulesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RulesRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

@@ -144,81 +144,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
-            /// <summary>Filters results by HTTP method.</summary>
-            [Obsolete("This property is deprecated, use HttpMethodAsGetHttpMethodQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("httpMethod")]
-            public string[]? HttpMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("httpMethod")]
-            public string[] HttpMethod { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results by HTTP method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpMethod")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpMethodQueryParameterType[]? HttpMethodAsGetHttpMethodQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpMethodQueryParameterType[]? HttpMethod { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpMethod")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpMethodQueryParameterType[] HttpMethodAsGetHttpMethodQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by HTTP version.</summary>
-            [Obsolete("This property is deprecated, use HttpVersionAsGetHttpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("httpVersion")]
-            public string[]? HttpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("httpVersion")]
-            public string[] HttpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpMethodQueryParameterType[] HttpMethod { get; set; }
 #endif
             /// <summary>Filters results by HTTP version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpVersionQueryParameterType[]? HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpVersionQueryParameterType[]? HttpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpVersionQueryParameterType[] HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
-            [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ipVersion")]
-            public string[]? IpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ipVersion")]
-            public string[] IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetHttpVersionQueryParameterType[] HttpVersion { get; set; }
 #endif
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetIpVersionQueryParameterType[]? IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetIpVersionQueryParameterType[] IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetIpVersionQueryParameterType[] IpVersion { get; set; }
 #endif
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
@@ -234,25 +190,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical
             public string[] Location { get; set; }
 #endif
             /// <summary>Filters the results by layer 7 mitigation product.</summary>
-            [Obsolete("This property is deprecated, use MitigationProductAsGetMitigationProductQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mitigationProduct")]
-            public string[]? MitigationProduct { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetMitigationProductQueryParameterType[]? MitigationProduct { get; set; }
 #nullable restore
 #else
             [QueryParameter("mitigationProduct")]
-            public string[] MitigationProduct { get; set; }
-#endif
-            /// <summary>Filters the results by layer 7 mitigation product.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("mitigationProduct")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetMitigationProductQueryParameterType[]? MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("mitigationProduct")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetMitigationProductQueryParameterType[] MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.GetMitigationProductQueryParameterType[] MitigationProduct { get; set; }
 #endif
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -264,14 +209,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical
             [QueryParameter("name")]
             public string[] Name { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VerticalRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder.VerticalRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

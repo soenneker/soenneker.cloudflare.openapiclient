@@ -91,19 +91,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
         public partial class VectorRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("aggInterval")]
-            public string? AggInterval { get; set; }
-#nullable restore
-#else
-            [QueryParameter("aggInterval")]
-            public string AggInterval { get; set; }
-#endif
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetAggIntervalQueryParameterType? AggInterval { get; set; }
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,53 +134,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Specifies whether the `location` filter applies to the source or target location.</summary>
-            [Obsolete("This property is deprecated, use DirectionAsGetDirectionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-            /// <summary>Specifies whether the `location` filter applies to the source or target location.</summary>
-            [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetDirectionQueryParameterType? DirectionAsGetDirectionQueryParameterType { get; set; }
-            /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
-            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
-            [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ipVersion")]
-            public string[]? IpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ipVersion")]
-            public string[] IpVersion { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetIpVersionQueryParameterType[]? IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetIpVersionQueryParameterType[] IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetIpVersionQueryParameterType[] IpVersion { get; set; }
 #endif
             /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
             [QueryParameter("limitPerGroup")]
@@ -217,48 +173,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
             public string[] Name { get; set; }
 #endif
             /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-            [Obsolete("This property is deprecated, use NormalizationAsGetNormalizationQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("normalization")]
-            public string? Normalization { get; set; }
-#nullable restore
-#else
-            [QueryParameter("normalization")]
-            public string Normalization { get; set; }
-#endif
-            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-            [QueryParameter("normalization")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetNormalizationQueryParameterType? NormalizationAsGetNormalizationQueryParameterType { get; set; }
-            /// <summary>Filters the results by layer 3/4 protocol.</summary>
-            [Obsolete("This property is deprecated, use ProtocolAsGetProtocolQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("protocol")]
-            public string[]? Protocol { get; set; }
-#nullable restore
-#else
-            [QueryParameter("protocol")]
-            public string[] Protocol { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetNormalizationQueryParameterType? Normalization { get; set; }
             /// <summary>Filters the results by layer 3/4 protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetProtocolQueryParameterType[]? ProtocolAsGetProtocolQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetProtocolQueryParameterType[]? Protocol { get; set; }
 #nullable restore
 #else
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetProtocolQueryParameterType[] ProtocolAsGetProtocolQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.GetProtocolQueryParameterType[] Protocol { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VectorRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.VectorRequestBuilder.VectorRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

@@ -149,46 +149,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases
             public string[] Asn { get; set; }
 #endif
             /// <summary>Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).</summary>
-            [Obsolete("This property is deprecated, use BotClassAsGetBotClassQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("botClass")]
-            public string[]? BotClass { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBotClassQueryParameterType[]? BotClass { get; set; }
 #nullable restore
 #else
             [QueryParameter("botClass")]
-            public string[] BotClass { get; set; }
-#endif
-            /// <summary>Filters results by bot class. Refer to [Bot classes](https://developers.cloudflare.com/radar/concepts/bot-classes/).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("botClass")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBotClassQueryParameterType[]? BotClassAsGetBotClassQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("botClass")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBotClassQueryParameterType[] BotClassAsGetBotClassQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by browser family.</summary>
-            [Obsolete("This property is deprecated, use BrowserFamilyAsGetBrowserFamilyQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("browserFamily")]
-            public string[]? BrowserFamily { get; set; }
-#nullable restore
-#else
-            [QueryParameter("browserFamily")]
-            public string[] BrowserFamily { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBotClassQueryParameterType[] BotClass { get; set; }
 #endif
             /// <summary>Filters results by browser family.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("browserFamily")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBrowserFamilyQueryParameterType[]? BrowserFamilyAsGetBrowserFamilyQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBrowserFamilyQueryParameterType[]? BrowserFamily { get; set; }
 #nullable restore
 #else
             [QueryParameter("browserFamily")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBrowserFamilyQueryParameterType[] BrowserFamilyAsGetBrowserFamilyQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetBrowserFamilyQueryParameterType[] BrowserFamily { get; set; }
 #endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -231,102 +209,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Filters results by device type.</summary>
-            [Obsolete("This property is deprecated, use DeviceTypeAsGetDeviceTypeQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("deviceType")]
-            public string[]? DeviceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetDeviceTypeQueryParameterType[]? DeviceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("deviceType")]
-            public string[] DeviceType { get; set; }
-#endif
-            /// <summary>Filters results by device type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("deviceType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetDeviceTypeQueryParameterType[]? DeviceTypeAsGetDeviceTypeQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("deviceType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetDeviceTypeQueryParameterType[] DeviceTypeAsGetDeviceTypeQueryParameterType { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetDeviceTypeQueryParameterType[] DeviceType { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
-            /// <summary>Filters results by HTTP protocol (HTTP vs. HTTPS).</summary>
-            [Obsolete("This property is deprecated, use HttpProtocolAsGetHttpProtocolQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("httpProtocol")]
-            public string[]? HttpProtocol { get; set; }
-#nullable restore
-#else
-            [QueryParameter("httpProtocol")]
-            public string[] HttpProtocol { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results by HTTP protocol (HTTP vs. HTTPS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpProtocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpProtocolQueryParameterType[]? HttpProtocolAsGetHttpProtocolQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpProtocolQueryParameterType[]? HttpProtocol { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpProtocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpProtocolQueryParameterType[] HttpProtocolAsGetHttpProtocolQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by HTTP version.</summary>
-            [Obsolete("This property is deprecated, use HttpVersionAsGetHttpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("httpVersion")]
-            public string[]? HttpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("httpVersion")]
-            public string[] HttpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpProtocolQueryParameterType[] HttpProtocol { get; set; }
 #endif
             /// <summary>Filters results by HTTP version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpVersionQueryParameterType[]? HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpVersionQueryParameterType[]? HttpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpVersionQueryParameterType[] HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
-            [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ipVersion")]
-            public string[]? IpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ipVersion")]
-            public string[] IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetHttpVersionQueryParameterType[] HttpVersion { get; set; }
 #endif
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetIpVersionQueryParameterType[]? IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetIpVersionQueryParameterType[] IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetIpVersionQueryParameterType[] IpVersion { get; set; }
 #endif
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
@@ -352,55 +275,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases
             public string[] Name { get; set; }
 #endif
             /// <summary>Filters results by operating system.</summary>
-            [Obsolete("This property is deprecated, use OsAsGetOsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("os")]
-            public string[]? Os { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetOsQueryParameterType[]? Os { get; set; }
 #nullable restore
 #else
             [QueryParameter("os")]
-            public string[] Os { get; set; }
-#endif
-            /// <summary>Filters results by operating system.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("os")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetOsQueryParameterType[]? OsAsGetOsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("os")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetOsQueryParameterType[] OsAsGetOsQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by TLS version.</summary>
-            [Obsolete("This property is deprecated, use TlsVersionAsGetTlsVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tlsVersion")]
-            public string[]? TlsVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tlsVersion")]
-            public string[] TlsVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetOsQueryParameterType[] Os { get; set; }
 #endif
             /// <summary>Filters results by TLS version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetTlsVersionQueryParameterType[]? TlsVersionAsGetTlsVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetTlsVersionQueryParameterType[]? TlsVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("tlsVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetTlsVersionQueryParameterType[] TlsVersionAsGetTlsVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.GetTlsVersionQueryParameterType[] TlsVersion { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AsesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder.AsesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

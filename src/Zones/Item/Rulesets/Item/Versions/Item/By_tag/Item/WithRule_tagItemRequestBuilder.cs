@@ -42,11 +42,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.I
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_tag4XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagGetResponse?> GetAsWithRule_tagGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagGetResponse> GetAsWithRule_tagGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,30 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.I
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_tag4XXError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Fetches the rules of a managed zone ruleset version for a given tag.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_tag4XXError">When receiving a 4XX status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsWithRule_tagGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_tag4XXError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches the rules of a managed zone ruleset version for a given tag.
@@ -107,14 +83,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.I
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Versions.Item.By_tag.Item.WithRule_tagItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithRule_tagItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

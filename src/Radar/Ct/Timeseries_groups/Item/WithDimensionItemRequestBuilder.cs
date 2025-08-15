@@ -91,19 +91,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item
         public partial class WithDimensionItemRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("aggInterval")]
-            public string? AggInterval { get; set; }
-#nullable restore
-#else
-            [QueryParameter("aggInterval")]
-            public string AggInterval { get; set; }
-#endif
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetAggIntervalQueryParameterType? AggInterval { get; set; }
             /// <summary>Filters results by certificate authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,82 +144,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Filters results by certificate duration.</summary>
-            [Obsolete("This property is deprecated, use DurationAsGetDurationQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("duration")]
-            public string[]? Duration { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetDurationQueryParameterType[]? Duration { get; set; }
 #nullable restore
 #else
             [QueryParameter("duration")]
-            public string[] Duration { get; set; }
-#endif
-            /// <summary>Filters results by certificate duration.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("duration")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetDurationQueryParameterType[]? DurationAsGetDurationQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("duration")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetDurationQueryParameterType[] DurationAsGetDurationQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by entry type (certificate vs. pre-certificate).</summary>
-            [Obsolete("This property is deprecated, use EntryTypeAsGetEntryTypeQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("entryType")]
-            public string[]? EntryType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("entryType")]
-            public string[] EntryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetDurationQueryParameterType[] Duration { get; set; }
 #endif
             /// <summary>Filters results by entry type (certificate vs. pre-certificate).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("entryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetEntryTypeQueryParameterType[]? EntryTypeAsGetEntryTypeQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetEntryTypeQueryParameterType[]? EntryType { get; set; }
 #nullable restore
 #else
             [QueryParameter("entryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetEntryTypeQueryParameterType[] EntryTypeAsGetEntryTypeQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by expiration status (expired vs. valid).</summary>
-            [Obsolete("This property is deprecated, use ExpirationStatusAsGetExpirationStatusQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("expirationStatus")]
-            public string[]? ExpirationStatus { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expirationStatus")]
-            public string[] ExpirationStatus { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetEntryTypeQueryParameterType[] EntryType { get; set; }
 #endif
             /// <summary>Filters results by expiration status (expired vs. valid).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expirationStatus")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetExpirationStatusQueryParameterType[]? ExpirationStatusAsGetExpirationStatusQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetExpirationStatusQueryParameterType[]? ExpirationStatus { get; set; }
 #nullable restore
 #else
             [QueryParameter("expirationStatus")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetExpirationStatusQueryParameterType[] ExpirationStatusAsGetExpirationStatusQueryParameterType { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetExpirationStatusQueryParameterType[] ExpirationStatus { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results based on whether the certificates are bound to specific IP addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -265,25 +210,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item
             public string[] Log { get; set; }
 #endif
             /// <summary>Filters results by certificate log API (RFC6962 vs. static).</summary>
-            [Obsolete("This property is deprecated, use LogApiAsGetLogApiQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("logApi")]
-            public string[]? LogApi { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetLogApiQueryParameterType[]? LogApi { get; set; }
 #nullable restore
 #else
             [QueryParameter("logApi")]
-            public string[] LogApi { get; set; }
-#endif
-            /// <summary>Filters results by certificate log API (RFC6962 vs. static).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("logApi")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetLogApiQueryParameterType[]? LogApiAsGetLogApiQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("logApi")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetLogApiQueryParameterType[] LogApiAsGetLogApiQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetLogApiQueryParameterType[] LogApi { get; set; }
 #endif
             /// <summary>Filters results by certificate log operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -306,60 +240,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item
             public string[] Name { get; set; }
 #endif
             /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-            [Obsolete("This property is deprecated, use NormalizationAsGetNormalizationQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("normalization")]
-            public string? Normalization { get; set; }
-#nullable restore
-#else
-            [QueryParameter("normalization")]
-            public string Normalization { get; set; }
-#endif
-            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-            [QueryParameter("normalization")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetNormalizationQueryParameterType? NormalizationAsGetNormalizationQueryParameterType { get; set; }
-            /// <summary>Filters results by public key algorithm.</summary>
-            [Obsolete("This property is deprecated, use PublicKeyAlgorithmAsGetPublicKeyAlgorithmQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("publicKeyAlgorithm")]
-            public string[]? PublicKeyAlgorithm { get; set; }
-#nullable restore
-#else
-            [QueryParameter("publicKeyAlgorithm")]
-            public string[] PublicKeyAlgorithm { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetNormalizationQueryParameterType? Normalization { get; set; }
             /// <summary>Filters results by public key algorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("publicKeyAlgorithm")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetPublicKeyAlgorithmQueryParameterType[]? PublicKeyAlgorithmAsGetPublicKeyAlgorithmQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetPublicKeyAlgorithmQueryParameterType[]? PublicKeyAlgorithm { get; set; }
 #nullable restore
 #else
             [QueryParameter("publicKeyAlgorithm")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetPublicKeyAlgorithmQueryParameterType[] PublicKeyAlgorithmAsGetPublicKeyAlgorithmQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by signature algorithm.</summary>
-            [Obsolete("This property is deprecated, use SignatureAlgorithmAsGetSignatureAlgorithmQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("signatureAlgorithm")]
-            public string[]? SignatureAlgorithm { get; set; }
-#nullable restore
-#else
-            [QueryParameter("signatureAlgorithm")]
-            public string[] SignatureAlgorithm { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetPublicKeyAlgorithmQueryParameterType[] PublicKeyAlgorithm { get; set; }
 #endif
             /// <summary>Filters results by signature algorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("signatureAlgorithm")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetSignatureAlgorithmQueryParameterType[]? SignatureAlgorithmAsGetSignatureAlgorithmQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetSignatureAlgorithmQueryParameterType[]? SignatureAlgorithm { get; set; }
 #nullable restore
 #else
             [QueryParameter("signatureAlgorithm")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetSignatureAlgorithmQueryParameterType[] SignatureAlgorithmAsGetSignatureAlgorithmQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetSignatureAlgorithmQueryParameterType[] SignatureAlgorithm { get; set; }
 #endif
             /// <summary>Filters results by top-level domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -372,55 +273,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item
             public string[] Tld { get; set; }
 #endif
             /// <summary>Specifies whether to filter out duplicate certificates and pre-certificates. Set to true for unique entries only.</summary>
-            [Obsolete("This property is deprecated, use UniqueEntriesAsGetUniqueEntriesQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("uniqueEntries")]
-            public string[]? UniqueEntries { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetUniqueEntriesQueryParameterType[]? UniqueEntries { get; set; }
 #nullable restore
 #else
             [QueryParameter("uniqueEntries")]
-            public string[] UniqueEntries { get; set; }
-#endif
-            /// <summary>Specifies whether to filter out duplicate certificates and pre-certificates. Set to true for unique entries only.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("uniqueEntries")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetUniqueEntriesQueryParameterType[]? UniqueEntriesAsGetUniqueEntriesQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("uniqueEntries")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetUniqueEntriesQueryParameterType[] UniqueEntriesAsGetUniqueEntriesQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by validation level.</summary>
-            [Obsolete("This property is deprecated, use ValidationLevelAsGetValidationLevelQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("validationLevel")]
-            public string[]? ValidationLevel { get; set; }
-#nullable restore
-#else
-            [QueryParameter("validationLevel")]
-            public string[] ValidationLevel { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetUniqueEntriesQueryParameterType[] UniqueEntries { get; set; }
 #endif
             /// <summary>Filters results by validation level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("validationLevel")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetValidationLevelQueryParameterType[]? ValidationLevelAsGetValidationLevelQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetValidationLevelQueryParameterType[]? ValidationLevel { get; set; }
 #nullable restore
 #else
             [QueryParameter("validationLevel")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetValidationLevelQueryParameterType[] ValidationLevelAsGetValidationLevelQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.GetValidationLevelQueryParameterType[] ValidationLevel { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithDimensionItemRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ct.Timeseries_groups.Item.WithDimensionItemRequestBuilder.WithDimensionItemRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

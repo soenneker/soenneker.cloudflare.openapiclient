@@ -141,60 +141,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_ver
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
-            /// <summary>Filters results by HTTP method.</summary>
-            [Obsolete("This property is deprecated, use HttpMethodAsGetHttpMethodQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("httpMethod")]
-            public string[]? HttpMethod { get; set; }
-#nullable restore
-#else
-            [QueryParameter("httpMethod")]
-            public string[] HttpMethod { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results by HTTP method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpMethod")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpMethodQueryParameterType[]? HttpMethodAsGetHttpMethodQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpMethodQueryParameterType[]? HttpMethod { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpMethod")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpMethodQueryParameterType[] HttpMethodAsGetHttpMethodQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by HTTP version.</summary>
-            [Obsolete("This property is deprecated, use HttpVersionAsGetHttpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("httpVersion")]
-            public string[]? HttpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("httpVersion")]
-            public string[] HttpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpMethodQueryParameterType[] HttpMethod { get; set; }
 #endif
             /// <summary>Filters results by HTTP version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpVersionQueryParameterType[]? HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpVersionQueryParameterType[]? HttpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpVersionQueryParameterType[] HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetHttpVersionQueryParameterType[] HttpVersion { get; set; }
 #endif
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -207,25 +174,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_ver
             public string[] Location { get; set; }
 #endif
             /// <summary>Filters the results by layer 7 mitigation product.</summary>
-            [Obsolete("This property is deprecated, use MitigationProductAsGetMitigationProductQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mitigationProduct")]
-            public string[]? MitigationProduct { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetMitigationProductQueryParameterType[]? MitigationProduct { get; set; }
 #nullable restore
 #else
             [QueryParameter("mitigationProduct")]
-            public string[] MitigationProduct { get; set; }
-#endif
-            /// <summary>Filters the results by layer 7 mitigation product.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("mitigationProduct")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetMitigationProductQueryParameterType[]? MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("mitigationProduct")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetMitigationProductQueryParameterType[] MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.GetMitigationProductQueryParameterType[] MitigationProduct { get; set; }
 #endif
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -237,14 +193,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_ver
             [QueryParameter("name")]
             public string[] Name { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Ip_versionRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Summary.Ip_version.Ip_versionRequestBuilder.Ip_versionRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

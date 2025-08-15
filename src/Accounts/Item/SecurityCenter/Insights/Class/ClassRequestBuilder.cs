@@ -110,43 +110,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             [QueryParameter("issue_class%7Eneq")]
             public string[] IssueClassNeq { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use IssueTypeAsSecurityCenterIssueType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type")]
-            public string[]? IssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueType { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type")]
-            public string[] IssueType { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeAsSecurityCenterIssueType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeAsSecurityCenterIssueType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use IssueTypeNeqAsSecurityCenterIssueType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("issue_type%7Eneq")]
-            public string[]? IssueTypeNeq { get; set; }
-#nullable restore
-#else
-            [QueryParameter("issue_type%7Eneq")]
-            public string[] IssueTypeNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeNeqAsSecurityCenterIssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeNeq { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeNeqAsSecurityCenterIssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeNeq { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,43 +146,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             [QueryParameter("product%7Eneq")]
             public string[] ProductNeq { get; set; }
 #endif
-            [Obsolete("This property is deprecated, use SeverityAsGetSeverityQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("severity")]
-            public string[]? Severity { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityQueryParameterType[]? Severity { get; set; }
 #nullable restore
 #else
             [QueryParameter("severity")]
-            public string[] Severity { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("severity")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityQueryParameterType[]? SeverityAsGetSeverityQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("severity")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityQueryParameterType[] SeverityAsGetSeverityQueryParameterType { get; set; }
-#endif
-            [Obsolete("This property is deprecated, use SeverityNeqAsGetSeverityNeqQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("severity%7Eneq")]
-            public string[]? SeverityNeq { get; set; }
-#nullable restore
-#else
-            [QueryParameter("severity%7Eneq")]
-            public string[] SeverityNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityQueryParameterType[] Severity { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("severity%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityNeqQueryParameterType[]? SeverityNeqAsGetSeverityNeqQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityNeqQueryParameterType[]? SeverityNeq { get; set; }
 #nullable restore
 #else
             [QueryParameter("severity%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityNeqQueryParameterType[] SeverityNeqAsGetSeverityNeqQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.GetSeverityNeqQueryParameterType[] SeverityNeq { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -222,14 +182,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             [QueryParameter("subject%7Eneq")]
             public string[] SubjectNeq { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.ClassRequestBuilder.ClassRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

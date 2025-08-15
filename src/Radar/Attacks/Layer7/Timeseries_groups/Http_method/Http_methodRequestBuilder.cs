@@ -91,19 +91,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
         public partial class Http_methodRequestBuilderGetQueryParameters 
         {
             /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [Obsolete("This property is deprecated, use AggIntervalAsGetAggIntervalQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("aggInterval")]
-            public string? AggInterval { get; set; }
-#nullable restore
-#else
-            [QueryParameter("aggInterval")]
-            public string AggInterval { get; set; }
-#endif
-            /// <summary>Aggregation interval of the results (e.g., in 15 minutes or 1 hour intervals). Refer to [Aggregation intervals](https://developers.cloudflare.com/radar/concepts/aggregation-intervals/).</summary>
-            [QueryParameter("aggInterval")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetAggIntervalQueryParameterType? AggIntervalAsGetAggIntervalQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetAggIntervalQueryParameterType? AggInterval { get; set; }
             /// <summary>Filters results by Autonomous System. Specify one or more Autonomous System Numbers (ASNs) as a comma-separated list. Prefix with `-` to exclude ASNs from results. For example, `-174, 3356` excludes results from AS174, but includes results from AS3356.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,60 +144,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
             /// <summary>Format in which results will be returned.</summary>
-            [Obsolete("This property is deprecated, use FormatAsGetFormatQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("format")]
-            public string? Format { get; set; }
-#nullable restore
-#else
-            [QueryParameter("format")]
-            public string Format { get; set; }
-#endif
-            /// <summary>Format in which results will be returned.</summary>
-            [QueryParameter("format")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetFormatQueryParameterType? FormatAsGetFormatQueryParameterType { get; set; }
-            /// <summary>Filters results by HTTP version.</summary>
-            [Obsolete("This property is deprecated, use HttpVersionAsGetHttpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("httpVersion")]
-            public string[]? HttpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("httpVersion")]
-            public string[] HttpVersion { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filters results by HTTP version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetHttpVersionQueryParameterType[]? HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetHttpVersionQueryParameterType[]? HttpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("httpVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetHttpVersionQueryParameterType[] HttpVersionAsGetHttpVersionQueryParameterType { get; set; }
-#endif
-            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
-            [Obsolete("This property is deprecated, use IpVersionAsGetIpVersionQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ipVersion")]
-            public string[]? IpVersion { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ipVersion")]
-            public string[] IpVersion { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetHttpVersionQueryParameterType[] HttpVersion { get; set; }
 #endif
             /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetIpVersionQueryParameterType[]? IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
 #nullable restore
 #else
             [QueryParameter("ipVersion")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetIpVersionQueryParameterType[] IpVersionAsGetIpVersionQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetIpVersionQueryParameterType[] IpVersion { get; set; }
 #endif
             /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
             [QueryParameter("limitPerGroup")]
@@ -224,25 +180,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
             public string[] Location { get; set; }
 #endif
             /// <summary>Filters the results by layer 7 mitigation product.</summary>
-            [Obsolete("This property is deprecated, use MitigationProductAsGetMitigationProductQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mitigationProduct")]
-            public string[]? MitigationProduct { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetMitigationProductQueryParameterType[]? MitigationProduct { get; set; }
 #nullable restore
 #else
             [QueryParameter("mitigationProduct")]
-            public string[] MitigationProduct { get; set; }
-#endif
-            /// <summary>Filters the results by layer 7 mitigation product.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("mitigationProduct")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetMitigationProductQueryParameterType[]? MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("mitigationProduct")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetMitigationProductQueryParameterType[] MitigationProductAsGetMitigationProductQueryParameterType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetMitigationProductQueryParameterType[] MitigationProduct { get; set; }
 #endif
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -255,27 +200,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
             public string[] Name { get; set; }
 #endif
             /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-            [Obsolete("This property is deprecated, use NormalizationAsGetNormalizationQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("normalization")]
-            public string? Normalization { get; set; }
-#nullable restore
-#else
-            [QueryParameter("normalization")]
-            public string Normalization { get; set; }
-#endif
-            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
-            [QueryParameter("normalization")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetNormalizationQueryParameterType? NormalizationAsGetNormalizationQueryParameterType { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Http_methodRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.Http_methodRequestBuilder.Http_methodRequestBuilderGetQueryParameters>
-        {
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.GetNormalizationQueryParameterType? Normalization { get; set; }
         }
     }
 }

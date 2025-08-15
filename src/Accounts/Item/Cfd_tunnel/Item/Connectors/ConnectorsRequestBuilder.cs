@@ -27,19 +27,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Conne
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Connectors.Item.WithConnector_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cfd_tunnel.item.connectors.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Connectors.Item.WithConnector_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Connectors.Item.WithConnector_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("connector_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Connectors.Item.WithConnector_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Connectors.ConnectorsRequestBuilder"/> and sets the default values.
         /// </summary>

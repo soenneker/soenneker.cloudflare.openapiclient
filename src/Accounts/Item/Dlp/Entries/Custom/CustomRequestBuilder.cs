@@ -27,19 +27,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom
                 return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom.Item.WithEntry_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.dlp.entries.custom.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom.Item.WithEntry_ItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom.Item.WithEntry_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("entry_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom.Item.WithEntry_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Custom.CustomRequestBuilder"/> and sets the default values.
         /// </summary>
