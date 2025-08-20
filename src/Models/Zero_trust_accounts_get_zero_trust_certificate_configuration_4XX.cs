@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BindingStatus { get; private set; }
 #endif
-        /// <summary>Enable use of custom certificate authority for signing Gateway traffic.</summary>
+        /// <summary>Enable use of custom certificate authority for signing Gateway. traffic.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_get_zero_trust_certificate_configuration_4XX_result Result { get; set; }
 #endif
-        /// <summary>Whether the API call was successful</summary>
+        /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }

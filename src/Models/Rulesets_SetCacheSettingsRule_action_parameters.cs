@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Rulesets_SetCacheSettingsRule_action_parameters : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>List of additional ports that caching can be enabled on.</summary>
+        /// <summary>A list of additional ports that caching should be enabled on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<int?>? AdditionalCacheablePorts { get; set; }
@@ -22,55 +22,55 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Specify how long client browsers should cache the response. Cloudflare cache purge will not purge content cached on client browsers, so high browser TTLs may lead to stale content.</summary>
+        /// <summary>How long client browsers should cache the response. Cloudflare cache purge will not purge content cached on client browsers, so high browser TTLs may lead to stale content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_browser_ttl? BrowserTtl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL? BrowserTtl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_browser_ttl BrowserTtl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL BrowserTtl { get; set; }
 #endif
-        /// <summary>Mark whether the request’s response from origin is eligible for caching. Caching itself will still depend on the cache-control header and your other caching configurations.</summary>
+        /// <summary>Whether the request&apos;s response from the origin is eligible for caching. Caching itself will still depend on the cache control header and your other caching configurations.</summary>
         public bool? Cache { get; set; }
-        /// <summary>Define which components of the request are included or excluded from the cache key Cloudflare uses to store the response in cache.</summary>
+        /// <summary>Which components of the request are included in or excluded from the cache key Cloudflare uses to store the response in cache.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_key? CacheKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey? CacheKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_key CacheKey { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey CacheKey { get; set; }
 #endif
-        /// <summary>Mark whether the request&apos;s response from origin is eligible for Cache Reserve (requires a Cache Reserve add-on plan).</summary>
+        /// <summary>Settings to determine whether the request&apos;s response from origin is eligible for Cache Reserve (requires a Cache Reserve add-on plan).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_reserve? CacheReserve { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve? CacheReserve { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_reserve CacheReserve { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve CacheReserve { get; set; }
 #endif
-        /// <summary>TTL (Time to Live) specifies the maximum time to cache a resource in the Cloudflare edge network.</summary>
+        /// <summary>How long the Cloudflare edge network should cache the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_edge_ttl? EdgeTtl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL? EdgeTtl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_edge_ttl EdgeTtl { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL EdgeTtl { get; set; }
 #endif
-        /// <summary>When enabled, Cloudflare will aim to strictly adhere to RFC 7234.</summary>
+        /// <summary>Whether Cloudflare will aim to strictly adhere to RFC 7234.</summary>
         public bool? OriginCacheControl { get; set; }
-        /// <summary>Generate Cloudflare error pages from issues sent from the origin server. When on, error pages will trigger for issues from the origin.</summary>
+        /// <summary>Whether to generate Cloudflare error pages for issues from the origin server.</summary>
         public bool? OriginErrorPagePassthru { get; set; }
-        /// <summary>Define a timeout value between two successive read operations to your origin server. Historically, the timeout value between two read options from Cloudflare to an origin server is 100 seconds. If you are attempting to reduce HTTP 524 errors because of timeouts from an origin server, try increasing this timeout value.</summary>
+        /// <summary>A timeout value between two successive read operations to use for your origin server. Historically, the timeout value between two read options from Cloudflare to an origin server is 100 seconds. If you are attempting to reduce HTTP 524 errors because of timeouts from an origin server, try increasing this timeout value.</summary>
         public int? ReadTimeout { get; set; }
-        /// <summary>Specify whether or not Cloudflare should respect strong ETag (entity tag) headers. When off, Cloudflare converts strong ETag headers to weak ETag headers.</summary>
+        /// <summary>Whether Cloudflare should respect strong ETag (entity tag) headers. If false, Cloudflare converts strong ETag headers to weak ETag headers.</summary>
         public bool? RespectStrongEtags { get; set; }
-        /// <summary>Define if Cloudflare should serve stale content while getting the latest content from the origin. If on, Cloudflare will not serve stale content while getting the latest content from the origin.</summary>
+        /// <summary>When to serve stale content from cache.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_serve_stale? ServeStale { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale? ServeStale { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_serve_stale ServeStale { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale ServeStale { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters"/> and sets the default values.
@@ -98,16 +98,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_cacheable_ports", n => { AdditionalCacheablePorts = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "browser_ttl", n => { BrowserTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_browser_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_browser_ttl.CreateFromDiscriminatorValue); } },
+                { "browser_ttl", n => { BrowserTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL.CreateFromDiscriminatorValue); } },
                 { "cache", n => { Cache = n.GetBoolValue(); } },
-                { "cache_key", n => { CacheKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_key.CreateFromDiscriminatorValue); } },
-                { "cache_reserve", n => { CacheReserve = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_reserve>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_reserve.CreateFromDiscriminatorValue); } },
-                { "edge_ttl", n => { EdgeTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_edge_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_edge_ttl.CreateFromDiscriminatorValue); } },
+                { "cache_key", n => { CacheKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey.CreateFromDiscriminatorValue); } },
+                { "cache_reserve", n => { CacheReserve = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve.CreateFromDiscriminatorValue); } },
+                { "edge_ttl", n => { EdgeTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL.CreateFromDiscriminatorValue); } },
                 { "origin_cache_control", n => { OriginCacheControl = n.GetBoolValue(); } },
                 { "origin_error_page_passthru", n => { OriginErrorPagePassthru = n.GetBoolValue(); } },
                 { "read_timeout", n => { ReadTimeout = n.GetIntValue(); } },
                 { "respect_strong_etags", n => { RespectStrongEtags = n.GetBoolValue(); } },
-                { "serve_stale", n => { ServeStale = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_serve_stale>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_serve_stale.CreateFromDiscriminatorValue); } },
+                { "serve_stale", n => { ServeStale = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -118,16 +118,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("additional_cacheable_ports", AdditionalCacheablePorts);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_browser_ttl>("browser_ttl", BrowserTtl);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL>("browser_ttl", BrowserTtl);
             writer.WriteBoolValue("cache", Cache);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_key>("cache_key", CacheKey);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_cache_reserve>("cache_reserve", CacheReserve);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_edge_ttl>("edge_ttl", EdgeTtl);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey>("cache_key", CacheKey);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve>("cache_reserve", CacheReserve);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL>("edge_ttl", EdgeTtl);
             writer.WriteBoolValue("origin_cache_control", OriginCacheControl);
             writer.WriteBoolValue("origin_error_page_passthru", OriginErrorPagePassthru);
             writer.WriteIntValue("read_timeout", ReadTimeout);
             writer.WriteBoolValue("respect_strong_etags", RespectStrongEtags);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters_serve_stale>("serve_stale", ServeStale);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>("serve_stale", ServeStale);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

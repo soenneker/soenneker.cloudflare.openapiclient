@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enable only cipher suites and TLS versions compliant with FIPS 140-2.</summary>
+        /// <summary>Enable only cipher suites and TLS versions compliant with FIPS. 140-2.</summary>
         public bool? Tls { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_fipsSettings"/> and sets the default values.

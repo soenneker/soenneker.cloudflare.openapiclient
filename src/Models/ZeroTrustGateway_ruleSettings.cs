@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? IpCategories { get; set; }
         /// <summary>Set to true to include IPs in DNS resolver indicator feed blocks. By default indicator feeds only block based on domain names.</summary>
         public bool? IpIndicatorFeeds { get; set; }
-        /// <summary>Send matching traffic to the supplied destination IP address and port.</summary>
+        /// <summary>Send matching traffic to the supplied destination IP address. and port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings_l4override? L4override { get; set; }
@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings_payload_log PayloadLog { get; set; }
 #endif
-        /// <summary>Settings that apply to quarantine rules</summary>
+        /// <summary>Settings that apply to quarantine rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings_quarantine? Quarantine { get; set; }
@@ -141,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings_quarantine Quarantine { get; set; }
 #endif
-        /// <summary>Settings that apply to redirect rules</summary>
+        /// <summary>Settings that apply to redirect rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings_redirect? Redirect { get; set; }

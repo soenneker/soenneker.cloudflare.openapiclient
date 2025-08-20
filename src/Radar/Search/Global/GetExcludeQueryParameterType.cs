@@ -32,5 +32,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
         #pragma warning disable CS1591
         NOTEBOOKS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "VERTICALS")]
+        #pragma warning disable CS1591
+        VERTICALS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "INDUSTRIES")]
+        #pragma warning disable CS1591
+        INDUSTRIES,
+        #pragma warning restore CS1591
     }
 }

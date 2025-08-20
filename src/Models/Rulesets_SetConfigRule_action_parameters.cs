@@ -14,45 +14,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Turn on or off Automatic HTTPS Rewrites.</summary>
+        /// <summary>Whether to enable Automatic HTTPS Rewrites.</summary>
         public bool? AutomaticHttpsRewrites { get; set; }
-        /// <summary>Select which file extensions to minify automatically.</summary>
+        /// <summary>Which file extensions to minify automatically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_autominify? Autominify { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify? Autominify { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_autominify Autominify { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify Autominify { get; set; }
 #endif
-        /// <summary>Turn on or off Browser Integrity Check.</summary>
+        /// <summary>Whether to enable Browser Integrity Check (BIC).</summary>
         public bool? Bic { get; set; }
-        /// <summary>Turn off all active Cloudflare Apps.</summary>
+        /// <summary>Whether to disable Cloudflare Apps.</summary>
         public bool? DisableApps { get; set; }
-        /// <summary>Turn off Real User Monitoring (RUM).</summary>
+        /// <summary>Whether to disable Pay Per Crawl.</summary>
+        public bool? DisablePayPerCrawl { get; set; }
+        /// <summary>Whether to disable Real User Monitoring (RUM).</summary>
         public bool? DisableRum { get; set; }
-        /// <summary>Turn off Zaraz.</summary>
+        /// <summary>Whether to disable Zaraz.</summary>
         public bool? DisableZaraz { get; set; }
-        /// <summary>Turn on or off Email Obfuscation.</summary>
+        /// <summary>Whether to enable Email Obfuscation.</summary>
         public bool? EmailObfuscation { get; set; }
-        /// <summary>Turn on or off Cloudflare Fonts.</summary>
+        /// <summary>Whether to enable Cloudflare Fonts.</summary>
         public bool? Fonts { get; set; }
-        /// <summary>Turn on or off the Hotlink Protection.</summary>
+        /// <summary>Whether to enable Hotlink Protection.</summary>
         public bool? HotlinkProtection { get; set; }
-        /// <summary>Turn on or off Mirage.</summary>
+        /// <summary>Whether to enable Mirage.</summary>
         public bool? Mirage { get; set; }
-        /// <summary>Turn on or off Opportunistic Encryption.</summary>
+        /// <summary>Whether to enable Opportunistic Encryption.</summary>
         public bool? OpportunisticEncryption { get; set; }
-        /// <summary>Configure the Polish level.</summary>
+        /// <summary>The Polish level to configure.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_polish? Polish { get; set; }
-        /// <summary>Turn on or off Rocket Loader.</summary>
+        /// <summary>Whether to enable Rocket Loader.</summary>
         public bool? RocketLoader { get; set; }
-        /// <summary>Configure the Security Level.</summary>
+        /// <summary>The Security Level to configure.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_security_level? SecurityLevel { get; set; }
-        /// <summary>Turn on or off Server Side Excludes.</summary>
+        /// <summary>Whether to enable Server-Side Excludes.</summary>
         public bool? ServerSideExcludes { get; set; }
-        /// <summary>Configure the SSL level.</summary>
+        /// <summary>The SSL level to configure.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_ssl? Ssl { get; set; }
-        /// <summary>Turn on or off Signed Exchanges (SXG).</summary>
+        /// <summary>Whether to enable Signed Exchanges (SXG).</summary>
         public bool? Sxg { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters"/> and sets the default values.
@@ -80,9 +82,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "automatic_https_rewrites", n => { AutomaticHttpsRewrites = n.GetBoolValue(); } },
-                { "autominify", n => { Autominify = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_autominify>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_autominify.CreateFromDiscriminatorValue); } },
+                { "autominify", n => { Autominify = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify.CreateFromDiscriminatorValue); } },
                 { "bic", n => { Bic = n.GetBoolValue(); } },
                 { "disable_apps", n => { DisableApps = n.GetBoolValue(); } },
+                { "disable_pay_per_crawl", n => { DisablePayPerCrawl = n.GetBoolValue(); } },
                 { "disable_rum", n => { DisableRum = n.GetBoolValue(); } },
                 { "disable_zaraz", n => { DisableZaraz = n.GetBoolValue(); } },
                 { "email_obfuscation", n => { EmailObfuscation = n.GetBoolValue(); } },
@@ -106,9 +109,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("automatic_https_rewrites", AutomaticHttpsRewrites);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_autominify>("autominify", Autominify);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify>("autominify", Autominify);
             writer.WriteBoolValue("bic", Bic);
             writer.WriteBoolValue("disable_apps", DisableApps);
+            writer.WriteBoolValue("disable_pay_per_crawl", DisablePayPerCrawl);
             writer.WriteBoolValue("disable_rum", DisableRum);
             writer.WriteBoolValue("disable_zaraz", DisableZaraz);
             writer.WriteBoolValue("email_obfuscation", EmailObfuscation);

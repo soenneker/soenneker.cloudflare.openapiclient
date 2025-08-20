@@ -90,6 +90,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string O365TenantId { get; set; }
 #endif
+        /// <summary>The regions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_regions?>? Regions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_regions?> Regions { get; set; }
+#endif
         /// <summary>The require_tls_inbound property</summary>
         public bool? RequireTlsInbound { get; set; }
         /// <summary>The require_tls_outbound property</summary>
@@ -141,6 +149,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "lookback_hops", n => { LookbackHops = n.GetIntValue(); } },
                 { "o365_tenant_id", n => { O365TenantId = n.GetStringValue(); } },
+                { "regions", n => { Regions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_regions>()?.AsList(); } },
                 { "require_tls_inbound", n => { RequireTlsInbound = n.GetBoolValue(); } },
                 { "require_tls_outbound", n => { RequireTlsOutbound = n.GetBoolValue(); } },
                 { "transport", n => { Transport = n.GetStringValue(); } },
@@ -167,6 +176,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_modified", LastModified);
             writer.WriteIntValue("lookback_hops", LookbackHops);
             writer.WriteStringValue("o365_tenant_id", O365TenantId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_regions>("regions", Regions);
             writer.WriteBoolValue("require_tls_inbound", RequireTlsInbound);
             writer.WriteBoolValue("require_tls_outbound", RequireTlsOutbound);
             writer.WriteStringValue("transport", Transport);

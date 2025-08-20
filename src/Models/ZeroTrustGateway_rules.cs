@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration Expiration { get; set; }
 #endif
-        /// <summary>The protocol or layer to evaluate the traffic, identity, and device posture expressions.</summary>
+        /// <summary>The protocol or layer to evaluate the traffic, identity, and device. posture expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Gateway?>? Filters { get; set; }
@@ -78,11 +78,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The rule cannot be shared via the Orgs API</summary>
+        /// <summary>The rule cannot be shared via the Orgs API.</summary>
         public bool? NotSharable { get; private set; }
         /// <summary>Precedence sets the order of your rules. Lower values indicate higher precedence. At each processing phase, applicable rules are evaluated in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) docs on how to manage precedence via Terraform.</summary>
         public int? Precedence { get; set; }
-        /// <summary>The rule was shared via the Orgs API and cannot be edited by the current account</summary>
+        /// <summary>The rule was shared via the Orgs API and cannot be edited by the current account.</summary>
         public bool? ReadOnly { get; private set; }
         /// <summary>Additional settings that modify the rule&apos;s action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule Schedule { get; set; }
 #endif
-        /// <summary>account tag of account that created the rule</summary>
+        /// <summary>account tag of account that created the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceAccount { get; private set; }
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
-        /// <summary>version number of the rule</summary>
+        /// <summary>version number of the rule.</summary>
         public int? Version { get; private set; }
         /// <summary>Warning for a misconfigured rule, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

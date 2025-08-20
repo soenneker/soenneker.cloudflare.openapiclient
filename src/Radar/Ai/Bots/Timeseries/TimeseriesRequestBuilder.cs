@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*,userAgent*}", pathParameters)
+        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*,userAgent*}", rawUrl)
+        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", rawUrl)
         {
         }
         /// <summary>
@@ -156,6 +156,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Filters results by industry.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("industry")]
+            public string[]? Industry { get; set; }
+#nullable restore
+#else
+            [QueryParameter("industry")]
+            public string[] Industry { get; set; }
+#endif
             /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
@@ -188,6 +198,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
 #else
             [QueryParameter("userAgent")]
             public string[] UserAgent { get; set; }
+#endif
+            /// <summary>Filters results by vertical.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("vertical")]
+            public string[]? Vertical { get; set; }
+#nullable restore
+#else
+            [QueryParameter("vertical")]
+            public string[] Vertical { get; set; }
 #endif
         }
     }

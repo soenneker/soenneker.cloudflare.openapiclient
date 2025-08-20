@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Name of compression algorithm to enable.</summary>
+    /// <summary>Name of the compression algorithm to enable.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Rulesets_CompressResponseRule_action_parameters_algorithms_name
     {

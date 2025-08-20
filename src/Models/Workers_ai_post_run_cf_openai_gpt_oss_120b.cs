@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The input property</summary>
+        /// <summary>Responses API Input messages. Refer to OpenAI Responses API docs to learn more about supported content types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b.Workers_ai_post_run_cf_openai_gpt_oss_120b_input? Input { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1"/>, <see cref="string"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workers_ai_post_run_cf_openai_gpt_oss_120b_input : IComposedTypeWrapper, IParsable
@@ -84,13 +84,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
             public string String { get; set; }
 #endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1>? WorkersAiPostRunCfOpenaiGptOss120bInputMember1 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1? WorkersAiPostRunCfOpenaiGptOss120bInputMember1 { get; set; }
 #nullable restore
 #else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1> WorkersAiPostRunCfOpenaiGptOss120bInputMember1 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1 WorkersAiPostRunCfOpenaiGptOss120bInputMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -100,15 +100,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b.Workers_ai_post_run_cf_openai_gpt_oss_120b_input CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b.Workers_ai_post_run_cf_openai_gpt_oss_120b_input();
                 if(parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1> workersAiPostRunCfOpenaiGptOss120bInputMember1Value)
-                {
-                    result.WorkersAiPostRunCfOpenaiGptOss120bInputMember1 = workersAiPostRunCfOpenaiGptOss120bInputMember1Value;
+                else {
+                    result.WorkersAiPostRunCfOpenaiGptOss120bInputMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1();
                 }
                 return result;
             }
@@ -118,6 +116,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
+                if(WorkersAiPostRunCfOpenaiGptOss120bInputMember1 != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkersAiPostRunCfOpenaiGptOss120bInputMember1);
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -131,9 +133,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 {
                     writer.WriteStringValue(null, String);
                 }
-                else if(WorkersAiPostRunCfOpenaiGptOss120bInputMember1 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1>(null, WorkersAiPostRunCfOpenaiGptOss120bInputMember1);
+                else {
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120b_inputMember1>(null, WorkersAiPostRunCfOpenaiGptOss120bInputMember1);
                 }
             }
         }

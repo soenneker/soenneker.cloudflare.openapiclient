@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Settings that apply to quarantine rules
+    /// Settings that apply to quarantine rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGateway_ruleSettings_quarantine : IAdditionalDataHolder, IParsable

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Configure the Security Level.</summary>
+    /// <summary>The Security Level to configure.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Rulesets_SetConfigRule_action_parameters_security_level
     {

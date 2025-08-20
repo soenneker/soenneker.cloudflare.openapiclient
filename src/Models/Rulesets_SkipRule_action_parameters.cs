@@ -14,8 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A phase to skip the execution of. This property is only compatible with products.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_phase? Phase { get; set; }
+        /// <summary>A phase to skip the execution of. This option is only compatible with the products option.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipPhase? Phase { get; set; }
         /// <summary>A list of phases to skip the execution of. This option is incompatible with the rulesets option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,21 +27,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of legacy security products to skip the execution of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_products?>? Products { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets?>? Products { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_products?> Products { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets?> Products { get; set; }
 #endif
         /// <summary>A mapping of ruleset IDs to a list of rule IDs in that ruleset to skip the execution of. This option is incompatible with the ruleset option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules? Rules { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules? Rules { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules Rules { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules Rules { get; set; }
 #endif
         /// <summary>A ruleset to skip the execution of. This option is incompatible with the rulesets option.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_ruleset? Ruleset { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRuleset? Ruleset { get; set; }
         /// <summary>A list of ruleset IDs to skip the execution of. This option is incompatible with the ruleset and phases options.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,11 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_phase>(); } },
+                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipPhase>(); } },
                 { "phases", n => { Phases = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>()?.AsList(); } },
-                { "products", n => { Products = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_products>()?.AsList(); } },
-                { "rules", n => { Rules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules.CreateFromDiscriminatorValue); } },
-                { "ruleset", n => { Ruleset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_ruleset>(); } },
+                { "products", n => { Products = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>()?.AsList(); } },
+                { "rules", n => { Rules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules.CreateFromDiscriminatorValue); } },
+                { "ruleset", n => { Ruleset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRuleset>(); } },
                 { "rulesets", n => { Rulesets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -90,11 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_phase>("phase", Phase);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipPhase>("phase", Phase);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>("phases", Phases);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_products>("products", Products);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules>("rules", Rules);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_ruleset>("ruleset", Ruleset);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>("products", Products);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules>("rules", Rules);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRuleset>("ruleset", Ruleset);
             writer.WriteCollectionOfPrimitiveValues<string>("rulesets", Rulesets);
             writer.WriteAdditionalData(AdditionalData);
         }

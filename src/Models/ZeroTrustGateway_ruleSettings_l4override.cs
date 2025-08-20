@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Send matching traffic to the supplied destination IP address and port.
+    /// Send matching traffic to the supplied destination IP address. and port.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGateway_ruleSettings_l4override : IAdditionalDataHolder, IParsable

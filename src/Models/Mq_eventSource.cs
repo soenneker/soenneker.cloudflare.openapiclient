@@ -8,51 +8,11 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccess"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccessApplication"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboards"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboardsClipboard"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceDnsZone"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceImages"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKv"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKvNamespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2Bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStore"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStoreStore"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSuperSlurper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorize"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorizeIndex"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersAiModel"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersBuildsWorker"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflows"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflowsWorkflow"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceImages"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKv"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSuperSlurper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorize"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersAiModel"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersBuildsWorker"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflowsWorkflow"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Mq_eventSource : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccess"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccess? MqEventSourceAccess { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccess MqEventSourceAccess { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccessApplication"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccessApplication? MqEventSourceAccessApplication { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccessApplication MqEventSourceAccessApplication { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboards"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboards? MqEventSourceClipboards { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboards MqEventSourceClipboards { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboardsClipboard"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboardsClipboard? MqEventSourceClipboardsClipboard { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboardsClipboard MqEventSourceClipboardsClipboard { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceDnsZone"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceDnsZone? MqEventSourceDnsZone { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceDnsZone MqEventSourceDnsZone { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceImages"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,14 +29,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKv MqEventSourceKv { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKvNamespace"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKvNamespace? MqEventSourceKvNamespace { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKvNamespace MqEventSourceKvNamespace { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,30 +36,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2 MqEventSourceR2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2Bucket"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2Bucket? MqEventSourceR2Bucket { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2Bucket MqEventSourceR2Bucket { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStore"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStore? MqEventSourceSecretsStore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStore MqEventSourceSecretsStore { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStoreStore"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStoreStore? MqEventSourceSecretsStoreStore { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStoreStore MqEventSourceSecretsStoreStore { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSuperSlurper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,14 +53,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorize MqEventSourceVectorize { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorizeIndex"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorizeIndex? MqEventSourceVectorizeIndex { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorizeIndex MqEventSourceVectorizeIndex { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersAiModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -148,14 +68,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersBuildsWorker MqEventSourceWorkersBuildsWorker { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflows"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflows? MqEventSourceWorkflows { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflows MqEventSourceWorkflows { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflowsWorkflow"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,27 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSource();
-            if("mq_event-source-access".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceAccess = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccess();
-            }
-            else if("mq_event-source-access-application".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceAccessApplication = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccessApplication();
-            }
-            else if("mq_event-source-clipboards".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceClipboards = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboards();
-            }
-            else if("mq_event-source-clipboards-clipboard".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceClipboardsClipboard = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboardsClipboard();
-            }
-            else if("mq_event-source-dns-zone".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceDnsZone = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceDnsZone();
-            }
-            else if("mq_event-source-images".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("mq_event-source-images".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceImages = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceImages();
             }
@@ -203,25 +95,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.MqEventSourceKv = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKv();
             }
-            else if("mq_event-source-kv-namespace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceKvNamespace = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKvNamespace();
-            }
             else if("mq_event-source-r2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceR2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2();
-            }
-            else if("mq_event-source-r2-bucket".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceR2Bucket = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2Bucket();
-            }
-            else if("mq_event-source-secrets-store".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceSecretsStore = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStore();
-            }
-            else if("mq_event-source-secrets-store-store".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceSecretsStoreStore = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStoreStore();
             }
             else if("mq_event-source-super-slurper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -231,10 +107,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.MqEventSourceVectorize = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorize();
             }
-            else if("mq_event-source-vectorize-index".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceVectorizeIndex = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorizeIndex();
-            }
             else if("mq_event-source-workers-ai-model".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceWorkersAiModel = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersAiModel();
@@ -242,10 +114,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if("mq_event-source-workers-builds-worker".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.MqEventSourceWorkersBuildsWorker = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersBuildsWorker();
-            }
-            else if("mq_event-source-workflows".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MqEventSourceWorkflows = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflows();
             }
             else if("mq_event-source-workflows-workflow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -259,27 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MqEventSourceAccess != null)
-            {
-                return MqEventSourceAccess.GetFieldDeserializers();
-            }
-            else if(MqEventSourceAccessApplication != null)
-            {
-                return MqEventSourceAccessApplication.GetFieldDeserializers();
-            }
-            else if(MqEventSourceClipboards != null)
-            {
-                return MqEventSourceClipboards.GetFieldDeserializers();
-            }
-            else if(MqEventSourceClipboardsClipboard != null)
-            {
-                return MqEventSourceClipboardsClipboard.GetFieldDeserializers();
-            }
-            else if(MqEventSourceDnsZone != null)
-            {
-                return MqEventSourceDnsZone.GetFieldDeserializers();
-            }
-            else if(MqEventSourceImages != null)
+            if(MqEventSourceImages != null)
             {
                 return MqEventSourceImages.GetFieldDeserializers();
             }
@@ -287,25 +135,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return MqEventSourceKv.GetFieldDeserializers();
             }
-            else if(MqEventSourceKvNamespace != null)
-            {
-                return MqEventSourceKvNamespace.GetFieldDeserializers();
-            }
             else if(MqEventSourceR2 != null)
             {
                 return MqEventSourceR2.GetFieldDeserializers();
-            }
-            else if(MqEventSourceR2Bucket != null)
-            {
-                return MqEventSourceR2Bucket.GetFieldDeserializers();
-            }
-            else if(MqEventSourceSecretsStore != null)
-            {
-                return MqEventSourceSecretsStore.GetFieldDeserializers();
-            }
-            else if(MqEventSourceSecretsStoreStore != null)
-            {
-                return MqEventSourceSecretsStoreStore.GetFieldDeserializers();
             }
             else if(MqEventSourceSuperSlurper != null)
             {
@@ -315,10 +147,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return MqEventSourceVectorize.GetFieldDeserializers();
             }
-            else if(MqEventSourceVectorizeIndex != null)
-            {
-                return MqEventSourceVectorizeIndex.GetFieldDeserializers();
-            }
             else if(MqEventSourceWorkersAiModel != null)
             {
                 return MqEventSourceWorkersAiModel.GetFieldDeserializers();
@@ -326,10 +154,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(MqEventSourceWorkersBuildsWorker != null)
             {
                 return MqEventSourceWorkersBuildsWorker.GetFieldDeserializers();
-            }
-            else if(MqEventSourceWorkflows != null)
-            {
-                return MqEventSourceWorkflows.GetFieldDeserializers();
             }
             else if(MqEventSourceWorkflowsWorkflow != null)
             {
@@ -344,27 +168,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(MqEventSourceAccess != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccess>(null, MqEventSourceAccess);
-            }
-            else if(MqEventSourceAccessApplication != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceAccessApplication>(null, MqEventSourceAccessApplication);
-            }
-            else if(MqEventSourceClipboards != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboards>(null, MqEventSourceClipboards);
-            }
-            else if(MqEventSourceClipboardsClipboard != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceClipboardsClipboard>(null, MqEventSourceClipboardsClipboard);
-            }
-            else if(MqEventSourceDnsZone != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceDnsZone>(null, MqEventSourceDnsZone);
-            }
-            else if(MqEventSourceImages != null)
+            if(MqEventSourceImages != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceImages>(null, MqEventSourceImages);
             }
@@ -372,25 +176,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKv>(null, MqEventSourceKv);
             }
-            else if(MqEventSourceKvNamespace != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceKvNamespace>(null, MqEventSourceKvNamespace);
-            }
             else if(MqEventSourceR2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2>(null, MqEventSourceR2);
-            }
-            else if(MqEventSourceR2Bucket != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceR2Bucket>(null, MqEventSourceR2Bucket);
-            }
-            else if(MqEventSourceSecretsStore != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStore>(null, MqEventSourceSecretsStore);
-            }
-            else if(MqEventSourceSecretsStoreStore != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceSecretsStoreStore>(null, MqEventSourceSecretsStoreStore);
             }
             else if(MqEventSourceSuperSlurper != null)
             {
@@ -400,10 +188,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorize>(null, MqEventSourceVectorize);
             }
-            else if(MqEventSourceVectorizeIndex != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceVectorizeIndex>(null, MqEventSourceVectorizeIndex);
-            }
             else if(MqEventSourceWorkersAiModel != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersAiModel>(null, MqEventSourceWorkersAiModel);
@@ -411,10 +195,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(MqEventSourceWorkersBuildsWorker != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkersBuildsWorker>(null, MqEventSourceWorkersBuildsWorker);
-            }
-            else if(MqEventSourceWorkflows != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSourceWorkflows>(null, MqEventSourceWorkflows);
             }
             else if(MqEventSourceWorkflowsWorkflow != null)
             {

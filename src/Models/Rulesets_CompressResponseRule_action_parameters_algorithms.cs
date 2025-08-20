@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Name of compression algorithm to enable.</summary>
+        /// <summary>Name of the compression algorithm to enable.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_CompressResponseRule_action_parameters_algorithms_name? Name { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_CompressResponseRule_action_parameters_algorithms"/> and sets the default values.

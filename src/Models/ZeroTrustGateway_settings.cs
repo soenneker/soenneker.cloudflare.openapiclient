@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PublicKey { get; set; }
 #endif
-        /// <summary>Seed ID</summary>
+        /// <summary>Seed ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SeedId { get; set; }

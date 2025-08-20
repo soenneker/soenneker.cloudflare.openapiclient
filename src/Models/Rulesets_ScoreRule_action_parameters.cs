@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Increment contains the delta to change the score and can be either positive or negative.</summary>
+        /// <summary>A delta to change the score by, which can be either positive or negative.</summary>
         public int? Increment { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ScoreRule_action_parameters"/> and sets the default values.

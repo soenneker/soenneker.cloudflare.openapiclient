@@ -82,6 +82,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FromName { get; set; }
 #endif
+        /// <summary>The htmltext_structure_hash property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? HtmltextStructureHash { get; set; }
+#nullable restore
+#else
+        public string HtmltextStructureHash { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,6 +217,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "findings", n => { Findings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from", n => { From = n.GetStringValue(); } },
                 { "from_name", n => { FromName = n.GetStringValue(); } },
+                { "htmltext_structure_hash", n => { HtmltextStructureHash = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_phish_submission", n => { IsPhishSubmission = n.GetBoolValue(); } },
                 { "is_quarantined", n => { IsQuarantined = n.GetBoolValue(); } },
@@ -241,6 +250,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings>("findings", Findings);
             writer.WriteStringValue("from", From);
             writer.WriteStringValue("from_name", FromName);
+            writer.WriteStringValue("htmltext_structure_hash", HtmltextStructureHash);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_phish_submission", IsPhishSubmission);
             writer.WriteBoolValue("is_quarantined", IsQuarantined);

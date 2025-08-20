@@ -48,13 +48,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
-        /// <summary>Configure checks for exposed credentials.</summary>
+        /// <summary>Configuration for exposed credential checking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_exposed_credential_check? ExposedCredentialCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck? ExposedCredentialCheck { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_exposed_credential_check ExposedCredentialCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck ExposedCredentialCheck { get; set; }
 #endif
         /// <summary>The expression defining which traffic will match the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,20 +77,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>An object configuring the rule&apos;s logging behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_logging? Logging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleLogging? Logging { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_logging Logging { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleLogging Logging { get; set; }
 #endif
-        /// <summary>An object configuring the rule&apos;s ratelimit behavior.</summary>
+        /// <summary>An object configuring the rule&apos;s rate limit behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_ratelimit? Ratelimit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleRatelimit? Ratelimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_ratelimit Ratelimit { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleRatelimit Ratelimit { get; set; }
 #endif
-        /// <summary>The reference of the rule (the rule ID by default).</summary>
+        /// <summary>The reference of the rule (the rule&apos;s ID by default).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ref { get; set; }
@@ -136,12 +136,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "exposed_credential_check", n => { ExposedCredentialCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_exposed_credential_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_exposed_credential_check.CreateFromDiscriminatorValue); } },
+                { "exposed_credential_check", n => { ExposedCredentialCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck.CreateFromDiscriminatorValue); } },
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
-                { "logging", n => { Logging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_logging>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_logging.CreateFromDiscriminatorValue); } },
-                { "ratelimit", n => { Ratelimit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_ratelimit>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_ratelimit.CreateFromDiscriminatorValue); } },
+                { "logging", n => { Logging = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleLogging>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleLogging.CreateFromDiscriminatorValue); } },
+                { "ratelimit", n => { Ratelimit = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleRatelimit>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleRatelimit.CreateFromDiscriminatorValue); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -157,11 +157,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_action_parameters>("action_parameters", ActionParameters);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_exposed_credential_check>("exposed_credential_check", ExposedCredentialCheck);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck>("exposed_credential_check", ExposedCredentialCheck);
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_logging>("logging", Logging);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_ratelimit>("ratelimit", Ratelimit);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleLogging>("logging", Logging);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleRatelimit>("ratelimit", Ratelimit);
             writer.WriteStringValue("ref", Ref);
             writer.WriteAdditionalData(AdditionalData);
         }

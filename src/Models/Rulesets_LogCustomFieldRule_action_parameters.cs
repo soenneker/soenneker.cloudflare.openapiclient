@@ -17,42 +17,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The cookie fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_cookie_fields>? CookieFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldCookieFields_item>? CookieFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_cookie_fields> CookieFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldCookieFields_item> CookieFields { get; set; }
 #endif
         /// <summary>The raw response fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_raw_response_fields>? RawResponseFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRawResponseFields_item>? RawResponseFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_raw_response_fields> RawResponseFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRawResponseFields_item> RawResponseFields { get; set; }
 #endif
         /// <summary>The raw request fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_request_fields>? RequestFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRequestFields_item>? RequestFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_request_fields> RequestFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRequestFields_item> RequestFields { get; set; }
 #endif
         /// <summary>The transformed response fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_response_fields>? ResponseFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldResponseFields_item>? ResponseFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_response_fields> ResponseFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldResponseFields_item> ResponseFields { get; set; }
 #endif
         /// <summary>The transformed request fields to log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_transformed_request_fields>? TransformedRequestFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldTransformedRequestFields_item>? TransformedRequestFields { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_transformed_request_fields> TransformedRequestFields { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldTransformedRequestFields_item> TransformedRequestFields { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters"/> and sets the default values.
@@ -79,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cookie_fields", n => { CookieFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_cookie_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_cookie_fields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "raw_response_fields", n => { RawResponseFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_raw_response_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_raw_response_fields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "request_fields", n => { RequestFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_request_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_request_fields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "response_fields", n => { ResponseFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_response_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_response_fields.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "transformed_request_fields", n => { TransformedRequestFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_transformed_request_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_transformed_request_fields.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cookie_fields", n => { CookieFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldCookieFields_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldCookieFields_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "raw_response_fields", n => { RawResponseFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRawResponseFields_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRawResponseFields_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "request_fields", n => { RequestFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRequestFields_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRequestFields_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "response_fields", n => { ResponseFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldResponseFields_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldResponseFields_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "transformed_request_fields", n => { TransformedRequestFields = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldTransformedRequestFields_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldTransformedRequestFields_item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -93,11 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_cookie_fields>("cookie_fields", CookieFields);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_raw_response_fields>("raw_response_fields", RawResponseFields);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_request_fields>("request_fields", RequestFields);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_response_fields>("response_fields", ResponseFields);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRule_action_parameters_transformed_request_fields>("transformed_request_fields", TransformedRequestFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldCookieFields_item>("cookie_fields", CookieFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRawResponseFields_item>("raw_response_fields", RawResponseFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldRequestFields_item>("request_fields", RequestFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldResponseFields_item>("response_fields", ResponseFields);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_LogCustomFieldTransformedRequestFields_item>("transformed_request_fields", TransformedRequestFields);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

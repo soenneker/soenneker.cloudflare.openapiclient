@@ -25,18 +25,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The configuration to use for matched data logging.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_matched_data? MatchedData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData? MatchedData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_matched_data MatchedData { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData MatchedData { get; set; }
 #endif
         /// <summary>A set of overrides to apply to the target ruleset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_overrides? Overrides { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides? Overrides { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_overrides Overrides { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides Overrides { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters"/> and sets the default values.
@@ -64,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "matched_data", n => { MatchedData = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_matched_data>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_matched_data.CreateFromDiscriminatorValue); } },
-                { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_overrides>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_overrides.CreateFromDiscriminatorValue); } },
+                { "matched_data", n => { MatchedData = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData.CreateFromDiscriminatorValue); } },
+                { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,8 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_matched_data>("matched_data", MatchedData);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_overrides>("overrides", Overrides);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData>("matched_data", MatchedData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides>("overrides", Overrides);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BackgroundColor { get; set; }
 #endif
-        /// <summary>Enable only cipher suites and TLS versions compliant with FIPS 140-2.</summary>
+        /// <summary>Enable only cipher suites and TLS versions compliant with FIPS. 140-2.</summary>
         public bool? Enabled { get; set; }
         /// <summary>If mode is customized_block_page: block page footer text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,9 +77,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>This setting was shared via the Orgs API and cannot be edited by the current account</summary>
+        /// <summary>This setting was shared via the Orgs API and cannot be edited by the current account.</summary>
         public bool? ReadOnly { get; private set; }
-        /// <summary>Account tag of account that shared this setting</summary>
+        /// <summary>Account tag of account that shared this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceAccount { get; private set; }
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TargetUri { get; set; }
 #endif
-        /// <summary>Version number of the setting</summary>
+        /// <summary>Version number of the setting.</summary>
         public int? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_blockPageSettings"/> and sets the default values.

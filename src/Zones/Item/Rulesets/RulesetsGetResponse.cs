@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets
     public partial class RulesetsGetResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Response, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Cursors information to navigate the results.</summary>
+        /// <summary>Information to navigate the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResultInfo? ResultInfo { get; set; }

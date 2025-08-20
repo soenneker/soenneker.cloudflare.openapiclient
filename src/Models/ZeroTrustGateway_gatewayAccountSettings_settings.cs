@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Account settings
+    /// Account settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroTrustGateway_gatewayAccountSettings_settings : IAdditionalDataHolder, IParsable
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_certificateSettings Certificate { get; set; }
 #endif
-        /// <summary>Custom certificate settings for BYO-PKI. (deprecated and replaced by `certificate`)</summary>
+        /// <summary>Custom certificate settings for BYO-PKI. (deprecated and replaced by `certificate`).</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_hostSelectorSettings HostSelector { get; set; }
 #endif
-        /// <summary>Setting to define inspection settings</summary>
+        /// <summary>Setting to define inspection settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_inspectionSettings? Inspection { get; set; }

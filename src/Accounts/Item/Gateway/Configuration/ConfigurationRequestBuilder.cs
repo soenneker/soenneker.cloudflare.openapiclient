@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration
         /// Patches the current Zero Trust account configuration. This endpoint can update a single subcollection of settings such as `antivirus`, `tls_decrypt`, `activity_log`, `block_page`, `browser_isolation`, `fips`, `body_scanning`, or `certificate`, without updating the entire configuration object. Returns an error if any collection of settings is not properly configured.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_account_config"/></returns>
-        /// <param name="body">Account settings</param>
+        /// <param name="body">Account settings.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_patch_zero_trust_account_configuration_4XX">When receiving a 4XX status code</exception>
@@ -91,10 +91,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration
         /// Updates the current Zero Trust account configuration.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_account_config"/></returns>
-        /// <param name="body">Account settings</param>
+        /// <param name="body">Account settings.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_update_zero_trust_account_configuration_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_update_zero_trust_account_configuration__4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_account_config?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gatewayAccountSettings body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_update_zero_trust_account_configuration_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_update_zero_trust_account_configuration__4XX.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_account_config>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_gateway_account_config.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -135,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration
         /// Patches the current Zero Trust account configuration. This endpoint can update a single subcollection of settings such as `antivirus`, `tls_decrypt`, `activity_log`, `block_page`, `browser_isolation`, `fips`, `body_scanning`, or `certificate`, without updating the entire configuration object. Returns an error if any collection of settings is not properly configured.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Account settings</param>
+        /// <param name="body">Account settings.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,7 +157,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration
         /// Updates the current Zero Trust account configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Account settings</param>
+        /// <param name="body">Account settings.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

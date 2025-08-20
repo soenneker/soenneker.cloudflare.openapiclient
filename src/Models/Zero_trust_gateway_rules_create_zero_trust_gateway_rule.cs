@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration Expiration { get; set; }
 #endif
-        /// <summary>The protocol or layer to evaluate the traffic, identity, and device posture expressions.</summary>
+        /// <summary>The protocol or layer to evaluate the traffic, identity, and device. posture expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules?>? Filters { get; set; }

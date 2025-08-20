@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Leases;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames;
@@ -23,6 +24,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Address_mapsRequestBuilder Address_maps
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps.Address_mapsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The leases property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Leases.LeasesRequestBuilder Leases
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Leases.LeasesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The loa_documents property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents.Loa_documentsRequestBuilder Loa_documents

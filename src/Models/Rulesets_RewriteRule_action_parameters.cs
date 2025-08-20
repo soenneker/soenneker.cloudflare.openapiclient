@@ -14,21 +14,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Map of request headers to modify.</summary>
+        /// <summary>A map of headers to rewrite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers? Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders Headers { get; set; }
 #endif
-        /// <summary>URI to rewrite the request to.</summary>
+        /// <summary>The uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_uri? Uri { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri? Uri { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_uri Uri { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri Uri { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers.CreateFromDiscriminatorValue); } },
-                { "uri", n => { Uri = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_uri>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_uri.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders.CreateFromDiscriminatorValue); } },
+                { "uri", n => { Uri = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers>("headers", Headers);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_uri>("uri", Uri);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri>("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

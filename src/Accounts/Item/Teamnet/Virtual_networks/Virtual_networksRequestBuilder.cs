@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_netwo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Virtual_networksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/teamnet/virtual_networks{?id*,is_default*,is_deleted*,name*}", pathParameters)
+        public Virtual_networksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/teamnet/virtual_networks{?id*,is_default*,is_default_network*,is_deleted*,name*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_netwo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Virtual_networksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/teamnet/virtual_networks{?id*,is_default*,is_deleted*,name*}", rawUrl)
+        public Virtual_networksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/teamnet/virtual_networks{?id*,is_default*,is_default_network*,is_deleted*,name*}", rawUrl)
         {
         }
         /// <summary>
@@ -152,8 +152,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_netwo
         {
             [QueryParameter("id")]
             public Guid? Id { get; set; }
+            [Obsolete("")]
             [QueryParameter("is_default")]
             public bool? IsDefault { get; set; }
+            [QueryParameter("is_default_network")]
+            public bool? IsDefaultNetwork { get; set; }
             [QueryParameter("is_deleted")]
             public bool? IsDeleted { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

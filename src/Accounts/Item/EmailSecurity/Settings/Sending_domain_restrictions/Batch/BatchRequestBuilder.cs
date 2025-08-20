@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         {
         }
         /// <summary>
-        /// Send a Batch of sending_domain_restrictions API calls to be executed together.
+        /// Send a Batch of `sending_domain_restrictions` API calls to be executed together.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_sending_domain_restrictions_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_sending_domain_restrictions_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_sending_domain_restrictions_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a Batch of sending_domain_restrictions API calls to be executed together.
+        /// Send a Batch of `sending_domain_restrictions` API calls to be executed together.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

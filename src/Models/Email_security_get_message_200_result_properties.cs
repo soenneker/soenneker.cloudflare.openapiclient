@@ -34,8 +34,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BlocklistedPattern { get; set; }
 #endif
-        /// <summary>The whitelisted_pattern_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_whitelisted_pattern_type? WhitelistedPatternType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties"/> and sets the default values.
         /// </summary>
@@ -65,7 +63,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowlisted_pattern_type", n => { AllowlistedPatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_allowlisted_pattern_type>(); } },
                 { "blocklisted_message", n => { BlocklistedMessage = n.GetBoolValue(); } },
                 { "blocklisted_pattern", n => { BlocklistedPattern = n.GetStringValue(); } },
-                { "whitelisted_pattern_type", n => { WhitelistedPatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_whitelisted_pattern_type>(); } },
             };
         }
         /// <summary>
@@ -79,7 +76,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_allowlisted_pattern_type>("allowlisted_pattern_type", AllowlistedPatternType);
             writer.WriteBoolValue("blocklisted_message", BlocklistedMessage);
             writer.WriteStringValue("blocklisted_pattern", BlocklistedPattern);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties_whitelisted_pattern_type>("whitelisted_pattern_type", WhitelistedPatternType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
