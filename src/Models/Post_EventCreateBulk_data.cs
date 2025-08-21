@@ -66,14 +66,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Indicator { get; set; }
 #endif
-        /// <summary>The indicatorType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IndicatorType { get; set; }
-#nullable restore
-#else
-        public string IndicatorType { get; set; }
-#endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -147,7 +139,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "indicator", n => { Indicator = n.GetStringValue(); } },
-                { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_data_raw>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_data_raw.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "targetCountry", n => { TargetCountry = n.GetStringValue(); } },
@@ -170,7 +161,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteStringValue("event", Event);
             writer.WriteStringValue("indicator", Indicator);
-            writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_data_raw>("raw", Raw);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("targetCountry", TargetCountry);

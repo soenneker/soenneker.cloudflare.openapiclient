@@ -12,8 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Get_EventListGet_200 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountId property</summary>
-        public double? AccountId { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attacker property</summary>
@@ -56,8 +54,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Event { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public double? Id { get; set; }
         /// <summary>The indicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,16 +62,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Indicator { get; set; }
 #endif
-        /// <summary>The indicatorType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IndicatorType { get; set; }
-#nullable restore
-#else
-        public string IndicatorType { get; set; }
-#endif
-        /// <summary>The indicatorTypeId property</summary>
-        public double? IndicatorTypeId { get; set; }
         /// <summary>The insight property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,14 +84,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? NumReferenced { get; set; }
         /// <summary>The numReferences property</summary>
         public double? NumReferences { get; set; }
-        /// <summary>The rawId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RawId { get; set; }
-#nullable restore
-#else
-        public string RawId { get; set; }
-#endif
         /// <summary>The referenced property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,14 +115,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public List<double?> ReferencesIds { get; set; }
-#endif
-        /// <summary>The releasabilityId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ReleasabilityId { get; set; }
-#nullable restore
-#else
-        public string ReleasabilityId { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -211,27 +181,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountId", n => { AccountId = n.GetDoubleValue(); } },
                 { "attacker", n => { Attacker = n.GetStringValue(); } },
                 { "attackerCountry", n => { AttackerCountry = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetDoubleValue(); } },
                 { "indicator", n => { Indicator = n.GetStringValue(); } },
-                { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
-                { "indicatorTypeId", n => { IndicatorTypeId = n.GetDoubleValue(); } },
                 { "insight", n => { Insight = n.GetStringValue(); } },
                 { "killChain", n => { KillChain = n.GetDoubleValue(); } },
                 { "mitreAttack", n => { MitreAttack = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "numReferenced", n => { NumReferenced = n.GetDoubleValue(); } },
                 { "numReferences", n => { NumReferences = n.GetDoubleValue(); } },
-                { "rawId", n => { RawId = n.GetStringValue(); } },
                 { "referenced", n => { Referenced = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "referencedIds", n => { ReferencedIds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "references", n => { References = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "referencesIds", n => { ReferencesIds = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
-                { "releasabilityId", n => { ReleasabilityId = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "targetCountry", n => { TargetCountry = n.GetStringValue(); } },
                 { "targetIndustry", n => { TargetIndustry = n.GetStringValue(); } },
@@ -246,27 +210,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("accountId", AccountId);
             writer.WriteStringValue("attacker", Attacker);
             writer.WriteStringValue("attackerCountry", AttackerCountry);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("date", Date);
             writer.WriteStringValue("event", Event);
-            writer.WriteDoubleValue("id", Id);
             writer.WriteStringValue("indicator", Indicator);
-            writer.WriteStringValue("indicatorType", IndicatorType);
-            writer.WriteDoubleValue("indicatorTypeId", IndicatorTypeId);
             writer.WriteStringValue("insight", Insight);
             writer.WriteDoubleValue("killChain", KillChain);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreAttack", MitreAttack);
             writer.WriteDoubleValue("numReferenced", NumReferenced);
             writer.WriteDoubleValue("numReferences", NumReferences);
-            writer.WriteStringValue("rawId", RawId);
             writer.WriteCollectionOfPrimitiveValues<string>("referenced", Referenced);
             writer.WriteCollectionOfPrimitiveValues<double?>("referencedIds", ReferencedIds);
             writer.WriteCollectionOfPrimitiveValues<string>("references", References);
             writer.WriteCollectionOfPrimitiveValues<double?>("referencesIds", ReferencesIds);
-            writer.WriteStringValue("releasabilityId", ReleasabilityId);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("targetCountry", TargetCountry);
             writer.WriteStringValue("targetIndustry", TargetIndustry);

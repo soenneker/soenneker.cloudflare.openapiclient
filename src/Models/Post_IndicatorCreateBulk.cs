@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Global flag to automatically create indicator types if they don&apos;t exist. Individual indicators can override this with their own autoCreateType flag.</summary>
+        public bool? AutoCreateType { get; set; }
         /// <summary>The indicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "autoCreateType", n => { AutoCreateType = n.GetBoolValue(); } },
                 { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_IndicatorCreateBulk_indicators>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_IndicatorCreateBulk_indicators.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -57,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("autoCreateType", AutoCreateType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_IndicatorCreateBulk_indicators>("indicators", Indicators);
             writer.WriteAdditionalData(AdditionalData);
         }
