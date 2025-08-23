@@ -68,6 +68,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Subdomain.SubdomainRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The workers property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.WorkersRequestBuilder Workers
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.WorkersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.WorkersRequestBuilder"/> and sets the default values.
         /// </summary>

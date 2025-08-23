@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart
         /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_tiered_cache_patch_smart_tiered_cache_setting_200"/></returns>
-        /// <param name="body">Update enablement of Smart Tiered Cache</param>
+        /// <param name="body">Update enablement of Smart Tiered Cache.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_apiResponseCommonFailure">When receiving a 4XX status code</exception>
@@ -146,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart
         /// Smart Tiered Cache dynamically selects the single closest upper tier for each of your website’s origins with no configuration required, using our in-house performance and routing data. Cloudflare collects latency data for each request to an origin, and uses the latency data to determine how well any upper-tier data center is connected with an origin. As a result, Cloudflare can select the data center with the lowest latency to be the upper-tier for an origin.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Update enablement of Smart Tiered Cache</param>
+        /// <param name="body">Update enablement of Smart Tiered Cache.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

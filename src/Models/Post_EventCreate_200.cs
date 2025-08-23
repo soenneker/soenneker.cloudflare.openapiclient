@@ -54,13 +54,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Event { get; set; }
 #endif
-        /// <summary>The indicator property</summary>
+        /// <summary>The indicatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Indicator { get; set; }
+        public string? IndicatorType { get; set; }
 #nullable restore
 #else
-        public string Indicator { get; set; }
+        public string IndicatorType { get; set; }
 #endif
         /// <summary>The insight property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -186,7 +186,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
-                { "indicator", n => { Indicator = n.GetStringValue(); } },
+                { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "insight", n => { Insight = n.GetStringValue(); } },
                 { "killChain", n => { KillChain = n.GetDoubleValue(); } },
                 { "mitreAttack", n => { MitreAttack = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -215,7 +215,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("date", Date);
             writer.WriteStringValue("event", Event);
-            writer.WriteStringValue("indicator", Indicator);
+            writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteStringValue("insight", Insight);
             writer.WriteDoubleValue("killChain", KillChain);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreAttack", MitreAttack);

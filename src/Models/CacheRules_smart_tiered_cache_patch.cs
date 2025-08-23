@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Update enablement of Smart Tiered Cache
+    /// Update enablement of Smart Tiered Cache.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CacheRules_smart_tiered_cache_patch : IAdditionalDataHolder, IParsable

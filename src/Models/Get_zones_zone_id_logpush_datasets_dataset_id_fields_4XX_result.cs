@@ -7,30 +7,29 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// The value of the feature
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CacheRules_resultObjectComplex_value : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class Get_zones_zone_id_logpush_datasets_dataset_id_fields_4XX_result : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logpush_datasets_dataset_id_fields_4XX_result"/> and sets the default values.
         /// </summary>
-        public CacheRules_resultObjectComplex_value()
+        public Get_zones_zone_id_logpush_datasets_dataset_id_fields_4XX_result()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logpush_datasets_dataset_id_fields_4XX_result"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logpush_datasets_dataset_id_fields_4XX_result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logpush_datasets_dataset_id_fields_4XX_result();
         }
         /// <summary>
         /// The deserialization information for the current model

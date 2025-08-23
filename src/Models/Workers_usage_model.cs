@@ -11,5 +11,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Standard,
         #pragma warning restore CS1591
+        [EnumMember(Value = "bundled")]
+        #pragma warning disable CS1591
+        Bundled,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unbound")]
+        #pragma warning disable CS1591
+        Unbound,
+        #pragma warning restore CS1591
     }
 }

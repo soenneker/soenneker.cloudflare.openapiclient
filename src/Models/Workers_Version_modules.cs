@@ -9,47 +9,51 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CacheRules_resultObjectComplex : IAdditionalDataHolder, IParsable
+    public partial class Workers_Version_modules : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the setting is editable</summary>
-        public bool? Editable { get; set; }
-        /// <summary>The identifier of the caching setting</summary>
+        /// <summary>The base64-encoded module content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public byte[]? ContentBase64 { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public byte[] ContentBase64 { get; set; }
 #endif
-        /// <summary>The time when the setting was last modified</summary>
-        public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>The value of the feature</summary>
+        /// <summary>The content type of the module.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value? Value { get; set; }
+        public string? ContentType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value Value { get; set; }
+        public string ContentType { get; set; }
+#endif
+        /// <summary>The name of the module.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules"/> and sets the default values.
         /// </summary>
-        public CacheRules_resultObjectComplex()
+        public Workers_Version_modules()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,10 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "editable", n => { Editable = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value.CreateFromDiscriminatorValue); } },
+                { "content_base64", n => { ContentBase64 = n.GetByteArrayValue(); } },
+                { "content_type", n => { ContentType = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,10 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("editable", Editable);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_resultObjectComplex_value>("value", Value);
+            writer.WriteByteArrayValue("content_base64", ContentBase64);
+            writer.WriteStringValue("content_type", ContentType);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
