@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_schemasBrowser_cache_ttl : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Value of the zone setting in seconds.Minimum values by plan:- Free: 7200 seconds (2 hours)- Pro: 3600 seconds (1 hour)- Business: 1 second- Enterprise: 1 secondSetting a TTL of 0 is equivalent to selecting `Respect Existing Headers` and is allowed for all plans.</summary>
+        /// <summary>Value of the zone setting in seconds.Minimum values by plan:- Free: 1 second- Pro: 1 second- Business: 1 second- Enterprise: 1 secondSetting a TTL of 0 is equivalent to selecting `Respect Existing Headers` and is allowed for all plans.</summary>
         public int? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

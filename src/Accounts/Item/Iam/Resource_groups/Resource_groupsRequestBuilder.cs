@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Resource_groupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/iam/resource_groups{?id*,name*,page*,per_page*}", pathParameters)
+        public Resource_groupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/iam/resource_groups{?id*,name*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Resource_groupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/iam/resource_groups{?id*,name*,page*,per_page*}", rawUrl)
+        public Resource_groupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/iam/resource_groups{?id*,name*}", rawUrl)
         {
         }
         /// <summary>
@@ -168,10 +168,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
-            [QueryParameter("page")]
-            public double? Page { get; set; }
-            [QueryParameter("per_page")]
-            public double? PerPage { get; set; }
         }
     }
 }

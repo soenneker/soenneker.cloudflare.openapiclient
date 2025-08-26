@@ -10,6 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// <summary>
     /// Automatically optimize image loading for website visitors on mobiledevices. Refer to [our blog post](http://blog.cloudflare.com/mirage2-solving-mobile-speed)for more information.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_schemasMirage : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {

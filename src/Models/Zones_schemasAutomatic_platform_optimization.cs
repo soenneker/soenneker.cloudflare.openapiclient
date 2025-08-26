@@ -11,7 +11,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// [Automatic Platform Optimization for WordPress](https://developers.cloudflare.com/automatic-platform-optimization/) serves your WordPress site from Cloudflare&apos;s edge network and caches third-party fonts.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Zones_schemasAutomatic_platform_optimization : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
+    public partial class Zones_schemasAutomatic_platform_optimization : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasBase, IParsable
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

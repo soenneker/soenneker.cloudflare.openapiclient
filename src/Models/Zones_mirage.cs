@@ -17,6 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cloudflare Mirage reduces bandwidth used by images in mobile browsers.It can accelerate loading of image-heavy websites on very slow mobile connections and HTTP/1.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage_id? Id { get; set; }
         /// <summary>Value of the zone setting.</summary>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage"/> and sets the default values.

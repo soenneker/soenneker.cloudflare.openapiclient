@@ -12,14 +12,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Get_IndicatorList_200 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The accountId property</summary>
-        public double? AccountId { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
-        public double? Id { get; set; }
         /// <summary>The indicatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,9 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accountId", n => { AccountId = n.GetDoubleValue(); } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetDoubleValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -96,9 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("accountId", AccountId);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteDoubleValue("id", Id);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents>("relatedEvents", RelatedEvents);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);

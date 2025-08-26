@@ -14,8 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>True if new beta namespace, with additional preview features.</summary>
-        public bool? Beta { get; private set; }
         /// <summary>Namespace identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +57,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "beta", n => { Beta = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "supports_url_encoding", n => { SupportsUrlEncoding = n.GetBoolValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },

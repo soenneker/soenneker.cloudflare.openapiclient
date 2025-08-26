@@ -5,6 +5,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>Value of the zone setting.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    [Obsolete("")]
     public enum Zones_mirage_value
     {
         [EnumMember(Value = "on")]
