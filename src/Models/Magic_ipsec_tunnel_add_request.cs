@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The bgp property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config? Bgp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config Bgp { get; set; }
+#endif
         /// <summary>The IP address assigned to the Cloudflare side of the IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config.CreateFromDiscriminatorValue); } },
                 { "cloudflare_endpoint", n => { CloudflareEndpoint = n.GetStringValue(); } },
                 { "customer_endpoint", n => { CustomerEndpoint = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -123,6 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>("bgp", Bgp);
             writer.WriteStringValue("cloudflare_endpoint", CloudflareEndpoint);
             writer.WriteStringValue("customer_endpoint", CustomerEndpoint);
             writer.WriteStringValue("description", Description);

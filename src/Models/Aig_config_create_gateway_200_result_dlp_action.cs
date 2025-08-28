@@ -3,17 +3,18 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>the type of account being created. For self-serve customers, use standard. for enterprise customers, use enterprise.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum Iam_createAccount_type
+    #pragma warning disable CS1591
+    public enum Aig_config_create_gateway_200_result_dlp_action
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "standard")]
+        [EnumMember(Value = "BLOCK")]
         #pragma warning disable CS1591
-        Standard,
+        BLOCK,
         #pragma warning restore CS1591
-        [EnumMember(Value = "enterprise")]
+        [EnumMember(Value = "FLAG")]
         #pragma warning disable CS1591
-        Enterprise,
+        FLAG,
         #pragma warning restore CS1591
     }
 }

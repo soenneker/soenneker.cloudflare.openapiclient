@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? CollectLogs { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The dlp property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_dlp? Dlp { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_dlp Dlp { get; set; }
+#endif
         /// <summary>gateway id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "collect_logs", n => { CollectLogs = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "dlp", n => { Dlp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_dlp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_dlp.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "internal_id", n => { InternalId = n.GetGuidValue(); } },
                 { "log_management", n => { LogManagement = n.GetIntValue(); } },
@@ -139,6 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteBoolValue("collect_logs", CollectLogs);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_dlp>("dlp", Dlp);
             writer.WriteStringValue("id", Id);
             writer.WriteGuidValue("internal_id", InternalId);
             writer.WriteIntValue("log_management", LogManagement);

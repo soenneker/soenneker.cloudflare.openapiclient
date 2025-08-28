@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/summary/{dimension}{?asn*,bot*,botCategory*,botOperator*,botVerificationStatus*,continent*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*}", pathParameters)
+        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/summary/{dimension}{?asn*,bot*,botCategory*,botKind*,botOperator*,botVerificationStatus*,continent*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/summary/{dimension}{?asn*,bot*,botCategory*,botOperator*,botVerificationStatus*,continent*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*}", rawUrl)
+        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/summary/{dimension}{?asn*,bot*,botCategory*,botKind*,botOperator*,botVerificationStatus*,continent*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*}", rawUrl)
         {
         }
         /// <summary>
@@ -119,6 +119,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item
 #else
             [QueryParameter("botCategory")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotCategoryQueryParameterType[] BotCategory { get; set; }
+#endif
+            /// <summary>Filters results by bot kind.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("botKind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotKindQueryParameterType[]? BotKind { get; set; }
+#nullable restore
+#else
+            [QueryParameter("botKind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Summary.Item.GetBotKindQueryParameterType[] BotKind { get; set; }
 #endif
             /// <summary>Filters results by bot operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

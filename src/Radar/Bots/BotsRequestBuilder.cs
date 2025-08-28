@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots{?botCategory*,botOperator*,botVerificationStatus*,format*,limit*,offset*}", pathParameters)
+        public BotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots{?botCategory*,botOperator*,botVerificationStatus*,format*,kind*,limit*,offset*}", pathParameters)
         {
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots{?botCategory*,botOperator*,botVerificationStatus*,format*,limit*,offset*}", rawUrl)
+        public BotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots{?botCategory*,botOperator*,botVerificationStatus*,format*,kind*,limit*,offset*}", rawUrl)
         {
         }
         /// <summary>
@@ -146,6 +146,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Filters results by bot kind.</summary>
+            [QueryParameter("kind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.GetKindQueryParameterType? Kind { get; set; }
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }

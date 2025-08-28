@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Custom_trust_store;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Total_tls;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AcmRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The custom_trust_store property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Custom_trust_store.Custom_trust_storeRequestBuilder Custom_trust_store
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Custom_trust_store.Custom_trust_storeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The total_tls property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Total_tls.Total_tlsRequestBuilder Total_tls
         {

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook;
@@ -54,6 +55,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.BytedanceRequestBuilder Bytedance
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.BytedanceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The deepgram property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.DeepgramRequestBuilder Deepgram
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.DeepgramRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deepseekAi property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekAiRequestBuilder DeepseekAi

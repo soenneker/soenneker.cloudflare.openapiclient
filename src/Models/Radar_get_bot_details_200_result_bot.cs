@@ -30,6 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The kind of the bot.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Kind { get; set; }
+#nullable restore
+#else
+        public string Kind { get; set; }
+#endif
         /// <summary>The name of the bot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
                 { "operatorUrl", n => { OperatorUrl = n.GetStringValue(); } },
@@ -122,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("kind", Kind);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("operator", Operator);
             writer.WriteStringValue("operatorUrl", OperatorUrl);

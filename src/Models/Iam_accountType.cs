@@ -5,24 +5,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum Current
+    public enum Iam_accountType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "event")]
+        [EnumMember(Value = "standard")]
         #pragma warning disable CS1591
-        Event,
+        Standard,
         #pragma warning restore CS1591
-        [EnumMember(Value = "appID")]
+        [EnumMember(Value = "enterprise")]
         #pragma warning disable CS1591
-        AppID,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "coloName")]
-        #pragma warning disable CS1591
-        ColoName,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ipVersion")]
-        #pragma warning disable CS1591
-        IpVersion,
+        Enterprise,
         #pragma warning restore CS1591
     }
 }
