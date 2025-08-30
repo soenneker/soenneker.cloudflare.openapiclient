@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier of a Delegation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The modified_at property</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
@@ -93,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("delegated_account_id", DelegatedAccountId);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("parent_prefix_id", ParentPrefixId);
             writer.WriteAdditionalData(AdditionalData);

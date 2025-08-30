@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.</summary>
+        /// <summary>The destination_conf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationConf { get; set; }
@@ -22,8 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DestinationConf { get; set; }
 #endif
-        /// <summary>Flag that indicates if the job is enabled.</summary>
-        public bool? Enabled { get; set; }
+        /// <summary>The enabled property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Enabled { get; set; }
+#nullable restore
+#else
+        public string Enabled { get; set; }
+#endif
         /// <summary>The filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/filters/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,7 +42,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency? Frequency { get; set; }
         /// <summary>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind? Kind { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Kind { get; set; }
+#nullable restore
+#else
+        public string Kind { get; set; }
+#endif
         /// <summary>This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options OutputOptions { get; set; }
 #endif
-        /// <summary>Ownership challenge token to prove destination ownership.</summary>
+        /// <summary>The ownership_challenge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnershipChallenge { get; set; }
@@ -121,10 +133,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
+                { "kind", n => { Kind = n.GetStringValue(); } },
                 { "logpull_options", n => { LogpullOptions = n.GetStringValue(); } },
                 { "max_upload_bytes", n => { MaxUploadBytes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes.CreateFromDiscriminatorValue); } },
                 { "max_upload_interval_seconds", n => { MaxUploadIntervalSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds.CreateFromDiscriminatorValue); } },
@@ -142,10 +154,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destination_conf", DestinationConf);
-            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("enabled", Enabled);
             writer.WriteStringValue("filter", Filter);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
+            writer.WriteStringValue("kind", Kind);
             writer.WriteStringValue("logpull_options", LogpullOptions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>("max_upload_bytes", MaxUploadBytes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>("max_upload_interval_seconds", MaxUploadIntervalSeconds);

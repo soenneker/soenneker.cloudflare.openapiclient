@@ -15,7 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Defines the asset creation time.</summary>
-        public DateTimeOffset? Created { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestAssetItem_created? Created { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestAssetItem_created Created { get; set; }
+#endif
         /// <summary>Asset description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestAssetItem_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestAssetItem_created.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "file_type", n => { FileType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestAssetItem_created>("created", Created);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("file_type", FileType);
             writer.WriteIntValue("id", Id);

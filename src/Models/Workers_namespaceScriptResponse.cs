@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the script was created.</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
+        public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>Name of the Workers for Platforms dispatch namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string DispatchNamespace { get; set; }
 #endif
         /// <summary>When the script was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The script property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +73,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("dispatch_namespace", DispatchNamespace);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptResponse>("script", Script);
             writer.WriteAdditionalData(AdditionalData);
         }

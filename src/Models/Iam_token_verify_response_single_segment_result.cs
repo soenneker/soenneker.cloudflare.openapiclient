@@ -14,20 +14,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
-        public DateTimeOffset? ExpiresOn { get; set; }
-        /// <summary>Token identifier tag.</summary>
+        /// <summary>The expires_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? ExpiresOn { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string ExpiresOn { get; set; }
 #endif
-        /// <summary>The time before which the token MUST NOT be accepted for processing.</summary>
-        public DateTimeOffset? NotBefore { get; set; }
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The not_before property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NotBefore { get; set; }
+#nullable restore
+#else
+        public string NotBefore { get; set; }
+#endif
         /// <summary>Status of the token.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_verify_response_single_segment_result"/> and sets the default values.
         /// </summary>
@@ -53,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
+                { "expires_on", n => { ExpiresOn = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>(); } },
+                { "not_before", n => { NotBefore = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,9 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
-            writer.WriteDateTimeOffsetValue("not_before", NotBefore);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>("status", Status);
+            writer.WriteStringValue("expires_on", ExpiresOn);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("not_before", NotBefore);
+            writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

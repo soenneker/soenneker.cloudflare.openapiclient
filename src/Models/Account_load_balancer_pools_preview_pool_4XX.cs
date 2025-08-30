@@ -36,10 +36,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_pools_preview_pool_4XX_result? Result { get; set; }
 #nullable restore
 #else
-        public string Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_pools_preview_pool_4XX_result Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_pools_preview_pool_4XX_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_pools_preview_pool_4XX_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_messages_item>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_messages_item>("messages", Messages);
-            writer.WriteStringValue("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_pools_preview_pool_4XX_result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

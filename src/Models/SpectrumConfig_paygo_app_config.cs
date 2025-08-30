@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> OriginDirect { get; set; }
 #endif
-        /// <summary>The port configuration at Cloudflare&apos;s edge. May specify a single port, for example `&quot;tcp/1000&quot;`, or a range of ports, for example `&quot;tcp/1000-2000&quot;`.</summary>
+        /// <summary>The protocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Protocol { get; set; }

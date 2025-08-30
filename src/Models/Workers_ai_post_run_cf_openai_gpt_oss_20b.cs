@@ -71,26 +71,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20b_inputMember1"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Input"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workers_ai_post_run_cf_openai_gpt_oss_20b_input : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Input"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Input? Input { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20b_inputMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20b_inputMember1? WorkersAiPostRunCfOpenaiGptOss20bInputMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20b_inputMember1 WorkersAiPostRunCfOpenaiGptOss20bInputMember1 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Input Input { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -101,13 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20b.Workers_ai_post_run_cf_openai_gpt_oss_20b_input();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.WorkersAiPostRunCfOpenaiGptOss20bInputMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20b_inputMember1();
-                }
+                result.Input = new global::Soenneker.Cloudflare.OpenApiClient.Models.Input();
                 return result;
             }
             /// <summary>
@@ -116,9 +102,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(WorkersAiPostRunCfOpenaiGptOss20bInputMember1 != null)
+                if(Input != null)
                 {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkersAiPostRunCfOpenaiGptOss20bInputMember1);
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(Input);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -129,13 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20b_inputMember1>(null, WorkersAiPostRunCfOpenaiGptOss20bInputMember1);
-                }
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Input>(null, Input);
             }
         }
     }

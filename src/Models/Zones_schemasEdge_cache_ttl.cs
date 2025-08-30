@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_schemasEdge_cache_ttl : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Value of the zone setting.Notes: The minimum TTL available depends on the plan level of the zone. (Enterprise = 30, Business = 1800, Pro = 3600, Free = 7200)</summary>
+        /// <summary>The value property</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

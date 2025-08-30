@@ -20,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of emails that can approve the access request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? EmailAddresses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group_email_addresses>? EmailAddresses { get; set; }
 #nullable restore
 #else
-        public UntypedNode EmailAddresses { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group_email_addresses> EmailAddresses { get; set; }
 #endif
         /// <summary>The UUID of an re-usable email list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approvals_needed", n => { ApprovalsNeeded = n.GetDoubleValue(); } },
-                { "email_addresses", n => { EmailAddresses = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "email_addresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group_email_addresses>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group_email_addresses.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "email_list_uuid", n => { EmailListUuid = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("approvals_needed", ApprovalsNeeded);
-            writer.WriteObjectValue<UntypedNode>("email_addresses", EmailAddresses);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group_email_addresses>("email_addresses", EmailAddresses);
             writer.WriteStringValue("email_list_uuid", EmailListUuid);
             writer.WriteAdditionalData(AdditionalData);
         }

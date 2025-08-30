@@ -13,10 +13,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to perform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action? Action { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Action { get; set; }
+#nullable restore
+#else
+        public string Action { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description of the rule.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The wirefilter expression used for device posture check matching. The API automatically formats and sanitizes this expression. This returns a normalized version that may differ from your input and cause Terraform state drift.</summary>
+        /// <summary>The device_posture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DevicePosture { get; set; }
@@ -32,8 +38,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DevicePosture { get; set; }
 #endif
-        /// <summary>True if the rule is enabled.</summary>
-        public bool? Enabled { get; set; }
+        /// <summary>The enabled property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Enabled { get; set; }
+#nullable restore
+#else
+        public string Enabled { get; set; }
+#endif
         /// <summary>The expiration time stamp and default duration of a DNS policy. Takesprecedence over the policy&apos;s `schedule` configuration, if any.This does not apply to HTTP or network policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_?> Filters { get; set; }
 #endif
-        /// <summary>The wirefilter expression used for identity matching. The API automatically formats and sanitizes this expression. This returns a normalized version that may differ from your input and cause Terraform state drift.</summary>
+        /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identity { get; set; }
@@ -58,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Identity { get; set; }
 #endif
-        /// <summary>The name of the rule.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -66,8 +78,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Precedence sets the order of your rules. Lower values indicate higher precedence. At each processing phase, applicable rules are evaluated in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) docs on how to manage precedence via Terraform.</summary>
-        public int? Precedence { get; set; }
+        /// <summary>The precedence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Precedence { get; set; }
+#nullable restore
+#else
+        public string Precedence { get; set; }
+#endif
         /// <summary>Additional settings that modify the rule&apos;s action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule Schedule { get; set; }
 #endif
-        /// <summary>The wirefilter expression used for traffic matching. The API automatically formats and sanitizes this expression. This returns a normalized version that may differ from your input and cause Terraform state drift.</summary>
+        /// <summary>The traffic property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Traffic { get; set; }
@@ -117,15 +135,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(); } },
+                { "action", n => { Action = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "device_posture", n => { DevicePosture = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetStringValue(); } },
                 { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration.CreateFromDiscriminatorValue); } },
                 { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_>()?.AsList(); } },
                 { "identity", n => { Identity = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "precedence", n => { Precedence = n.GetIntValue(); } },
+                { "precedence", n => { Precedence = n.GetStringValue(); } },
                 { "rule_settings", n => { RuleSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings.CreateFromDiscriminatorValue); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule.CreateFromDiscriminatorValue); } },
                 { "traffic", n => { Traffic = n.GetStringValue(); } },
@@ -138,15 +156,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
+            writer.WriteStringValue("action", Action);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("device_posture", DevicePosture);
-            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteStringValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>("expiration", Expiration);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_>("filters", Filters);
             writer.WriteStringValue("identity", Identity);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("precedence", Precedence);
+            writer.WriteStringValue("precedence", Precedence);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings>("rule_settings", RuleSettings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule>("schedule", Schedule);
             writer.WriteStringValue("traffic", Traffic);

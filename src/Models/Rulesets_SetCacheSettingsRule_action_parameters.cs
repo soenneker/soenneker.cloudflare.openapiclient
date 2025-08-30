@@ -30,8 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL BrowserTtl { get; set; }
 #endif
-        /// <summary>Whether the request&apos;s response from the origin is eligible for caching. Caching itself will still depend on the cache control header and your other caching configurations.</summary>
-        public bool? Cache { get; set; }
+        /// <summary>The cache property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cache { get; set; }
+#nullable restore
+#else
+        public string Cache { get; set; }
+#endif
         /// <summary>Which components of the request are included in or excluded from the cache key Cloudflare uses to store the response in cache.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,14 +62,38 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL EdgeTtl { get; set; }
 #endif
-        /// <summary>Whether Cloudflare will aim to strictly adhere to RFC 7234.</summary>
-        public bool? OriginCacheControl { get; set; }
-        /// <summary>Whether to generate Cloudflare error pages for issues from the origin server.</summary>
-        public bool? OriginErrorPagePassthru { get; set; }
-        /// <summary>A timeout value between two successive read operations to use for your origin server. Historically, the timeout value between two read options from Cloudflare to an origin server is 100 seconds. If you are attempting to reduce HTTP 524 errors because of timeouts from an origin server, try increasing this timeout value.</summary>
-        public int? ReadTimeout { get; set; }
-        /// <summary>Whether Cloudflare should respect strong ETag (entity tag) headers. If false, Cloudflare converts strong ETag headers to weak ETag headers.</summary>
-        public bool? RespectStrongEtags { get; set; }
+        /// <summary>The origin_cache_control property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginCacheControl { get; set; }
+#nullable restore
+#else
+        public string OriginCacheControl { get; set; }
+#endif
+        /// <summary>The origin_error_page_passthru property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginErrorPagePassthru { get; set; }
+#nullable restore
+#else
+        public string OriginErrorPagePassthru { get; set; }
+#endif
+        /// <summary>The read_timeout property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReadTimeout { get; set; }
+#nullable restore
+#else
+        public string ReadTimeout { get; set; }
+#endif
+        /// <summary>The respect_strong_etags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RespectStrongEtags { get; set; }
+#nullable restore
+#else
+        public string RespectStrongEtags { get; set; }
+#endif
         /// <summary>When to serve stale content from cache.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,14 +129,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "additional_cacheable_ports", n => { AdditionalCacheablePorts = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "browser_ttl", n => { BrowserTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL.CreateFromDiscriminatorValue); } },
-                { "cache", n => { Cache = n.GetBoolValue(); } },
+                { "cache", n => { Cache = n.GetStringValue(); } },
                 { "cache_key", n => { CacheKey = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey.CreateFromDiscriminatorValue); } },
                 { "cache_reserve", n => { CacheReserve = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve.CreateFromDiscriminatorValue); } },
                 { "edge_ttl", n => { EdgeTtl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL.CreateFromDiscriminatorValue); } },
-                { "origin_cache_control", n => { OriginCacheControl = n.GetBoolValue(); } },
-                { "origin_error_page_passthru", n => { OriginErrorPagePassthru = n.GetBoolValue(); } },
-                { "read_timeout", n => { ReadTimeout = n.GetIntValue(); } },
-                { "respect_strong_etags", n => { RespectStrongEtags = n.GetBoolValue(); } },
+                { "origin_cache_control", n => { OriginCacheControl = n.GetStringValue(); } },
+                { "origin_error_page_passthru", n => { OriginErrorPagePassthru = n.GetStringValue(); } },
+                { "read_timeout", n => { ReadTimeout = n.GetStringValue(); } },
+                { "respect_strong_etags", n => { RespectStrongEtags = n.GetStringValue(); } },
                 { "serve_stale", n => { ServeStale = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale.CreateFromDiscriminatorValue); } },
             };
         }
@@ -119,14 +149,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("additional_cacheable_ports", AdditionalCacheablePorts);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsBrowserTTL>("browser_ttl", BrowserTtl);
-            writer.WriteBoolValue("cache", Cache);
+            writer.WriteStringValue("cache", Cache);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheKey>("cache_key", CacheKey);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsCacheReserve>("cache_reserve", CacheReserve);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsEdgeTTL>("edge_ttl", EdgeTtl);
-            writer.WriteBoolValue("origin_cache_control", OriginCacheControl);
-            writer.WriteBoolValue("origin_error_page_passthru", OriginErrorPagePassthru);
-            writer.WriteIntValue("read_timeout", ReadTimeout);
-            writer.WriteBoolValue("respect_strong_etags", RespectStrongEtags);
+            writer.WriteStringValue("origin_cache_control", OriginCacheControl);
+            writer.WriteStringValue("origin_error_page_passthru", OriginErrorPagePassthru);
+            writer.WriteStringValue("read_timeout", ReadTimeout);
+            writer.WriteStringValue("respect_strong_etags", RespectStrongEtags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>("serve_stale", ServeStale);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>UUID of the Cloudflare Tunnel connector.</summary>
-        public Guid? ClientId { get; private set; }
+        public Guid? ClientId { get; set; }
         /// <summary>The cloudflared version used to establish this connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ColoName { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
-        public Guid? Id { get; private set; }
+        public Guid? Id { get; set; }
         /// <summary>Cloudflare continues to track connections for several minutes after they disconnect. This is an optimization to improve latency and reliability of reconnecting.  If `true`, the connection has disconnected but is still being tracked. If `false`, the connection is actively serving traffic.</summary>
         public bool? IsPendingReconnect { get; set; }
         /// <summary>Timestamp of when the connection was established.</summary>
@@ -41,13 +41,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The public IP address of the host running cloudflared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginIp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection_origin_ip? OriginIp { get; set; }
 #nullable restore
 #else
-        public string OriginIp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection_origin_ip OriginIp { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
-        public Guid? Uuid { get; private set; }
+        public Guid? Uuid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection"/> and sets the default values.
         /// </summary>
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_pending_reconnect", n => { IsPendingReconnect = n.GetBoolValue(); } },
                 { "opened_at", n => { OpenedAt = n.GetDateTimeOffsetValue(); } },
-                { "origin_ip", n => { OriginIp = n.GetStringValue(); } },
+                { "origin_ip", n => { OriginIp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection_origin_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection_origin_ip.CreateFromDiscriminatorValue); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
             };
         }
@@ -90,11 +90,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteGuidValue("client_id", ClientId);
             writer.WriteStringValue("client_version", ClientVersion);
             writer.WriteStringValue("colo_name", ColoName);
+            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_pending_reconnect", IsPendingReconnect);
             writer.WriteDateTimeOffsetValue("opened_at", OpenedAt);
-            writer.WriteStringValue("origin_ip", OriginIp);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection_origin_ip>("origin_ip", OriginIp);
+            writer.WriteGuidValue("uuid", Uuid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

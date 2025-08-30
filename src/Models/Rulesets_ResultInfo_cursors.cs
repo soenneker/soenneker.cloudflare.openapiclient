@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The after property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? After { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResultInfo_cursors_after? After { get; set; }
 #nullable restore
 #else
-        public string After { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResultInfo_cursors_after After { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResultInfo_cursors"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "after", n => { After = n.GetStringValue(); } },
+                { "after", n => { After = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResultInfo_cursors_after>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResultInfo_cursors_after.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("after", After);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResultInfo_cursors_after>("after", After);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

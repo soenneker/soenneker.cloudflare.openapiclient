@@ -14,7 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zones_schemasAutomatic_https_rewrites : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
         /// <summary>The value property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasAutomatic_https_rewrites_value? Value { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasAutomatic_https_rewrites_value>(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -44,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasAutomatic_https_rewrites_value>("value", Value);
+            writer.WriteStringValue("value", Value);
         }
     }
 }

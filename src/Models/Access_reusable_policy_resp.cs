@@ -12,8 +12,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Access_reusable_policy_resp : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_resp, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Number of access applications currently using this policy.</summary>
-        public int? AppCount { get; set; }
+        /// <summary>The app_count property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AppCount { get; set; }
+#nullable restore
+#else
+        public string AppCount { get; set; }
+#endif
         /// <summary>The reusable property</summary>
         public bool? Reusable { get; set; }
         /// <summary>
@@ -34,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "app_count", n => { AppCount = n.GetIntValue(); } },
+                { "app_count", n => { AppCount = n.GetStringValue(); } },
                 { "reusable", n => { Reusable = n.GetBoolValue(); } },
             };
         }
@@ -46,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("app_count", AppCount);
+            writer.WriteStringValue("app_count", AppCount);
             writer.WriteBoolValue("reusable", Reusable);
         }
     }

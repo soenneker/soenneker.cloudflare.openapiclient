@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`</summary>
+        /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hostname { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Hostname { get; set; }
 #endif
-        /// <summary>Identifying key for the region</summary>
+        /// <summary>The region_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegionKey { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RegionKey { get; set; }
 #endif
-        /// <summary>Configure which routing method to use for the regional hostname</summary>
+        /// <summary>The routing property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Routing { get; set; }
@@ -44,7 +44,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Dls_account_regional_hostnames_account_create_hostname()
         {
             AdditionalData = new Dictionary<string, object>();
-            Routing = "dns";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

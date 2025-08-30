@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
+        public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>If set, the event will override the waiting room&apos;s `custom_page_html` property while it is active. If null, the event will inherit it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>A unique name to identify the event. Only alphanumeric characters, hyphens and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,12 +150,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("custom_page_html", CustomPageHtml);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disable_session_renewal", DisableSessionRenewal);
             writer.WriteStringValue("event_end_time", EventEndTime);
             writer.WriteStringValue("event_start_time", EventStartTime);
             writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("new_users_per_minute", NewUsersPerMinute);
             writer.WriteStringValue("prequeue_start_time", PrequeueStartTime);

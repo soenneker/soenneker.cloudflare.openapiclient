@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_trusted_domain_201.Email_security_create_trusted_domain_201_result>("result", Result);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Email_security_create_trusted_domain_201_result : IComposedTypeWrapper, IParsable
@@ -60,18 +60,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain? EmailSecurityCreateTrustedDomain201ResultEmailSecurityTrustedDomain { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain? EmailSecurityTrustedDomain { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain EmailSecurityCreateTrustedDomain201ResultEmailSecurityTrustedDomain { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain EmailSecurityTrustedDomain { get; set; }
 #endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain>? EmailSecurityTrustedDomain { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain> EmailSecurityTrustedDomain { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -85,11 +85,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_trusted_domain_201.Email_security_create_trusted_domain_201_result();
                 if("email-security_TrustedDomain".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.EmailSecurityCreateTrustedDomain201ResultEmailSecurityTrustedDomain = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain();
+                    result.EmailSecurityTrustedDomain = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain();
                 }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain> emailSecurityTrustedDomainValue)
+                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.EmailSecurityTrustedDomain = emailSecurityTrustedDomainValue;
+                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 }
                 return result;
             }
@@ -99,9 +99,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(EmailSecurityCreateTrustedDomain201ResultEmailSecurityTrustedDomain != null)
+                if(EmailSecurityTrustedDomain != null)
                 {
-                    return EmailSecurityCreateTrustedDomain201ResultEmailSecurityTrustedDomain.GetFieldDeserializers();
+                    return EmailSecurityTrustedDomain.GetFieldDeserializers();
+                }
+                else if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -112,13 +116,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(EmailSecurityCreateTrustedDomain201ResultEmailSecurityTrustedDomain != null)
+                if(EmailSecurityTrustedDomain != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain>(null, EmailSecurityCreateTrustedDomain201ResultEmailSecurityTrustedDomain);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain>(null, EmailSecurityTrustedDomain);
                 }
-                else if(EmailSecurityTrustedDomain != null)
+                else if(UnionBranch != null)
                 {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_TrustedDomain>(null, EmailSecurityTrustedDomain);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
                 }
             }
         }

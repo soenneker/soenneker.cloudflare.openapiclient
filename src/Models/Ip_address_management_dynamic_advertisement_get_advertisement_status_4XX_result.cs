@@ -14,8 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Advertisement status of the prefix. If `true`, the BGP route for the prefix is advertised to the Internet. If `false`, the BGP route is withdrawn.</summary>
-        public bool? Advertised { get; set; }
+        /// <summary>The advertised property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Advertised { get; set; }
+#nullable restore
+#else
+        public string Advertised { get; set; }
+#endif
         /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
         public DateTimeOffset? AdvertisedModifiedAt { get; set; }
         /// <summary>
@@ -43,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "advertised", n => { Advertised = n.GetBoolValue(); } },
+                { "advertised", n => { Advertised = n.GetStringValue(); } },
                 { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -54,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("advertised", Advertised);
+            writer.WriteStringValue("advertised", Advertised);
             writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

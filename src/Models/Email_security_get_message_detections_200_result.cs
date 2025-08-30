@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment> Attachments { get; set; }
 #endif
         /// <summary>The final_disposition property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel? FinalDisposition { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition? FinalDisposition { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition FinalDisposition { get; set; }
+#endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetStringValue(); } },
                 { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "final_disposition", n => { FinalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>(); } },
+                { "final_disposition", n => { FinalDisposition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sender_info", n => { SenderInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_sender_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_sender_info.CreateFromDiscriminatorValue); } },
@@ -116,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment>("attachments", Attachments);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("final_disposition", FinalDisposition);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition>("final_disposition", FinalDisposition);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader>("headers", Headers);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link>("links", Links);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_sender_info>("sender_info", SenderInfo);

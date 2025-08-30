@@ -15,9 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The operator property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleOperator? Operator { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Operator { get; set; }
+#nullable restore
+#else
+        public string Operator { get; set; }
+#endif
         /// <summary>The selector property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleSelector? Selector { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Selector { get; set; }
+#nullable restore
+#else
+        public string Selector { get; set; }
+#endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,8 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleOperator>(); } },
-                { "selector", n => { Selector = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleSelector>(); } },
+                { "operator", n => { Operator = n.GetStringValue(); } },
+                { "selector", n => { Selector = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -63,8 +75,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleOperator>("operator", Operator);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleSelector>("selector", Selector);
+            writer.WriteStringValue("operator", Operator);
+            writer.WriteStringValue("selector", Selector);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EmailRuleValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

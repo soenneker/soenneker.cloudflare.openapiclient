@@ -36,19 +36,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item
         /// <summary>
         /// Removes association to an organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_leave_organization_200"/></returns>
-        /// <param name="body">Fallback request body schema</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User_s_organizations_leave_organization_200"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_leave_organization_200?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item.WithOrganization_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.User_s_organizations_leave_organization_200?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item.WithOrganization_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_leave_organization_200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item.WithOrganization_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.User_s_organizations_leave_organization_200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item.WithOrganization_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_leave_organization_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.User__s_organizations_leave_organization_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.User_s_organizations_leave_organization_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.User_s_organizations_leave_organization_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a specific organization the user is associated with.
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item
         /// Removes association to an organization.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Fallback request body schema</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

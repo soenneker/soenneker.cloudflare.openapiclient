@@ -23,9 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>Timestamp of when the resource was created.</summary>
-        public DateTimeOffset? CreatedAt { get; private set; }
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.</summary>
-        public DateTimeOffset? DeletedAt { get; private set; }
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>UUID of the virtual network.</summary>
         public Guid? Id { get; set; }
         /// <summary>If `true`, this virtual network is the default for the account.</summary>
@@ -79,6 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_default_network", IsDefaultNetwork);
             writer.WriteStringValue("name", Name);

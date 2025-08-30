@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string AllowlistedPattern { get; set; }
 #endif
         /// <summary>The allowlisted_pattern_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_allowlisted_pattern_type? AllowlistedPatternType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_allowlisted_pattern_type AllowlistedPatternType { get; set; }
+#endif
         /// <summary>The blocklisted_message property</summary>
         public bool? BlocklistedMessage { get; set; }
         /// <summary>The blocklisted_pattern property</summary>
@@ -35,7 +41,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string BlocklistedPattern { get; set; }
 #endif
         /// <summary>The whitelisted_pattern_type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_whitelisted_pattern_type? WhitelistedPatternType { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_whitelisted_pattern_type WhitelistedPatternType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties"/> and sets the default values.
         /// </summary>
@@ -62,10 +74,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowlisted_pattern", n => { AllowlistedPattern = n.GetStringValue(); } },
-                { "allowlisted_pattern_type", n => { AllowlistedPatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_allowlisted_pattern_type>(); } },
+                { "allowlisted_pattern_type", n => { AllowlistedPatternType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_allowlisted_pattern_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_allowlisted_pattern_type.CreateFromDiscriminatorValue); } },
                 { "blocklisted_message", n => { BlocklistedMessage = n.GetBoolValue(); } },
                 { "blocklisted_pattern", n => { BlocklistedPattern = n.GetStringValue(); } },
-                { "whitelisted_pattern_type", n => { WhitelistedPatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_whitelisted_pattern_type>(); } },
+                { "whitelisted_pattern_type", n => { WhitelistedPatternType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_whitelisted_pattern_type>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_whitelisted_pattern_type.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,10 +88,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("allowlisted_pattern", AllowlistedPattern);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_allowlisted_pattern_type>("allowlisted_pattern_type", AllowlistedPatternType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_allowlisted_pattern_type>("allowlisted_pattern_type", AllowlistedPatternType);
             writer.WriteBoolValue("blocklisted_message", BlocklistedMessage);
             writer.WriteStringValue("blocklisted_pattern", BlocklistedPattern);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_whitelisted_pattern_type>("whitelisted_pattern_type", WhitelistedPatternType);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MailsearchMessage_properties_whitelisted_pattern_type>("whitelisted_pattern_type", WhitelistedPatternType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

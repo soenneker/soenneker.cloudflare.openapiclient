@@ -103,15 +103,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VerificationRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("retry")]
-            public string? Retry { get; set; }
-#nullable restore
-#else
-            [QueryParameter("retry")]
-            public string Retry { get; set; }
-#endif
+            public bool? Retry { get; set; }
         }
     }
 }

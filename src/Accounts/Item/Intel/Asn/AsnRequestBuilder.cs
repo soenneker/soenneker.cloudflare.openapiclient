@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.intel.asn.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item.WithAsnItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item.WithAsnItemRequestBuilder this[int position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item.WithAsnItemRequestBuilder this[string position]
         {
             get
             {

@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.magic.cloud.resources.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder this[Guid position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources.Item.WithResource_ItemRequestBuilder this[string position]
         {
             get
             {
@@ -173,20 +173,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_id")]
-            public Guid?[]? ResourceId { get; set; }
+            public string[]? ResourceId { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_id")]
-            public Guid?[] ResourceId { get; set; }
+            public string[] ResourceId { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[]? ResourceType { get; set; }
+            public string[]? ResourceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[] ResourceType { get; set; }
+            public string[] ResourceType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

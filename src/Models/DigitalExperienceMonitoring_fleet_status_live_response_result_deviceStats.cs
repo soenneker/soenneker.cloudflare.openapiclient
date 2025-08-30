@@ -54,8 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat> ByVersion { get; set; }
 #endif
-        /// <summary>Number of unique devices</summary>
-        public double? UniqueDevicesTotal { get; set; }
+        /// <summary>The uniqueDevicesTotal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UniqueDevicesTotal { get; set; }
+#nullable restore
+#else
+        public string UniqueDevicesTotal { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_live_response_result_deviceStats"/> and sets the default values.
         /// </summary>
@@ -86,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "byPlatform", n => { ByPlatform = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "byStatus", n => { ByStatus = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "byVersion", n => { ByVersion = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat>(global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "uniqueDevicesTotal", n => { UniqueDevicesTotal = n.GetDoubleValue(); } },
+                { "uniqueDevicesTotal", n => { UniqueDevicesTotal = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -101,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat>("byPlatform", ByPlatform);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat>("byStatus", ByStatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_live_stat>("byVersion", ByVersion);
-            writer.WriteDoubleValue("uniqueDevicesTotal", UniqueDevicesTotal);
+            writer.WriteStringValue("uniqueDevicesTotal", UniqueDevicesTotal);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

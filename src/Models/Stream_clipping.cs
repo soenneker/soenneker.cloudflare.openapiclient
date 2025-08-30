@@ -75,7 +75,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies the start time for the video clip in seconds.</summary>
         public int? StartTimeSeconds { get; set; }
         /// <summary>Specifies the processing status for all quality levels for a video.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The timestamp for a thumbnail image calculated as a percentage value of the video&apos;s duration. To convert from a second-wise timestamp to a percentage, divide the desired timestamp by the total duration of the video.  If this value is not set, the default thumbnail image is taken from 0s of the video.</summary>
         public double? ThumbnailTimestampPct { get; set; }
         /// <summary>The watermark property</summary>
@@ -123,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "preview", n => { Preview = n.GetStringValue(); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
                 { "startTimeSeconds", n => { StartTimeSeconds = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "thumbnailTimestampPct", n => { ThumbnailTimestampPct = n.GetDoubleValue(); } },
                 { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload.CreateFromDiscriminatorValue); } },
             };
@@ -147,7 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("preview", Preview);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
             writer.WriteIntValue("startTimeSeconds", StartTimeSeconds);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteDoubleValue("thumbnailTimestampPct", ThumbnailTimestampPct);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarkAtUpload>("watermark", Watermark);
             writer.WriteAdditionalData(AdditionalData);

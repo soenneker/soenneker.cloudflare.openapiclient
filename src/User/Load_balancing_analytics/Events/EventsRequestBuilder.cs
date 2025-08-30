@@ -90,8 +90,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancing_analytics.Event
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("origin_healthy")]
-            public bool? OriginHealthy { get; set; }
+            public string? OriginHealthy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("origin_healthy")]
+            public string OriginHealthy { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("origin_name")]
@@ -123,8 +130,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancing_analytics.Event
 #endif
             [QueryParameter("since")]
             public DateTimeOffset? Since { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("until")]
-            public DateTimeOffset? Until { get; set; }
+            public string? Until { get; set; }
+#nullable restore
+#else
+            [QueryParameter("until")]
+            public string Until { get; set; }
+#endif
         }
     }
 }

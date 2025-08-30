@@ -17,7 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Certificate Authority is manually reviewing the order.</summary>
         public bool? BrandCheck { get; set; }
         /// <summary>Current status of certificate.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_status? CertificateStatus { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CertificateStatus { get; set; }
+#nullable restore
+#else
+        public string CertificateStatus { get; set; }
+#endif
         /// <summary>Certificate Pack UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,9 +33,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CertPackUuid { get; set; }
 #endif
         /// <summary>Certificate&apos;s signature algorithm.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasSignature? Signature { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Signature { get; set; }
+#nullable restore
+#else
+        public string Signature { get; set; }
+#endif
         /// <summary>Validation method in use for a certificate pack order.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidation_method? ValidationMethod { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ValidationMethod { get; set; }
+#nullable restore
+#else
+        public string ValidationMethod { get; set; }
+#endif
         /// <summary>Certificate&apos;s required verification information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +59,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Status of the required verification information, omitted if verification status is unknown.</summary>
         public bool? VerificationStatus { get; set; }
         /// <summary>Method of verification.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification_type? VerificationType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VerificationType { get; set; }
+#nullable restore
+#else
+        public string VerificationType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification"/> and sets the default values.
         /// </summary>
@@ -69,12 +93,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "brand_check", n => { BrandCheck = n.GetBoolValue(); } },
                 { "cert_pack_uuid", n => { CertPackUuid = n.GetStringValue(); } },
-                { "certificate_status", n => { CertificateStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_status>(); } },
-                { "signature", n => { Signature = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasSignature>(); } },
-                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidation_method>(); } },
+                { "certificate_status", n => { CertificateStatus = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "validation_method", n => { ValidationMethod = n.GetStringValue(); } },
                 { "verification_info", n => { VerificationInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification_info.CreateFromDiscriminatorValue); } },
                 { "verification_status", n => { VerificationStatus = n.GetBoolValue(); } },
-                { "verification_type", n => { VerificationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification_type>(); } },
+                { "verification_type", n => { VerificationType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,13 +109,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("brand_check", BrandCheck);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_status>("certificate_status", CertificateStatus);
+            writer.WriteStringValue("certificate_status", CertificateStatus);
             writer.WriteStringValue("cert_pack_uuid", CertPackUuid);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasSignature>("signature", Signature);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasValidation_method>("validation_method", ValidationMethod);
+            writer.WriteStringValue("signature", Signature);
+            writer.WriteStringValue("validation_method", ValidationMethod);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification_info>("verification_info", VerificationInfo);
             writer.WriteBoolValue("verification_status", VerificationStatus);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification_type>("verification_type", VerificationType);
+            writer.WriteStringValue("verification_type", VerificationType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

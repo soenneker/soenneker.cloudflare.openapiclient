@@ -14,9 +14,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Version
     #pragma warning restore CS1591
     {
         /// <summary>The kind of the ruleset.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind? Kind { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Kind { get; set; }
+#nullable restore
+#else
+        public string Kind { get; set; }
+#endif
         /// <summary>The phase of the ruleset.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase? Phase { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Phase { get; set; }
+#nullable restore
+#else
+        public string Phase { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Version
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>(); } },
-                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>(); } },
+                { "kind", n => { Kind = n.GetStringValue(); } },
+                { "phase", n => { Phase = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -47,8 +59,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Version
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>("kind", Kind);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>("phase", Phase);
+            writer.WriteStringValue("kind", Kind);
+            writer.WriteStringValue("phase", Phase);
         }
     }
 }

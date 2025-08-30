@@ -150,8 +150,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Live_inputsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("include_counts")]
-            public bool? IncludeCounts { get; set; }
+            public string? IncludeCounts { get; set; }
+#nullable restore
+#else
+            [QueryParameter("include_counts")]
+            public string IncludeCounts { get; set; }
+#endif
         }
     }
 }

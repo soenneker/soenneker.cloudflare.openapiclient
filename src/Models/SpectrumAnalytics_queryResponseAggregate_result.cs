@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The appID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppID { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseAggregate_result_appID? AppID { get; set; }
 #nullable restore
 #else
-        public string AppID { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseAggregate_result_appID AppID { get; set; }
 #endif
         /// <summary>Number of bytes sent</summary>
         public double? BytesEgress { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appID", n => { AppID = n.GetStringValue(); } },
+                { "appID", n => { AppID = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseAggregate_result_appID>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseAggregate_result_appID.CreateFromDiscriminatorValue); } },
                 { "bytesEgress", n => { BytesEgress = n.GetDoubleValue(); } },
                 { "bytesIngress", n => { BytesIngress = n.GetDoubleValue(); } },
                 { "connections", n => { Connections = n.GetDoubleValue(); } },
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("appID", AppID);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseAggregate_result_appID>("appID", AppID);
             writer.WriteDoubleValue("bytesEgress", BytesEgress);
             writer.WriteDoubleValue("bytesIngress", BytesIngress);
             writer.WriteDoubleValue("connections", Connections);

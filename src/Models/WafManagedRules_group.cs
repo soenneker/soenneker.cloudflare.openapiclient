@@ -25,31 +25,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the unique identifier of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Defines the number of rules within the group that have been modified from their default configuration.</summary>
-        public double? ModifiedRulesCount { get; private set; }
+        public double? ModifiedRulesCount { get; set; }
         /// <summary>Defines the name of the rule group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; private set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; private set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Defines the unique identifier of a WAF package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId { get; private set; }
+        public string? PackageId { get; set; }
 #nullable restore
 #else
-        public string PackageId { get; private set; }
+        public string PackageId { get; set; }
 #endif
         /// <summary>Defines the number of rules in the current rule group.</summary>
-        public double? RulesCount { get; private set; }
+        public double? RulesCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_group"/> and sets the default values.
         /// </summary>
@@ -90,6 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("modified_rules_count", ModifiedRulesCount);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("package_id", PackageId);
+            writer.WriteDoubleValue("rules_count", RulesCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,9 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>How often should a secondary zone auto refresh regardless of DNS NOTIFY.Not applicable for primary zones.</summary>
-        public double? AutoRefreshSeconds { get; set; }
-        /// <summary>The time for a specific event.</summary>
+        /// <summary>The auto_refresh_seconds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AutoRefreshSeconds { get; set; }
+#nullable restore
+#else
+        public string AutoRefreshSeconds { get; set; }
+#endif
+        /// <summary>The checked_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CheckedTime { get; set; }
@@ -24,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CheckedTime { get; set; }
 #endif
-        /// <summary>The time for a specific event.</summary>
+        /// <summary>The created_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedTime { get; set; }
@@ -35,12 +41,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The time for a specific event.</summary>
+        /// <summary>The modified_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifiedTime { get; set; }
@@ -48,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ModifiedTime { get; set; }
 #endif
-        /// <summary>Zone name.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -64,8 +70,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Peers { get; set; }
 #endif
-        /// <summary>The serial number of the SOA for the given zone.</summary>
-        public double? SoaSerial { get; set; }
+        /// <summary>The soa_serial property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SoaSerial { get; set; }
+#nullable restore
+#else
+        public string SoaSerial { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_single_response_incoming_result"/> and sets the default values.
         /// </summary>
@@ -91,14 +103,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auto_refresh_seconds", n => { AutoRefreshSeconds = n.GetDoubleValue(); } },
+                { "auto_refresh_seconds", n => { AutoRefreshSeconds = n.GetStringValue(); } },
                 { "checked_time", n => { CheckedTime = n.GetStringValue(); } },
                 { "created_time", n => { CreatedTime = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_time", n => { ModifiedTime = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "peers", n => { Peers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "soa_serial", n => { SoaSerial = n.GetDoubleValue(); } },
+                { "soa_serial", n => { SoaSerial = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -108,13 +120,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("auto_refresh_seconds", AutoRefreshSeconds);
+            writer.WriteStringValue("auto_refresh_seconds", AutoRefreshSeconds);
             writer.WriteStringValue("checked_time", CheckedTime);
             writer.WriteStringValue("created_time", CreatedTime);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("modified_time", ModifiedTime);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("peers", Peers);
-            writer.WriteDoubleValue("soa_serial", SoaSerial);
+            writer.WriteStringValue("soa_serial", SoaSerial);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

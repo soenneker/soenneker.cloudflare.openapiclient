@@ -14,9 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates the date and time at which the video will be deleted. Omit the field to indicate no change, or include with a `null` value to remove an existing scheduled deletion. If specified, must be at least 30 days from upload time.</summary>
-        public DateTimeOffset? ScheduledDeletion { get; set; }
-        /// <summary>A Cloudflare-generated unique identifier for a media item.</summary>
+        /// <summary>The scheduledDeletion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduledDeletion { get; set; }
+#nullable restore
+#else
+        public string ScheduledDeletion { get; set; }
+#endif
+        /// <summary>The uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uid { get; set; }
@@ -65,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "scheduledDeletion", n => { ScheduledDeletion = n.GetDateTimeOffsetValue(); } },
+                { "scheduledDeletion", n => { ScheduledDeletion = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
                 { "uploadURL", n => { UploadURL = n.GetStringValue(); } },
                 { "watermark", n => { Watermark = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarks>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarks.CreateFromDiscriminatorValue); } },
@@ -78,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("scheduledDeletion", ScheduledDeletion);
+            writer.WriteStringValue("scheduledDeletion", ScheduledDeletion);
             writer.WriteStringValue("uid", Uid);
             writer.WriteStringValue("uploadURL", UploadURL);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_watermarks>("watermark", Watermark);

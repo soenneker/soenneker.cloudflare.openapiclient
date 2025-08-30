@@ -24,8 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The unique identifier for the allow policy.</summary>
-        public int? Id { get; set; }
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.Note: This will not exempt messages with Malicious or Suspicious dispositions.</summary>
         public bool? IsAcceptableSender { get; set; }
         /// <summary>Messages to this recipient will bypass all detections.</summary>
@@ -54,7 +60,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Pattern { get; set; }
 #endif
         /// <summary>The pattern_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType? PatternType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PatternType { get; set; }
+#nullable restore
+#else
+        public string PatternType { get; set; }
+#endif
         /// <summary>Enforce DMARC, SPF or DKIM authentication.When on, Email Security only honors policies that pass authentication.</summary>
         public bool? VerifySender { get; set; }
         /// <summary>
@@ -84,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "is_acceptable_sender", n => { IsAcceptableSender = n.GetBoolValue(); } },
                 { "is_exempt_recipient", n => { IsExemptRecipient = n.GetBoolValue(); } },
                 { "is_recipient", n => { IsRecipient = n.GetBoolValue(); } },
@@ -94,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_trusted_sender", n => { IsTrustedSender = n.GetBoolValue(); } },
                 { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "pattern_type", n => { PatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>(); } },
+                { "pattern_type", n => { PatternType = n.GetStringValue(); } },
                 { "verify_sender", n => { VerifySender = n.GetBoolValue(); } },
             };
         }
@@ -107,7 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_acceptable_sender", IsAcceptableSender);
             writer.WriteBoolValue("is_exempt_recipient", IsExemptRecipient);
             writer.WriteBoolValue("is_recipient", IsRecipient);
@@ -117,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_trusted_sender", IsTrustedSender);
             writer.WriteDateTimeOffsetValue("last_modified", LastModified);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>("pattern_type", PatternType);
+            writer.WriteStringValue("pattern_type", PatternType);
             writer.WriteBoolValue("verify_sender", VerifySender);
             writer.WriteAdditionalData(AdditionalData);
         }

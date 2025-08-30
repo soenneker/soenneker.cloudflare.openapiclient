@@ -12,13 +12,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Iam_response_single_value : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingle, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The token value.</summary>
+        /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Result { get; private set; }
+        public string? Result { get; set; }
 #nullable restore
 #else
-        public string Result { get; private set; }
+        public string Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("result", Result);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Params { get; set; }
 #endif
-        /// <summary>Your SQL query. Supports multiple statements, joined by semicolons, which will be executed as a batch.</summary>
+        /// <summary>The sql property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sql { get; set; }

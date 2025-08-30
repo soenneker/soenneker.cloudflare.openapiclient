@@ -14,8 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of days between key rotations.</summary>
-        public double? KeyRotationIntervalDays { get; set; }
+        /// <summary>The key_rotation_interval_days property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? KeyRotationIntervalDays { get; set; }
+#nullable restore
+#else
+        public string KeyRotationIntervalDays { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_key_configuration_update_the_access_key_configuration"/> and sets the default values.
         /// </summary>
@@ -41,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "key_rotation_interval_days", n => { KeyRotationIntervalDays = n.GetDoubleValue(); } },
+                { "key_rotation_interval_days", n => { KeyRotationIntervalDays = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("key_rotation_interval_days", KeyRotationIntervalDays);
+            writer.WriteStringValue("key_rotation_interval_days", KeyRotationIntervalDays);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

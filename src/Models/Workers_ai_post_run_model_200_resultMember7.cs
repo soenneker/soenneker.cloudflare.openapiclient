@@ -14,13 +14,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The summarized version of the input text</summary>
+        /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary { get; set; }
+        public UntypedNode? Data { get; set; }
 #nullable restore
 #else
-        public string Summary { get; set; }
+        public UntypedNode Data { get; set; }
+#endif
+        /// <summary>The shape property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<double?>? Shape { get; set; }
+#nullable restore
+#else
+        public List<double?> Shape { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember7"/> and sets the default values.
@@ -47,7 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "data", n => { Data = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "shape", n => { Shape = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("summary", Summary);
+            writer.WriteObjectValue<UntypedNode>("data", Data);
+            writer.WriteCollectionOfPrimitiveValues<double?>("shape", Shape);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

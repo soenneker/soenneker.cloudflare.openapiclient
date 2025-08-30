@@ -23,17 +23,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>Whenthe secret was created.</summary>
-        public DateTimeOffset? Created { get; private set; }
+        public DateTimeOffset? Created { get; set; }
         /// <summary>Secret identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>When the secret was modified.</summary>
-        public DateTimeOffset? Modified { get; private set; }
+        public DateTimeOffset? Modified { get; set; }
         /// <summary>The name of the secret</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,14 +43,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>Store Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StoreId { get; private set; }
+        public string? StoreId { get; set; }
 #nullable restore
 #else
-        public string StoreId { get; private set; }
+        public string StoreId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_secretObject"/> and sets the default values.
@@ -82,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "store_id", n => { StoreId = n.GetStringValue(); } },
             };
         }
@@ -94,8 +100,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
+            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStore_SecretStatus>("status", Status);
+            writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("store_id", StoreId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

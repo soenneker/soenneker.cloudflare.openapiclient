@@ -14,24 +14,78 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The total number of auth-ids seen across this calculation.</summary>
-        public int? AuthIdTokens { get; private set; }
-        /// <summary>The number of data points used for the threshold suggestion calculation.</summary>
-        public int? DataPoints { get; private set; }
+        /// <summary>The auth_id_tokens property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AuthIdTokens { get; set; }
+#nullable restore
+#else
+        public string AuthIdTokens { get; set; }
+#endif
+        /// <summary>The data_points property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DataPoints { get; set; }
+#nullable restore
+#else
+        public string DataPoints { get; set; }
+#endif
         /// <summary>The last_updated property</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
-        /// <summary>The p50 quantile of requests (in period_seconds).</summary>
-        public int? P50 { get; private set; }
-        /// <summary>The p90 quantile of requests (in period_seconds).</summary>
-        public int? P90 { get; private set; }
-        /// <summary>The p99 quantile of requests (in period_seconds).</summary>
-        public int? P99 { get; private set; }
-        /// <summary>The period over which this threshold is suggested.</summary>
-        public int? PeriodSeconds { get; private set; }
-        /// <summary>The estimated number of requests covered by these calculations.</summary>
-        public int? Requests { get; private set; }
-        /// <summary>The suggested threshold in requests done by the same auth_id or period_seconds.</summary>
-        public int? SuggestedThreshold { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastUpdated { get; set; }
+#nullable restore
+#else
+        public string LastUpdated { get; set; }
+#endif
+        /// <summary>The p50 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? P50 { get; set; }
+#nullable restore
+#else
+        public string P50 { get; set; }
+#endif
+        /// <summary>The p90 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? P90 { get; set; }
+#nullable restore
+#else
+        public string P90 { get; set; }
+#endif
+        /// <summary>The p99 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? P99 { get; set; }
+#nullable restore
+#else
+        public string P99 { get; set; }
+#endif
+        /// <summary>The period_seconds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PeriodSeconds { get; set; }
+#nullable restore
+#else
+        public string PeriodSeconds { get; set; }
+#endif
+        /// <summary>The requests property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Requests { get; set; }
+#nullable restore
+#else
+        public string Requests { get; set; }
+#endif
+        /// <summary>The suggested_threshold property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SuggestedThreshold { get; set; }
+#nullable restore
+#else
+        public string SuggestedThreshold { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_thresholds_thresholds"/> and sets the default values.
         /// </summary>
@@ -57,15 +111,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_id_tokens", n => { AuthIdTokens = n.GetIntValue(); } },
-                { "data_points", n => { DataPoints = n.GetIntValue(); } },
-                { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
-                { "p50", n => { P50 = n.GetIntValue(); } },
-                { "p90", n => { P90 = n.GetIntValue(); } },
-                { "p99", n => { P99 = n.GetIntValue(); } },
-                { "period_seconds", n => { PeriodSeconds = n.GetIntValue(); } },
-                { "requests", n => { Requests = n.GetIntValue(); } },
-                { "suggested_threshold", n => { SuggestedThreshold = n.GetIntValue(); } },
+                { "auth_id_tokens", n => { AuthIdTokens = n.GetStringValue(); } },
+                { "data_points", n => { DataPoints = n.GetStringValue(); } },
+                { "last_updated", n => { LastUpdated = n.GetStringValue(); } },
+                { "p50", n => { P50 = n.GetStringValue(); } },
+                { "p90", n => { P90 = n.GetStringValue(); } },
+                { "p99", n => { P99 = n.GetStringValue(); } },
+                { "period_seconds", n => { PeriodSeconds = n.GetStringValue(); } },
+                { "requests", n => { Requests = n.GetStringValue(); } },
+                { "suggested_threshold", n => { SuggestedThreshold = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +129,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
+            writer.WriteStringValue("auth_id_tokens", AuthIdTokens);
+            writer.WriteStringValue("data_points", DataPoints);
+            writer.WriteStringValue("last_updated", LastUpdated);
+            writer.WriteStringValue("p50", P50);
+            writer.WriteStringValue("p90", P90);
+            writer.WriteStringValue("p99", P99);
+            writer.WriteStringValue("period_seconds", PeriodSeconds);
+            writer.WriteStringValue("requests", Requests);
+            writer.WriteStringValue("suggested_threshold", SuggestedThreshold);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

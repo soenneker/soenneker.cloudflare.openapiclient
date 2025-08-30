@@ -186,12 +186,33 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Networ
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithIp_network_encodedItemRequestBuilderDeleteQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("tunnel_id")]
-            public Guid? TunnelId { get; set; }
+            public string? TunnelId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tunnel_id")]
+            public string TunnelId { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("tun_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type? TunType { get; set; }
+            public string? TunType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tun_type")]
+            public string TunType { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("virtual_network_id")]
-            public Guid? VirtualNetworkId { get; set; }
+            public string? VirtualNetworkId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("virtual_network_id")]
+            public string VirtualNetworkId { get; set; }
+#endif
         }
     }
 }

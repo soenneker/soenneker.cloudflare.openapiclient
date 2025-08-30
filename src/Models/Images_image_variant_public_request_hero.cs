@@ -22,8 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Indicates whether the variant can access an image without a signature, regardless of image access control.</summary>
-        public bool? NeverRequireSignedURLs { get; set; }
+        /// <summary>The neverRequireSignedURLs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NeverRequireSignedURLs { get; set; }
+#nullable restore
+#else
+        public string NeverRequireSignedURLs { get; set; }
+#endif
         /// <summary>Allows you to define image resizing sizes for different use cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "neverRequireSignedURLs", n => { NeverRequireSignedURLs = n.GetBoolValue(); } },
+                { "neverRequireSignedURLs", n => { NeverRequireSignedURLs = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_options.CreateFromDiscriminatorValue); } },
             };
         }
@@ -70,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("neverRequireSignedURLs", NeverRequireSignedURLs);
+            writer.WriteStringValue("neverRequireSignedURLs", NeverRequireSignedURLs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_variant_options>("options", Options);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,8 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>When true, indicates that Cloudflare should also delete the associated filter if there are no other firewall rules referencing the filter.</summary>
-        public bool? DeleteFilterIfUnused { get; set; }
+        /// <summary>The delete_filter_if_unused property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeleteFilterIfUnused { get; set; }
+#nullable restore
+#else
+        public string DeleteFilterIfUnused { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_delete_a_firewall_rule"/> and sets the default values.
         /// </summary>
@@ -41,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delete_filter_if_unused", n => { DeleteFilterIfUnused = n.GetBoolValue(); } },
+                { "delete_filter_if_unused", n => { DeleteFilterIfUnused = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("delete_filter_if_unused", DeleteFilterIfUnused);
+            writer.WriteStringValue("delete_filter_if_unused", DeleteFilterIfUnused);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

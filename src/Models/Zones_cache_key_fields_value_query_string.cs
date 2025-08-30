@@ -72,26 +72,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Zones_cache_key_fields_value_query_string_exclude : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<string>? String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public List<string> String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? ZonesCacheKeyFieldsValueQueryStringExcludeString { get; set; }
-#nullable restore
-#else
-            public string ZonesCacheKeyFieldsValueQueryStringExcludeString { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -103,13 +95,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_key_fields_value_query_string.Zones_cache_key_fields_value_query_string_exclude();
-                if(parseNode.GetStringValue() is string zonesCacheKeyFieldsValueQueryStringExcludeStringValue)
+                if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.ZonesCacheKeyFieldsValueQueryStringExcludeString = zonesCacheKeyFieldsValueQueryStringExcludeStringValue;
-                }
-                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
-                {
-                    result.String = stringValue;
+                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 }
                 return result;
             }
@@ -119,6 +107,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
+                if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -128,37 +120,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(ZonesCacheKeyFieldsValueQueryStringExcludeString != null)
+                if(UnionBranch != null)
                 {
-                    writer.WriteStringValue(null, ZonesCacheKeyFieldsValueQueryStringExcludeString);
-                }
-                else if(String != null)
-                {
-                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
                 }
             }
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Zones_cache_key_fields_value_query_string_include : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<string>? String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public List<string> String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? ZonesCacheKeyFieldsValueQueryStringIncludeString { get; set; }
-#nullable restore
-#else
-            public string ZonesCacheKeyFieldsValueQueryStringIncludeString { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -170,13 +150,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_key_fields_value_query_string.Zones_cache_key_fields_value_query_string_include();
-                if(parseNode.GetStringValue() is string zonesCacheKeyFieldsValueQueryStringIncludeStringValue)
+                if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.ZonesCacheKeyFieldsValueQueryStringIncludeString = zonesCacheKeyFieldsValueQueryStringIncludeStringValue;
-                }
-                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
-                {
-                    result.String = stringValue;
+                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 }
                 return result;
             }
@@ -186,6 +162,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
+                if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -195,13 +175,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(ZonesCacheKeyFieldsValueQueryStringIncludeString != null)
+                if(UnionBranch != null)
                 {
-                    writer.WriteStringValue(null, ZonesCacheKeyFieldsValueQueryStringIncludeString);
-                }
-                else if(String != null)
-                {
-                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
                 }
             }
         }

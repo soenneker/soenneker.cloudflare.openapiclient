@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Certificates { get; set; }
 #endif
         /// <summary>When the certificate expires.</summary>
-        public DateTimeOffset? ExpiresOn { get; private set; }
+        public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The certificate authority that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get; private set; }
+        public string? Issuer { get; set; }
 #nullable restore
 #else
-        public string Issuer { get; private set; }
+        public string Issuer { get; set; }
 #endif
         /// <summary>Optional unique name for the certificate. Only used for human readability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,18 +53,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The certificate serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber { get; private set; }
+        public string? SerialNumber { get; set; }
 #nullable restore
 #else
-        public string SerialNumber { get; private set; }
+        public string SerialNumber { get; set; }
 #endif
         /// <summary>The type of hash used for the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; private set; }
+        public string? Signature { get; set; }
 #nullable restore
 #else
-        public string Signature { get; private set; }
+        public string Signature { get; set; }
 #endif
         /// <summary>This is the time the certificate was uploaded.</summary>
         public DateTimeOffset? UploadedOn { get; set; }
@@ -113,8 +113,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("ca", Ca);
             writer.WriteStringValue("certificates", Certificates);
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("serial_number", SerialNumber);
+            writer.WriteStringValue("signature", Signature);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);
         }

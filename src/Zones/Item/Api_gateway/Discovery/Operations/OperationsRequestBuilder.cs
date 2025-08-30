@@ -184,8 +184,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.GetOrderQueryParameterType? Order { get; set; }
             /// <summary>Filter results to only include discovery results sourced from a particular discovery engine  * `ML` - Discovered operations that were sourced using ML API Discovery  * `SessionIdentifier` - Discovered operations that were sourced using Session Identifier API Discovery</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("origin")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin? Origin { get; set; }
+            public string? Origin { get; set; }
+#nullable restore
+#else
+            [QueryParameter("origin")]
+            public string Origin { get; set; }
+#endif
             /// <summary>Page number of paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -193,8 +200,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter results to only include discovery results in a particular state. States are as follows  * `review` - Discovered operations that are not saved into API Shield Endpoint Management  * `saved` - Discovered operations that are already saved into API Shield Endpoint Management  * `ignored` - Discovered operations that have been marked as ignored</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("state")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_state? State { get; set; }
+            public string? State { get; set; }
+#nullable restore
+#else
+            [QueryParameter("state")]
+            public string State { get; set; }
+#endif
         }
     }
 }

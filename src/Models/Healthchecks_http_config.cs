@@ -61,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Healthchecks_http_config()
         {
             AdditionalData = new Dictionary<string, object>();
+            ExpectedCodes = new List<string> { "200" };
             Method = global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_http_config_method.GET;
             Path = "/";
         }

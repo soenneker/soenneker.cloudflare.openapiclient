@@ -14,15 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Identifier</summary>
+        /// <summary>The ipsec_tunnel_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpsecTunnelId { get; private set; }
+        public string? IpsecTunnelId { get; set; }
 #nullable restore
 #else
-        public string IpsecTunnelId { get; private set; }
+        public string IpsecTunnelId { get; set; }
 #endif
-        /// <summary>A randomly generated or provided string for use in the IPsec tunnel.</summary>
+        /// <summary>The psk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Psk { get; set; }
@@ -75,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("ipsec_tunnel_id", IpsecTunnelId);
             writer.WriteStringValue("psk", Psk);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata>("psk_metadata", PskMetadata);
             writer.WriteAdditionalData(AdditionalData);

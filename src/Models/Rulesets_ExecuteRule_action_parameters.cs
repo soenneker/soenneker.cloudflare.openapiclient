@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_id? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_id Id { get; set; }
 #endif
         /// <summary>The configuration to use for matched data logging.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_id.CreateFromDiscriminatorValue); } },
                 { "matched_data", n => { MatchedData = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData.CreateFromDiscriminatorValue); } },
                 { "overrides", n => { Overrides = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides.CreateFromDiscriminatorValue); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRule_action_parameters_id>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteMatchedData>("matched_data", MatchedData);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides>("overrides", Overrides);
             writer.WriteAdditionalData(AdditionalData);

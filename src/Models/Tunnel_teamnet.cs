@@ -23,16 +23,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>Timestamp of when the resource was created.</summary>
-        public DateTimeOffset? CreatedAt { get; private set; }
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.</summary>
-        public DateTimeOffset? DeletedAt { get; private set; }
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>UUID of the route.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The private IPv4 or IPv6 range connected by the route, in CIDR notation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Network { get; set; }
 #endif
         /// <summary>UUID of the tunnel.</summary>
-        public Guid? TunnelId { get; private set; }
+        public Guid? TunnelId { get; set; }
         /// <summary>A user-friendly name for a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +53,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string TunnelName { get; set; }
 #endif
         /// <summary>The type of tunnel.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type? TunType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TunType { get; set; }
+#nullable restore
+#else
+        public string TunType { get; set; }
+#endif
         /// <summary>UUID of the virtual network.</summary>
         public Guid? VirtualNetworkId { get; set; }
         /// <summary>A user-friendly name for the virtual network.</summary>
@@ -94,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
-                { "tun_type", n => { TunType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>(); } },
+                { "tun_type", n => { TunType = n.GetStringValue(); } },
                 { "tunnel_id", n => { TunnelId = n.GetGuidValue(); } },
                 { "tunnel_name", n => { TunnelName = n.GetStringValue(); } },
                 { "virtual_network_id", n => { VirtualNetworkId = n.GetGuidValue(); } },
@@ -109,9 +115,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("network", Network);
+            writer.WriteGuidValue("tunnel_id", TunnelId);
             writer.WriteStringValue("tunnel_name", TunnelName);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>("tun_type", TunType);
+            writer.WriteStringValue("tun_type", TunType);
             writer.WriteGuidValue("virtual_network_id", VirtualNetworkId);
             writer.WriteStringValue("virtual_network_name", VirtualNetworkName);
             writer.WriteAdditionalData(AdditionalData);

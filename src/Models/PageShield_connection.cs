@@ -39,10 +39,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The last_seen_at property</summary>
         public DateTimeOffset? LastSeenAt { get; set; }
@@ -134,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("first_page_url", FirstPageUrl);
             writer.WriteDateTimeOffsetValue("first_seen_at", FirstSeenAt);
             writer.WriteStringValue("host", Host);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
             writer.WriteCollectionOfPrimitiveValues<string>("malicious_domain_categories", MaliciousDomainCategories);
             writer.WriteCollectionOfPrimitiveValues<string>("malicious_url_categories", MaliciousUrlCategories);

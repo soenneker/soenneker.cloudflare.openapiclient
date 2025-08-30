@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the tunnel was last modified.</summary>
-        public DateTimeOffset? LastGeneratedOn { get; private set; }
+        public DateTimeOffset? LastGeneratedOn { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata"/> and sets the default values.
         /// </summary>
@@ -52,6 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("last_generated_on", LastGeneratedOn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

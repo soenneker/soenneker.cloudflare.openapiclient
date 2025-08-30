@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.History
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history___deprecated__billing_history_details_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history_deprecated_billing_history_details_4XX">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.History
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history___deprecated__billing_history_details_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.User_billing_history_deprecated_billing_history_details_4XX.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_billing_history_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -102,8 +102,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Billing.History
             [QueryParameter("action")]
             public string Action { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("occurred_at")]
-            public DateTimeOffset? OccurredAt { get; set; }
+            public string? OccurredAt { get; set; }
+#nullable restore
+#else
+            [QueryParameter("occurred_at")]
+            public string OccurredAt { get; set; }
+#endif
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.User.Billing.History.GetOrderQueryParameterType? Order { get; set; }
             [QueryParameter("page")]

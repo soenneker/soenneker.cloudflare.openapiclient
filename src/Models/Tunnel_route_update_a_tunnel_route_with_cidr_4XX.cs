@@ -88,19 +88,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember2"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Tunnel_route_update_a_tunnel_route_with_cidr_4XX_result : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,13 +101,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1 TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember2"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember2? TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember2 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember2 TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember2 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -126,14 +118,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_result();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1();
-                    result.TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember2();
-                }
+                result.TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1();
+                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 return result;
             }
             /// <summary>
@@ -142,9 +128,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1 != null || TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember2 != null)
+                if(TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1 != null || UnionBranch != null)
                 {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1, TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember2);
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1, UnionBranch);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -155,13 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1>(null, TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1, TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember2);
-                }
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_update_a_tunnel_route_with_cidr_4XX_resultMember1>(null, TunnelRouteUpdateATunnelRouteWithCidr4XXResultMember1, UnionBranch);
             }
         }
     }

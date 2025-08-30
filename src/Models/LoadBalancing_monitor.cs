@@ -13,7 +13,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedOn { get; set; }
+#nullable restore
+#else
+        public string CreatedOn { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,7 +29,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ModifiedOn { get; set; }
+#nullable restore
+#else
+        public string ModifiedOn { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,9 +54,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "created_on", n => { CreatedOn = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +67,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("created_on", CreatedOn);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("modified_on", ModifiedOn);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_netwo
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.teamnet.virtual_networks.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_networks.Item.WithVirtual_network_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_networks.Item.WithVirtual_network_ItemRequestBuilder this[Guid position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_networks.Item.WithVirtual_network_ItemRequestBuilder this[string position]
         {
             get
             {
@@ -150,8 +150,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Virtual_netwo
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Virtual_networksRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("id")]
-            public Guid? Id { get; set; }
+            public string? Id { get; set; }
+#nullable restore
+#else
+            [QueryParameter("id")]
+            public string Id { get; set; }
+#endif
             [Obsolete("")]
             [QueryParameter("is_default")]
             public bool? IsDefault { get; set; }

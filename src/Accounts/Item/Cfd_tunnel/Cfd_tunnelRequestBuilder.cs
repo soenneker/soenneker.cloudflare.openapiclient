@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cfd_tunnel.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.WithTunnel_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.WithTunnel_ItemRequestBuilder this[Guid position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.WithTunnel_ItemRequestBuilder this[string position]
         {
             get
             {
@@ -188,14 +188,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel
             [QueryParameter("name")]
             public string Name { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("page")]
-            public double? Page { get; set; }
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("per_page")]
-            public double? PerPage { get; set; }
+            public string? PerPage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("per_page")]
+            public string PerPage { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status? Status { get; set; }
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("uuid")]
-            public Guid? Uuid { get; set; }
+            public string? Uuid { get; set; }
+#nullable restore
+#else
+            [QueryParameter("uuid")]
+            public string Uuid { get; set; }
+#endif
             [QueryParameter("was_active_at")]
             public DateTimeOffset? WasActiveAt { get; set; }
             [QueryParameter("was_inactive_at")]

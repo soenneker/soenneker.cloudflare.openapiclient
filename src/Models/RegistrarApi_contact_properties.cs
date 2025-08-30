@@ -73,10 +73,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contact Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>User&apos;s last name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -172,6 +172,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("fax", Fax);
             writer.WriteStringValue("first_name", FirstName);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteStringValue("organization", Organization);
             writer.WriteStringValue("phone", Phone);

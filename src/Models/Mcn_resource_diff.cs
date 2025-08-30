@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_cost_diff MonthlyCostEstimateDiff { get; set; }
 #endif
         /// <summary>The planned_action property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_planned_action? PlannedAction { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PlannedAction { get; set; }
+#nullable restore
+#else
+        public string PlannedAction { get; set; }
+#endif
         /// <summary>The resource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "diff", n => { Diff = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_yaml_diff>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_yaml_diff.CreateFromDiscriminatorValue); } },
                 { "keys_require_replace", n => { KeysRequireReplace = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "monthly_cost_estimate_diff", n => { MonthlyCostEstimateDiff = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_cost_diff>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_cost_diff.CreateFromDiscriminatorValue); } },
-                { "planned_action", n => { PlannedAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_planned_action>(); } },
+                { "planned_action", n => { PlannedAction = n.GetStringValue(); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_preview>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_preview.CreateFromDiscriminatorValue); } },
             };
         }
@@ -90,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_yaml_diff>("diff", Diff);
             writer.WriteCollectionOfPrimitiveValues<string>("keys_require_replace", KeysRequireReplace);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_cost_diff>("monthly_cost_estimate_diff", MonthlyCostEstimateDiff);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_planned_action>("planned_action", PlannedAction);
+            writer.WriteStringValue("planned_action", PlannedAction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_preview>("resource", Resource);
             writer.WriteAdditionalData(AdditionalData);
         }

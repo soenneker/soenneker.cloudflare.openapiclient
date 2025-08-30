@@ -17,7 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The backoff property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_backoff? Backoff { get; set; }
         /// <summary>The delay property</summary>
-        public double? Delay { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_delay? Delay { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_delay Delay { get; set; }
+#endif
         /// <summary>The limit property</summary>
         public double? Limit { get; set; }
         /// <summary>
@@ -46,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "backoff", n => { Backoff = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_backoff>(); } },
-                { "delay", n => { Delay = n.GetDoubleValue(); } },
+                { "delay", n => { Delay = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_delay>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_delay.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
             };
         }
@@ -58,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_backoff>("backoff", Backoff);
-            writer.WriteDoubleValue("delay", Delay);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_delay>("delay", Delay);
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -19,22 +19,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; private set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public string Currency { get; private set; }
+        public string Currency { get; set; }
 #endif
         /// <summary>Indicates whether this plan is managed externally.</summary>
         public bool? ExternallyManaged { get; set; }
         /// <summary>The frequency at which you will be billed for this plan.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency? Frequency { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Frequency { get; set; }
+#nullable restore
+#else
+        public string Frequency { get; set; }
+#endif
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Indicates whether you are currently subscribed to this plan.</summary>
         public bool? IsSubscribed { get; set; }
@@ -43,18 +49,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The legacy identifier for this rate plan, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegacyId { get; private set; }
+        public string? LegacyId { get; set; }
 #nullable restore
 #else
-        public string LegacyId { get; private set; }
+        public string LegacyId { get; set; }
 #endif
         /// <summary>The plan name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; private set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; private set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The amount you will be billed for this plan.</summary>
         public double? Price { get; set; }
@@ -86,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "can_subscribe", n => { CanSubscribe = n.GetBoolValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "externally_managed", n => { ExternallyManaged = n.GetBoolValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency>(); } },
+                { "frequency", n => { Frequency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_subscribed", n => { IsSubscribed = n.GetBoolValue(); } },
                 { "legacy_discount", n => { LegacyDiscount = n.GetBoolValue(); } },
@@ -103,9 +109,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("can_subscribe", CanSubscribe);
+            writer.WriteStringValue("currency", Currency);
             writer.WriteBoolValue("externally_managed", ExternallyManaged);
+            writer.WriteStringValue("frequency", Frequency);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_subscribed", IsSubscribed);
             writer.WriteBoolValue("legacy_discount", LegacyDiscount);
+            writer.WriteStringValue("legacy_id", LegacyId);
+            writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("price", Price);
             writer.WriteAdditionalData(AdditionalData);
         }

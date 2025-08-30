@@ -19,7 +19,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>True if the device was deleted.</summary>
         public bool? Deleted { get; set; }
         /// <summary>The device_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform? DeviceType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeviceType { get; set; }
+#nullable restore
+#else
+        public string DeviceType { get; set; }
+#endif
         /// <summary>Registration ID. Equal to Device ID except for accounts which enabled [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,7 +171,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
-                { "device_type", n => { DeviceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform>(); } },
+                { "device_type", n => { DeviceType = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
@@ -194,7 +200,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteBoolValue("deleted", Deleted);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_platform>("device_type", DeviceType);
+            writer.WriteStringValue("device_type", DeviceType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ip", Ip);
             writer.WriteStringValue("key", Key);

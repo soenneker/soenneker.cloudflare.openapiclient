@@ -31,7 +31,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status_lifecycle_errors LifecycleErrors { get; set; }
 #endif
         /// <summary>The lifecycle_state property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_lifecycle_state? LifecycleState { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LifecycleState { get; set; }
+#nullable restore
+#else
+        public string LifecycleState { get; set; }
+#endif
         /// <summary>The plan_progress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,18 +49,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The routes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? Routes { get; set; }
+        public List<string>? Routes { get; set; }
 #nullable restore
 #else
-        public List<Guid?> Routes { get; set; }
+        public List<string> Routes { get; set; }
 #endif
         /// <summary>The tunnels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? Tunnels { get; set; }
+        public List<string>? Tunnels { get; set; }
 #nullable restore
 #else
-        public List<Guid?> Tunnels { get; set; }
+        public List<string> Tunnels { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status"/> and sets the default values.
@@ -83,10 +89,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "apply_progress", n => { ApplyProgress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_apply_progress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_apply_progress.CreateFromDiscriminatorValue); } },
                 { "lifecycle_errors", n => { LifecycleErrors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status_lifecycle_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status_lifecycle_errors.CreateFromDiscriminatorValue); } },
-                { "lifecycle_state", n => { LifecycleState = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_lifecycle_state>(); } },
+                { "lifecycle_state", n => { LifecycleState = n.GetStringValue(); } },
                 { "plan_progress", n => { PlanProgress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_plan_progress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_plan_progress.CreateFromDiscriminatorValue); } },
-                { "routes", n => { Routes = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "tunnels", n => { Tunnels = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "routes", n => { Routes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tunnels", n => { Tunnels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -98,10 +104,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_apply_progress>("apply_progress", ApplyProgress);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status_lifecycle_errors>("lifecycle_errors", LifecycleErrors);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_lifecycle_state>("lifecycle_state", LifecycleState);
+            writer.WriteStringValue("lifecycle_state", LifecycleState);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_plan_progress>("plan_progress", PlanProgress);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("routes", Routes);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("tunnels", Tunnels);
+            writer.WriteCollectionOfPrimitiveValues<string>("routes", Routes);
+            writer.WriteCollectionOfPrimitiveValues<string>("tunnels", Tunnels);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

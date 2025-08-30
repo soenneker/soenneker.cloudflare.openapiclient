@@ -15,9 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Cloudflare Images allowed usage.</summary>
-        public double? Allowed { get; private set; }
+        public double? Allowed { get; set; }
         /// <summary>Cloudflare Images current usage.</summary>
-        public double? Current { get; private set; }
+        public double? Current { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_count"/> and sets the default values.
         /// </summary>
@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("allowed", Allowed);
+            writer.WriteDoubleValue("current", Current);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

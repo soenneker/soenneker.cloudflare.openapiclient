@@ -43,13 +43,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string SessionDuration { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_resp"/> and sets the default values.
-        /// </summary>
-        public Access_policy_resp() : base()
-        {
-            SessionDuration = "24h";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_resp"/></returns>

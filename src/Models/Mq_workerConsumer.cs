@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConsumerId { get; private set; }
+        public string? ConsumerId { get; set; }
 #nullable restore
 #else
-        public string ConsumerId { get; private set; }
+        public string ConsumerId { get; set; }
 #endif
         /// <summary>The created_on property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QueueId { get; private set; }
+        public string? QueueId { get; set; }
 #nullable restore
 #else
-        public string QueueId { get; private set; }
+        public string QueueId { get; set; }
 #endif
         /// <summary>The script property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -105,6 +105,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("consumer_id", ConsumerId);
+            writer.WriteStringValue("queue_id", QueueId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer_script>("script", Script);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer_script_name>("script_name", ScriptName);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer_settings>("settings", Settings);

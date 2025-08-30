@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The unique subdomain assigned to your Zero Trust organization.</summary>
+        /// <summary>The auth_domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthDomain { get; set; }
@@ -22,8 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string AuthDomain { get; set; }
 #endif
-        /// <summary>Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.</summary>
-        public bool? IsUiReadOnly { get; set; }
+        /// <summary>The is_ui_read_only property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IsUiReadOnly { get; set; }
+#nullable restore
+#else
+        public string IsUiReadOnly { get; set; }
+#endif
         /// <summary>The login_design property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design LoginDesign { get; set; }
 #endif
-        /// <summary>The name of your Zero Trust organization.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>A description of the reason why the UI read only field is being toggled.</summary>
+        /// <summary>The ui_read_only_toggle_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UiReadOnlyToggleReason { get; set; }
@@ -48,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string UiReadOnlyToggleReason { get; set; }
 #endif
-        /// <summary>The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count. Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.</summary>
+        /// <summary>The user_seat_expiration_inactive_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserSeatExpirationInactiveTime { get; set; }
@@ -82,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "auth_domain", n => { AuthDomain = n.GetStringValue(); } },
-                { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
+                { "is_ui_read_only", n => { IsUiReadOnly = n.GetStringValue(); } },
                 { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ui_read_only_toggle_reason", n => { UiReadOnlyToggleReason = n.GetStringValue(); } },
@@ -97,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("auth_domain", AuthDomain);
-            writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
+            writer.WriteStringValue("is_ui_read_only", IsUiReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design>("login_design", LoginDesign);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ui_read_only_toggle_reason", UiReadOnlyToggleReason);

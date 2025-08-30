@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>UUID.</summary>
+        /// <summary>The app_uid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppUid { get; set; }
@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The policies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPolicy_check_response_result_app_state_policies>? Policies { get; set; }
 #nullable restore
 #else
-        public UntypedNode Policies { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPolicy_check_response_result_app_state_policies> Policies { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "aud", n => { Aud = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "policies", n => { Policies = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPolicy_check_response_result_app_state_policies>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPolicy_check_response_result_app_state_policies.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -106,7 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("aud", Aud);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UntypedNode>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasPolicy_check_response_result_app_state_policies>("policies", Policies);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

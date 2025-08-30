@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The string_matches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? StringMatches { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Query_string_matches? StringMatches { get; set; }
 #nullable restore
 #else
-        public UntypedNode StringMatches { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Query_string_matches StringMatches { get; set; }
 #endif
         /// <summary>The tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "max_time", n => { MaxTime = n.GetDateTimeOffsetValue(); } },
                 { "min_time", n => { MinTime = n.GetDateTimeOffsetValue(); } },
                 { "scan", n => { Scan = n.GetBoolValue(); } },
-                { "string_matches", n => { StringMatches = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "string_matches", n => { StringMatches = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Query_string_matches>(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Query_string_matches.CreateFromDiscriminatorValue); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("max_time", MaxTime);
             writer.WriteDateTimeOffsetValue("min_time", MinTime);
             writer.WriteBoolValue("scan", Scan);
-            writer.WriteObjectValue<UntypedNode>("string_matches", StringMatches);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Query_string_matches>("string_matches", StringMatches);
             writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }

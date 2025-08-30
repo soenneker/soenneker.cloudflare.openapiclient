@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Client Certificate PEM</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Certificate { get; private set; }
+        public string? Certificate { get; set; }
 #nullable restore
 #else
-        public string Certificate { get; private set; }
+        public string Certificate { get; set; }
 #endif
         /// <summary>Certificate Authority used to issue the Client Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,18 +33,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Common Name of the Client Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommonName { get; private set; }
+        public string? CommonName { get; set; }
 #nullable restore
 #else
-        public string CommonName { get; private set; }
+        public string CommonName { get; set; }
 #endif
         /// <summary>Country, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country { get; private set; }
+        public string? Country { get; set; }
 #nullable restore
 #else
-        public string Country { get; private set; }
+        public string Country { get; set; }
 #endif
         /// <summary>The Certificate Signing Request (CSR). Must be newline-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,18 +57,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Date that the Client Certificate expires</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpiresOn { get; private set; }
+        public string? ExpiresOn { get; set; }
 #nullable restore
 #else
-        public string ExpiresOn { get; private set; }
+        public string ExpiresOn { get; set; }
 #endif
         /// <summary>Unique identifier of the Client Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FingerprintSha256 { get; private set; }
+        public string? FingerprintSha256 { get; set; }
 #nullable restore
 #else
-        public string FingerprintSha256 { get; private set; }
+        public string FingerprintSha256 { get; set; }
 #endif
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,69 +81,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Date that the Client Certificate was issued by the Certificate Authority</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuedOn { get; private set; }
+        public string? IssuedOn { get; set; }
 #nullable restore
 #else
-        public string IssuedOn { get; private set; }
+        public string IssuedOn { get; set; }
 #endif
         /// <summary>Location, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location { get; private set; }
+        public string? Location { get; set; }
 #nullable restore
 #else
-        public string Location { get; private set; }
+        public string Location { get; set; }
 #endif
         /// <summary>Organization, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Organization { get; private set; }
+        public string? Organization { get; set; }
 #nullable restore
 #else
-        public string Organization { get; private set; }
+        public string Organization { get; set; }
 #endif
         /// <summary>Organizational Unit, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalUnit { get; private set; }
+        public string? OrganizationalUnit { get; set; }
 #nullable restore
 #else
-        public string OrganizationalUnit { get; private set; }
+        public string OrganizationalUnit { get; set; }
 #endif
         /// <summary>The serial number on the created Client Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber { get; private set; }
+        public string? SerialNumber { get; set; }
 #nullable restore
 #else
-        public string SerialNumber { get; private set; }
+        public string SerialNumber { get; set; }
 #endif
         /// <summary>The type of hash used for the Client Certificate..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; private set; }
+        public string? Signature { get; set; }
 #nullable restore
 #else
-        public string Signature { get; private set; }
+        public string Signature { get; set; }
 #endif
         /// <summary>Subject Key Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ski { get; private set; }
+        public string? Ski { get; set; }
 #nullable restore
 #else
-        public string Ski { get; private set; }
+        public string Ski { get; set; }
 #endif
         /// <summary>State, provided by the CSR</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; private set; }
+        public string? State { get; set; }
 #nullable restore
 #else
-        public string State { get; private set; }
+        public string State { get; set; }
 #endif
         /// <summary>Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The number of days the Client Certificate will be valid after the issued_on date</summary>
         public int? ValidityDays { get; set; }
         /// <summary>
@@ -187,7 +193,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "ski", n => { Ski = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "validity_days", n => { ValidityDays = n.GetIntValue(); } },
             };
         }
@@ -198,10 +204,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("certificate", Certificate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasCertificate_authority>("certificate_authority", CertificateAuthority);
+            writer.WriteStringValue("common_name", CommonName);
+            writer.WriteStringValue("country", Country);
             writer.WriteStringValue("csr", Csr);
+            writer.WriteStringValue("expires_on", ExpiresOn);
+            writer.WriteStringValue("fingerprint_sha256", FingerprintSha256);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>("status", Status);
+            writer.WriteStringValue("issued_on", IssuedOn);
+            writer.WriteStringValue("location", Location);
+            writer.WriteStringValue("organization", Organization);
+            writer.WriteStringValue("organizational_unit", OrganizationalUnit);
+            writer.WriteStringValue("serial_number", SerialNumber);
+            writer.WriteStringValue("signature", Signature);
+            writer.WriteStringValue("ski", Ski);
+            writer.WriteStringValue("state", State);
+            writer.WriteStringValue("status", Status);
             writer.WriteIntValue("validity_days", ValidityDays);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>IPv4 CIDRs to associate with traffic decisions. (IPv6 CIDRs are currently unsupported)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IpSubnets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Apps>? IpSubnets { get; set; }
 #nullable restore
 #else
-        public List<string> IpSubnets { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Apps> IpSubnets { get; set; }
 #endif
         /// <summary>Managed app ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "hostnames", n => { Hostnames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "ip_subnets", n => { IpSubnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "ip_subnets", n => { IpSubnets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Apps>(global::Soenneker.Cloudflare.OpenApiClient.Models.Apps.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "managed_app_id", n => { ManagedAppId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("hostnames", Hostnames);
-            writer.WriteCollectionOfPrimitiveValues<string>("ip_subnets", IpSubnets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Apps>("ip_subnets", IpSubnets);
             writer.WriteStringValue("managed_app_id", ManagedAppId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("type", Type);

@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Failed { get; set; }
 #endif
-        /// <summary>The identifier of the message.</summary>
+        /// <summary>The postfix_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostfixId { get; set; }

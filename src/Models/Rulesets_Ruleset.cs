@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_id? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_id Id { get; set; }
 #endif
         /// <summary>The timestamp of when the ruleset was last modified.</summary>
         public DateTimeOffset? LastUpdated { get; private set; }
@@ -44,10 +44,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_version? Version { get; set; }
 #nullable restore
 #else
-        public string Version { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_version Version { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset"/> and sets the default values.
@@ -75,10 +75,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_id.CreateFromDiscriminatorValue); } },
                 { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "version", n => { Version = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_version>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_version.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_id>("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("version", Version);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset_version>("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

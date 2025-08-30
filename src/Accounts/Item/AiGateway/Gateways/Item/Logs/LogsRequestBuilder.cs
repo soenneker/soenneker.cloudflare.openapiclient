@@ -177,8 +177,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             [QueryParameter("end_date")]
             public DateTimeOffset? EndDate { get; set; }
             [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("feedback")]
-            public double? Feedback { get; set; }
+            public string? Feedback { get; set; }
+#nullable restore
+#else
+            [QueryParameter("feedback")]
+            public string Feedback { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filters")]

@@ -12,8 +12,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Access_app_policy_request : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_req, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The order of execution for this policy. Must be unique for each policy within an app.</summary>
-        public int? Precedence { get; set; }
+        /// <summary>The precedence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Precedence { get; set; }
+#nullable restore
+#else
+        public string Precedence { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "precedence", n => { Precedence = n.GetIntValue(); } },
+                { "precedence", n => { Precedence = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -43,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("precedence", Precedence);
+            writer.WriteStringValue("precedence", Precedence);
         }
     }
 }

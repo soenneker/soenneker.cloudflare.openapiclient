@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Features { get; set; }
 #endif
         /// <summary>UUID of the Cloudflare Tunnel connection.</summary>
-        public Guid? Id { get; private set; }
+        public Guid? Id { get; set; }
         /// <summary>Timestamp of when the tunnel connection was started.</summary>
         public DateTimeOffset? RunAt { get; set; }
         /// <summary>The cloudflared version used to establish this connection.</summary>
@@ -98,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("config_version", ConfigVersion);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>("conns", Conns);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
+            writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("run_at", RunAt);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

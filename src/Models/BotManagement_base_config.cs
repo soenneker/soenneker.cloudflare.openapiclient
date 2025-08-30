@@ -15,15 +15,45 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection? AiBotsProtection { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AiBotsProtection { get; set; }
+#nullable restore
+#else
+        public string AiBotsProtection { get; set; }
+#endif
         /// <summary>Enable rule to punish AI Scrapers and Crawlers via a link maze.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection? CrawlerProtection { get; set; }
-        /// <summary>Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).</summary>
-        public bool? EnableJs { get; set; }
-        /// <summary>Enable cloudflare managed robots.txt. If an existing robots.txt is detected, then managed robots.txt will be prepended to the existing robots.txt.</summary>
-        public bool? IsRobotsTxtManaged { get; set; }
-        /// <summary>A read-only field that indicates whether the zone currently is running the latest ML model.</summary>
-        public bool? UsingLatestModel { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CrawlerProtection { get; set; }
+#nullable restore
+#else
+        public string CrawlerProtection { get; set; }
+#endif
+        /// <summary>The enable_js property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EnableJs { get; set; }
+#nullable restore
+#else
+        public string EnableJs { get; set; }
+#endif
+        /// <summary>The is_robots_txt_managed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IsRobotsTxtManaged { get; set; }
+#nullable restore
+#else
+        public string IsRobotsTxtManaged { get; set; }
+#endif
+        /// <summary>The using_latest_model property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UsingLatestModel { get; set; }
+#nullable restore
+#else
+        public string UsingLatestModel { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_base_config"/> and sets the default values.
         /// </summary>
@@ -49,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ai_bots_protection", n => { AiBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>(); } },
-                { "crawler_protection", n => { CrawlerProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>(); } },
-                { "enable_js", n => { EnableJs = n.GetBoolValue(); } },
-                { "is_robots_txt_managed", n => { IsRobotsTxtManaged = n.GetBoolValue(); } },
-                { "using_latest_model", n => { UsingLatestModel = n.GetBoolValue(); } },
+                { "ai_bots_protection", n => { AiBotsProtection = n.GetStringValue(); } },
+                { "crawler_protection", n => { CrawlerProtection = n.GetStringValue(); } },
+                { "enable_js", n => { EnableJs = n.GetStringValue(); } },
+                { "is_robots_txt_managed", n => { IsRobotsTxtManaged = n.GetStringValue(); } },
+                { "using_latest_model", n => { UsingLatestModel = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,10 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>("ai_bots_protection", AiBotsProtection);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>("crawler_protection", CrawlerProtection);
-            writer.WriteBoolValue("enable_js", EnableJs);
-            writer.WriteBoolValue("is_robots_txt_managed", IsRobotsTxtManaged);
+            writer.WriteStringValue("ai_bots_protection", AiBotsProtection);
+            writer.WriteStringValue("crawler_protection", CrawlerProtection);
+            writer.WriteStringValue("enable_js", EnableJs);
+            writer.WriteStringValue("is_robots_txt_managed", IsRobotsTxtManaged);
+            writer.WriteStringValue("using_latest_model", UsingLatestModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

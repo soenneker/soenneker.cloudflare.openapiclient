@@ -15,9 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Request completion time.</summary>
-        public DateTimeOffset? Completed { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_completed? Completed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_completed Completed { get; set; }
+#endif
         /// <summary>Request creation time.</summary>
-        public DateTimeOffset? Created { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created? Created { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created Created { get; set; }
+#endif
         /// <summary>UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,7 +41,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Tokens for the request messages.</summary>
         public int? MessageTokens { get; set; }
         /// <summary>The priority property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority? Priority { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Priority { get; set; }
+#nullable restore
+#else
+        public string Priority { get; set; }
+#endif
         /// <summary>Readable Request ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,7 +65,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Request { get; set; }
 #endif
         /// <summary>Request Status.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>Brief description of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,11 +81,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Summary { get; set; }
 #endif
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Tlp { get; set; }
+#nullable restore
+#else
+        public string Tlp { get; set; }
+#endif
         /// <summary>Tokens for the request.</summary>
         public int? Tokens { get; set; }
         /// <summary>Request last updated time.</summary>
-        public DateTimeOffset? Updated { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated? Updated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated Updated { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem"/> and sets the default values.
         /// </summary>
@@ -87,18 +123,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed", n => { Completed = n.GetDateTimeOffsetValue(); } },
-                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "completed", n => { Completed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_completed>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_completed.CreateFromDiscriminatorValue); } },
+                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message_tokens", n => { MessageTokens = n.GetIntValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
                 { "readable_id", n => { ReadableId = n.GetStringValue(); } },
                 { "request", n => { Request = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
-                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
+                { "tlp", n => { Tlp = n.GetStringValue(); } },
                 { "tokens", n => { Tokens = n.GetIntValue(); } },
-                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
+                { "updated", n => { Updated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -108,18 +144,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("completed", Completed);
-            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_completed>("completed", Completed);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created>("created", Created);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("message_tokens", MessageTokens);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>("priority", Priority);
+            writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("readable_id", ReadableId);
             writer.WriteStringValue("request", Request);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteStringValue("summary", Summary);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
+            writer.WriteStringValue("tlp", Tlp);
             writer.WriteIntValue("tokens", Tokens);
-            writer.WriteDateTimeOffsetValue("updated", Updated);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated>("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

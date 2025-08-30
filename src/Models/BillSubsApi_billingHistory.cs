@@ -15,48 +15,48 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The billing item action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get; private set; }
+        public string? Action { get; set; }
 #nullable restore
 #else
-        public string Action { get; private set; }
+        public string Action { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount associated with this billing item.</summary>
-        public double? Amount { get; private set; }
+        public double? Amount { get; set; }
         /// <summary>The monetary unit in which pricing information is displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; private set; }
+        public string? Currency { get; set; }
 #nullable restore
 #else
-        public string Currency { get; private set; }
+        public string Currency { get; set; }
 #endif
         /// <summary>The billing item description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; private set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; private set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Billing item identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>When the billing item was created.</summary>
-        public DateTimeOffset? OccurredAt { get; private set; }
+        public DateTimeOffset? OccurredAt { get; set; }
         /// <summary>The billing item type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; private set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public string Type { get; private set; }
+        public string Type { get; set; }
 #endif
         /// <summary>The zone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,6 +108,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("action", Action);
+            writer.WriteDoubleValue("amount", Amount);
+            writer.WriteStringValue("currency", Currency);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("occurred_at", OccurredAt);
+            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasZone>("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }

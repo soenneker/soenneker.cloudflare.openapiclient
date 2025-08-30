@@ -39,10 +39,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The variant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryVariant? Variant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry_variant? Variant { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryVariant Variant { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry_variant Variant { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "profile_id", n => { ProfileId = n.GetGuidValue(); } },
-                { "variant", n => { Variant = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryVariant>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryVariant.CreateFromDiscriminatorValue); } },
+                { "variant", n => { Variant = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry_variant>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry_variant.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("profile_id", ProfileId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntryVariant>("variant", Variant);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PredefinedEntry_variant>("variant", Variant);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -22,8 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline Result { get; set; }
 #endif
-        /// <summary>Indicates whether the API call was successful.</summary>
-        public bool? Success { get; set; }
+        /// <summary>The success property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Success { get; set; }
+#nullable restore
+#else
+        public string Success { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_200"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline.CreateFromDiscriminatorValue); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
+                { "success", n => { Success = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>("result", Result);
-            writer.WriteBoolValue("success", Success);
+            writer.WriteStringValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

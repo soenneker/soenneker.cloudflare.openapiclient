@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CloudflareEndpoint { get; set; }
 #endif
         /// <summary>The date and time the tunnel was created.</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
+        public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>The IP address assigned to the customer side of the IPsec tunnel. Not required, but must be set for proactive traceroutes to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,10 +69,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string InterfaceAddress6 { get; set; }
 #endif
         /// <summary>The date and time the tunnel was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The name of the IPsec tunnel. The name cannot share a name with other tunnels.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,11 +163,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>("bgp", Bgp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_status_with_state>("bgp_status", BgpStatus);
             writer.WriteStringValue("cloudflare_endpoint", CloudflareEndpoint);
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("customer_endpoint", CustomerEndpoint);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>("health_check", HealthCheck);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interface_address", InterfaceAddress);
             writer.WriteStringValue("interface_address6", InterfaceAddress6);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_psk_metadata>("psk_metadata", PskMetadata);
             writer.WriteBoolValue("replay_protection", ReplayProtection);

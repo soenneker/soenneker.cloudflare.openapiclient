@@ -24,9 +24,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CreationDate { get; set; }
 #endif
         /// <summary>Jurisdiction where objects in this bucket are guaranteed to be stored.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_jurisdiction? Jurisdiction { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Jurisdiction { get; set; }
+#nullable restore
+#else
+        public string Jurisdiction { get; set; }
+#endif
         /// <summary>Location of the bucket.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location? Location { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Location { get; set; }
+#nullable restore
+#else
+        public string Location { get; set; }
+#endif
         /// <summary>Name of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,15 +48,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Storage class for newly uploaded objects, unless specified otherwise.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class? StorageClass { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StorageClass { get; set; }
+#nullable restore
+#else
+        public string StorageClass { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket"/> and sets the default values.
         /// </summary>
         public R2_bucket()
         {
             AdditionalData = new Dictionary<string, object>();
-            Jurisdiction = global::Soenneker.Cloudflare.OpenApiClient.Models.R2_jurisdiction.Default;
-            StorageClass = global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class.Standard;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -65,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "creation_date", n => { CreationDate = n.GetStringValue(); } },
-                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_jurisdiction>(); } },
-                { "location", n => { Location = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location>(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "storage_class", n => { StorageClass = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class>(); } },
+                { "storage_class", n => { StorageClass = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,10 +95,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("creation_date", CreationDate);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_jurisdiction>("jurisdiction", Jurisdiction);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location>("location", Location);
+            writer.WriteStringValue("jurisdiction", Jurisdiction);
+            writer.WriteStringValue("location", Location);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_storage_class>("storage_class", StorageClass);
+            writer.WriteStringValue("storage_class", StorageClass);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -27,7 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The last_event property</summary>
         public DateTimeOffset? LastEvent { get; set; }
         /// <summary>The max_risk_level property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel? MaxRiskLevel { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaxRiskLevel { get; set; }
+#nullable restore
+#else
+        public string MaxRiskLevel { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "event_count", n => { EventCount = n.GetIntValue(); } },
                 { "last_event", n => { LastEvent = n.GetDateTimeOffsetValue(); } },
-                { "max_risk_level", n => { MaxRiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>(); } },
+                { "max_risk_level", n => { MaxRiskLevel = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetGuidValue(); } },
             };
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteIntValue("event_count", EventCount);
             writer.WriteDateTimeOffsetValue("last_event", LastEvent);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>("max_risk_level", MaxRiskLevel);
+            writer.WriteStringValue("max_risk_level", MaxRiskLevel);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);

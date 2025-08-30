@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the timestamp the resource was created as an ISO8601 string.</summary>
-        public DateTimeOffset? CreatedAt { get; private set; }
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The D1 database&apos;s size, in bytes.</summary>
         public double? FileSize { get; set; }
         /// <summary>D1 database name.</summary>
@@ -40,10 +40,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>D1 database identifier (UUID).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uuid { get; private set; }
+        public string? Uuid { get; set; }
 #nullable restore
 #else
-        public string Uuid { get; private set; }
+        public string Uuid { get; set; }
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,10 +94,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDoubleValue("file_size", FileSize);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("num_tables", NumTables);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_readReplicationDetails>("read_replication", ReadReplication);
+            writer.WriteStringValue("uuid", Uuid);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

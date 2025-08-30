@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ColoName { get; set; }
 #endif
         /// <summary>The date and time the tunnel was created.</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
+        public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>An optional description of the interconnect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,18 +43,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base? HealthCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check? HealthCheck { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base HealthCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check HealthCheck { get; set; }
 #endif
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string InterfaceAddress6 { get; set; }
 #endif
         /// <summary>The date and time the tunnel was last modified.</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The Maximum Transmission Unit (MTU) in bytes for the interconnect. The minimum value is 576.</summary>
         public int? Mtu { get; set; }
         /// <summary>The name of the interconnect. The name cannot share a name with other tunnels.</summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "gre", n => { Gre = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre.CreateFromDiscriminatorValue); } },
-                { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.CreateFromDiscriminatorValue); } },
+                { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
                 { "interface_address6", n => { InterfaceAddress6 = n.GetStringValue(); } },
@@ -130,11 +130,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("colo_name", ColoName);
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre>("gre", Gre);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base>("health_check", HealthCheck);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check>("health_check", HealthCheck);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interface_address", InterfaceAddress);
             writer.WriteStringValue("interface_address6", InterfaceAddress6);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteIntValue("mtu", Mtu);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

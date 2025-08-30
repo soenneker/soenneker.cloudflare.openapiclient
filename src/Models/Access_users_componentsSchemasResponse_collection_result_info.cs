@@ -17,34 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Count { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_count? Count { get; set; }
 #nullable restore
 #else
-        public UntypedNode Count { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_count Count { get; set; }
 #endif
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Page { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_page? Page { get; set; }
 #nullable restore
 #else
-        public UntypedNode Page { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_page Page { get; set; }
 #endif
         /// <summary>The per_page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PerPage { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_per_page? PerPage { get; set; }
 #nullable restore
 #else
-        public UntypedNode PerPage { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_per_page PerPage { get; set; }
 #endif
         /// <summary>The total_count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TotalCount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_total_count? TotalCount { get; set; }
 #nullable restore
 #else
-        public UntypedNode TotalCount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_total_count TotalCount { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "page", n => { Page = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "per_page", n => { PerPage = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "total_count", n => { TotalCount = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "count", n => { Count = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_count.CreateFromDiscriminatorValue); } },
+                { "page", n => { Page = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_page>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_page.CreateFromDiscriminatorValue); } },
+                { "per_page", n => { PerPage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_per_page>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_per_page.CreateFromDiscriminatorValue); } },
+                { "total_count", n => { TotalCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_total_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_total_count.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("count", Count);
-            writer.WriteObjectValue<UntypedNode>("page", Page);
-            writer.WriteObjectValue<UntypedNode>("per_page", PerPage);
-            writer.WriteObjectValue<UntypedNode>("total_count", TotalCount);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_count>("count", Count);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_page>("page", Page);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_per_page>("per_page", PerPage);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_users_componentsSchemasResponse_collection_result_info_total_count>("total_count", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

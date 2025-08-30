@@ -11,8 +11,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// A rule object containing conditions and overrides for this load balancer to evaluate.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class LoadBalancing_rules_item : IParsable
+    public partial class LoadBalancing_rules_item : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The condition expressions to evaluate. If the condition evaluates to true, the overrides or fixed_response in this rule will be applied. An empty condition is always true. For more details on condition expressions, please see https://developers.cloudflare.com/load-balancing/understand-basics/load-balancing-rules/expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +53,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Priority { get; set; }
         /// <summary>If this rule&apos;s condition is true, this causes rule evaluation to stop after processing this rule.</summary>
         public bool? Terminates { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_rules_item"/> and sets the default values.
+        /// </summary>
+        public LoadBalancing_rules_item()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -92,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_rules_item_overrides>("overrides", Overrides);
             writer.WriteIntValue("priority", Priority);
             writer.WriteBoolValue("terminates", Terminates);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

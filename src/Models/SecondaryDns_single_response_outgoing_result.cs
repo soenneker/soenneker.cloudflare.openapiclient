@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The time for a specific event.</summary>
+        /// <summary>The checked_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CheckedTime { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CheckedTime { get; set; }
 #endif
-        /// <summary>The time for a specific event.</summary>
+        /// <summary>The created_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedTime { get; set; }
@@ -33,12 +33,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The time for a specific event.</summary>
+        /// <summary>The last_transferred_time property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastTransferredTime { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LastTransferredTime { get; set; }
 #endif
-        /// <summary>Zone name.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -62,8 +62,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Peers { get; set; }
 #endif
-        /// <summary>The serial number of the SOA for the given zone.</summary>
-        public double? SoaSerial { get; set; }
+        /// <summary>The soa_serial property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SoaSerial { get; set; }
+#nullable restore
+#else
+        public string SoaSerial { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_single_response_outgoing_result"/> and sets the default values.
         /// </summary>
@@ -95,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_transferred_time", n => { LastTransferredTime = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "peers", n => { Peers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "soa_serial", n => { SoaSerial = n.GetDoubleValue(); } },
+                { "soa_serial", n => { SoaSerial = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,10 +113,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("checked_time", CheckedTime);
             writer.WriteStringValue("created_time", CreatedTime);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_transferred_time", LastTransferredTime);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("peers", Peers);
-            writer.WriteDoubleValue("soa_serial", SoaSerial);
+            writer.WriteStringValue("soa_serial", SoaSerial);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

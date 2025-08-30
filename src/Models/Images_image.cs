@@ -25,18 +25,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Image file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Filename { get; private set; }
+        public string? Filename { get; set; }
 #nullable restore
 #else
-        public string Filename { get; private set; }
+        public string Filename { get; set; }
 #endif
         /// <summary>Image unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>User modifiable key-value store. Can be used for keeping references to another system of record for managing images. Metadata must not exceed 1024 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicates whether the image can be a accessed only using it&apos;s UID. If set to true, a signed token needs to be generated with a signing key to view the image.</summary>
         public bool? RequireSignedURLs { get; set; }
         /// <summary>When the media item was uploaded.</summary>
-        public DateTimeOffset? Uploaded { get; private set; }
+        public DateTimeOffset? Uploaded { get; set; }
         /// <summary>Object specifying available variants for an image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,8 +100,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("creator", Creator);
+            writer.WriteStringValue("filename", Filename);
+            writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_metadata>("meta", Meta);
             writer.WriteBoolValue("requireSignedURLs", RequireSignedURLs);
+            writer.WriteDateTimeOffsetValue("uploaded", Uploaded);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

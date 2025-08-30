@@ -12,13 +12,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class PageShield_policyWithId : global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_policy, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Identifier</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("id", Id);
         }
     }
 }

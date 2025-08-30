@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The health_check property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base? HealthCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check? HealthCheck { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base HealthCheck { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check HealthCheck { get; set; }
 #endif
         /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "gre", n => { Gre = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre.CreateFromDiscriminatorValue); } },
-                { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base.CreateFromDiscriminatorValue); } },
+                { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check.CreateFromDiscriminatorValue); } },
                 { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
                 { "interface_address6", n => { InterfaceAddress6 = n.GetStringValue(); } },
                 { "mtu", n => { Mtu = n.GetIntValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre>("gre", Gre);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base>("health_check", HealthCheck);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_health_check>("health_check", HealthCheck);
             writer.WriteStringValue("interface_address", InterfaceAddress);
             writer.WriteStringValue("interface_address6", InterfaceAddress6);
             writer.WriteIntValue("mtu", Mtu);

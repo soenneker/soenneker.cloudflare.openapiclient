@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.intel.indicatorFeeds.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder this[int position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.WithFeed_ItemRequestBuilder this[string position]
         {
             get
             {

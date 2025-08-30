@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Policy { get; set; }
 #endif
         /// <summary>The update_mode property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode? UpdateMode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdateMode { get; set; }
+#nullable restore
+#else
+        public string UpdateMode { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_update_catalog_sync_request"/> and sets the default values.
         /// </summary>
@@ -68,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "policy", n => { Policy = n.GetStringValue(); } },
-                { "update_mode", n => { UpdateMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode>(); } },
+                { "update_mode", n => { UpdateMode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("policy", Policy);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_update_mode>("update_mode", UpdateMode);
+            writer.WriteStringValue("update_mode", UpdateMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

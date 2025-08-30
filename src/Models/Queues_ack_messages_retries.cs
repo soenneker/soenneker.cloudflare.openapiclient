@@ -14,9 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of seconds to delay before making the message available for another attempt.</summary>
-        public double? DelaySeconds { get; set; }
-        /// <summary>An ID that represents an &quot;in-flight&quot; message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.</summary>
+        /// <summary>The delay_seconds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DelaySeconds { get; set; }
+#nullable restore
+#else
+        public string DelaySeconds { get; set; }
+#endif
+        /// <summary>The lease_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeaseId { get; set; }
@@ -49,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delay_seconds", n => { DelaySeconds = n.GetDoubleValue(); } },
+                { "delay_seconds", n => { DelaySeconds = n.GetStringValue(); } },
                 { "lease_id", n => { LeaseId = n.GetStringValue(); } },
             };
         }
@@ -60,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("delay_seconds", DelaySeconds);
+            writer.WriteStringValue("delay_seconds", DelaySeconds);
             writer.WriteStringValue("lease_id", LeaseId);
             writer.WriteAdditionalData(AdditionalData);
         }

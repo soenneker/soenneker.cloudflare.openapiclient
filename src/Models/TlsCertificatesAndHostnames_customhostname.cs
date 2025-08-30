@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The custom hostname that will point to your hostname via CNAME.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hostname { get; private set; }
+        public string? Hostname { get; set; }
 #nullable restore
 #else
-        public string Hostname { get; private set; }
+        public string Hostname { get; set; }
 #endif
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl Ssl { get; set; }
 #endif
         /// <summary>Status of the hostname&apos;s activation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>These are errors that were encountered while trying to activate a hostname.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ownership_verification", n => { OwnershipVerification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification.CreateFromDiscriminatorValue); } },
                 { "ownership_verification_http", n => { OwnershipVerificationHttp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification_http>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification_http.CreateFromDiscriminatorValue); } },
                 { "ssl", n => { Ssl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "verification_errors", n => { VerificationErrors = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -139,11 +145,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_metadata>("custom_metadata", CustomMetadata);
             writer.WriteStringValue("custom_origin_server", CustomOriginServer);
             writer.WriteStringValue("custom_origin_sni", CustomOriginSni);
+            writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification>("ownership_verification", OwnershipVerification);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ownership_verification_http>("ownership_verification_http", OwnershipVerificationHttp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl>("ssl", Ssl);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasStatus>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfPrimitiveValues<string>("verification_errors", VerificationErrors);
             writer.WriteAdditionalData(AdditionalData);
         }

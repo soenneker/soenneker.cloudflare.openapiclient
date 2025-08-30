@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The UUID of the policy test.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -22,24 +22,78 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The percentage of (processed) users approved based on policy evaluation results.</summary>
-        public int? PercentApproved { get; set; }
-        /// <summary>The percentage of (processed) users blocked based on policy evaluation results.</summary>
-        public int? PercentBlocked { get; set; }
-        /// <summary>The percentage of (processed) users errored based on policy evaluation results.</summary>
-        public int? PercentErrored { get; set; }
-        /// <summary>The percentage of users processed so far (of the entire user base).</summary>
-        public int? PercentUsersProcessed { get; set; }
+        /// <summary>The percent_approved property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PercentApproved { get; set; }
+#nullable restore
+#else
+        public string PercentApproved { get; set; }
+#endif
+        /// <summary>The percent_blocked property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PercentBlocked { get; set; }
+#nullable restore
+#else
+        public string PercentBlocked { get; set; }
+#endif
+        /// <summary>The percent_errored property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PercentErrored { get; set; }
+#nullable restore
+#else
+        public string PercentErrored { get; set; }
+#endif
+        /// <summary>The percent_users_processed property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PercentUsersProcessed { get; set; }
+#nullable restore
+#else
+        public string PercentUsersProcessed { get; set; }
+#endif
         /// <summary>The status of the policy test.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status? Status { get; set; }
-        /// <summary>The total number of users in the user base.</summary>
-        public int? TotalUsers { get; set; }
-        /// <summary>The number of (processed) users approved based on policy evaluation results.</summary>
-        public int? UsersApproved { get; set; }
-        /// <summary>The number of (processed) users blocked based on policy evaluation results.</summary>
-        public int? UsersBlocked { get; set; }
-        /// <summary>The number of (processed) users errored based on policy evaluation results.</summary>
-        public int? UsersErrored { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
+        /// <summary>The total_users property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TotalUsers { get; set; }
+#nullable restore
+#else
+        public string TotalUsers { get; set; }
+#endif
+        /// <summary>The users_approved property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UsersApproved { get; set; }
+#nullable restore
+#else
+        public string UsersApproved { get; set; }
+#endif
+        /// <summary>The users_blocked property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UsersBlocked { get; set; }
+#nullable restore
+#else
+        public string UsersBlocked { get; set; }
+#endif
+        /// <summary>The users_errored property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UsersErrored { get; set; }
+#nullable restore
+#else
+        public string UsersErrored { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_policy_update_resp_result"/> and sets the default values.
         /// </summary>
@@ -66,15 +120,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "percent_approved", n => { PercentApproved = n.GetIntValue(); } },
-                { "percent_blocked", n => { PercentBlocked = n.GetIntValue(); } },
-                { "percent_errored", n => { PercentErrored = n.GetIntValue(); } },
-                { "percent_users_processed", n => { PercentUsersProcessed = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>(); } },
-                { "total_users", n => { TotalUsers = n.GetIntValue(); } },
-                { "users_approved", n => { UsersApproved = n.GetIntValue(); } },
-                { "users_blocked", n => { UsersBlocked = n.GetIntValue(); } },
-                { "users_errored", n => { UsersErrored = n.GetIntValue(); } },
+                { "percent_approved", n => { PercentApproved = n.GetStringValue(); } },
+                { "percent_blocked", n => { PercentBlocked = n.GetStringValue(); } },
+                { "percent_errored", n => { PercentErrored = n.GetStringValue(); } },
+                { "percent_users_processed", n => { PercentUsersProcessed = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "total_users", n => { TotalUsers = n.GetStringValue(); } },
+                { "users_approved", n => { UsersApproved = n.GetStringValue(); } },
+                { "users_blocked", n => { UsersBlocked = n.GetStringValue(); } },
+                { "users_errored", n => { UsersErrored = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,15 +139,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("percent_approved", PercentApproved);
-            writer.WriteIntValue("percent_blocked", PercentBlocked);
-            writer.WriteIntValue("percent_errored", PercentErrored);
-            writer.WriteIntValue("percent_users_processed", PercentUsersProcessed);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>("status", Status);
-            writer.WriteIntValue("total_users", TotalUsers);
-            writer.WriteIntValue("users_approved", UsersApproved);
-            writer.WriteIntValue("users_blocked", UsersBlocked);
-            writer.WriteIntValue("users_errored", UsersErrored);
+            writer.WriteStringValue("percent_approved", PercentApproved);
+            writer.WriteStringValue("percent_blocked", PercentBlocked);
+            writer.WriteStringValue("percent_errored", PercentErrored);
+            writer.WriteStringValue("percent_users_processed", PercentUsersProcessed);
+            writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("total_users", TotalUsers);
+            writer.WriteStringValue("users_approved", UsersApproved);
+            writer.WriteStringValue("users_blocked", UsersBlocked);
+            writer.WriteStringValue("users_errored", UsersErrored);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

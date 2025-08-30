@@ -27,18 +27,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The max property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat? Max { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_max? Max { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat Max { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_max Max { get; set; }
 #endif
         /// <summary>The min property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat? Min { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_min? Min { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat Min { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_min Min { get; set; }
 #endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,10 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The totals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat? Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_totals? Totals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat Totals { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_totals Totals { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result"/> and sets the default values.
@@ -93,12 +93,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "data_lag", n => { DataLag = n.GetDoubleValue(); } },
-                { "max", n => { Max = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat.CreateFromDiscriminatorValue); } },
-                { "min", n => { Min = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat.CreateFromDiscriminatorValue); } },
+                { "max", n => { Max = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_max>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_max.CreateFromDiscriminatorValue); } },
+                { "min", n => { Min = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_min>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_min.CreateFromDiscriminatorValue); } },
                 { "query", n => { Query = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_query>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_query.CreateFromDiscriminatorValue); } },
                 { "rows", n => { Rows = n.GetDoubleValue(); } },
                 { "time_intervals", n => { TimeIntervals = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_totals>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_totals.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -110,12 +110,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column>("data", Data);
             writer.WriteDoubleValue("data_lag", DataLag);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat>("max", Max);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat>("min", Min);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_max>("max", Max);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_min>("min", Min);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_query>("query", Query);
             writer.WriteDoubleValue("rows", Rows);
             writer.WriteObjectValue<UntypedNode>("time_intervals", TimeIntervals);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_stat>("totals", Totals);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_queryResponseSingle_result_totals>("totals", Totals);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,8 +12,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class SpectrumConfig_app_config : global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_base_app_config, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Enables Argo Smart Routing for this application.Notes: Only available for TCP applications with traffic_type set to &quot;direct&quot;.</summary>
-        public bool? ArgoSmartRouting { get; set; }
+        /// <summary>The argo_smart_routing property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ArgoSmartRouting { get; set; }
+#nullable restore
+#else
+        public string ArgoSmartRouting { get; set; }
+#endif
         /// <summary>The name and type of DNS record for the Spectrum application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,8 +36,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips EdgeIps { get; set; }
 #endif
-        /// <summary>Enables IP Access Rules for this application.Notes: Only available for TCP applications.</summary>
-        public bool? IpFirewall { get; set; }
+        /// <summary>The ip_firewall property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IpFirewall { get; set; }
+#nullable restore
+#else
+        public string IpFirewall { get; set; }
+#endif
         /// <summary>List of origin IP addresses. Array may contain multiple IP addresses for load balancing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port OriginPort { get; set; }
 #endif
-        /// <summary>The port configuration at Cloudflare&apos;s edge. May specify a single port, for example `&quot;tcp/1000&quot;`, or a range of ports, for example `&quot;tcp/1000-2000&quot;`.</summary>
+        /// <summary>The protocol property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Protocol { get; set; }
@@ -65,20 +77,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Protocol { get; set; }
 #endif
         /// <summary>Enables Proxy Protocol to the origin. Refer to [Enable Proxy protocol](https://developers.cloudflare.com/spectrum/getting-started/proxy-protocol/) for implementation details on PROXY Protocol V1, PROXY Protocol V2, and Simple Proxy Protocol.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol? ProxyProtocol { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProxyProtocol { get; set; }
+#nullable restore
+#else
+        public string ProxyProtocol { get; set; }
+#endif
         /// <summary>The type of TLS termination associated with the application.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls? Tls { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Tls { get; set; }
+#nullable restore
+#else
+        public string Tls { get; set; }
+#endif
         /// <summary>Determines how data travels from the edge to your origin. When set to &quot;direct&quot;, Spectrum will send traffic directly to your origin, and the application&apos;s type is derived from the `protocol`. When set to &quot;http&quot; or &quot;https&quot;, Spectrum will apply Cloudflare&apos;s HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type? TrafficType { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config"/> and sets the default values.
-        /// </summary>
-        public SpectrumConfig_app_config() : base()
-        {
-            ProxyProtocol = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol.Off;
-            Tls = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls.Off;
-            TrafficType = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type.Direct;
-        }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TrafficType { get; set; }
+#nullable restore
+#else
+        public string TrafficType { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -97,17 +118,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "argo_smart_routing", n => { ArgoSmartRouting = n.GetBoolValue(); } },
+                { "argo_smart_routing", n => { ArgoSmartRouting = n.GetStringValue(); } },
                 { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns.CreateFromDiscriminatorValue); } },
                 { "edge_ips", n => { EdgeIps = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips.CreateFromDiscriminatorValue); } },
-                { "ip_firewall", n => { IpFirewall = n.GetBoolValue(); } },
+                { "ip_firewall", n => { IpFirewall = n.GetStringValue(); } },
                 { "origin_direct", n => { OriginDirect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "origin_dns", n => { OriginDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns.CreateFromDiscriminatorValue); } },
                 { "origin_port", n => { OriginPort = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port.CreateFromDiscriminatorValue); } },
                 { "protocol", n => { Protocol = n.GetStringValue(); } },
-                { "proxy_protocol", n => { ProxyProtocol = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>(); } },
-                { "tls", n => { Tls = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>(); } },
-                { "traffic_type", n => { TrafficType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>(); } },
+                { "proxy_protocol", n => { ProxyProtocol = n.GetStringValue(); } },
+                { "tls", n => { Tls = n.GetStringValue(); } },
+                { "traffic_type", n => { TrafficType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -118,17 +139,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("argo_smart_routing", ArgoSmartRouting);
+            writer.WriteStringValue("argo_smart_routing", ArgoSmartRouting);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns>("dns", Dns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips>("edge_ips", EdgeIps);
-            writer.WriteBoolValue("ip_firewall", IpFirewall);
+            writer.WriteStringValue("ip_firewall", IpFirewall);
             writer.WriteCollectionOfPrimitiveValues<string>("origin_direct", OriginDirect);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>("origin_dns", OriginDns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>("origin_port", OriginPort);
             writer.WriteStringValue("protocol", Protocol);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>("proxy_protocol", ProxyProtocol);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>("tls", Tls);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>("traffic_type", TrafficType);
+            writer.WriteStringValue("proxy_protocol", ProxyProtocol);
+            writer.WriteStringValue("tls", Tls);
+            writer.WriteStringValue("traffic_type", TrafficType);
         }
     }
 }

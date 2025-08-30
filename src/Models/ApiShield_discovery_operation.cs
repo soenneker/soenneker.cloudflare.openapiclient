@@ -39,13 +39,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>API discovery engine(s) that discovered this operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin?>? Origin { get; set; }
+        public List<string>? Origin { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin?> Origin { get; set; }
+        public List<string> Origin { get; set; }
 #endif
         /// <summary>State of operation in API Discovery  * `review` - Operation is not saved into API Shield Endpoint Management  * `saved` - Operation is saved into API Shield Endpoint Management  * `ignored` - Operation is marked as ignored</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_state? State { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? State { get; set; }
+#nullable restore
+#else
+        public string State { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,8 +73,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "features", n => { Features = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_traffic_stats>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_traffic_stats.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid.CreateFromDiscriminatorValue); } },
                 { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp.CreateFromDiscriminatorValue); } },
-                { "origin", n => { Origin = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin>()?.AsList(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_state>(); } },
+                { "origin", n => { Origin = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,8 +87,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp>("last_updated", LastUpdated);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin>("origin", Origin);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_state>("state", State);
+            writer.WriteCollectionOfPrimitiveValues<string>("origin", Origin);
+            writer.WriteStringValue("state", State);
         }
     }
 }

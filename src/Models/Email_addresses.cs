@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date and time the destination address has been created.</summary>
-        public DateTimeOffset? Created { get; private set; }
+        public DateTimeOffset? Created { get; set; }
         /// <summary>The contact email address of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,24 +27,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Destination address identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The date and time the destination address was last modified.</summary>
-        public DateTimeOffset? Modified { get; private set; }
+        public DateTimeOffset? Modified { get; set; }
         /// <summary>Destination address tag. (Deprecated, replaced by destination address identifier)</summary>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag { get; private set; }
+        public string? Tag { get; set; }
 #nullable restore
 #else
-        public string Tag { get; private set; }
+        public string Tag { get; set; }
 #endif
         /// <summary>The date and time the destination address has been verified. Null means not verified yet.</summary>
-        public DateTimeOffset? Verified { get; private set; }
+        public DateTimeOffset? Verified { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_addresses"/> and sets the default values.
         /// </summary>
@@ -85,7 +84,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("modified", Modified);
+            writer.WriteStringValue("tag", Tag);
+            writer.WriteDateTimeOffsetValue("verified", Verified);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

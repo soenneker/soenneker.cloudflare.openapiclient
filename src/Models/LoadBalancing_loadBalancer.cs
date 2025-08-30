@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_country_pools CountryPools { get; set; }
 #endif
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
+        public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_location_strategy LocationStrategy { get; set; }
 #endif
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The DNS hostname to associate with your Load Balancer. If this hostname already exists as a DNS record in Cloudflare&apos;s DNS, the Load Balancer will take precedence and the DNS record will not be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,7 +127,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_rules_item> Rules { get; set; }
 #endif
         /// <summary>Specifies the type of session affinity the load balancer should use unless specified as `&quot;none&quot;`. The supported types are: - `&quot;cookie&quot;`: On the first request to a proxied load balancer, a cookie is generated, encoding information of which origin the request will be forwarded to. Subsequent requests, by the same client to the same load balancer, will be sent to the origin server the cookie encodes, for the duration of the cookie and as long as the origin server remains healthy. If the cookie has expired or the origin server is unhealthy, then a new origin server is calculated and used. - `&quot;ip_cookie&quot;`: Behaves the same as `&quot;cookie&quot;` except the initial origin selection is stable and based on the client&apos;s ip address. - `&quot;header&quot;`: On the first request to a proxied load balancer, a session key based on the configured HTTP headers (see `session_affinity_attributes.headers`) is generated, encoding the request headers used for storing in the load balancer session state which origin the request will be forwarded to. Subsequent requests to the load balancer with the same headers will be sent to the same origin server, for the duration of the session and as long as the origin server remains healthy. If the session has been idle for the duration of `session_affinity_ttl` seconds or the origin server is unhealthy, then a new origin server is calculated and used. See `headers` in `session_affinity_attributes` for additional required configuration.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity? SessionAffinity { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SessionAffinity { get; set; }
+#nullable restore
+#else
+        public string SessionAffinity { get; set; }
+#endif
         /// <summary>Configures attributes for session affinity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,7 +145,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Time, in seconds, until a client&apos;s session expires after being created. Once the expiry time has been reached, subsequent requests may get sent to a different origin server. The accepted ranges per `session_affinity` policy are: - `&quot;cookie&quot;` / `&quot;ip_cookie&quot;`: The current default of 23 hours will be used unless explicitly set. The accepted range of values is between [1800, 604800]. - `&quot;header&quot;`: The current default of 1800 seconds will be used unless explicitly set. The accepted range of values is between [30, 3600]. Note: With session affinity by header, sessions only expire after they haven&apos;t been used for the number of seconds specified.</summary>
         public double? SessionAffinityTtl { get; set; }
         /// <summary>Steering Policy for this load balancer.- `&quot;off&quot;`: Use `default_pools`.- `&quot;geo&quot;`: Use `region_pools`/`country_pools`/`pop_pools`. For non-proxied requests, the country for `country_pools` is determined by `location_strategy`.- `&quot;random&quot;`: Select a pool randomly.- `&quot;dynamic_latency&quot;`: Use round trip time to select the closest pool in default_pools (requires pool health checks).- `&quot;proximity&quot;`: Use the pools&apos; latitude and longitude to select the closest pool using the Cloudflare PoP location for proxied requests or the location determined by `location_strategy` for non-proxied requests.- `&quot;least_outstanding_requests&quot;`: Select a pool by taking into consideration `random_steering` weights, as well as each pool&apos;s number of outstanding requests. Pools with more pending requests are weighted proportionately less relative to others.- `&quot;least_connections&quot;`: Select a pool by taking into consideration `random_steering` weights, as well as each pool&apos;s number of open connections. Pools with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.- `&quot;&quot;`: Will map to `&quot;geo&quot;` if you use `region_pools`/`country_pools`/`pop_pools` otherwise `&quot;off&quot;`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_steering_policy? SteeringPolicy { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SteeringPolicy { get; set; }
+#nullable restore
+#else
+        public string SteeringPolicy { get; set; }
+#endif
         /// <summary>Time to live (TTL) of the DNS entry for the IP address returned by this load balancer. This only applies to gray-clouded (unproxied) load balancers.</summary>
         public double? Ttl { get; set; }
         /// <summary>The zone_name property</summary>
@@ -156,7 +168,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public LoadBalancing_loadBalancer()
         {
             AdditionalData = new Dictionary<string, object>();
-            SessionAffinity = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity.None;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -193,10 +204,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "random_steering", n => { RandomSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_random_steering>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_random_steering.CreateFromDiscriminatorValue); } },
                 { "region_pools", n => { RegionPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_region_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_region_pools.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_rules_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_rules_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "session_affinity", n => { SessionAffinity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity>(); } },
+                { "session_affinity", n => { SessionAffinity = n.GetStringValue(); } },
                 { "session_affinity_attributes", n => { SessionAffinityAttributes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity_attributes>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity_attributes.CreateFromDiscriminatorValue); } },
                 { "session_affinity_ttl", n => { SessionAffinityTtl = n.GetDoubleValue(); } },
-                { "steering_policy", n => { SteeringPolicy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_steering_policy>(); } },
+                { "steering_policy", n => { SteeringPolicy = n.GetStringValue(); } },
                 { "ttl", n => { Ttl = n.GetDoubleValue(); } },
                 { "zone_name", n => { ZoneName = n.GetStringValue(); } },
             };
@@ -210,12 +221,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_adaptive_routing>("adaptive_routing", AdaptiveRouting);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_country_pools>("country_pools", CountryPools);
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteCollectionOfPrimitiveValues<string>("default_pools", DefaultPools);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("fallback_pool", FallbackPool);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_location_strategy>("location_strategy", LocationStrategy);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_pop_pools>("pop_pools", PopPools);
@@ -223,10 +236,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_random_steering>("random_steering", RandomSteering);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_region_pools>("region_pools", RegionPools);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_rules_item>("rules", Rules);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity>("session_affinity", SessionAffinity);
+            writer.WriteStringValue("session_affinity", SessionAffinity);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_session_affinity_attributes>("session_affinity_attributes", SessionAffinityAttributes);
             writer.WriteDoubleValue("session_affinity_ttl", SessionAffinityTtl);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_steering_policy>("steering_policy", SteeringPolicy);
+            writer.WriteStringValue("steering_policy", SteeringPolicy);
             writer.WriteDoubleValue("ttl", Ttl);
             writer.WriteStringValue("zone_name", ZoneName);
             writer.WriteAdditionalData(AdditionalData);

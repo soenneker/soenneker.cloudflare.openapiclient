@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of days until the next key rotation.</summary>
-        public double? DaysUntilNextRotation { get; private set; }
+        public double? DaysUntilNextRotation { get; set; }
         /// <summary>The number of days between key rotations.</summary>
         public double? KeyRotationIntervalDays { get; set; }
         /// <summary>The timestamp of the previous key rotation.</summary>
@@ -57,6 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("days_until_next_rotation", DaysUntilNextRotation);
             writer.WriteDoubleValue("key_rotation_interval_days", KeyRotationIntervalDays);
             writer.WriteDateTimeOffsetValue("last_key_rotation_at", LastKeyRotationAt);
             writer.WriteAdditionalData(AdditionalData);

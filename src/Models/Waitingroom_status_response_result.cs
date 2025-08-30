@@ -15,9 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The estimated_queued_users property</summary>
-        public int? EstimatedQueuedUsers { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EstimatedQueuedUsers { get; set; }
+#nullable restore
+#else
+        public string EstimatedQueuedUsers { get; set; }
+#endif
         /// <summary>The estimated_total_active_users property</summary>
-        public int? EstimatedTotalActiveUsers { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EstimatedTotalActiveUsers { get; set; }
+#nullable restore
+#else
+        public string EstimatedTotalActiveUsers { get; set; }
+#endif
         /// <summary>The event_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,9 +39,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string EventId { get; set; }
 #endif
         /// <summary>The max_estimated_time_minutes property</summary>
-        public int? MaxEstimatedTimeMinutes { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaxEstimatedTimeMinutes { get; set; }
+#nullable restore
+#else
+        public string MaxEstimatedTimeMinutes { get; set; }
+#endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response_result"/> and sets the default values.
         /// </summary>
@@ -55,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "estimated_queued_users", n => { EstimatedQueuedUsers = n.GetIntValue(); } },
-                { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetIntValue(); } },
+                { "estimated_queued_users", n => { EstimatedQueuedUsers = n.GetStringValue(); } },
+                { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetStringValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "max_estimated_time_minutes", n => { MaxEstimatedTimeMinutes = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>(); } },
+                { "max_estimated_time_minutes", n => { MaxEstimatedTimeMinutes = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,11 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("estimated_queued_users", EstimatedQueuedUsers);
-            writer.WriteIntValue("estimated_total_active_users", EstimatedTotalActiveUsers);
+            writer.WriteStringValue("estimated_queued_users", EstimatedQueuedUsers);
+            writer.WriteStringValue("estimated_total_active_users", EstimatedTotalActiveUsers);
             writer.WriteStringValue("event_id", EventId);
-            writer.WriteIntValue("max_estimated_time_minutes", MaxEstimatedTimeMinutes);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>("status", Status);
+            writer.WriteStringValue("max_estimated_time_minutes", MaxEstimatedTimeMinutes);
+            writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

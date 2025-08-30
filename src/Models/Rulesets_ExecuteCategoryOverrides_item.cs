@@ -16,25 +16,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action? Action { get; set; }
 #nullable restore
 #else
-        public string Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action Action { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category? Category { get; set; }
 #nullable restore
 #else
-        public string Category { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category Category { get; set; }
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled? Enabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled Enabled { get; set; }
+#endif
         /// <summary>The sensitivity_level property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel? SensitivityLevel { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SensitivityLevel { get; set; }
+#nullable restore
+#else
+        public string SensitivityLevel { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item"/> and sets the default values.
         /// </summary>
@@ -60,10 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "sensitivity_level", n => { SensitivityLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel>(); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category.CreateFromDiscriminatorValue); } },
+                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled.CreateFromDiscriminatorValue); } },
+                { "sensitivity_level", n => { SensitivityLevel = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,10 +85,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("action", Action);
-            writer.WriteStringValue("category", Category);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel>("sensitivity_level", SensitivityLevel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category>("category", Category);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled>("enabled", Enabled);
+            writer.WriteStringValue("sensitivity_level", SensitivityLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

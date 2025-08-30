@@ -34,9 +34,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel&apos;s configuration on the Zero Trust dashboard.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src? Source { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get; set; }
+#nullable restore
+#else
+        public string Source { get; set; }
+#endif
         /// <summary>UUID of the tunnel.</summary>
-        public Guid? TunnelId { get; private set; }
+        public Guid? TunnelId { get; set; }
         /// <summary>The version of the Tunnel Configuration.</summary>
         public int? Version { get; set; }
         /// <summary>
@@ -67,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src>(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
                 { "tunnel_id", n => { TunnelId = n.GetGuidValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
@@ -82,7 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config>("config", Config);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConfig_src>("source", Source);
+            writer.WriteStringValue("source", Source);
+            writer.WriteGuidValue("tunnel_id", TunnelId);
             writer.WriteIntValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

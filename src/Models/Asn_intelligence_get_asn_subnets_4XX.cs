@@ -16,16 +16,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn property</summary>
-        public int? Asn { get; set; }
-        /// <summary>Total results returned based on your search parameters.</summary>
-        public double? Count { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Asn { get; set; }
+#nullable restore
+#else
+        public string Asn { get; set; }
+#endif
+        /// <summary>The count property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Count { get; set; }
+#nullable restore
+#else
+        public string Count { get; set; }
+#endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item>? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_errors? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item> Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_errors Errors { get; set; }
 #endif
         /// <summary>The ip_count_total property</summary>
         public int? IpCountTotal { get; set; }
@@ -34,15 +46,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item>? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_messages? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item> Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_messages Messages { get; set; }
 #endif
-        /// <summary>Current page within paginated list of results.</summary>
-        public double? Page { get; set; }
-        /// <summary>Number of results per page of results.</summary>
-        public double? PerPage { get; set; }
+        /// <summary>The page property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Page { get; set; }
+#nullable restore
+#else
+        public string Page { get; set; }
+#endif
+        /// <summary>The per_page property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PerPage { get; set; }
+#nullable restore
+#else
+        public string PerPage { get; set; }
+#endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,13 +110,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asn", n => { Asn = n.GetIntValue(); } },
-                { "count", n => { Count = n.GetDoubleValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "asn", n => { Asn = n.GetStringValue(); } },
+                { "count", n => { Count = n.GetStringValue(); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_errors.CreateFromDiscriminatorValue); } },
                 { "ip_count_total", n => { IpCountTotal = n.GetIntValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "page", n => { Page = n.GetDoubleValue(); } },
-                { "per_page", n => { PerPage = n.GetDoubleValue(); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_messages.CreateFromDiscriminatorValue); } },
+                { "page", n => { Page = n.GetStringValue(); } },
+                { "per_page", n => { PerPage = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
                 { "subnets", n => { Subnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
@@ -105,13 +129,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("asn", Asn);
-            writer.WriteDoubleValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item>("errors", Errors);
+            writer.WriteStringValue("asn", Asn);
+            writer.WriteStringValue("count", Count);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_errors>("errors", Errors);
             writer.WriteIntValue("ip_count_total", IpCountTotal);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_messages_item>("messages", Messages);
-            writer.WriteDoubleValue("page", Page);
-            writer.WriteDoubleValue("per_page", PerPage);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_messages>("messages", Messages);
+            writer.WriteStringValue("page", Page);
+            writer.WriteStringValue("per_page", PerPage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_apiResponseCommonFailure_result>("result", Result);
             writer.WriteCollectionOfPrimitiveValues<string>("subnets", Subnets);
             writer.WriteBoolValue("success", Success);

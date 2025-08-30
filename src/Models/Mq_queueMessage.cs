@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The number of seconds to wait for attempting to deliver this message to consumers</summary>
+        public double? DelaySeconds { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueMessage"/> and sets the default values.
         /// </summary>
@@ -39,6 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "delay_seconds", n => { DelaySeconds = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("delay_seconds", DelaySeconds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

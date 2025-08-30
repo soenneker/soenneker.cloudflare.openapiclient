@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Meta object containing non-standard meta-information about the error.This field must be an object or null!</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg_meta? Meta { get; set; }
 #nullable restore
 #else
-        public UntypedNode Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg_meta Meta { get; set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
                 { "error_chain", n => { ErrorChain = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg_meta.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Source>(global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Source.CreateFromDiscriminatorValue); } },
             };
         }
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("documentation_url", DocumentationUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg>("error_chain", ErrorChain);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<UntypedNode>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Msg_meta>("meta", Meta);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_Source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }

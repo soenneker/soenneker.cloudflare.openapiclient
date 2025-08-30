@@ -15,11 +15,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates that the zone&apos;s Bot Fight Mode is turned on.</summary>
-        public bool? FightMode { get; set; }
-        /// <summary>Indicates that the zone&apos;s wordpress optimization for SBFM is turned on.</summary>
-        public bool? OptimizeWordpress { get; set; }
-        /// <summary>Indicates that the zone&apos;s definitely automated requests are being blocked or challenged.</summary>
+        /// <summary>The fight_mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FightMode { get; set; }
+#nullable restore
+#else
+        public string FightMode { get; set; }
+#endif
+        /// <summary>The optimize_wordpress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OptimizeWordpress { get; set; }
+#nullable restore
+#else
+        public string OptimizeWordpress { get; set; }
+#endif
+        /// <summary>The sbfm_definitely_automated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SbfmDefinitelyAutomated { get; set; }
@@ -27,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SbfmDefinitelyAutomated { get; set; }
 #endif
-        /// <summary>Indicates that the zone&apos;s likely automated requests are being blocked or challenged.</summary>
+        /// <summary>The sbfm_likely_automated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SbfmLikelyAutomated { get; set; }
@@ -35,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SbfmLikelyAutomated { get; set; }
 #endif
-        /// <summary>Indicates that the zone&apos;s static resource protection is turned on.</summary>
+        /// <summary>The sbfm_static_resource_protection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SbfmStaticResourceProtection { get; set; }
@@ -43,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SbfmStaticResourceProtection { get; set; }
 #endif
-        /// <summary>Indicates that the zone&apos;s verified bot requests are being blocked.</summary>
+        /// <summary>The sbfm_verified_bots property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SbfmVerifiedBots { get; set; }
@@ -76,8 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fight_mode", n => { FightMode = n.GetBoolValue(); } },
-                { "optimize_wordpress", n => { OptimizeWordpress = n.GetBoolValue(); } },
+                { "fight_mode", n => { FightMode = n.GetStringValue(); } },
+                { "optimize_wordpress", n => { OptimizeWordpress = n.GetStringValue(); } },
                 { "sbfm_definitely_automated", n => { SbfmDefinitelyAutomated = n.GetStringValue(); } },
                 { "sbfm_likely_automated", n => { SbfmLikelyAutomated = n.GetStringValue(); } },
                 { "sbfm_static_resource_protection", n => { SbfmStaticResourceProtection = n.GetStringValue(); } },
@@ -91,8 +103,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("fight_mode", FightMode);
-            writer.WriteBoolValue("optimize_wordpress", OptimizeWordpress);
+            writer.WriteStringValue("fight_mode", FightMode);
+            writer.WriteStringValue("optimize_wordpress", OptimizeWordpress);
             writer.WriteStringValue("sbfm_definitely_automated", SbfmDefinitelyAutomated);
             writer.WriteStringValue("sbfm_likely_automated", SbfmLikelyAutomated);
             writer.WriteStringValue("sbfm_static_resource_protection", SbfmStaticResourceProtection);

@@ -17,7 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies the number of dimensions for the index</summary>
         public int? Dimensions { get; set; }
         /// <summary>Specifies the type of metric to use calculating distance.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric? Metric { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Metric { get; set; }
+#nullable restore
+#else
+        public string Metric { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration"/> and sets the default values.
         /// </summary>
@@ -44,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dimensions", n => { Dimensions = n.GetIntValue(); } },
-                { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>(); } },
+                { "metric", n => { Metric = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dimensions", Dimensions);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>("metric", Metric);
+            writer.WriteStringValue("metric", Metric);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

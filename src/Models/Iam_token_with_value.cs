@@ -12,13 +12,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Iam_token_with_value : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_base, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The token value.</summary>
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; private set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public string Value { get; private set; }
+        public string Value { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("value", Value);
         }
     }
 }

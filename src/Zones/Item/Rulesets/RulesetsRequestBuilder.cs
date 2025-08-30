@@ -165,8 +165,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("per_page")]
-            public int? PerPage { get; set; }
+            public string? PerPage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("per_page")]
+            public string PerPage { get; set; }
+#endif
         }
     }
 }

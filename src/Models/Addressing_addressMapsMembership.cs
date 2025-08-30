@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Controls whether the membership can be deleted via the API or not.</summary>
-        public bool? CanDelete { get; private set; }
+        public bool? CanDelete { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The identifier for the membership (eg. a zone or account tag).</summary>
@@ -27,7 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Identifier { get; set; }
 #endif
         /// <summary>The type of the membership.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind? Kind { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Kind { get; set; }
+#nullable restore
+#else
+        public string Kind { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsMembership"/> and sets the default values.
         /// </summary>
@@ -56,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "can_delete", n => { CanDelete = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "identifier", n => { Identifier = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>(); } },
+                { "kind", n => { Kind = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,9 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("can_delete", CanDelete);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("identifier", Identifier);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_kind>("kind", Kind);
+            writer.WriteStringValue("kind", Kind);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,27 +8,46 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPresetConfiguration"/>
+    /// Specifies the type of configuration to use for the index.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Vectorize_indexConfiguration : IComposedTypeWrapper, IParsable
+    public partial class Vectorize_indexConfiguration : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Specifies the number of dimensions for the index</summary>
+        public int? Dimensions { get; set; }
+        /// <summary>Specifies the type of metric to use calculating distance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration? VectorizeIndexDimensionConfiguration { get; set; }
+        public string? Metric { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration VectorizeIndexDimensionConfiguration { get; set; }
+        public string Metric { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPresetConfiguration"/></summary>
+        /// <summary>Specifies the preset to use for the index.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPresetConfiguration? VectorizeIndexPresetConfiguration { get; set; }
+        public string? Preset { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPresetConfiguration VectorizeIndexPresetConfiguration { get; set; }
+        public string Preset { get; set; }
 #endif
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexConfiguration"/> and sets the default values.
+        /// </summary>
+        public Vectorize_indexConfiguration()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,17 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexConfiguration();
-            if("vectorize_index-dimension-configuration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.VectorizeIndexDimensionConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration();
-            }
-            else if("vectorize_index-preset-configuration".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.VectorizeIndexPresetConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPresetConfiguration();
-            }
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,15 +64,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(VectorizeIndexDimensionConfiguration != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return VectorizeIndexDimensionConfiguration.GetFieldDeserializers();
-            }
-            else if(VectorizeIndexPresetConfiguration != null)
-            {
-                return VectorizeIndexPresetConfiguration.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "dimensions", n => { Dimensions = n.GetIntValue(); } },
+                { "metric", n => { Metric = n.GetStringValue(); } },
+                { "preset", n => { Preset = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -72,14 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(VectorizeIndexDimensionConfiguration != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexDimensionConfiguration>(null, VectorizeIndexDimensionConfiguration);
-            }
-            else if(VectorizeIndexPresetConfiguration != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPresetConfiguration>(null, VectorizeIndexPresetConfiguration);
-            }
+            writer.WriteIntValue("dimensions", Dimensions);
+            writer.WriteStringValue("metric", Metric);
+            writer.WriteStringValue("preset", Preset);
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

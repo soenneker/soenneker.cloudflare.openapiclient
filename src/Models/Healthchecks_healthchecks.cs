@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The number of consecutive successes required from a health check before changing the health to healthy.</summary>
         public int? ConsecutiveSuccesses { get; set; }
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; private set; }
+        public DateTimeOffset? CreatedOn { get; set; }
         /// <summary>A human-readable description of the health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The current failure reason if status is unhealthy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureReason { get; private set; }
+        public string? FailureReason { get; set; }
 #nullable restore
 #else
-        public string FailureReason { get; private set; }
+        public string FailureReason { get; set; }
 #endif
         /// <summary>Parameters specific to an HTTP or HTTPS health check.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,15 +63,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The interval between each health check. Shorter intervals may give quicker notifications if the origin status changes, but will increase load on the origin as we check from multiple locations.</summary>
         public int? Interval { get; set; }
         /// <summary>The modified_on property</summary>
-        public DateTimeOffset? ModifiedOn { get; private set; }
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>A short name to identify the health check. Only alphanumeric characters, hyphens and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.</summary>
         public int? Retries { get; set; }
         /// <summary>The current status of the origin server according to the health check.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status? Status { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>If suspended, no health checks are sent to the origin.</summary>
         public bool? Suspended { get; set; }
         /// <summary>Parameters specific to TCP health check.</summary>
@@ -110,7 +116,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Healthchecks_healthchecks()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = "HTTP";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -143,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "retries", n => { Retries = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "suspended", n => { Suspended = n.GetBoolValue(); } },
                 { "tcp_config", n => { TcpConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
@@ -161,11 +166,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks>("check_regions", CheckRegions);
             writer.WriteIntValue("consecutive_fails", ConsecutiveFails);
             writer.WriteIntValue("consecutive_successes", ConsecutiveSuccesses);
+            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("failure_reason", FailureReason);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_http_config>("http_config", HttpConfig);
+            writer.WriteStringValue("id", Id);
             writer.WriteIntValue("interval", Interval);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("retries", Retries);
+            writer.WriteStringValue("status", Status);
             writer.WriteBoolValue("suspended", Suspended);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>("tcp_config", TcpConfig);
             writer.WriteIntValue("timeout", Timeout);

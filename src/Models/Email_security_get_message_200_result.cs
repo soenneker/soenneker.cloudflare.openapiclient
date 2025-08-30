@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The action_log property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ActionLog { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_action_log? ActionLog { get; set; }
 #nullable restore
 #else
-        public UntypedNode ActionLog { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_action_log ActionLog { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> ClientRecipients { get; set; }
 #endif
         /// <summary>The delivery_mode property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageDeliveryMode? DeliveryMode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_delivery_mode? DeliveryMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_delivery_mode DeliveryMode { get; set; }
+#endif
         /// <summary>The detection_reasons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +63,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string EdfHash { get; set; }
 #endif
         /// <summary>The final_disposition property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel? FinalDisposition { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_final_disposition? FinalDisposition { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_final_disposition FinalDisposition { get; set; }
+#endif
         /// <summary>The findings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MessageId { get; set; }
 #endif
-        /// <summary>The identifier of the message.</summary>
+        /// <summary>The postfix_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostfixId { get; set; }
@@ -207,13 +219,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action_log", n => { ActionLog = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "action_log", n => { ActionLog = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_action_log>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_action_log.CreateFromDiscriminatorValue); } },
                 { "alert_id", n => { AlertId = n.GetStringValue(); } },
                 { "client_recipients", n => { ClientRecipients = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "delivery_mode", n => { DeliveryMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageDeliveryMode>(); } },
+                { "delivery_mode", n => { DeliveryMode = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_delivery_mode>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_delivery_mode.CreateFromDiscriminatorValue); } },
                 { "detection_reasons", n => { DetectionReasons = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "edf_hash", n => { EdfHash = n.GetStringValue(); } },
-                { "final_disposition", n => { FinalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>(); } },
+                { "final_disposition", n => { FinalDisposition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_final_disposition>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_final_disposition.CreateFromDiscriminatorValue); } },
                 { "findings", n => { Findings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from", n => { From = n.GetStringValue(); } },
                 { "from_name", n => { FromName = n.GetStringValue(); } },
@@ -240,13 +252,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("action_log", ActionLog);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_action_log>("action_log", ActionLog);
             writer.WriteStringValue("alert_id", AlertId);
             writer.WriteCollectionOfPrimitiveValues<string>("client_recipients", ClientRecipients);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageDeliveryMode>("delivery_mode", DeliveryMode);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_delivery_mode>("delivery_mode", DeliveryMode);
             writer.WriteCollectionOfPrimitiveValues<string>("detection_reasons", DetectionReasons);
             writer.WriteStringValue("edf_hash", EdfHash);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("final_disposition", FinalDisposition);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_final_disposition>("final_disposition", FinalDisposition);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings>("findings", Findings);
             writer.WriteStringValue("from", From);
             writer.WriteStringValue("from_name", FromName);

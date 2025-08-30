@@ -47,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_enabled? Enabled { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_enabled Enabled { get; set; }
+#endif
         /// <summary>Configuration for exposed credential checking.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "action_parameters", n => { ActionParameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_action_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_action_parameters.CreateFromDiscriminatorValue); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_enabled.CreateFromDiscriminatorValue); } },
                 { "exposed_credential_check", n => { ExposedCredentialCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck.CreateFromDiscriminatorValue); } },
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -156,7 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_action_parameters>("action_parameters", ActionParameters);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Rule_enabled>("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RuleExposedCredentialCheck>("exposed_credential_check", ExposedCredentialCheck);
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("id", Id);

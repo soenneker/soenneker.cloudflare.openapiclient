@@ -282,10 +282,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("content%2Estartswith")]
             public string ContentStartswith { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_direction? Direction { get; set; }
+            public string? Direction { get; set; }
+#nullable restore
+#else
+            [QueryParameter("direction")]
+            public string Direction { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_match? Match { get; set; }
+            public string? Match { get; set; }
+#nullable restore
+#else
+            [QueryParameter("match")]
+            public string Match { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -331,14 +345,42 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("name%2Estartswith")]
             public string NameStartswith { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_order? Order { get; set; }
+            public string? Order { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order")]
+            public string Order { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("page")]
-            public double? Page { get; set; }
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("per_page")]
-            public double? PerPage { get; set; }
+            public string? PerPage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("per_page")]
+            public string PerPage { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("proxied")]
-            public bool? Proxied { get; set; }
+            public string? Proxied { get; set; }
+#nullable restore
+#else
+            [QueryParameter("proxied")]
+            public string Proxied { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -393,8 +435,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("tag%2Eexact")]
             public string TagExact { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("tag_match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_tag_match? TagMatch { get; set; }
+            public string? TagMatch { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tag_match")]
+            public string TagMatch { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tag%2Epresent")]
@@ -413,8 +462,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("tag%2Estartswith")]
             public string TagStartswith { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_type? Type { get; set; }
+            public string? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public string Type { get; set; }
+#endif
         }
     }
 }

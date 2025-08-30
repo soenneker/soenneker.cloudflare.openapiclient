@@ -25,7 +25,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Label { get; set; }
 #endif
         /// <summary>Specifies the processing status of the video.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>A Cloudflare-generated unique identifier for a media item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "default", n => { Default = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
             };
         }
@@ -74,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("label", Label);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_audio_state>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteStringValue("uid", Uid);
             writer.WriteAdditionalData(AdditionalData);
         }

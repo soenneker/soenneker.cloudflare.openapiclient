@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The timestamp of when the rule was last modified.</summary>
         public DateTimeOffset? LastUpdated { get; private set; }
-        /// <summary>The identifying name of the snippet.</summary>
+        /// <summary>The snippet_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnippetName { get; set; }

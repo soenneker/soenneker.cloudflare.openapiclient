@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Managed Transforms that this Managed Transform conflicts with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConflictsWith { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ManagedTransform_conflicts_with>? ConflictsWith { get; private set; }
 #nullable restore
 #else
-        public List<string> ConflictsWith { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ManagedTransform_conflicts_with> ConflictsWith { get; private set; }
 #endif
         /// <summary>Whether the Managed Transform is enabled.</summary>
         public bool? Enabled { get; set; }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conflicts_with", n => { ConflictsWith = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "conflicts_with", n => { ConflictsWith = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ManagedTransform_conflicts_with>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ManagedTransform_conflicts_with.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "has_conflict", n => { HasConflict = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },

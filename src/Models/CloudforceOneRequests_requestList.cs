@@ -15,13 +15,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Retrieve requests completed after this time.</summary>
-        public DateTimeOffset? CompletedAfter { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_after? CompletedAfter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_after CompletedAfter { get; set; }
+#endif
         /// <summary>Retrieve requests completed before this time.</summary>
-        public DateTimeOffset? CompletedBefore { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_before? CompletedBefore { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_before CompletedBefore { get; set; }
+#endif
         /// <summary>Retrieve requests created after this time.</summary>
-        public DateTimeOffset? CreatedAfter { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_after? CreatedAfter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_after CreatedAfter { get; set; }
+#endif
         /// <summary>Retrieve requests created before this time.</summary>
-        public DateTimeOffset? CreatedBefore { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_before? CreatedBefore { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_before CreatedBefore { get; set; }
+#endif
         /// <summary>Page number of results.</summary>
         public int? Page { get; set; }
         /// <summary>Number of results per page.</summary>
@@ -45,7 +69,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Sort order (asc or desc).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_sort_order? SortOrder { get; set; }
         /// <summary>Request Status.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList"/> and sets the default values.
         /// </summary>
@@ -71,16 +101,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed_after", n => { CompletedAfter = n.GetDateTimeOffsetValue(); } },
-                { "completed_before", n => { CompletedBefore = n.GetDateTimeOffsetValue(); } },
-                { "created_after", n => { CreatedAfter = n.GetDateTimeOffsetValue(); } },
-                { "created_before", n => { CreatedBefore = n.GetDateTimeOffsetValue(); } },
+                { "completed_after", n => { CompletedAfter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_after>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_after.CreateFromDiscriminatorValue); } },
+                { "completed_before", n => { CompletedBefore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_before>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_before.CreateFromDiscriminatorValue); } },
+                { "created_after", n => { CreatedAfter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_after>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_after.CreateFromDiscriminatorValue); } },
+                { "created_before", n => { CreatedBefore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_before>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_before.CreateFromDiscriminatorValue); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "per_page", n => { PerPage = n.GetIntValue(); } },
                 { "request_type", n => { RequestType = n.GetStringValue(); } },
                 { "sort_by", n => { SortBy = n.GetStringValue(); } },
                 { "sort_order", n => { SortOrder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_sort_order>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -90,16 +120,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("completed_after", CompletedAfter);
-            writer.WriteDateTimeOffsetValue("completed_before", CompletedBefore);
-            writer.WriteDateTimeOffsetValue("created_after", CreatedAfter);
-            writer.WriteDateTimeOffsetValue("created_before", CreatedBefore);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_after>("completed_after", CompletedAfter);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_completed_before>("completed_before", CompletedBefore);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_after>("created_after", CreatedAfter);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_created_before>("created_before", CreatedBefore);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
             writer.WriteStringValue("request_type", RequestType);
             writer.WriteStringValue("sort_by", SortBy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_sort_order>("sort_order", SortOrder);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

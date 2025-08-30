@@ -23,9 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Comment { get; set; }
 #endif
         /// <summary>Timestamp of when the resource was created.</summary>
-        public DateTimeOffset? CreatedAt { get; private set; }
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Timestamp of when the resource was deleted. If `null`, the resource has not been deleted.</summary>
-        public DateTimeOffset? DeletedAt { get; private set; }
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>The UUID of the subnet.</summary>
         public Guid? Id { get; set; }
         /// <summary>If `true`, this is the default subnet for the account. There can only be one default subnet per account.</summary>
@@ -47,7 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Network { get; set; }
 #endif
         /// <summary>The type of subnet.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type? SubnetType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubnetType { get; set; }
+#nullable restore
+#else
+        public string SubnetType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet"/> and sets the default values.
         /// </summary>
@@ -80,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_default_network", n => { IsDefaultNetwork = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
-                { "subnet_type", n => { SubnetType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>(); } },
+                { "subnet_type", n => { SubnetType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -91,11 +97,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_default_network", IsDefaultNetwork);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("network", Network);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>("subnet_type", SubnetType);
+            writer.WriteStringValue("subnet_type", SubnetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

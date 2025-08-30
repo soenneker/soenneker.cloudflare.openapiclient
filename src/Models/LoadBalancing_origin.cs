@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Address { get; set; }
 #endif
         /// <summary>This field shows up only if the origin is disabled. This field is set with the time the origin was disabled.</summary>
-        public DateTimeOffset? DisabledAt { get; private set; }
+        public DateTimeOffset? DisabledAt { get; set; }
         /// <summary>Whether to enable (the default) this origin within the pool. Disabled origins will not receive traffic and are excluded from health checks. The origin will only be disabled for the current pool.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The request header is used to pass additional information with an HTTP request. Currently supported header is &apos;Host&apos;.</summary>
@@ -97,6 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
+            writer.WriteDateTimeOffsetValue("disabled_at", DisabledAt);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasHeader>("header", Header);
             writer.WriteStringValue("name", Name);

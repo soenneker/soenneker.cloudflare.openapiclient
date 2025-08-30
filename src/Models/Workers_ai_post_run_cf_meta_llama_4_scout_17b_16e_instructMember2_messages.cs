@@ -81,34 +81,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember2"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_content : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1>? WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1? WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 { get; set; }
 #nullable restore
 #else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1> WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember2? WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember2 WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember2 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1 WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -120,17 +112,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_content();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember2();
+                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1> workersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1Value)
-                {
-                    result.WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 = workersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1Value;
+                    result.WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1();
                 }
                 return result;
             }
@@ -140,9 +128,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember2 != null)
+                if(UnionBranch != null)
                 {
-                    return WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember2.GetFieldDeserializers();
+                    return UnionBranch.GetFieldDeserializers();
+                }
+                else if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 != null)
+                {
+                    return WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -153,17 +145,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember2 != null)
+                if(UnionBranch != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember2>(null, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember2);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
                 }
                 else if(WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1 != null)
                 {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1>(null, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instructMember2_messages_contentMember1>(null, WorkersAiPostRunCfMetaLlama4Scout17b16eInstructMember2MessagesContentMember1);
                 }
             }
         }

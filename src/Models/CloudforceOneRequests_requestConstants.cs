@@ -17,26 +17,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority?>? Priority { get; set; }
+        public List<string>? Priority { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority?> Priority { get; set; }
+        public List<string> Priority { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus?>? Status { get; set; }
+        public List<string>? Status { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus?> Status { get; set; }
+        public List<string> Status { get; set; }
 #endif
         /// <summary>The tlp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp?>? Tlp { get; set; }
+        public List<string>? Tlp { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp?> Tlp { get; set; }
+        public List<string> Tlp { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestConstants"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "priority", n => { Priority = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>()?.AsList(); } },
-                { "status", n => { Status = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>()?.AsList(); } },
-                { "tlp", n => { Tlp = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>()?.AsList(); } },
+                { "priority", n => { Priority = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "status", n => { Status = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tlp", n => { Tlp = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>("priority", Priority);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>("status", Status);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
+            writer.WriteCollectionOfPrimitiveValues<string>("priority", Priority);
+            writer.WriteCollectionOfPrimitiveValues<string>("status", Status);
+            writer.WriteCollectionOfPrimitiveValues<string>("tlp", Tlp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

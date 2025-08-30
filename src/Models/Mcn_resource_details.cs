@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cloud_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_cloud_type? CloudType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CloudType { get; set; }
+#nullable restore
+#else
+        public string CloudType { get; set; }
+#endif
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,10 +87,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The provider_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ProviderIds { get; set; }
+        public List<string>? ProviderIds { get; set; }
 #nullable restore
 #else
-        public List<Guid?> ProviderIds { get; set; }
+        public List<string> ProviderIds { get; set; }
 #endif
         /// <summary>The provider_names_by_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +117,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ResourceGroup { get; set; }
 #endif
         /// <summary>The resource_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type? ResourceType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceType { get; set; }
+#nullable restore
+#else
+        public string ResourceType { get; set; }
+#endif
         /// <summary>The sections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,7 +190,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "cloud_type", n => { CloudType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_cloud_type>(); } },
+                { "cloud_type", n => { CloudType = n.GetStringValue(); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_config.CreateFromDiscriminatorValue); } },
                 { "deployment_provider", n => { DeploymentProvider = n.GetGuidValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -188,11 +200,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "native_id", n => { NativeId = n.GetStringValue(); } },
                 { "observations", n => { Observations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_observations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_observations.CreateFromDiscriminatorValue); } },
-                { "provider_ids", n => { ProviderIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "provider_ids", n => { ProviderIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "provider_names_by_id", n => { ProviderNamesById = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_provider_names_by_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_provider_names_by_id.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "resource_group", n => { ResourceGroup = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type>(); } },
+                { "resource_type", n => { ResourceType = n.GetStringValue(); } },
                 { "sections", n => { Sections = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_section>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_section.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "state", n => { State = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_state.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_tags.CreateFromDiscriminatorValue); } },
@@ -208,7 +220,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_cloud_type>("cloud_type", CloudType);
+            writer.WriteStringValue("cloud_type", CloudType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_config>("config", Config);
             writer.WriteGuidValue("deployment_provider", DeploymentProvider);
             writer.WriteGuidValue("id", Id);
@@ -218,11 +230,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("native_id", NativeId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_observations>("observations", Observations);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("provider_ids", ProviderIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("provider_ids", ProviderIds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_provider_names_by_id>("provider_names_by_id", ProviderNamesById);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("resource_group", ResourceGroup);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type>("resource_type", ResourceType);
+            writer.WriteStringValue("resource_type", ResourceType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_section>("sections", Sections);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_state>("state", State);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_tags>("tags", Tags);

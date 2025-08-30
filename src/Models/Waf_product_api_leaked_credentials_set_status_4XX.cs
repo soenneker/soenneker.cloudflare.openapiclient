@@ -88,18 +88,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember1"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Waf_product_api_leaked_credentials_set_status_4XX_result : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,14 +108,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember1 WafProductApiLeakedCredentialsSetStatus4XXResultMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2>? WafProductApiLeakedCredentialsSetStatus4XXResultMember2 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2> WafProductApiLeakedCredentialsSetStatus4XXResultMember2 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -126,17 +118,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX.Waf_product_api_leaked_credentials_set_status_4XX_result();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2>(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2> wafProductApiLeakedCredentialsSetStatus4XXResultMember2Value)
-                {
-                    result.WafProductApiLeakedCredentialsSetStatus4XXResultMember2 = wafProductApiLeakedCredentialsSetStatus4XXResultMember2Value;
-                }
-                else {
-                    result.WafProductApiLeakedCredentialsSetStatus4XXResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember1();
-                }
+                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
+                result.WafProductApiLeakedCredentialsSetStatus4XXResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember1();
                 return result;
             }
             /// <summary>
@@ -145,9 +128,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(WafProductApiLeakedCredentialsSetStatus4XXResultMember1 != null)
+                if(UnionBranch != null || WafProductApiLeakedCredentialsSetStatus4XXResultMember1 != null)
                 {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WafProductApiLeakedCredentialsSetStatus4XXResultMember1);
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch, WafProductApiLeakedCredentialsSetStatus4XXResultMember1);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -158,17 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(WafProductApiLeakedCredentialsSetStatus4XXResultMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember2>(null, WafProductApiLeakedCredentialsSetStatus4XXResultMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX_resultMember1>(null, WafProductApiLeakedCredentialsSetStatus4XXResultMember1);
-                }
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch, WafProductApiLeakedCredentialsSetStatus4XXResultMember1);
             }
         }
     }

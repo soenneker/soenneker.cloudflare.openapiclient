@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target"/>, <see cref="string"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Magic_health_check_base_target : IComposedTypeWrapper, IParsable
@@ -88,13 +88,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target MagicHealthCheckTarget { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public string? String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public string String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -110,9 +110,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 {
                     result.MagicHealthCheckTarget = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target();
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.String = stringValue;
+                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 }
                 return result;
             }
@@ -125,6 +125,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 if(MagicHealthCheckTarget != null)
                 {
                     return MagicHealthCheckTarget.GetFieldDeserializers();
+                }
+                else if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -139,9 +143,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 {
                     writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_target>(null, MagicHealthCheckTarget);
                 }
-                else if(String != null)
+                else if(UnionBranch != null)
                 {
-                    writer.WriteStringValue(null, String);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
                 }
             }
         }

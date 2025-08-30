@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The event_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? EventDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details? EventDetails { get; set; }
 #nullable restore
 #else
-        public UntypedNode EventDetails { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details EventDetails { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The risk_level property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel? RiskLevel { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RiskLevel { get; set; }
+#nullable restore
+#else
+        public string RiskLevel { get; set; }
+#endif
         /// <summary>The timestamp property</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
@@ -67,10 +73,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "event_details", n => { EventDetails = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "event_details", n => { EventDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>(); } },
+                { "risk_level", n => { RiskLevel = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -81,10 +87,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("event_details", EventDetails);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details>("event_details", EventDetails);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>("risk_level", RiskLevel);
+            writer.WriteStringValue("risk_level", RiskLevel);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,21 +14,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Embeddings of the requested text values</summary>
+        /// <summary>The transcription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Data { get; set; }
+        public string? Text { get; set; }
 #nullable restore
 #else
-        public UntypedNode Data { get; set; }
+        public string Text { get; set; }
 #endif
-        /// <summary>The shape property</summary>
+        /// <summary>The vtt property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Shape { get; set; }
+        public string? Vtt { get; set; }
 #nullable restore
 #else
-        public List<double?> Shape { get; set; }
+        public string Vtt { get; set; }
+#endif
+        /// <summary>The word_count property</summary>
+        public double? WordCount { get; set; }
+        /// <summary>The words property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2_words>? Words { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2_words> Words { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2"/> and sets the default values.
@@ -55,8 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "shape", n => { Shape = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "vtt", n => { Vtt = n.GetStringValue(); } },
+                { "word_count", n => { WordCount = n.GetDoubleValue(); } },
+                { "words", n => { Words = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2_words>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2_words.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,8 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("data", Data);
-            writer.WriteCollectionOfPrimitiveValues<double?>("shape", Shape);
+            writer.WriteStringValue("text", Text);
+            writer.WriteStringValue("vtt", Vtt);
+            writer.WriteDoubleValue("word_count", WordCount);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_model_200_resultMember2_words>("words", Words);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

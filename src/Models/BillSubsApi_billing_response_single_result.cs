@@ -118,13 +118,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>Billing item identifier tag.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The is_partner property</summary>
         public bool? IsPartner { get; set; }
@@ -373,6 +373,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("enterprise_billing_email", EnterpriseBillingEmail);
             writer.WriteStringValue("enterprise_primary_email", EnterprisePrimaryEmail);
             writer.WriteStringValue("first_name", FirstName);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_partner", IsPartner);
             writer.WriteStringValue("last_name", LastName);
             writer.WriteDateTimeOffsetValue("next_bill_date", NextBillDate);

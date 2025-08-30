@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The applicable_destinations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type?>? ApplicableDestinations { get; set; }
+        public List<string>? ApplicableDestinations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type?> ApplicableDestinations { get; set; }
+        public List<string> ApplicableDestinations { get; set; }
 #endif
         /// <summary>The policy_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applicable_destinations", n => { ApplicableDestinations = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type>()?.AsList(); } },
+                { "applicable_destinations", n => { ApplicableDestinations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "policy_description", n => { PolicyDescription = n.GetStringValue(); } },
                 { "policy_name", n => { PolicyName = n.GetStringValue(); } },
                 { "policy_string", n => { PolicyString = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_catalog_sync_destination_type>("applicable_destinations", ApplicableDestinations);
+            writer.WriteCollectionOfPrimitiveValues<string>("applicable_destinations", ApplicableDestinations);
             writer.WriteStringValue("policy_description", PolicyDescription);
             writer.WriteStringValue("policy_name", PolicyName);
             writer.WriteStringValue("policy_string", PolicyString);

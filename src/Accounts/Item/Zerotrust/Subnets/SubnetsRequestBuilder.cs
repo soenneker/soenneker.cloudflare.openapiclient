@@ -97,8 +97,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         public partial class SubnetsRequestBuilderGetQueryParameters 
         {
             /// <summary>If set, only include subnets in the given address family - `v4` or `v6`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("address_family")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_address_family? AddressFamily { get; set; }
+            public string? AddressFamily { get; set; }
+#nullable restore
+#else
+            [QueryParameter("address_family")]
+            public string AddressFamily { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("comment")]
@@ -140,10 +147,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
             [QueryParameter("network")]
             public string Network { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("page")]
-            public double? Page { get; set; }
+            public string? Page { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page")]
+            public string Page { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("per_page")]
-            public double? PerPage { get; set; }
+            public string? PerPage { get; set; }
+#nullable restore
+#else
+            [QueryParameter("per_page")]
+            public string PerPage { get; set; }
+#endif
             [QueryParameter("sort_order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.GetSort_orderQueryParameterType? SortOrder { get; set; }
             [QueryParameter("subnet_types")]

@@ -101,8 +101,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.Flee
             public string Colo { get; set; }
 #endif
             /// <summary>Number of minutes before current time</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("since_minutes")]
-            public double? SinceMinutes { get; set; }
+            public string? SinceMinutes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("since_minutes")]
+            public string SinceMinutes { get; set; }
+#endif
             /// <summary>Number of minutes before current time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

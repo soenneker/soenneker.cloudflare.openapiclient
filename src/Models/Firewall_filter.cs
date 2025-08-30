@@ -31,10 +31,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier of the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>When true, indicates that the filter is currently paused.</summary>
         public bool? Paused { get; set; }
@@ -80,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("expression", Expression);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteStringValue("ref", Ref);
         }

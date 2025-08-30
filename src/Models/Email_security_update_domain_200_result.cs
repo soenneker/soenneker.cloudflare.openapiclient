@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The allowed_delivery_modes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DeliveryMode?>? AllowedDeliveryModes { get; set; }
+        public List<string>? AllowedDeliveryModes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DeliveryMode?> AllowedDeliveryModes { get; set; }
+        public List<string> AllowedDeliveryModes { get; set; }
 #endif
         /// <summary>The authorization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The drop_dispositions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel?>? DropDispositions { get; set; }
+        public List<string>? DropDispositions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel?> DropDispositions { get; set; }
+        public List<string> DropDispositions { get; set; }
 #endif
         /// <summary>The emails_processed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_emails_processed EmailsProcessed { get; set; }
 #endif
         /// <summary>The folder property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ScannableFolder? Folder { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_folder? Folder { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_folder Folder { get; set; }
+#endif
         /// <summary>The unique identifier for the domain.</summary>
         public int? Id { get; set; }
         /// <summary>The inbox_provider property</summary>
@@ -135,13 +141,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowed_delivery_modes", n => { AllowedDeliveryModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DeliveryMode>()?.AsList(); } },
+                { "allowed_delivery_modes", n => { AllowedDeliveryModes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "authorization", n => { Authorization = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_authorization>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_authorization.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
-                { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>()?.AsList(); } },
+                { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "emails_processed", n => { EmailsProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_emails_processed>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_emails_processed.CreateFromDiscriminatorValue); } },
-                { "folder", n => { Folder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ScannableFolder>(); } },
+                { "folder", n => { Folder = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_folder>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_folder.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "inbox_provider", n => { InboxProvider = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_inbox_provider>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_inbox_provider.CreateFromDiscriminatorValue); } },
                 { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
@@ -162,13 +168,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DeliveryMode>("allowed_delivery_modes", AllowedDeliveryModes);
+            writer.WriteCollectionOfPrimitiveValues<string>("allowed_delivery_modes", AllowedDeliveryModes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_authorization>("authorization", Authorization);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("domain", Domain);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("drop_dispositions", DropDispositions);
+            writer.WriteCollectionOfPrimitiveValues<string>("drop_dispositions", DropDispositions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_emails_processed>("emails_processed", EmailsProcessed);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ScannableFolder>("folder", Folder);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_folder>("folder", Folder);
             writer.WriteIntValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_domain_200_result_inbox_provider>("inbox_provider", InboxProvider);
             writer.WriteGuidValue("integration_id", IntegrationId);

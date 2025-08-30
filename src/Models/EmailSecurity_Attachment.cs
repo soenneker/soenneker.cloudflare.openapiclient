@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ContentType { get; set; }
 #endif
         /// <summary>The detection property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel? Detection { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Detection { get; set; }
+#nullable restore
+#else
+        public string Detection { get; set; }
+#endif
         /// <summary>The encrypted property</summary>
         public bool? Encrypted { get; set; }
         /// <summary>The name property</summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
-                { "detection", n => { Detection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>(); } },
+                { "detection", n => { Detection = n.GetStringValue(); } },
                 { "encrypted", n => { Encrypted = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
@@ -76,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content_type", ContentType);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("detection", Detection);
+            writer.WriteStringValue("detection", Detection);
             writer.WriteBoolValue("encrypted", Encrypted);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("size", Size);

@@ -78,10 +78,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Telephone { get; set; }
 #endif
-        /// <summary>Indicates whether two-factor authentication is enabled for the user account. Does not apply to API authentication.</summary>
-        public bool? TwoFactorAuthenticationEnabled { get; private set; }
-        /// <summary>Indicates whether two-factor authentication is required by one of the accounts that the user is a member of.</summary>
-        public bool? TwoFactorAuthenticationLocked { get; private set; }
+        /// <summary>The two_factor_authentication_enabled property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TwoFactorAuthenticationEnabled { get; set; }
+#nullable restore
+#else
+        public string TwoFactorAuthenticationEnabled { get; set; }
+#endif
+        /// <summary>The two_factor_authentication_locked property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TwoFactorAuthenticationLocked { get; set; }
+#nullable restore
+#else
+        public string TwoFactorAuthenticationLocked { get; set; }
+#endif
         /// <summary>The zipcode or postal code where the user lives.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,8 +138,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "organizations", n => { Organizations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "suspended", n => { Suspended = n.GetBoolValue(); } },
                 { "telephone", n => { Telephone = n.GetStringValue(); } },
-                { "two_factor_authentication_enabled", n => { TwoFactorAuthenticationEnabled = n.GetBoolValue(); } },
-                { "two_factor_authentication_locked", n => { TwoFactorAuthenticationLocked = n.GetBoolValue(); } },
+                { "two_factor_authentication_enabled", n => { TwoFactorAuthenticationEnabled = n.GetStringValue(); } },
+                { "two_factor_authentication_locked", n => { TwoFactorAuthenticationLocked = n.GetStringValue(); } },
                 { "zipcode", n => { Zipcode = n.GetStringValue(); } },
             };
         }
@@ -143,6 +155,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("last_name", LastName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization>("organizations", Organizations);
             writer.WriteStringValue("telephone", Telephone);
+            writer.WriteStringValue("two_factor_authentication_enabled", TwoFactorAuthenticationEnabled);
+            writer.WriteStringValue("two_factor_authentication_locked", TwoFactorAuthenticationLocked);
             writer.WriteStringValue("zipcode", Zipcode);
             writer.WriteAdditionalData(AdditionalData);
         }

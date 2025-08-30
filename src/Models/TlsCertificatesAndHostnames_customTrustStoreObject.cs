@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Certificate { get; set; }
 #endif
         /// <summary>When the certificate expires.</summary>
-        public DateTimeOffset? ExpiresOn { get; private set; }
+        public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,25 +35,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The certificate authority that issued the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get; private set; }
+        public string? Issuer { get; set; }
 #nullable restore
 #else
-        public string Issuer { get; private set; }
+        public string Issuer { get; set; }
 #endif
         /// <summary>The type of hash used for the certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get; private set; }
+        public string? Signature { get; set; }
 #nullable restore
 #else
-        public string Signature { get; private set; }
+        public string Signature { get; set; }
 #endif
         /// <summary>Status of the zone&apos;s custom SSL.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customTrustStore_componentsSchemasStatus? Status { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>When the certificate was last modified.</summary>
-        public DateTimeOffset? UpdatedAt { get; private set; }
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>When the certificate was uploaded to Cloudflare.</summary>
-        public DateTimeOffset? UploadedOn { get; private set; }
+        public DateTimeOffset? UploadedOn { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customTrustStoreObject"/> and sets the default values.
         /// </summary>
@@ -84,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customTrustStore_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
             };
@@ -97,7 +103,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("certificate", Certificate);
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("issuer", Issuer);
+            writer.WriteStringValue("signature", Signature);
+            writer.WriteStringValue("status", Status);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

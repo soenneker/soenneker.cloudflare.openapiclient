@@ -41,7 +41,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The risk_level property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel? RiskLevel { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RiskLevel { get; set; }
+#nullable restore
+#else
+        public string RiskLevel { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvents"/> and sets the default values.
         /// </summary>
@@ -71,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "last_reset_time", n => { LastResetTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>(); } },
+                { "risk_level", n => { RiskLevel = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent>("events", Events);
             writer.WriteDateTimeOffsetValue("last_reset_time", LastResetTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>("risk_level", RiskLevel);
+            writer.WriteStringValue("risk_level", RiskLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

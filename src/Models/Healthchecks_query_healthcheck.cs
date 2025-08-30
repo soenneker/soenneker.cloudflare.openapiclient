@@ -88,7 +88,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Healthchecks_query_healthcheck()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = "HTTP";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

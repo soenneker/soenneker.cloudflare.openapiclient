@@ -46,7 +46,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Pattern { get; set; }
 #endif
         /// <summary>The pattern_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType? PatternType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PatternType { get; set; }
+#nullable restore
+#else
+        public string PatternType { get; set; }
+#endif
         /// <summary>Enforce DMARC, SPF or DKIM authentication.When on, Email Security only honors policies that pass authentication.</summary>
         public bool? VerifySender { get; set; }
         /// <summary>
@@ -76,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_spoof", n => { IsSpoof = n.GetBoolValue(); } },
                 { "is_trusted_sender", n => { IsTrustedSender = n.GetBoolValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "pattern_type", n => { PatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>(); } },
+                { "pattern_type", n => { PatternType = n.GetStringValue(); } },
                 { "verify_sender", n => { VerifySender = n.GetBoolValue(); } },
             };
         }
@@ -96,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_spoof", IsSpoof);
             writer.WriteBoolValue("is_trusted_sender", IsTrustedSender);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>("pattern_type", PatternType);
+            writer.WriteStringValue("pattern_type", PatternType);
             writer.WriteBoolValue("verify_sender", VerifySender);
         }
     }

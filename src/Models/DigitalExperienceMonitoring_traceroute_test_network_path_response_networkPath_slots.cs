@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? ClientToCfIngressRttMs { get; set; }
         /// <summary>Round trip time in ms of the client to ISP mile</summary>
         public int? ClientToIspRttMs { get; set; }
-        /// <summary>API Resource UUID tag.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

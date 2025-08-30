@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of target IDs to bulk delete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? TargetIds { get; set; }
+        public List<string>? TargetIds { get; set; }
 #nullable restore
 #else
-        public List<Guid?> TargetIds { get; set; }
+        public List<string> TargetIds { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_targets_delete_batch"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "target_ids", n => { TargetIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "target_ids", n => { TargetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("target_ids", TargetIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("target_ids", TargetIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

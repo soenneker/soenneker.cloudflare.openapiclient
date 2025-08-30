@@ -31,13 +31,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Content { get; set; }
 #endif
         /// <summary>Defines the message creation time.</summary>
-        public DateTimeOffset? Created { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_created? Created { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_created Created { get; set; }
+#endif
         /// <summary>Message ID.</summary>
         public int? Id { get; set; }
         /// <summary>Whether the message is a follow-on request.</summary>
         public bool? IsFollowOnRequest { get; set; }
         /// <summary>Defines the message last updated time.</summary>
-        public DateTimeOffset? Updated { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_updated? Updated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_updated Updated { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem"/> and sets the default values.
         /// </summary>
@@ -65,10 +77,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_created.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "is_follow_on_request", n => { IsFollowOnRequest = n.GetBoolValue(); } },
-                { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
+                { "updated", n => { Updated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_updated>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_updated.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,10 +92,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("author", Author);
             writer.WriteStringValue("content", Content);
-            writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_created>("created", Created);
             writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("is_follow_on_request", IsFollowOnRequest);
-            writer.WriteDateTimeOffsetValue("updated", Updated);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestMessageItem_updated>("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

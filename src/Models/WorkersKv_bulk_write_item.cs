@@ -16,11 +16,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether or not the server should base64 decode the value before storing it. Useful for writing values that wouldn&apos;t otherwise be valid JSON strings, such as images.</summary>
         public bool? Base64 { get; set; }
-        /// <summary>Expires the key at a certain time, measured in number of seconds since the UNIX epoch.</summary>
-        public double? Expiration { get; set; }
-        /// <summary>Expires the key after a number of seconds. Must be at least 60.</summary>
-        public double? ExpirationTtl { get; set; }
-        /// <summary>A key&apos;s name. The name may be at most 512 bytes. All printable, non-whitespace characters are valid.</summary>
+        /// <summary>The expiration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Expiration { get; set; }
+#nullable restore
+#else
+        public string Expiration { get; set; }
+#endif
+        /// <summary>The expiration_ttl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpirationTtl { get; set; }
+#nullable restore
+#else
+        public string ExpirationTtl { get; set; }
+#endif
+        /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }
@@ -70,8 +82,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "base64", n => { Base64 = n.GetBoolValue(); } },
-                { "expiration", n => { Expiration = n.GetDoubleValue(); } },
-                { "expiration_ttl", n => { ExpirationTtl = n.GetDoubleValue(); } },
+                { "expiration", n => { Expiration = n.GetStringValue(); } },
+                { "expiration_ttl", n => { ExpirationTtl = n.GetStringValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetStringValue(); } },
@@ -85,8 +97,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("base64", Base64);
-            writer.WriteDoubleValue("expiration", Expiration);
-            writer.WriteDoubleValue("expiration_ttl", ExpirationTtl);
+            writer.WriteStringValue("expiration", Expiration);
+            writer.WriteStringValue("expiration_ttl", ExpirationTtl);
             writer.WriteStringValue("key", Key);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_list_metadata>("metadata", Metadata);
             writer.WriteStringValue("value", Value);

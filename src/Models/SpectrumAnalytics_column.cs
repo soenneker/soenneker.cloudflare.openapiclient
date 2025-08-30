@@ -71,26 +71,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes List&lt;double&gt;, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SpectrumAnalytics_column_metrics : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type List&lt;double&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<double?>? Double { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public List<double?> Double { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1>? SpectrumAnalyticsColumnMetricsMember1 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1> SpectrumAnalyticsColumnMetricsMember1 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,13 +94,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column.SpectrumAnalytics_column_metrics();
-                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1> spectrumAnalyticsColumnMetricsMember1Value)
+                if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.SpectrumAnalyticsColumnMetricsMember1 = spectrumAnalyticsColumnMetricsMember1Value;
-                }
-                else if(parseNode.GetCollectionOfPrimitiveValues<double?>()?.AsList() is List<double?> doubleValue)
-                {
-                    result.Double = doubleValue;
+                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 }
                 return result;
             }
@@ -118,6 +106,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
+                if(UnionBranch != null)
+                {
+                    return UnionBranch.GetFieldDeserializers();
+                }
                 return new Dictionary<string, Action<IParseNode>>();
             }
             /// <summary>
@@ -127,13 +119,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(SpectrumAnalyticsColumnMetricsMember1 != null)
+                if(UnionBranch != null)
                 {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumAnalytics_column_metricsMember1>(null, SpectrumAnalyticsColumnMetricsMember1);
-                }
-                else if(Double != null)
-                {
-                    writer.WriteCollectionOfPrimitiveValues<double?>(null, Double);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
                 }
             }
         }

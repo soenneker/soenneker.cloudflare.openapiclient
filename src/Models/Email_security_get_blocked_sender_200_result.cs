@@ -24,8 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The unique identifier for the allow policy.</summary>
-        public int? Id { get; set; }
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The is_regex property</summary>
         public bool? IsRegex { get; set; }
         /// <summary>The last_modified property</summary>
@@ -39,7 +45,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Pattern { get; set; }
 #endif
         /// <summary>The pattern_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType? PatternType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PatternType { get; set; }
+#nullable restore
+#else
+        public string PatternType { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_blocked_sender_200_result"/> and sets the default values.
         /// </summary>
@@ -67,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "is_regex", n => { IsRegex = n.GetBoolValue(); } },
                 { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "pattern_type", n => { PatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>(); } },
+                { "pattern_type", n => { PatternType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,11 +95,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteIntValue("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_regex", IsRegex);
             writer.WriteDateTimeOffsetValue("last_modified", LastModified);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>("pattern_type", PatternType);
+            writer.WriteStringValue("pattern_type", PatternType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

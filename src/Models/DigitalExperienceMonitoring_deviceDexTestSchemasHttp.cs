@@ -61,10 +61,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for the test.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TestId { get; private set; }
+        public string? TestId { get; set; }
 #nullable restore
 #else
-        public string TestId { get; private set; }
+        public string TestId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_deviceDexTestSchemasHttp"/> and sets the default values.
@@ -115,6 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("targeted", Targeted);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_dex_target_policy>("target_policies", TargetPolicies);
+            writer.WriteStringValue("test_id", TestId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

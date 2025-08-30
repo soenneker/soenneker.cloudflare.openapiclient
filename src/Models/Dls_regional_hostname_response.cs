@@ -15,7 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_on property</summary>
-        public DateTimeOffset? CreatedOn { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_regional_hostname_response_created_on? CreatedOn { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_regional_hostname_response_created_on CreatedOn { get; set; }
+#endif
         /// <summary>DNS hostname to be regionalized, must be a subdomain of the zone. Wildcards are supported for one level, e.g `*.example.com`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,7 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Dls_regional_hostname_response()
         {
             AdditionalData = new Dictionary<string, object>();
-            Routing = "dns";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "created_on", n => { CreatedOn = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_regional_hostname_response_created_on>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_regional_hostname_response_created_on.CreateFromDiscriminatorValue); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "region_key", n => { RegionKey = n.GetStringValue(); } },
                 { "routing", n => { Routing = n.GetStringValue(); } },
@@ -79,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dls_regional_hostname_response_created_on>("created_on", CreatedOn);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("region_key", RegionKey);
             writer.WriteStringValue("routing", Routing);

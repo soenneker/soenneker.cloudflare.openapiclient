@@ -22,10 +22,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The priority of the rule, used to define which Page Rule is processedover another. A higher number indicates a higher priority. For example,if you have a catch-all Page Rule (rule A: `/images/*`) but want a morespecific Page Rule to take precedence (rule B: `/images/special/*`),specify a higher priority for rule B so it overrides rule A.</summary>
-        public int? Priority { get; set; }
+        /// <summary>The priority property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Priority { get; set; }
+#nullable restore
+#else
+        public string Priority { get; set; }
+#endif
         /// <summary>The status of the Page Rule.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The rule targets to evaluate on each request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Page_rules_update_a_page_rule()
         {
             AdditionalData = new Dictionary<string, object>();
-            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status.Disabled;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,8 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_update_a_page_rule.WithPagerule_>(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_update_a_page_rule.WithPagerule_.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "priority", n => { Priority = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -74,8 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_update_a_page_rule.WithPagerule_>("actions", Actions);
-            writer.WriteIntValue("priority", Priority);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>("status", Status);
+            writer.WriteStringValue("priority", Priority);
+            writer.WriteStringValue("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }

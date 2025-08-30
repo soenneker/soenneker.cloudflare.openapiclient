@@ -14,10 +14,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The maximum number of messages to include in a batch.</summary>
-        public double? BatchSize { get; set; }
-        /// <summary>The number of milliseconds that a message is exclusively leased. After the timeout, the message becomes available for another attempt.</summary>
-        public double? VisibilityTimeoutMs { get; set; }
+        /// <summary>The batch_size property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BatchSize { get; set; }
+#nullable restore
+#else
+        public string BatchSize { get; set; }
+#endif
+        /// <summary>The visibility_timeout_ms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VisibilityTimeoutMs { get; set; }
+#nullable restore
+#else
+        public string VisibilityTimeoutMs { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Queues_pull_messages"/> and sets the default values.
         /// </summary>
@@ -43,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "batch_size", n => { BatchSize = n.GetDoubleValue(); } },
-                { "visibility_timeout_ms", n => { VisibilityTimeoutMs = n.GetDoubleValue(); } },
+                { "batch_size", n => { BatchSize = n.GetStringValue(); } },
+                { "visibility_timeout_ms", n => { VisibilityTimeoutMs = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("batch_size", BatchSize);
-            writer.WriteDoubleValue("visibility_timeout_ms", VisibilityTimeoutMs);
+            writer.WriteStringValue("batch_size", BatchSize);
+            writer.WriteStringValue("visibility_timeout_ms", VisibilityTimeoutMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

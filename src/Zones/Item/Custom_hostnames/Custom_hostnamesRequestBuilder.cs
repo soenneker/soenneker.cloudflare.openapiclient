@@ -182,15 +182,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
             public double? Page { get; set; }
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("ssl")]
-            public string? Ssl { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ssl")]
-            public string Ssl { get; set; }
-#endif
+            public double? Ssl { get; set; }
         }
     }
 }

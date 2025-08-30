@@ -14,9 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>True if the location is the default location.</summary>
-        public bool? ClientDefault { get; set; }
-        /// <summary>The identifier of the pair of IPv4 addresses assigned to this location. When creating a location, if this field is absent or set with null, the pair of shared IPv4 addresses (0e4a32c6-6fb8-4858-9296-98f51631e8e6) is auto-assigned. When updating a location, if the field is absent or set with null, the pre-assigned pair remains unchanged.</summary>
+        /// <summary>The client_default property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientDefault { get; set; }
+#nullable restore
+#else
+        public string ClientDefault { get; set; }
+#endif
+        /// <summary>The dns_destination_ips_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DnsDestinationIpsId { get; set; }
@@ -24,8 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DnsDestinationIpsId { get; set; }
 #endif
-        /// <summary>True if the location needs to resolve EDNS queries.</summary>
-        public bool? EcsSupport { get; set; }
+        /// <summary>The ecs_support property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EcsSupport { get; set; }
+#nullable restore
+#else
+        public string EcsSupport { get; set; }
+#endif
         /// <summary>The destination endpoints configured for this location. When updating a location, if this field is absent or set with null, the endpoints configuration remains unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints Endpoints { get; set; }
 #endif
-        /// <summary>The name of the location.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -75,9 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "client_default", n => { ClientDefault = n.GetBoolValue(); } },
+                { "client_default", n => { ClientDefault = n.GetStringValue(); } },
                 { "dns_destination_ips_id", n => { DnsDestinationIpsId = n.GetStringValue(); } },
-                { "ecs_support", n => { EcsSupport = n.GetBoolValue(); } },
+                { "ecs_support", n => { EcsSupport = n.GetStringValue(); } },
                 { "endpoints", n => { Endpoints = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networks", n => { Networks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -90,9 +102,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("client_default", ClientDefault);
+            writer.WriteStringValue("client_default", ClientDefault);
             writer.WriteStringValue("dns_destination_ips_id", DnsDestinationIpsId);
-            writer.WriteBoolValue("ecs_support", EcsSupport);
+            writer.WriteStringValue("ecs_support", EcsSupport);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>("endpoints", Endpoints);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network>("networks", Networks);

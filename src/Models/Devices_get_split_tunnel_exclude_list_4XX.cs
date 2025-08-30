@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember1"/>, <see cref="string"/>, List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2&gt;
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Devices_get_split_tunnel_exclude_list_4XX_result : IComposedTypeWrapper, IParsable
@@ -111,21 +111,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember1 DevicesGetSplitTunnelExcludeList4XXResultMember1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2&gt;</summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2>? DevicesGetSplitTunnelExcludeList4XXResultMember2 { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
 #nullable restore
 #else
-            public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2> DevicesGetSplitTunnelExcludeList4XXResultMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -136,17 +128,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX.Devices_get_split_tunnel_exclude_list_4XX_result();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2>(global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2> devicesGetSplitTunnelExcludeList4XXResultMember2Value)
-                {
-                    result.DevicesGetSplitTunnelExcludeList4XXResultMember2 = devicesGetSplitTunnelExcludeList4XXResultMember2Value;
-                }
-                else {
-                    result.DevicesGetSplitTunnelExcludeList4XXResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember1();
-                }
+                result.DevicesGetSplitTunnelExcludeList4XXResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember1();
+                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 return result;
             }
             /// <summary>
@@ -155,9 +138,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(DevicesGetSplitTunnelExcludeList4XXResultMember1 != null)
+                if(DevicesGetSplitTunnelExcludeList4XXResultMember1 != null || UnionBranch != null)
                 {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DevicesGetSplitTunnelExcludeList4XXResultMember1);
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DevicesGetSplitTunnelExcludeList4XXResultMember1, UnionBranch);
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -168,17 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(DevicesGetSplitTunnelExcludeList4XXResultMember2 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember2>(null, DevicesGetSplitTunnelExcludeList4XXResultMember2);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember1>(null, DevicesGetSplitTunnelExcludeList4XXResultMember1);
-                }
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_split_tunnel_exclude_list_4XX_resultMember1>(null, DevicesGetSplitTunnelExcludeList4XXResultMember1, UnionBranch);
             }
         }
     }

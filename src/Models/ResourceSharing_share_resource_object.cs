@@ -51,11 +51,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ResourceId { get; set; }
 #endif
         /// <summary>Resource Type.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type? ResourceType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceType { get; set; }
+#nullable restore
+#else
+        public string ResourceType { get; set; }
+#endif
         /// <summary>Resource Version.</summary>
         public int? ResourceVersion { get; set; }
         /// <summary>Resource Status.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_object"/> and sets the default values.
         /// </summary>
@@ -87,9 +99,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "resource_account_id", n => { ResourceAccountId = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>(); } },
+                { "resource_type", n => { ResourceType = n.GetStringValue(); } },
                 { "resource_version", n => { ResourceVersion = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -105,9 +117,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("resource_account_id", ResourceAccountId);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>("resource_type", ResourceType);
+            writer.WriteStringValue("resource_type", ResourceType);
             writer.WriteIntValue("resource_version", ResourceVersion);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

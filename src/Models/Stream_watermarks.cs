@@ -66,7 +66,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Stream_watermarks()
         {
             AdditionalData = new Dictionary<string, object>();
-            Position = "upperRight";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

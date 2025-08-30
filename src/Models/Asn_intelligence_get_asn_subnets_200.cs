@@ -15,15 +15,39 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The asn property</summary>
-        public int? Asn { get; set; }
-        /// <summary>Total results returned based on your search parameters.</summary>
-        public double? Count { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Asn { get; set; }
+#nullable restore
+#else
+        public string Asn { get; set; }
+#endif
+        /// <summary>The count property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Count { get; set; }
+#nullable restore
+#else
+        public string Count { get; set; }
+#endif
         /// <summary>The ip_count_total property</summary>
         public int? IpCountTotal { get; set; }
-        /// <summary>Current page within paginated list of results.</summary>
-        public double? Page { get; set; }
-        /// <summary>Number of results per page of results.</summary>
-        public double? PerPage { get; set; }
+        /// <summary>The page property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Page { get; set; }
+#nullable restore
+#else
+        public string Page { get; set; }
+#endif
+        /// <summary>The per_page property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PerPage { get; set; }
+#nullable restore
+#else
+        public string PerPage { get; set; }
+#endif
         /// <summary>The subnets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,11 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "asn", n => { Asn = n.GetIntValue(); } },
-                { "count", n => { Count = n.GetDoubleValue(); } },
+                { "asn", n => { Asn = n.GetStringValue(); } },
+                { "count", n => { Count = n.GetStringValue(); } },
                 { "ip_count_total", n => { IpCountTotal = n.GetIntValue(); } },
-                { "page", n => { Page = n.GetDoubleValue(); } },
-                { "per_page", n => { PerPage = n.GetDoubleValue(); } },
+                { "page", n => { Page = n.GetStringValue(); } },
+                { "per_page", n => { PerPage = n.GetStringValue(); } },
                 { "subnets", n => { Subnets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -72,11 +96,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("asn", Asn);
-            writer.WriteDoubleValue("count", Count);
+            writer.WriteStringValue("asn", Asn);
+            writer.WriteStringValue("count", Count);
             writer.WriteIntValue("ip_count_total", IpCountTotal);
-            writer.WriteDoubleValue("page", Page);
-            writer.WriteDoubleValue("per_page", PerPage);
+            writer.WriteStringValue("page", Page);
+            writer.WriteStringValue("per_page", PerPage);
             writer.WriteCollectionOfPrimitiveValues<string>("subnets", Subnets);
             writer.WriteAdditionalData(AdditionalData);
         }

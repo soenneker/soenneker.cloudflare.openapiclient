@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>An ID that represents an &quot;in-flight&quot; message that has been pulled from a Queue. You must hold on to this ID and use it to acknowledge this message.</summary>
+        /// <summary>The lease_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LeaseId { get; set; }

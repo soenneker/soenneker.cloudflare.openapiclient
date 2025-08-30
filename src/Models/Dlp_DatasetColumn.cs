@@ -27,7 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The num_cells property</summary>
         public long? NumCells { get; set; }
         /// <summary>The upload_status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus? UploadStatus { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UploadStatus { get; set; }
+#nullable restore
+#else
+        public string UploadStatus { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetColumn"/> and sets the default values.
         /// </summary>
@@ -56,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "entry_id", n => { EntryId = n.GetGuidValue(); } },
                 { "header_name", n => { HeaderName = n.GetStringValue(); } },
                 { "num_cells", n => { NumCells = n.GetLongValue(); } },
-                { "upload_status", n => { UploadStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus>(); } },
+                { "upload_status", n => { UploadStatus = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("entry_id", EntryId);
             writer.WriteStringValue("header_name", HeaderName);
             writer.WriteLongValue("num_cells", NumCells);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus>("upload_status", UploadStatus);
+            writer.WriteStringValue("upload_status", UploadStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

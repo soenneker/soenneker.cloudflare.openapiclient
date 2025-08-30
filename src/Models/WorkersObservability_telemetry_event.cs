@@ -32,10 +32,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_source? Source { get; set; }
 #nullable restore
 #else
-        public string Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_source Source { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
         public int? Timestamp { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "$metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_source.CreateFromDiscriminatorValue); } },
                 { "timestamp", n => { Timestamp = n.GetIntValue(); } },
                 { "$workers", n => { Workers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event.WorkersObservability_telemetry_event_Workers>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event.WorkersObservability_telemetry_event_Workers.CreateFromDiscriminatorValue); } },
             };
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_Metadata>("$metadata", Metadata);
-            writer.WriteStringValue("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event_source>("source", Source);
             writer.WriteIntValue("timestamp", Timestamp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_telemetry_event.WorkersObservability_telemetry_event_Workers>("$workers", Workers);
         }

@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Comma-separated list of fields.</summary>
+        /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fields { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Fields { get; set; }
 #endif
-        /// <summary>Filters to drill down into specific events.</summary>
+        /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Filter { get; set; }
@@ -30,8 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Filter { get; set; }
 #endif
-        /// <summary>The sample parameter is the sample rate of the records set by the client: &quot;sample&quot;: 1 is 100% of records &quot;sample&quot;: 10 is 10% and so on.</summary>
-        public int? Sample { get; set; }
+        /// <summary>The sample property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sample { get; set; }
+#nullable restore
+#else
+        public string Sample { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_zones_zone_id_logpush_edge_jobs"/> and sets the default values.
         /// </summary>
@@ -59,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "fields", n => { Fields = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetStringValue(); } },
-                { "sample", n => { Sample = n.GetIntValue(); } },
+                { "sample", n => { Sample = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("fields", Fields);
             writer.WriteStringValue("filter", Filter);
-            writer.WriteIntValue("sample", Sample);
+            writer.WriteStringValue("sample", Sample);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

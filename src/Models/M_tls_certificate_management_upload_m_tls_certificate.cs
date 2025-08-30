@@ -14,9 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether the certificate is a CA or leaf certificate.</summary>
-        public bool? Ca { get; set; }
-        /// <summary>The uploaded root CA certificate.</summary>
+        /// <summary>The ca property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Ca { get; set; }
+#nullable restore
+#else
+        public string Ca { get; set; }
+#endif
+        /// <summary>The certificates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Certificates { get; set; }
@@ -24,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Certificates { get; set; }
 #endif
-        /// <summary>Optional unique name for the certificate. Only used for human readability.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -32,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The private key for the certificate. This field is only needed for specific use cases such as using a custom certificate with Zero Trust&apos;s block page.</summary>
+        /// <summary>The private_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PrivateKey { get; set; }
@@ -65,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ca", n => { Ca = n.GetBoolValue(); } },
+                { "ca", n => { Ca = n.GetStringValue(); } },
                 { "certificates", n => { Certificates = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
@@ -78,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("ca", Ca);
+            writer.WriteStringValue("ca", Ca);
             writer.WriteStringValue("certificates", Certificates);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("private_key", PrivateKey);

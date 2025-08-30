@@ -14,16 +14,46 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The maximum number of messages to include in a batch.</summary>
-        public double? BatchSize { get; set; }
-        /// <summary>Maximum number of concurrent consumers that may consume from this Queue. Set to `null` to automatically opt in to the platform&apos;s maximum (recommended).</summary>
-        public double? MaxConcurrency { get; set; }
-        /// <summary>The maximum number of retries</summary>
-        public double? MaxRetries { get; set; }
-        /// <summary>The number of milliseconds to wait for a batch to fill up before attempting to deliver it</summary>
-        public double? MaxWaitTimeMs { get; set; }
-        /// <summary>The number of seconds to delay before making the message available for another attempt.</summary>
-        public double? RetryDelay { get; set; }
+        /// <summary>The batch_size property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BatchSize { get; set; }
+#nullable restore
+#else
+        public string BatchSize { get; set; }
+#endif
+        /// <summary>The max_concurrency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaxConcurrency { get; set; }
+#nullable restore
+#else
+        public string MaxConcurrency { get; set; }
+#endif
+        /// <summary>The max_retries property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaxRetries { get; set; }
+#nullable restore
+#else
+        public string MaxRetries { get; set; }
+#endif
+        /// <summary>The max_wait_time_ms property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MaxWaitTimeMs { get; set; }
+#nullable restore
+#else
+        public string MaxWaitTimeMs { get; set; }
+#endif
+        /// <summary>The retry_delay property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RetryDelay { get; set; }
+#nullable restore
+#else
+        public string RetryDelay { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer_settings"/> and sets the default values.
         /// </summary>
@@ -49,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "batch_size", n => { BatchSize = n.GetDoubleValue(); } },
-                { "max_concurrency", n => { MaxConcurrency = n.GetDoubleValue(); } },
-                { "max_retries", n => { MaxRetries = n.GetDoubleValue(); } },
-                { "max_wait_time_ms", n => { MaxWaitTimeMs = n.GetDoubleValue(); } },
-                { "retry_delay", n => { RetryDelay = n.GetDoubleValue(); } },
+                { "batch_size", n => { BatchSize = n.GetStringValue(); } },
+                { "max_concurrency", n => { MaxConcurrency = n.GetStringValue(); } },
+                { "max_retries", n => { MaxRetries = n.GetStringValue(); } },
+                { "max_wait_time_ms", n => { MaxWaitTimeMs = n.GetStringValue(); } },
+                { "retry_delay", n => { RetryDelay = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,11 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("batch_size", BatchSize);
-            writer.WriteDoubleValue("max_concurrency", MaxConcurrency);
-            writer.WriteDoubleValue("max_retries", MaxRetries);
-            writer.WriteDoubleValue("max_wait_time_ms", MaxWaitTimeMs);
-            writer.WriteDoubleValue("retry_delay", RetryDelay);
+            writer.WriteStringValue("batch_size", BatchSize);
+            writer.WriteStringValue("max_concurrency", MaxConcurrency);
+            writer.WriteStringValue("max_retries", MaxRetries);
+            writer.WriteStringValue("max_wait_time_ms", MaxWaitTimeMs);
+            writer.WriteStringValue("retry_delay", RetryDelay);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

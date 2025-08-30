@@ -114,8 +114,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuesRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("dismissed")]
-            public bool? Dismissed { get; set; }
+            public string? Dismissed { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dismissed")]
+            public string Dismissed { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_class")]
@@ -137,20 +144,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueType { get; set; }
+            public string[]? IssueType { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueType { get; set; }
+            public string[] IssueType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeNeq { get; set; }
+            public string[]? IssueTypeNeq { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeNeq { get; set; }
+            public string[] IssueTypeNeq { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

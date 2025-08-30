@@ -55,7 +55,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Request { get; set; }
 #endif
         /// <summary>Request Status.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>Brief description of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Summary { get; set; }
 #endif
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Tlp { get; set; }
+#nullable restore
+#else
+        public string Tlp { get; set; }
+#endif
         /// <summary>Tokens for the request.</summary>
         public int? Tokens { get; set; }
         /// <summary>The updated property</summary>
@@ -103,9 +115,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "priority", n => { Priority = n.GetDateTimeOffsetValue(); } },
                 { "readable_id", n => { ReadableId = n.GetStringValue(); } },
                 { "request", n => { Request = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
-                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
+                { "tlp", n => { Tlp = n.GetStringValue(); } },
                 { "tokens", n => { Tokens = n.GetIntValue(); } },
                 { "updated", n => { Updated = n.GetDateTimeOffsetValue(); } },
             };
@@ -125,9 +137,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("priority", Priority);
             writer.WriteStringValue("readable_id", ReadableId);
             writer.WriteStringValue("request", Request);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteStringValue("summary", Summary);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
+            writer.WriteStringValue("tlp", Tlp);
             writer.WriteIntValue("tokens", Tokens);
             writer.WriteDateTimeOffsetValue("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);
