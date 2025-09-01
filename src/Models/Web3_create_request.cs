@@ -39,13 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Specify the target gateway of the hostname.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Target { get; set; }
-#nullable restore
-#else
-        public string Target { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target? Target { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_create_request"/> and sets the default values.
         /// </summary>
@@ -74,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "dnslink", n => { Dnslink = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "target", n => { Target = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>(); } },
             };
         }
         /// <summary>
@@ -87,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("dnslink", Dnslink);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("target", Target);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_target>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

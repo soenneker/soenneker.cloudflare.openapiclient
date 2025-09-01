@@ -16,27 +16,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the list of possible actions of the WAF rule when it is triggered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedModes { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_deny_traditional?>? AllowedModes { get; private set; }
 #nullable restore
 #else
-        public List<string> AllowedModes { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_deny_traditional?> AllowedModes { get; private set; }
 #endif
         /// <summary>Defines the default action/mode of a rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DefaultMode { get; set; }
-#nullable restore
-#else
-        public string DefaultMode { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_default_mode? DefaultMode { get; private set; }
         /// <summary>Defines the action that the current WAF rule will perform when triggered. Applies to traditional (deny) WAF rules.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Mode { get; set; }
-#nullable restore
-#else
-        public string Mode { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_deny_traditional? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,9 +43,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowed_modes", n => { AllowedModes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "default_mode", n => { DefaultMode = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetStringValue(); } },
+                { "allowed_modes", n => { AllowedModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_deny_traditional>()?.AsList(); } },
+                { "default_mode", n => { DefaultMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_default_mode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_deny_traditional>(); } },
             };
         }
         /// <summary>
@@ -68,8 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("default_mode", DefaultMode);
-            writer.WriteStringValue("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_deny_traditional>("mode", Mode);
         }
     }
 }

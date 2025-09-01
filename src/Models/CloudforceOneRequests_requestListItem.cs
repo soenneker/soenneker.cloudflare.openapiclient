@@ -41,13 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Tokens for the request messages.</summary>
         public int? MessageTokens { get; set; }
         /// <summary>The priority property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Priority { get; set; }
-#nullable restore
-#else
-        public string Priority { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority? Priority { get; set; }
         /// <summary>Readable Request ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,13 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Request { get; set; }
 #endif
         /// <summary>Request Status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus? Status { get; set; }
         /// <summary>Brief description of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,13 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Summary { get; set; }
 #endif
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Tlp { get; set; }
-#nullable restore
-#else
-        public string Tlp { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
         /// <summary>Tokens for the request.</summary>
         public int? Tokens { get; set; }
         /// <summary>Request last updated time.</summary>
@@ -127,12 +109,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created", n => { Created = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message_tokens", n => { MessageTokens = n.GetIntValue(); } },
-                { "priority", n => { Priority = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>(); } },
                 { "readable_id", n => { ReadableId = n.GetStringValue(); } },
                 { "request", n => { Request = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
-                { "tlp", n => { Tlp = n.GetStringValue(); } },
+                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
                 { "tokens", n => { Tokens = n.GetIntValue(); } },
                 { "updated", n => { Updated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated.CreateFromDiscriminatorValue); } },
             };
@@ -148,12 +130,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_created>("created", Created);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("message_tokens", MessageTokens);
-            writer.WriteStringValue("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_priority>("priority", Priority);
             writer.WriteStringValue("readable_id", ReadableId);
             writer.WriteStringValue("request", Request);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>("status", Status);
             writer.WriteStringValue("summary", Summary);
-            writer.WriteStringValue("tlp", Tlp);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
             writer.WriteIntValue("tokens", Tokens);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestListItem_updated>("updated", Updated);
             writer.WriteAdditionalData(AdditionalData);

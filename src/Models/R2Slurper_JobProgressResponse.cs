@@ -37,13 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The skippedObjects property</summary>
         public int? SkippedObjects { get; set; }
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus? Status { get; set; }
         /// <summary>The transferredObjects property</summary>
         public int? TransferredObjects { get; set; }
         /// <summary>
@@ -76,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "objects", n => { Objects = n.GetIntValue(); } },
                 { "skippedObjects", n => { SkippedObjects = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>(); } },
                 { "transferredObjects", n => { TransferredObjects = n.GetIntValue(); } },
             };
         }
@@ -92,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("objects", Objects);
             writer.WriteIntValue("skippedObjects", SkippedObjects);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobStatus>("status", Status);
             writer.WriteIntValue("transferredObjects", TransferredObjects);
             writer.WriteAdditionalData(AdditionalData);
         }

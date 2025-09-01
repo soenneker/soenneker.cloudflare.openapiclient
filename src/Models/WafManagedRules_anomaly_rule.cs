@@ -16,19 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Defines the available modes for the current WAF rule. Applies to anomaly detection WAF rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedModes { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_anomaly?>? AllowedModes { get; private set; }
 #nullable restore
 #else
-        public List<string> AllowedModes { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_anomaly?> AllowedModes { get; private set; }
 #endif
         /// <summary>Defines the mode anomaly. When set to `on`, the current WAF rule will be used when evaluating the request. Applies to anomaly detection WAF rules.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Mode { get; set; }
-#nullable restore
-#else
-        public string Mode { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_anomaly? Mode { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,8 +41,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowed_modes", n => { AllowedModes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "mode", n => { Mode = n.GetStringValue(); } },
+                { "allowed_modes", n => { AllowedModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_anomaly>()?.AsList(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_anomaly>(); } },
             };
         }
         /// <summary>
@@ -59,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WafManagedRules_mode_anomaly>("mode", Mode);
         }
     }
 }

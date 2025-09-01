@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unit of time to group data by.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TimeDelta { get; set; }
-#nullable restore
-#else
-        public string TimeDelta { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_time_delta? TimeDelta { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_report_bytime_query"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "time_delta", n => { TimeDelta = n.GetStringValue(); } },
+                { "time_delta", n => { TimeDelta = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_time_delta>(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("time_delta", TimeDelta);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_time_delta>("time_delta", TimeDelta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

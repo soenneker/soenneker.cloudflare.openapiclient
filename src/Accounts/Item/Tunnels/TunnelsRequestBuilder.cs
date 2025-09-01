@@ -146,23 +146,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
             [QueryParameter("per_page")]
             public string PerPage { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status? Status { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tun_types")]
-            public string[]? TunTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[]? TunTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("tun_types")]
-            public string[] TunTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[] TunTypes { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

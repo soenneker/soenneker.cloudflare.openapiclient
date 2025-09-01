@@ -18,13 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Cumulative Layout Shift.</summary>
         public double? Cls { get; set; }
         /// <summary>The type of device.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DeviceType { get; set; }
-#nullable restore
-#else
-        public string DeviceType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_device_type? DeviceType { get; set; }
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,13 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Speed Index.</summary>
         public double? Si { get; set; }
         /// <summary>The state of the Lighthouse report.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_lighthouse_state? State { get; set; }
         /// <summary>Total Blocking Time.</summary>
         public double? Tbt { get; set; }
         /// <summary>Time To First Byte.</summary>
@@ -89,14 +77,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cls", n => { Cls = n.GetDoubleValue(); } },
-                { "deviceType", n => { DeviceType = n.GetStringValue(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_device_type>(); } },
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_lighthouse_report_error>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_lighthouse_report_error.CreateFromDiscriminatorValue); } },
                 { "fcp", n => { Fcp = n.GetDoubleValue(); } },
                 { "jsonReportUrl", n => { JsonReportUrl = n.GetStringValue(); } },
                 { "lcp", n => { Lcp = n.GetDoubleValue(); } },
                 { "performanceScore", n => { PerformanceScore = n.GetDoubleValue(); } },
                 { "si", n => { Si = n.GetDoubleValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_lighthouse_state>(); } },
                 { "tbt", n => { Tbt = n.GetDoubleValue(); } },
                 { "ttfb", n => { Ttfb = n.GetDoubleValue(); } },
                 { "tti", n => { Tti = n.GetDoubleValue(); } },
@@ -110,14 +98,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("cls", Cls);
-            writer.WriteStringValue("deviceType", DeviceType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_device_type>("deviceType", DeviceType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_lighthouse_report_error>("error", Error);
             writer.WriteDoubleValue("fcp", Fcp);
             writer.WriteStringValue("jsonReportUrl", JsonReportUrl);
             writer.WriteDoubleValue("lcp", Lcp);
             writer.WriteDoubleValue("performanceScore", PerformanceScore);
             writer.WriteDoubleValue("si", Si);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_lighthouse_state>("state", State);
             writer.WriteDoubleValue("tbt", Tbt);
             writer.WriteDoubleValue("ttfb", Ttfb);
             writer.WriteDoubleValue("tti", Tti);

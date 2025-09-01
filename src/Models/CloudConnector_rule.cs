@@ -49,13 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule_parameters Parameters { get; set; }
 #endif
         /// <summary>Cloud Provider type</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Provider { get; set; }
-#nullable restore
-#else
-        public string Provider { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_provider? Provider { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule"/> and sets the default values.
         /// </summary>
@@ -86,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule_parameters.CreateFromDiscriminatorValue); } },
-                { "provider", n => { Provider = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_provider>(); } },
             };
         }
         /// <summary>
@@ -101,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule_parameters>("parameters", Parameters);
-            writer.WriteStringValue("provider", Provider);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_provider>("provider", Provider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

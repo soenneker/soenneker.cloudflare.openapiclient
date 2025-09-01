@@ -55,13 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The keyless SSL port used to communicate between Cloudflare and the client&apos;s Keyless SSL server.</summary>
         public double? Port { get; set; }
         /// <summary>Status of the Keyless SSL.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasStatus? Status { get; private set; }
         /// <summary>Configuration for using Keyless SSL through a Cloudflare Tunnel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "port", n => { Port = n.GetDoubleValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasStatus>(); } },
                 { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel.CreateFromDiscriminatorValue); } },
             };
         }
@@ -119,7 +113,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("port", Port);
-            writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>("tunnel", Tunnel);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -39,13 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The type of the list. Each type supports specific list items (IP addresses, ASNs, hostnames or redirects).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Kind { get; set; }
-#nullable restore
-#else
-        public string Kind { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_kind? Kind { get; set; }
         /// <summary>The RFC 3339 timestamp of when the list was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_kind>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "num_items", n => { NumItems = n.GetDoubleValue(); } },
@@ -111,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("created_on", CreatedOn);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_kind>("kind", Kind);
             writer.WriteStringValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("num_items", NumItems);

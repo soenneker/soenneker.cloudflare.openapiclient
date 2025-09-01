@@ -17,19 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Turn on or off whether Cloudflare should wait for an entire filefrom the origin server before forwarding it to the site visitor. Bydefault, Cloudflare sends packets to the client as they arrive fromthe origin server.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_id? Id { get; set; }
         /// <summary>Value of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering"/> and sets the default values.
         /// </summary>
         public Zones_response_buffering()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_value.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_id>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_id>("id", Id);
-            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

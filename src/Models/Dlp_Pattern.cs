@@ -23,13 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Regex { get; set; }
 #endif
         /// <summary>The validation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Validation { get; set; }
-#nullable restore
-#else
-        public string Validation { get; set; }
-#endif
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Validation? Validation { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Pattern"/> and sets the default values.
         /// </summary>
@@ -56,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "regex", n => { Regex = n.GetStringValue(); } },
-                { "validation", n => { Validation = n.GetStringValue(); } },
+                { "validation", n => { Validation = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Validation>(); } },
             };
         }
         /// <summary>
@@ -67,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("regex", Regex);
-            writer.WriteStringValue("validation", Validation);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Validation>("validation", Validation);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

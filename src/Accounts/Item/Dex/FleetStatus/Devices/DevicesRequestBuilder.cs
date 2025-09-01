@@ -161,25 +161,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             public string Platform { get; set; }
 #endif
             /// <summary>Dimension to sort results by</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("sort_by")]
-            public string? SortBy { get; set; }
-#nullable restore
-#else
-            [QueryParameter("sort_by")]
-            public string SortBy { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_sort_by? SortBy { get; set; }
             /// <summary>Source:  * `hourly` - device details aggregated hourly, up to 7 days prior  * `last_seen` - device details, up to 24 hours prior  * `raw` - device details, up to 7 days prior</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("source")]
-            public string? Source { get; set; }
-#nullable restore
-#else
-            [QueryParameter("source")]
-            public string Source { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_source? Source { get; set; }
             /// <summary>Network status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

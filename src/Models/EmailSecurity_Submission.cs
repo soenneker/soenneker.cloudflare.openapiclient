@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The original_disposition property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OriginalDisposition { get; set; }
-#nullable restore
-#else
-        public string OriginalDisposition { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel? OriginalDisposition { get; set; }
         /// <summary>The original_edf_hash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,13 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Outcome { get; set; }
 #endif
         /// <summary>The outcome_disposition property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OutcomeDisposition { get; set; }
-#nullable restore
-#else
-        public string OutcomeDisposition { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel? OutcomeDisposition { get; set; }
         /// <summary>The requested_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,13 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string RequestedBy { get; set; }
 #endif
         /// <summary>The requested_disposition property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RequestedDisposition { get; set; }
-#nullable restore
-#else
-        public string RequestedDisposition { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel? RequestedDisposition { get; set; }
         /// <summary>The requested_ts property</summary>
         public DateTimeOffset? RequestedTs { get; set; }
         /// <summary>The status property</summary>
@@ -121,12 +103,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "original_disposition", n => { OriginalDisposition = n.GetStringValue(); } },
+                { "original_disposition", n => { OriginalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>(); } },
                 { "original_edf_hash", n => { OriginalEdfHash = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
-                { "outcome_disposition", n => { OutcomeDisposition = n.GetStringValue(); } },
+                { "outcome_disposition", n => { OutcomeDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>(); } },
                 { "requested_by", n => { RequestedBy = n.GetStringValue(); } },
-                { "requested_disposition", n => { RequestedDisposition = n.GetStringValue(); } },
+                { "requested_disposition", n => { RequestedDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>(); } },
                 { "requested_ts", n => { RequestedTs = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
@@ -141,12 +123,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("original_disposition", OriginalDisposition);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("original_disposition", OriginalDisposition);
             writer.WriteStringValue("original_edf_hash", OriginalEdfHash);
             writer.WriteStringValue("outcome", Outcome);
-            writer.WriteStringValue("outcome_disposition", OutcomeDisposition);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("outcome_disposition", OutcomeDisposition);
             writer.WriteStringValue("requested_by", RequestedBy);
-            writer.WriteStringValue("requested_disposition", RequestedDisposition);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DispositionLabel>("requested_disposition", RequestedDisposition);
             writer.WriteDateTimeOffsetValue("requested_ts", RequestedTs);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("subject", Subject);

@@ -17,13 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>True if the category is in beta and subject to change.</summary>
         public bool? Beta { get; set; }
         /// <summary>Which account types are allowed to create policies based on this category. `blocked` categories are blocked unconditionally for all accounts. `removalPending` categories can be removed from policies but not added. `noBlock` categories cannot be blocked.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Class { get; set; }
-#nullable restore
-#else
-        public string Class { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class? Class { get; set; }
         /// <summary>A short summary of domains in the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "beta", n => { Beta = n.GetBoolValue(); } },
-                { "class", n => { Class = n.GetStringValue(); } },
+                { "class", n => { Class = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -82,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("beta", Beta);
-            writer.WriteStringValue("class", Class);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_class>("class", Class);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("name", Name);

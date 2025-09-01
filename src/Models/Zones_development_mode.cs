@@ -16,13 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Value of the zone setting.Notes: The interval (in seconds) from when development mode expires (positive integer) or last expired (negative integer) for the domain. If development mode has never been enabled, this value is false.</summary>
         public double? TimeRemaining { get; private set; }
         /// <summary>Value of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value? Value { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode"/> and sets the default values.
+        /// </summary>
+        public Zones_development_mode() : base()
+        {
+            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value.Off;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "time_remaining", n => { TimeRemaining = n.GetDoubleValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value>(); } },
             };
         }
         /// <summary>
@@ -53,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value>("value", Value);
         }
     }
 }

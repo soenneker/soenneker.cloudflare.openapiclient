@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>Specify the type of content list entry to block.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_create_request"/> and sets the default values.
         /// </summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>(); } },
             };
         }
         /// <summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_content_list_entry_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

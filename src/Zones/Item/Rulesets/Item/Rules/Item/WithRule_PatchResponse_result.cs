@@ -14,21 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item
     #pragma warning restore CS1591
     {
         /// <summary>The kind of the ruleset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Kind { get; set; }
-#nullable restore
-#else
-        public string Kind { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind? Kind { get; set; }
         /// <summary>The phase of the ruleset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Phase { get; set; }
-#nullable restore
-#else
-        public string Phase { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase? Phase { get; set; }
         /// <summary>The list of rules in the ruleset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,8 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "kind", n => { Kind = n.GetStringValue(); } },
-                { "phase", n => { Phase = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>(); } },
+                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>(); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResponseRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResponseRule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -68,8 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item.Rules.Item
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("kind", Kind);
-            writer.WriteStringValue("phase", Phase);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>("phase", Phase);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ResponseRule>("rules", Rules);
         }
     }

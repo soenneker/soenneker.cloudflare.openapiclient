@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of trust stores to check for client certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TrustStores { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_trust_stores_enum?>? TrustStores { get; set; }
 #nullable restore
 #else
-        public List<string> TrustStores { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_trust_stores_enum?> TrustStores { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request_locations"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "paths", n => { Paths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "trust_stores", n => { TrustStores = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "trust_stores", n => { TrustStores = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_trust_stores_enum>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("paths", Paths);
-            writer.WriteCollectionOfPrimitiveValues<string>("trust_stores", TrustStores);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_trust_stores_enum>("trust_stores", TrustStores);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

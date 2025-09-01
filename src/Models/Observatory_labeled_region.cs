@@ -24,13 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Label { get; set; }
 #endif
         /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "label", n => { Label = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region_value>(); } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("label", Label);
-            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

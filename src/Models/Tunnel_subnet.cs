@@ -47,13 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Network { get; set; }
 #endif
         /// <summary>The type of subnet.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SubnetType { get; set; }
-#nullable restore
-#else
-        public string SubnetType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type? SubnetType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet"/> and sets the default values.
         /// </summary>
@@ -86,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_default_network", n => { IsDefaultNetwork = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
-                { "subnet_type", n => { SubnetType = n.GetStringValue(); } },
+                { "subnet_type", n => { SubnetType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>(); } },
             };
         }
         /// <summary>
@@ -103,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_default_network", IsDefaultNetwork);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("network", Network);
-            writer.WriteStringValue("subnet_type", SubnetType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_subnet_type>("subnet_type", SubnetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

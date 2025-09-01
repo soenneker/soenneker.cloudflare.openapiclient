@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The read only deployment status of the certificate on Cloudflare&apos;s edge. Certificates in the &apos;available&apos; (previously called &apos;active&apos;) state may be used for Gateway TLS interception.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BindingStatus { get; set; }
-#nullable restore
-#else
-        public string BindingStatus { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_binding_status? BindingStatus { get; private set; }
         /// <summary>The CA certificate(read only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,13 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string IssuerRaw { get; private set; }
 #endif
         /// <summary>The type of certificate, either BYO-PKI (custom) or Gateway-managed(read only).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_type? Type { get; private set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The uploaded_on property</summary>
@@ -105,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "binding_status", n => { BindingStatus = n.GetStringValue(); } },
+                { "binding_status", n => { BindingStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_binding_status>(); } },
                 { "certificate", n => { Certificate = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
@@ -114,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "in_use", n => { InUse = n.GetBoolValue(); } },
                 { "issuer_org", n => { IssuerOrg = n.GetStringValue(); } },
                 { "issuer_raw", n => { IssuerRaw = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
             };
@@ -126,11 +114,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("binding_status", BindingStatus);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);

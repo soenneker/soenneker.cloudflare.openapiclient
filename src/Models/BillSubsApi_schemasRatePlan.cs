@@ -33,13 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The duration of the plan subscription.</summary>
         public double? Duration { get; set; }
         /// <summary>The frequency at which you will be billed for this plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Frequency { get; set; }
-#nullable restore
-#else
-        public string Frequency { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency? Frequency { get; private set; }
         /// <summary>Plan identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "components", n => { Components = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "duration", n => { Duration = n.GetDoubleValue(); } },
-                { "frequency", n => { Frequency = n.GetStringValue(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -99,7 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentValue>("components", Components);
             writer.WriteStringValue("currency", Currency);
             writer.WriteDoubleValue("duration", Duration);
-            writer.WriteStringValue("frequency", Frequency);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

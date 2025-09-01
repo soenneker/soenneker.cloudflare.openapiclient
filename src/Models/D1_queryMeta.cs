@@ -29,13 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Denotes if the query has been handled by the database primary instance.</summary>
         public bool? ServedByPrimary { get; set; }
         /// <summary>Region location hint of the database instance that handled the query.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ServedByRegion { get; set; }
-#nullable restore
-#else
-        public string ServedByRegion { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_servedByRegion? ServedByRegion { get; set; }
         /// <summary>Size of the database after the query committed, in bytes.</summary>
         public double? SizeAfter { get; set; }
         /// <summary>Various durations for the query.</summary>
@@ -78,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rows_read", n => { RowsRead = n.GetDoubleValue(); } },
                 { "rows_written", n => { RowsWritten = n.GetDoubleValue(); } },
                 { "served_by_primary", n => { ServedByPrimary = n.GetBoolValue(); } },
-                { "served_by_region", n => { ServedByRegion = n.GetStringValue(); } },
+                { "served_by_region", n => { ServedByRegion = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_servedByRegion>(); } },
                 { "size_after", n => { SizeAfter = n.GetDoubleValue(); } },
                 { "timings", n => { Timings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta_timings>(global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta_timings.CreateFromDiscriminatorValue); } },
             };
@@ -97,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("rows_read", RowsRead);
             writer.WriteDoubleValue("rows_written", RowsWritten);
             writer.WriteBoolValue("served_by_primary", ServedByPrimary);
-            writer.WriteStringValue("served_by_region", ServedByRegion);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_servedByRegion>("served_by_region", ServedByRegion);
             writer.WriteDoubleValue("size_after", SizeAfter);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta_timings>("timings", Timings);
             writer.WriteAdditionalData(AdditionalData);

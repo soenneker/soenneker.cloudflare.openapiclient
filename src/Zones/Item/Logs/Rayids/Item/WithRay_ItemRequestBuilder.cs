@@ -99,15 +99,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.Item
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("timestamps")]
-            public string? Timestamps { get; set; }
-#nullable restore
-#else
-            [QueryParameter("timestamps")]
-            public string Timestamps { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_timestamps? Timestamps { get; set; }
         }
     }
 }

@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>type of check to perform</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CheckType { get; set; }
-#nullable restore
-#else
-        public string CheckType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_check_type? CheckType { get; set; }
         /// <summary>the IP address of the host to perform checks against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicTransit_endpoint_health_check()
         {
             AdditionalData = new Dictionary<string, object>();
+            CheckType = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_check_type.Icmp;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "check_type", n => { CheckType = n.GetStringValue(); } },
+                { "check_type", n => { CheckType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_check_type>(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -75,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("check_type", CheckType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_check_type>("check_type", CheckType);
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

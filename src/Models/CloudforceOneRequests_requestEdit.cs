@@ -47,13 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Summary { get; set; }
 #endif
         /// <summary>The CISA defined Traffic Light Protocol (TLP).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Tlp { get; set; }
-#nullable restore
-#else
-        public string Tlp { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp? Tlp { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestEdit"/> and sets the default values.
         /// </summary>
@@ -83,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "priority", n => { Priority = n.GetStringValue(); } },
                 { "request_type", n => { RequestType = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
-                { "tlp", n => { Tlp = n.GetStringValue(); } },
+                { "tlp", n => { Tlp = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>(); } },
             };
         }
         /// <summary>
@@ -97,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("priority", Priority);
             writer.WriteStringValue("request_type", RequestType);
             writer.WriteStringValue("summary", Summary);
-            writer.WriteStringValue("tlp", Tlp);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_tlp>("tlp", Tlp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

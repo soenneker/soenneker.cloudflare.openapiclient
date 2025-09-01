@@ -39,13 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string NotBefore { get; set; }
 #endif
         /// <summary>Status of the token.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_verify_response_single_segment_result"/> and sets the default values.
         /// </summary>
@@ -74,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expires_on", n => { ExpiresOn = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "not_before", n => { NotBefore = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>(); } },
             };
         }
         /// <summary>
@@ -87,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("not_before", NotBefore);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

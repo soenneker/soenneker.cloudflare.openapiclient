@@ -17,19 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Control options for the SSL feature of the Edge Certificates tab in the Cloudflare SSL/TLS app.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_id? Id { get; set; }
         /// <summary>Value of the zone setting.Notes: Depends on the zone&apos;s plan level</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl"/> and sets the default values.
         /// </summary>
         public Zones_ssl()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_value.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_id>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_id>("id", Id);
-            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

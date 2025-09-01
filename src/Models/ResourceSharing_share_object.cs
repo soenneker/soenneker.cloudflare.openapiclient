@@ -41,13 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The kind property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Kind { get; set; }
-#nullable restore
-#else
-        public string Kind { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_kind? Kind { get; set; }
         /// <summary>When the share was modified.</summary>
         public DateTimeOffset? Modified { get; set; }
         /// <summary>The name of the share.</summary>
@@ -67,21 +61,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string OrganizationId { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_status? Status { get; set; }
         /// <summary>The target_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetType { get; set; }
-#nullable restore
-#else
-        public string TargetType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_target_type? TargetType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_object"/> and sets the default values.
         /// </summary>
@@ -111,12 +93,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "account_name", n => { AccountName = n.GetStringValue(); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_kind>(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
-                { "target_type", n => { TargetType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_status>(); } },
+                { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_target_type>(); } },
             };
         }
         /// <summary>
@@ -130,12 +112,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("account_name", AccountName);
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_kind>("kind", Kind);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
-            writer.WriteStringValue("status", Status);
-            writer.WriteStringValue("target_type", TargetType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_target_type>("target_type", TargetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

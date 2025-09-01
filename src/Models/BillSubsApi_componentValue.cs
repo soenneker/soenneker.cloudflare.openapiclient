@@ -17,13 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The default amount allocated.</summary>
         public double? Default { get; set; }
         /// <summary>The unique component.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasName? Name { get; set; }
         /// <summary>The unit price of the addon.</summary>
         public double? UnitPrice { get; set; }
         /// <summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "default", n => { Default = n.GetDoubleValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasName>(); } },
                 { "unit_price", n => { UnitPrice = n.GetDoubleValue(); } },
             };
         }
@@ -64,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("default", Default);
-            writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_componentsSchemasName>("name", Name);
             writer.WriteDoubleValue("unit_price", UnitPrice);
             writer.WriteAdditionalData(AdditionalData);
         }

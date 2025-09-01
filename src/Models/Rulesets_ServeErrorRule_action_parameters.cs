@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The content type header to set with the error response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ContentType { get; set; }
-#nullable restore
-#else
-        public string ContentType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ServeErrorContentType? ContentType { get; set; }
         /// <summary>The status_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content_type", n => { ContentType = n.GetStringValue(); } },
+                { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ServeErrorContentType>(); } },
                 { "status_code", n => { StatusCode = n.GetStringValue(); } },
             };
         }
@@ -66,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("content_type", ContentType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ServeErrorContentType>("content_type", ContentType);
             writer.WriteStringValue("status_code", StatusCode);
             writer.WriteAdditionalData(AdditionalData);
         }

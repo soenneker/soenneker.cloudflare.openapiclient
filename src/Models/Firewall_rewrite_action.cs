@@ -16,45 +16,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The WAF rule action to apply.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Block { get; set; }
-#nullable restore
-#else
-        public string Block { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action? Block { get; set; }
         /// <summary>The WAF rule action to apply.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Challenge { get; set; }
-#nullable restore
-#else
-        public string Challenge { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action? Challenge { get; set; }
         /// <summary>The WAF rule action to apply.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Default { get; set; }
-#nullable restore
-#else
-        public string Default { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action? Default { get; set; }
         /// <summary>The WAF rule action to apply.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Disable { get; set; }
-#nullable restore
-#else
-        public string Disable { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action? Disable { get; set; }
         /// <summary>The WAF rule action to apply.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Simulate { get; set; }
-#nullable restore
-#else
-        public string Simulate { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action? Simulate { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rewrite_action"/> and sets the default values.
         /// </summary>
@@ -80,11 +50,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "block", n => { Block = n.GetStringValue(); } },
-                { "challenge", n => { Challenge = n.GetStringValue(); } },
-                { "default", n => { Default = n.GetStringValue(); } },
-                { "disable", n => { Disable = n.GetStringValue(); } },
-                { "simulate", n => { Simulate = n.GetStringValue(); } },
+                { "block", n => { Block = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>(); } },
+                { "challenge", n => { Challenge = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>(); } },
+                { "default", n => { Default = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>(); } },
+                { "disable", n => { Disable = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>(); } },
+                { "simulate", n => { Simulate = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>(); } },
             };
         }
         /// <summary>
@@ -94,11 +64,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("block", Block);
-            writer.WriteStringValue("challenge", Challenge);
-            writer.WriteStringValue("default", Default);
-            writer.WriteStringValue("disable", Disable);
-            writer.WriteStringValue("simulate", Simulate);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>("block", Block);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>("challenge", Challenge);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>("default", Default);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>("disable", Disable);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_waf_rewrite_action>("simulate", Simulate);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

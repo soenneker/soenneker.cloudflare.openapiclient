@@ -239,11 +239,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tun_types")]
-            public string[]? TunTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[]? TunTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("tun_types")]
-            public string[] TunTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[] TunTypes { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

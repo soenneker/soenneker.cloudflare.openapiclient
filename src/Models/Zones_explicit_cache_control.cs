@@ -17,13 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Origin Cache Control is enabled by default for Free, Pro, andBusiness domains and disabled by default for Enterprise domains.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_explicit_cache_control_id? Id { get; set; }
         /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_explicit_cache_control_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_explicit_cache_control"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_explicit_cache_control_id>(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_explicit_cache_control_value>(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_explicit_cache_control_id>("id", Id);
-            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_explicit_cache_control_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

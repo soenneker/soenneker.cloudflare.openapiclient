@@ -13,21 +13,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The default action performed by the rules in the WAF package.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ActionMode { get; set; }
-#nullable restore
-#else
-        public string ActionMode { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode? ActionMode { get; set; }
         /// <summary>The sensitivity of the WAF package.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Sensitivity { get; set; }
-#nullable restore
-#else
-        public string Sensitivity { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity? Sensitivity { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_anomaly_package"/> and sets the default values.
+        /// </summary>
+        public Firewall_anomaly_package() : base()
+        {
+            ActionMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode.Challenge;
+            Sensitivity = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity.High;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,8 +42,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action_mode", n => { ActionMode = n.GetStringValue(); } },
-                { "sensitivity", n => { Sensitivity = n.GetStringValue(); } },
+                { "action_mode", n => { ActionMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>(); } },
+                { "sensitivity", n => { Sensitivity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>(); } },
             };
         }
         /// <summary>
@@ -58,8 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("action_mode", ActionMode);
-            writer.WriteStringValue("sensitivity", Sensitivity);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action_mode>("action_mode", ActionMode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_sensitivity>("sensitivity", Sensitivity);
         }
     }
 }

@@ -87,19 +87,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The timeout (in seconds) before marking the health check as failed.</summary>
         public int? Timeout { get; set; }
         /// <summary>The protocol to use for the health check. Currently supported protocols are &apos;HTTP&apos;,&apos;HTTPS&apos;, &apos;TCP&apos;, &apos;ICMP-PING&apos;, &apos;UDP-ICMP&apos;, and &apos;SMTP&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_monitorEditable"/> and sets the default values.
         /// </summary>
         public LoadBalancing_monitorEditable()
         {
             AdditionalData = new Dictionary<string, object>();
+            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type.Http;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -134,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "probe_zone", n => { ProbeZone = n.GetStringValue(); } },
                 { "retries", n => { Retries = n.GetIntValue(); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>(); } },
             };
         }
         /// <summary>
@@ -159,7 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("probe_zone", ProbeZone);
             writer.WriteIntValue("retries", Retries);
             writer.WriteIntValue("timeout", Timeout);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

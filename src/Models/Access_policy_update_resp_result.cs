@@ -55,13 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PercentUsersProcessed { get; set; }
 #endif
         /// <summary>The status of the policy test.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status? Status { get; set; }
         /// <summary>The total_users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "percent_blocked", n => { PercentBlocked = n.GetStringValue(); } },
                 { "percent_errored", n => { PercentErrored = n.GetStringValue(); } },
                 { "percent_users_processed", n => { PercentUsersProcessed = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>(); } },
                 { "total_users", n => { TotalUsers = n.GetStringValue(); } },
                 { "users_approved", n => { UsersApproved = n.GetStringValue(); } },
                 { "users_blocked", n => { UsersBlocked = n.GetStringValue(); } },
@@ -143,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("percent_blocked", PercentBlocked);
             writer.WriteStringValue("percent_errored", PercentErrored);
             writer.WriteStringValue("percent_users_processed", PercentUsersProcessed);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_update_status>("status", Status);
             writer.WriteStringValue("total_users", TotalUsers);
             writer.WriteStringValue("users_approved", UsersApproved);
             writer.WriteStringValue("users_blocked", UsersBlocked);

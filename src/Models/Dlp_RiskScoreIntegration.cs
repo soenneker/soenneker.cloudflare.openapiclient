@@ -29,13 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The id of the integration, a UUIDv4.</summary>
         public Guid? Id { get; set; }
         /// <summary>The integration_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IntegrationType { get; set; }
-#nullable restore
-#else
-        public string IntegrationType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType? IntegrationType { get; set; }
         /// <summary>A reference ID defined by the client.Should be set to the Access-Okta IDP integration ID.Useful when the risk-score integration needs to be associated with a secondary asset and recalled using that ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "integration_type", n => { IntegrationType = n.GetStringValue(); } },
+                { "integration_type", n => { IntegrationType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType>(); } },
                 { "reference_id", n => { ReferenceId = n.GetStringValue(); } },
                 { "tenant_url", n => { TenantUrl = n.GetStringValue(); } },
                 { "well_known_url", n => { WellKnownUrl = n.GetStringValue(); } },
@@ -106,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("id", Id);
-            writer.WriteStringValue("integration_type", IntegrationType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskScoreIntegrationType>("integration_type", IntegrationType);
             writer.WriteStringValue("reference_id", ReferenceId);
             writer.WriteStringValue("tenant_url", TenantUrl);
             writer.WriteStringValue("well_known_url", WellKnownUrl);

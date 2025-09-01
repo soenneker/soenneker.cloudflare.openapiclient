@@ -165,15 +165,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
             public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.GetDirectionQueryParameterType? Direction { get; set; }
             [QueryParameter("match")]
             public global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.GetMatchQueryParameterType? Match { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("mode")]
-            public string? Mode { get; set; }
-#nullable restore
-#else
-            [QueryParameter("mode")]
-            public string Mode { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? Mode { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("notes")]

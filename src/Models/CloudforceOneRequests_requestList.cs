@@ -69,13 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Sort order (asc or desc).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_sort_order? SortOrder { get; set; }
         /// <summary>Request Status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList"/> and sets the default values.
         /// </summary>
@@ -110,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "request_type", n => { RequestType = n.GetStringValue(); } },
                 { "sort_by", n => { SortBy = n.GetStringValue(); } },
                 { "sort_order", n => { SortOrder = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_sort_order>(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>(); } },
             };
         }
         /// <summary>
@@ -129,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("request_type", RequestType);
             writer.WriteStringValue("sort_by", SortBy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestList_sort_order>("sort_order", SortOrder);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_requestStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

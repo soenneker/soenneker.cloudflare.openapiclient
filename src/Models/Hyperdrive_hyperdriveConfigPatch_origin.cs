@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Password { get; set; }
 #endif
         /// <summary>Specifies the URL scheme used to connect to your origin database.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Scheme { get; set; }
-#nullable restore
-#else
-        public string Scheme { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveScheme? Scheme { get; set; }
         /// <summary>Set the user of your origin database.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "database", n => { Database = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetStringValue(); } },
-                { "scheme", n => { Scheme = n.GetStringValue(); } },
+                { "scheme", n => { Scheme = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveScheme>(); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
         }
@@ -86,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("database", Database);
             writer.WriteStringValue("password", Password);
-            writer.WriteStringValue("scheme", Scheme);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdriveScheme>("scheme", Scheme);
             writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

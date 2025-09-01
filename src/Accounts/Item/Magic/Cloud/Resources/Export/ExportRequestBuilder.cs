@@ -149,11 +149,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud.Resources
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("resource_type")]
-            public string[]? ResourceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[]? ResourceType { get; set; }
 #nullable restore
 #else
             [QueryParameter("resource_type")]
-            public string[] ResourceType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_type[] ResourceType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

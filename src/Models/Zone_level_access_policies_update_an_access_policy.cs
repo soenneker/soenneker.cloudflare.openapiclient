@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ApprovalRequired { get; set; }
 #endif
         /// <summary>The action Access will take if a user matches this policy.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Decision { get; set; }
-#nullable restore
-#else
-        public string Decision { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision? Decision { get; set; }
         /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "approval_required", n => { ApprovalRequired = n.GetStringValue(); } },
-                { "decision", n => { Decision = n.GetStringValue(); } },
+                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>(); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isolation_required", n => { IsolationRequired = n.GetStringValue(); } },
@@ -149,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group>("approval_groups", ApprovalGroups);
             writer.WriteStringValue("approval_required", ApprovalRequired);
-            writer.WriteStringValue("decision", Decision);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("exclude", Exclude);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("include", Include);
             writer.WriteStringValue("isolation_required", IsolationRequired);

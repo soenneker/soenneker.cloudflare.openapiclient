@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The topic_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TopicType { get; set; }
-#nullable restore
-#else
-        public string TopicType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PromptTopicType? TopicType { get; set; }
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "topic_type", n => { TopicType = n.GetStringValue(); } },
+                { "topic_type", n => { TopicType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PromptTopicType>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -76,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("topic_type", TopicType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PromptTopicType>("topic_type", TopicType);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

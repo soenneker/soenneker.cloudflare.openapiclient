@@ -17,13 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The num_cells property</summary>
         public long? NumCells { get; set; }
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus? Status { get; set; }
         /// <summary>The version property</summary>
         public long? Version { get; set; }
         /// <summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "num_cells", n => { NumCells = n.GetLongValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus>(); } },
                 { "version", n => { Version = n.GetLongValue(); } },
             };
         }
@@ -64,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("num_cells", NumCells);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus>("status", Status);
             writer.WriteLongValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

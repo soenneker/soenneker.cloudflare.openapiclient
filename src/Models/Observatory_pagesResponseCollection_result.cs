@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region Region { get; set; }
 #endif
         /// <summary>The frequency of the test.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScheduleFrequency { get; set; }
-#nullable restore
-#else
-        public string ScheduleFrequency { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency? ScheduleFrequency { get; set; }
         /// <summary>The tests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "region", n => { Region = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region.CreateFromDiscriminatorValue); } },
-                { "scheduleFrequency", n => { ScheduleFrequency = n.GetStringValue(); } },
+                { "scheduleFrequency", n => { ScheduleFrequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>(); } },
                 { "tests", n => { Tests = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_page_test>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_page_test.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -85,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_labeled_region>("region", Region);
-            writer.WriteStringValue("scheduleFrequency", ScheduleFrequency);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>("scheduleFrequency", ScheduleFrequency);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_page_test>("tests", Tests);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

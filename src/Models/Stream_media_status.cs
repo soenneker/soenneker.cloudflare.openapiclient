@@ -40,13 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PctComplete { get; set; }
 #endif
         /// <summary>Specifies the processing status for all quality levels for a video.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state? State { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_status"/> and sets the default values.
         /// </summary>
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errorReasonCode", n => { ErrorReasonCode = n.GetStringValue(); } },
                 { "errorReasonText", n => { ErrorReasonText = n.GetStringValue(); } },
                 { "pctComplete", n => { PctComplete = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>(); } },
             };
         }
         /// <summary>
@@ -88,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("errorReasonCode", ErrorReasonCode);
             writer.WriteStringValue("errorReasonText", ErrorReasonText);
             writer.WriteStringValue("pctComplete", PctComplete);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_state>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

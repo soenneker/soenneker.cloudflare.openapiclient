@@ -97,15 +97,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         public partial class SubnetsRequestBuilderGetQueryParameters 
         {
             /// <summary>If set, only include subnets in the given address family - `v4` or `v6`</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("address_family")]
-            public string? AddressFamily { get; set; }
-#nullable restore
-#else
-            [QueryParameter("address_family")]
-            public string AddressFamily { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_address_family? AddressFamily { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("comment")]

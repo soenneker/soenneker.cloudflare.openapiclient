@@ -19,13 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Number of packets sent at each TTL.</summary>
         public int? PacketsPerTtl { get; set; }
         /// <summary>Type of packet sent.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PacketType { get; set; }
-#nullable restore
-#else
-        public string PacketType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type? PacketType { get; set; }
         /// <summary>For UDP and TCP, specifies the destination port. For ICMP, specifies the initial ICMP sequence value. Default value 0 will choose the best value to use for each protocol.</summary>
         public int? Port { get; set; }
         /// <summary>Set the time (in seconds) to wait for a response to a probe.</summary>
@@ -36,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public MagicTransit_options()
         {
             AdditionalData = new Dictionary<string, object>();
+            PacketType = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type.Icmp;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "max_ttl", n => { MaxTtl = n.GetIntValue(); } },
-                { "packet_type", n => { PacketType = n.GetStringValue(); } },
+                { "packet_type", n => { PacketType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>(); } },
                 { "packets_per_ttl", n => { PacketsPerTtl = n.GetIntValue(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
                 { "wait_time", n => { WaitTime = n.GetIntValue(); } },
@@ -71,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("max_ttl", MaxTtl);
             writer.WriteIntValue("packets_per_ttl", PacketsPerTtl);
-            writer.WriteStringValue("packet_type", PacketType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_packet_type>("packet_type", PacketType);
             writer.WriteIntValue("port", Port);
             writer.WriteIntValue("wait_time", WaitTime);
             writer.WriteAdditionalData(AdditionalData);

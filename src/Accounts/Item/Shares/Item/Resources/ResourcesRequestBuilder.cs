@@ -161,25 +161,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter share resources by resource_type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("resource_type")]
-            public string? ResourceType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("resource_type")]
-            public string ResourceType { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type? ResourceType { get; set; }
             /// <summary>Filter share resources by status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_status? Status { get; set; }
         }
     }
 }

@@ -51,13 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The secret property</summary>
         public bool? Secret { get; set; }
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus? Status { get; set; }
         /// <summary>When the dataset was last updated.This includes name or description changes as well as uploads.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The uploads property</summary>
@@ -102,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "num_cells", n => { NumCells = n.GetLongValue(); } },
                 { "secret", n => { Secret = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uploads", n => { Uploads = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUpload>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUpload.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -123,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("num_cells", NumCells);
             writer.WriteBoolValue("secret", Secret);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUpload>("uploads", Uploads);
             writer.WriteAdditionalData(AdditionalData);

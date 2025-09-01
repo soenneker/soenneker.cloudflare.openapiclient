@@ -40,13 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled Enabled { get; set; }
 #endif
         /// <summary>The sensitivity_level property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SensitivityLevel { get; set; }
-#nullable restore
-#else
-        public string SensitivityLevel { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel? SensitivityLevel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item"/> and sets the default values.
         /// </summary>
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action.CreateFromDiscriminatorValue); } },
                 { "category", n => { Category = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled.CreateFromDiscriminatorValue); } },
-                { "sensitivity_level", n => { SensitivityLevel = n.GetStringValue(); } },
+                { "sensitivity_level", n => { SensitivityLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel>(); } },
             };
         }
         /// <summary>
@@ -88,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_category>("category", Category);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item_enabled>("enabled", Enabled);
-            writer.WriteStringValue("sensitivity_level", SensitivityLevel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel>("sensitivity_level", SensitivityLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -83,13 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string PublicKey { get; private set; }
 #endif
         /// <summary>Status of DNSSEC, based on user-desired state and presence of necessary records.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_dnssec"/> and sets the default values.
         /// </summary>
@@ -128,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "key_type", n => { KeyType = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "public_key", n => { PublicKey = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_status>(); } },
             };
         }
         /// <summary>
@@ -141,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("dnssec_multi_signer", DnssecMultiSigner);
             writer.WriteBoolValue("dnssec_presigned", DnssecPresigned);
             writer.WriteBoolValue("dnssec_use_nsec3", DnssecUseNsec3);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dnssec_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

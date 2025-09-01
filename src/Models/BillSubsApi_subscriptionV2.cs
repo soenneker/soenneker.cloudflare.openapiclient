@@ -35,13 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When the current billing period started. May match initial_period_start if this is the first period.</summary>
         public DateTimeOffset? CurrentPeriodStart { get; set; }
         /// <summary>How often the subscription is renewed automatically.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Frequency { get; set; }
-#nullable restore
-#else
-        public string Frequency { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_frequency? Frequency { get; set; }
         /// <summary>Subscription identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,13 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_rate_plan RatePlan { get; set; }
 #endif
         /// <summary>The state that the subscription is in.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_state? State { get; private set; }
         /// <summary>A simple zone object. May have null properties if not a zone subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,11 +93,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "current_period_end", n => { CurrentPeriodEnd = n.GetDateTimeOffsetValue(); } },
                 { "current_period_start", n => { CurrentPeriodStart = n.GetDateTimeOffsetValue(); } },
-                { "frequency", n => { Frequency = n.GetStringValue(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_frequency>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
                 { "rate_plan", n => { RatePlan = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_rate_plan>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_rate_plan.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_state>(); } },
                 { "zone", n => { Zone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_zone>(global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_zone.CreateFromDiscriminatorValue); } },
             };
         }
@@ -124,11 +112,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteDateTimeOffsetValue("current_period_end", CurrentPeriodEnd);
             writer.WriteDateTimeOffsetValue("current_period_start", CurrentPeriodStart);
-            writer.WriteStringValue("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_frequency>("frequency", Frequency);
             writer.WriteStringValue("id", Id);
             writer.WriteDoubleValue("price", Price);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_rate_plan>("rate_plan", RatePlan);
-            writer.WriteStringValue("state", State);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_zone>("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -27,13 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies the time when the setting was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_result_object_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_result_object"/> and sets the default values.
         /// </summary>
@@ -62,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "editable", n => { Editable = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_result_object_value>(); } },
             };
         }
         /// <summary>
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("editable", Editable);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
-            writer.WriteStringValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_result_object_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

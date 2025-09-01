@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_colo Colo { get; set; }
 #endif
         /// <summary>Errors resulting from collecting traceroute from colo to target.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Error { get; set; }
-#nullable restore
-#else
-        public string Error { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_error? Error { get; set; }
         /// <summary>The hops property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "colo", n => { Colo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_colo>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_colo.CreateFromDiscriminatorValue); } },
-                { "error", n => { Error = n.GetStringValue(); } },
+                { "error", n => { Error = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_error>(); } },
                 { "hops", n => { Hops = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "target_summary", n => { TargetSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_summary>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_summary.CreateFromDiscriminatorValue); } },
                 { "traceroute_time_ms", n => { TracerouteTimeMs = n.GetIntValue(); } },
@@ -88,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_colo>("colo", Colo);
-            writer.WriteStringValue("error", Error);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_error>("error", Error);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_hop_result>("hops", Hops);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_target_summary>("target_summary", TargetSummary);
             writer.WriteIntValue("traceroute_time_ms", TracerouteTimeMs);

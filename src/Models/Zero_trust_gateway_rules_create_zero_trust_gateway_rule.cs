@@ -13,13 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to perform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Action { get; set; }
-#nullable restore
-#else
-        public string Action { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
@@ -135,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "device_posture", n => { DevicePosture = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetStringValue(); } },
@@ -156,7 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("device_posture", DevicePosture);
             writer.WriteStringValue("enabled", Enabled);

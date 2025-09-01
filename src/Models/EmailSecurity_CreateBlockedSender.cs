@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Pattern { get; set; }
 #endif
         /// <summary>The pattern_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PatternType { get; set; }
-#nullable restore
-#else
-        public string PatternType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType? PatternType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "is_regex", n => { IsRegex = n.GetBoolValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
-                { "pattern_type", n => { PatternType = n.GetStringValue(); } },
+                { "pattern_type", n => { PatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>(); } },
             };
         }
         /// <summary>
@@ -72,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("comments", Comments);
             writer.WriteBoolValue("is_regex", IsRegex);
             writer.WriteStringValue("pattern", Pattern);
-            writer.WriteStringValue("pattern_type", PatternType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_PatternType>("pattern_type", PatternType);
         }
     }
 }

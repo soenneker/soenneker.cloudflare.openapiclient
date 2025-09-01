@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Certificate Authority selected for the order.  For information on any certificate authority specific details or restrictions [see this page for more details.](https://developers.cloudflare.com/ssl/reference/certificate-authorities)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CertificateAuthority { get; set; }
-#nullable restore
-#else
-        public string CertificateAuthority { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificate_authority? CertificateAuthority { get; set; }
         /// <summary>The cloudflare_branding property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,21 +41,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Status of certificate pack.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificatePacks_componentsSchemasStatus? Status { get; set; }
         /// <summary>Type of certificate pack.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasType? Type { get; set; }
         /// <summary>Domain validation errors that have been received by the certificate authority (CA).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,13 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Certificate_packs_order_advanced_certificate_manager_certificate_pack_4XX_result_validation_errors> ValidationErrors { get; set; }
 #endif
         /// <summary>Validation Method selected for the order.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ValidationMethod { get; set; }
-#nullable restore
-#else
-        public string ValidationMethod { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method? ValidationMethod { get; set; }
         /// <summary>Certificates&apos; validation records. Only present when certificate pack is in &quot;pending_validation&quot; status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,14 +89,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "certificate_authority", n => { CertificateAuthority = n.GetStringValue(); } },
+                { "certificate_authority", n => { CertificateAuthority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificate_authority>(); } },
                 { "cloudflare_branding", n => { CloudflareBranding = n.GetStringValue(); } },
                 { "hosts", n => { Hosts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificatePacks_componentsSchemasStatus>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasType>(); } },
                 { "validation_errors", n => { ValidationErrors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Certificate_packs_order_advanced_certificate_manager_certificate_pack_4XX_result_validation_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Certificate_packs_order_advanced_certificate_manager_certificate_pack_4XX_result_validation_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "validation_method", n => { ValidationMethod = n.GetStringValue(); } },
+                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method>(); } },
                 { "validation_records", n => { ValidationRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_record>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_record.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "validity_days", n => { ValidityDays = n.GetIntValue(); } },
             };
@@ -132,14 +108,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("certificate_authority", CertificateAuthority);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasCertificate_authority>("certificate_authority", CertificateAuthority);
             writer.WriteStringValue("cloudflare_branding", CloudflareBranding);
             writer.WriteCollectionOfPrimitiveValues<string>("hosts", Hosts);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("status", Status);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificatePacks_componentsSchemasStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_schemasType>("type", Type);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Certificate_packs_order_advanced_certificate_manager_certificate_pack_4XX_result_validation_errors>("validation_errors", ValidationErrors);
-            writer.WriteStringValue("validation_method", ValidationMethod);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method>("validation_method", ValidationMethod);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_record>("validation_records", ValidationRecords);
             writer.WriteIntValue("validity_days", ValidityDays);
             writer.WriteAdditionalData(AdditionalData);

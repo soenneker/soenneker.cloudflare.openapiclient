@@ -33,13 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Language { get; set; }
 #endif
         /// <summary>The status of a generated caption.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_captions"/> and sets the default values.
         /// </summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "generated", n => { Generated = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status>(); } },
             };
         }
         /// <summary>
@@ -81,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("generated", Generated);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("language", Language);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_caption_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

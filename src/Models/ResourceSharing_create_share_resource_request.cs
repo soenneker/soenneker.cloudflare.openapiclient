@@ -39,13 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ResourceId { get; set; }
 #endif
         /// <summary>Resource Type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ResourceType { get; set; }
-#nullable restore
-#else
-        public string ResourceType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type? ResourceType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_create_share_resource_request"/> and sets the default values.
         /// </summary>
@@ -74,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_meta.CreateFromDiscriminatorValue); } },
                 { "resource_account_id", n => { ResourceAccountId = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetStringValue(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>(); } },
             };
         }
         /// <summary>
@@ -87,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_meta>("meta", Meta);
             writer.WriteStringValue("resource_account_id", ResourceAccountId);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteStringValue("resource_type", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_resource_type>("resource_type", ResourceType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

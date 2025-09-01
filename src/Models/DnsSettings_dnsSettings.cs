@@ -41,13 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_soa Soa { get; set; }
 #endif
         /// <summary>Whether the zone mode is a regular or CDN/DNS only zone.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ZoneMode { get; set; }
-#nullable restore
-#else
-        public string ZoneMode { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_zone_mode? ZoneMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_dnsSettings"/> and sets the default values.
         /// </summary>
@@ -80,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ns_ttl", n => { NsTtl = n.GetDoubleValue(); } },
                 { "secondary_overrides", n => { SecondaryOverrides = n.GetBoolValue(); } },
                 { "soa", n => { Soa = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_soa>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_soa.CreateFromDiscriminatorValue); } },
-                { "zone_mode", n => { ZoneMode = n.GetStringValue(); } },
+                { "zone_mode", n => { ZoneMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_zone_mode>(); } },
             };
         }
         /// <summary>
@@ -97,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("ns_ttl", NsTtl);
             writer.WriteBoolValue("secondary_overrides", SecondaryOverrides);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_soa>("soa", Soa);
-            writer.WriteStringValue("zone_mode", ZoneMode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsSettings_zone_mode>("zone_mode", ZoneMode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

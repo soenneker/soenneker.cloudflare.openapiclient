@@ -53,13 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string TunnelName { get; set; }
 #endif
         /// <summary>The type of tunnel.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TunType { get; set; }
-#nullable restore
-#else
-        public string TunType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type? TunType { get; set; }
         /// <summary>UUID of the virtual network.</summary>
         public Guid? VirtualNetworkId { get; set; }
         /// <summary>A user-friendly name for the virtual network.</summary>
@@ -100,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "network", n => { Network = n.GetStringValue(); } },
-                { "tun_type", n => { TunType = n.GetStringValue(); } },
+                { "tun_type", n => { TunType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>(); } },
                 { "tunnel_id", n => { TunnelId = n.GetGuidValue(); } },
                 { "tunnel_name", n => { TunnelName = n.GetStringValue(); } },
                 { "virtual_network_id", n => { VirtualNetworkId = n.GetGuidValue(); } },
@@ -121,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("network", Network);
             writer.WriteGuidValue("tunnel_id", TunnelId);
             writer.WriteStringValue("tunnel_name", TunnelName);
-            writer.WriteStringValue("tun_type", TunType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type>("tun_type", TunType);
             writer.WriteGuidValue("virtual_network_id", VirtualNetworkId);
             writer.WriteStringValue("virtual_network_name", VirtualNetworkName);
             writer.WriteAdditionalData(AdditionalData);

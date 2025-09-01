@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Array of R2 object actions that will trigger notifications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_r2Action?>? Actions { get; set; }
 #nullable restore
 #else
-        public List<string> Actions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_r2Action?> Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_r2Action>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
                 { "suffix", n => { Suffix = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("actions", Actions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_r2Action>("actions", Actions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("prefix", Prefix);
             writer.WriteStringValue("suffix", Suffix);

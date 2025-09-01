@@ -42,13 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency? Frequency { get; set; }
         /// <summary>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Kind { get; set; }
-#nullable restore
-#else
-        public string Kind { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind? Kind { get; set; }
         /// <summary>This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
                 { "logpull_options", n => { LogpullOptions = n.GetStringValue(); } },
                 { "max_upload_bytes", n => { MaxUploadBytes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes.CreateFromDiscriminatorValue); } },
                 { "max_upload_interval_seconds", n => { MaxUploadIntervalSeconds = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds.CreateFromDiscriminatorValue); } },
@@ -157,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("enabled", Enabled);
             writer.WriteStringValue("filter", Filter);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
-            writer.WriteStringValue("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
             writer.WriteStringValue("logpull_options", LogpullOptions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>("max_upload_bytes", MaxUploadBytes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds>("max_upload_interval_seconds", MaxUploadIntervalSeconds);

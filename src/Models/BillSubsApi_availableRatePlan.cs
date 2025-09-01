@@ -27,13 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Indicates whether this plan is managed externally.</summary>
         public bool? ExternallyManaged { get; set; }
         /// <summary>The frequency at which you will be billed for this plan.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Frequency { get; set; }
-#nullable restore
-#else
-        public string Frequency { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency? Frequency { get; private set; }
         /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "can_subscribe", n => { CanSubscribe = n.GetBoolValue(); } },
                 { "currency", n => { Currency = n.GetStringValue(); } },
                 { "externally_managed", n => { ExternallyManaged = n.GetBoolValue(); } },
-                { "frequency", n => { Frequency = n.GetStringValue(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_schemasFrequency>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_subscribed", n => { IsSubscribed = n.GetBoolValue(); } },
                 { "legacy_discount", n => { LegacyDiscount = n.GetBoolValue(); } },
@@ -111,7 +105,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("can_subscribe", CanSubscribe);
             writer.WriteStringValue("currency", Currency);
             writer.WriteBoolValue("externally_managed", ExternallyManaged);
-            writer.WriteStringValue("frequency", Frequency);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_subscribed", IsSubscribed);
             writer.WriteBoolValue("legacy_discount", LegacyDiscount);

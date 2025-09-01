@@ -49,13 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Signature { get; set; }
 #endif
         /// <summary>Status of the zone&apos;s custom SSL.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customTrustStore_componentsSchemasStatus? Status { get; private set; }
         /// <summary>When the certificate was last modified.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>When the certificate was uploaded to Cloudflare.</summary>
@@ -90,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_customTrustStore_componentsSchemasStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
             };
@@ -107,7 +101,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("signature", Signature);
-            writer.WriteStringValue("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);

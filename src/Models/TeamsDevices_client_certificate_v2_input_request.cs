@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of values indicating purposes for which the certificate public key can be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExtendedKeyUsage { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_extended_key_usage_enum?>? ExtendedKeyUsage { get; set; }
 #nullable restore
 #else
-        public List<string> ExtendedKeyUsage { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_extended_key_usage_enum?> ExtendedKeyUsage { get; set; }
 #endif
         /// <summary>The locations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "certificate_id", n => { CertificateId = n.GetStringValue(); } },
                 { "check_private_key", n => { CheckPrivateKey = n.GetBoolValue(); } },
                 { "cn", n => { Cn = n.GetStringValue(); } },
-                { "extended_key_usage", n => { ExtendedKeyUsage = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "extended_key_usage", n => { ExtendedKeyUsage = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_extended_key_usage_enum>()?.AsList(); } },
                 { "locations", n => { Locations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request_locations>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request_locations.CreateFromDiscriminatorValue); } },
                 { "operating_system", n => { OperatingSystem = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request_operating_system>(); } },
                 { "subject_alternative_names", n => { SubjectAlternativeNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("certificate_id", CertificateId);
             writer.WriteBoolValue("check_private_key", CheckPrivateKey);
             writer.WriteStringValue("cn", Cn);
-            writer.WriteCollectionOfPrimitiveValues<string>("extended_key_usage", ExtendedKeyUsage);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_extended_key_usage_enum>("extended_key_usage", ExtendedKeyUsage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request_locations>("locations", Locations);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_client_certificate_v2_input_request_operating_system>("operating_system", OperatingSystem);
             writer.WriteCollectionOfPrimitiveValues<string>("subject_alternative_names", SubjectAlternativeNames);

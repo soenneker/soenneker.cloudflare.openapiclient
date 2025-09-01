@@ -77,29 +77,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Protocol { get; set; }
 #endif
         /// <summary>Enables Proxy Protocol to the origin. Refer to [Enable Proxy protocol](https://developers.cloudflare.com/spectrum/getting-started/proxy-protocol/) for implementation details on PROXY Protocol V1, PROXY Protocol V2, and Simple Proxy Protocol.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProxyProtocol { get; set; }
-#nullable restore
-#else
-        public string ProxyProtocol { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol? ProxyProtocol { get; set; }
         /// <summary>The type of TLS termination associated with the application.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Tls { get; set; }
-#nullable restore
-#else
-        public string Tls { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls? Tls { get; set; }
         /// <summary>Determines how data travels from the edge to your origin. When set to &quot;direct&quot;, Spectrum will send traffic directly to your origin, and the application&apos;s type is derived from the `protocol`. When set to &quot;http&quot; or &quot;https&quot;, Spectrum will apply Cloudflare&apos;s HTTP/HTTPS features as it sends traffic to your origin, and the application type matches this property exactly.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TrafficType { get; set; }
-#nullable restore
-#else
-        public string TrafficType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type? TrafficType { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_app_config"/> and sets the default values.
+        /// </summary>
+        public SpectrumConfig_app_config() : base()
+        {
+            ProxyProtocol = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol.Off;
+            Tls = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls.Off;
+            TrafficType = global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type.Direct;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -126,9 +117,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "origin_dns", n => { OriginDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns.CreateFromDiscriminatorValue); } },
                 { "origin_port", n => { OriginPort = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port.CreateFromDiscriminatorValue); } },
                 { "protocol", n => { Protocol = n.GetStringValue(); } },
-                { "proxy_protocol", n => { ProxyProtocol = n.GetStringValue(); } },
-                { "tls", n => { Tls = n.GetStringValue(); } },
-                { "traffic_type", n => { TrafficType = n.GetStringValue(); } },
+                { "proxy_protocol", n => { ProxyProtocol = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>(); } },
+                { "tls", n => { Tls = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>(); } },
+                { "traffic_type", n => { TrafficType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>(); } },
             };
         }
         /// <summary>
@@ -147,9 +138,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>("origin_dns", OriginDns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>("origin_port", OriginPort);
             writer.WriteStringValue("protocol", Protocol);
-            writer.WriteStringValue("proxy_protocol", ProxyProtocol);
-            writer.WriteStringValue("tls", Tls);
-            writer.WriteStringValue("traffic_type", TrafficType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_proxy_protocol>("proxy_protocol", ProxyProtocol);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_tls>("tls", Tls);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_traffic_type>("traffic_type", TrafficType);
         }
     }
 }

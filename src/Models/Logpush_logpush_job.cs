@@ -40,13 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Unique id of the job.</summary>
         public int? Id { get; set; }
         /// <summary>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Kind { get; set; }
-#nullable restore
-#else
-        public string Kind { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind? Kind { get; set; }
         /// <summary>Records the last time for which logs have been successfully pushed. If the last successful push was for logs range 2018-07-23T10:00:00Z to 2018-07-23T10:01:00Z then the value of this field will be 2018-07-23T10:01:00Z. If the job has never run or has just been enabled and hasn&apos;t run yet then the field will be empty.</summary>
         public DateTimeOffset? LastComplete { get; set; }
         /// <summary>Records the last time the job failed. If not null, the job is currently. failing. If null, the job has either never failed or has run successfully at least once since last failure. See also the error_message field.</summary>
@@ -133,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
                 { "last_complete", n => { LastComplete = n.GetDateTimeOffsetValue(); } },
                 { "last_error", n => { LastError = n.GetDateTimeOffsetValue(); } },
                 { "logpull_options", n => { LogpullOptions = n.GetStringValue(); } },
@@ -157,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("error_message", ErrorMessage);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
             writer.WriteIntValue("id", Id);
-            writer.WriteStringValue("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
             writer.WriteDateTimeOffsetValue("last_complete", LastComplete);
             writer.WriteDateTimeOffsetValue("last_error", LastError);
             writer.WriteStringValue("logpull_options", LogpullOptions);

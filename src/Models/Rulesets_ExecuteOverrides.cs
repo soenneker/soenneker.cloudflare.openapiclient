@@ -48,13 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRuleOverrides_item> Rules { get; set; }
 #endif
         /// <summary>The sensitivity_level property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SensitivityLevel { get; set; }
-#nullable restore
-#else
-        public string SensitivityLevel { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel? SensitivityLevel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides"/> and sets the default values.
         /// </summary>
@@ -84,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "categories", n => { Categories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides_enabled>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides_enabled.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRuleOverrides_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRuleOverrides_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "sensitivity_level", n => { SensitivityLevel = n.GetStringValue(); } },
+                { "sensitivity_level", n => { SensitivityLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel>(); } },
             };
         }
         /// <summary>
@@ -98,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteCategoryOverrides_item>("categories", Categories);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteOverrides_enabled>("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteRuleOverrides_item>("rules", Rules);
-            writer.WriteStringValue("sensitivity_level", SensitivityLevel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ExecuteSensitivityLevel>("sensitivity_level", SensitivityLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -47,13 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Region { get; set; }
 #endif
         /// <summary>Bandwidth structure as visible through the customer-facing API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Speed { get; set; }
-#nullable restore
-#else
-        public string Speed { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_ApiBandwidth? Speed { get; set; }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
-                { "speed", n => { Speed = n.GetStringValue(); } },
+                { "speed", n => { Speed = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_ApiBandwidth>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -106,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
             writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("speed", Speed);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_ApiBandwidth>("speed", Speed);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

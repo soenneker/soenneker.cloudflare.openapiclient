@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> AttachedVpcs { get; set; }
 #endif
         /// <summary>The cloud_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CloudType { get; set; }
-#nullable restore
-#else
-        public string CloudType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type? CloudType { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,13 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status Status { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_type? Type { get; set; }
         /// <summary>The updated_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -203,7 +191,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "attached_hubs", n => { AttachedHubs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "attached_vpcs", n => { AttachedVpcs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "cloud_type", n => { CloudType = n.GetStringValue(); } },
+                { "cloud_type", n => { CloudType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "hub", n => { Hub = n.GetGuidValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -223,7 +211,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "post_apply_resources_unavailable", n => { PostApplyResourcesUnavailable = n.GetBoolValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
                 { "vpc", n => { Vpc = n.GetGuidValue(); } },
                 { "vpcs_by_id", n => { VpcsById = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_vpcs_by_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_vpcs_by_id.CreateFromDiscriminatorValue); } },
@@ -239,7 +227,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("attached_hubs", AttachedHubs);
             writer.WriteCollectionOfPrimitiveValues<string>("attached_vpcs", AttachedVpcs);
-            writer.WriteStringValue("cloud_type", CloudType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>("cloud_type", CloudType);
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("hub", Hub);
             writer.WriteGuidValue("id", Id);
@@ -259,7 +247,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("post_apply_resources_unavailable", PostApplyResourcesUnavailable);
             writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_status>("status", Status);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_type>("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("vpc", Vpc);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_vpcs_by_id>("vpcs_by_id", VpcsById);

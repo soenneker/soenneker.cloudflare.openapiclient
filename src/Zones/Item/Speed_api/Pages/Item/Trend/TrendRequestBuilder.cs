@@ -90,15 +90,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TrendRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("deviceType")]
-            public string? DeviceType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("deviceType")]
-            public string DeviceType { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_device_type? DeviceType { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("end")]
@@ -118,15 +111,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Pages.Item.Tre
             [QueryParameter("metrics")]
             public string Metrics { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("region")]
-            public string? Region { get; set; }
-#nullable restore
-#else
-            [QueryParameter("region")]
-            public string Region { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_region? Region { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("start")]

@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string AlertInterval { get; set; }
 #endif
         /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AlertType { get; set; }
-#nullable restore
-#else
-        public string AlertType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type? AlertType { get; set; }
         /// <summary>The created property</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>Optional description for the Notification policy.</summary>
@@ -102,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alert_interval", n => { AlertInterval = n.GetStringValue(); } },
-                { "alert_type", n => { AlertType = n.GetStringValue(); } },
+                { "alert_type", n => { AlertType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>(); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -121,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alert_interval", AlertInterval);
-            writer.WriteStringValue("alert_type", AlertType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>("alert_type", AlertType);
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);

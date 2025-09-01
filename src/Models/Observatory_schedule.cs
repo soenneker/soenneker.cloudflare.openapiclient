@@ -16,21 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The frequency of the test.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Frequency { get; set; }
-#nullable restore
-#else
-        public string Frequency { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency? Frequency { get; set; }
         /// <summary>A test region.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region { get; set; }
-#nullable restore
-#else
-        public string Region { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_region? Region { get; set; }
         /// <summary>A URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frequency", n => { Frequency = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
+                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_region>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -76,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("frequency", Frequency);
-            writer.WriteStringValue("region", Region);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency>("frequency", Frequency);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_region>("region", Region);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

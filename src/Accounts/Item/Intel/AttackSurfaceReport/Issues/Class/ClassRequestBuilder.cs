@@ -123,20 +123,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type")]
-            public string[]? IssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueType { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type")]
-            public string[] IssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type%7Eneq")]
-            public string[]? IssueTypeNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeNeq { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type%7Eneq")]
-            public string[] IssueTypeNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeNeq { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

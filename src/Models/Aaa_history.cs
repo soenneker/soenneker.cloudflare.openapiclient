@@ -55,13 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Mechanism { get; set; }
 #endif
         /// <summary>The type of mechanism to which the notification has been dispatched. This can be email/pagerduty/webhook based on the mechanism configured.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MechanismType { get; set; }
-#nullable restore
-#else
-        public string MechanismType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type? MechanismType { get; set; }
         /// <summary>Name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "mechanism", n => { Mechanism = n.GetStringValue(); } },
-                { "mechanism_type", n => { MechanismType = n.GetStringValue(); } },
+                { "mechanism_type", n => { MechanismType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "policy_id", n => { PolicyId = n.GetStringValue(); } },
                 { "sent", n => { Sent = n.GetDateTimeOffsetValue(); } },
@@ -128,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("mechanism", Mechanism);
-            writer.WriteStringValue("mechanism_type", MechanismType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanism_type>("mechanism_type", MechanismType);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("policy_id", PolicyId);
             writer.WriteDateTimeOffsetValue("sent", Sent);

@@ -29,13 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string StartTs { get; set; }
 #endif
         /// <summary>The current state of the Cache Reserve Clear operation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state? State { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "end_ts", n => { EndTs = n.GetStringValue(); } },
                 { "start_ts", n => { StartTs = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>(); } },
             };
         }
         /// <summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteStringValue("end_ts", EndTs);
             writer.WriteStringValue("start_ts", StartTs);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>("state", State);
         }
     }
 }

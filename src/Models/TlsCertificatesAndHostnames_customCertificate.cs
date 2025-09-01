@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BundleMethod { get; set; }
-#nullable restore
-#else
-        public string BundleMethod { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method? BundleMethod { get; set; }
         /// <summary>When the certificate from the authority expires.</summary>
         public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.</summary>
@@ -85,13 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Signature { get; set; }
 #endif
         /// <summary>Status of the zone&apos;s custom SSL.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_status? Status { get; private set; }
         /// <summary>When the certificate was uploaded to Cloudflare.</summary>
         public DateTimeOffset? UploadedOn { get; set; }
         /// <summary>Identifier.</summary>
@@ -108,6 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public TlsCertificatesAndHostnames_customCertificate()
         {
             AdditionalData = new Dictionary<string, object>();
+            BundleMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method.Ubiquitous;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -127,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bundle_method", n => { BundleMethod = n.GetStringValue(); } },
+                { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method>(); } },
                 { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
                 { "geo_restrictions", n => { GeoRestrictions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_geo_restrictions>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_geo_restrictions.CreateFromDiscriminatorValue); } },
                 { "hosts", n => { Hosts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -138,7 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "policy", n => { Policy = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_status>(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
                 { "zone_id", n => { ZoneId = n.GetStringValue(); } },
             };
@@ -150,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("bundle_method", BundleMethod);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method>("bundle_method", BundleMethod);
             writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_geo_restrictions>("geo_restrictions", GeoRestrictions);
             writer.WriteCollectionOfPrimitiveValues<string>("hosts", Hosts);
@@ -161,7 +150,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("policy", Policy);
             writer.WriteDoubleValue("priority", Priority);
             writer.WriteStringValue("signature", Signature);
-            writer.WriteStringValue("status", Status);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteStringValue("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);

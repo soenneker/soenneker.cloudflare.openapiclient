@@ -143,13 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string State { get; set; }
 #endif
         /// <summary>Client Certificates may be active or revoked, and the pending_reactivation or pending_revocation represent in-progress asynchronous transitions</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus? Status { get; set; }
         /// <summary>The number of days the Client Certificate will be valid after the issued_on date</summary>
         public int? ValidityDays { get; set; }
         /// <summary>
@@ -193,7 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "ski", n => { Ski = n.GetStringValue(); } },
                 { "state", n => { State = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>(); } },
                 { "validity_days", n => { ValidityDays = n.GetIntValue(); } },
             };
         }
@@ -220,7 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("signature", Signature);
             writer.WriteStringValue("ski", Ski);
             writer.WriteStringValue("state", State);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_clientCertificates_componentsSchemasStatus>("status", Status);
             writer.WriteIntValue("validity_days", ValidityDays);
             writer.WriteAdditionalData(AdditionalData);
         }

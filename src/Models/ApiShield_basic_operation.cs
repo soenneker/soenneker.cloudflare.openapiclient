@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Host { get; set; }
 #endif
         /// <summary>The HTTP method used to access the endpoint.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Method { get; set; }
-#nullable restore
-#else
-        public string Method { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method? Method { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation"/> and sets the default values.
         /// </summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "method", n => { Method = n.GetStringValue(); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>(); } },
             };
         }
         /// <summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("method", Method);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_method>("method", Method);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

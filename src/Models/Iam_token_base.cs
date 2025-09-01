@@ -57,13 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources> Policies { get; set; }
 #endif
         /// <summary>Status of the token.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_base"/> and sets the default values.
         /// </summary>
@@ -98,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>(); } },
             };
         }
         /// <summary>
@@ -117,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_policy_with_permission_groups_and_resources>("policies", Policies);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

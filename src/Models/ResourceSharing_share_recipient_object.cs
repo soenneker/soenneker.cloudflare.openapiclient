@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Share Recipient association status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AssociationStatus { get; set; }
-#nullable restore
-#else
-        public string AssociationStatus { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status? AssociationStatus { get; set; }
         /// <summary>When the share was created.</summary>
         public DateTimeOffset? Created { get; set; }
         /// <summary>Share Recipient identifier tag.</summary>
@@ -76,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "association_status", n => { AssociationStatus = n.GetStringValue(); } },
+                { "association_status", n => { AssociationStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status>(); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
@@ -91,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("association_status", AssociationStatus);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_recipient_association_status>("association_status", AssociationStatus);
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified", Modified);

@@ -23,19 +23,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Type { get; set; }
 #endif
         /// <summary>Value of the zone setting.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_china_network_enabled_value? Value { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_china_network_enabled_value_setting"/> and sets the default values.
         /// </summary>
         public Zones_china_network_enabled_value_setting()
         {
             AdditionalData = new Dictionary<string, object>();
+            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_china_network_enabled_value.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_china_network_enabled_value>(); } },
             };
         }
         /// <summary>
@@ -67,7 +62,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

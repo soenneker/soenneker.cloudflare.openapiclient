@@ -51,13 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> RequiredTokens { get; set; }
 #endif
         /// <summary>The custom page state.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get; set; }
-#nullable restore
-#else
-        public string State { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state? State { get; set; }
         /// <summary>The URL associated with the custom page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "preview_target", n => { PreviewTarget = n.GetStringValue(); } },
                 { "required_tokens", n => { RequiredTokens = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -114,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("preview_target", PreviewTarget);
             writer.WriteCollectionOfPrimitiveValues<string>("required_tokens", RequiredTokens);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state>("state", State);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

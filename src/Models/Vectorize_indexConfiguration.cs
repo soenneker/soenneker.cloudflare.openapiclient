@@ -18,21 +18,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Specifies the number of dimensions for the index</summary>
         public int? Dimensions { get; set; }
         /// <summary>Specifies the type of metric to use calculating distance.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Metric { get; set; }
-#nullable restore
-#else
-        public string Metric { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric? Metric { get; set; }
         /// <summary>Specifies the preset to use for the index.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Preset { get; set; }
-#nullable restore
-#else
-        public string Preset { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset? Preset { get; set; }
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dimensions", n => { Dimensions = n.GetIntValue(); } },
-                { "metric", n => { Metric = n.GetStringValue(); } },
-                { "preset", n => { Preset = n.GetStringValue(); } },
+                { "metric", n => { Metric = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>(); } },
+                { "preset", n => { Preset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -80,8 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dimensions", Dimensions);
-            writer.WriteStringValue("metric", Metric);
-            writer.WriteStringValue("preset", Preset);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexMetric>("metric", Metric);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_indexPreset>("preset", Preset);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

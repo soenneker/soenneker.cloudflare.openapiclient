@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The mode that defines how rules within the package are evaluated during the course of a request. When a package uses anomaly detection mode (`anomaly` value), each rule is given a score when triggered. If the total score of all triggered rules exceeds the sensitivity defined in the WAF package, the action configured in the package will be performed. Traditional detection mode (`traditional` value) will decide the action to take when it is triggered by the request. If multiple rules are triggered, the action providing the highest protection will be applied (for example, a &apos;block&apos; action will win over a &apos;challenge&apos; action).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DetectionMode { get; set; }
-#nullable restore
-#else
-        public string DetectionMode { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode? DetectionMode { get; private set; }
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,13 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>When set to `active`, indicates that the WAF package will be applied to the zone.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status? Status { get; private set; }
         /// <summary>Defines an identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Firewall_package_definition()
         {
             AdditionalData = new Dictionary<string, object>();
+            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status.Active;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -88,10 +77,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "detection_mode", n => { DetectionMode = n.GetStringValue(); } },
+                { "detection_mode", n => { DetectionMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_detection_mode>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_status>(); } },
                 { "zone_id", n => { ZoneId = n.GetStringValue(); } },
             };
         }
@@ -103,10 +92,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("detection_mode", DetectionMode);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("status", Status);
             writer.WriteStringValue("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }

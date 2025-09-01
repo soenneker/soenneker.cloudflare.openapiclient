@@ -47,13 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string MaxEstimatedTimeMinutes { get; set; }
 #endif
         /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status_response_result"/> and sets the default values.
         /// </summary>
@@ -83,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "estimated_total_active_users", n => { EstimatedTotalActiveUsers = n.GetStringValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "max_estimated_time_minutes", n => { MaxEstimatedTimeMinutes = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>(); } },
             };
         }
         /// <summary>
@@ -97,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("estimated_total_active_users", EstimatedTotalActiveUsers);
             writer.WriteStringValue("event_id", EventId);
             writer.WriteStringValue("max_estimated_time_minutes", MaxEstimatedTimeMinutes);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

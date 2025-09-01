@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this is a locally or remotely configured tunnel. If `local`, manage the tunnel using a YAML file on the origin machine. If `cloudflare`, manage the tunnel on the Zero Trust dashboard.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConfigSrc { get; set; }
-#nullable restore
-#else
-        public string ConfigSrc { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src? ConfigSrc { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Cloudflare_tunnel_create_a_cloudflare_tunnel()
         {
             AdditionalData = new Dictionary<string, object>();
+            ConfigSrc = global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src.Local;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config_src", n => { ConfigSrc = n.GetStringValue(); } },
+                { "config_src", n => { ConfigSrc = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tunnel_secret", n => { TunnelSecret = n.GetStringValue(); } },
             };
@@ -75,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("config_src", ConfigSrc);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_src>("config_src", ConfigSrc);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("tunnel_secret", TunnelSecret);
             writer.WriteAdditionalData(AdditionalData);

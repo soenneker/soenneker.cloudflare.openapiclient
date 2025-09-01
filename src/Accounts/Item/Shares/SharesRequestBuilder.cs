@@ -158,15 +158,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>Filter shares by kind.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("kind")]
-            public string? Kind { get; set; }
-#nullable restore
-#else
-            [QueryParameter("kind")]
-            public string Kind { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_kind? Kind { get; set; }
             /// <summary>Order shares by values in the given field.</summary>
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.GetOrderQueryParameterType? Order { get; set; }
@@ -177,25 +170,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Filter shares by status.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_status? Status { get; set; }
             /// <summary>Filter shares by target_type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("target_type")]
-            public string? TargetType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("target_type")]
-            public string TargetType { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_target_type? TargetType { get; set; }
         }
     }
 }

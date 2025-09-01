@@ -26,13 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The TTL of our resolution of your DNS record in seconds.</summary>
         public int? Ttl { get; set; }
         /// <summary>The type of DNS record associated with the origin. &quot;&quot; is used to specify a combination of A/AAAA records.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns"/> and sets the default values.
         /// </summary>
@@ -60,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ttl", n => { Ttl = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type>(); } },
             };
         }
         /// <summary>
@@ -72,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("ttl", Ttl);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

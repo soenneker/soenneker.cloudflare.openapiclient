@@ -23,13 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Bandwidth structure as visible through the customer-facing API.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Bandwidth { get; set; }
-#nullable restore
-#else
-        public string Bandwidth { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_ApiBandwidth? Bandwidth { get; set; }
         /// <summary>Pairing key provided by GCP</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetStringValue(); } },
-                { "bandwidth", n => { Bandwidth = n.GetStringValue(); } },
+                { "bandwidth", n => { Bandwidth = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_ApiBandwidth>(); } },
                 { "pairing_key", n => { PairingKey = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -85,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account", Account);
-            writer.WriteStringValue("bandwidth", Bandwidth);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Nsc_ApiBandwidth>("bandwidth", Bandwidth);
             writer.WriteStringValue("pairing_key", PairingKey);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

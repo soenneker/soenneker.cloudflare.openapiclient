@@ -282,24 +282,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("content%2Estartswith")]
             public string ContentStartswith { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("direction")]
-            public string? Direction { get; set; }
-#nullable restore
-#else
-            [QueryParameter("direction")]
-            public string Direction { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_direction? Direction { get; set; }
             [QueryParameter("match")]
-            public string? Match { get; set; }
-#nullable restore
-#else
-            [QueryParameter("match")]
-            public string Match { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_match? Match { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -345,15 +331,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("name%2Estartswith")]
             public string NameStartswith { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("order")]
-            public string? Order { get; set; }
-#nullable restore
-#else
-            [QueryParameter("order")]
-            public string Order { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_order? Order { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page")]
@@ -435,15 +414,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("tag%2Eexact")]
             public string TagExact { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("tag_match")]
-            public string? TagMatch { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tag_match")]
-            public string TagMatch { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_tag_match? TagMatch { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tag%2Epresent")]
@@ -462,15 +434,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             [QueryParameter("tag%2Estartswith")]
             public string TagStartswith { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_type? Type { get; set; }
         }
     }
 }

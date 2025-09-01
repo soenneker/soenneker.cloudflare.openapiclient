@@ -144,15 +144,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns
             [QueryParameter("sort")]
             public string Sort { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("time_delta")]
-            public string? TimeDelta { get; set; }
-#nullable restore
-#else
-            [QueryParameter("time_delta")]
-            public string TimeDelta { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_time_delta? TimeDelta { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("until")]

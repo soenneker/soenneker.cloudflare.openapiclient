@@ -18,13 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_bundle_method? BundleMethod { get; set; }
         /// <summary>The Certificate Authority that will issue the certificate</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CertificateAuthority { get; set; }
-#nullable restore
-#else
-        public string CertificateAuthority { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_authority? CertificateAuthority { get; set; }
         /// <summary>Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true</summary>
         public bool? CloudflareBranding { get; set; }
         /// <summary>Array of custom certificate and key pairs (1 or 2 pairs allowed)</summary>
@@ -98,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_bundle_method>(); } },
-                { "certificate_authority", n => { CertificateAuthority = n.GetStringValue(); } },
+                { "certificate_authority", n => { CertificateAuthority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_authority>(); } },
                 { "cloudflare_branding", n => { CloudflareBranding = n.GetBoolValue(); } },
                 { "custom_cert_bundle", n => { CustomCertBundle = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_cert_and_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_cert_and_key.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "custom_certificate", n => { CustomCertificate = n.GetStringValue(); } },
@@ -117,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_sslpost_bundle_method>("bundle_method", BundleMethod);
-            writer.WriteStringValue("certificate_authority", CertificateAuthority);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_authority>("certificate_authority", CertificateAuthority);
             writer.WriteBoolValue("cloudflare_branding", CloudflareBranding);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_cert_and_key>("custom_cert_bundle", CustomCertBundle);
             writer.WriteStringValue("custom_certificate", CustomCertificate);

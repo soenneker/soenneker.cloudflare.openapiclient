@@ -31,13 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Priority { get; set; }
 #endif
         /// <summary>The status of the Page Rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status? Status { get; set; }
         /// <summary>The rule targets to evaluate on each request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Page_rules_edit_a_page_rule()
         {
             AdditionalData = new Dictionary<string, object>();
+            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status.Disabled;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_edit_a_page_rule.WithPagerule_>(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_edit_a_page_rule.WithPagerule_.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "priority", n => { Priority = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>(); } },
                 { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -86,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_rules_edit_a_page_rule.WithPagerule_>("actions", Actions);
             writer.WriteStringValue("priority", Priority);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_status>("status", Status);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_target>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }

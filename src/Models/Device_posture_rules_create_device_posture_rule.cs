@@ -63,13 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Schedule { get; set; }
 #endif
         /// <summary>The type of device posture rule.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Device_posture_rules_create_device_posture_rule"/> and sets the default values.
         /// </summary>
@@ -101,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "match", n => { Match = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>(); } },
             };
         }
         /// <summary>
@@ -117,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item>("match", Match);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("schedule", Schedule);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

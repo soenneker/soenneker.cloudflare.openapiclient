@@ -59,13 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The number of packets captured.</summary>
         public int? PacketsCaptured { get; set; }
         /// <summary>The status of the packet capture request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status? Status { get; set; }
         /// <summary>The RFC 3339 timestamp when stopping the packet capture was requested. This field only applies to `full` packet captures.</summary>
         public DateTimeOffset? StopRequested { get; set; }
         /// <summary>The RFC 3339 timestamp when the packet capture was created.</summary>
@@ -77,23 +71,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Submitted { get; set; }
 #endif
         /// <summary>The system used to collect packet captures.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? System { get; set; }
-#nullable restore
-#else
-        public string System { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system? System { get; set; }
         /// <summary>The packet capture duration in seconds.</summary>
         public double? TimeLimit { get; set; }
         /// <summary>The type of packet capture. `Simple` captures sampled packets, and `full` captures entire payloads and non-sampled packets.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_response_full"/> and sets the default values.
         /// </summary>
@@ -126,12 +108,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "filter_v1", n => { FilterV1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_filter_v1>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_filter_v1.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "packets_captured", n => { PacketsCaptured = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status>(); } },
                 { "stop_requested", n => { StopRequested = n.GetDateTimeOffsetValue(); } },
                 { "submitted", n => { Submitted = n.GetStringValue(); } },
-                { "system", n => { System = n.GetStringValue(); } },
+                { "system", n => { System = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system>(); } },
                 { "time_limit", n => { TimeLimit = n.GetDoubleValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type>(); } },
             };
         }
         /// <summary>
@@ -148,12 +130,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_filter_v1>("filter_v1", FilterV1);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("packets_captured", PacketsCaptured);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_status>("status", Status);
             writer.WriteDateTimeOffsetValue("stop_requested", StopRequested);
             writer.WriteStringValue("submitted", Submitted);
-            writer.WriteStringValue("system", System);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_system>("system", System);
             writer.WriteDoubleValue("time_limit", TimeLimit);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_pcaps_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

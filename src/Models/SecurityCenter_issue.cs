@@ -33,13 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string IssueClass { get; set; }
 #endif
         /// <summary>The issue_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IssueType { get; set; }
-#nullable restore
-#else
-        public string IssueType { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType? IssueType { get; set; }
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -106,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dismissed", n => { Dismissed = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "issue_class", n => { IssueClass = n.GetStringValue(); } },
-                { "issue_type", n => { IssueType = n.GetStringValue(); } },
+                { "issue_type", n => { IssueType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType>(); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue_payload>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue_payload.CreateFromDiscriminatorValue); } },
                 { "resolve_link", n => { ResolveLink = n.GetStringValue(); } },
                 { "resolve_text", n => { ResolveText = n.GetStringValue(); } },
@@ -126,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("dismissed", Dismissed);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("issue_class", IssueClass);
-            writer.WriteStringValue("issue_type", IssueType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType>("issue_type", IssueType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue_payload>("payload", Payload);
             writer.WriteStringValue("resolve_link", ResolveLink);
             writer.WriteStringValue("resolve_text", ResolveText);

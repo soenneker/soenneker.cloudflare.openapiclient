@@ -39,13 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The risk_level property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RiskLevel { get; set; }
-#nullable restore
-#else
-        public string RiskLevel { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel? RiskLevel { get; set; }
         /// <summary>The timestamp property</summary>
         public DateTimeOffset? Timestamp { get; set; }
         /// <summary>
@@ -76,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "event_details", n => { EventDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "risk_level", n => { RiskLevel = n.GetStringValue(); } },
+                { "risk_level", n => { RiskLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -90,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskEvent_event_details>("event_details", EventDetails);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("risk_level", RiskLevel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_RiskLevel>("risk_level", RiskLevel);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -83,13 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The number of retries to attempt in case of a timeout before marking the origin as unhealthy. Retries are attempted immediately.</summary>
         public int? Retries { get; set; }
         /// <summary>The current status of the origin server according to the health check.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status? Status { get; private set; }
         /// <summary>If suspended, no health checks are sent to the origin.</summary>
         public bool? Suspended { get; set; }
         /// <summary>Parameters specific to TCP health check.</summary>
@@ -148,7 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "retries", n => { Retries = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_status>(); } },
                 { "suspended", n => { Suspended = n.GetBoolValue(); } },
                 { "tcp_config", n => { TcpConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config.CreateFromDiscriminatorValue); } },
                 { "timeout", n => { Timeout = n.GetIntValue(); } },
@@ -175,7 +169,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("retries", Retries);
-            writer.WriteStringValue("status", Status);
             writer.WriteBoolValue("suspended", Suspended);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Healthchecks_tcp_config>("tcp_config", TcpConfig);
             writer.WriteIntValue("timeout", Timeout);
