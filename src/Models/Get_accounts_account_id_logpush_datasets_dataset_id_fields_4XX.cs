@@ -18,28 +18,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_errors? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_errors? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_errors Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_errors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_messages? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_messages Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_result Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -68,9 +68,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_errors.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_messages.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -81,9 +81,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_messages>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommonFailure_result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
