@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Secondary_dns_api_response_single : IAdditionalDataHolder, IParsable
+    public partial class Observatory_api_response_common : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,37 +17,37 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item> Messages { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_api_response_single"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_common"/> and sets the default values.
         /// </summary>
-        public Secondary_dns_api_response_single()
+        public Observatory_api_response_common()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_api_response_single"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_common"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_api_response_single CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_common CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_api_response_single();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_common();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,8 +57,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -69,8 +69,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_messages_item>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_messages_item>("messages", Messages);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
