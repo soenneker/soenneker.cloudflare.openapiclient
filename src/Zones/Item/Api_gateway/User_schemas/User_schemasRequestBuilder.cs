@@ -172,15 +172,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas
             /// <summary>Maximum number of results per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("validation_enabled")]
-            public string? ValidationEnabled { get; set; }
-#nullable restore
-#else
-            [QueryParameter("validation_enabled")]
-            public string ValidationEnabled { get; set; }
-#endif
+            public bool? ValidationEnabled { get; set; }
         }
     }
 }

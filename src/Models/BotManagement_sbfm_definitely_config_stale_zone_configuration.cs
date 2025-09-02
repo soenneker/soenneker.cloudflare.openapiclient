@@ -15,15 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fight_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FightMode { get; set; }
-#nullable restore
-#else
-        public string FightMode { get; set; }
-#endif
-        /// <summary>The sbfm_likely_automated property</summary>
+        /// <summary>Indicates that the zone&apos;s Bot Fight Mode is turned on.</summary>
+        public bool? FightMode { get; set; }
+        /// <summary>Indicates that the zone&apos;s likely automated requests are being blocked or challenged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SbfmLikelyAutomated { get; set; }
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "fight_mode", n => { FightMode = n.GetStringValue(); } },
+                { "fight_mode", n => { FightMode = n.GetBoolValue(); } },
                 { "sbfm_likely_automated", n => { SbfmLikelyAutomated = n.GetStringValue(); } },
             };
         }
@@ -67,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("fight_mode", FightMode);
+            writer.WriteBoolValue("fight_mode", FightMode);
             writer.WriteStringValue("sbfm_likely_automated", SbfmLikelyAutomated);
             writer.WriteAdditionalData(AdditionalData);
         }

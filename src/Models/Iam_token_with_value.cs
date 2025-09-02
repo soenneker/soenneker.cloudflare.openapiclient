@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Iam_token_with_value : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_base, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The value property</summary>
+        /// <summary>The token value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

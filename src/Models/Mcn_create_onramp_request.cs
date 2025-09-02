@@ -19,18 +19,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The attached_hubs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttachedHubs { get; set; }
+        public List<Guid?>? AttachedHubs { get; set; }
 #nullable restore
 #else
-        public List<string> AttachedHubs { get; set; }
+        public List<Guid?> AttachedHubs { get; set; }
 #endif
         /// <summary>The attached_vpcs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttachedVpcs { get; set; }
+        public List<Guid?>? AttachedVpcs { get; set; }
 #nullable restore
 #else
-        public List<string> AttachedVpcs { get; set; }
+        public List<Guid?> AttachedVpcs { get; set; }
 #endif
         /// <summary>The cloud_type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type? CloudType { get; set; }
@@ -98,8 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "adopted_hub_id", n => { AdoptedHubId = n.GetGuidValue(); } },
-                { "attached_hubs", n => { AttachedHubs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "attached_vpcs", n => { AttachedVpcs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "attached_hubs", n => { AttachedHubs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "attached_vpcs", n => { AttachedVpcs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "cloud_type", n => { CloudType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "hub_provider_id", n => { HubProviderId = n.GetGuidValue(); } },
@@ -121,8 +121,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("adopted_hub_id", AdoptedHubId);
-            writer.WriteCollectionOfPrimitiveValues<string>("attached_hubs", AttachedHubs);
-            writer.WriteCollectionOfPrimitiveValues<string>("attached_vpcs", AttachedVpcs);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_hubs", AttachedHubs);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_vpcs", AttachedVpcs);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>("cloud_type", CloudType);
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("hub_provider_id", HubProviderId);

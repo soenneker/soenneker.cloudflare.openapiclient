@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Iam_response_single_value : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingle, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The result property</summary>
+        /// <summary>The token value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Result { get; set; }

@@ -12,22 +12,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zone_cache_settings_start_cache_reserve_clear_200_result : global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The end_ts property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EndTs { get; set; }
-#nullable restore
-#else
-        public string EndTs { get; set; }
-#endif
-        /// <summary>The start_ts property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StartTs { get; set; }
-#nullable restore
-#else
-        public string StartTs { get; set; }
-#endif
+        /// <summary>The time that the latest Cache Reserve Clear operation completed.</summary>
+        public DateTimeOffset? EndTs { get; set; }
+        /// <summary>The time that the latest Cache Reserve Clear operation started.</summary>
+        public DateTimeOffset? StartTs { get; set; }
         /// <summary>The current state of the Cache Reserve Clear operation.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state? State { get; set; }
         /// <summary>
@@ -48,8 +36,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "end_ts", n => { EndTs = n.GetStringValue(); } },
-                { "start_ts", n => { StartTs = n.GetStringValue(); } },
+                { "end_ts", n => { EndTs = n.GetDateTimeOffsetValue(); } },
+                { "start_ts", n => { StartTs = n.GetDateTimeOffsetValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>(); } },
             };
         }
@@ -61,8 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("end_ts", EndTs);
-            writer.WriteStringValue("start_ts", StartTs);
+            writer.WriteDateTimeOffsetValue("end_ts", EndTs);
+            writer.WriteDateTimeOffsetValue("start_ts", StartTs);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>("state", State);
         }
     }

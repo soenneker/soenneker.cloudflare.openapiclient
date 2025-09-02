@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasConfig_request Config { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the device managed network. This name must be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

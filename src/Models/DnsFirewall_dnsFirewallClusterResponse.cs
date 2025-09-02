@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> DnsFirewallIps { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -28,14 +28,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The modified_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifiedOn { get; set; }
-#nullable restore
-#else
-        public string ModifiedOn { get; set; }
-#endif
+        /// <summary>Last modification of DNS Firewall cluster</summary>
+        public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dns_firewall_ips", n => { DnsFirewallIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },
+                { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("dns_firewall_ips", DnsFirewallIps);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("modified_on", ModifiedOn);
+            writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
         }
     }
 }

@@ -16,17 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Toggle on if you would like Cloudflare to automatically advertise the IP Prefixes within the rule via Magic Transit when the rule is triggered. Only available for users of Magic Transit.</summary>
         public bool? AutomaticAdvertisement { get; set; }
-        /// <summary>The bandwidth property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Bandwidth { get; set; }
-#nullable restore
-#else
-        public string Bandwidth { get; set; }
-#endif
+        /// <summary>The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.</summary>
+        public double? Bandwidth { get; set; }
         /// <summary>The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values [&quot;1m&quot;,&quot;5m&quot;,&quot;10m&quot;,&quot;15m&quot;,&quot;20m&quot;,&quot;30m&quot;,&quot;45m&quot;,&quot;60m&quot;].</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration? Duration { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -34,14 +28,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The packet_threshold property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PacketThreshold { get; set; }
-#nullable restore
-#else
-        public string PacketThreshold { get; set; }
-#endif
+        /// <summary>The number of packets per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.</summary>
+        public double? PacketThreshold { get; set; }
         /// <summary>The prefixes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "automatic_advertisement", n => { AutomaticAdvertisement = n.GetBoolValue(); } },
-                { "bandwidth", n => { Bandwidth = n.GetStringValue(); } },
+                { "bandwidth", n => { Bandwidth = n.GetDoubleValue(); } },
                 { "duration", n => { Duration = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "packet_threshold", n => { PacketThreshold = n.GetStringValue(); } },
+                { "packet_threshold", n => { PacketThreshold = n.GetDoubleValue(); } },
                 { "prefixes", n => { Prefixes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -92,10 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("automatic_advertisement", AutomaticAdvertisement);
-            writer.WriteStringValue("bandwidth", Bandwidth);
+            writer.WriteDoubleValue("bandwidth", Bandwidth);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>("duration", Duration);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("packet_threshold", PacketThreshold);
+            writer.WriteDoubleValue("packet_threshold", PacketThreshold);
             writer.WriteCollectionOfPrimitiveValues<string>("prefixes", Prefixes);
             writer.WriteAdditionalData(AdditionalData);
         }

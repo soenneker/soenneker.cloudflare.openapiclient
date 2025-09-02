@@ -14,15 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allow_authenticate_via_warp property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AllowAuthenticateViaWarp { get; set; }
-#nullable restore
-#else
-        public string AllowAuthenticateViaWarp { get; set; }
-#endif
-        /// <summary>The auth_domain property</summary>
+        /// <summary>When set to true, users can authenticate via WARP for any application in your organization. Application settings will take precedence over this value.</summary>
+        public bool? AllowAuthenticateViaWarp { get; set; }
+        /// <summary>The unique subdomain assigned to your Zero Trust organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthDomain { get; set; }
@@ -30,14 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string AuthDomain { get; set; }
 #endif
-        /// <summary>The auto_redirect_to_identity property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AutoRedirectToIdentity { get; set; }
-#nullable restore
-#else
-        public string AutoRedirectToIdentity { get; set; }
-#endif
+        /// <summary>When set to `true`, users skip the identity provider selection step during login.</summary>
+        public bool? AutoRedirectToIdentity { get; set; }
         /// <summary>The custom_pages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,14 +34,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_pages CustomPages { get; set; }
 #endif
-        /// <summary>The is_ui_read_only property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IsUiReadOnly { get; set; }
-#nullable restore
-#else
-        public string IsUiReadOnly { get; set; }
-#endif
+        /// <summary>Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.</summary>
+        public bool? IsUiReadOnly { get; set; }
         /// <summary>The login_design property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design LoginDesign { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of your Zero Trust organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -70,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The session_duration property</summary>
+        /// <summary>The amount of time that tokens issued for applications will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionDuration { get; set; }
@@ -78,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SessionDuration { get; set; }
 #endif
-        /// <summary>The ui_read_only_toggle_reason property</summary>
+        /// <summary>A description of the reason why the UI read only field is being toggled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UiReadOnlyToggleReason { get; set; }
@@ -86,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string UiReadOnlyToggleReason { get; set; }
 #endif
-        /// <summary>The user_seat_expiration_inactive_time property</summary>
+        /// <summary>The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserSeatExpirationInactiveTime { get; set; }
@@ -94,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string UserSeatExpirationInactiveTime { get; set; }
 #endif
-        /// <summary>The warp_auth_session_duration property</summary>
+        /// <summary>The amount of time that tokens issued for applications will be valid. Must be in the format `30m` or `2h45m`. Valid time units are: m, h.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WarpAuthSessionDuration { get; set; }
@@ -127,11 +109,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allow_authenticate_via_warp", n => { AllowAuthenticateViaWarp = n.GetStringValue(); } },
+                { "allow_authenticate_via_warp", n => { AllowAuthenticateViaWarp = n.GetBoolValue(); } },
                 { "auth_domain", n => { AuthDomain = n.GetStringValue(); } },
-                { "auto_redirect_to_identity", n => { AutoRedirectToIdentity = n.GetStringValue(); } },
+                { "auto_redirect_to_identity", n => { AutoRedirectToIdentity = n.GetBoolValue(); } },
                 { "custom_pages", n => { CustomPages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_pages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_pages.CreateFromDiscriminatorValue); } },
-                { "is_ui_read_only", n => { IsUiReadOnly = n.GetStringValue(); } },
+                { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
                 { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
@@ -147,11 +129,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("allow_authenticate_via_warp", AllowAuthenticateViaWarp);
+            writer.WriteBoolValue("allow_authenticate_via_warp", AllowAuthenticateViaWarp);
             writer.WriteStringValue("auth_domain", AuthDomain);
-            writer.WriteStringValue("auto_redirect_to_identity", AutoRedirectToIdentity);
+            writer.WriteBoolValue("auto_redirect_to_identity", AutoRedirectToIdentity);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_pages>("custom_pages", CustomPages);
-            writer.WriteStringValue("is_ui_read_only", IsUiReadOnly);
+            writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design>("login_design", LoginDesign);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("session_duration", SessionDuration);

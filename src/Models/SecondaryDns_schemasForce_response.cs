@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class SecondaryDns_schemasForce_response : global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_apiResponseSingle, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The result property</summary>
+        /// <summary>When force_notify query parameter is set to true, the response is a simple string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Result { get; set; }

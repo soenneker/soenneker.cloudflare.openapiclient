@@ -14,14 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The frequency property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Frequency { get; set; }
-#nullable restore
-#else
-        public string Frequency { get; set; }
-#endif
+        /// <summary>Defines the number of days between each scan (0 = One-off scan).</summary>
+        public double? Frequency { get; set; }
         /// <summary>Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frequency", n => { Frequency = n.GetStringValue(); } },
+                { "frequency", n => { Frequency = n.GetDoubleValue(); } },
                 { "ips", n => { Ips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("frequency", Frequency);
+            writer.WriteDoubleValue("frequency", Frequency);
             writer.WriteCollectionOfPrimitiveValues<string>("ips", Ips);
             writer.WriteCollectionOfPrimitiveValues<string>("ports", Ports);
             writer.WriteAdditionalData(AdditionalData);

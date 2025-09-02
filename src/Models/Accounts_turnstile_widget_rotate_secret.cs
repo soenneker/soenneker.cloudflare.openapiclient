@@ -14,14 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The invalidate_immediately property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InvalidateImmediately { get; set; }
-#nullable restore
-#else
-        public string InvalidateImmediately { get; set; }
-#endif
+        /// <summary>If `invalidate_immediately` is set to `false`, the previous secret willremain valid for two hours. Otherwise, the secret is immediatelyinvalidated, and requests using it will be rejected.</summary>
+        public bool? InvalidateImmediately { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_turnstile_widget_rotate_secret"/> and sets the default values.
         /// </summary>
@@ -47,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "invalidate_immediately", n => { InvalidateImmediately = n.GetStringValue(); } },
+                { "invalidate_immediately", n => { InvalidateImmediately = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("invalidate_immediately", InvalidateImmediately);
+            writer.WriteBoolValue("invalidate_immediately", InvalidateImmediately);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

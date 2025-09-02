@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom page state.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomPages_state? State { get; set; }
-        /// <summary>The url property</summary>
+        /// <summary>The URL associated with the custom page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

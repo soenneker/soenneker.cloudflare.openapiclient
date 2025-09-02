@@ -24,14 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>The unique identifier for the allow policy.</summary>
+        public int? Id { get; set; }
         /// <summary>Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.Note: This will not exempt messages with Malicious or Suspicious dispositions.</summary>
         public bool? IsAcceptableSender { get; set; }
         /// <summary>Messages to this recipient will bypass all detections.</summary>
@@ -90,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
                 { "is_acceptable_sender", n => { IsAcceptableSender = n.GetBoolValue(); } },
                 { "is_exempt_recipient", n => { IsExemptRecipient = n.GetBoolValue(); } },
                 { "is_recipient", n => { IsRecipient = n.GetBoolValue(); } },
@@ -113,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("is_acceptable_sender", IsAcceptableSender);
             writer.WriteBoolValue("is_exempt_recipient", IsExemptRecipient);
             writer.WriteBoolValue("is_recipient", IsRecipient);

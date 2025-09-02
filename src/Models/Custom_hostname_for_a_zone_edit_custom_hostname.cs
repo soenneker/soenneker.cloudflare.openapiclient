@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_metadata CustomMetadata { get; set; }
 #endif
-        /// <summary>The custom_origin_server property</summary>
+        /// <summary>a valid hostname that’s been added to your DNS zone as an A, AAAA, or CNAME record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomOriginServer { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CustomOriginServer { get; set; }
 #endif
-        /// <summary>The custom_origin_sni property</summary>
+        /// <summary>A hostname that will be sent to your custom origin server as SNI for TLS handshake. This can be a valid subdomain of the zone or custom origin server name or the string &apos;:request_host_header:&apos; which will cause the host header in the request to be used as SNI. Not configurable with default/fallback origin server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomOriginSni { get; set; }

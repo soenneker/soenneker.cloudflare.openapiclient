@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comment property</summary>
+        /// <summary>Optional remark describing the virtual network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment { get; set; }
@@ -25,15 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>If `true`, this virtual network is the default for the account.</summary>
         [Obsolete("")]
         public bool? IsDefault { get; set; }
-        /// <summary>The is_default_network property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IsDefaultNetwork { get; set; }
-#nullable restore
-#else
-        public string IsDefaultNetwork { get; set; }
-#endif
-        /// <summary>The name property</summary>
+        /// <summary>If `true`, this virtual network is the default for the account.</summary>
+        public bool? IsDefaultNetwork { get; set; }
+        /// <summary>A user-friendly name for the virtual network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -68,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
-                { "is_default_network", n => { IsDefaultNetwork = n.GetStringValue(); } },
+                { "is_default_network", n => { IsDefaultNetwork = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -81,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
             writer.WriteBoolValue("is_default", IsDefault);
-            writer.WriteStringValue("is_default_network", IsDefaultNetwork);
+            writer.WriteBoolValue("is_default_network", IsDefaultNetwork);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

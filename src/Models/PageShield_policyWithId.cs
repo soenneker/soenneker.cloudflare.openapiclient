@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class PageShield_policyWithId : global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_policy, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The id property</summary>
+        /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? CommentModifiedOn { get; private set; }
         /// <summary>When the record was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
-        /// <summary>The id property</summary>
+        /// <summary>Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

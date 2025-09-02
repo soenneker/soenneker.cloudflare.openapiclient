@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Ip_address_management_prefixes_upload_loa_document_4XX_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
+        /// <summary>Identifier of a Cloudflare account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountId { get; set; }
@@ -23,14 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Created { get; set; }
-#nullable restore
-#else
-        public string Created { get; set; }
-#endif
-        /// <summary>The filename property</summary>
+        public DateTimeOffset? Created { get; set; }
+        /// <summary>Name of LOA document. Max file size 10MB, and supported filetype is pdf.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Filename { get; set; }
@@ -46,22 +40,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The size_bytes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SizeBytes { get; set; }
-#nullable restore
-#else
-        public string SizeBytes { get; set; }
-#endif
-        /// <summary>The verified property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Verified { get; set; }
-#nullable restore
-#else
-        public string Verified { get; set; }
-#endif
+        /// <summary>File size of the uploaded LOA document.</summary>
+        public int? SizeBytes { get; set; }
+        /// <summary>Whether the LOA has been verified by Cloudflare staff.</summary>
+        public bool? Verified { get; set; }
         /// <summary>Timestamp of the moment the LOA was marked as validated.</summary>
         public DateTimeOffset? VerifiedAt { get; set; }
         /// <summary>
@@ -90,11 +72,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "created", n => { Created = n.GetStringValue(); } },
+                { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "size_bytes", n => { SizeBytes = n.GetStringValue(); } },
-                { "verified", n => { Verified = n.GetStringValue(); } },
+                { "size_bytes", n => { SizeBytes = n.GetIntValue(); } },
+                { "verified", n => { Verified = n.GetBoolValue(); } },
                 { "verified_at", n => { VerifiedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -106,11 +88,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("created", Created);
+            writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("size_bytes", SizeBytes);
-            writer.WriteStringValue("verified", Verified);
+            writer.WriteIntValue("size_bytes", SizeBytes);
+            writer.WriteBoolValue("verified", Verified);
             writer.WriteDateTimeOffsetValue("verified_at", VerifiedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,30 +14,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Enabled { get; set; }
-#nullable restore
-#else
-        public string Enabled { get; set; }
-#endif
-        /// <summary>The use_cloudflare_reporting_endpoint property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UseCloudflareReportingEndpoint { get; set; }
-#nullable restore
-#else
-        public string UseCloudflareReportingEndpoint { get; set; }
-#endif
-        /// <summary>The use_connection_url_path property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UseConnectionUrlPath { get; set; }
-#nullable restore
-#else
-        public string UseConnectionUrlPath { get; set; }
-#endif
+        /// <summary>When true, indicates that Page Shield is enabled.</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>When true, CSP reports will be sent to https://csp-reporting.cloudflare.com/cdn-cgi/script_monitor/report</summary>
+        public bool? UseCloudflareReportingEndpoint { get; set; }
+        /// <summary>When true, the paths associated with connections URLs will also be analyzed.</summary>
+        public bool? UseConnectionUrlPath { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_update_settings"/> and sets the default values.
         /// </summary>
@@ -63,9 +45,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enabled", n => { Enabled = n.GetStringValue(); } },
-                { "use_cloudflare_reporting_endpoint", n => { UseCloudflareReportingEndpoint = n.GetStringValue(); } },
-                { "use_connection_url_path", n => { UseConnectionUrlPath = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "use_cloudflare_reporting_endpoint", n => { UseCloudflareReportingEndpoint = n.GetBoolValue(); } },
+                { "use_connection_url_path", n => { UseConnectionUrlPath = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +57,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("enabled", Enabled);
-            writer.WriteStringValue("use_cloudflare_reporting_endpoint", UseCloudflareReportingEndpoint);
-            writer.WriteStringValue("use_connection_url_path", UseConnectionUrlPath);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("use_cloudflare_reporting_endpoint", UseCloudflareReportingEndpoint);
+            writer.WriteBoolValue("use_connection_url_path", UseConnectionUrlPath);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

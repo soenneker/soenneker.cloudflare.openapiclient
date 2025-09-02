@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
+        /// <summary>The contact email address of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FirstName { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -47,14 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LastName { get; set; }
 #endif
-        /// <summary>The two_factor_authentication_enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TwoFactorAuthenticationEnabled { get; set; }
-#nullable restore
-#else
-        public string TwoFactorAuthenticationEnabled { get; set; }
-#endif
+        /// <summary>Indicates whether two-factor authentication is enabled for the user account. Does not apply to API authentication.</summary>
+        public bool? TwoFactorAuthenticationEnabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_member_with_policies_user"/> and sets the default values.
         /// </summary>
@@ -84,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "first_name", n => { FirstName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_name", n => { LastName = n.GetStringValue(); } },
-                { "two_factor_authentication_enabled", n => { TwoFactorAuthenticationEnabled = n.GetStringValue(); } },
+                { "two_factor_authentication_enabled", n => { TwoFactorAuthenticationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -98,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("first_name", FirstName);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_name", LastName);
-            writer.WriteStringValue("two_factor_authentication_enabled", TwoFactorAuthenticationEnabled);
+            writer.WriteBoolValue("two_factor_authentication_enabled", TwoFactorAuthenticationEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

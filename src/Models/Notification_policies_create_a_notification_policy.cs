@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alert_interval property</summary>
+        /// <summary>Optional specification of how often to re-alert from the same incident, not support on all alert types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlertInterval { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Refers to which event will trigger a Notification dispatch. You can use the endpoint to get available alert types which then will give you a list of possible values.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type? AlertType { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Optional description for the Notification policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -32,14 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Enabled { get; set; }
-#nullable restore
-#else
-        public string Enabled { get; set; }
-#endif
+        /// <summary>Whether or not the Notification policy is enabled.</summary>
+        public bool? Enabled { get; set; }
         /// <summary>Optional filters that allow you to be alerted only on a subset of events for that alert type based on some criteria. This is only available for select alert types. See alert type documentation for more details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanisms Mechanisms { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -92,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "alert_interval", n => { AlertInterval = n.GetStringValue(); } },
                 { "alert_type", n => { AlertType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters.CreateFromDiscriminatorValue); } },
                 { "mechanisms", n => { Mechanisms = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanisms>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanisms.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -108,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("alert_interval", AlertInterval);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_alert_type>("alert_type", AlertType);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("enabled", Enabled);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters>("filters", Filters);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_mechanisms>("mechanisms", Mechanisms);
             writer.WriteStringValue("name", Name);

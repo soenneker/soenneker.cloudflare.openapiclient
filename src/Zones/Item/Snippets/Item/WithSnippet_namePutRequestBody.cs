@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The main_module property</summary>
+        /// <summary>Name of the file that contains the main module of the snippet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MainModule { get; set; }

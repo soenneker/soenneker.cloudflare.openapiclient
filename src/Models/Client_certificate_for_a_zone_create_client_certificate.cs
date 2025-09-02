@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The csr property</summary>
+        /// <summary>The Certificate Signing Request (CSR). Must be newline-encoded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Csr { get; set; }
@@ -22,14 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Csr { get; set; }
 #endif
-        /// <summary>The validity_days property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ValidityDays { get; set; }
-#nullable restore
-#else
-        public string ValidityDays { get; set; }
-#endif
+        /// <summary>The number of days the Client Certificate will be valid after the issued_on date</summary>
+        public int? ValidityDays { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Client_certificate_for_a_zone_create_client_certificate"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "csr", n => { Csr = n.GetStringValue(); } },
-                { "validity_days", n => { ValidityDays = n.GetStringValue(); } },
+                { "validity_days", n => { ValidityDays = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("csr", Csr);
-            writer.WriteStringValue("validity_days", ValidityDays);
+            writer.WriteIntValue("validity_days", ValidityDays);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

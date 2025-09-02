@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule.Lockdowns> Configurations { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>An informative summary of the rule. This value is sanitized and any tags will be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,22 +30,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The paused property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Paused { get; set; }
-#nullable restore
-#else
-        public string Paused { get; set; }
-#endif
-        /// <summary>The priority property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Priority { get; set; }
-#nullable restore
-#else
-        public string Priority { get; set; }
-#endif
+        /// <summary>When true, indicates that the rule is currently paused.</summary>
+        public bool? Paused { get; set; }
+        /// <summary>The priority of the rule to control the processing order. A lower number indicates higher priority. If not provided, any rules with a configured priority will be processed before rules without a priority.</summary>
+        public double? Priority { get; set; }
         /// <summary>The URLs to include in the current WAF override. You can use wildcards. Each entered URL will be escaped before use, which means you can only use simple wildcard patterns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,8 +69,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule.Lockdowns>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule.Lockdowns.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "paused", n => { Paused = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetStringValue(); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -95,8 +83,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule.Lockdowns>("configurations", Configurations);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("paused", Paused);
-            writer.WriteStringValue("priority", Priority);
+            writer.WriteBoolValue("paused", Paused);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);
         }

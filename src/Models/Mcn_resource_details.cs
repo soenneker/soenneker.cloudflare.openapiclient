@@ -81,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The provider_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ProviderIds { get; set; }
+        public List<Guid?>? ProviderIds { get; set; }
 #nullable restore
 #else
-        public List<string> ProviderIds { get; set; }
+        public List<Guid?> ProviderIds { get; set; }
 #endif
         /// <summary>The provider_names_by_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -188,7 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "native_id", n => { NativeId = n.GetStringValue(); } },
                 { "observations", n => { Observations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_observations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_observations.CreateFromDiscriminatorValue); } },
-                { "provider_ids", n => { ProviderIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "provider_ids", n => { ProviderIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "provider_names_by_id", n => { ProviderNamesById = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_provider_names_by_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_provider_names_by_id.CreateFromDiscriminatorValue); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "resource_group", n => { ResourceGroup = n.GetStringValue(); } },
@@ -218,7 +218,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("native_id", NativeId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_observations>("observations", Observations);
-            writer.WriteCollectionOfPrimitiveValues<string>("provider_ids", ProviderIds);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("provider_ids", ProviderIds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_resource_details_provider_names_by_id>("provider_names_by_id", ProviderNamesById);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("resource_group", ResourceGroup);

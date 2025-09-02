@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
 #else
         public string BodyPart { get; set; }
 #endif
-        /// <summary>The compatibility_date property</summary>
+        /// <summary>Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompatibilityDate { get; set; }
@@ -74,14 +74,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_limits Limits { get; set; }
 #endif
-        /// <summary>The logpush property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Logpush { get; set; }
-#nullable restore
-#else
-        public string Logpush { get; set; }
-#endif
+        /// <summary>Whether Logpush is turned on for the Worker.</summary>
+        public bool? Logpush { get; set; }
         /// <summary>Name of the part in the multipart request that contains the main module (e.g. the file exporting a `fetch` handler). Indicates a `module syntax` Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,7 +160,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
                 { "keep_assets", n => { KeepAssets = n.GetBoolValue(); } },
                 { "keep_bindings", n => { KeepBindings = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_limits>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_limits.CreateFromDiscriminatorValue); } },
-                { "logpush", n => { Logpush = n.GetStringValue(); } },
+                { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "main_module", n => { MainModule = n.GetStringValue(); } },
                 { "migrations", n => { Migrations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.Workers_multipartScriptPutRequestBody.Workers_multipartScriptPutRequestBody_migrations>(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.Workers_multipartScriptPutRequestBody.Workers_multipartScriptPutRequestBody_migrations.CreateFromDiscriminatorValue); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability.CreateFromDiscriminatorValue); } },
@@ -191,7 +185,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
             writer.WriteBoolValue("keep_assets", KeepAssets);
             writer.WriteCollectionOfPrimitiveValues<string>("keep_bindings", KeepBindings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_limits>("limits", Limits);
-            writer.WriteStringValue("logpush", Logpush);
+            writer.WriteBoolValue("logpush", Logpush);
             writer.WriteStringValue("main_module", MainModule);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.Workers_multipartScriptPutRequestBody.Workers_multipartScriptPutRequestBody_migrations>("migrations", Migrations);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability>("observability", Observability);

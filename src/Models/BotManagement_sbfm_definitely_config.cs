@@ -12,24 +12,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class BotManagement_sbfm_definitely_config : global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_base_config, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The optimize_wordpress property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OptimizeWordpress { get; set; }
-#nullable restore
-#else
-        public string OptimizeWordpress { get; set; }
-#endif
+        /// <summary>Whether to optimize Super Bot Fight Mode protections for Wordpress.</summary>
+        public bool? OptimizeWordpress { get; set; }
         /// <summary>Super Bot Fight Mode (SBFM) action to take on definitely automated requests.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated? SbfmDefinitelyAutomated { get; set; }
-        /// <summary>The sbfm_static_resource_protection property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SbfmStaticResourceProtection { get; set; }
-#nullable restore
-#else
-        public string SbfmStaticResourceProtection { get; set; }
-#endif
+        /// <summary>Super Bot Fight Mode (SBFM) to enable static resource protection.Enable if static resources on your application need bot protection.Note: Static resource protection can also result in legitimate traffic being blocked.</summary>
+        public bool? SbfmStaticResourceProtection { get; set; }
         /// <summary>Super Bot Fight Mode (SBFM) action to take on verified bots requests.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots? SbfmVerifiedBots { get; set; }
         /// <summary>A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.</summary>
@@ -58,9 +46,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "optimize_wordpress", n => { OptimizeWordpress = n.GetStringValue(); } },
+                { "optimize_wordpress", n => { OptimizeWordpress = n.GetBoolValue(); } },
                 { "sbfm_definitely_automated", n => { SbfmDefinitelyAutomated = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated>(); } },
-                { "sbfm_static_resource_protection", n => { SbfmStaticResourceProtection = n.GetStringValue(); } },
+                { "sbfm_static_resource_protection", n => { SbfmStaticResourceProtection = n.GetBoolValue(); } },
                 { "sbfm_verified_bots", n => { SbfmVerifiedBots = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots>(); } },
                 { "stale_zone_configuration", n => { StaleZoneConfiguration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config_stale_zone_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config_stale_zone_configuration.CreateFromDiscriminatorValue); } },
             };
@@ -73,9 +61,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("optimize_wordpress", OptimizeWordpress);
+            writer.WriteBoolValue("optimize_wordpress", OptimizeWordpress);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_automated>("sbfm_definitely_automated", SbfmDefinitelyAutomated);
-            writer.WriteStringValue("sbfm_static_resource_protection", SbfmStaticResourceProtection);
+            writer.WriteBoolValue("sbfm_static_resource_protection", SbfmStaticResourceProtection);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_verified_bots>("sbfm_verified_bots", SbfmVerifiedBots);
         }
     }

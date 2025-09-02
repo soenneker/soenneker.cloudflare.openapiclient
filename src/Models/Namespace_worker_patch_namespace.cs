@@ -22,14 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The trusted_workers property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TrustedWorkers { get; set; }
-#nullable restore
-#else
-        public string TrustedWorkers { get; set; }
-#endif
+        /// <summary>Whether the Workers in the namespace are executed in a &quot;trusted&quot; manner. When a Worker is trusted, it has access to the shared caches for the zone in the Cache API, and has access to the `request.cf` object on incoming Requests. When a Worker is untrusted, caches are not shared across the zone, and `request.cf` is undefined. By default, Workers in a namespace are &quot;untrusted&quot;.</summary>
+        public bool? TrustedWorkers { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Namespace_worker_patch_namespace"/> and sets the default values.
         /// </summary>
@@ -56,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "trusted_workers", n => { TrustedWorkers = n.GetStringValue(); } },
+                { "trusted_workers", n => { TrustedWorkers = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("trusted_workers", TrustedWorkers);
+            writer.WriteBoolValue("trusted_workers", TrustedWorkers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

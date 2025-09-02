@@ -14,15 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The expires_on property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExpiresOn { get; set; }
-#nullable restore
-#else
-        public string ExpiresOn { get; set; }
-#endif
-        /// <summary>The id property</summary>
+        /// <summary>The expiration time on or after which the JWT MUST NOT be accepted for processing.</summary>
+        public DateTimeOffset? ExpiresOn { get; set; }
+        /// <summary>Token identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -30,14 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The not_before property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? NotBefore { get; set; }
-#nullable restore
-#else
-        public string NotBefore { get; set; }
-#endif
+        /// <summary>The time before which the token MUST NOT be accepted for processing.</summary>
+        public DateTimeOffset? NotBefore { get; set; }
         /// <summary>Status of the token.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status? Status { get; set; }
         /// <summary>
@@ -65,9 +53,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "expires_on", n => { ExpiresOn = n.GetStringValue(); } },
+                { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "not_before", n => { NotBefore = n.GetStringValue(); } },
+                { "not_before", n => { NotBefore = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>(); } },
             };
         }
@@ -78,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("expires_on", ExpiresOn);
+            writer.WriteDateTimeOffsetValue("expires_on", ExpiresOn);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("not_before", NotBefore);
+            writer.WriteDateTimeOffsetValue("not_before", NotBefore);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_token_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

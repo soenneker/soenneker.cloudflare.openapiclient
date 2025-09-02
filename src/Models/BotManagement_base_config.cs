@@ -18,30 +18,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection? AiBotsProtection { get; set; }
         /// <summary>Enable rule to punish AI Scrapers and Crawlers via a link maze.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection? CrawlerProtection { get; set; }
-        /// <summary>The enable_js property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EnableJs { get; set; }
-#nullable restore
-#else
-        public string EnableJs { get; set; }
-#endif
-        /// <summary>The is_robots_txt_managed property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IsRobotsTxtManaged { get; set; }
-#nullable restore
-#else
-        public string IsRobotsTxtManaged { get; set; }
-#endif
-        /// <summary>The using_latest_model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? UsingLatestModel { get; set; }
-#nullable restore
-#else
-        public string UsingLatestModel { get; set; }
-#endif
+        /// <summary>Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).</summary>
+        public bool? EnableJs { get; set; }
+        /// <summary>Enable cloudflare managed robots.txt. If an existing robots.txt is detected, then managed robots.txt will be prepended to the existing robots.txt.</summary>
+        public bool? IsRobotsTxtManaged { get; set; }
+        /// <summary>A read-only field that indicates whether the zone currently is running the latest ML model.</summary>
+        public bool? UsingLatestModel { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_base_config"/> and sets the default values.
         /// </summary>
@@ -69,9 +51,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "ai_bots_protection", n => { AiBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>(); } },
                 { "crawler_protection", n => { CrawlerProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>(); } },
-                { "enable_js", n => { EnableJs = n.GetStringValue(); } },
-                { "is_robots_txt_managed", n => { IsRobotsTxtManaged = n.GetStringValue(); } },
-                { "using_latest_model", n => { UsingLatestModel = n.GetStringValue(); } },
+                { "enable_js", n => { EnableJs = n.GetBoolValue(); } },
+                { "is_robots_txt_managed", n => { IsRobotsTxtManaged = n.GetBoolValue(); } },
+                { "using_latest_model", n => { UsingLatestModel = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -83,9 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_ai_bots_protection>("ai_bots_protection", AiBotsProtection);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_crawler_protection>("crawler_protection", CrawlerProtection);
-            writer.WriteStringValue("enable_js", EnableJs);
-            writer.WriteStringValue("is_robots_txt_managed", IsRobotsTxtManaged);
-            writer.WriteStringValue("using_latest_model", UsingLatestModel);
+            writer.WriteBoolValue("enable_js", EnableJs);
+            writer.WriteBoolValue("is_robots_txt_managed", IsRobotsTxtManaged);
+            writer.WriteBoolValue("using_latest_model", UsingLatestModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

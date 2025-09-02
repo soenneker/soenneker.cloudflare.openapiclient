@@ -24,14 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>The unique identifier for the allow policy.</summary>
+        public int? Id { get; set; }
         /// <summary>The is_regex property</summary>
         public bool? IsRegex { get; set; }
         /// <summary>The last_modified property</summary>
@@ -73,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetIntValue(); } },
                 { "is_regex", n => { IsRegex = n.GetBoolValue(); } },
                 { "last_modified", n => { LastModified = n.GetDateTimeOffsetValue(); } },
                 { "pattern", n => { Pattern = n.GetStringValue(); } },
@@ -89,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comments", Comments);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("id", Id);
             writer.WriteBoolValue("is_regex", IsRegex);
             writer.WriteDateTimeOffsetValue("last_modified", LastModified);
             writer.WriteStringValue("pattern", Pattern);

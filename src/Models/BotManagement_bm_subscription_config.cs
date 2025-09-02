@@ -12,22 +12,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class BotManagement_bm_subscription_config : global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_base_config, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The auto_update_model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AutoUpdateModel { get; set; }
-#nullable restore
-#else
-        public string AutoUpdateModel { get; set; }
-#endif
-        /// <summary>The bm_cookie_enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BmCookieEnabled { get; set; }
-#nullable restore
-#else
-        public string BmCookieEnabled { get; set; }
-#endif
+        /// <summary>Automatically update to the newest bot detection models created by Cloudflare as they are released. [Learn more.](https://developers.cloudflare.com/bots/reference/machine-learning-models#model-versions-and-release-notes)</summary>
+        public bool? AutoUpdateModel { get; set; }
+        /// <summary>Indicates that the bot management cookie can be placed on end user devices accessing the site. Defaults to true</summary>
+        public bool? BmCookieEnabled { get; set; }
         /// <summary>A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,14 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config_stale_zone_configuration StaleZoneConfiguration { get; private set; }
 #endif
-        /// <summary>The suppress_session_score property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SuppressSessionScore { get; set; }
-#nullable restore
-#else
-        public string SuppressSessionScore { get; set; }
-#endif
+        /// <summary>Whether to disable tracking the highest bot score for a session in the Bot Management cookie.</summary>
+        public bool? SuppressSessionScore { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -62,10 +44,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "auto_update_model", n => { AutoUpdateModel = n.GetStringValue(); } },
-                { "bm_cookie_enabled", n => { BmCookieEnabled = n.GetStringValue(); } },
+                { "auto_update_model", n => { AutoUpdateModel = n.GetBoolValue(); } },
+                { "bm_cookie_enabled", n => { BmCookieEnabled = n.GetBoolValue(); } },
                 { "stale_zone_configuration", n => { StaleZoneConfiguration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config_stale_zone_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config_stale_zone_configuration.CreateFromDiscriminatorValue); } },
-                { "suppress_session_score", n => { SuppressSessionScore = n.GetStringValue(); } },
+                { "suppress_session_score", n => { SuppressSessionScore = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +58,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("auto_update_model", AutoUpdateModel);
-            writer.WriteStringValue("bm_cookie_enabled", BmCookieEnabled);
-            writer.WriteStringValue("suppress_session_score", SuppressSessionScore);
+            writer.WriteBoolValue("auto_update_model", AutoUpdateModel);
+            writer.WriteBoolValue("bm_cookie_enabled", BmCookieEnabled);
+            writer.WriteBoolValue("suppress_session_score", SuppressSessionScore);
         }
     }
 }

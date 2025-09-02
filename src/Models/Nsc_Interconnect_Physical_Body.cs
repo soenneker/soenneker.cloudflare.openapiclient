@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Owner { get; set; }
 #endif
-        /// <summary>The site property</summary>
+        /// <summary>A Cloudflare site name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Site { get; set; }

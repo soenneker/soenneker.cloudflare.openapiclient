@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_policyAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>A description for the policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,15 +24,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Enabled { get; set; }
-#nullable restore
-#else
-        public string Enabled { get; set; }
-#endif
-        /// <summary>The expression property</summary>
+        /// <summary>Whether the policy is enabled</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The expression which must match for the policy to be applied, using the Cloudflare Firewall rule expression syntax</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Expression { get; set; }
@@ -40,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Expression { get; set; }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The policy which will be applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }
@@ -75,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_policyAction>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -89,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PageShield_policyAction>("action", Action);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("enabled", Enabled);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("expression", Expression);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

@@ -14,14 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Count { get; set; }
-#nullable restore
-#else
-        public string Count { get; set; }
-#endif
+        /// <summary>Total number of results</summary>
+        public int? Count { get; set; }
         /// <summary>The issues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,22 +24,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue> Issues { get; set; }
 #endif
-        /// <summary>The page property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Page { get; set; }
-#nullable restore
-#else
-        public string Page { get; set; }
-#endif
-        /// <summary>The per_page property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PerPage { get; set; }
-#nullable restore
-#else
-        public string PerPage { get; set; }
-#endif
+        /// <summary>Current page within paginated list of results</summary>
+        public int? Page { get; set; }
+        /// <summary>Number of results per page of results</summary>
+        public int? PerPage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200_result"/> and sets the default values.
         /// </summary>
@@ -71,10 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "count", n => { Count = n.GetStringValue(); } },
+                { "count", n => { Count = n.GetIntValue(); } },
                 { "issues", n => { Issues = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "page", n => { Page = n.GetStringValue(); } },
-                { "per_page", n => { PerPage = n.GetStringValue(); } },
+                { "page", n => { Page = n.GetIntValue(); } },
+                { "per_page", n => { PerPage = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -84,10 +66,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("count", Count);
+            writer.WriteIntValue("count", Count);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue>("issues", Issues);
-            writer.WriteStringValue("page", Page);
-            writer.WriteStringValue("per_page", PerPage);
+            writer.WriteIntValue("page", Page);
+            writer.WriteIntValue("per_page", PerPage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

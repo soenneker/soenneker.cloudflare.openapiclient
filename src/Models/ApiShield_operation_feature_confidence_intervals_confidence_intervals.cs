@@ -15,13 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last_updated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastUpdated { get; set; }
-#nullable restore
-#else
-        public string LastUpdated { get; set; }
-#endif
+        public DateTimeOffset? LastUpdated { get; set; }
         /// <summary>The suggested_threshold property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "last_updated", n => { LastUpdated = n.GetStringValue(); } },
+                { "last_updated", n => { LastUpdated = n.GetDateTimeOffsetValue(); } },
                 { "suggested_threshold", n => { SuggestedThreshold = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals_confidence_intervals_suggested_threshold>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals_confidence_intervals_suggested_threshold.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("last_updated", LastUpdated);
+            writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_feature_confidence_intervals_confidence_intervals_suggested_threshold>("suggested_threshold", SuggestedThreshold);
             writer.WriteAdditionalData(AdditionalData);
         }

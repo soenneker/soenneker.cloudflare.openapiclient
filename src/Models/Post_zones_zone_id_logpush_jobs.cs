@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the dataset. A list of supported datasets can be found on the [Developer Docs](https://developers.cloudflare.com/logs/reference/log-fields/).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset? Dataset { get; set; }
-        /// <summary>The destination_conf property</summary>
+        /// <summary>Uniquely identifies a resource (such as an s3 bucket) where data. will be pushed. Additional configuration parameters supported by the destination may be included.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationConf { get; set; }
@@ -24,14 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DestinationConf { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Enabled { get; set; }
-#nullable restore
-#else
-        public string Enabled { get; set; }
-#endif
+        /// <summary>Flag that indicates if the job is enabled.</summary>
+        public bool? Enabled { get; set; }
         /// <summary>The filters to select the events to include and/or remove from your logs. For more information, refer to [Filters](https://developers.cloudflare.com/logs/reference/filters/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options OutputOptions { get; set; }
 #endif
-        /// <summary>The ownership_challenge property</summary>
+        /// <summary>Ownership challenge token to prove destination ownership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OwnershipChallenge { get; set; }
@@ -131,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dataset", n => { Dataset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>(); } },
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
@@ -153,7 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset>("dataset", Dataset);
             writer.WriteStringValue("destination_conf", DestinationConf);
-            writer.WriteStringValue("enabled", Enabled);
+            writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("filter", Filter);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);

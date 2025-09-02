@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Frequency { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

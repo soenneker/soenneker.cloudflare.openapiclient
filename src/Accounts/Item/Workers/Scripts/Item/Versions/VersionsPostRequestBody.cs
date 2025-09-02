@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item> Bindings { get; set; }
 #endif
-        /// <summary>The compatibility_date property</summary>
+        /// <summary>Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompatibilityDate { get; set; }

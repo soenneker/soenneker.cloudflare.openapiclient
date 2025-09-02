@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comment property</summary>
+        /// <summary>Optional remark describing the route.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment { get; set; }
@@ -22,22 +22,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Comment { get; set; }
 #endif
-        /// <summary>The tunnel_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TunnelId { get; set; }
-#nullable restore
-#else
-        public string TunnelId { get; set; }
-#endif
-        /// <summary>The virtual_network_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VirtualNetworkId { get; set; }
-#nullable restore
-#else
-        public string VirtualNetworkId { get; set; }
-#endif
+        /// <summary>UUID of the tunnel.</summary>
+        public Guid? TunnelId { get; set; }
+        /// <summary>UUID of the virtual network.</summary>
+        public Guid? VirtualNetworkId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_route_create_a_tunnel_route_with_cidr"/> and sets the default values.
         /// </summary>
@@ -64,8 +52,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "comment", n => { Comment = n.GetStringValue(); } },
-                { "tunnel_id", n => { TunnelId = n.GetStringValue(); } },
-                { "virtual_network_id", n => { VirtualNetworkId = n.GetStringValue(); } },
+                { "tunnel_id", n => { TunnelId = n.GetGuidValue(); } },
+                { "virtual_network_id", n => { VirtualNetworkId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -76,8 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("comment", Comment);
-            writer.WriteStringValue("tunnel_id", TunnelId);
-            writer.WriteStringValue("virtual_network_id", VirtualNetworkId);
+            writer.WriteGuidValue("tunnel_id", TunnelId);
+            writer.WriteGuidValue("virtual_network_id", VirtualNetworkId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_?> CheckRegions { get; set; }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>A human-readable description of the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -30,30 +30,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The disabled_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DisabledAt { get; set; }
-#nullable restore
-#else
-        public string DisabledAt { get; set; }
-#endif
-        /// <summary>The enabled property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Enabled { get; set; }
-#nullable restore
-#else
-        public string Enabled { get; set; }
-#endif
-        /// <summary>The latitude property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Latitude { get; set; }
-#nullable restore
-#else
-        public string Latitude { get; set; }
-#endif
+        /// <summary>This field shows up only if the pool is disabled. This field is set with the time the pool was disabled at.</summary>
+        public DateTimeOffset? DisabledAt { get; set; }
+        /// <summary>Whether to enable (the default) or disable this pool. Disabled pools will not receive traffic and are excluded from health checks. Disabling a pool will cause any load balancers using it to failover to the next pool (if any).</summary>
+        public bool? Enabled { get; set; }
+        /// <summary>The latitude of the data center containing the origins used in this pool in decimal degrees. If this is set, longitude must also be set.</summary>
+        public double? Latitude { get; set; }
         /// <summary>Configures load shedding policies and percentages for the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,23 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding LoadShedding { get; set; }
 #endif
-        /// <summary>The longitude property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Longitude { get; set; }
-#nullable restore
-#else
-        public string Longitude { get; set; }
-#endif
-        /// <summary>The minimum_origins property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MinimumOrigins { get; set; }
-#nullable restore
-#else
-        public string MinimumOrigins { get; set; }
-#endif
-        /// <summary>The monitor property</summary>
+        /// <summary>The longitude of the data center containing the origins used in this pool in decimal degrees. If this is set, latitude must also be set.</summary>
+        public double? Longitude { get; set; }
+        /// <summary>The minimum number of origins that must be healthy for this pool to serve traffic. If the number of healthy origins falls below this number, the pool will be marked unhealthy and will failover to the next available pool.</summary>
+        public int? MinimumOrigins { get; set; }
+        /// <summary>The ID of the Monitor to use for checking the health of origins within this pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Monitor { get; set; }
@@ -86,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Monitor { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -102,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Networks { get; set; }
 #endif
-        /// <summary>The notification_email property</summary>
+        /// <summary>This field is now deprecated. It has been moved to Cloudflare&apos;s Centralized Notification service https://developers.cloudflare.com/fundamentals/notifications/. The email address to send health status notifications to. This can be an individual mailbox or a mailing list. Multiple emails can be supplied as a comma delimited list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NotificationEmail { get; set; }
@@ -161,12 +131,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "check_regions", n => { CheckRegions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "disabled_at", n => { DisabledAt = n.GetStringValue(); } },
-                { "enabled", n => { Enabled = n.GetStringValue(); } },
-                { "latitude", n => { Latitude = n.GetStringValue(); } },
+                { "disabled_at", n => { DisabledAt = n.GetDateTimeOffsetValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "latitude", n => { Latitude = n.GetDoubleValue(); } },
                 { "load_shedding", n => { LoadShedding = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding.CreateFromDiscriminatorValue); } },
-                { "longitude", n => { Longitude = n.GetStringValue(); } },
-                { "minimum_origins", n => { MinimumOrigins = n.GetStringValue(); } },
+                { "longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "minimum_origins", n => { MinimumOrigins = n.GetIntValue(); } },
                 { "monitor", n => { Monitor = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networks", n => { Networks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -185,12 +155,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithPool_>("check_regions", CheckRegions);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("disabled_at", DisabledAt);
-            writer.WriteStringValue("enabled", Enabled);
-            writer.WriteStringValue("latitude", Latitude);
+            writer.WriteDateTimeOffsetValue("disabled_at", DisabledAt);
+            writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteDoubleValue("latitude", Latitude);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding>("load_shedding", LoadShedding);
-            writer.WriteStringValue("longitude", Longitude);
-            writer.WriteStringValue("minimum_origins", MinimumOrigins);
+            writer.WriteDoubleValue("longitude", Longitude);
+            writer.WriteIntValue("minimum_origins", MinimumOrigins);
             writer.WriteStringValue("monitor", Monitor);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);

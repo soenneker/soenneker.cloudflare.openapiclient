@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The attached_hubs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttachedHubs { get; set; }
+        public List<Guid?>? AttachedHubs { get; set; }
 #nullable restore
 #else
-        public List<string> AttachedHubs { get; set; }
+        public List<Guid?> AttachedHubs { get; set; }
 #endif
         /// <summary>The attached_vpcs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AttachedVpcs { get; set; }
+        public List<Guid?>? AttachedVpcs { get; set; }
 #nullable restore
 #else
-        public List<string> AttachedVpcs { get; set; }
+        public List<Guid?> AttachedVpcs { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,8 +81,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attached_hubs", n => { AttachedHubs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "attached_vpcs", n => { AttachedVpcs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "attached_hubs", n => { AttachedHubs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "attached_vpcs", n => { AttachedVpcs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "install_routes_in_cloud", n => { InstallRoutesInCloud = n.GetBoolValue(); } },
                 { "install_routes_in_magic_wan", n => { InstallRoutesInMagicWan = n.GetBoolValue(); } },
@@ -99,8 +99,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("attached_hubs", AttachedHubs);
-            writer.WriteCollectionOfPrimitiveValues<string>("attached_vpcs", AttachedVpcs);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_hubs", AttachedHubs);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_vpcs", AttachedVpcs);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("install_routes_in_cloud", InstallRoutesInCloud);
             writer.WriteBoolValue("install_routes_in_magic_wan", InstallRoutesInMagicWan);

@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.BillSubsApi_apiResponseCommonFailure_result Result { get; set; }
 #endif
-        /// <summary>The subscription_id property</summary>
+        /// <summary>Subscription identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionId { get; set; }

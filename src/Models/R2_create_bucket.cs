@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Location of the bucket.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_bucket_location? LocationHint { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

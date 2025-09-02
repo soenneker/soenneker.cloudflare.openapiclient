@@ -12,14 +12,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class SpectrumConfig_app_config : global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_base_app_config, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The argo_smart_routing property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ArgoSmartRouting { get; set; }
-#nullable restore
-#else
-        public string ArgoSmartRouting { get; set; }
-#endif
+        /// <summary>Enables Argo Smart Routing for this application.Notes: Only available for TCP applications with traffic_type set to &quot;direct&quot;.</summary>
+        public bool? ArgoSmartRouting { get; set; }
         /// <summary>The name and type of DNS record for the Spectrum application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,14 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips EdgeIps { get; set; }
 #endif
-        /// <summary>The ip_firewall property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IpFirewall { get; set; }
-#nullable restore
-#else
-        public string IpFirewall { get; set; }
-#endif
+        /// <summary>Enables IP Access Rules for this application.Notes: Only available for TCP applications.</summary>
+        public bool? IpFirewall { get; set; }
         /// <summary>List of origin IP addresses. Array may contain multiple IP addresses for load balancing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port OriginPort { get; set; }
 #endif
-        /// <summary>The protocol property</summary>
+        /// <summary>The port configuration at Cloudflare&apos;s edge. May specify a single port, for example `&quot;tcp/1000&quot;`, or a range of ports, for example `&quot;tcp/1000-2000&quot;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Protocol { get; set; }
@@ -109,10 +97,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "argo_smart_routing", n => { ArgoSmartRouting = n.GetStringValue(); } },
+                { "argo_smart_routing", n => { ArgoSmartRouting = n.GetBoolValue(); } },
                 { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns.CreateFromDiscriminatorValue); } },
                 { "edge_ips", n => { EdgeIps = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips.CreateFromDiscriminatorValue); } },
-                { "ip_firewall", n => { IpFirewall = n.GetStringValue(); } },
+                { "ip_firewall", n => { IpFirewall = n.GetBoolValue(); } },
                 { "origin_direct", n => { OriginDirect = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "origin_dns", n => { OriginDns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns.CreateFromDiscriminatorValue); } },
                 { "origin_port", n => { OriginPort = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>(global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port.CreateFromDiscriminatorValue); } },
@@ -130,10 +118,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("argo_smart_routing", ArgoSmartRouting);
+            writer.WriteBoolValue("argo_smart_routing", ArgoSmartRouting);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_dns>("dns", Dns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_edge_ips>("edge_ips", EdgeIps);
-            writer.WriteStringValue("ip_firewall", IpFirewall);
+            writer.WriteBoolValue("ip_firewall", IpFirewall);
             writer.WriteCollectionOfPrimitiveValues<string>("origin_direct", OriginDirect);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_dns>("origin_dns", OriginDns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SpectrumConfig_origin_port>("origin_port", OriginPort);

@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_tests_response_tests_httpResultsByColo> HttpResultsByColo { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

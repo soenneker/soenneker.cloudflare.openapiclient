@@ -15,15 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The breakout property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Breakout { get; set; }
-#nullable restore
-#else
-        public string Breakout { get; set; }
-#endif
-        /// <summary>The id property</summary>
+        /// <summary>Whether to breakout traffic to the app&apos;s endpoints directly. Null preserves default behavior.</summary>
+        public bool? Breakout { get; set; }
+        /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -31,15 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The priority property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Priority { get; set; }
-#nullable restore
-#else
-        public string Priority { get; set; }
-#endif
-        /// <summary>The site_id property</summary>
+        /// <summary>Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)</summary>
+        public int? Priority { get; set; }
+        /// <summary>Identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SiteId { get; set; }
@@ -72,9 +60,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "breakout", n => { Breakout = n.GetStringValue(); } },
+                { "breakout", n => { Breakout = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "priority", n => { Priority = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
                 { "site_id", n => { SiteId = n.GetStringValue(); } },
             };
         }
@@ -85,9 +73,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("breakout", Breakout);
+            writer.WriteBoolValue("breakout", Breakout);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("priority", Priority);
+            writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("site_id", SiteId);
             writer.WriteAdditionalData(AdditionalData);
         }

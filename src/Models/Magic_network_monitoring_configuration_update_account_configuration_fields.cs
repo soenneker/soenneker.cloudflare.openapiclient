@@ -14,15 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The default_sampling property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DefaultSampling { get; set; }
-#nullable restore
-#else
-        public string DefaultSampling { get; set; }
-#endif
-        /// <summary>The name property</summary>
+        /// <summary>Fallback sampling rate of flow messages being sent in packets per second. This should match the packet sampling rate configured on the router.</summary>
+        public double? DefaultSampling { get; set; }
+        /// <summary>The account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -71,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_sampling", n => { DefaultSampling = n.GetStringValue(); } },
+                { "default_sampling", n => { DefaultSampling = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "router_ips", n => { RouterIps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "warp_devices", n => { WarpDevices = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -84,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("default_sampling", DefaultSampling);
+            writer.WriteDoubleValue("default_sampling", DefaultSampling);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("router_ips", RouterIps);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_config_warp_device>("warp_devices", WarpDevices);

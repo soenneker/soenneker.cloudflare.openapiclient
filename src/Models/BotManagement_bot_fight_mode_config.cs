@@ -12,14 +12,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class BotManagement_bot_fight_mode_config : global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_base_config, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The fight_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FightMode { get; set; }
-#nullable restore
-#else
-        public string FightMode { get; set; }
-#endif
+        /// <summary>Whether to enable Bot Fight Mode.</summary>
+        public bool? FightMode { get; set; }
         /// <summary>A read-only field that shows which unauthorized settings are currently active on the zone. These settings typically result from upgrades or downgrades.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fight_mode", n => { FightMode = n.GetStringValue(); } },
+                { "fight_mode", n => { FightMode = n.GetBoolValue(); } },
                 { "stale_zone_configuration", n => { StaleZoneConfiguration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config_stale_zone_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config_stale_zone_configuration.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("fight_mode", FightMode);
+            writer.WriteBoolValue("fight_mode", FightMode);
         }
     }
 }

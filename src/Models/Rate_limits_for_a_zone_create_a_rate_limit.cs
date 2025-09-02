@@ -30,22 +30,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match Match { get; set; }
 #endif
-        /// <summary>The period property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Period { get; set; }
-#nullable restore
-#else
-        public string Period { get; set; }
-#endif
-        /// <summary>The threshold property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Threshold { get; set; }
-#nullable restore
-#else
-        public string Threshold { get; set; }
-#endif
+        /// <summary>The time in seconds (an integer value) to count matching traffic. If the count exceeds the configured threshold within this period, Cloudflare will perform the configured action.</summary>
+        public double? Period { get; set; }
+        /// <summary>The threshold that will trigger the configured mitigation action. Configure this value along with the `period` property to establish a threshold per period.</summary>
+        public double? Threshold { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rate_limits_for_a_zone_create_a_rate_limit"/> and sets the default values.
         /// </summary>
@@ -73,8 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action.CreateFromDiscriminatorValue); } },
                 { "match", n => { Match = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match.CreateFromDiscriminatorValue); } },
-                { "period", n => { Period = n.GetStringValue(); } },
-                { "threshold", n => { Threshold = n.GetStringValue(); } },
+                { "period", n => { Period = n.GetDoubleValue(); } },
+                { "threshold", n => { Threshold = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -86,8 +74,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_match>("match", Match);
-            writer.WriteStringValue("period", Period);
-            writer.WriteStringValue("threshold", Threshold);
+            writer.WriteDoubleValue("period", Period);
+            writer.WriteDoubleValue("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

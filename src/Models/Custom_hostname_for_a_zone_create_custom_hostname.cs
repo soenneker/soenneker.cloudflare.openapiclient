@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_metadata CustomMetadata { get; set; }
 #endif
-        /// <summary>The hostname property</summary>
+        /// <summary>The custom hostname that will point to your hostname via CNAME.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hostname { get; set; }
