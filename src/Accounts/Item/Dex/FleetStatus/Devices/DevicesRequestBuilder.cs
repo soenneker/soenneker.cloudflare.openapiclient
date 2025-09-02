@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
         /// <summary>
         /// List details for devices using WARP
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_fleet_status_devices_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_fleet_status_devices_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_fleet_status_devices_response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_fleet_status_devices_response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices.DevicesRequestBuilder.DevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Dex_fleet_status_devices_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_fleet_status_devices_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_fleet_status_devices_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_fleet_status_devices_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List details for devices using WARP
@@ -162,10 +162,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
 #endif
             /// <summary>Dimension to sort results by</summary>
             [QueryParameter("sort_by")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_sort_by? SortBy { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_sort_by? SortBy { get; set; }
             /// <summary>Source:  * `hourly` - device details aggregated hourly, up to 7 days prior  * `last_seen` - device details, up to 24 hours prior  * `raw` - device details, up to 7 days prior</summary>
             [QueryParameter("source")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_source? Source { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_source? Source { get; set; }
             /// <summary>Network status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

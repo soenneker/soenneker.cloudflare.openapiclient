@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Addressing_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_apiResponseCollection, IParsable
+    public partial class Addressing_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes> Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes>("result", Result);
         }
     }
 }

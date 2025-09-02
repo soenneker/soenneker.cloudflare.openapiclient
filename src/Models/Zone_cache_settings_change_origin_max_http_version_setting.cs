@@ -14,8 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting_value? Value { get; set; }
+        /// <summary>Value of the Origin Max HTTP Version Setting.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_origin_max_http_version_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting_value>(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_origin_max_http_version_value>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting_value>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_origin_max_http_version_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

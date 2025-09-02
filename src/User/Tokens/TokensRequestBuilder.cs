@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_tokens_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_tokens_response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Tokens.TokensRequestBuilder.TokensRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_tokens_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_collection_tokens_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_single_token_create_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_payload body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Tokens
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_single_token_create_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_single_token_create_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

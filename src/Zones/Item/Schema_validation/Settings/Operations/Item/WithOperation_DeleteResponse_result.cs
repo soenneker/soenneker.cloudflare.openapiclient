@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         /// <summary>The operation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid? OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid? OperationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid OperationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid OperationId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_DeleteResponse_result"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid.CreateFromDiscriminatorValue); } },
+                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasUuid>("operation_id", OperationId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>("operation_id", OperationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSettings>? Settings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_settings>? Settings { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSettings> Settings { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_settings> Settings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_level_access_mtls_authentication_update_an_mtls_certificate_settings"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSettings.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_settings.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSettings>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_settings>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

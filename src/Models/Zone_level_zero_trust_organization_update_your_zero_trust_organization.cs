@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The login_design property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design? LoginDesign { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design? LoginDesign { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design LoginDesign { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design LoginDesign { get; set; }
 #endif
         /// <summary>The name of your Zero Trust organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "auth_domain", n => { AuthDomain = n.GetStringValue(); } },
                 { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
-                { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design.CreateFromDiscriminatorValue); } },
+                { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ui_read_only_toggle_reason", n => { UiReadOnlyToggleReason = n.GetStringValue(); } },
                 { "user_seat_expiration_inactive_time", n => { UserSeatExpirationInactiveTime = n.GetStringValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("auth_domain", AuthDomain);
             writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasLogin_design>("login_design", LoginDesign);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design>("login_design", LoginDesign);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("ui_read_only_toggle_reason", UiReadOnlyToggleReason);
             writer.WriteStringValue("user_seat_expiration_inactive_time", UserSeatExpirationInactiveTime);

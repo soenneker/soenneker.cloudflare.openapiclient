@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns
         /// <summary>
         /// Gets a list of all the domains that have resolved to a specific IP address.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_componentsSchemasSingle_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_components_schemas_single_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Passive_dns_by_ip_get_passive_dns_by_ip_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_componentsSchemasSingle_response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns.DnsRequestBuilder.DnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_components_schemas_single_response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns.DnsRequestBuilder.DnsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_componentsSchemasSingle_response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns.DnsRequestBuilder.DnsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_components_schemas_single_response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns.DnsRequestBuilder.DnsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Passive_dns_by_ip_get_passive_dns_by_ip_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_componentsSchemasSingle_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_componentsSchemasSingle_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of all the domains that have resolved to a specific IP address.

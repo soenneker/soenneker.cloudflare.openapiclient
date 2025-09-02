@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithScript_namePutResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_scriptResponseUploadSingle, IParsable
+    public partial class WithScript_namePutResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_response_upload_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

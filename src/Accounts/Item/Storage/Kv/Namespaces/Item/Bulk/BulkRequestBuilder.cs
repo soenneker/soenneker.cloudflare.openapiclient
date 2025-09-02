@@ -81,11 +81,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_write_multiple_key_value_pairs_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_write_multiple_key_value_pairs_200?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_write_multiple_key_value_pairs_200?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_write_multiple_key_value_pairs_200> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_write_multiple_key_value_pairs_200> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -127,11 +127,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_write_item> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

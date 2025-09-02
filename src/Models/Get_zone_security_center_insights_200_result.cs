@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The issues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue>? Issues { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issue>? Issues { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue> Issues { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issue> Issues { get; set; }
 #endif
         /// <summary>Current page within paginated list of results</summary>
         public int? Page { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "issues", n => { Issues = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue>(global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "issues", n => { Issues = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issue>(global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issue.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "page", n => { Page = n.GetIntValue(); } },
                 { "per_page", n => { PerPage = n.GetIntValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issue>("issues", Issues);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issue>("issues", Issues);
             writer.WriteIntValue("page", Page);
             writer.WriteIntValue("per_page", PerPage);
             writer.WriteAdditionalData(AdditionalData);

@@ -36,71 +36,71 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Publisher
         /// <summary>
         /// Deletes the stripe config for a publisher.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiNoResultResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiNoResultResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiNoResultResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiNoResultResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiNoResultResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiNoResultResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiNoResultResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiNoResultResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiNoResultResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiNoResultResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets the stripe config for a publisher.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_getStripeConfigResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_getStripeConfigResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_getStripeConfigResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_getStripeConfigResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_getStripeConfigResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_getStripeConfigResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_getStripeConfigResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_getStripeConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_getStripeConfigResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_getStripeConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates the stripe config for a publisher.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_createStripeConfigResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_createStripeConfigResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiErrorResponse">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_createStripeConfigResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_createStripeConfigResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_createStripeConfigResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_createStripeConfigResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_apiErrorResponse.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_apiErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_createStripeConfigResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PayPerCrawl_createStripeConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_createStripeConfigResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Pay_per_crawl_createStripeConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes the stripe config for a publisher.

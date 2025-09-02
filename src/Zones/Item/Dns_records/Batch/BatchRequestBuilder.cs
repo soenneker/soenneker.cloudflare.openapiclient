@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
         /// <summary>
         /// Send a Batch of DNS Record API calls to be executed together.Notes:- Although Cloudflare will execute the batched operations in a single database transaction, Cloudflare&apos;s distributed KV store must treat each record change as a single key-value pair. This means that the propagation of changes is not atomic. See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/batch-record-changes/ &quot;Batch DNS records&quot;) for more information.- The operations you specify within the /batch request body are always executed in the following order:    - Deletes    - Patches    - Puts    - Posts
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_batch"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_batch"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_batch_dns_records_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_batch?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_batch?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_request_batch_object body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_batch> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_batch> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_request_batch_object body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_batch_dns_records_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_batch>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_batch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_batch>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_batch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Send a Batch of DNS Record API calls to be executed together.Notes:- Although Cloudflare will execute the batched operations in a single database transaction, Cloudflare&apos;s distributed KV store must treat each record change as a single key-value pair. This means that the propagation of changes is not atomic. See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/batch-record-changes/ &quot;Batch DNS records&quot;) for more information.- The operations you specify within the /batch request body are always executed in the following order:    - Deletes    - Patches    - Puts    - Posts
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Batch
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_request_batch_object body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRequestBatchObject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_request_batch_object body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

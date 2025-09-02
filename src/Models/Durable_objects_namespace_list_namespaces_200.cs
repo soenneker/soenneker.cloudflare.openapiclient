@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Durable_objects_namespace_list_namespaces_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCollection, IParsable
+    public partial class Durable_objects_namespace_list_namespaces_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Describes the configuration of a pipeline.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline Result { get; set; }
 #endif
         /// <summary>Indicates whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

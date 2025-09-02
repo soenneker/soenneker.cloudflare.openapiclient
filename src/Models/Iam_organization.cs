@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<string> Roles { get; private set; }
 #endif
         /// <summary>Whether the user is a member of the organization or has an invitation pending.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_componentsSchemasStatus? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_components_schemas_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_organization"/> and sets the default values.
         /// </summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_componentsSchemasStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_components_schemas_status>(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_componentsSchemasStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_components_schemas_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

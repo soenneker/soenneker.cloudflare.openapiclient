@@ -89,26 +89,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasCidr_configuration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasIp_configuration"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_cidr_configuration"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_ip_configuration"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Lockdowns : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasCidr_configuration"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_cidr_configuration"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasCidr_configuration? FirewallSchemasCidrConfiguration { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_cidr_configuration? FirewallSchemasCidrConfiguration { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasCidr_configuration FirewallSchemasCidrConfiguration { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_cidr_configuration FirewallSchemasCidrConfiguration { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasIp_configuration"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_ip_configuration"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasIp_configuration? FirewallSchemasIpConfiguration { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_ip_configuration? FirewallSchemasIpConfiguration { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasIp_configuration FirewallSchemasIpConfiguration { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_ip_configuration FirewallSchemasIpConfiguration { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -119,8 +119,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_lockdown_create_a_zone_lockdown_rule.Lockdowns();
-                result.FirewallSchemasCidrConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasCidr_configuration();
-                result.FirewallSchemasIpConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasIp_configuration();
+                result.FirewallSchemasCidrConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_cidr_configuration();
+                result.FirewallSchemasIpConfiguration = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_ip_configuration();
                 return result;
             }
             /// <summary>
@@ -142,7 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasCidr_configuration>(null, FirewallSchemasCidrConfiguration, FirewallSchemasIpConfiguration);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_cidr_configuration>(null, FirewallSchemasCidrConfiguration, FirewallSchemasIpConfiguration);
             }
         }
     }

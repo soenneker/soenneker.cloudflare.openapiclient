@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Images_image_key_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.Images_apiResponseCommon, IParsable
+    public partial class Images_image_key_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.Images_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

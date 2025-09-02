@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule>? Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_rule>? Rules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule> Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_rule> Rules { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_put_bucket_lifecycle_configuration"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_rule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycleRule>("rules", Rules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_rule>("rules", Rules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

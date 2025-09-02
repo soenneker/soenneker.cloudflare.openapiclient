@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Zone_settings_change_fonts_setting_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_apiResponseCommon, IParsable
+    public partial class Zone_settings_change_fonts_setting_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Speed_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Enhance your website&apos;s font delivery with Cloudflare Fonts. Deliver Google Hosted fonts from your own domain,boost performance, and enhance user privacy. Refer to the Cloudflare Fonts documentation for more information.</summary>

@@ -72,27 +72,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
         /// <summary>
         /// Update the `state` on one or more discovered operations
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_patch_discoveries_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_patch_discoveries_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_patch_discoveries_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_patch_discoveries_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_patch_discoveries_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_patch_discoveries_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_patch_discoveries_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_patch_discoveries_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_patch_discoveries_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_patch_discoveries_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the most up to date view of discovered operations
@@ -121,11 +121,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_patch_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -185,7 +185,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
             public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Operations.GetOrderQueryParameterType? Order { get; set; }
             /// <summary>Filter results to only include discovery results sourced from a particular discovery engine  * `ML` - Discovered operations that were sourced using ML API Discovery  * `SessionIdentifier` - Discovered operations that were sourced using Session Identifier API Discovery</summary>
             [QueryParameter("origin")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_origin? Origin { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_origin? Origin { get; set; }
             /// <summary>Page number of paginated results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -194,7 +194,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery.Op
             public int? PerPage { get; set; }
             /// <summary>Filter results to only include discovery results in a particular state. States are as follows  * `review` - Discovered operations that are not saved into API Shield Endpoint Management  * `saved` - Discovered operations that are already saved into API Shield Endpoint Management  * `ignored` - Discovered operations that have been marked as ignored</summary>
             [QueryParameter("state")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_api_discovery_state? State { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_state? State { get; set; }
         }
     }
 }

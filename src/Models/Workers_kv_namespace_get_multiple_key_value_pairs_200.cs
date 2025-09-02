@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Workers_kv_namespace_get_multiple_key_value_pairs_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult, IParsable
+    public partial class Workers_kv_namespace_get_multiple_key_value_pairs_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
@@ -42,26 +42,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             base.Serialize(writer);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResult"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResultWithMetadata"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result_with_metadata"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workers_kv_namespace_get_multiple_key_value_pairs_200_result : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResult"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResult? WorkersKvBulkGetResult { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result? WorkersKvBulkGetResult { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResult WorkersKvBulkGetResult { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result WorkersKvBulkGetResult { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResultWithMetadata"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result_with_metadata"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResultWithMetadata? WorkersKvBulkGetResultWithMetadata { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result_with_metadata? WorkersKvBulkGetResultWithMetadata { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResultWithMetadata WorkersKvBulkGetResultWithMetadata { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result_with_metadata WorkersKvBulkGetResultWithMetadata { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,13 +73,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_200.Workers_kv_namespace_get_multiple_key_value_pairs_200_result();
-                if("workers-kv_bulk-get-result".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("workers_kv_bulk_get_result".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.WorkersKvBulkGetResult = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResult();
+                    result.WorkersKvBulkGetResult = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result();
                 }
-                else if("workers-kv_bulk-get-result-with-metadata".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("workers_kv_bulk_get_result_with_metadata".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.WorkersKvBulkGetResultWithMetadata = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResultWithMetadata();
+                    result.WorkersKvBulkGetResultWithMetadata = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result_with_metadata();
                 }
                 return result;
             }
@@ -108,11 +108,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(WorkersKvBulkGetResult != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResult>(null, WorkersKvBulkGetResult);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result>(null, WorkersKvBulkGetResult);
                 }
                 else if(WorkersKvBulkGetResultWithMetadata != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_bulkGetResultWithMetadata>(null, WorkersKvBulkGetResultWithMetadata);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result_with_metadata>(null, WorkersKvBulkGetResultWithMetadata);
                 }
             }
         }

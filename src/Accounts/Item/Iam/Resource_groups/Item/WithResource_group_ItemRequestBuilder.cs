@@ -36,27 +36,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.I
         /// <summary>
         /// Remove a resource group from an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingleId"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_single_id"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingleId?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.Item.WithResource_group_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_single_id?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.Item.WithResource_group_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingleId> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.Item.WithResource_group_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_single_id> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.Item.WithResource_group_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingleId>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingleId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_single_id>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_single_id.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get information about a specific resource group in an account.
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.I
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.I
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.I
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_request_update_resource_group body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Iam.Resource_groups.I
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_resource_group.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

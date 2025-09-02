@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Addressing_single_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_apiResponseSingle, IParsable
+    public partial class Addressing_single_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipamPrefixes>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes>("result", Result);
         }
     }
 }

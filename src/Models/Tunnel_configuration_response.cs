@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Tunnel_configuration_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasApiResponseSingle, IParsable
+    public partial class Tunnel_configuration_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Cloudflare Tunnel configuration</summary>

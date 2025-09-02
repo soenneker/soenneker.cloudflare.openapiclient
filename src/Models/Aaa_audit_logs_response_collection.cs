@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_apiResponseCommon"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_response_collectionMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_api_response_common"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_response_collectionMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Aaa_audit_logs_response_collection : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_apiResponseCommon"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_api_response_common"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_apiResponseCommon? AaaApiResponseCommon { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_api_response_common? AaaApiResponseCommon { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_apiResponseCommon AaaApiResponseCommon { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_api_response_common AaaApiResponseCommon { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_response_collectionMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,9 +39,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_response_collection();
-            if("aaa_api-response-common".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("aaa_api_response_common".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.AaaApiResponseCommon = new global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_apiResponseCommon();
+                result.AaaApiResponseCommon = new global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_api_response_common();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(AaaApiResponseCommon != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_apiResponseCommon>(null, AaaApiResponseCommon);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_api_response_common>(null, AaaApiResponseCommon);
             }
             else if(AaaAuditLogsResponseCollectionMember1 != null)
             {

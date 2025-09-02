@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Zone_settings_get_single_setting_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_settingsApi_componentsSchemasApiResponseCommon, IParsable
+    public partial class Zone_settings_get_single_setting_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_settings_api_components_schemas_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

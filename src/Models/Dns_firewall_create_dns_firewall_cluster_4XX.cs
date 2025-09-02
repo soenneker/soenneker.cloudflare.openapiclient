@@ -18,28 +18,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_dns_firewall_cluster_response? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_dns_firewall_cluster_response Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -68,9 +68,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_dns_firewall_cluster_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_dns_firewall_cluster_response.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -81,9 +81,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_messages_item>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsFirewall_dnsFirewallClusterResponse>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_messages_item>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_firewall_dns_firewall_cluster_response>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

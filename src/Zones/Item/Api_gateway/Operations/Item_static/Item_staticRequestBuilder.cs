@@ -36,27 +36,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.I
         /// <summary>
         /// Add one operation to a zone. Endpoints can contain path variables. Host, method, endpoint will be normalized to a canoncial form when creating an operation and must be unique on the zone. Inserting an operation that matches an existing one will return the record of the already existing operation and update its last_updated date.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_singleOperationResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_single_operation_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_singleOperationResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_single_operation_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_singleOperationResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_single_operation_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_singleOperationResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_singleOperationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_single_operation_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_single_operation_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add one operation to a zone. Endpoints can contain path variables. Host, method, endpoint will be normalized to a canoncial form when creating an operation and must be unique on the zone. Inserting an operation that matches an existing one will return the record of the already existing operation and update its last_updated date.
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.I
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

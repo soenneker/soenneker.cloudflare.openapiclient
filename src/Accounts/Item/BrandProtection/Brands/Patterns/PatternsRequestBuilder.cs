@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brand
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brand
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brand
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brand
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brand
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Brand
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

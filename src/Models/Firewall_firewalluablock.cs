@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The configuration object for the current rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration? Configuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_configuration? Configuration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration Configuration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_configuration Configuration { get; set; }
 #endif
         /// <summary>An informative summary of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The action to apply to a matched request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasMode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_components_schemas_mode? Mode { get; set; }
         /// <summary>When true, indicates that the rule is currently paused.</summary>
         public bool? Paused { get; set; }
         /// <summary>
@@ -67,10 +67,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_configuration.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasMode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_components_schemas_mode>(); } },
                 { "paused", n => { Paused = n.GetBoolValue(); } },
             };
         }
@@ -81,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_configuration>("configuration", Configuration);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_componentsSchemasMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_components_schemas_mode>("mode", Mode);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteAdditionalData(AdditionalData);
         }

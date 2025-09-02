@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.F
         /// <summary>
         /// Fetches the list of domains to bypass Gateway DNS resolution from a specified device settings profile. These domains will use the specified local DNS resolver instead.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_local_domain_fallback_list_for_a_device_settings_policy_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,23 +54,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.F
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_local_domain_fallback_list_for_a_device_settings_policy_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets the list of domains to bypass Gateway DNS resolution. These domains will use the specified local DNS resolver instead. This will only apply to the specified device settings profile.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_set_local_domain_fallback_list_for_a_device_settings_policy_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.F
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_set_local_domain_fallback_list_for_a_device_settings_policy_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches the list of domains to bypass Gateway DNS resolution from a specified device settings profile. These domains will use the specified local DNS resolver instead.
@@ -108,11 +108,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.F
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_fallback_domain> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

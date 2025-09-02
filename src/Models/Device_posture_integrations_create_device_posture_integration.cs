@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The configuration object containing third-party integration information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request? Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_config_request? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request Config { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_config_request Config { get; set; }
 #endif
         /// <summary>The interval between each posture check with the third-party API. Use `m` for minutes (e.g. `5m`) and `h` for hours (e.g. `12h`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type of device posture integration.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_schemas_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Device_posture_integrations_create_device_posture_integration"/> and sets the default values.
         /// </summary>
@@ -65,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_config_request>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_config_request.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_schemas_type>(); } },
             };
         }
         /// <summary>
@@ -78,10 +78,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_config_request>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_config_request>("config", Config);
             writer.WriteStringValue("interval", Interval);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_schemasType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_schemas_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

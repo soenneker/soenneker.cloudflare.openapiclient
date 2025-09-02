@@ -28,10 +28,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The Cloudflare Tunnel connections between your origin and Cloudflare&apos;s edge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>? Conns { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection>? Conns { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection> Conns { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection> Conns { get; set; }
 #endif
         /// <summary>Features enabled for the Cloudflare Tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "arch", n => { Arch = n.GetStringValue(); } },
                 { "config_version", n => { ConfigVersion = n.GetIntValue(); } },
-                { "conns", n => { Conns = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conns", n => { Conns = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "run_at", n => { RunAt = n.GetDateTimeOffsetValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("arch", Arch);
             writer.WriteIntValue("config_version", ConfigVersion);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemasConnection>("conns", Conns);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection>("conns", Conns);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("run_at", RunAt);

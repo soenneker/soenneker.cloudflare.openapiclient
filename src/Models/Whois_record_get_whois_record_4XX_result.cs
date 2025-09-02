@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Whois_record_get_whois_record_4XX_result : global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneWhois_whois, IParsable
+    public partial class Whois_record_get_whois_record_4XX_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_whois_whois, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

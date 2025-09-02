@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_query_meta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_query_meta Meta { get; set; }
 #endif
         /// <summary>The total number of queries that were executed during the import.</summary>
         public double? NumQueries { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "final_bookmark", n => { FinalBookmark = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta>(global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_query_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.D1_query_meta.CreateFromDiscriminatorValue); } },
                 { "num_queries", n => { NumQueries = n.GetDoubleValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("final_bookmark", FinalBookmark);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_queryMeta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_query_meta>("meta", Meta);
             writer.WriteDoubleValue("num_queries", NumQueries);
             writer.WriteAdditionalData(AdditionalData);
         }

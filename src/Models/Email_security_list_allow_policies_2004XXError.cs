@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,8 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_list_allow_policies_2004XXError_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_list_allow_policies_2004XXError_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -81,8 +81,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Message>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Message>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_list_allow_policies_2004XXError_result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

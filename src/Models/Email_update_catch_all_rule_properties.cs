@@ -15,10 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List actions for the catch-all routing rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallAction>? Actions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_action>? Actions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallAction> Actions { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_action> Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>List of matchers for the catch-all routing rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallMatcher>? Matchers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_matcher>? Matchers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallMatcher> Matchers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_matcher> Matchers { get; set; }
 #endif
         /// <summary>Routing rule name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,9 +65,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallAction>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallAction.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_action.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "matchers", n => { Matchers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallMatcher>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallMatcher.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "matchers", n => { Matchers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_matcher>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_matcher.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -78,9 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallAction>("actions", Actions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_action>("actions", Actions);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchallMatcher>("matchers", Matchers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_rule_catchall_matcher>("matchers", Matchers);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

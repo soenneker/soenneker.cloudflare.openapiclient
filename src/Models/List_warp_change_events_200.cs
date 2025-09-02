@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class List_warp_change_events_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_apiResponseCollection, IParsable
+    public partial class List_warp_change_events_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands> Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos>(global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands>(global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,47 +49,47 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands>("result", Result);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_config_change_event"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_toggle_change_event"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_config_change_event"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_toggle_change_event"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Colos : IComposedTypeWrapper, IParsable
+        public partial class Commands : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_config_change_event"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_config_change_event"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_config_change_event? DigitalExperienceMonitoringWarpConfigChangeEvent { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_config_change_event? DigitalExperienceMonitoringWarpConfigChangeEvent { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_config_change_event DigitalExperienceMonitoringWarpConfigChangeEvent { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_config_change_event DigitalExperienceMonitoringWarpConfigChangeEvent { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_toggle_change_event"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_toggle_change_event"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_toggle_change_event? DigitalExperienceMonitoringWarpToggleChangeEvent { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_toggle_change_event? DigitalExperienceMonitoringWarpToggleChangeEvent { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_toggle_change_event DigitalExperienceMonitoringWarpToggleChangeEvent { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_toggle_change_event DigitalExperienceMonitoringWarpToggleChangeEvent { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos"/></returns>
+            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Colos();
-                if("digital-experience-monitoring_warp_config_change_event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.List_warp_change_events_200.Commands();
+                if("digital_experience_monitoring_warp_config_change_event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.DigitalExperienceMonitoringWarpConfigChangeEvent = new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_config_change_event();
+                    result.DigitalExperienceMonitoringWarpConfigChangeEvent = new global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_config_change_event();
                 }
-                else if("digital-experience-monitoring_warp_toggle_change_event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("digital_experience_monitoring_warp_toggle_change_event".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.DigitalExperienceMonitoringWarpToggleChangeEvent = new global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_toggle_change_event();
+                    result.DigitalExperienceMonitoringWarpToggleChangeEvent = new global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_toggle_change_event();
                 }
                 return result;
             }
@@ -118,11 +118,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(DigitalExperienceMonitoringWarpConfigChangeEvent != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_config_change_event>(null, DigitalExperienceMonitoringWarpConfigChangeEvent);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_config_change_event>(null, DigitalExperienceMonitoringWarpConfigChangeEvent);
                 }
                 else if(DigitalExperienceMonitoringWarpToggleChangeEvent != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_warp_toggle_change_event>(null, DigitalExperienceMonitoringWarpToggleChangeEvent);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_warp_toggle_change_event>(null, DigitalExperienceMonitoringWarpToggleChangeEvent);
                 }
             }
         }

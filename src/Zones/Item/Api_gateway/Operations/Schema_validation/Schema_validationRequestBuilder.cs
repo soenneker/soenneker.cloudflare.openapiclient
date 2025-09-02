@@ -44,11 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.S
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_update_multiple_operation_level_settings_200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_update_multiple_operation_level_settings_200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_update_multiple_operation_level_settings_200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_update_multiple_operation_level_settings_200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -68,11 +68,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.S
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation_schema_validation_settings_multiple_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

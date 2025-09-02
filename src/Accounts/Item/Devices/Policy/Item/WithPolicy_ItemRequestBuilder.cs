@@ -54,18 +54,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item
         /// <summary>
         /// Deletes a device settings profile and fetches a list of the remaining profiles for an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_delete_device_settings_policy_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response_collection?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response_collection?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response_collection> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response_collection> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item.WithPolicy_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -74,22 +74,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_delete_device_settings_policy_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches a device settings profile by ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_device_settings_policy_by_id_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -97,23 +97,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_get_device_settings_policy_by_id_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a configured device settings profile.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_update_device_settings_policy_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_update_device_settings_policy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_update_device_settings_policy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_update_device_settings_policy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_update_device_settings_policy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -122,7 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Policy.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_update_device_settings_policy_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_device_settings_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_device_settings_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a device settings profile and fetches a list of the remaining profiles for an account.

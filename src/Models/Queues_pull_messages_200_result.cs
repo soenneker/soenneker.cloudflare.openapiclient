@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queuePullBatch_item>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_pull_batch_item>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queuePullBatch_item> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_pull_batch_item> Messages { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Queues_pull_messages_200_result"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "message_backlog_count", n => { MessageBacklogCount = n.GetDoubleValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queuePullBatch_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queuePullBatch_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_pull_batch_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_pull_batch_item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("message_backlog_count", MessageBacklogCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queuePullBatch_item>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_pull_batch_item>("messages", Messages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

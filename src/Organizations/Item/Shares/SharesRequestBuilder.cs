@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// <summary>
         /// Lists all organization shares.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organization_shares_list_4XX">When receiving a 4XX status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organization_shares_list_5XX">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.SharesRequestBuilder.SharesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Organization_shares_list_4XX.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Organization_shares_list_5XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all organization shares.
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
             public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>Filter shares by kind.</summary>
             [QueryParameter("kind")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_kind? Kind { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_kind? Kind { get; set; }
             /// <summary>Order shares by values in the given field.</summary>
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares.GetOrderQueryParameterType? Order { get; set; }
@@ -109,10 +109,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
             public int? PerPage { get; set; }
             /// <summary>Filter shares by status.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_status? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_status? Status { get; set; }
             /// <summary>Filter shares by target_type.</summary>
             [QueryParameter("target_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_target_type? TargetType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_target_type? TargetType { get; set; }
         }
     }
 }

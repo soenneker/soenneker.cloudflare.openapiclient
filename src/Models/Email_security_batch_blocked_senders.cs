@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateBlockedSender>? Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateBlockedSender>? Posts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateBlockedSender> Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateBlockedSender> Posts { get; set; }
 #endif
         /// <summary>The puts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_deletes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_deletes.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "patches", n => { Patches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_patches>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_patches.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateBlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateBlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateBlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateBlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "puts", n => { Puts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_puts>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_puts.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_deletes>("deletes", Deletes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_patches>("patches", Patches);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateBlockedSender>("posts", Posts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateBlockedSender>("posts", Posts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_puts>("puts", Puts);
             writer.WriteAdditionalData(AdditionalData);
         }

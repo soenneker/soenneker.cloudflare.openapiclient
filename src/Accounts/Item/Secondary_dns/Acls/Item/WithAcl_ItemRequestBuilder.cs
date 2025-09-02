@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.It
         /// <summary>
         /// Delete ACL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasId_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_id_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl_delete_acl_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasId_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.Item.WithAcl_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_id_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.Item.WithAcl_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasId_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.Item.WithAcl_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_id_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.Item.WithAcl_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,22 +56,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.It
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl_delete_acl_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasId_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasId_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_id_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_id_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get ACL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl_acl_details_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,23 +79,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.It
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl_acl_details_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Modify ACL.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl_update_acl_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.It
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl_update_acl_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_componentsSchemasSingle_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete ACL.
@@ -155,11 +155,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Acls.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.SecondaryDns_acl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Secondary_dns_acl body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

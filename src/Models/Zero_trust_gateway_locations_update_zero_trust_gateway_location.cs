@@ -29,10 +29,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The destination endpoints configured for this location. When updating a location, if this field is absent or set with null, the endpoints configuration remains unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints? Endpoints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_endpoints? Endpoints { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints Endpoints { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_endpoints Endpoints { get; set; }
 #endif
         /// <summary>The name of the location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,10 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A list of network ranges that requests from this location would originate from. A non-empty list is only effective if the ipv4 endpoint is enabled for this location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network>? Networks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_ipv4_network>? Networks { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network> Networks { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_ipv4_network> Networks { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_locations_update_zero_trust_gateway_location"/> and sets the default values.
@@ -78,9 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "client_default", n => { ClientDefault = n.GetBoolValue(); } },
                 { "dns_destination_ips_id", n => { DnsDestinationIpsId = n.GetStringValue(); } },
                 { "ecs_support", n => { EcsSupport = n.GetBoolValue(); } },
-                { "endpoints", n => { Endpoints = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints.CreateFromDiscriminatorValue); } },
+                { "endpoints", n => { Endpoints = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_endpoints>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_endpoints.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "networks", n => { Networks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "networks", n => { Networks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_ipv4_network>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_ipv4_network.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -93,9 +93,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("client_default", ClientDefault);
             writer.WriteStringValue("dns_destination_ips_id", DnsDestinationIpsId);
             writer.WriteBoolValue("ecs_support", EcsSupport);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_endpoints>("endpoints", Endpoints);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_endpoints>("endpoints", Endpoints);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ipv4_network>("networks", Networks);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_ipv4_network>("networks", Networks);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

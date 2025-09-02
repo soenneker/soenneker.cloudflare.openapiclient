@@ -17,18 +17,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The schemas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_openapi>? Schemas { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi>? Schemas { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_openapi> Schemas { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi> Schemas { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp? Timestamp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp? Timestamp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp Timestamp { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp Timestamp { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX_result"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "schemas", n => { Schemas = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_openapi>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_openapi.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "timestamp", n => { Timestamp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp.CreateFromDiscriminatorValue); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "timestamp", n => { Timestamp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_openapi>("schemas", Schemas);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schemasTimestamp>("timestamp", Timestamp);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi>("schemas", Schemas);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

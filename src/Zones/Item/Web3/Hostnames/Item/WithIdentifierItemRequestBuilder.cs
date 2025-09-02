@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item
         /// <summary>
         /// Delete Web3 Hostname
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_api_response_single_id"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -50,11 +50,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_web3_hostname_5XX">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.WithIdentifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_api_response_single_id?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.WithIdentifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.WithIdentifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_api_response_single_id> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item.WithIdentifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3.Hostnames.Item
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_web3_hostname_4XX.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_hostname_delete_web3_hostname_5XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_apiResponseSingleId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_api_response_single_id>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Web3_api_response_single_id.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Web3 Hostname Details

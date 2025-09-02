@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>items to add to the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_itemsInput_item>? Append { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_input_item>? Append { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_itemsInput_item> Append { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_input_item> Append { get; set; }
 #endif
         /// <summary>A list of the item values you want to remove.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "append", n => { Append = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_itemsInput_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_itemsInput_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "append", n => { Append = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_input_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_input_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "remove", n => { Remove = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_itemsInput_item>("append", Append);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_input_item>("append", Append);
             writer.WriteCollectionOfPrimitiveValues<string>("remove", Remove);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Specify the region to create the D1 primary, if available. If this option is omitted, the D1 will be created as close as possible to the current user.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primaryLocationHint? PrimaryLocationHint { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primary_location_hint? PrimaryLocationHint { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_d1_create_database"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "primary_location_hint", n => { PrimaryLocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primaryLocationHint>(); } },
+                { "primary_location_hint", n => { PrimaryLocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primary_location_hint>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primaryLocationHint>("primary_location_hint", PrimaryLocationHint);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primary_location_hint>("primary_location_hint", PrimaryLocationHint);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

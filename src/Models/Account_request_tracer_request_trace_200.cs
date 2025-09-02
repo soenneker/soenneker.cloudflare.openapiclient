@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Account_request_tracer_request_trace_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracer_apiResponseCommon, IParsable
+    public partial class Account_request_tracer_request_trace_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Request_tracer_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Trace result with an origin status code</summary>

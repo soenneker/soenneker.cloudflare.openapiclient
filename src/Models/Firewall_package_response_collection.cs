@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseCollection"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collectionMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_collection"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collectionMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Firewall_package_response_collection : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseCollection"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_collection"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseCollection? FirewallApiResponseCollection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_collection? FirewallApiResponseCollection { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseCollection FirewallApiResponseCollection { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_collection FirewallApiResponseCollection { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collectionMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collection();
-            result.FirewallApiResponseCollection = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseCollection();
+            result.FirewallApiResponseCollection = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_collection();
             result.FirewallPackageResponseCollectionMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_collectionMember1();
             return result;
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseCollection>(null, FirewallApiResponseCollection, FirewallPackageResponseCollectionMember1);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_collection>(null, FirewallApiResponseCollection, FirewallPackageResponseCollectionMember1);
         }
     }
 }

@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_options? Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_options? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_options Options { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_options Options { get; set; }
 #endif
         /// <summary>The targets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "colos", n => { Colos = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_options.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_options.CreateFromDiscriminatorValue); } },
                 { "targets", n => { Targets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("colos", Colos);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicTransit_options>("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_options>("options", Options);
             writer.WriteCollectionOfPrimitiveValues<string>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }

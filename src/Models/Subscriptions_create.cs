@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Destination configuration for the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventDestination? Destination { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_destination? Destination { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventDestination Destination { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_destination Destination { get; set; }
 #endif
         /// <summary>Whether the subscription is active</summary>
         public bool? Enabled { get; set; }
@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Source configuration for the subscription</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSource? Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_source? Source { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSource Source { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_source Source { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Subscriptions_create"/> and sets the default values.
@@ -73,11 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventDestination>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventDestination.CreateFromDiscriminatorValue); } },
+                { "destination", n => { Destination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_destination>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_destination.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSource>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSource.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_source.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,11 +87,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventDestination>("destination", Destination);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_destination>("destination", Destination);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSource>("source", Source);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_source>("source", Source);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

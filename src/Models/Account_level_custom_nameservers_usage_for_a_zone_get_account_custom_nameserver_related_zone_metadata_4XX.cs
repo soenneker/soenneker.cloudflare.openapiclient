@@ -20,20 +20,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item> Messages { get; set; }
 #endif
         /// <summary>The number of the name server set to assign to the zone.</summary>
         public double? NsSet { get; set; }
@@ -81,8 +81,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ns_set", n => { NsSet = n.GetDoubleValue(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Account_level_custom_nameservers_usage_for_a_zone_get_account_custom_nameserver_related_zone_metadata_4XX_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Account_level_custom_nameservers_usage_for_a_zone_get_account_custom_nameserver_related_zone_metadata_4XX_result.CreateFromDiscriminatorValue); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Account_level_custom_nameservers_usage_for_a_zone_get_account_custom_nameserver_related_zone_metadata_4XX_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Account_level_custom_nameservers_usage_for_a_zone_get_account_custom_nameserver_related_zone_metadata_4XX_result_info.CreateFromDiscriminatorValue); } },
@@ -97,8 +97,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsCustomNameservers_messages_item>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_custom_nameservers_messages_item>("messages", Messages);
             writer.WriteDoubleValue("ns_set", NsSet);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Account_level_custom_nameservers_usage_for_a_zone_get_account_custom_nameserver_related_zone_metadata_4XX_result>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Account_level_custom_nameservers_usage_for_a_zone_get_account_custom_nameserver_related_zone_metadata_4XX_result_info>("result_info", ResultInfo);

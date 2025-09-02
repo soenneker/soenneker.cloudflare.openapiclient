@@ -37,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configuration for using Keyless SSL through a Cloudflare Tunnel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel? Tunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel? Tunnel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel Tunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel Tunnel { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Keyless_ssl_for_a_zone_edit_keyless_ssl_configuration"/> and sets the default values.
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "port", n => { Port = n.GetDoubleValue(); } },
-                { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel.CreateFromDiscriminatorValue); } },
+                { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("host", Host);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("port", Port);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>("tunnel", Tunnel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel>("tunnel", Tunnel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

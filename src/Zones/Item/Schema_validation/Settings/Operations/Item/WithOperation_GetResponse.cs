@@ -10,16 +10,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithOperation_GetResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommon, IParsable
+    public partial class WithOperation_GetResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_per_operation_setting? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_per_operation_setting? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_per_operation_setting Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_per_operation_setting Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_per_operation_setting>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_per_operation_setting.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_per_operation_setting>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_per_operation_setting.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_per_operation_setting>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_per_operation_setting>("result", Result);
         }
     }
 }

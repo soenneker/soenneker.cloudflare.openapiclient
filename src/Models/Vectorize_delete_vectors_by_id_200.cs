@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Vectorize_delete_vectors_by_id_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_apiResponseSingle, IParsable
+    public partial class Vectorize_delete_vectors_by_id_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -49,18 +49,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         /// <summary>
         /// Removes one or more items from a list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_delete_list_items_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_delete_list_items body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_delete_list_items body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_delete_list_items body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_delete_list_items body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -69,22 +69,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_delete_list_items_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches all the items in the list.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsListResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_items_list_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_get_list_items_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsListResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_items_list_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsListResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_items_list_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -92,23 +92,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_get_list_items_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsListResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_itemsListResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_items_list_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_items_list_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Appends new items to the list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_create_list_items_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response?> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -117,23 +117,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_create_list_items_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes all existing items from the list and adds the provided items to the list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_update_all_list_items_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -142,7 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_update_all_list_items_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_listsAsyncResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_lists_async_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes one or more items from a list.This operation is asynchronous. To get current the operation status, invoke the `Get bulk operation status` endpoint with the returned `operation_id`.
@@ -193,11 +193,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -215,11 +215,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -269,7 +269,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
         /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_hostname_comment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_ip_comment"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_redirect_comment"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Lists_itemsUpdateRequestCollection : IComposedTypeWrapper, IParsable
+        public partial class Lists_items_update_request_collection : IComposedTypeWrapper, IParsable
         {
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -306,13 +306,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Item
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection"/></returns>
+            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_itemsUpdateRequestCollection();
+                var result = new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules.Lists.Item.Items.ItemsRequestBuilder.Lists_items_update_request_collection();
                 if("lists_list_item_asn_comment".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
                     result.ListsListItemAsnComment = new global::Soenneker.Cloudflare.OpenApiClient.Models.Lists_list_item_asn_comment();

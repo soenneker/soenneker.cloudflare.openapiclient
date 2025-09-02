@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The number of bits per second for the rule. When this value is exceeded for the set duration, an alert notification is sent. Minimum of 1 and no maximum.</summary>
         public double? Bandwidth { get; set; }
         /// <summary>The amount of time that the rule threshold must be exceeded to send an alert notification. The final value must be equivalent to one of the following 8 values [&quot;1m&quot;,&quot;5m&quot;,&quot;10m&quot;,&quot;15m&quot;,&quot;20m&quot;,&quot;30m&quot;,&quot;45m&quot;,&quot;60m&quot;].</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration? Duration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rule_duration? Duration { get; set; }
         /// <summary>The name of the rule. Must be unique. Supports characters A-Z, a-z, 0-9, underscore (_), dash (-), period (.), and tilde (~). You can’t have a space in the rule name. Max 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Magic_network_monitoring_rules_update_rule()
         {
             AdditionalData = new Dictionary<string, object>();
-            Duration = global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration.Onem;
+            Duration = global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rule_duration.Onem;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "automatic_advertisement", n => { AutomaticAdvertisement = n.GetBoolValue(); } },
                 { "bandwidth", n => { Bandwidth = n.GetDoubleValue(); } },
-                { "duration", n => { Duration = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>(); } },
+                { "duration", n => { Duration = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rule_duration>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "packet_threshold", n => { PacketThreshold = n.GetDoubleValue(); } },
                 { "prefixes", n => { Prefixes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("automatic_advertisement", AutomaticAdvertisement);
             writer.WriteDoubleValue("bandwidth", Bandwidth);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rule_duration>("duration", Duration);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rule_duration>("duration", Duration);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("packet_threshold", PacketThreshold);
             writer.WriteCollectionOfPrimitiveValues<string>("prefixes", Prefixes);

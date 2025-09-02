@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Location of site in latitude and longitude.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation? Location { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_site_location? Location { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation Location { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_site_location Location { get; set; }
 #endif
         /// <summary>The name of the site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "ha_mode", n => { HaMode = n.GetBoolValue(); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_site_location>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_site_location.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "secondary_connector_id", n => { SecondaryConnectorId = n.GetStringValue(); } },
             };
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("connector_id", ConnectorId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("ha_mode", HaMode);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_siteLocation>("location", Location);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_site_location>("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("secondary_connector_id", SecondaryConnectorId);
             writer.WriteAdditionalData(AdditionalData);

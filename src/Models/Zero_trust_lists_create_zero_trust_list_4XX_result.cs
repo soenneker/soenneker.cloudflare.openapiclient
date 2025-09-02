@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The items in the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_items_item>? Items { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_item>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_items_item> Items { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_item> Items { get; set; }
 #endif
         /// <summary>The name of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The type of list.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schemas_type? Type { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -80,9 +80,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_items_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_items_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schemas_type>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -96,9 +96,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_items_item>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_items_item>("items", Items);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schemasType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schemas_type>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

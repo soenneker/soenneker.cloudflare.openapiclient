@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Stop
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_apiResponseCommonFailure">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_pcaps_api_response_common_failure">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PutAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Item.Stop
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityPcaps_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_pcaps_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

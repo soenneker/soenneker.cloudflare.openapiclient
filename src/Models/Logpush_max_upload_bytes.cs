@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Branch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_setting"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Branch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Wrapper"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Logpush_max_upload_bytes : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Branch2 LogpushMaxUploadBytesBranch2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_setting"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_setting? LogpushMaxUploadBytesSetting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Wrapper? LogpushMaxUploadBytesWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_setting LogpushMaxUploadBytesSetting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Wrapper LogpushMaxUploadBytesWrapper { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LogpushMaxUploadBytesSetting = new global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_setting();
+                result.LogpushMaxUploadBytesWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Wrapper();
             }
             return result;
         }
@@ -59,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return LogpushMaxUploadBytesBranch2.GetFieldDeserializers();
             }
-            else if(LogpushMaxUploadBytesSetting != null)
+            else if(LogpushMaxUploadBytesWrapper != null)
             {
-                return LogpushMaxUploadBytesSetting.GetFieldDeserializers();
+                return LogpushMaxUploadBytesWrapper.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -76,9 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Branch2>(null, LogpushMaxUploadBytesBranch2);
             }
-            else if(LogpushMaxUploadBytesSetting != null)
+            else if(LogpushMaxUploadBytesWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_setting>(null, LogpushMaxUploadBytesSetting);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes_Wrapper>(null, LogpushMaxUploadBytesWrapper);
             }
         }
     }

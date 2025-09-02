@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Logpush_validate_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_apiResponseCommon, IParsable
+    public partial class Logpush_validate_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_trusted_domain_Branch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_trusted_domain_Branch2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Email_security_create_trusted_domain : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain? EmailSecurityCreateTrustedDomain { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain? EmailSecurityCreateTrustedDomain { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain EmailSecurityCreateTrustedDomain { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain EmailSecurityCreateTrustedDomain { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_trusted_domain_Branch2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,9 +39,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_trusted_domain();
-            if("email-security_CreateTrustedDomain".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("email_security_CreateTrustedDomain".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EmailSecurityCreateTrustedDomain = new global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain();
+                result.EmailSecurityCreateTrustedDomain = new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain();
             }
             else if("email_security_create_trusted_domain_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(EmailSecurityCreateTrustedDomain != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain>(null, EmailSecurityCreateTrustedDomain);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain>(null, EmailSecurityCreateTrustedDomain);
             }
             else if(EmailSecurityCreateTrustedDomainBranch2 != null)
             {

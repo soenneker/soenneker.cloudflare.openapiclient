@@ -33,10 +33,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_query_results? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_query_results Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results Result { get; set; }
 #endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_200_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_200_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_200_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_200_messages.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_query_results>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_query_results.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_200_errors>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_200_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersObservability_query_results>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

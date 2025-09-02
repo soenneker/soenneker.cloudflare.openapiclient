@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Zone_cloud_connector_rules_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_apiResponseCommon, IParsable
+    public partial class Zone_cloud_connector_rules_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of Cloud Connector rules</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule> Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule>("result", Result);
         }
     }
 }

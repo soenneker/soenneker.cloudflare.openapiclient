@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The action to perform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action? Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description of the rule.</summary>
@@ -37,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The expiration time stamp and default duration of a DNS policy. Takesprecedence over the policy&apos;s `schedule` configuration, if any.This does not apply to HTTP or network policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration? Expiration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_expiration? Expiration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration Expiration { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_expiration Expiration { get; set; }
 #endif
         /// <summary>The protocol or layer to evaluate the traffic, identity, and device. posture expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,18 +71,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Additional settings that modify the rule&apos;s action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings? RuleSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings? RuleSettings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings RuleSettings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings RuleSettings { get; set; }
 #endif
         /// <summary>The schedule for activating DNS policies. This does not apply to HTTP or network policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule? Schedule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schedule? Schedule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule Schedule { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schedule Schedule { get; set; }
 #endif
         /// <summary>The wirefilter expression used for traffic matching. The API automatically formats and sanitizes this expression. This returns a normalized version that may differ from your input and cause Terraform state drift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,17 +117,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_action>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "device_posture", n => { DevicePosture = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration.CreateFromDiscriminatorValue); } },
+                { "expiration", n => { Expiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_expiration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_expiration.CreateFromDiscriminatorValue); } },
                 { "filters", n => { Filters = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_>()?.AsList(); } },
                 { "identity", n => { Identity = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "precedence", n => { Precedence = n.GetIntValue(); } },
-                { "rule_settings", n => { RuleSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings.CreateFromDiscriminatorValue); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule.CreateFromDiscriminatorValue); } },
+                { "rule_settings", n => { RuleSettings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schedule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schedule.CreateFromDiscriminatorValue); } },
                 { "traffic", n => { Traffic = n.GetStringValue(); } },
             };
         }
@@ -138,17 +138,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_action>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_action>("action", Action);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("device_posture", DevicePosture);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_expiration>("expiration", Expiration);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_expiration>("expiration", Expiration);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithRule_>("filters", Filters);
             writer.WriteStringValue("identity", Identity);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("precedence", Precedence);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_ruleSettings>("rule_settings", RuleSettings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_schedule>("schedule", Schedule);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings>("rule_settings", RuleSettings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schedule>("schedule", Schedule);
             writer.WriteStringValue("traffic", Traffic);
             writer.WriteAdditionalData(AdditionalData);
         }

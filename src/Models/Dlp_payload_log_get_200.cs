@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Dlp_payload_log_get_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_apiResponseSingle, IParsable
+    public partial class Dlp_payload_log_get_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Item.Dns
             public string Sort { get; set; }
 #endif
             [QueryParameter("time_delta")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsAnalytics_time_delta? TimeDelta { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_analytics_time_delta? TimeDelta { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("until")]

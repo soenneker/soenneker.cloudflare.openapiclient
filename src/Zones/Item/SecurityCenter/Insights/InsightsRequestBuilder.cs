@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zone_security_center_insights_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zone_security_center_insights_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zone_security_center_insights_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zone_security_center_insights_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -151,20 +151,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[]? IssueType { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[] IssueType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[]? IssueTypeNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[]? IssueTypeNeq { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenter_issueType[] IssueTypeNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[] IssueTypeNeq { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

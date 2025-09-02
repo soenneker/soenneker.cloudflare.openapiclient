@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2Producer"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerProducer"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2_producer"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_producer"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Mq_producer : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2Producer"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2_producer"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2Producer? MqR2Producer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2_producer? MqR2Producer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2Producer MqR2Producer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2_producer MqR2Producer { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerProducer"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_producer"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerProducer? MqWorkerProducer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_producer? MqWorkerProducer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerProducer MqWorkerProducer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_producer MqWorkerProducer { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_producer();
-            if("mq_r2-producer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("mq_r2_producer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqR2Producer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2Producer();
+                result.MqR2Producer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2_producer();
             }
-            else if("mq_worker-producer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("mq_worker_producer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqWorkerProducer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerProducer();
+                result.MqWorkerProducer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_producer();
             }
             return result;
         }
@@ -74,11 +74,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(MqR2Producer != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2Producer>(null, MqR2Producer);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_r2_producer>(null, MqR2Producer);
             }
             else if(MqWorkerProducer != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerProducer>(null, MqWorkerProducer);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_producer>(null, MqWorkerProducer);
             }
         }
     }

@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Origin_ca_revoke_certificate_4XX_messages : global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_messages_Wrapper, IParsable
+    public partial class Origin_ca_revoke_certificate_4XX_messages : global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

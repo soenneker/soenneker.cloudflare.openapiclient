@@ -49,17 +49,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates
         /// <summary>
         /// Lists all mTLS certificates.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_list_m_tls_certificates_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_collection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_collection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_collection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_collection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_list_m_tls_certificates_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_mtlsManagement_componentsSchemasCertificate_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_mtls_management_components_schemas_certificate_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload a certificate that you want to use with mTLS-enabled Cloudflare services.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_response_single_post"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_single_post"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_response_single_post?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_single_post?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_response_single_post> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_single_post> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.M_tls_certificate_management_upload_m_tls_certificate_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_response_single_post>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_certificate_response_single_post.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_single_post>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_single_post.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all mTLS certificates.

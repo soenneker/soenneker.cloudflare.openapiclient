@@ -72,50 +72,50 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// <summary>
         /// Delete a worker from a Workers for Platforms namespace. This call has no response body on a successful delete.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseNullResult"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_null_result"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseNullResult?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_null_result?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseNullResult> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_null_result> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseNullResult>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseNullResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_null_result>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_null_result.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetch information about a script uploaded to a Workers for Platforms namespace.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespaceScriptResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespace_script_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespaceScriptResponseSingle?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespace_script_response_single?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespaceScriptResponseSingle> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespace_script_response_single> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespaceScriptResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespaceScriptResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespace_script_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespace_script_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse?> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -138,7 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

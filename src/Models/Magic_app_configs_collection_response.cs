@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Magic_app_configs_collection_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_appsResponseObject, IParsable
+    public partial class Magic_app_configs_collection_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_apps_response_object, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

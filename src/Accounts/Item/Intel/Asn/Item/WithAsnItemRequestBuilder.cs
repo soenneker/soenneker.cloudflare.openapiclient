@@ -42,17 +42,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item
         /// <summary>
         /// Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_componentsSchemasResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_components_schemas_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Asn_intelligence_get_asn_overview_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_componentsSchemasResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_components_schemas_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_componentsSchemasResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_components_schemas_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Asn.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Asn_intelligence_get_asn_overview_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_componentsSchemasResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_componentsSchemasResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_components_schemas_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Intel_asn_components_schemas_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets an overview of the Autonomous System Number (ASN) and a list of subnets for it.

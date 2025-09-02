@@ -42,17 +42,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
         /// <summary>
         /// Retrieves the current status of Leaked Credential Checks.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_get_status_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,23 +60,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_get_status_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the current status of Leaked Credential Checks.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status"/></returns>
         /// <param name="body">Defines the overall status for Leaked Credential Checks.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_status body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_status body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_status body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_status body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_leaked_credentials_set_status_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_responseStatus.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_response_status.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves the current status of Leaked Credential Checks.
@@ -114,11 +114,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_status body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_status body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WafProductApiBundle_status body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Waf_product_api_bundle_status body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

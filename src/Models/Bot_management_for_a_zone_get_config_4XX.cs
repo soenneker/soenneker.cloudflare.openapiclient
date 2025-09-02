@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,8 +68,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_for_a_zone_get_config_4XX.Bot_management_for_a_zone_get_config_4XX_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_for_a_zone_get_config_4XX.Bot_management_for_a_zone_get_config_4XX_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -81,49 +81,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_messages_item>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_messages_item>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_for_a_zone_get_config_4XX.Bot_management_for_a_zone_get_config_4XX_result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_config"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bm_subscription_config"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bot_fight_mode_config"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_definitely_config"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_likely_config"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Bot_management_for_a_zone_get_config_4XX_result : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bm_subscription_config"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config? BotManagementBmSubscriptionConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bm_subscription_config? BotManagementBmSubscriptionConfig { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config BotManagementBmSubscriptionConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bm_subscription_config BotManagementBmSubscriptionConfig { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bot_fight_mode_config"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config? BotManagementBotFightModeConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bot_fight_mode_config? BotManagementBotFightModeConfig { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config BotManagementBotFightModeConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bot_fight_mode_config BotManagementBotFightModeConfig { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_definitely_config"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config? BotManagementSbfmDefinitelyConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_definitely_config? BotManagementSbfmDefinitelyConfig { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config BotManagementSbfmDefinitelyConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_definitely_config BotManagementSbfmDefinitelyConfig { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_config"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_likely_config"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_config? BotManagementSbfmLikelyConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_likely_config? BotManagementSbfmLikelyConfig { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_config BotManagementSbfmLikelyConfig { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_likely_config BotManagementSbfmLikelyConfig { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -135,21 +135,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_for_a_zone_get_config_4XX.Bot_management_for_a_zone_get_config_4XX_result();
-                if("bot-management_bm_subscription_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("bot_management_bm_subscription_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.BotManagementBmSubscriptionConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config();
+                    result.BotManagementBmSubscriptionConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bm_subscription_config();
                 }
-                else if("bot-management_bot_fight_mode_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("bot_management_bot_fight_mode_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.BotManagementBotFightModeConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config();
+                    result.BotManagementBotFightModeConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bot_fight_mode_config();
                 }
-                else if("bot-management_sbfm_definitely_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("bot_management_sbfm_definitely_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.BotManagementSbfmDefinitelyConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config();
+                    result.BotManagementSbfmDefinitelyConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_definitely_config();
                 }
-                else if("bot-management_sbfm_likely_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("bot_management_sbfm_likely_config".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.BotManagementSbfmLikelyConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_config();
+                    result.BotManagementSbfmLikelyConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_likely_config();
                 }
                 return result;
             }
@@ -186,19 +186,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(BotManagementBmSubscriptionConfig != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bm_subscription_config>(null, BotManagementBmSubscriptionConfig);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bm_subscription_config>(null, BotManagementBmSubscriptionConfig);
                 }
                 else if(BotManagementBotFightModeConfig != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_bot_fight_mode_config>(null, BotManagementBotFightModeConfig);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_bot_fight_mode_config>(null, BotManagementBotFightModeConfig);
                 }
                 else if(BotManagementSbfmDefinitelyConfig != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_definitely_config>(null, BotManagementSbfmDefinitelyConfig);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_definitely_config>(null, BotManagementSbfmDefinitelyConfig);
                 }
                 else if(BotManagementSbfmLikelyConfig != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.BotManagement_sbfm_likely_config>(null, BotManagementSbfmLikelyConfig);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_likely_config>(null, BotManagementSbfmLikelyConfig);
                 }
             }
         }

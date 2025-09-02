@@ -42,17 +42,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
         /// <summary>
         /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_response_discovery"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_discovery"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_response_discovery?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_discovery?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_response_discovery> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_discovery> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_response_discovery>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_schema_response_discovery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_discovery>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_discovery.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the most up to date view of discovered operations, rendered as OpenAPI schemas

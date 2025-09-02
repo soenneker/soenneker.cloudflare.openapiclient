@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Iam_token_verify_response_single_segment : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseSingle, IParsable
+    public partial class Iam_token_verify_response_single_segment : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

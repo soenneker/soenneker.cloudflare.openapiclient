@@ -49,17 +49,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules
         /// <summary>
         /// Lists network monitoring rules for account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_collection_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_collection_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_list_rules_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_collection_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_collection_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_collection_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_collection_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_list_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_collection_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_collection_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_collection_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_collection_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create network monitoring rules for account. Currently only supports creating a single rule per API request.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_create_rules_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_create_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_create_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_create_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_create_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -92,23 +92,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_create_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update network monitoring rules for account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_rules_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_rules_update_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.MagicVisibilityMnm_mnm_rules_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_mnm_rules_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists network monitoring rules for account.

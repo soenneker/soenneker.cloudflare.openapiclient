@@ -17,15 +17,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Administrators who can approve a temporary authentication request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group>? ApprovalGroups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_approval_group>? ApprovalGroups { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group> ApprovalGroups { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_approval_group> ApprovalGroups { get; set; }
 #endif
         /// <summary>Requires the user to request access from an administrator at the start of each session.</summary>
         public bool? ApprovalRequired { get; set; }
         /// <summary>The action Access will take if a user matches this policy.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision? Decision { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_decision? Decision { get; set; }
         /// <summary>Rules evaluated with a NOT logical operator. To match the policy, a user cannot meet any of the Exclude rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,9 +97,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_approval_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_approval_group.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "approval_required", n => { ApprovalRequired = n.GetBoolValue(); } },
-                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>(); } },
+                { "decision", n => { Decision = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_decision>(); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "include", n => { Include = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isolation_required", n => { IsolationRequired = n.GetBoolValue(); } },
@@ -117,9 +117,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasApproval_group>("approval_groups", ApprovalGroups);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_approval_group>("approval_groups", ApprovalGroups);
             writer.WriteBoolValue("approval_required", ApprovalRequired);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasDecision>("decision", Decision);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_decision>("decision", Decision);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("exclude", Exclude);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_rule>("include", Include);
             writer.WriteBoolValue("isolation_required", IsolationRequired);

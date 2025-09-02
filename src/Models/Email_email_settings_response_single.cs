@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Email_email_settings_response_single : global::Soenneker.Cloudflare.OpenApiClient.Models.Email_apiResponseSingle, IParsable
+    public partial class Email_email_settings_response_single : global::Soenneker.Cloudflare.OpenApiClient.Models.Email_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

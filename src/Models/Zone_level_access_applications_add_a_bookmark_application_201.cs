@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Zone_level_access_applications_add_a_bookmark_application_201 : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apps_componentsSchemasSingle_response2, IParsable
+    public partial class Zone_level_access_applications_add_a_bookmark_application_201 : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apps_components_schemas_single_response_2, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

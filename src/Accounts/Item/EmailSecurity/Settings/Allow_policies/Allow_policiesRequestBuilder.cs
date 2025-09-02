@@ -85,11 +85,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_allow_policy_2014XXError">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_allow_policy_201?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_allow_policy_201?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_allow_policy_201> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_allow_policy_201> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -127,11 +127,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateAllowPolicy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

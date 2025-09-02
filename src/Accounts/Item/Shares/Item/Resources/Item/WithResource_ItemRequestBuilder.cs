@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <summary>
         /// Deletion is not immediate, an updated share resource object with a new status will be returned.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resource_delete_4XX">When receiving a 4XX status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resource_delete_5XX">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -56,23 +56,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resource_delete_4XX.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resource_delete_5XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get share resource by ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resources_get_by_id_4XX">When receiving a 4XX status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resources_get_by_id_5XX">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -81,12 +81,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resources_get_by_id_4XX.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resources_get_by_id_5XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update is not immediate, an updated share resource object with a new status will be returned.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,11 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resource_update_5XX">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resource_update_4XX.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Share_resource_update_5XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_share_resource_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletion is not immediate, an updated share resource object with a new status will be returned.
@@ -156,11 +156,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_update_share_resource_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

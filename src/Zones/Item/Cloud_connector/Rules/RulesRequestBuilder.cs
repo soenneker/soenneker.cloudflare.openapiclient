@@ -69,11 +69,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector.Rules
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cloud_conenctor_rules_put_5XX">When receiving a 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cloud_conenctor_rules_put_200?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cloud_conenctor_rules_put_200?> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cloud_conenctor_rules_put_200> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cloud_conenctor_rules_put_200> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -112,11 +112,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector.Rules
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudConnector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloud_connector_rule> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

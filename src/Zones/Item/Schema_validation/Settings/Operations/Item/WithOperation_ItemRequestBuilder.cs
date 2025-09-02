@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_DeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_DeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_DeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_GetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_GetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_GetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_PutResponse?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_PutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settin
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_PutResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Settings.Operations.Item.WithOperation_PutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_apiResponseSingle"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_settings_response_collection"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_api_response_single"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_settings_response_collection"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Email_routing_settings_disable_email_routing_dns_200 : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_apiResponseSingle"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_api_response_single"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_apiResponseSingle? EmailApiResponseSingle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_api_response_single? EmailApiResponseSingle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_apiResponseSingle EmailApiResponseSingle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_api_response_single EmailApiResponseSingle { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_settings_response_collection"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,9 +39,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_routing_settings_disable_email_routing_dns_200();
-            if("email_api-response-single".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("email_api_response_single".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EmailApiResponseSingle = new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_apiResponseSingle();
+                result.EmailApiResponseSingle = new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_api_response_single();
             }
             else if("email_dns_settings_response_collection".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(EmailApiResponseSingle != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_apiResponseSingle>(null, EmailApiResponseSingle);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_api_response_single>(null, EmailApiResponseSingle);
             }
             else if(EmailDnsSettingsResponseCollection != null)
             {

@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,10 +44,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_result_info? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_result_info? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_result_info ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_result_info ResultInfo { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -76,10 +76,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_result_info.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_result_info.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -90,10 +90,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_messages_item>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item>("messages", Messages);
             writer.WriteObjectValue<UntypedNode>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_result_info>("result_info", ResultInfo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_result_info>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

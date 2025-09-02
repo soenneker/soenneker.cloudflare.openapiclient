@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Counts per account plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_planPropertiesInfo? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_plan_properties_info? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_planPropertiesInfo Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_plan_properties_info Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_availabilities_quota_quotasPerPlan"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_planPropertiesInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_planPropertiesInfo.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_plan_properties_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_plan_properties_info.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_planPropertiesInfo>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_plan_properties_info>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -73,17 +73,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// <summary>
         /// List, search, sort, and filter a zones&apos; DNS records.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_list_dns_records_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Dns_recordsRequestBuilder.Dns_recordsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -91,23 +91,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_list_dns_records_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new DNS record for a zone.Notes:- A/AAAA records cannot exist on the same name as CNAME records.- NS records cannot exist on the same name as any other record type.- Domain names are always represented in Punycode, even if Unicode  characters were used when creating the record.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_single"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_create_dns_record_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_single?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_record_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_single> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_record_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_create_dns_record_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List, search, sort, and filter a zones&apos; DNS records.
@@ -145,11 +145,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_record_post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dnsRecordPost body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_record_post body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -283,9 +283,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             public string ContentStartswith { get; set; }
 #endif
             [QueryParameter("direction")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_direction? Direction { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_direction? Direction { get; set; }
             [QueryParameter("match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_match? Match { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_match? Match { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("name")]
@@ -332,7 +332,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             public string NameStartswith { get; set; }
 #endif
             [QueryParameter("order")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_order? Order { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_order? Order { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("page")]
@@ -415,7 +415,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             public string TagExact { get; set; }
 #endif
             [QueryParameter("tag_match")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_tag_match? TagMatch { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_tag_match? TagMatch { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tag%2Epresent")]
@@ -435,7 +435,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
             public string TagStartswith { get; set; }
 #endif
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_type? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_type? Type { get; set; }
         }
     }
 }

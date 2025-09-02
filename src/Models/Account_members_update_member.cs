@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_policies"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_roles"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Account_members_update_member : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_policies"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies? IamUpdateMemberWithPolicies { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_policies? IamUpdateMemberWithPolicies { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies IamUpdateMemberWithPolicies { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_policies IamUpdateMemberWithPolicies { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_roles"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles? IamUpdateMemberWithRoles { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_roles? IamUpdateMemberWithRoles { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles IamUpdateMemberWithRoles { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_roles IamUpdateMemberWithRoles { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Account_members_update_member();
-            if("iam_update-member-with-policies".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("iam_update_member_with_policies".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IamUpdateMemberWithPolicies = new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies();
+                result.IamUpdateMemberWithPolicies = new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_policies();
             }
-            else if("iam_update-member-with-roles".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("iam_update_member_with_roles".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.IamUpdateMemberWithRoles = new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles();
+                result.IamUpdateMemberWithRoles = new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_roles();
             }
             return result;
         }
@@ -74,11 +74,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(IamUpdateMemberWithPolicies != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithPolicies>(null, IamUpdateMemberWithPolicies);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_policies>(null, IamUpdateMemberWithPolicies);
             }
             else if(IamUpdateMemberWithRoles != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_updateMemberWithRoles>(null, IamUpdateMemberWithRoles);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_update_member_with_roles>(null, IamUpdateMemberWithRoles);
             }
         }
     }

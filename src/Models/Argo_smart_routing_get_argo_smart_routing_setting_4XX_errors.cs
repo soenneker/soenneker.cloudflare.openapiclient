@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Argo_smart_routing_get_argo_smart_routing_setting_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.ArgoConfig_messages_Wrapper, IParsable
+    public partial class Argo_smart_routing_get_argo_smart_routing_setting_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.Argo_config_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

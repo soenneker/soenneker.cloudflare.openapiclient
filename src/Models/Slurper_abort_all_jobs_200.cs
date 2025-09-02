@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Slurper_abort_all_jobs_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Success, IParsable
+    public partial class Slurper_abort_all_jobs_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_success, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_settings Settings { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_accountType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account"/> and sets the default values.
         /// </summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_settings.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_accountType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_type>(); } },
             };
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_settings>("settings", Settings);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_accountType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

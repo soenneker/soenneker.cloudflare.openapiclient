@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification.Item
         /// <summary>
         /// Edit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_method_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_ssl_validation_method_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_edit_ssl_certificate_pack_validation_method_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_method_response_collection?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasValidation_method body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_ssl_validation_method_response_collection?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_validation_method body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_method_response_collection> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasValidation_method body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_ssl_validation_method_response_collection> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_validation_method body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification.Item
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_edit_ssl_certificate_pack_validation_method_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_method_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_ssl_validation_method_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_ssl_validation_method_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_ssl_validation_method_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Edit SSL validation method for a certificate pack. A PATCH request will request an immediate validation check on any certificate, and return the updated status. If a validation method is provided, the validation will be immediately attempted using that method.
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasValidation_method body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_validation_method body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_componentsSchemasValidation_method body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_validation_method body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

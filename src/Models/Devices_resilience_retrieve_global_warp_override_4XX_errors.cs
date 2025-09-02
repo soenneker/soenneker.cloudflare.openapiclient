@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Devices_resilience_retrieve_global_warp_override_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_messages_Wrapper, IParsable
+    public partial class Devices_resilience_retrieve_global_warp_override_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

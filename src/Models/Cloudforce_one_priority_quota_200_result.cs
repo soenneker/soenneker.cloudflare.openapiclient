@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Cloudforce_one_priority_quota_200_result : global::Soenneker.Cloudflare.OpenApiClient.Models.CloudforceOneRequests_quota, IParsable
+    public partial class Cloudforce_one_priority_quota_200_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudforce_one_requests_quota, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke
         /// <summary>
         /// Revokes a list of devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled.**Deprecated**: please use POST /accounts/{account_id}/devices/registrations/revoke instead.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_api_response_single"/></returns>
         /// <param name="body">A list of Registration IDs to revoke.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -44,11 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle?> PostAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_api_response_single?> PostAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle> PostAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_api_response_single> PostAsync(List<string> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Revoke
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_revoke_devices_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_apiResponseSingle.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_api_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_api_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Revokes a list of devices. Not supported when [multi-user mode](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/deployment/mdm-deployment/windows-multiuser/) is enabled.**Deprecated**: please use POST /accounts/{account_id}/devices/registrations/revoke instead.

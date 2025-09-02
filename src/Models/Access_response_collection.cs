@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Access_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCollection, IParsable
+    public partial class Access_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_response_collection.Access_response_collection_result>("result", Result);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onelogin"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_pingone"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_saml"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_yandex"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google_apps"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_onelogin"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_pingone"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_saml"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_yandex"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Access_response_collection_result : IComposedTypeWrapper, IParsable
@@ -97,13 +97,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google AccessGoogle { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google_apps"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps? AccessGoogleApps { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google_apps? AccessGoogleApps { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps AccessGoogleApps { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google_apps AccessGoogleApps { get; set; }
 #endif
             /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -175,7 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 result.AccessFacebook = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_facebook();
                 result.AccessGithub = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_github();
                 result.AccessGoogle = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google();
-                result.AccessGoogleApps = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_googleApps();
+                result.AccessGoogleApps = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_google_apps();
                 result.AccessLinkedin = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_linkedin();
                 result.AccessOidc = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_oidc();
                 result.AccessOkta = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_okta();

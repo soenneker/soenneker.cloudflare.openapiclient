@@ -36,10 +36,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemFull? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemFull Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_messages_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_messages_item.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemFull>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemFull.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_messages_item>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_messages_item>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemFull>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

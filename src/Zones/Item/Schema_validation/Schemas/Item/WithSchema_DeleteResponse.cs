@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithSchema_DeleteResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseSingle, IParsable
+    public partial class WithSchema_DeleteResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

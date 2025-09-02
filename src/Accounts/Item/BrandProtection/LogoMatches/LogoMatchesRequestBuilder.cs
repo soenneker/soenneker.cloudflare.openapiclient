@@ -42,27 +42,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoM
         /// <summary>
         /// Return matches for logo queries based on ID
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_LogoMatch"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_LogoMatch"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_LogoMatch?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoMatches.LogoMatchesRequestBuilder.LogoMatchesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_LogoMatch?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoMatches.LogoMatchesRequestBuilder.LogoMatchesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_LogoMatch> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoMatches.LogoMatchesRequestBuilder.LogoMatchesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_LogoMatch> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.LogoMatches.LogoMatchesRequestBuilder.LogoMatchesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_LogoMatch>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_LogoMatch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_LogoMatch>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_LogoMatch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return matches for logo queries based on ID

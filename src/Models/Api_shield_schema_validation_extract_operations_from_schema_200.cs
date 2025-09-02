@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Api_shield_schema_validation_extract_operations_from_schema_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCollection, IParsable
+    public partial class Api_shield_schema_validation_extract_operations_from_schema_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
@@ -52,26 +52,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_extract_operations_from_schema_200.Api_shield_schema_validation_extract_operations_from_schema_200_result>("result", Result);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Api_shield_schema_validation_extract_operations_from_schema_200_result : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation? ApiShieldBasicOperation { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation? ApiShieldBasicOperation { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation ApiShieldBasicOperation { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation ApiShieldBasicOperation { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation? ApiShieldOperation { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation? ApiShieldOperation { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation ApiShieldOperation { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation ApiShieldOperation { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,8 +82,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_validation_extract_operations_from_schema_200.Api_shield_schema_validation_extract_operations_from_schema_200_result();
-                result.ApiShieldBasicOperation = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation();
-                result.ApiShieldOperation = new global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_operation();
+                result.ApiShieldBasicOperation = new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation();
+                result.ApiShieldOperation = new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation();
                 return result;
             }
             /// <summary>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_basic_operation>(null, ApiShieldBasicOperation, ApiShieldOperation);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation>(null, ApiShieldBasicOperation, ApiShieldOperation);
             }
         }
     }

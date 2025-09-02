@@ -36,10 +36,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_verification>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_verification> Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_ssl_verification_details_4XX_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_ssl_verification_details_4XX_errors.CreateFromDiscriminatorValue); } },
                 { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_ssl_verification_details_4XX_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_ssl_verification_details_4XX_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_verification>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_verification.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_ssl_verification_details_4XX_errors>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_ssl_verification_details_4XX_messages>("messages", Messages);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_verification>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_verification>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

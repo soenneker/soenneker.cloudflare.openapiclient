@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Iam_collection_resource_groups_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCollection, IParsable
+    public partial class Iam_collection_resource_groups_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of resource groups that the policy applies to.</summary>

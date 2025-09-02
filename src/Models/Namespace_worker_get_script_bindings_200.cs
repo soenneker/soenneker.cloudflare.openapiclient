@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Namespace_worker_get_script_bindings_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_apiResponseCommon, IParsable
+    public partial class Namespace_worker_get_script_bindings_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>

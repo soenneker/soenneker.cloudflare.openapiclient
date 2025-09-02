@@ -8,58 +8,58 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_Everything"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByHostnames"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByPrefixes"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByTags"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFile"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFileWithUrlAndHeaders"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_Everything"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByHostnames"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByPrefixes"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByTags"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFile"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFileWithUrlAndHeaders"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zone_purge : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_Everything"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_Everything"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_Everything? CachePurgeEverything { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_Everything? CachePurgeEverything { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_Everything CachePurgeEverything { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_Everything CachePurgeEverything { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByHostnames"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByHostnames"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByHostnames? CachePurgeFlexPurgeByHostnames { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByHostnames? CachePurgeFlexPurgeByHostnames { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByHostnames CachePurgeFlexPurgeByHostnames { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByHostnames CachePurgeFlexPurgeByHostnames { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByPrefixes"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByPrefixes"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByPrefixes? CachePurgeFlexPurgeByPrefixes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByPrefixes? CachePurgeFlexPurgeByPrefixes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByPrefixes CachePurgeFlexPurgeByPrefixes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByPrefixes CachePurgeFlexPurgeByPrefixes { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByTags"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByTags"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByTags? CachePurgeFlexPurgeByTags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByTags? CachePurgeFlexPurgeByTags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByTags CachePurgeFlexPurgeByTags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByTags CachePurgeFlexPurgeByTags { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFile"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFile"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFile? CachePurgeSingleFile { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFile? CachePurgeSingleFile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFile CachePurgeSingleFile { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFile CachePurgeSingleFile { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFileWithUrlAndHeaders"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFileWithUrlAndHeaders"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFileWithUrlAndHeaders? CachePurgeSingleFileWithUrlAndHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFileWithUrlAndHeaders? CachePurgeSingleFileWithUrlAndHeaders { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFileWithUrlAndHeaders CachePurgeSingleFileWithUrlAndHeaders { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFileWithUrlAndHeaders CachePurgeSingleFileWithUrlAndHeaders { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,12 +70,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_purge();
-            result.CachePurgeEverything = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_Everything();
-            result.CachePurgeFlexPurgeByHostnames = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByHostnames();
-            result.CachePurgeFlexPurgeByPrefixes = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByPrefixes();
-            result.CachePurgeFlexPurgeByTags = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_FlexPurgeByTags();
-            result.CachePurgeSingleFile = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFile();
-            result.CachePurgeSingleFileWithUrlAndHeaders = new global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_SingleFileWithUrlAndHeaders();
+            result.CachePurgeEverything = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_Everything();
+            result.CachePurgeFlexPurgeByHostnames = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByHostnames();
+            result.CachePurgeFlexPurgeByPrefixes = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByPrefixes();
+            result.CachePurgeFlexPurgeByTags = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_FlexPurgeByTags();
+            result.CachePurgeSingleFile = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFile();
+            result.CachePurgeSingleFileWithUrlAndHeaders = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_SingleFileWithUrlAndHeaders();
             return result;
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CachePurge_Everything>(null, CachePurgeEverything, CachePurgeFlexPurgeByHostnames, CachePurgeFlexPurgeByPrefixes, CachePurgeFlexPurgeByTags, CachePurgeSingleFile, CachePurgeSingleFileWithUrlAndHeaders);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_purge_Everything>(null, CachePurgeEverything, CachePurgeFlexPurgeByHostnames, CachePurgeFlexPurgeByPrefixes, CachePurgeFlexPurgeByTags, CachePurgeSingleFile, CachePurgeSingleFileWithUrlAndHeaders);
         }
     }
 }

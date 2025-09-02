@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,36 +65,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return new saved logo queries created from image files
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Logo"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Logo"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 422 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Logo?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Logo?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Logo> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Logo> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
-                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Error.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
+                { "XXX", global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Logo>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_Logo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Logo>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_Logo.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return all saved logo queries
@@ -123,11 +123,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.BrandProtectionApi_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Brand_protection_api_ImageFile body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection.Logos.LogosRequestBuilder.LogosRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

@@ -49,17 +49,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
         /// <summary>
         /// List configured pools.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_list_pools_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder.PoolsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder.PoolsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder.PoolsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools.PoolsRequestBuilder.PoolsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_list_pools_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Apply changes to a number of existing pools, overwriting the supplied properties. Pools are ordered by ascending `name`. Returns the list of affected pools. Supports the standard pagination query parameters, either `limit`/`offset` or `per_page`/`page`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_patch_pools_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_patch_pools body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_patch_pools body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_patch_pools body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_patch_pools body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -92,23 +92,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_patch_pools_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasResponse_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new pool.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasSingle_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_single_response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_create_pool_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasSingle_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_create_pool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_single_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_create_pool body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasSingle_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_create_pool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_single_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_create_pool body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Load_balancers.Pools
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancer_pools_create_pool_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasSingle_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_schemasSingle_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List configured pools.

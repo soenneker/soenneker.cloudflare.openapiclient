@@ -30,21 +30,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CreatedOn { get; private set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_http_consumer"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer? MqHttpConsumer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_http_consumer? MqHttpConsumer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer MqHttpConsumer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_http_consumer MqHttpConsumer { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_consumer"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer? MqWorkerConsumer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_consumer? MqWorkerConsumer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer MqWorkerConsumer { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_consumer MqWorkerConsumer { get; set; }
 #endif
         /// <summary>A Resource identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,13 +103,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer();
-            if("mq_http-consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("mq_http_consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqHttpConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer();
+                result.MqHttpConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_http_consumer();
             }
-            else if("mq_worker-consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("mq_worker_consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.MqWorkerConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer();
+                result.MqWorkerConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_consumer();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -178,11 +178,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(MqHttpConsumer != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_httpConsumer>(null, MqHttpConsumer);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_http_consumer>(null, MqHttpConsumer);
             }
             else if(MqWorkerConsumer != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_workerConsumer>(null, MqWorkerConsumer);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_worker_consumer>(null, MqWorkerConsumer);
             }
             else if(Script != null)
             {

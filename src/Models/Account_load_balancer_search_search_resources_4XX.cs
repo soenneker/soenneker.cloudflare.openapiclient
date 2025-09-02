@@ -20,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_result_info? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_result_info? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_result_info ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_result_info ResultInfo { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_search_search_resources_4XX"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_result_info.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_result_info.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_result_info>("result_info", ResultInfo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_result_info>("result_info", ResultInfo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

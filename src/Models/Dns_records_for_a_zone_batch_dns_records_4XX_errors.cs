@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Dns_records_for_a_zone_batch_dns_records_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_messages_Wrapper, IParsable
+    public partial class Dns_records_for_a_zone_batch_dns_records_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

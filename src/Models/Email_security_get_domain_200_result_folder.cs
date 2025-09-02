@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Email_security_get_domain_200_result_folder : global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ScannableFolder_Wrapper, IParsable
+    public partial class Email_security_get_domain_200_result_folder : global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ScannableFolder_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Filters_create_filters_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterResponseCollection, IParsable
+    public partial class Filters_create_filters_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

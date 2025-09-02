@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Zone_cache_settings_start_cache_reserve_clear_200_result : global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear, IParsable
+    public partial class Zone_cache_settings_start_cache_reserve_clear_200_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_cache_reserve_clear, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The time that the latest Cache Reserve Clear operation completed.</summary>
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The time that the latest Cache Reserve Clear operation started.</summary>
         public DateTimeOffset? StartTs { get; set; }
         /// <summary>The current state of the Cache Reserve Clear operation.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state? State { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_cache_reserve_clear_state? State { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "end_ts", n => { EndTs = n.GetDateTimeOffsetValue(); } },
                 { "start_ts", n => { StartTs = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_cache_reserve_clear_state>(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("end_ts", EndTs);
             writer.WriteDateTimeOffsetValue("start_ts", StartTs);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_cache_reserve_clear_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_cache_reserve_clear_state>("state", State);
         }
     }
 }

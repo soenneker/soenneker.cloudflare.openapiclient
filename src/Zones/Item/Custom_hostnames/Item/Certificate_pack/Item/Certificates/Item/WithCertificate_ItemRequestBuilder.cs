@@ -61,18 +61,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
         /// <summary>
         /// Replace a single custom certificate within a certificate pack that contains two bundled certificates. The replacement must adhere to the following constraints. You can only replace an RSA certificate with another RSA certificate or an ECDSA certificate with another ECDSA certificate.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_hostname_response_single"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_edit_custom_certificate_custom_hostname_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_hostname_response_single?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_hostname_response_single> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_edit_custom_certificate_custom_hostname_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_hostname_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_hostname_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a single custom certificate from a certificate pack that contains two bundled certificates. Deletion is subject to the following constraints. You cannot delete a certificate if it is the only remaining certificate in the pack. At least one certificate must remain in the pack.
@@ -113,11 +113,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item.Ce
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_cert_and_key body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tls setting value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_value? Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_value Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Per_hostname_tls_settings_get"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

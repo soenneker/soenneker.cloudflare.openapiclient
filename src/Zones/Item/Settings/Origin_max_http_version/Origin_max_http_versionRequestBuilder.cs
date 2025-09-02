@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_origin_max_http_version_setting_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_origin_max_http_version_setting_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_origin_max_http_version_setting_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_origin_max_http_version_setting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting_200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CacheRules_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_origin_max_http_version_setting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

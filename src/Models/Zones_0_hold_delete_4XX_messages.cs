@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Zones_0_hold_delete_4XX_messages : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemasMessages_Wrapper, IParsable
+    public partial class Zones_0_hold_delete_4XX_messages : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemas_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

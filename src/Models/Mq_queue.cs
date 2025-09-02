@@ -69,10 +69,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueSettings? Settings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_settings? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueSettings Settings { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_settings Settings { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue"/> and sets the default values.
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "producers_total_count", n => { ProducersTotalCount = n.GetDoubleValue(); } },
                 { "queue_id", n => { QueueId = n.GetStringValue(); } },
                 { "queue_name", n => { QueueName = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueSettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_settings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("queue_name", QueueName);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queueSettings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_queue_settings>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

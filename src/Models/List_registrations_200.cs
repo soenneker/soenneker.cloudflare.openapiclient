@@ -17,34 +17,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message>? Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message> Errors { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message> Errors { get; set; }
 #endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message>? Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message>? Messages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message> Messages { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message> Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_registration>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_registration> Result { get; set; }
 #endif
         /// <summary>V4 public API Pagination/Cursor info.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_cursor_result_info? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_cursor_result_info? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_cursor_result_info ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_cursor_result_info ResultInfo { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -73,10 +73,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_cursor_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_cursor_result_info.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_registration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_registration.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_cursor_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_cursor_result_info.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -87,10 +87,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message>("errors", Errors);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_v4_response_message>("messages", Messages);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_registration>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_cursor_result_info>("result_info", ResultInfo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_v4_response_message>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_registration>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_cursor_result_info>("result_info", ResultInfo);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

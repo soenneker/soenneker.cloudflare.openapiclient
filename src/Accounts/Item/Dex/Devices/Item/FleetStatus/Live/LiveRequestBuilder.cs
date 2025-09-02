@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.Flee
         /// <summary>
         /// Get the live status of a latest device given device_id from the device_state table
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_device"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_live_status_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_device?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.Live.LiveRequestBuilder.LiveRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.Live.LiveRequestBuilder.LiveRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_device> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.Live.LiveRequestBuilder.LiveRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.FleetStatus.Live.LiveRequestBuilder.LiveRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Item.Flee
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_live_status_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_device>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DigitalExperienceMonitoring_device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the live status of a latest device given device_id from the device_state table

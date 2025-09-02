@@ -36,27 +36,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Seats
         /// <summary>
         /// Removes a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_componentsSchemasResponse_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_components_schemas_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_componentsSchemasResponse_collection?> PatchAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seat> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_components_schemas_response_collection?> PatchAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seat> body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_componentsSchemasResponse_collection> PatchAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seat> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_components_schemas_response_collection> PatchAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seat> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Access_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Access_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_componentsSchemasResponse_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_componentsSchemasResponse_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_components_schemas_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Access_seats_components_schemas_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Removes a user from a Zero Trust seat when both `access_seat` and `gateway_seat` are set to false.

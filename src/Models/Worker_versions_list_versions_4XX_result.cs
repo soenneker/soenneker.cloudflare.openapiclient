@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort>? Items { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_short>? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort> Items { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_short> Items { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Worker_versions_list_versions_4XX_result"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_short>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_short.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versionItemShort>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_short>("items", Items);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

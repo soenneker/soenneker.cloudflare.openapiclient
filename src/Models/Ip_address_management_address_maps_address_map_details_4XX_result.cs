@@ -9,24 +9,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Ip_address_management_address_maps_address_map_details_4XX_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMaps, IParsable
+    public partial class Ip_address_management_address_maps_address_map_details_4XX_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The set of IPs on the Address Map.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsIp>? Ips { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_ip>? Ips { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsIp> Ips { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_ip> Ips { get; set; }
 #endif
         /// <summary>Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsMembership>? Memberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership>? Memberships { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsMembership> Memberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership> Memberships { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,8 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsIp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsIp.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "memberships", n => { Memberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsMembership>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsMembership.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "ips", n => { Ips = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_ip>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_ip.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "memberships", n => { Memberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsIp>("ips", Ips);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_addressMapsMembership>("memberships", Memberships);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_ip>("ips", Ips);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership>("memberships", Memberships);
         }
     }
 }

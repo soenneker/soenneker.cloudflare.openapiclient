@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Waitingroom_event_id_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_apiResponseSingle, IParsable
+    public partial class Waitingroom_event_id_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Waitingroom_api_response_single, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

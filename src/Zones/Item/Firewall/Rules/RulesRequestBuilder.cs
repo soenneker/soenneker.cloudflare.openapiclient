@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         /// <summary>
         /// Deletes existing firewall rules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollectionDelete"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection_delete"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -58,11 +58,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollectionDelete?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_delete_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection_delete?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_delete_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollectionDelete> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_delete_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection_delete> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_delete_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -71,23 +71,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_delete_firewall_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollectionDelete>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollectionDelete.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection_delete>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection_delete.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Fetches firewall rules in a zone. You can filter the results using several optional parameters.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_list_firewall_rules_4XX">When receiving a 4XX status code</exception>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -95,12 +95,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_list_firewall_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates the priority of existing firewall rules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -108,11 +108,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_priority_of_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_priority_of_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_priority_of_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_priority_of_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -121,12 +121,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_priority_of_firewall_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create one or more firewall rules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,11 +134,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_create_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_create_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_create_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_create_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -147,12 +147,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_create_firewall_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates one or more existing firewall rules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -160,11 +160,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_firewall_rules body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -173,7 +173,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rules_update_firewall_rules_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filterRulesResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rules_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes existing firewall rules.

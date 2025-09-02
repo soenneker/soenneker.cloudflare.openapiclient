@@ -166,7 +166,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             [QueryParameter("match")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules.Rules.GetMatchQueryParameterType? Match { get; set; }
             [QueryParameter("mode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? Mode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_mode? Mode { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("notes")]

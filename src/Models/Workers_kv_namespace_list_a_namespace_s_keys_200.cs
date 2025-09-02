@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Workers_kv_namespace_list_a_namespace_s_keys_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommon, IParsable
+    public partial class Workers_kv_namespace_list_a_namespace_s_keys_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_key>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_key> Result { get; set; }
 #endif
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_key.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_list_a_namespace_s_keys_200_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_list_a_namespace_s_keys_200_result_info.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_key>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_key>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_list_a_namespace_s_keys_200_result_info>("result_info", ResultInfo);
         }
     }

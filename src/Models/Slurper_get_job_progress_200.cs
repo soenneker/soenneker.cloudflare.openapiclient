@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Slurper_get_job_progress_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Success, IParsable
+    public partial class Slurper_get_job_progress_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_success, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobProgressResponse? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_JobProgressResponse? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobProgressResponse Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_JobProgressResponse Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobProgressResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobProgressResponse.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_JobProgressResponse>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_JobProgressResponse.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_JobProgressResponse>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_JobProgressResponse>("result", Result);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method? BundleMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method? BundleMethod { get; set; }
         /// <summary>The zone&apos;s SSL certificate or SSL certificate and intermediate(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,10 +45,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configuration for using Keyless SSL through a Cloudflare Tunnel</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel? Tunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel? Tunnel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel Tunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel Tunnel { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Keyless_ssl_for_a_zone_create_keyless_ssl_configuration"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Keyless_ssl_for_a_zone_create_keyless_ssl_configuration()
         {
             AdditionalData = new Dictionary<string, object>();
-            BundleMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method.Ubiquitous;
+            BundleMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method.Ubiquitous;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -76,12 +76,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method>(); } },
+                { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>(); } },
                 { "certificate", n => { Certificate = n.GetStringValue(); } },
                 { "host", n => { Host = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "port", n => { Port = n.GetDoubleValue(); } },
-                { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel.CreateFromDiscriminatorValue); } },
+                { "tunnel", n => { Tunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,12 +91,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_bundle_method>("bundle_method", BundleMethod);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>("bundle_method", BundleMethod);
             writer.WriteStringValue("certificate", Certificate);
             writer.WriteStringValue("host", Host);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("port", Port);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_keyless_tunnel>("tunnel", Tunnel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_tunnel>("tunnel", Tunnel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

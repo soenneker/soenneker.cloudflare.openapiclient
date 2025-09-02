@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Zero_trust_organization_update_your_zero_trust_organization_doh_settings_201 : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemasSingle_response, IParsable
+    public partial class Zero_trust_organization_update_your_zero_trust_organization_doh_settings_201 : global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_single_response, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

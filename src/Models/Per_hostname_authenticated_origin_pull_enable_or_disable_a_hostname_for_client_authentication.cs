@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_input>? Config { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_certid_input>? Config { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_input> Config { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_certid_input> Config { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Per_hostname_authenticated_origin_pull_enable_or_disable_a_hostname_for_client_authentication"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_input>(global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_input.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "config", n => { Config = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_certid_input>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_certid_input.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_hostname_certid_input>("config", Config);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_certid_input>("config", Config);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

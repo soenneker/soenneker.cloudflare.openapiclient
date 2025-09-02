@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Per_hostname_tls_settings_delete_4XX_result : global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_settingObjectDelete, IParsable
+    public partial class Per_hostname_tls_settings_delete_4XX_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_settingObjectDelete, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

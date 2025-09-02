@@ -36,27 +36,27 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
         /// <summary>
         /// Remove a KV pair from the namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns the value associated with the given key in the given namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. If the KV-pair is set to expire at some point, the expiration time as measured in seconds since the UNIX epoch will be returned in the `expiration` response header.
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -77,34 +77,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Write a value identified by a key. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name. Body should be the value to be stored. If JSON metadata to be associated with the key/value pair is needed, use `multipart/form-data` content type for your PUT request (see dropdown below in `REQUEST BODY SCHEMA`). Existing values, expirations, and metadata will be overwritten. If neither `expiration` nor `expiration_ttl` is specified, the key-value pair will never expire. If both are set, `expiration_ttl` is used and `expiration` is ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult?> PutAsync(string body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result?> PutAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult> PutAsync(string body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result> PutAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove a KV pair from the namespace. Use URL-encoding to use special characters (for example, `:`, `!`, `%`) in the key name.
@@ -155,18 +155,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(string body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(string body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item.WithKey_nameItemRequestBuilder.WithKey_nameItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            if(string.IsNullOrEmpty(body)) throw new ArgumentNullException(nameof(body));
+            _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromScalar(RequestAdapter, "multipart/form-data", body);
+            requestInfo.SetContentFromParsable(RequestAdapter, "multipart/form-data", body);
             return requestInfo;
         }
         /// <summary>

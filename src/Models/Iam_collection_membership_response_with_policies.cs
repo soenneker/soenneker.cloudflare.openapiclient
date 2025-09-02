@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Iam_collection_membership_response_with_policies : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_apiResponseCollection, IParsable
+    public partial class Iam_collection_membership_response_with_policies : global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membershipWithPolicies>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_with_policies>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membershipWithPolicies> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_with_policies> Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membershipWithPolicies>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membershipWithPolicies.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_with_policies>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_with_policies.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membershipWithPolicies>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_membership_with_policies>("result", Result);
         }
     }
 }

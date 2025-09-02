@@ -20,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The trace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracer_trace_item>? Trace { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Request_tracer_trace_item>? Trace { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracer_trace_item> Trace { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Request_tracer_trace_item> Trace { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Account_request_tracer_request_trace_200_result"/> and sets the default values.
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "status_code", n => { StatusCode = n.GetIntValue(); } },
-                { "trace", n => { Trace = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracer_trace_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracer_trace_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "trace", n => { Trace = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Request_tracer_trace_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Request_tracer_trace_item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("status_code", StatusCode);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RequestTracer_trace_item>("trace", Trace);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Request_tracer_trace_item>("trace", Trace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Email_security_delete_trusted_domain_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ApiResponseCommon, IParsable
+    public partial class Email_security_delete_trusted_domain_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ApiResponseCommon, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>

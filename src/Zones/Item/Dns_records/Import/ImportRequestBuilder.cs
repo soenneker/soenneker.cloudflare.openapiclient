@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Import
         /// <summary>
         /// You can upload your [BIND config](https://en.wikipedia.org/wiki/Zone_file &quot;Zone file&quot;) through this endpoint. It assumes that cURL is called from a location with bind_config.txt (valid BIND config) present.See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ &quot;Import and export records&quot;) for more information.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_import_scan"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_import_scan"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_import_dns_records_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_import_scan?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_import_scan?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_import_scan> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_import_scan> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Import
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_import_dns_records_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_import_scan>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_dns_response_import_scan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_import_scan>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_import_scan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// You can upload your [BIND config](https://en.wikipedia.org/wiki/Zone_file &quot;Zone file&quot;) through this endpoint. It assumes that cURL is called from a location with bind_config.txt (valid BIND config) present.See [the documentation](https://developers.cloudflare.com/dns/manage-dns-records/how-to/import-and-export/ &quot;Import and export records&quot;) for more information.

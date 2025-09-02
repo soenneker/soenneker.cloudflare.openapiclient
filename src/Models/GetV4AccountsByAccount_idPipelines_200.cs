@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>? Results { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline> Results { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline> Results { get; set; }
 #endif
         /// <summary>Indicates whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200_result_info.CreateFromDiscriminatorValue); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>(global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200_result_info>("result_info", ResultInfo);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflarePipelines_workersPipelinesPipeline>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_workers_pipelines_pipeline>("results", Results);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

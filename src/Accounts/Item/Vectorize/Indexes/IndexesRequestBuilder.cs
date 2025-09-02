@@ -82,11 +82,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_deprecated_create_vectorize_index_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_createIndexRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_deprecated_create_vectorize_index_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_index_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_deprecated_create_vectorize_index_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_createIndexRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_deprecated_create_vectorize_index_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_index_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -126,11 +126,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_createIndexRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_index_request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_createIndexRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_index_request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

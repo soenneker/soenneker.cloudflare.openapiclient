@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Status { get; set; }
 #endif
         /// <summary>Desired validation method.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition? ValidationMethod { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_method_definition? ValidationMethod { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ssl_verification_edit_ssl_certificate_pack_validation_method_4XX_result"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition>(); } },
+                { "validation_method", n => { ValidationMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_method_definition>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TlsCertificatesAndHostnames_validation_method_definition>("validation_method", ValidationMethod);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_method_definition>("validation_method", ValidationMethod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

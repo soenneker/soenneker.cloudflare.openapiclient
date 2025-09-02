@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Workers_kv_namespace_rename_a_namespace_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommon, IParsable
+    public partial class Workers_kv_namespace_rename_a_namespace_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_namespace? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_namespace Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_namespace>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_namespace.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_namespace>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace>("result", Result);
         }
     }
 }

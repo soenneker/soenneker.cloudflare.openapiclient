@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The attachments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment>? Attachments { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Attachment>? Attachments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment> Attachments { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Attachment> Attachments { get; set; }
 #endif
         /// <summary>The final_disposition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader>? Headers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MessageHeader>? Headers { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader> Headers { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MessageHeader> Headers { get; set; }
 #endif
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link>? Links { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Link>? Links { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link> Links { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Link> Links { get; set; }
 #endif
         /// <summary>The sender_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +65,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The threat_categories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ThreatCategory>? ThreatCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ThreatCategory>? ThreatCategories { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ThreatCategory> ThreatCategories { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ThreatCategory> ThreatCategories { get; set; }
 #endif
         /// <summary>The validation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,12 +104,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetStringValue(); } },
-                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Attachment>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Attachment.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "final_disposition", n => { FinalDisposition = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition.CreateFromDiscriminatorValue); } },
-                { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MessageHeader>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MessageHeader.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "links", n => { Links = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Link>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Link.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sender_info", n => { SenderInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_sender_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_sender_info.CreateFromDiscriminatorValue); } },
-                { "threat_categories", n => { ThreatCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ThreatCategory>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ThreatCategory.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "threat_categories", n => { ThreatCategories = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ThreatCategory>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ThreatCategory.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "validation", n => { Validation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_validation>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_validation.CreateFromDiscriminatorValue); } },
             };
         }
@@ -121,12 +121,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Attachment>("attachments", Attachments);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Attachment>("attachments", Attachments);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_final_disposition>("final_disposition", FinalDisposition);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_MessageHeader>("headers", Headers);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_Link>("links", Links);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MessageHeader>("headers", Headers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Link>("links", Links);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_sender_info>("sender_info", SenderInfo);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ThreatCategory>("threat_categories", ThreatCategories);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ThreatCategory>("threat_categories", ThreatCategories);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_detections_200_result_validation>("validation", Validation);
             writer.WriteAdditionalData(AdditionalData);
         }

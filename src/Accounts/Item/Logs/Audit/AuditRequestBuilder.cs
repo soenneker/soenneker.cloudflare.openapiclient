@@ -36,25 +36,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// <summary>
         /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasApiResponseCommonFailure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemas_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemasApiResponseCommonFailure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemas_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_auditLogsV2ResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;

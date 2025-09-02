@@ -25,26 +25,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The patches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>? Patches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>? Patches { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender> Patches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender> Patches { get; set; }
 #endif
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>? Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>? Posts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender> Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender> Posts { get; set; }
 #endif
         /// <summary>The puts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>? Puts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>? Puts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender> Puts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender> Puts { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_200_result"/> and sets the default values.
@@ -72,9 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_200_result_deletes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_200_result_deletes.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "patches", n => { Patches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "puts", n => { Puts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "patches", n => { Patches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "puts", n => { Puts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_blocked_senders_200_result_deletes>("deletes", Deletes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>("patches", Patches);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>("posts", Posts);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_BlockedSender>("puts", Puts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>("patches", Patches);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>("posts", Posts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_BlockedSender>("puts", Puts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

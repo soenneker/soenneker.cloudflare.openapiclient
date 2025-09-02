@@ -28,18 +28,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The lan_1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration? Lan1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration? Lan1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration Lan1 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration Lan1 { get; set; }
 #endif
         /// <summary>The lan_2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration? Lan2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration? Lan2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration Lan2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration Lan2 { get; set; }
 #endif
         /// <summary>The name of the ACL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,8 +86,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "forward_locally", n => { ForwardLocally = n.GetBoolValue(); } },
-                { "lan_1", n => { Lan1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration.CreateFromDiscriminatorValue); } },
-                { "lan_2", n => { Lan2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration.CreateFromDiscriminatorValue); } },
+                { "lan_1", n => { Lan1 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration.CreateFromDiscriminatorValue); } },
+                { "lan_2", n => { Lan2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "protocols", n => { Protocols = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_acls_add_single_request_protocols>()?.AsList(); } },
                 { "unidirectional", n => { Unidirectional = n.GetBoolValue(); } },
@@ -102,8 +102,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("forward_locally", ForwardLocally);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>("lan_1", Lan1);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lanAclConfiguration>("lan_2", Lan2);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration>("lan_1", Lan1);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_lan_acl_configuration>("lan_2", Lan2);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_acls_add_single_request_protocols>("protocols", Protocols);
             writer.WriteBoolValue("unidirectional", Unidirectional);

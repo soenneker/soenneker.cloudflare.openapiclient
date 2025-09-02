@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The deleted_gre_tunnel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel? DeletedGreTunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel? DeletedGreTunnel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel DeletedGreTunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel DeletedGreTunnel { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_deleted_response_result"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
-                { "deleted_gre_tunnel", n => { DeletedGreTunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel.CreateFromDiscriminatorValue); } },
+                { "deleted_gre_tunnel", n => { DeletedGreTunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("deleted", Deleted);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel>("deleted_gre_tunnel", DeletedGreTunnel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel>("deleted_gre_tunnel", DeletedGreTunnel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

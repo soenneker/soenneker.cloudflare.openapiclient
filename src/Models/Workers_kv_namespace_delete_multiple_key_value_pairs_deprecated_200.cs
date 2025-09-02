@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Workers_kv_namespace_delete_multiple_key_value_pairs_deprecated_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersKv_apiResponseCommonNoResult, IParsable
+    public partial class Workers_kv_namespace_delete_multiple_key_value_pairs_deprecated_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_api_response_common_no_result, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

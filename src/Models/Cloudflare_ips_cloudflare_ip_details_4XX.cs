@@ -54,26 +54,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips_jdcloud"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips_jdcloud"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Cloudflare_ips_cloudflare_ip_details_4XX_result : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips? PublicIpIps { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips? PublicIpIps { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips PublicIpIps { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips PublicIpIps { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips_jdcloud"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips_jdcloud"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips_jdcloud? PublicIpIpsJdcloud { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips_jdcloud? PublicIpIpsJdcloud { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips_jdcloud PublicIpIpsJdcloud { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips_jdcloud PublicIpIpsJdcloud { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -85,13 +85,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_ips_cloudflare_ip_details_4XX.Cloudflare_ips_cloudflare_ip_details_4XX_result();
-                if("public-ip_ips".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("public_ip_ips".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.PublicIpIps = new global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips();
+                    result.PublicIpIps = new global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips();
                 }
-                else if("public-ip_ips_jdcloud".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("public_ip_ips_jdcloud".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.PublicIpIpsJdcloud = new global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips_jdcloud();
+                    result.PublicIpIpsJdcloud = new global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips_jdcloud();
                 }
                 return result;
             }
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 _ = writer ?? throw new ArgumentNullException(nameof(writer));
                 if(PublicIpIps != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips>(null, PublicIpIps);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips>(null, PublicIpIps);
                 }
                 else if(PublicIpIpsJdcloud != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.PublicIp_ips_jdcloud>(null, PublicIpIpsJdcloud);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Public_ip_ips_jdcloud>(null, PublicIpIpsJdcloud);
                 }
             }
         }

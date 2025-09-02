@@ -18,20 +18,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_errors? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_errors? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_errors Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_errors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_messages? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_messages? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_messages Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_messages Messages { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
@@ -60,8 +60,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_messages.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_errors.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_messages.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -72,8 +72,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.DnsRecords_apiResponseCommonFailure_messages>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_api_response_common_failure_messages>("messages", Messages);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

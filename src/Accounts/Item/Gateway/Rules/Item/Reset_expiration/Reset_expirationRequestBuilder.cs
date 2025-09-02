@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules.Item.Re
         /// <summary>
         /// Resets the expiration of a Zero Trust Gateway Rule if its duration has elapsed and it has a default duration.The Zero Trust Gateway Rule must have values for both `expiration.expires_at` and `expiration.duration`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasSingle_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_components_schemas_single_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rules_reset_expiration_zero_trust_gateway_rule_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasSingle_response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_components_schemas_single_response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasSingle_response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_components_schemas_single_response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules.Item.Re
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rules_reset_expiration_zero_trust_gateway_rule_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasSingle_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGateway_componentsSchemasSingle_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Resets the expiration of a Zero Trust Gateway Rule if its duration has elapsed and it has a default duration.The Zero Trust Gateway Rule must have values for both `expiration.expires_at` and `expiration.duration`.

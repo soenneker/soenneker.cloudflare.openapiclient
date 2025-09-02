@@ -9,24 +9,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Email_security_list_display_names_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ApiResponseCommon, IParsable
+    public partial class Email_security_list_display_names_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ApiResponseCommon, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DisplayName>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DisplayName>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DisplayName> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DisplayName> Result { get; set; }
 #endif
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ResultInfo? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ResultInfo ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo ResultInfo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,8 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DisplayName>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DisplayName.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ResultInfo.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DisplayName>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DisplayName.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_DisplayName>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_ResultInfo>("result_info", ResultInfo);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DisplayName>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo>("result_info", ResultInfo);
         }
     }
 }

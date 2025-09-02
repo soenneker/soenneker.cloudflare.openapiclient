@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain>? Value { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain>? Value { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain> Value { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain> Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_trusted_domain_Branch2"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_CreateTrustedDomain>("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CreateTrustedDomain>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

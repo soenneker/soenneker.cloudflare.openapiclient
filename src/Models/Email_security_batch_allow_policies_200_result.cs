@@ -25,26 +25,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The patches property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>? Patches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>? Patches { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy> Patches { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy> Patches { get; set; }
 #endif
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>? Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>? Posts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy> Posts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy> Posts { get; set; }
 #endif
         /// <summary>The puts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>? Puts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>? Puts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy> Puts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy> Puts { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_allow_policies_200_result"/> and sets the default values.
@@ -72,9 +72,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deletes", n => { Deletes = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_allow_policies_200_result_deletes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_allow_policies_200_result_deletes.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "patches", n => { Patches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "puts", n => { Puts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "patches", n => { Patches = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "puts", n => { Puts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -85,9 +85,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_batch_allow_policies_200_result_deletes>("deletes", Deletes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>("patches", Patches);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>("posts", Posts);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurity_AllowPolicy>("puts", Puts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>("patches", Patches);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>("posts", Posts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_AllowPolicy>("puts", Puts);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

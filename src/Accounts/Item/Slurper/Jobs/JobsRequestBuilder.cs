@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_list_jobs_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_list_jobs_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_list_jobs_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_list_jobs_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -82,23 +82,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Failure">When receiving a 409 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_failure">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_create_job_201?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_create_job_201?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_create_job_201> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_create_job_201> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Failure.CreateFromDiscriminatorValue },
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_apiV4Failure.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_api_v4_failure.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_create_job_201>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_create_job_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -129,11 +129,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.R2Slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_CreateJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));

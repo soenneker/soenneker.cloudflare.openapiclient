@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Branch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_setting"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Branch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Wrapper"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Logpush_max_upload_interval_seconds : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Branch2 LogpushMaxUploadIntervalSecondsBranch2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_setting"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_setting? LogpushMaxUploadIntervalSecondsSetting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Wrapper? LogpushMaxUploadIntervalSecondsWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_setting LogpushMaxUploadIntervalSecondsSetting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Wrapper LogpushMaxUploadIntervalSecondsWrapper { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LogpushMaxUploadIntervalSecondsSetting = new global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_setting();
+                result.LogpushMaxUploadIntervalSecondsWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Wrapper();
             }
             return result;
         }
@@ -59,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return LogpushMaxUploadIntervalSecondsBranch2.GetFieldDeserializers();
             }
-            else if(LogpushMaxUploadIntervalSecondsSetting != null)
+            else if(LogpushMaxUploadIntervalSecondsWrapper != null)
             {
-                return LogpushMaxUploadIntervalSecondsSetting.GetFieldDeserializers();
+                return LogpushMaxUploadIntervalSecondsWrapper.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -76,9 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Branch2>(null, LogpushMaxUploadIntervalSecondsBranch2);
             }
-            else if(LogpushMaxUploadIntervalSecondsSetting != null)
+            else if(LogpushMaxUploadIntervalSecondsWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_setting>(null, LogpushMaxUploadIntervalSecondsSetting);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_interval_seconds_Wrapper>(null, LogpushMaxUploadIntervalSecondsWrapper);
             }
         }
     }

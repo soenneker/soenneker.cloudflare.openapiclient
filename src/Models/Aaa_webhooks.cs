@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Secret { get; set; }
 #endif
         /// <summary>Type of webhook endpoint.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_components_schemas_type? Type { get; set; }
         /// <summary>The POST endpoint to call when dispatching a notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_success", n => { LastSuccess = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_components_schemas_type>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_success", LastSuccess);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("secret", Secret);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_componentsSchemasType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_components_schemas_type>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

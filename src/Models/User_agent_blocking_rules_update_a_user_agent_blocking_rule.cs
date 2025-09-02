@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The action to apply to a matched request.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode? Mode { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_mode? Mode { get; set; }
         /// <summary>When true, indicates that the rule is currently paused.</summary>
         public bool? Paused { get; set; }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>(); } },
+                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_mode>(); } },
                 { "paused", n => { Paused = n.GetBoolValue(); } },
             };
         }
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>("configuration", Configuration);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemasMode>("mode", Mode);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_mode>("mode", Mode);
             writer.WriteBoolValue("paused", Paused);
             writer.WriteAdditionalData(AdditionalData);
         }

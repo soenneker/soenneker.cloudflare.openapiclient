@@ -33,18 +33,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The value to be checked against.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input? Input { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_input? Input { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input Input { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_input Input { get; set; }
 #endif
         /// <summary>The conditions that the client must match to run the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item>? Match { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_match_item>? Match { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item> Match { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_match_item> Match { get; set; }
 #endif
         /// <summary>The name of the device posture rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Schedule { get; set; }
 #endif
         /// <summary>The type of device posture rule.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Device_posture_rules_create_device_posture_rule"/> and sets the default values.
         /// </summary>
@@ -91,11 +91,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "expiration", n => { Expiration = n.GetStringValue(); } },
-                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input.CreateFromDiscriminatorValue); } },
-                { "match", n => { Match = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_input>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_input.CreateFromDiscriminatorValue); } },
+                { "match", n => { Match = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_match_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_match_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_type>(); } },
             };
         }
         /// <summary>
@@ -107,11 +107,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("expiration", Expiration);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_input>("input", Input);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_match_item>("match", Match);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_input>("input", Input);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_match_item>("match", Match);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("schedule", Schedule);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.TeamsDevices_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

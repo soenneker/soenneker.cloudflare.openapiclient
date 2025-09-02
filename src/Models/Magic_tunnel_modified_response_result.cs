@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The modified_gre_tunnel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel? ModifiedGreTunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel? ModifiedGreTunnel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel ModifiedGreTunnel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel ModifiedGreTunnel { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_modified_response_result"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "modified", n => { Modified = n.GetBoolValue(); } },
-                { "modified_gre_tunnel", n => { ModifiedGreTunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel.CreateFromDiscriminatorValue); } },
+                { "modified_gre_tunnel", n => { ModifiedGreTunnel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("modified", Modified);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_greTunnel>("modified_gre_tunnel", ModifiedGreTunnel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_gre_tunnel>("modified_gre_tunnel", ModifiedGreTunnel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

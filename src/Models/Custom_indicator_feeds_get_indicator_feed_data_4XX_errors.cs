@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Custom_indicator_feeds_get_indicator_feed_data_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeeds_messages_Wrapper, IParsable
+    public partial class Custom_indicator_feeds_get_indicator_feed_data_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

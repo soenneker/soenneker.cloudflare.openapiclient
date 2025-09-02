@@ -29,10 +29,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Configures load shedding policies and percentages for the pool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding? LoadShedding { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_load_shedding? LoadShedding { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding LoadShedding { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_load_shedding LoadShedding { get; set; }
 #endif
         /// <summary>The longitude of the data center containing the origins used in this pool in decimal degrees. If this is set, latitude must also be set.</summary>
         public double? Longitude { get; set; }
@@ -65,26 +65,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Filter pool and origin health notifications by resource type or health status. Use null to reset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter? NotificationFilter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_notification_filter? NotificationFilter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter NotificationFilter { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_notification_filter NotificationFilter { get; set; }
 #endif
         /// <summary>The list of origins within this pool. Traffic directed at this pool is balanced across all currently healthy origins, provided the pool itself is healthy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin>? Origins { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin>? Origins { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin> Origins { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin> Origins { get; set; }
 #endif
         /// <summary>Configures origin steering for the pool. Controls how origins are selected for new sessions and traffic without session affinity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering? OriginSteering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin_steering? OriginSteering { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering OriginSteering { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin_steering OriginSteering { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Account_load_balancer_pools_create_pool"/> and sets the default values.
@@ -114,15 +114,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "latitude", n => { Latitude = n.GetDoubleValue(); } },
-                { "load_shedding", n => { LoadShedding = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding.CreateFromDiscriminatorValue); } },
+                { "load_shedding", n => { LoadShedding = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_load_shedding>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_load_shedding.CreateFromDiscriminatorValue); } },
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
                 { "minimum_origins", n => { MinimumOrigins = n.GetIntValue(); } },
                 { "monitor", n => { Monitor = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notification_email", n => { NotificationEmail = n.GetStringValue(); } },
-                { "notification_filter", n => { NotificationFilter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter.CreateFromDiscriminatorValue); } },
-                { "origin_steering", n => { OriginSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering.CreateFromDiscriminatorValue); } },
-                { "origins", n => { Origins = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "notification_filter", n => { NotificationFilter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_notification_filter>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_notification_filter.CreateFromDiscriminatorValue); } },
+                { "origin_steering", n => { OriginSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin_steering>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin_steering.CreateFromDiscriminatorValue); } },
+                { "origins", n => { Origins = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -135,15 +135,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("latitude", Latitude);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_load_shedding>("load_shedding", LoadShedding);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_load_shedding>("load_shedding", LoadShedding);
             writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteIntValue("minimum_origins", MinimumOrigins);
             writer.WriteStringValue("monitor", Monitor);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notification_email", NotificationEmail);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_notification_filter>("notification_filter", NotificationFilter);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin>("origins", Origins);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.LoadBalancing_origin_steering>("origin_steering", OriginSteering);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_notification_filter>("notification_filter", NotificationFilter);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin>("origins", Origins);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_origin_steering>("origin_steering", OriginSteering);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

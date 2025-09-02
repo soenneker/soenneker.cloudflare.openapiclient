@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Subscriptions_list_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_apiV4Success, IParsable
+    public partial class Subscriptions_list_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_api_v4_success, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSubscription>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_subscription>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSubscription> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_subscription> Result { get; set; }
 #endif
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSubscription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSubscription.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_subscription>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_subscription.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Subscriptions_list_200_result_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Subscriptions_list_200_result_info.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_eventSubscription>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_event_subscription>("result", Result);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Subscriptions_list_200_result_info>("result_info", ResultInfo);
         }
     }

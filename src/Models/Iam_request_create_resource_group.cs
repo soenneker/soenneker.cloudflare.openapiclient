@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A scope is a combination of scope objects which provides additional context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_createScope? Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_scope? Scope { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_createScope Scope { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_scope Scope { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_request_create_resource_group"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_createScope>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_createScope.CreateFromDiscriminatorValue); } },
+                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_scope>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_scope.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_createScope>("scope", Scope);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_scope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

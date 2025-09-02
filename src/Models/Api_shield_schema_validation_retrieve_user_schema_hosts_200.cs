@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Api_shield_schema_validation_retrieve_user_schema_hosts_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_apiResponseCollection, IParsable
+    public partial class Api_shield_schema_validation_retrieve_user_schema_hosts_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_collection, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_response_user_schemas_hosts>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_response_user_schemas_hosts>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_response_user_schemas_hosts> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_response_user_schemas_hosts> Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_response_user_schemas_hosts>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_response_user_schemas_hosts.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_response_user_schemas_hosts>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_response_user_schemas_hosts.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShield_response_user_schemas_hosts>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_response_user_schemas_hosts>("result", Result);
         }
     }
 }

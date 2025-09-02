@@ -9,7 +9,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Organization_shares_list_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.ResourceSharing_v4errors_Wrapper, IParsable
+    public partial class Organization_shares_list_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_v4errors_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

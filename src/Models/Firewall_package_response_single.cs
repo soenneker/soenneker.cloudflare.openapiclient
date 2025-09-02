@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_single"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle? FirewallApiResponseSingle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_single? FirewallApiResponseSingle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle FirewallApiResponseSingle { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_single FirewallApiResponseSingle { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_singleMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,9 +63,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_package_response_single();
-            if("firewall_api-response-single".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("firewall_api_response_single".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FirewallApiResponseSingle = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle();
+                result.FirewallApiResponseSingle = new global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_single();
             }
             else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             if(FirewallApiResponseSingle != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_apiResponseSingle>(null, FirewallApiResponseSingle);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_single>(null, FirewallApiResponseSingle);
             }
             else if(FirewallPackageResponseSingleMember1 != null)
             {
