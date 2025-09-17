@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/shares{?direction*,kind*,order*,page*,per_page*,status*,target_type*}", pathParameters)
+        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/shares{?direction*,kind*,order*,page*,per_page*,resource_types*,status*,target_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/shares{?direction*,kind*,order*,page*,per_page*,status*,target_type*}", rawUrl)
+        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/shares{?direction*,kind*,order*,page*,per_page*,resource_types*,status*,target_type*}", rawUrl)
         {
         }
         /// <summary>
@@ -107,6 +107,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Shares
             /// <summary>Number of objects to return per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Filter share resources by resource_types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_types")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_type[]? ResourceTypes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_types")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_type[] ResourceTypes { get; set; }
+#endif
             /// <summary>Filter shares by status.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_status? Status { get; set; }

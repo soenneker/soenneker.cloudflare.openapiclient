@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Extended e-mail matching settings.
+    /// Specify user emails settings for the firewall policies.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_extended_email_matching : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enable matching all variants of user emails (with + or . modifiers) used as criteria in Firewall policies.</summary>
+        /// <summary>Specify whether to match all variants of user emails (with + or . modifiers) used as criteria in Firewall policies.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>This setting was shared via the Orgs API and cannot be edited by the current account.</summary>
+        /// <summary>Indicate that this setting was shared via the Orgs API and read only for the current account.</summary>
         public bool? ReadOnly { get; private set; }
-        /// <summary>Account tag of account that shared this setting.</summary>
+        /// <summary>Indicate the account tag of the account that shared this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceAccount { get; private set; }
@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SourceAccount { get; private set; }
 #endif
-        /// <summary>Version number of the setting.</summary>
+        /// <summary>Indicate the version number of the setting.</summary>
         public int? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_extended_email_matching"/> and sets the default values.

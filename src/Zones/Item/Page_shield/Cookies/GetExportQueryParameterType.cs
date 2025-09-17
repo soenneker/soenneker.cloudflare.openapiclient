@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Cookies
 {
-    /// <summary>Export the list of cookies as a file.</summary>
+    /// <summary>Export the list of cookies as a file, limited to 50000 entries.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetExportQueryParameterType
     {

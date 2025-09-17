@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Certificate settings for Gateway TLS interception. If not specified, the Cloudflare Root CA will be used.
+    /// Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_certificate_settings : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>UUID of certificate to be used for interception. Certificate must be available (previously called &apos;active&apos;) on the edge. A nil UUID will indicate the Cloudflare Root CA should be used.</summary>
+        /// <summary>Specify the UUID of the certificate used for interception. Ensure the certificate is available at the edge(previously called &apos;active&apos;). A nil UUID directs Cloudflare to use the Root CA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

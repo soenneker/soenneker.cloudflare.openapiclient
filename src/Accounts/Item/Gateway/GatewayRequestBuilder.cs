@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.App_types;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Apps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_settings;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Categories;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Certificates;
@@ -31,6 +32,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.App_types.App_typesRequestBuilder App_types
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.App_types.App_typesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The apps property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Apps.AppsRequestBuilder Apps
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The audit_ssh_settings property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_settings.Audit_ssh_settingsRequestBuilder Audit_ssh_settings
@@ -94,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
         {
         }
         /// <summary>
-        /// Gets information about the current Zero Trust account.
+        /// Retrieve information about the current Zero Trust account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +123,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a Zero Trust account with an existing Cloudflare account.
+        /// Create a Zero Trust account for an existing Cloudflare account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets information about the current Zero Trust account.
+        /// Retrieve information about the current Zero Trust account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
             return requestInfo;
         }
         /// <summary>
-        /// Creates a Zero Trust account with an existing Cloudflare account.
+        /// Create a Zero Trust account for an existing Cloudflare account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

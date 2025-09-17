@@ -17,7 +17,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Number of apps the custom page is assigned to.</summary>
         public int? AppCount { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at? CreatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at CreatedAt { get; set; }
+#endif
         /// <summary>Custom page HTML.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,7 +51,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Uid { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at UpdatedAt { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_page"/> and sets the default values.
         /// </summary>
@@ -72,12 +84,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "app_count", n => { AppCount = n.GetIntValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at.CreateFromDiscriminatorValue); } },
                 { "custom_html", n => { CustomHtml = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_type>(); } },
                 { "uid", n => { Uid = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,12 +100,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("app_count", AppCount);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at>("created_at", CreatedAt);
             writer.WriteStringValue("custom_html", CustomHtml);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_type>("type", Type);
             writer.WriteStringValue("uid", Uid);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at>("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

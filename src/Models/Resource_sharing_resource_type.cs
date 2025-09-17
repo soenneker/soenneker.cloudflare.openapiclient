@@ -15,5 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Widget,
         #pragma warning restore CS1591
+        [EnumMember(Value = "gateway-policy")]
+        #pragma warning disable CS1591
+        GatewayPolicy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gateway-destination-ip")]
+        #pragma warning disable CS1591
+        GatewayDestinationIp,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gateway-block-page-settings")]
+        #pragma warning disable CS1591
+        GatewayBlockPageSettings,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "gateway-extended-email-matching")]
+        #pragma warning disable CS1591
+        GatewayExtendedEmailMatching,
+        #pragma warning restore CS1591
     }
 }

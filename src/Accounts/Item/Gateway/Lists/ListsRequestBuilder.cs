@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
         {
         }
         /// <summary>
-        /// Fetches all Zero Trust lists for an account.
+        /// Fetch all Zero Trust lists for an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schemas_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_single_response_with_list_items>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_single_response_with_list_items.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches all Zero Trust lists for an account.
+        /// Fetch all Zero Trust lists for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Fetches all Zero Trust lists for an account.
+        /// Fetch all Zero Trust lists for an account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListsRequestBuilderGetQueryParameters 

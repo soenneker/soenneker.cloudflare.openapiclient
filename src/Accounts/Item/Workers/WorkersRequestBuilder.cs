@@ -9,6 +9,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.ScriptsSearch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Subdomain;
 using System.Collections.Generic;
@@ -57,6 +58,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.ScriptsRequestBuilder Scripts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.ScriptsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scriptsSearch property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.ScriptsSearch.ScriptsSearchRequestBuilder ScriptsSearch
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.ScriptsSearch.ScriptsSearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The services property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services.ServicesRequestBuilder Services

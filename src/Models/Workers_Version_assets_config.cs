@@ -33,6 +33,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Workers_Version_assets_config()
         {
             AdditionalData = new Dictionary<string, object>();
+            HtmlHandling = global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_assets_config_html_handling.AutoTrailingSlash;
+            NotFoundHandling = global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_assets_config_not_found_handling.None;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

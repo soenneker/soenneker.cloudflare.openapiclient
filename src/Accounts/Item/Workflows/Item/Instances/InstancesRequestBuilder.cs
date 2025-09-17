@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances{?cursor*,date_end*,date_start*,page*,per_page*,status*}", pathParameters)
+        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances{?cursor*,date_end*,date_start*,direction*,page*,per_page*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances{?cursor*,date_end*,date_start*,page*,per_page*,status*}", rawUrl)
+        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances{?cursor*,date_end*,date_start*,direction*,page*,per_page*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -182,6 +182,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
             /// <summary>Accepts ISO 8601 with no timezone offsets and in UTC.</summary>
             [QueryParameter("date_start")]
             public DateTimeOffset? DateStart { get; set; }
+            /// <summary>should only be used when `cursor` is used, defines a new direction for the cursor</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>`page` and `cursor` are mutually exclusive, use one or the other.</summary>
             [QueryParameter("page")]
             public double? Page { get; set; }

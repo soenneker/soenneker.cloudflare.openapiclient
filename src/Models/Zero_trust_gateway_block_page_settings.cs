@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Block page layout settings.
+    /// Specify block page layout settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_block_page_settings : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>If mode is customized_block_page: block page background color in #rrggbb format.</summary>
+        /// <summary>Specify the block page background color in `#rrggbb` format when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BackgroundColor { get; set; }
@@ -23,9 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BackgroundColor { get; set; }
 #endif
-        /// <summary>Enable only cipher suites and TLS versions compliant with FIPS. 140-2.</summary>
+        /// <summary>Specify whether to enable the custom block page.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>If mode is customized_block_page: block page footer text.</summary>
+        /// <summary>Specify the block page footer text when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FooterText { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FooterText { get; set; }
 #endif
-        /// <summary>If mode is customized_block_page: block page header text.</summary>
+        /// <summary>Specify the block page header text when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HeaderText { get; set; }
@@ -41,9 +41,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string HeaderText { get; set; }
 #endif
-        /// <summary>If mode is redirect_uri: when enabled, context will be appended to target_uri as query parameters.</summary>
+        /// <summary>Specify whether to append context to target_uri as query parameters. This applies only when the mode is redirect_uri.</summary>
         public bool? IncludeContext { get; set; }
-        /// <summary>If mode is customized_block_page: full URL to the logo file.</summary>
+        /// <summary>Specify the full URL to the logo file when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogoPath { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LogoPath { get; set; }
 #endif
-        /// <summary>If mode is customized_block_page: admin email for users to contact.</summary>
+        /// <summary>Specify the admin email for users to contact when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MailtoAddress { get; set; }
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MailtoAddress { get; set; }
 #endif
-        /// <summary>If mode is customized_block_page: subject line for emails created from block page.</summary>
+        /// <summary>Specify the subject line for emails created from the block page when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MailtoSubject { get; set; }
@@ -67,9 +67,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MailtoSubject { get; set; }
 #endif
-        /// <summary>Controls whether the user is redirected to a Cloudflare-hosted block page or to a customer-provided URI.</summary>
+        /// <summary>Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_block_page_settings_mode? Mode { get; set; }
-        /// <summary>If mode is customized_block_page: block page title.</summary>
+        /// <summary>Specify the block page title when the mode is customized_block_page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -77,9 +77,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>This setting was shared via the Orgs API and cannot be edited by the current account.</summary>
+        /// <summary>Indicate that this setting was shared via the Orgs API and read only for the current account.</summary>
         public bool? ReadOnly { get; private set; }
-        /// <summary>Account tag of account that shared this setting.</summary>
+        /// <summary>Indicate the account tag of the account that shared this setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceAccount { get; private set; }
@@ -87,9 +87,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string SourceAccount { get; private set; }
 #endif
-        /// <summary>If mode is customized_block_page: suppress detailed info at the bottom of the block page.</summary>
+        /// <summary>Specify whether to suppress detailed information at the bottom of the block page when the mode is customized_block_page.</summary>
         public bool? SuppressFooter { get; set; }
-        /// <summary>If mode is redirect_uri: URI to which the user should be redirected.</summary>
+        /// <summary>Specify the URI to redirect users to when the mode is redirect_uri.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetUri { get; set; }
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TargetUri { get; set; }
 #endif
-        /// <summary>Version number of the setting.</summary>
+        /// <summary>Indicate the version number of the setting.</summary>
         public int? Version { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_block_page_settings"/> and sets the default values.

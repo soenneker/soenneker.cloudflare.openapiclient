@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder Connectivity_settings
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Connectivity_settings.Connectivity_settingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The routes property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.RoutesRequestBuilder Routes
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The subnets property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder Subnets

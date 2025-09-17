@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Configure whether downloading enabled or not. When set with &quot;remote_only&quot;, downloads are only available for viewing. Only applies when `version == &quot;v2&quot;`.</summary>
+    /// <summary>Configure download behavior. When set to remote_only, users can view downloads but cannot save them. Applies only when version == &quot;v2&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_rule_settings_biso_admin_controls_download
     {

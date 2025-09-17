@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The type of certificate, either BYO-PKI (custom) or Gateway-managed(read only).</summary>
+    /// <summary>Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_type
     {

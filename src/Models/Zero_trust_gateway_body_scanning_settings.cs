@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// DLP body scanning settings.
+    /// Specify the DLP inspection mode.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_body_scanning_settings : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set the inspection mode to either `deep` or `shallow`.</summary>
+        /// <summary>Specify the inspection mode as either `deep` or `shallow`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_body_scanning_settings_inspection_mode? InspectionMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_body_scanning_settings"/> and sets the default values.

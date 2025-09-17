@@ -14,11 +14,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>True if the category is in beta and subject to change.</summary>
+        /// <summary>Indicate whether the category is in beta and subject to change.</summary>
         public bool? Beta { get; set; }
-        /// <summary>Which account types are allowed to create policies based on this category. `blocked` categories are blocked unconditionally for all accounts. `removalPending` categories can be removed from policies but not added. `noBlock` categories cannot be blocked.</summary>
+        /// <summary>Specify which account types can create policies for this category. `blocked` Blocks unconditionally for all accounts. `removalPending` Allows removal from policies but disables addition. `noBlock` Prevents blocking.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_class? Class { get; set; }
-        /// <summary>A short summary of domains in the category.</summary>
+        /// <summary>Provide a short summary of domains in the category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -26,9 +26,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The identifier for this category. There is only one category per ID.</summary>
+        /// <summary>Identify this category. Only one category per ID.</summary>
         public int? Id { get; set; }
-        /// <summary>The name of the category.</summary>
+        /// <summary>Specify the category name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>All subcategories for this category.</summary>
+        /// <summary>Provide all subcategories for this category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_subcategory>? Subcategories { get; set; }

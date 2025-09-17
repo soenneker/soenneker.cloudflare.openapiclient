@@ -27,7 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>When set to `true`, users skip the identity provider selection step during login.</summary>
         public bool? AutoRedirectToIdentity { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at? CreatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at CreatedAt { get; set; }
+#endif
         /// <summary>The custom_pages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +77,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string UiReadOnlyToggleReason { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at UpdatedAt { get; set; }
+#endif
         /// <summary>The amount of time a user seat is inactive before it expires. When the user seat exceeds the set time of inactivity, the user is removed as an active seat and no longer counts against your Teams seat count.  Minimum value for this setting is 1 month (730h). Must be in the format `300ms` or `2h45m`. Valid time units are: `ns`, `us` (or `µs`), `ms`, `s`, `m`, `h`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,14 +128,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allow_authenticate_via_warp", n => { AllowAuthenticateViaWarp = n.GetBoolValue(); } },
                 { "auth_domain", n => { AuthDomain = n.GetStringValue(); } },
                 { "auto_redirect_to_identity", n => { AutoRedirectToIdentity = n.GetBoolValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at.CreateFromDiscriminatorValue); } },
                 { "custom_pages", n => { CustomPages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_pages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_pages.CreateFromDiscriminatorValue); } },
                 { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
                 { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
                 { "ui_read_only_toggle_reason", n => { UiReadOnlyToggleReason = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at.CreateFromDiscriminatorValue); } },
                 { "user_seat_expiration_inactive_time", n => { UserSeatExpirationInactiveTime = n.GetStringValue(); } },
                 { "warp_auth_session_duration", n => { WarpAuthSessionDuration = n.GetStringValue(); } },
             };
@@ -138,14 +150,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("allow_authenticate_via_warp", AllowAuthenticateViaWarp);
             writer.WriteStringValue("auth_domain", AuthDomain);
             writer.WriteBoolValue("auto_redirect_to_identity", AutoRedirectToIdentity);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at>("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_custom_pages>("custom_pages", CustomPages);
             writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design>("login_design", LoginDesign);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("session_duration", SessionDuration);
             writer.WriteStringValue("ui_read_only_toggle_reason", UiReadOnlyToggleReason);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at>("updated_at", UpdatedAt);
             writer.WriteStringValue("user_seat_expiration_inactive_time", UserSeatExpirationInactiveTime);
             writer.WriteStringValue("warp_auth_session_duration", WarpAuthSessionDuration);
             writer.WriteAdditionalData(AdditionalData);

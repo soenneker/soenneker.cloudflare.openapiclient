@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Sandbox settings.
+    /// Specify whether to enable the sandbox.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_sandbox : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enable sandbox.</summary>
+        /// <summary>Specify whether to enable the sandbox.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>Action to take when the file cannot be scanned.</summary>
+        /// <summary>Specify the action to take when the system cannot scan the file.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_sandbox_fallback_action? FallbackAction { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_sandbox"/> and sets the default values.

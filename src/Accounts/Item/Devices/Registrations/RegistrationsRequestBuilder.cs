@@ -194,6 +194,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Registrations
             [QueryParameter("id")]
             public string[] Id { get; set; }
 #endif
+            /// <summary>Comma-separated list of additional information that should be included in the registration response. Supported values are: &quot;policy&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

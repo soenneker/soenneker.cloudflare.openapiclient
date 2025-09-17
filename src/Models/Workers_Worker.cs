@@ -16,13 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the Worker was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
-        /// <summary>The id property</summary>
+        /// <summary>Immutable ID of the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_id? Id { get; private set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_id Id { get; private set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Whether logpush is enabled for the Worker.</summary>
         public bool? Logpush { get; set; }
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability.CreateFromDiscriminatorValue); } },

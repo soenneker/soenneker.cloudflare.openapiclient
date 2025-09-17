@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>True if automatic stateful return routing should be enabled for a tunnel, false otherwise.</summary>
+        public bool? AutomaticReturnRouting { get; set; }
         /// <summary>The bgp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "automatic_return_routing", n => { AutomaticReturnRouting = n.GetBoolValue(); } },
                 { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config.CreateFromDiscriminatorValue); } },
                 { "bgp_status", n => { BgpStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_status_with_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_status_with_state.CreateFromDiscriminatorValue); } },
                 { "cloudflare_gre_endpoint", n => { CloudflareGreEndpoint = n.GetStringValue(); } },
@@ -150,6 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("automatic_return_routing", AutomaticReturnRouting);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>("bgp", Bgp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_status_with_state>("bgp_status", BgpStatus);
             writer.WriteStringValue("cloudflare_gre_endpoint", CloudflareGreEndpoint);

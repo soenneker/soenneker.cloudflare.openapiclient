@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure to forward the query to the internal DNS service, passing the specified &apos;view_id&apos; as input. Cannot be set when &apos;dns_resolvers&apos; are specified or &apos;resolve_dns_through_cloudflare&apos; is set. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.
+    /// Configure to forward the query to the internal DNS service, passing the specified &apos;view_id&apos; as input. Not used when &apos;dns_resolvers&apos; is specified or &apos;resolve_dns_through_cloudflare&apos; is set. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_resolve_dns_internally : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fallback behavior to apply when the internal DNS response code is different from &apos;NOERROR&apos; or when the response data only contains CNAME records for &apos;A&apos; or &apos;AAAA&apos; queries.</summary>
+        /// <summary>Specify the fallback behavior to apply when the internal DNS response code differs from &apos;NOERROR&apos; or when the response data contains only CNAME records for &apos;A&apos; or &apos;AAAA&apos; queries.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_resolve_dns_internally_fallback? Fallback { get; set; }
-        /// <summary>The internal DNS view identifier that&apos;s passed to the internal DNS service.</summary>
+        /// <summary>Specify the internal DNS view identifier to pass to the internal DNS service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ViewId { get; set; }

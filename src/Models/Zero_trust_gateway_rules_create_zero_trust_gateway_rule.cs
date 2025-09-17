@@ -12,11 +12,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zero_trust_gateway_rules_create_zero_trust_gateway_rule : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action to perform when the associated traffic, identity, and device posture expressions are either absent or evaluate to `true`.</summary>
+        /// <summary>Specify the action to perform when the associated traffic, identity, and device posture expressions either absent or evaluate to `true`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description of the rule.</summary>
+        /// <summary>Specify the rule description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The wirefilter expression used for device posture check matching. The API automatically formats and sanitizes this expression. This returns a normalized version that may differ from your input and cause Terraform state drift.</summary>
+        /// <summary>Specify the wirefilter expression used for device posture check. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DevicePosture { get; set; }
@@ -32,9 +32,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DevicePosture { get; set; }
 #endif
-        /// <summary>True if the rule is enabled.</summary>
+        /// <summary>Specify whether the rule is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The expiration time stamp and default duration of a DNS policy. Takesprecedence over the policy&apos;s `schedule` configuration, if any.This does not apply to HTTP or network policies.</summary>
+        /// <summary>Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy&apos;s `schedule` configuration, if any. This  does not apply to HTTP or network policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_expiration? Expiration { get; set; }
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_expiration Expiration { get; set; }
 #endif
-        /// <summary>The protocol or layer to evaluate the traffic, identity, and device. posture expressions.</summary>
+        /// <summary>Specify the protocol or layer to evaluate the traffic, identity, and device posture expressions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules?>? Filters { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rules?> Filters { get; set; }
 #endif
-        /// <summary>The wirefilter expression used for identity matching. The API automatically formats and sanitizes this expression. This returns a normalized version that may differ from your input and cause Terraform state drift.</summary>
+        /// <summary>Specify the wirefilter expression used for identity matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identity { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Identity { get; set; }
 #endif
-        /// <summary>The name of the rule.</summary>
+        /// <summary>Specify the rule name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -66,9 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Precedence sets the order of your rules. Lower values indicate higher precedence. At each processing phase, applicable rules are evaluated in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) docs on how to manage precedence via Terraform.</summary>
+        /// <summary>Set the order of your rules. Lower values indicate higher precedence. At each processing phase, evaluate applicable rules in ascending order of this value. Refer to [Order of enforcement](http://developers.cloudflare.com/learning-paths/secure-internet-traffic/understand-policies/order-of-enforcement/#manage-precedence-with-terraform) to manage precedence via Terraform.</summary>
         public int? Precedence { get; set; }
-        /// <summary>Additional settings that modify the rule&apos;s action.</summary>
+        /// <summary>Set settings related to this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings? RuleSettings { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings RuleSettings { get; set; }
 #endif
-        /// <summary>The schedule for activating DNS policies. This does not apply to HTTP or network policies.</summary>
+        /// <summary>Defines the schedule for activating DNS policies. (HTTP/Egress or L4 unsupported).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schedule? Schedule { get; set; }
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_schedule Schedule { get; set; }
 #endif
-        /// <summary>The wirefilter expression used for traffic matching. The API automatically formats and sanitizes this expression. This returns a normalized version that may differ from your input and cause Terraform state drift.</summary>
+        /// <summary>Specify the wirefilter expression used for traffic matching. The API automatically formats and sanitizes expressions before storing them. To prevent Terraform state drift, use the formatted expression returned in the API response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Traffic { get; set; }

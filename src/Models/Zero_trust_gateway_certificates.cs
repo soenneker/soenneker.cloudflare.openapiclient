@@ -14,9 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The read only deployment status of the certificate on Cloudflare&apos;s edge. Certificates in the &apos;available&apos; (previously called &apos;active&apos;) state may be used for Gateway TLS interception.</summary>
+        /// <summary>Indicate the read-only deployment status of the certificate on Cloudflare&apos;s edge. Gateway TLS interception can use certificates in the &apos;available&apos; (previously called &apos;active&apos;) state.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_binding_status? BindingStatus { get; private set; }
-        /// <summary>The CA certificate(read only).</summary>
+        /// <summary>Provide the CA certificate (read-only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Certificate { get; private set; }
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The expires_on property</summary>
         public DateTimeOffset? ExpiresOn { get; set; }
-        /// <summary>The SHA256 fingerprint of the certificate(read only).</summary>
+        /// <summary>Provide the SHA256 fingerprint of the certificate (read-only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Fingerprint { get; private set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Fingerprint { get; private set; }
 #endif
-        /// <summary>Certificate UUID tag.</summary>
+        /// <summary>Identify the certificate with a UUID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -44,9 +44,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Read-only field that shows whether Gateway TLS interception is using this certificate. This value cannot be set directly. To configure the certificate for interception, use the Gateway configuration setting named certificate.</summary>
+        /// <summary>Indicate whether Gateway TLS interception uses this certificate (read-only). You cannot set this value directly. To configure interception, use the Gateway configuration setting named `certificate` (read-only).</summary>
         public bool? InUse { get; private set; }
-        /// <summary>The organization that issued the certificate(read only).</summary>
+        /// <summary>Indicate the organization that issued the certificate (read-only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuerOrg { get; private set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string IssuerOrg { get; private set; }
 #endif
-        /// <summary>The entire issuer field of the certificate(read only).</summary>
+        /// <summary>Provide the entire issuer field of the certificate (read-only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IssuerRaw { get; private set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string IssuerRaw { get; private set; }
 #endif
-        /// <summary>The type of certificate, either BYO-PKI (custom) or Gateway-managed(read only).</summary>
+        /// <summary>Indicate the read-only certificate type, BYO-PKI (custom) or Gateway-managed.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_type? Type { get; private set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }

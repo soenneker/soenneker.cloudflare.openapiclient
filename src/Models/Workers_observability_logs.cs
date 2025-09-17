@@ -15,12 +15,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A list of destinations where logs will be exported to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Destinations { get; set; }
+#nullable restore
+#else
+        public List<string> Destinations { get; set; }
+#endif
         /// <summary>Whether logs are enabled for the Worker.</summary>
         public bool? Enabled { get; set; }
         /// <summary>The sampling rate for logs. From 0 to 1 (1 = 100%, 0.1 = 10%). Default is 1.</summary>
         public double? HeadSamplingRate { get; set; }
         /// <summary>Whether [invocation logs](https://developers.cloudflare.com/workers/observability/logs/workers-logs/#invocation-logs) are enabled for the Worker.</summary>
         public bool? InvocationLogs { get; set; }
+        /// <summary>Whether log persistence is enabled for the Worker.</summary>
+        public bool? Persist { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_logs"/> and sets the default values.
         /// </summary>
@@ -46,9 +56,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "destinations", n => { Destinations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "head_sampling_rate", n => { HeadSamplingRate = n.GetDoubleValue(); } },
                 { "invocation_logs", n => { InvocationLogs = n.GetBoolValue(); } },
+                { "persist", n => { Persist = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -58,9 +70,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("destinations", Destinations);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
             writer.WriteBoolValue("invocation_logs", InvocationLogs);
+            writer.WriteBoolValue("persist", Persist);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

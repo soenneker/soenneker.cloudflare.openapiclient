@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Anti-virus settings.
+    /// Specify anti-virus settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_anti_virus_settings : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Enable anti-virus scanning on downloads.</summary>
+        /// <summary>Specify whether to enable anti-virus scanning on downloads.</summary>
         public bool? EnabledDownloadPhase { get; set; }
-        /// <summary>Enable anti-virus scanning on uploads.</summary>
+        /// <summary>Specify whether to enable anti-virus scanning on uploads.</summary>
         public bool? EnabledUploadPhase { get; set; }
-        /// <summary>Block requests for files that cannot be scanned.</summary>
+        /// <summary>Specify whether to block requests for unscannable files.</summary>
         public bool? FailClosed { get; set; }
-        /// <summary>Configure a message to display on the user&apos;s device when an antivirus search is performed.</summary>
+        /// <summary>Configure the message the user&apos;s device shows during an antivirus scan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_notification_settings? NotificationSettings { get; set; }

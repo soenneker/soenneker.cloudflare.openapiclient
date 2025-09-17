@@ -23,8 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Prefix advertisement status to the Internet. This field is only not &apos;null&apos; if on demand is enabled.</summary>
+        [Obsolete("")]
         public bool? Advertised { get; set; }
         /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
+        [Obsolete("")]
         public DateTimeOffset? AdvertisedModifiedAt { get; set; }
         /// <summary>Approval state of the prefix (P = pending, V = active).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

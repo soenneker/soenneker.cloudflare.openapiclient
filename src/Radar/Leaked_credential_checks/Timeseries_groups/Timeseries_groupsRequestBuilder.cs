@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Bot_class;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Time
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder Compromised
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Compromised.CompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.leaked_credential_checks.timeseries_groups.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.

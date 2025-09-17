@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The action performed when an untrusted certificate is seen. The default action is an error with HTTP code 526.</summary>
+    /// <summary>Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_rule_settings_untrusted_cert_action
     {

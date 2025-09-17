@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The identifier for the type of this application. There can be many applications with the same type. This refers to the `id` of a returned application type.</summary>
+        /// <summary>Identify the type of this application. Multiple applications can share the same type. Refers to the `id` of a returned application type.</summary>
         public int? ApplicationTypeId { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The identifier for this application. There is only one application per ID.</summary>
+        /// <summary>Identify this application. Only one application per ID.</summary>
         public int? Id { get; set; }
-        /// <summary>The name of the application or application type.</summary>
+        /// <summary>Specify the name of the application or application type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

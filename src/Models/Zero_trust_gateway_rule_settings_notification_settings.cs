@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure a notification to display on the user&apos;s device when this rule is matched.
+    /// Configure a notification to display on the user&apos;s device when this rule matched.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_notification_settings : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set notification on.</summary>
+        /// <summary>Enable notification.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>If true, context information will be passed as query parameters.</summary>
+        /// <summary>Indicates whether to pass the context information as query parameters.</summary>
         public bool? IncludeContext { get; set; }
         /// <summary>Customize the message shown in the notification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Msg { get; set; }
 #endif
-        /// <summary>Optional URL to direct users to additional information. If not set, the notification will open a block page.</summary>
+        /// <summary>Defines an optional URL to direct users to additional information. If unset, the notification opens a block page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SupportUrl { get; set; }

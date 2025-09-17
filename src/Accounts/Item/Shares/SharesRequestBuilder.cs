@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares{?direction*,kind*,order*,page*,per_page*,status*,target_type*}", pathParameters)
+        public SharesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,target_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares{?direction*,kind*,order*,page*,per_page*,status*,target_type*}", rawUrl)
+        public SharesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/shares{?direction*,include_recipient_counts*,include_resources*,kind*,order*,page*,per_page*,resource_types*,status*,target_type*}", rawUrl)
         {
         }
         /// <summary>
@@ -157,6 +157,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             /// <summary>Direction to sort objects.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.GetDirectionQueryParameterType? Direction { get; set; }
+            /// <summary>Include recipient counts in the response.</summary>
+            [QueryParameter("include_recipient_counts")]
+            public bool? IncludeRecipientCounts { get; set; }
+            /// <summary>Include resources in the response.</summary>
+            [QueryParameter("include_resources")]
+            public bool? IncludeResources { get; set; }
             /// <summary>Filter shares by kind.</summary>
             [QueryParameter("kind")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_kind? Kind { get; set; }
@@ -169,6 +175,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares
             /// <summary>Number of objects to return per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Filter share resources by resource_types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("resource_types")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_type[]? ResourceTypes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("resource_types")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_type[] ResourceTypes { get; set; }
+#endif
             /// <summary>Filter shares by status.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_status? Status { get; set; }

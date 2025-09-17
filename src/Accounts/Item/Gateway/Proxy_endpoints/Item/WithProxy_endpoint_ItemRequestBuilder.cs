@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
         {
         }
         /// <summary>
-        /// Deletes a configured Zero Trust Gateway proxy endpoint.
+        /// Delete a configured Zero Trust Gateway proxy endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_empty_response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_empty_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_empty_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetches a single Zero Trust Gateway proxy endpoint.
+        /// Get a single Zero Trust Gateway proxy endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a configured Zero Trust Gateway proxy endpoint.
+        /// Update a configured Zero Trust Gateway proxy endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a configured Zero Trust Gateway proxy endpoint.
+        /// Delete a configured Zero Trust Gateway proxy endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
             return requestInfo;
         }
         /// <summary>
-        /// Fetches a single Zero Trust Gateway proxy endpoint.
+        /// Get a single Zero Trust Gateway proxy endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
             return requestInfo;
         }
         /// <summary>
-        /// Updates a configured Zero Trust Gateway proxy endpoint.
+        /// Update a configured Zero Trust Gateway proxy endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

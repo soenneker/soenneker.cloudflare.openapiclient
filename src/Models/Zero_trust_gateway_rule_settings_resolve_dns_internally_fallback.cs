@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The fallback behavior to apply when the internal DNS response code is different from &apos;NOERROR&apos; or when the response data only contains CNAME records for &apos;A&apos; or &apos;AAAA&apos; queries.</summary>
+    /// <summary>Specify the fallback behavior to apply when the internal DNS response code differs from &apos;NOERROR&apos; or when the response data contains only CNAME records for &apos;A&apos; or &apos;AAAA&apos; queries.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_rule_settings_resolve_dns_internally_fallback
     {

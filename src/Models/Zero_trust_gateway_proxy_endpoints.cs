@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>A list of CIDRs to restrict ingress connections.</summary>
+        /// <summary>Specify the list of CIDRs to restrict ingress connections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Ips { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Ips { get; set; }
 #endif
-        /// <summary>The name of the proxy endpoint.</summary>
+        /// <summary>Specify the name of the proxy endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The subdomain to be used as the destination in the proxy client.</summary>
+        /// <summary>Specify the subdomain to use as the destination in the proxy client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subdomain { get; set; }

@@ -36,6 +36,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the share was modified.</summary>
         public DateTimeOffset? Modified { get; set; }
+        /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object>? Resources { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object> Resources { get; set; }
+#endif
         /// <summary>Share Recipient status message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status_message", n => { StatusMessage = n.GetStringValue(); } },
             };
         }
@@ -89,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified", Modified);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object>("resources", Resources);
             writer.WriteStringValue("status_message", StatusMessage);
             writer.WriteAdditionalData(AdditionalData);
         }

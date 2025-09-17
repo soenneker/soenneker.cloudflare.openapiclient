@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Controls whether the user is redirected to a Cloudflare-hosted block page or to a customer-provided URI.</summary>
+    /// <summary>Specify whether to redirect users to a Cloudflare-hosted block page or a customer-provided URI.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_block_page_settings_mode
     {

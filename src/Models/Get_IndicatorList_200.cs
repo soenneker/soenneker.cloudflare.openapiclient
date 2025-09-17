@@ -14,41 +14,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The createdAt property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The indicatorType property</summary>
+        /// <summary>The indicators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndicatorType { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators>? Indicators { get; set; }
 #nullable restore
 #else
-        public string IndicatorType { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators> Indicators { get; set; }
 #endif
-        /// <summary>The relatedEvents property</summary>
+        /// <summary>The pagination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents>? RelatedEvents { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination? Pagination { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents> RelatedEvents { get; set; }
-#endif
-        /// <summary>The updatedAt property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The uuid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Uuid { get; set; }
-#nullable restore
-#else
-        public string Uuid { get; set; }
-#endif
-        /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination Pagination { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200"/> and sets the default values.
@@ -75,12 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
-                { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "uuid", n => { Uuid = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,12 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
-            writer.WriteStringValue("indicatorType", IndicatorType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_relatedEvents>("relatedEvents", RelatedEvents);
-            writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
-            writer.WriteStringValue("uuid", Uuid);
-            writer.WriteStringValue("value", Value);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators>("indicators", Indicators);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination>("pagination", Pagination);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

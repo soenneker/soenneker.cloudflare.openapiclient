@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Configure whether uploading is enabled or not. When absent, uploading is enabled. Only applies when `version == &quot;v2&quot;`.</summary>
+    /// <summary>Configure upload behavior. If this field is absent, uploading remains enabled. Applies only when version == &quot;v2&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_rule_settings_biso_admin_controls_upload
     {

@@ -14,9 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Log all requests to this service.</summary>
+        /// <summary>Specify whether to log all requests to this service.</summary>
         public bool? LogAll { get; set; }
-        /// <summary>Log only blocking requests to this service.</summary>
+        /// <summary>Specify whether to log only blocking requests to this service.</summary>
         public bool? LogBlocks { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options"/> and sets the default values.

@@ -20,6 +20,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Custom_ns;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Custom_pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1;
@@ -53,6 +54,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RequestTracer;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles;
@@ -176,6 +178,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.CniRequestBuilder Cni
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni.CniRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The connectivity property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.ConnectivityRequestBuilder Connectivity
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.ConnectivityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_ns property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Custom_ns.Custom_nsRequestBuilder Custom_ns
@@ -341,6 +348,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.R2RequestBuilder R2
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.R2RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The realtimekit property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.RealtimekitRequestBuilder Realtimekit
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.RealtimekitRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The registrar property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar.RegistrarRequestBuilder Registrar

@@ -23,7 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string ClientId { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at? CreatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at CreatedAt { get; set; }
+#endif
         /// <summary>The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +49,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_id Id { get; set; }
 #endif
         /// <summary>The last_seen_at property</summary>
-        public DateTimeOffset? LastSeenAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_last_seen_at? LastSeenAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_last_seen_at LastSeenAt { get; set; }
+#endif
         /// <summary>The name of the service token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -53,7 +65,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at UpdatedAt { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens"/> and sets the default values.
         /// </summary>
@@ -80,13 +98,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at.CreateFromDiscriminatorValue); } },
                 { "duration", n => { Duration = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_id.CreateFromDiscriminatorValue); } },
-                { "last_seen_at", n => { LastSeenAt = n.GetDateTimeOffsetValue(); } },
+                { "last_seen_at", n => { LastSeenAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_last_seen_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_last_seen_at.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,13 +115,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_created_at>("created_at", CreatedAt);
             writer.WriteStringValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_id>("id", Id);
-            writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_service_tokens_last_seen_at>("last_seen_at", LastSeenAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_updated_at>("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional settings that modify the rule&apos;s action.
+    /// Set settings related to this rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Add custom headers to allowed requests, in the form of key-value pairs. Keys are header names, pointing to an array with its header value(s).</summary>
+        /// <summary>Add custom headers to allowed requests as key-value pairs. Use header names as keys that map to arrays of header values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_add_headers? AddHeaders { get; set; }
@@ -23,9 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set by parent MSP accounts to enable their children to bypass this rule.</summary>
+        /// <summary>Set to enable MSP children to bypass this rule. Only parent MSP accounts can set this. this rule.</summary>
         public bool? AllowChildBypass { get; set; }
-        /// <summary>Settings for the Audit SSH action.</summary>
+        /// <summary>Define the settings for the Audit SSH action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_audit_ssh? AuditSsh { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_audit_ssh AuditSsh { get; set; }
 #endif
-        /// <summary>Configure how browser isolation behaves.</summary>
+        /// <summary>Configure browser isolation behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_biso_admin_controls? BisoAdminControls { get; set; }
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_biso_admin_controls BisoAdminControls { get; set; }
 #endif
-        /// <summary>Custom block page settings. If missing/null, blocking will use the the account settings.</summary>
+        /// <summary>Configure custom block page settings. If missing or null, use the account settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_block_page? BlockPage { get; set; }
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Enable the custom block page.</summary>
         public bool? BlockPageEnabled { get; set; }
-        /// <summary>The text describing why this block occurred, displayed on the custom block page (if enabled).</summary>
+        /// <summary>Explain why the rule blocks the request. The custom block page shows this text (if enabled).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BlockReason { get; set; }
@@ -59,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BlockReason { get; set; }
 #endif
-        /// <summary>Set by children MSP accounts to bypass their parent&apos;s rules.</summary>
+        /// <summary>Set to enable MSP accounts to bypass their parent&apos;s rules. Only MSP child accounts can set this.</summary>
         public bool? BypassParentRule { get; set; }
-        /// <summary>Configure how session check behaves.</summary>
+        /// <summary>Configure session check behavior.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_check_session? CheckSession { get; set; }
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_check_session CheckSession { get; set; }
 #endif
-        /// <summary>Add your own custom resolvers to route queries that match the resolver policy. Cannot be used when &apos;resolve_dns_through_cloudflare&apos; or &apos;resolve_dns_internally&apos; are set. DNS queries will route to the address closest to their origin. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.</summary>
+        /// <summary>Configure custom resolvers to route queries that match the resolver policy. Unused with &apos;resolve_dns_through_cloudflare&apos; or &apos;resolve_dns_internally&apos; settings. DNS queries get routed to the address closest to their origin. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_dns_resolvers? DnsResolvers { get; set; }
@@ -85,13 +85,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_egress Egress { get; set; }
 #endif
-        /// <summary>Set to true, to ignore the category matches at CNAME domains in a response. If unchecked, the categories in this rule will be checked against all the CNAME domain categories in a response.</summary>
+        /// <summary>Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response.</summary>
         public bool? IgnoreCnameCategoryMatches { get; set; }
-        /// <summary>INSECURE - disable DNSSEC validation (for Allow actions).</summary>
+        /// <summary>Specify whether to disable DNSSEC validation (for Allow actions) [INSECURE].</summary>
         public bool? InsecureDisableDnssecValidation { get; set; }
-        /// <summary>Set to true to enable IPs in DNS resolver category blocks. By default categories only block based on domain names.</summary>
+        /// <summary>Enable IPs in DNS resolver category blocks. The system blocks only domain name categories unless you enable this setting.</summary>
         public bool? IpCategories { get; set; }
-        /// <summary>Set to true to include IPs in DNS resolver indicator feed blocks. By default indicator feeds only block based on domain names.</summary>
+        /// <summary>Indicates whether to include IPs in DNS resolver indicator feed blocks. Default, indicator feeds block only domain names.</summary>
         public bool? IpIndicatorFeeds { get; set; }
         /// <summary>Send matching traffic to the supplied destination IP address. and port.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_l4override L4override { get; set; }
 #endif
-        /// <summary>Configure a notification to display on the user&apos;s device when this rule is matched.</summary>
+        /// <summary>Configure a notification to display on the user&apos;s device when this rule matched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_notification_settings? NotificationSettings { get; set; }
@@ -109,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_notification_settings NotificationSettings { get; set; }
 #endif
-        /// <summary>Override matching DNS queries with a hostname.</summary>
+        /// <summary>Defines a hostname for override, for the matching DNS queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OverrideHost { get; set; }
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OverrideHost { get; set; }
 #endif
-        /// <summary>Override matching DNS queries with an IP or set of IPs.</summary>
+        /// <summary>Defines a an IP or set of IPs for overriding matched DNS queries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? OverrideIps { get; set; }
@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_payload_log PayloadLog { get; set; }
 #endif
-        /// <summary>Settings that apply to quarantine rules.</summary>
+        /// <summary>Configure settings that apply to quarantine rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_quarantine? Quarantine { get; set; }
@@ -141,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_quarantine Quarantine { get; set; }
 #endif
-        /// <summary>Settings that apply to redirect rules.</summary>
+        /// <summary>Apply settings to redirect rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_redirect? Redirect { get; set; }
@@ -149,7 +149,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_redirect Redirect { get; set; }
 #endif
-        /// <summary>Configure to forward the query to the internal DNS service, passing the specified &apos;view_id&apos; as input. Cannot be set when &apos;dns_resolvers&apos; are specified or &apos;resolve_dns_through_cloudflare&apos; is set. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.</summary>
+        /// <summary>Configure to forward the query to the internal DNS service, passing the specified &apos;view_id&apos; as input. Not used when &apos;dns_resolvers&apos; is specified or &apos;resolve_dns_through_cloudflare&apos; is set. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_resolve_dns_internally? ResolveDnsInternally { get; set; }
@@ -157,9 +157,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_resolve_dns_internally ResolveDnsInternally { get; set; }
 #endif
-        /// <summary>Enable to send queries that match the policy to Cloudflare&apos;s default 1.1.1.1 DNS resolver. Cannot be set when &apos;dns_resolvers&apos; are specified or &apos;resolve_dns_internally&apos; is set. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.</summary>
+        /// <summary>Enable to send queries that match the policy to Cloudflare&apos;s default 1.1.1.1 DNS resolver. Cannot set when &apos;dns_resolvers&apos; specified or &apos;resolve_dns_internally&apos; is set. Only valid when a rule&apos;s action set to &apos;resolve&apos;.</summary>
         public bool? ResolveDnsThroughCloudflare { get; set; }
-        /// <summary>Configure behavior when an upstream cert is invalid or an SSL error occurs.</summary>
+        /// <summary>Configure behavior when an upstream certificate is invalid or an SSL error occurs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_untrusted_cert? UntrustedCert { get; set; }

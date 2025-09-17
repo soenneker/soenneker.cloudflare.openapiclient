@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>IPv4 address of upstream resolver.</summary>
+        /// <summary>Specify the IPv4 address of the upstream resolver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ip { get; set; }
@@ -22,11 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Ip { get; set; }
 #endif
-        /// <summary>A port number to use for upstream resolver. Defaults to 53 if unspecified.</summary>
+        /// <summary>Specify a port number to use for the upstream resolver. Defaults to 53 if unspecified.</summary>
         public int? Port { get; set; }
-        /// <summary>Whether to connect to this resolver over a private network. Must be set when vnet_id is set.</summary>
+        /// <summary>Indicate whether to connect to this resolver over a private network. Must set when vnet_id set.</summary>
         public bool? RouteThroughPrivateNetwork { get; set; }
-        /// <summary>Optionally specify a virtual network for this resolver. Uses default virtual network id if omitted.</summary>
+        /// <summary>Specify an optional virtual network for this resolver. Uses default virtual network id if omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VnetId { get; set; }

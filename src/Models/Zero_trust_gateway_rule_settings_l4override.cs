@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>IPv4 or IPv6 address.</summary>
+        /// <summary>Defines the IPv4 or IPv6 address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ip { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Ip { get; set; }
 #endif
-        /// <summary>A port number to use for TCP/UDP overrides.</summary>
+        /// <summary>Defines a port number to use for TCP/UDP overrides.</summary>
         public int? Port { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_l4override"/> and sets the default values.

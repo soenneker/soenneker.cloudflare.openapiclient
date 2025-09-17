@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Total number of results for the requested service.</summary>
+        /// <summary>Indicate the total number of results for the requested service.</summary>
         public double? Count { get; set; }
-        /// <summary>Current page within paginated list of results.</summary>
+        /// <summary>Indicate the current page within a paginated list of results.</summary>
         public double? Page { get; set; }
-        /// <summary>Number of results per page of results.</summary>
+        /// <summary>Indicate the number of results per page.</summary>
         public double? PerPage { get; set; }
-        /// <summary>Total results available without any search parameters.</summary>
+        /// <summary>Indicate the total results available without any search parameters.</summary>
         public double? TotalCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_result_info"/> and sets the default values.

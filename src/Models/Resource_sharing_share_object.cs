@@ -30,8 +30,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The number of recipients in the &apos;associated&apos; state. This field is only included when requested via the &apos;include_recipient_counts&apos; parameter.</summary>
+        public int? AssociatedRecipientCount { get; set; }
+        /// <summary>The number of recipients in the &apos;associating&apos; state. This field is only included when requested via the &apos;include_recipient_counts&apos; parameter.</summary>
+        public int? AssociatingRecipientCount { get; set; }
         /// <summary>When the share was created.</summary>
         public DateTimeOffset? Created { get; set; }
+        /// <summary>The number of recipients in the &apos;disassociated&apos; state. This field is only included when requested via the &apos;include_recipient_counts&apos; parameter.</summary>
+        public int? DisassociatedRecipientCount { get; set; }
+        /// <summary>The number of recipients in the &apos;disassociating&apos; state. This field is only included when requested via the &apos;include_recipient_counts&apos; parameter.</summary>
+        public int? DisassociatingRecipientCount { get; set; }
         /// <summary>Share identifier tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +67,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string OrganizationId { get; set; }
+#endif
+        /// <summary>A list of resources that are part of the share. This field is only included when requested via the &apos;include_resources&apos; parameter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object>? Resources { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object> Resources { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_status? Status { get; set; }
@@ -91,12 +107,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "account_name", n => { AccountName = n.GetStringValue(); } },
+                { "associated_recipient_count", n => { AssociatedRecipientCount = n.GetIntValue(); } },
+                { "associating_recipient_count", n => { AssociatingRecipientCount = n.GetIntValue(); } },
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
+                { "disassociated_recipient_count", n => { DisassociatedRecipientCount = n.GetIntValue(); } },
+                { "disassociating_recipient_count", n => { DisassociatingRecipientCount = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_kind>(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_id", n => { OrganizationId = n.GetStringValue(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_status>(); } },
                 { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_target_type>(); } },
             };
@@ -110,12 +131,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("account_name", AccountName);
+            writer.WriteIntValue("associated_recipient_count", AssociatedRecipientCount);
+            writer.WriteIntValue("associating_recipient_count", AssociatingRecipientCount);
             writer.WriteDateTimeOffsetValue("created", Created);
+            writer.WriteIntValue("disassociated_recipient_count", DisassociatedRecipientCount);
+            writer.WriteIntValue("disassociating_recipient_count", DisassociatingRecipientCount);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_kind>("kind", Kind);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_id", OrganizationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object>("resources", Resources);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_status>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_target_type>("target_type", TargetType);
             writer.WriteAdditionalData(AdditionalData);

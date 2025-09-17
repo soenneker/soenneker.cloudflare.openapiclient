@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Configure whether copy is enabled or not. When set with &quot;remote_only&quot;, copying isolated content from the remote browser to the user&apos;s local clipboard is disabled. When absent, copy is enabled. Only applies when `version == &quot;v2&quot;`.</summary>
+    /// <summary>Configure copy behavior. If set to remote_only, users cannot copy isolated content from the remote browser to the local clipboard. If this field is absent, copying remains enabled. Applies only when version == &quot;v2&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_rule_settings_biso_admin_controls_copy
     {

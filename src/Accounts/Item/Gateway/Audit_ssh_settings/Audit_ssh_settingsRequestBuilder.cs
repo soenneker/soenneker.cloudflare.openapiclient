@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_set
         {
         }
         /// <summary>
-        /// Gets all Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
+        /// Retrieve all Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_set
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
+        /// Update Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response"/></returns>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_set
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets all Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
+        /// Retrieve all Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_set
             return requestInfo;
         }
         /// <summary>
-        /// Updates Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
+        /// Update Zero Trust Audit SSH and SSH with Access for Infrastructure settings for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

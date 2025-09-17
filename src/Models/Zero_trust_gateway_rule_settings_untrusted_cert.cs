@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure behavior when an upstream cert is invalid or an SSL error occurs.
+    /// Configure behavior when an upstream certificate is invalid or an SSL error occurs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_untrusted_cert : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The action performed when an untrusted certificate is seen. The default action is an error with HTTP code 526.</summary>
+        /// <summary>Defines the action performed when an untrusted certificate seen. The default action an error with HTTP code 526.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_untrusted_cert_action? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

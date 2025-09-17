@@ -73,6 +73,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LastSeenAt { get; set; }
 #endif
+        /// <summary>The last seen registration for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_registration? LastSeenRegistration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_registration LastSeenRegistration { get; set; }
+#endif
         /// <summary>The last user to use the WARP device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -186,6 +194,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "hardware_id", n => { HardwareId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_seen_at", n => { LastSeenAt = n.GetStringValue(); } },
+                { "last_seen_registration", n => { LastSeenRegistration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_registration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_registration.CreateFromDiscriminatorValue); } },
                 { "last_seen_user", n => { LastSeenUser = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_user>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_user.CreateFromDiscriminatorValue); } },
                 { "mac_address", n => { MacAddress = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
@@ -213,6 +222,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("hardware_id", HardwareId);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("last_seen_at", LastSeenAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_registration>("last_seen_registration", LastSeenRegistration);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_physical_device_last_seen_user>("last_seen_user", LastSeenUser);
             writer.WriteStringValue("mac_address", MacAddress);
             writer.WriteStringValue("manufacturer", Manufacturer);

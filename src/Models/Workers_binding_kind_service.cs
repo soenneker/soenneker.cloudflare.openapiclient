@@ -46,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Workers_binding_kind_service()
         {
             AdditionalData = new Dictionary<string, object>();
+            Environment = "production";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

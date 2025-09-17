@@ -8,36 +8,36 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Logging settings by rule type.
+    /// Configure logging settings for each rule type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dns property</summary>
+        /// <summary>Configure logging settings for DNS firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options? Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_dns? Dns { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options Dns { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_dns Dns { get; set; }
 #endif
-        /// <summary>The http property</summary>
+        /// <summary>Configure logging settings for HTTP/HTTPS firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options? Http { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_http? Http { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options Http { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_http Http { get; set; }
 #endif
-        /// <summary>The l4 property</summary>
+        /// <summary>Configure logging settings for Network firewall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options? L4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_l4? L4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options L4 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_l4 L4 { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options.CreateFromDiscriminatorValue); } },
-                { "http", n => { Http = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options.CreateFromDiscriminatorValue); } },
-                { "l4", n => { L4 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options.CreateFromDiscriminatorValue); } },
+                { "dns", n => { Dns = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_dns>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_dns.CreateFromDiscriminatorValue); } },
+                { "http", n => { Http = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_http>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_http.CreateFromDiscriminatorValue); } },
+                { "l4", n => { L4 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_l4>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_l4.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,9 +76,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options>("dns", Dns);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options>("http", Http);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_account_log_options>("l4", L4);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_dns>("dns", Dns);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_http>("http", Http);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account_logging_settings_settings_by_rule_type_l4>("l4", L4);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

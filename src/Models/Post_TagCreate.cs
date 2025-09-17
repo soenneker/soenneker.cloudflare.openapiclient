@@ -12,15 +12,117 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Post_TagCreate : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The name property</summary>
+        /// <summary>The activeDuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? ActiveDuration { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string ActiveDuration { get; set; }
+#endif
+        /// <summary>The actorCategory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ActorCategory { get; set; }
+#nullable restore
+#else
+        public string ActorCategory { get; set; }
+#endif
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The aliasGroupNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AliasGroupNames { get; set; }
+#nullable restore
+#else
+        public List<string> AliasGroupNames { get; set; }
+#endif
+        /// <summary>The aliasGroupNamesInternal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AliasGroupNamesInternal { get; set; }
+#nullable restore
+#else
+        public List<string> AliasGroupNamesInternal { get; set; }
+#endif
+        /// <summary>The analyticPriority property</summary>
+        public double? AnalyticPriority { get; set; }
+        /// <summary>The attributionConfidence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AttributionConfidence { get; set; }
+#nullable restore
+#else
+        public string AttributionConfidence { get; set; }
+#endif
+        /// <summary>The attributionOrganization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AttributionOrganization { get; set; }
+#nullable restore
+#else
+        public string AttributionOrganization { get; set; }
+#endif
+        /// <summary>The categoryId property</summary>
+        public double? CategoryId { get; set; }
+        /// <summary>The externalReferenceLinks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExternalReferenceLinks { get; set; }
+#nullable restore
+#else
+        public List<string> ExternalReferenceLinks { get; set; }
+#endif
+        /// <summary>The internalDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InternalDescription { get; set; }
+#nullable restore
+#else
+        public string InternalDescription { get; set; }
+#endif
+        /// <summary>The motive property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Motive { get; set; }
+#nullable restore
+#else
+        public string Motive { get; set; }
+#endif
+        /// <summary>The opsecLevel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OpsecLevel { get; set; }
+#nullable restore
+#else
+        public string OpsecLevel { get; set; }
+#endif
+        /// <summary>The originCountryISO property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginCountryISO { get; set; }
+#nullable restore
+#else
+        public string OriginCountryISO { get; set; }
+#endif
+        /// <summary>The priority property</summary>
+        public double? Priority { get; set; }
+        /// <summary>The sophisticationLevel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SophisticationLevel { get; set; }
+#nullable restore
+#else
+        public string SophisticationLevel { get; set; }
+#endif
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Value { get; set; }
+#nullable restore
+#else
+        public string Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_TagCreate"/> and sets the default values.
@@ -47,7 +149,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "activeDuration", n => { ActiveDuration = n.GetStringValue(); } },
+                { "actorCategory", n => { ActorCategory = n.GetStringValue(); } },
+                { "aliasGroupNames", n => { AliasGroupNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "aliasGroupNamesInternal", n => { AliasGroupNamesInternal = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "analyticPriority", n => { AnalyticPriority = n.GetDoubleValue(); } },
+                { "attributionConfidence", n => { AttributionConfidence = n.GetStringValue(); } },
+                { "attributionOrganization", n => { AttributionOrganization = n.GetStringValue(); } },
+                { "categoryId", n => { CategoryId = n.GetDoubleValue(); } },
+                { "externalReferenceLinks", n => { ExternalReferenceLinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "internalDescription", n => { InternalDescription = n.GetStringValue(); } },
+                { "motive", n => { Motive = n.GetStringValue(); } },
+                { "opsecLevel", n => { OpsecLevel = n.GetStringValue(); } },
+                { "originCountryISO", n => { OriginCountryISO = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
+                { "sophisticationLevel", n => { SophisticationLevel = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +174,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("activeDuration", ActiveDuration);
+            writer.WriteStringValue("actorCategory", ActorCategory);
+            writer.WriteCollectionOfPrimitiveValues<string>("aliasGroupNames", AliasGroupNames);
+            writer.WriteCollectionOfPrimitiveValues<string>("aliasGroupNamesInternal", AliasGroupNamesInternal);
+            writer.WriteDoubleValue("analyticPriority", AnalyticPriority);
+            writer.WriteStringValue("attributionConfidence", AttributionConfidence);
+            writer.WriteStringValue("attributionOrganization", AttributionOrganization);
+            writer.WriteDoubleValue("categoryId", CategoryId);
+            writer.WriteCollectionOfPrimitiveValues<string>("externalReferenceLinks", ExternalReferenceLinks);
+            writer.WriteStringValue("internalDescription", InternalDescription);
+            writer.WriteStringValue("motive", Motive);
+            writer.WriteStringValue("opsecLevel", OpsecLevel);
+            writer.WriteStringValue("originCountryISO", OriginCountryISO);
+            writer.WriteDoubleValue("priority", Priority);
+            writer.WriteStringValue("sophisticationLevel", SophisticationLevel);
+            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

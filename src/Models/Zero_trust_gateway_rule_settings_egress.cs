@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The IPv4 address to be used for egress.</summary>
+        /// <summary>Specify the IPv4 address to use for egress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ipv4 { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Ipv4 { get; set; }
 #endif
-        /// <summary>The fallback IPv4 address to be used for egress in the event of an error egressing with the primary IPv4. Can be &apos;0.0.0.0&apos; to indicate local egress via WARP IPs.</summary>
+        /// <summary>Specify the fallback IPv4 address to use for egress when the primary IPv4 fails. Set &apos;0.0.0.0&apos; to indicate local egress via WARP IPs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ipv4Fallback { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Ipv4Fallback { get; set; }
 #endif
-        /// <summary>The IPv6 range to be used for egress.</summary>
+        /// <summary>Specify the IPv6 range to use for egress.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ipv6 { get; set; }

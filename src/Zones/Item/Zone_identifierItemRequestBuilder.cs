@@ -36,7 +36,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs;
@@ -233,11 +232,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder Keyless_certificates
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The leakedCredentialChecks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder LeakedCredentialChecks
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The load_balancers property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers.Load_balancersRequestBuilder Load_balancers

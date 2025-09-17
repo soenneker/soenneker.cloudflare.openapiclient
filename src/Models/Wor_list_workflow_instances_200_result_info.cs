@@ -16,13 +16,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
         public double? Count { get; set; }
-        /// <summary>The next_cursor property</summary>
+        /// <summary>The cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextCursor { get; set; }
+        public string? Cursor { get; set; }
 #nullable restore
 #else
-        public string NextCursor { get; set; }
+        public string Cursor { get; set; }
 #endif
         /// <summary>The page property</summary>
         public double? Page { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetDoubleValue(); } },
-                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
+                { "cursor", n => { Cursor = n.GetStringValue(); } },
                 { "page", n => { Page = n.GetDoubleValue(); } },
                 { "per_page", n => { PerPage = n.GetDoubleValue(); } },
                 { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("count", Count);
-            writer.WriteStringValue("next_cursor", NextCursor);
+            writer.WriteStringValue("cursor", Cursor);
             writer.WriteDoubleValue("page", Page);
             writer.WriteDoubleValue("per_page", PerPage);
             writer.WriteDoubleValue("total_count", TotalCount);

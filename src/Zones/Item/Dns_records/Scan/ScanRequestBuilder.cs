@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Review;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Trigger;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +19,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScanRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The review property</summary>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Review.ReviewRequestBuilder Review
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Review.ReviewRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The trigger property</summary>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Trigger.TriggerRequestBuilder Trigger
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.Trigger.TriggerRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -41,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_for_a_zone_scan_dns_records_4XX">When receiving a 4XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_response_import_scan?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -64,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -85,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder(rawUrl, RequestAdapter);

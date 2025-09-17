@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The zone_defaults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account? ZoneDefaults { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response? ZoneDefaults { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account ZoneDefaults { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response ZoneDefaults { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_account_settings"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "zone_defaults", n => { ZoneDefaults = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account.CreateFromDiscriminatorValue); } },
+                { "zone_defaults", n => { ZoneDefaults = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account>("zone_defaults", ZoneDefaults);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response>("zone_defaults", ZoneDefaults);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

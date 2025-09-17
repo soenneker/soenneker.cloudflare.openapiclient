@@ -8,16 +8,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// The expiration time stamp and default duration of a DNS policy. Takesprecedence over the policy&apos;s `schedule` configuration, if any.This does not apply to HTTP or network policies.
+    /// Defines the expiration time stamp and default duration of a DNS policy. Takes precedence over the policy&apos;s `schedule` configuration, if any. This  does not apply to HTTP or network policies.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_expiration : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The default duration a policy will be active in minutes. Must be set in order to use the `reset_expiration` endpoint on this rule.</summary>
+        /// <summary>Defines the default duration a policy active in minutes. Must set in order to use the `reset_expiration` endpoint on this rule.</summary>
         public int? Duration { get; set; }
-        /// <summary>Whether the policy has expired.</summary>
+        /// <summary>Indicates whether the policy is expired.</summary>
         public bool? Expired { get; private set; }
         /// <summary>The expires_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

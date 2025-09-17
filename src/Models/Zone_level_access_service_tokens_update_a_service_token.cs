@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A version number identifying the current `client_secret` associated with the service token. Incrementing it triggers a rotation; the previous secret will still be accepted until the time indicated by `previous_client_secret_expires_at`.</summary>
+        public double? ClientSecretVersion { get; set; }
         /// <summary>The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The expiration of the previous `client_secret`. This can be modified at any point after a rotation. For example, you may extend it further into the future if you need more time to update services with the new secret; or move it into the past to immediately invalidate the previous token in case of compromise.</summary>
+        public DateTimeOffset? PreviousClientSecretExpiresAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_level_access_service_tokens_update_a_service_token"/> and sets the default values.
         /// </summary>
@@ -55,8 +59,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "client_secret_version", n => { ClientSecretVersion = n.GetDoubleValue(); } },
                 { "duration", n => { Duration = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "previous_client_secret_expires_at", n => { PreviousClientSecretExpiresAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("client_secret_version", ClientSecretVersion);
             writer.WriteStringValue("duration", Duration);
             writer.WriteStringValue("name", Name);
+            writer.WriteDateTimeOffsetValue("previous_client_secret_expires_at", PreviousClientSecretExpiresAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

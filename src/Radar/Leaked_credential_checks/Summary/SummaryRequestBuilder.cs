@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Bot_class;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Compromised;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summ
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Compromised.CompromisedRequestBuilder Compromised
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Compromised.CompromisedRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.leaked_credential_checks.summary.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.SummaryRequestBuilder"/> and sets the default values.

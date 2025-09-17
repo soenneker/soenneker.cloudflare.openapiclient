@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.Item.Versions.Item
 {
+    /// <summary>Whether to include the `modules` property of the version in the response, which contains code and sourcemap content and may add several megabytes to the response size.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetIncludeQueryParameterType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "modules")]
         #pragma warning disable CS1591

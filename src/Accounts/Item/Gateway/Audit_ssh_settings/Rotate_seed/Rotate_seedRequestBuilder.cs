@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_set
         {
         }
         /// <summary>
-        /// Rotates the SSH account seed that is used for generating the host key identity when connecting through the Cloudflare SSH Proxy.
+        /// Rotate the SSH account seed that generates the host key identity when connecting through the Cloudflare SSH Proxy.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_set
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_audit_ssh_settings_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Rotates the SSH account seed that is used for generating the host key identity when connecting through the Cloudflare SSH Proxy.
+        /// Rotate the SSH account seed that generates the host key identity when connecting through the Cloudflare SSH Proxy.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

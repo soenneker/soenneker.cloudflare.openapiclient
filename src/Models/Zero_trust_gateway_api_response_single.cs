@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_messages_item> Messages { get; set; }
 #endif
-        /// <summary>Whether the API call was successful.</summary>
+        /// <summary>Indicate whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_api_response_single"/> and sets the default values.

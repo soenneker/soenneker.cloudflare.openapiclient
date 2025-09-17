@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Indicates which version of the browser isolation controls should apply.</summary>
+    /// <summary>Indicate which version of the browser isolation controls should apply.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_rule_settings_biso_admin_controls_version
     {

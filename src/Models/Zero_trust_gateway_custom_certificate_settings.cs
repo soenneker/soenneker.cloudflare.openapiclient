@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Custom certificate settings for BYO-PKI. (deprecated and replaced by `certificate`).
+    /// Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.
     /// </summary>
     [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Certificate status (internal).</summary>
+        /// <summary>Indicate the internal certificate status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BindingStatus { get; private set; }
@@ -24,9 +24,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BindingStatus { get; private set; }
 #endif
-        /// <summary>Enable use of custom certificate authority for signing Gateway. traffic.</summary>
+        /// <summary>Specify whether to enable a custom certificate authority for signing Gateway traffic.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>UUID of certificate (ID from MTLS certificate store).</summary>
+        /// <summary>Specify the UUID of the certificate (ID from MTLS certificate store).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

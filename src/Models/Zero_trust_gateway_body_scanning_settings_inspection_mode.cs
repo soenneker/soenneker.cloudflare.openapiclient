@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Set the inspection mode to either `deep` or `shallow`.</summary>
+    /// <summary>Specify the inspection mode as either `deep` or `shallow`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Zero_trust_gateway_body_scanning_settings_inspection_mode
     {

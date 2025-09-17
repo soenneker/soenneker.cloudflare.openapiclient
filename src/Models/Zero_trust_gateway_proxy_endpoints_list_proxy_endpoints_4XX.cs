@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints Result { get; set; }
 #endif
-        /// <summary>Whether the API call was successful.</summary>
+        /// <summary>Indicate whether the API call was successful.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_list_proxy_endpoints_4XX"/> and sets the default values.

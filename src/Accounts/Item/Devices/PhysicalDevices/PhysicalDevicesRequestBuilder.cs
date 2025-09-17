@@ -121,6 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
             [QueryParameter("id")]
             public string[] Id { get; set; }
 #endif
+            /// <summary>Comma-separated list of additional information that should be included in the device response. Supported values are: &quot;last_seen_registration.policy&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

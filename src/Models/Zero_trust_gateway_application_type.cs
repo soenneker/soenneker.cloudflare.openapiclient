@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>A short summary of applications with this type.</summary>
+        /// <summary>Provide a short summary of applications with this type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -24,9 +24,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The identifier for the type of this application. There can be many applications with the same type. This refers to the `id` of a returned application type.</summary>
+        /// <summary>Identify the type of this application. Multiple applications can share the same type. Refers to the `id` of a returned application type.</summary>
         public int? Id { get; set; }
-        /// <summary>The name of the application or application type.</summary>
+        /// <summary>Specify the name of the application or application type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

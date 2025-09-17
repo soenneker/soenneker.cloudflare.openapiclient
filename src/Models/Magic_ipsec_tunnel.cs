@@ -16,6 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When `true`, the tunnel can use a null-cipher (`ENCR_NULL`) in the ESP tunnel (Phase 2).</summary>
         public bool? AllowNullCipher { get; set; }
+        /// <summary>True if automatic stateful return routing should be enabled for a tunnel, false otherwise.</summary>
+        public bool? AutomaticReturnRouting { get; set; }
         /// <summary>The bgp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string CustomerEndpoint { get; set; }
+#endif
+        /// <summary>The custom_remote_identities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities? CustomRemoteIdentities { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities CustomRemoteIdentities { get; set; }
 #endif
         /// <summary>An optional description forthe IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,10 +146,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allow_null_cipher", n => { AllowNullCipher = n.GetBoolValue(); } },
+                { "automatic_return_routing", n => { AutomaticReturnRouting = n.GetBoolValue(); } },
                 { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config.CreateFromDiscriminatorValue); } },
                 { "bgp_status", n => { BgpStatus = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_status_with_state>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_status_with_state.CreateFromDiscriminatorValue); } },
                 { "cloudflare_endpoint", n => { CloudflareEndpoint = n.GetStringValue(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "custom_remote_identities", n => { CustomRemoteIdentities = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities.CreateFromDiscriminatorValue); } },
                 { "customer_endpoint", n => { CustomerEndpoint = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check.CreateFromDiscriminatorValue); } },
@@ -160,11 +172,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_null_cipher", AllowNullCipher);
+            writer.WriteBoolValue("automatic_return_routing", AutomaticReturnRouting);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>("bgp", Bgp);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_status_with_state>("bgp_status", BgpStatus);
             writer.WriteStringValue("cloudflare_endpoint", CloudflareEndpoint);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteStringValue("customer_endpoint", CustomerEndpoint);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities>("custom_remote_identities", CustomRemoteIdentities);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>("health_check", HealthCheck);
             writer.WriteStringValue("id", Id);

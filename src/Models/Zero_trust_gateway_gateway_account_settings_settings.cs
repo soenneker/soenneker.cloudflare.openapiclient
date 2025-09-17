@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Account settings.
+    /// Specify account settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_gateway_account_settings_settings : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Activity log settings.</summary>
+        /// <summary>Specify activity log settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_activity_log_settings? ActivityLog { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Anti-virus settings.</summary>
+        /// <summary>Specify anti-virus settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_anti_virus_settings? Antivirus { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_anti_virus_settings Antivirus { get; set; }
 #endif
-        /// <summary>Block page layout settings.</summary>
+        /// <summary>Specify block page layout settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_block_page_settings? BlockPage { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_block_page_settings BlockPage { get; set; }
 #endif
-        /// <summary>DLP body scanning settings.</summary>
+        /// <summary>Specify the DLP inspection mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_body_scanning_settings? BodyScanning { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_body_scanning_settings BodyScanning { get; set; }
 #endif
-        /// <summary>Browser isolation settings.</summary>
+        /// <summary>Specify Clientless Browser Isolation settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_browser_isolation_settings? BrowserIsolation { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_browser_isolation_settings BrowserIsolation { get; set; }
 #endif
-        /// <summary>Certificate settings for Gateway TLS interception. If not specified, the Cloudflare Root CA will be used.</summary>
+        /// <summary>Specify certificate settings for Gateway TLS interception. If unset, the Cloudflare Root CA handles interception.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_certificate_settings? Certificate { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_certificate_settings Certificate { get; set; }
 #endif
-        /// <summary>Custom certificate settings for BYO-PKI. (deprecated and replaced by `certificate`).</summary>
+        /// <summary>Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_custom_certificate_settings CustomCertificate { get; set; }
 #endif
-        /// <summary>Extended e-mail matching settings.</summary>
+        /// <summary>Specify user emails settings for the firewall policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_extended_email_matching? ExtendedEmailMatching { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_extended_email_matching ExtendedEmailMatching { get; set; }
 #endif
-        /// <summary>FIPS settings.</summary>
+        /// <summary>Specify FIPS settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_fips_settings? Fips { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_fips_settings Fips { get; set; }
 #endif
-        /// <summary>Setting to enable host selector in egress policies.</summary>
+        /// <summary>Enable host selection in egress policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_host_selector_settings? HostSelector { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_host_selector_settings HostSelector { get; set; }
 #endif
-        /// <summary>Setting to define inspection settings.</summary>
+        /// <summary>Define the proxy inspection mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_inspection_settings? Inspection { get; set; }
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_inspection_settings Inspection { get; set; }
 #endif
-        /// <summary>Protocol Detection settings.</summary>
+        /// <summary>Specify whether to detect protocols from the initial bytes of client traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_protocol_detection? ProtocolDetection { get; set; }
@@ -112,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_protocol_detection ProtocolDetection { get; set; }
 #endif
-        /// <summary>Sandbox settings.</summary>
+        /// <summary>Specify whether to enable the sandbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_sandbox? Sandbox { get; set; }
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_sandbox Sandbox { get; set; }
 #endif
-        /// <summary>TLS interception settings.</summary>
+        /// <summary>Specify whether to inspect encrypted HTTP traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_tls_settings? TlsDecrypt { get; set; }

@@ -71,6 +71,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LastSeenAt { get; set; }
 #endif
+        /// <summary>The device settings profile assigned to this registration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_policy_summary? Policy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_policy_summary Policy { get; set; }
+#endif
         /// <summary>The RFC3339 timestamp when the registration was revoked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "key_type", n => { KeyType = n.GetStringValue(); } },
                 { "last_seen_at", n => { LastSeenAt = n.GetStringValue(); } },
+                { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_policy_summary>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_policy_summary.CreateFromDiscriminatorValue); } },
                 { "revoked_at", n => { RevokedAt = n.GetStringValue(); } },
                 { "tunnel_type", n => { TunnelType = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -155,6 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("key_type", KeyType);
             writer.WriteStringValue("last_seen_at", LastSeenAt);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_policy_summary>("policy", Policy);
             writer.WriteStringValue("revoked_at", RevokedAt);
             writer.WriteStringValue("tunnel_type", TunnelType);
             writer.WriteStringValue("updated_at", UpdatedAt);
