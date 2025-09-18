@@ -64,8 +64,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string AttributionOrganization { get; set; }
 #endif
-        /// <summary>The categoryId property</summary>
-        public double? CategoryId { get; set; }
+        /// <summary>The categoryUuid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CategoryUuid { get; set; }
+#nullable restore
+#else
+        public string CategoryUuid { get; set; }
+#endif
         /// <summary>The externalReferenceLinks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,7 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "analyticPriority", n => { AnalyticPriority = n.GetDoubleValue(); } },
                 { "attributionConfidence", n => { AttributionConfidence = n.GetStringValue(); } },
                 { "attributionOrganization", n => { AttributionOrganization = n.GetStringValue(); } },
-                { "categoryId", n => { CategoryId = n.GetDoubleValue(); } },
+                { "categoryUuid", n => { CategoryUuid = n.GetStringValue(); } },
                 { "externalReferenceLinks", n => { ExternalReferenceLinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "internalDescription", n => { InternalDescription = n.GetStringValue(); } },
                 { "motive", n => { Motive = n.GetStringValue(); } },
@@ -181,7 +187,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("analyticPriority", AnalyticPriority);
             writer.WriteStringValue("attributionConfidence", AttributionConfidence);
             writer.WriteStringValue("attributionOrganization", AttributionOrganization);
-            writer.WriteDoubleValue("categoryId", CategoryId);
+            writer.WriteStringValue("categoryUuid", CategoryUuid);
             writer.WriteCollectionOfPrimitiveValues<string>("externalReferenceLinks", ExternalReferenceLinks);
             writer.WriteStringValue("internalDescription", InternalDescription);
             writer.WriteStringValue("motive", Motive);

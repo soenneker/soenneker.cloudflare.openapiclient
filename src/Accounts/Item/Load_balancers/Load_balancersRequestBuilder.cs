@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Pools;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Preview;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Load_balancersRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The monitor_groups property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups.Monitor_groupsRequestBuilder Monitor_groups
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups.Monitor_groupsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The monitors property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitors.MonitorsRequestBuilder Monitors
         {

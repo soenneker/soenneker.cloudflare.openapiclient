@@ -54,6 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Monitor { get; set; }
 #endif
+        /// <summary>The ID of the Monitor Group to use for checking the health of origins within this pool.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MonitorGroup { get; set; }
+#nullable restore
+#else
+        public string MonitorGroup { get; set; }
+#endif
         /// <summary>A short name (tag) for the pool. Only alphanumeric characters, hyphens, and underscores are allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -135,6 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "longitude", n => { Longitude = n.GetDoubleValue(); } },
                 { "minimum_origins", n => { MinimumOrigins = n.GetIntValue(); } },
                 { "monitor", n => { Monitor = n.GetStringValue(); } },
+                { "monitor_group", n => { MonitorGroup = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networks", n => { Networks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "notification_email", n => { NotificationEmail = n.GetStringValue(); } },
@@ -158,6 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("longitude", Longitude);
             writer.WriteIntValue("minimum_origins", MinimumOrigins);
             writer.WriteStringValue("monitor", Monitor);
+            writer.WriteStringValue("monitor_group", MonitorGroup);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
             writer.WriteStringValue("notification_email", NotificationEmail);

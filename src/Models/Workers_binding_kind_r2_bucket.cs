@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BucketName { get; set; }
 #endif
+        /// <summary>The [jurisdiction](https://developers.cloudflare.com/r2/reference/data-location/#jurisdictional-restrictions) of the R2 bucket.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_jurisdiction? Jurisdiction { get; set; }
         /// <summary>A JavaScript variable name for the binding.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket_name", n => { BucketName = n.GetStringValue(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_jurisdiction>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_type>(); } },
             };
@@ -70,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket_name", BucketName);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_jurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

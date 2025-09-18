@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Stats
         {
         }
         /// <summary>
-        /// Fetch usage statistics details for Cloudflare Images.
+        /// Fetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account&apos;s allowance.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.Stats
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_stats_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetch usage statistics details for Cloudflare Images.
+        /// Fetch image statistics details for Cloudflare Images. The returned statistics detail storage usage, including the current image count vs this account&apos;s allowance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -32,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The dmarc_status property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_dmarc_status? DmarcStatus { get; set; }
         /// <summary>The domain property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? RequireTlsInbound { get; set; }
         /// <summary>The require_tls_outbound property</summary>
         public bool? RequireTlsOutbound { get; set; }
+        /// <summary>The spf_status property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_spf_status? SpfStatus { get; set; }
         /// <summary>The transport property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,6 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowed_delivery_modes", n => { AllowedDeliveryModes = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DeliveryMode>()?.AsList(); } },
                 { "authorization", n => { Authorization = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_authorization>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_authorization.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "dmarc_status", n => { DmarcStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_dmarc_status>(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "drop_dispositions", n => { DropDispositions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>()?.AsList(); } },
                 { "emails_processed", n => { EmailsProcessed = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_emails_processed>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_emails_processed.CreateFromDiscriminatorValue); } },
@@ -146,6 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "regions", n => { Regions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_regions>()?.AsList(); } },
                 { "require_tls_inbound", n => { RequireTlsInbound = n.GetBoolValue(); } },
                 { "require_tls_outbound", n => { RequireTlsOutbound = n.GetBoolValue(); } },
+                { "spf_status", n => { SpfStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_spf_status>(); } },
                 { "transport", n => { Transport = n.GetStringValue(); } },
             };
         }
@@ -159,6 +165,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DeliveryMode>("allowed_delivery_modes", AllowedDeliveryModes);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_authorization>("authorization", Authorization);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_dmarc_status>("dmarc_status", DmarcStatus);
             writer.WriteStringValue("domain", Domain);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("drop_dispositions", DropDispositions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_emails_processed>("emails_processed", EmailsProcessed);
@@ -173,6 +180,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_regions>("regions", Regions);
             writer.WriteBoolValue("require_tls_inbound", RequireTlsInbound);
             writer.WriteBoolValue("require_tls_outbound", RequireTlsOutbound);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Domain_spf_status>("spf_status", SpfStatus);
             writer.WriteStringValue("transport", Transport);
             writer.WriteAdditionalData(AdditionalData);
         }

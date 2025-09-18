@@ -32,6 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_IndicatorCreate_relatedEvents> RelatedEvents { get; set; }
 #endif
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags { get; set; }
+#nullable restore
+#else
+        public List<string> Tags { get; set; }
+#endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "autoCreateType", n => { AutoCreateType = n.GetBoolValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_IndicatorCreate_relatedEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_IndicatorCreate_relatedEvents.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -81,6 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("autoCreateType", AutoCreateType);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_IndicatorCreate_relatedEvents>("relatedEvents", RelatedEvents);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
