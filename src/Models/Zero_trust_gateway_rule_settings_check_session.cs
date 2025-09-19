@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure session check behavior.
+    /// Configure session check behavior. Settable only for `l4` and `http` rules with the action set to `allow`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_check_session : IAdditionalDataHolder, IParsable

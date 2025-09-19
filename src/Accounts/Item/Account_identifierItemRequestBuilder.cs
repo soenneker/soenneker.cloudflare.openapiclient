@@ -47,11 +47,14 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Members;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Profile;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit;
@@ -314,10 +317,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm.MnmRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The move property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move.MoveRequestBuilder Move
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move.MoveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The mtls_certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Mtls_certificatesRequestBuilder Mtls_certificates
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates.Mtls_certificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The organizations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Organizations.OrganizationsRequestBuilder Organizations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pages property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.PagesRequestBuilder Pages
@@ -338,6 +351,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder Pipelines
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The profile property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Profile.ProfileRequestBuilder Profile
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Profile.ProfileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The queues property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.QueuesRequestBuilder Queues

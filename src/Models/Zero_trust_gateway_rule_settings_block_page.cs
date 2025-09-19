@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure custom block page settings. If missing or null, use the account settings.
+    /// Configure custom block page settings. If missing or null, use the account settings. Settable only for `http` rules with the action set to `block`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_block_page : IAdditionalDataHolder, IParsable

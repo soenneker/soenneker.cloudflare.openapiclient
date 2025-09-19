@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Defines the schedule for activating DNS policies. (HTTP/Egress or L4 unsupported).
+    /// Defines the schedule for activating DNS policies. Settable only for `dns` and `dns_resolver` rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_schedule : IAdditionalDataHolder, IParsable

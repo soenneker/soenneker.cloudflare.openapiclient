@@ -16,7 +16,9 @@ using Soenneker.Cloudflare.OpenApiClient.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Radar;
 using Soenneker.Cloudflare.OpenApiClient.Ready;
 using Soenneker.Cloudflare.OpenApiClient.SignedUrl;
+using Soenneker.Cloudflare.OpenApiClient.Tenants;
 using Soenneker.Cloudflare.OpenApiClient.User;
+using Soenneker.Cloudflare.OpenApiClient.Users;
 using Soenneker.Cloudflare.OpenApiClient.Zones;
 using System.Collections.Generic;
 using System.IO;
@@ -80,10 +82,20 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.SignedUrl.SignedUrlRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The tenants property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.TenantsRequestBuilder Tenants
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Tenants.TenantsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The user property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder User
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The users property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Users.UsersRequestBuilder Users
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zones property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder Zones

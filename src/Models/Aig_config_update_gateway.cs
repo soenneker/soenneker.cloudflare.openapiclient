@@ -58,6 +58,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string StoreId { get; set; }
 #endif
+        /// <summary>The stripe property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_stripe? Stripe { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_stripe Stripe { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway"/> and sets the default values.
         /// </summary>
@@ -96,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_rate_limiting_technique>(); } },
                 { "store_id", n => { StoreId = n.GetStringValue(); } },
+                { "stripe", n => { Stripe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_stripe>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_stripe.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -118,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
             writer.WriteStringValue("store_id", StoreId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_stripe>("stripe", Stripe);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

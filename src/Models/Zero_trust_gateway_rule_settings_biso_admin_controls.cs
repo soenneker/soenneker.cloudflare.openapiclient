@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure browser isolation behavior.
+    /// Configure browser isolation behavior. Settable only for `http` rules with the action set to `isolate`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_biso_admin_controls : IAdditionalDataHolder, IParsable

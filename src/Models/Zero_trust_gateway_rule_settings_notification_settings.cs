@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure a notification to display on the user&apos;s device when this rule matched.
+    /// Configure a notification to display on the user&apos;s device when this rule matched. Settable for all types of rules with the action set to `block`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_notification_settings : IAdditionalDataHolder, IParsable

@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Defines the list of &quot;approved&quot; app ids</summary>
+        /// <summary>Defines the list of &quot;approved&quot; app ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<int?>? ApprovedApps { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<int?> ApprovedApps { get; set; }
 #endif
-        /// <summary>Defines the list of &quot;in review&quot; app ids</summary>
+        /// <summary>Defines the list of &quot;in review&quot; app ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<int?>? InReviewApps { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<int?> InReviewApps { get; set; }
 #endif
-        /// <summary>Defines the list of &quot;unapproved&quot; app ids</summary>
+        /// <summary>Defines the list of &quot;unapproved&quot; app ids.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<int?>? UnapprovedApps { get; set; }

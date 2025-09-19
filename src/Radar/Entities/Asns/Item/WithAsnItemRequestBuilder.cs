@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.As_set;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.Rel;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithAsnItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The as_set property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.As_set.As_setRequestBuilder As_set
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.As_set.As_setRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The rel property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item.Rel.RelRequestBuilder Rel
         {

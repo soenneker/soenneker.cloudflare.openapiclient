@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Apply settings to redirect rules.
+    /// Apply settings to redirect rules. Settable only for `http` rules with the action set to `redirect`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_redirect : IAdditionalDataHolder, IParsable

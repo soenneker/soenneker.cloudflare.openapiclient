@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configure custom resolvers to route queries that match the resolver policy. Unused with &apos;resolve_dns_through_cloudflare&apos; or &apos;resolve_dns_internally&apos; settings. DNS queries get routed to the address closest to their origin. Only valid when a rule&apos;s action is set to &apos;resolve&apos;.
+    /// Configure custom resolvers to route queries that match the resolver policy. Unused with &apos;resolve_dns_through_cloudflare&apos; or &apos;resolve_dns_internally&apos; settings. DNS queries get routed to the address closest to their origin. Only valid when a rule&apos;s action set to &apos;resolve&apos;. Settable only for `dns_resolver` rules.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_dns_resolvers : IAdditionalDataHolder, IParsable

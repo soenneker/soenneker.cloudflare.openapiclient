@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Define the settings for the Audit SSH action.
+    /// Define the settings for the Audit SSH action. Settable only for `l4` rules with `audit_ssh` action.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zero_trust_gateway_rule_settings_audit_ssh : IAdditionalDataHolder, IParsable
