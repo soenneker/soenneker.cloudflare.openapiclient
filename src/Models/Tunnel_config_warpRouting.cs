@@ -10,6 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// <summary>
     /// Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Tunnel_config_warpRouting : IAdditionalDataHolder, IParsable
     {

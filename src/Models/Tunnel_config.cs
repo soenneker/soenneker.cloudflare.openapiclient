@@ -32,6 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_originRequest OriginRequest { get; set; }
 #endif
         /// <summary>Enable private network access from WARP users to private network routes. This is enabled if the tunnel has an assigned route.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_config_warpRouting? WarpRouting { get; private set; }

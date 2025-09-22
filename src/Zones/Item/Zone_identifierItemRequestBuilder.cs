@@ -18,7 +18,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_ns;
@@ -36,6 +35,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs;
@@ -143,11 +143,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector.Cloud_connectorRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The contentUploadScan property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder ContentUploadScan
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan.ContentUploadScanRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The custom_certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Custom_certificatesRequestBuilder Custom_certificates
         {
@@ -232,6 +227,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder Keyless_certificates
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Keyless_certificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The leakedCredentialChecks property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder LeakedCredentialChecks
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.LeakedCredentialChecks.LeakedCredentialChecksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The load_balancers property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers.Load_balancersRequestBuilder Load_balancers
