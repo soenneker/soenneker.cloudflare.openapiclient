@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Smart_routing;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Tiered_caching;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,11 +19,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Smart_routing.Smart_routingRequestBuilder Smart_routing
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Smart_routing.Smart_routingRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The tiered_caching property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Tiered_caching.Tiered_cachingRequestBuilder Tiered_caching
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.Tiered_caching.Tiered_cachingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo.ArgoRequestBuilder"/> and sets the default values.

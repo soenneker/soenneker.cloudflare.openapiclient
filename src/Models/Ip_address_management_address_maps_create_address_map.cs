@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Zones and Accounts which will be assigned IPs on this Address Map. A zone membership will take priority over an account membership.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership>? Memberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership_request>? Memberships { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership> Memberships { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership_request> Memberships { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_address_maps_create_address_map"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "ips", n => { Ips = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "memberships", n => { Memberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "memberships", n => { Memberships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership_request>(global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership_request.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfPrimitiveValues<string>("ips", Ips);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership>("memberships", Memberships);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_address_maps_membership_request>("memberships", Memberships);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

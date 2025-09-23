@@ -4,11 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Item;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Rum;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Speed_brain;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Ssl_automatic_mode;
@@ -26,29 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SettingsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The aegis property</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder Aegis
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis.AegisRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The fonts property</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder Fonts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The origin_h2_max_streams property</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder Origin_h2_max_streams
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The origin_max_http_version property</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder Origin_max_http_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version.Origin_max_http_versionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rum property</summary>
         [Obsolete("")]
