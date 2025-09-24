@@ -26,9 +26,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? DeprecateAnyRequests { get; set; }
         /// <summary>Whether to forward client IP (resolver) subnet if no EDNS Client Subnet is sent</summary>
         public bool? EcsFallback { get; set; }
-        /// <summary>Maximum DNS cache TTL This setting sets an upper bound on DNS TTLs for purposes of caching between DNS Firewall and the upstream servers. Higher TTLs will be decreased to the maximum defined here for caching purposes.</summary>
+        /// <summary>By default, Cloudflare attempts to cache responses for as long asindicated by the TTL received from upstream nameservers. This settingsets an upper bound on this duration. For caching purposes, higher TTLswill be decreased to the maximum value defined by this setting.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.</summary>
         public double? MaximumCacheTtl { get; set; }
-        /// <summary>Minimum DNS cache TTL This setting sets a lower bound on DNS TTLs for purposes of caching between DNS Firewall and the upstream servers. Lower TTLs will be increased to the minimum defined here for caching purposes.</summary>
+        /// <summary>By default, Cloudflare attempts to cache responses for as long asindicated by the TTL received from upstream nameservers. This settingsets a lower bound on this duration. For caching purposes, lower TTLswill be increased to the minimum value defined by this setting.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.Note that, even with this setting, there is no guarantee that aresponse will be cached for at least the specified duration. Cachedresponses may be removed earlier for capacity or other operationalreasons.</summary>
         public double? MinimumCacheTtl { get; set; }
         /// <summary>DNS Firewall cluster name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Negative DNS cache TTL This setting controls how long DNS Firewall should cache negative responses (e.g., NXDOMAIN) from the upstream servers.</summary>
+        /// <summary>This setting controls how long DNS Firewall should cache negativeresponses (e.g., NXDOMAIN) from the upstream servers.This setting does not affect the TTL value in the DNS responseCloudflare returns to clients. Cloudflare will always forward the TTLvalue received from upstream nameservers.</summary>
         public double? NegativeCacheTtl { get; set; }
         /// <summary>Ratelimit in queries per second per datacenter (applies to DNS queries sent to the upstream nameservers configured on the cluster)</summary>
         public double? Ratelimit { get; set; }

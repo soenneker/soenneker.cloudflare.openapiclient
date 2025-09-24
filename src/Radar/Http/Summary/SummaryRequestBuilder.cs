@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Device_type;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Http_protocol;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Http_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Ip_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Os;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Post_quantum;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Tls_version;
@@ -61,6 +62,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Tls_version.Tls_versionRequestBuilder Tls_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.summary.item collection</summary>
+        /// <param name="position">Specifies the HTTP attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Summary.SummaryRequestBuilder"/> and sets the default values.

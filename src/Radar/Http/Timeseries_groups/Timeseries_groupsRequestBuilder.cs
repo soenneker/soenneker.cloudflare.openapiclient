@@ -9,6 +9,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Device_typ
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_protocol;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Ip_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Os;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Post_quantum;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Tls_version;
@@ -73,6 +74,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Tls_version.Tls_versionRequestBuilder Tls_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.http.timeseries_groups.item collection</summary>
+        /// <param name="position">Specifies the HTTP attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.

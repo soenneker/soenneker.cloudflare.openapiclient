@@ -13,6 +13,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Datasets;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Entities;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Geolocations;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows;
@@ -89,6 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.EntitiesRequestBuilder Entities
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.EntitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The geolocations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Geolocations.GeolocationsRequestBuilder Geolocations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Geolocations.GeolocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The http property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.HttpRequestBuilder Http

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_p
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Http_protocolRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/timeseries_groups/http_protocol{?aggInterval*,asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,httpVersion*,ipVersion*,location*,name*,os*,tlsVersion*}", pathParameters)
+        public Http_protocolRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/timeseries_groups/http_protocol{?aggInterval*,asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpVersion*,ipVersion*,location*,name*,os*,tlsVersion*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_p
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Http_protocolRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/timeseries_groups/http_protocol{?aggInterval*,asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,httpVersion*,ipVersion*,location*,name*,os*,tlsVersion*}", rawUrl)
+        public Http_protocolRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/timeseries_groups/http_protocol{?aggInterval*,asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpVersion*,ipVersion*,location*,name*,os*,tlsVersion*}", rawUrl)
         {
         }
         /// <summary>
@@ -40,6 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_p
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_http_protocol_400">When receiving a 400 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_timeseries_group_by_http_protocol_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_protocol.Http_protocolRequestBuilder.Http_protocolRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -61,6 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_p
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_protocol.Http_protocolRequestBuilder.Http_protocolRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_p
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_protocol.Http_protocolRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_protocol.Http_protocolRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_protocol.Http_protocolRequestBuilder(rawUrl, RequestAdapter);
@@ -176,6 +179,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_p
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Timeseries_groups.Http_protocol.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Filters results by Geolocation. Specify a comma-separated list of GeoNames IDs. Prefix with `-` to exclude geoIds from results. For example, `-2267056,360689` excludes results from the 2267056 (Lisbon), but includes results from 5128638 (New York).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("geoId")]
+            public string[]? GeoId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("geoId")]
+            public string[] GeoId { get; set; }
+#endif
             /// <summary>Filters results by HTTP version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

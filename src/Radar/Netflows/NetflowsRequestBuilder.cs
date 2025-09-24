@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Summary;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries_groups;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries.TimeseriesRequestBuilder Timeseries
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The timeseries_groups property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries_groups.Timeseries_groupsRequestBuilder Timeseries_groups
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries_groups.Timeseries_groupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The top property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Top.TopRequestBuilder Top

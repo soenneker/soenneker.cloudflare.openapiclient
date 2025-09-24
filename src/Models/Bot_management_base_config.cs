@@ -16,6 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Enable rule to block AI Scrapers and Crawlers. Please note the value `only_on_ad_pages` is currently not available for Enterprise customers.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_ai_bots_protection? AiBotsProtection { get; set; }
+        /// <summary>Specifies the Robots Access Control License variant to use.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_cf_robots_variant? CfRobotsVariant { get; set; }
         /// <summary>Enable rule to punish AI Scrapers and Crawlers via a link maze.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_crawler_protection? CrawlerProtection { get; set; }
         /// <summary>Use lightweight, invisible JavaScript detections to improve Bot Management. [Learn more about JavaScript Detections](https://developers.cloudflare.com/bots/reference/javascript-detections/).</summary>
@@ -50,6 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ai_bots_protection", n => { AiBotsProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_ai_bots_protection>(); } },
+                { "cf_robots_variant", n => { CfRobotsVariant = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_cf_robots_variant>(); } },
                 { "crawler_protection", n => { CrawlerProtection = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_crawler_protection>(); } },
                 { "enable_js", n => { EnableJs = n.GetBoolValue(); } },
                 { "is_robots_txt_managed", n => { IsRobotsTxtManaged = n.GetBoolValue(); } },
@@ -64,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_ai_bots_protection>("ai_bots_protection", AiBotsProtection);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_cf_robots_variant>("cf_robots_variant", CfRobotsVariant);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_crawler_protection>("crawler_protection", CrawlerProtection);
             writer.WriteBoolValue("enable_js", EnableJs);
             writer.WriteBoolValue("is_robots_txt_managed", IsRobotsTxtManaged);

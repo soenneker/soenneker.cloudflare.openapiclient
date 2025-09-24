@@ -14,6 +14,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_plans;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Available_rate_plans;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Client_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector;
@@ -123,6 +124,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management.Bot_managementRequestBuilder Bot_management
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Bot_management.Bot_managementRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The cache property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.CacheRequestBuilder Cache
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.CacheRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificate_authorities property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Certificate_authorities.Certificate_authoritiesRequestBuilder Certificate_authorities

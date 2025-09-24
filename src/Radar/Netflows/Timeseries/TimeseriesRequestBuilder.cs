@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/netflows/timeseries{?aggInterval*,asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,location*,name*,normalization*,product*}", pathParameters)
+        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/netflows/timeseries{?aggInterval*,asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,geoId*,location*,name*,normalization*,product*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/netflows/timeseries{?aggInterval*,asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,location*,name*,normalization*,product*}", rawUrl)
+        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/netflows/timeseries{?aggInterval*,asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,geoId*,location*,name*,normalization*,product*}", rawUrl)
         {
         }
         /// <summary>
@@ -146,6 +146,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.Timeseries.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Filters results by Geolocation. Specify a comma-separated list of GeoNames IDs. Prefix with `-` to exclude geoIds from results. For example, `-2267056,360689` excludes results from the 2267056 (Lisbon), but includes results from 5128638 (New York).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("geoId")]
+            public string[]? GeoId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("geoId")]
+            public string[] GeoId { get; set; }
+#endif
             /// <summary>Filters results by location. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude locations from results. For example, `-US,PT` excludes results from the US, but includes results from PT.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

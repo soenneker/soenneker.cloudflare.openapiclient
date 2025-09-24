@@ -8,6 +8,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
     public enum GetIncludeQueryParameterType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "ADM1S")]
+        #pragma warning disable CS1591
+        ADM1S,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ASNS")]
         #pragma warning disable CS1591
         ASNS,

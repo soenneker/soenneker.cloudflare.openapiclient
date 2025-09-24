@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTls_versionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/tls_version/{tls_version}{?asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*}", pathParameters)
+        public WithTls_versionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/tls_version/{tls_version}{?asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTls_versionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/tls_version/{tls_version}{?asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*}", rawUrl)
+        public WithTls_versionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/http/top/ases/tls_version/{tls_version}{?asn*,botClass*,browserFamily*,continent*,dateEnd*,dateRange*,dateStart*,deviceType*,format*,geoId*,httpProtocol*,httpVersion*,ipVersion*,limit*,location*,name*,os*}", rawUrl)
         {
         }
         /// <summary>
@@ -173,6 +173,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Ite
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.Tls_version.Item.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Filters results by Geolocation. Specify a comma-separated list of GeoNames IDs. Prefix with `-` to exclude geoIds from results. For example, `-2267056,360689` excludes results from the 2267056 (Lisbon), but includes results from 5128638 (New York).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("geoId")]
+            public string[]? GeoId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("geoId")]
+            public string[] GeoId { get; set; }
+#endif
             /// <summary>Filters results by HTTP protocol (HTTP vs. HTTPS).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

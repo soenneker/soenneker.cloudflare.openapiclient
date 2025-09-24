@@ -74,6 +74,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The modified_at property</summary>
         public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>The otel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_otel>? Otel { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_otel> Otel { get; set; }
+#endif
         /// <summary>The rate_limiting_interval property</summary>
         public int? RateLimitingInterval { get; set; }
         /// <summary>The rate_limiting_limit property</summary>
@@ -136,6 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "logpush_public_key", n => { LogpushPublicKey = n.GetStringValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "otel", n => { Otel = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_otel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_otel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rate_limiting_interval", n => { RateLimitingInterval = n.GetIntValue(); } },
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_rate_limiting_technique>(); } },
@@ -165,6 +174,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("logpush", Logpush);
             writer.WriteStringValue("logpush_public_key", LogpushPublicKey);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_otel>("otel", Otel);
             writer.WriteIntValue("rate_limiting_interval", RateLimitingInterval);
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_200_result_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);

@@ -14,22 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A numeric string.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? HTTP { get; set; }
-#nullable restore
-#else
-        public string HTTP { get; set; }
-#endif
-        /// <summary>A numeric string.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OTHER { get; set; }
-#nullable restore
-#else
-        public string OTHER { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_netflows_summary_200_result_summary_0"/> and sets the default values.
         /// </summary>
@@ -55,8 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "HTTP", n => { HTTP = n.GetStringValue(); } },
-                { "OTHER", n => { OTHER = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("HTTP", HTTP);
-            writer.WriteStringValue("OTHER", OTHER);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -44,6 +44,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LogpushPublicKey { get; set; }
 #endif
+        /// <summary>The otel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_otel>? Otel { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_otel> Otel { get; set; }
+#endif
         /// <summary>The rate_limiting_interval property</summary>
         public int? RateLimitingInterval { get; set; }
         /// <summary>The rate_limiting_limit property</summary>
@@ -100,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "log_management_strategy", n => { LogManagementStrategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_log_management_strategy>(); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "logpush_public_key", n => { LogpushPublicKey = n.GetStringValue(); } },
+                { "otel", n => { Otel = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_otel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_otel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "rate_limiting_interval", n => { RateLimitingInterval = n.GetIntValue(); } },
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_rate_limiting_technique>(); } },
@@ -123,6 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_log_management_strategy>("log_management_strategy", LogManagementStrategy);
             writer.WriteBoolValue("logpush", Logpush);
             writer.WriteStringValue("logpush_public_key", LogpushPublicKey);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_otel>("otel", Otel);
             writer.WriteIntValue("rate_limiting_interval", RateLimitingInterval);
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
