@@ -43,14 +43,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
-        /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
+        /// <summary>Indicates whether the API call was successful.</summary>
+        public bool? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX"/> and sets the default values.
         /// </summary>
@@ -80,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -94,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result>("result", Result);
             writer.WriteBoolValue("success", Success);
-            writer.WriteStringValue("value", Value);
+            writer.WriteBoolValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

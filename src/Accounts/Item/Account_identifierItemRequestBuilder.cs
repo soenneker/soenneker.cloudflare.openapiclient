@@ -50,7 +50,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mnm;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Mtls_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Organizations;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines;
@@ -69,6 +68,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Sso_connectors;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Subscriptions;
@@ -332,11 +332,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The pages property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.PagesRequestBuilder Pages
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.PagesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The payPerCrawl property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.PayPerCrawlRequestBuilder PayPerCrawl
         {
@@ -426,6 +421,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.SlurperRequestBuilder Slurper
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.SlurperRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sso_connectors property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Sso_connectors.Sso_connectorsRequestBuilder Sso_connectors
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Sso_connectors.Sso_connectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The storage property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.StorageRequestBuilder Storage

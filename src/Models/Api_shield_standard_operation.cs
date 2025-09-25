@@ -12,6 +12,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Api_shield_standard_operation : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_basic_operation, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The last_updated property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp? LastUpdated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp LastUpdated { get; set; }
+#endif
+        /// <summary>The operation_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid? OperationId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid OperationId { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,6 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp.CreateFromDiscriminatorValue); } },
+                { "operation_id", n => { OperationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -40,6 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>("last_updated", LastUpdated);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>("operation_id", OperationId);
         }
     }
 }
