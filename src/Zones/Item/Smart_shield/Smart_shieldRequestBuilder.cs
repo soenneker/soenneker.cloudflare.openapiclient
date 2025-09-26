@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
         /// <summary>
         /// Retrieve Smart Shield Settings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_get_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_get_settings_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_api_response_common_failure">When receiving a 4XX status code</exception>
@@ -56,11 +56,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_api_response_common_failure">When receiving a 502 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_get_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_get_settings_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_get_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_get_settings_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -70,12 +70,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_api_response_common_failure.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_get_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_get_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_get_settings_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_get_settings_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Set Smart Shield Settings.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_patch_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_patch_settings_200"/></returns>
         /// <param name="body">The patch body for Smart Shield.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,11 +84,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_api_response_common_failure">When receiving a 502 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_patch_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_smart_shield_settings_patch_body body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_patch_settings_200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_smart_shield_settings_patch_body body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_patch_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_smart_shield_settings_patch_body body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_patch_settings_200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_smart_shield_settings_patch_body body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Smart_shield
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_api_response_common_failure.CreateFromDiscriminatorValue },
                 { "502", global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_patch_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_single_smart_shield_patch_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_patch_settings_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_patch_settings_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve Smart Shield Settings.

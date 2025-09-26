@@ -6,9 +6,7 @@ using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
-using Soenneker.Cloudflare.OpenApiClient.Account;
 using Soenneker.Cloudflare.OpenApiClient.Accounts;
-using Soenneker.Cloudflare.OpenApiClient.Builds;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Internal;
 using Soenneker.Cloudflare.OpenApiClient.Ips;
@@ -17,14 +15,10 @@ using Soenneker.Cloudflare.OpenApiClient.Memberships;
 using Soenneker.Cloudflare.OpenApiClient.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Radar;
 using Soenneker.Cloudflare.OpenApiClient.Ready;
-using Soenneker.Cloudflare.OpenApiClient.Repos;
 using Soenneker.Cloudflare.OpenApiClient.SignedUrl;
 using Soenneker.Cloudflare.OpenApiClient.Tenants;
-using Soenneker.Cloudflare.OpenApiClient.Tokens;
-using Soenneker.Cloudflare.OpenApiClient.Triggers;
 using Soenneker.Cloudflare.OpenApiClient.User;
 using Soenneker.Cloudflare.OpenApiClient.Users;
-using Soenneker.Cloudflare.OpenApiClient.Workers;
 using Soenneker.Cloudflare.OpenApiClient.Zones;
 using System.Collections.Generic;
 using System.IO;
@@ -38,20 +32,10 @@ namespace Soenneker.Cloudflare.OpenApiClient
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CloudflareOpenApiClient : BaseRequestBuilder
     {
-        /// <summary>The account property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Account.AccountRequestBuilder Account
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Account.AccountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The accounts property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.AccountsRequestBuilder Accounts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The builds property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Builds.BuildsRequestBuilder Builds
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Builds.BuildsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder Certificates
@@ -93,11 +77,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Ready.ReadyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The repos property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Repos.ReposRequestBuilder Repos
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Repos.ReposRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The signedUrl property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.SignedUrl.SignedUrlRequestBuilder SignedUrl
         {
@@ -108,16 +87,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Tenants.TenantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The tokens property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Tokens.TokensRequestBuilder Tokens
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Tokens.TokensRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The triggers property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Triggers.TriggersRequestBuilder Triggers
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Triggers.TriggersRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The user property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.User.UserRequestBuilder User
         {
@@ -127,11 +96,6 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Users.UsersRequestBuilder Users
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The workers property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Workers.WorkersRequestBuilder Workers
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Workers.WorkersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The zones property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.ZonesRequestBuilder Zones
