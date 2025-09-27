@@ -8,7 +8,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Dns;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.DomainHistory;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpList;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Miscategorization;
@@ -50,11 +49,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.DomainHistory.DomainHistoryRequestBuilder DomainHistory
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.DomainHistory.DomainHistoryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The indicator_feeds property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder Indicator_feeds
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Indicator_feeds.Indicator_feedsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The indicatorFeeds property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.IndicatorFeedsRequestBuilder IndicatorFeeds

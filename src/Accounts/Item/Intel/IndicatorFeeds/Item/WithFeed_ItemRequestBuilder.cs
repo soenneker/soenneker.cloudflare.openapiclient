@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Data;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Download;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -23,6 +24,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Data.DataRequestBuilder Data
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Data.DataRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The download property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Download.DownloadRequestBuilder Download
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Download.DownloadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The snapshot property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Item.Snapshot.SnapshotRequestBuilder Snapshot
