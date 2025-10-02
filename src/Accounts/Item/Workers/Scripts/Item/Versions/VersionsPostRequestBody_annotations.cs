@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Associated alias for a version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkersAlias { get; set; }
+#nullable restore
+#else
+        public string WorkersAlias { get; set; }
+#endif
         /// <summary>Human-readable message about the version. Truncated to 100 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,6 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "workers/alias", n => { WorkersAlias = n.GetStringValue(); } },
                 { "workers/message", n => { WorkersMessage = n.GetStringValue(); } },
                 { "workers/tag", n => { WorkersTag = n.GetStringValue(); } },
             };
@@ -66,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("workers/alias", WorkersAlias);
             writer.WriteStringValue("workers/message", WorkersMessage);
             writer.WriteStringValue("workers/tag", WorkersTag);
             writer.WriteAdditionalData(AdditionalData);

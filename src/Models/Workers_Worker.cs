@@ -42,6 +42,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability Observability { get; set; }
 #endif
+        /// <summary>Other resources that reference the Worker and depend on it existing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_references? References { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_references References { get; private set; }
+#endif
         /// <summary>Subdomain settings for the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_references>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_references.CreateFromDiscriminatorValue); } },
                 { "subdomain", n => { Subdomain = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_subdomain>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_subdomain.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tail_consumers", n => { TailConsumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_tail_consumers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_tail_consumers.CreateFromDiscriminatorValue)?.AsList(); } },

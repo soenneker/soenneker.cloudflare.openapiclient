@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Arc;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dkim;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Dmarc;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Malicious;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spam;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Spf;
@@ -67,6 +68,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_gro
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder Tls_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.security.timeseries_groups.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.

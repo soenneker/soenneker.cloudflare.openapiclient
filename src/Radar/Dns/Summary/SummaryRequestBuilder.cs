@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Dnssec;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Dnssec_aware;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Dnssec_e2e;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Ip_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Matching_answer;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Protocol;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Query_type;
@@ -73,6 +74,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Response_ttl.Response_ttlRequestBuilder Response_ttl
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Response_ttl.Response_ttlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.dns.summary.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.SummaryRequestBuilder"/> and sets the default values.

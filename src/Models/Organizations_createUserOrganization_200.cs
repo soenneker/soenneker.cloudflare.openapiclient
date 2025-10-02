@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_api_V4Message> Messages { get; set; }
 #endif
-        /// <summary>Represents an Organization in the Cloudflare data model</summary>
+        /// <summary>References an Organization in the Cloudflare data model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_api_Organization? Result { get; set; }

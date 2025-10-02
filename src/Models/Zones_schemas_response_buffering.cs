@@ -10,6 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     /// <summary>
     /// Enables or disables buffering of responses from the proxied server. Cloudflare may buffer the whole payload to deliver it at once to the client versus allowing it to be delivered in chunks. By default, the proxied server streams directly and is not buffered by Cloudflare. This is limited to Enterprise Zones.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_schemas_response_buffering : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {

@@ -36,6 +36,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Timestamp for the last update of the SSO connector</summary>
         public DateTimeOffset? UpdatedOn { get; set; }
+        /// <summary>Controls the display of FedRAMP language to the user during SSO login</summary>
+        public bool? UseFedrampLanguage { get; set; }
         /// <summary>The verification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_sso_connector_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_sso_connector_identifier.CreateFromDiscriminatorValue); } },
                 { "updated_on", n => { UpdatedOn = n.GetDateTimeOffsetValue(); } },
+                { "use_fedramp_language", n => { UseFedrampLanguage = n.GetBoolValue(); } },
                 { "verification", n => { Verification = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_sso_connector_verification_info>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_sso_connector_verification_info.CreateFromDiscriminatorValue); } },
             };
         }
@@ -89,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_sso_connector_identifier>("id", Id);
             writer.WriteDateTimeOffsetValue("updated_on", UpdatedOn);
+            writer.WriteBoolValue("use_fedramp_language", UseFedrampLanguage);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_sso_connector_verification_info>("verification", Verification);
             writer.WriteAdditionalData(AdditionalData);
         }

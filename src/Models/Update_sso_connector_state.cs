@@ -16,6 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>SSO Connector enabled state</summary>
         public bool? Enabled { get; set; }
+        /// <summary>Controls the display of FedRAMP language to the user during SSO login</summary>
+        public bool? UseFedrampLanguage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Update_sso_connector_state"/> and sets the default values.
         /// </summary>
@@ -42,6 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "use_fedramp_language", n => { UseFedrampLanguage = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -52,6 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
+            writer.WriteBoolValue("use_fedramp_language", UseFedrampLanguage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

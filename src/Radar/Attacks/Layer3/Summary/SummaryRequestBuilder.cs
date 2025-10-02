@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Bitrate;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Duration;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Industry;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Ip_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Protocol;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Vector;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Vertical;
@@ -55,6 +56,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Vertical.VerticalRequestBuilder Vertical
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.attacks.layer3.summary.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Summary.SummaryRequestBuilder"/> and sets the default values.

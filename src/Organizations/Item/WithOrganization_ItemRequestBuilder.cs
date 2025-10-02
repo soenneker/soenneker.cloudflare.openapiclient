@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
         /// Modify organization
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_modify_200"/></returns>
-        /// <param name="body">Represents an Organization in the Cloudflare data model</param>
+        /// <param name="body">References an Organization in the Cloudflare data model.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_api_V4ErrorResponse">When receiving a 4XX status code</exception>
@@ -176,7 +176,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
         /// Modify organization
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Represents an Organization in the Cloudflare data model</param>
+        /// <param name="body">References an Organization in the Cloudflare data model.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

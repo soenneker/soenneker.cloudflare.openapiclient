@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Arc;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dkim;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dmarc;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Malicious;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spam;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spf;
@@ -67,6 +68,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Tls_version.Tls_versionRequestBuilder Tls_version
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.security.summary.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.SummaryRequestBuilder"/> and sets the default values.

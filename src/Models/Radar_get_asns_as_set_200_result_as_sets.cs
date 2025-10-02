@@ -16,14 +16,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The number of AS members in the AS-SET</summary>
         public int? AsMembersCount { get; set; }
-        /// <summary>The inferred AS number of the AS-SET</summary>
-        public int? Asn { get; set; }
         /// <summary>The number of unique ASNs in the AS-SETs recursive downstream</summary>
         public int? AsnConeSize { get; set; }
         /// <summary>The number of AS-SET members in the AS-SET</summary>
         public int? AsSetMembersCount { get; set; }
         /// <summary>The number of recursive upstream AS-SETs</summary>
         public int? AsSetUpstreamsCount { get; set; }
+        /// <summary>The AS number following hierarchical AS-SET name</summary>
+        public int? HierarchicalAsn { get; set; }
+        /// <summary>The inferred AS number of the AS-SET</summary>
+        public int? InferredAsn { get; set; }
         /// <summary>The IRR sources of the AS-SET</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +42,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The AS number matching PeeringDB record</summary>
+        public int? PeeringdbAsn { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_asns_as_set_200_result_as_sets"/> and sets the default values.
         /// </summary>
@@ -68,10 +72,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "as_members_count", n => { AsMembersCount = n.GetIntValue(); } },
                 { "as_set_members_count", n => { AsSetMembersCount = n.GetIntValue(); } },
                 { "as_set_upstreams_count", n => { AsSetUpstreamsCount = n.GetIntValue(); } },
-                { "asn", n => { Asn = n.GetIntValue(); } },
                 { "asn_cone_size", n => { AsnConeSize = n.GetIntValue(); } },
+                { "hierarchical_asn", n => { HierarchicalAsn = n.GetIntValue(); } },
+                { "inferred_asn", n => { InferredAsn = n.GetIntValue(); } },
                 { "irr_sources", n => { IrrSources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "peeringdb_asn", n => { PeeringdbAsn = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -82,12 +88,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("as_members_count", AsMembersCount);
-            writer.WriteIntValue("asn", Asn);
             writer.WriteIntValue("asn_cone_size", AsnConeSize);
             writer.WriteIntValue("as_set_members_count", AsSetMembersCount);
             writer.WriteIntValue("as_set_upstreams_count", AsSetUpstreamsCount);
+            writer.WriteIntValue("hierarchical_asn", HierarchicalAsn);
+            writer.WriteIntValue("inferred_asn", InferredAsn);
             writer.WriteCollectionOfPrimitiveValues<string>("irr_sources", IrrSources);
             writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("peeringdb_asn", PeeringdbAsn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

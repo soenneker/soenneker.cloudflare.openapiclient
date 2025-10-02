@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_dns_protection;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_tcp_protection;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Apps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cf_interconnects;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud;
@@ -22,6 +24,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MagicRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The advanced_dns_protection property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_dns_protection.Advanced_dns_protectionRequestBuilder Advanced_dns_protection
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_dns_protection.Advanced_dns_protectionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The advanced_tcp_protection property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_tcp_protection.Advanced_tcp_protectionRequestBuilder Advanced_tcp_protection
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_tcp_protection.Advanced_tcp_protectionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The apps property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Apps.AppsRequestBuilder Apps
         {

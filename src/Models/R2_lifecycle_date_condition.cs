@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -17,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date property</summary>
-        public Date? Date { get; set; }
+        public DateTimeOffset? Date { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_date_condition_type? Type { get; set; }
         /// <summary>
@@ -45,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "date", n => { Date = n.GetDateValue(); } },
+                { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_date_condition_type>(); } },
             };
         }
@@ -56,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateValue("date", Date);
+            writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_lifecycle_date_condition_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

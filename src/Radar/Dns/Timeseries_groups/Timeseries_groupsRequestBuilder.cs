@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_aware;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Ip_version;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Matching_answer;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Protocol;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Query_type;
@@ -73,6 +74,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder Response_ttl
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.dns.timeseries_groups.item collection</summary>
+        /// <param name="position">Specifies the attribute by which to group the results.</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("dimension", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Timeseries_groupsRequestBuilder"/> and sets the default values.

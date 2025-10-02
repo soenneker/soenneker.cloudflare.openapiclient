@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Represents an Organization in the Cloudflare data model
+    /// References an Organization in the Cloudflare data model.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Organizations_api_Organization : IAdditionalDataHolder, IParsable

@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Control how long resources cached by client browsers remain valid.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_browser_cache_ttl_id? Id { get; set; }
-        /// <summary>The number of seconds to cache resources for.Minimum values by plan:- Free: 7200 seconds (2 hours)- Pro: 3600 seconds (1 hour)- Business: 1 second- Enterprise: 1 secondSetting this to 0 enables &quot;Respect Existing Headers&quot; and is allowed for all plans.</summary>
+        /// <summary>The number of seconds to cache resources for.Setting this to 0 enables &quot;Respect Existing Headers&quot;.</summary>
         public int? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_browser_cache_ttl"/> and sets the default values.

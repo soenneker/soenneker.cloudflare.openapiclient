@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Users.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Users.Tenants;
 using System.Collections.Generic;
 using System.IO;
@@ -16,11 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Users
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsersRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The organizations property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Users.Organizations.OrganizationsRequestBuilder Organizations
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Users.Organizations.OrganizationsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The tenants property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Users.Tenants.TenantsRequestBuilder Tenants
         {

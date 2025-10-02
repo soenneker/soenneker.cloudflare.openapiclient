@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Organization flags for feature enablement
+    /// Enable features for Organizations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Organizations_api_OrganizationFlags : IAdditionalDataHolder, IParsable

@@ -24,6 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EmailDomain { get; set; }
 #endif
+        /// <summary>Controls the display of FedRAMP language to the user during SSO login</summary>
+        public bool? UseFedrampLanguage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Init_new_sso_connector"/> and sets the default values.
         /// </summary>
@@ -51,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "begin_verification", n => { BeginVerification = n.GetBoolValue(); } },
                 { "email_domain", n => { EmailDomain = n.GetStringValue(); } },
+                { "use_fedramp_language", n => { UseFedrampLanguage = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("begin_verification", BeginVerification);
             writer.WriteStringValue("email_domain", EmailDomain);
+            writer.WriteBoolValue("use_fedramp_language", UseFedrampLanguage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
