@@ -7,6 +7,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Aaa_alert_type
     {
+        [EnumMember(Value = "abuse_report_alert")]
+        #pragma warning disable CS1591
+        Abuse_report_alert,
+        #pragma warning restore CS1591
         [EnumMember(Value = "access_custom_certificate_expiration_type")]
         #pragma warning disable CS1591
         Access_custom_certificate_expiration_type,

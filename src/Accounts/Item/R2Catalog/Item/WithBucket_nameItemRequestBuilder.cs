@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Credential
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Disable;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Enable;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.MaintenanceConfigs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +41,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.MaintenanceConfigs.MaintenanceConfigsRequestBuilder MaintenanceConfigs
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.MaintenanceConfigs.MaintenanceConfigsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The namespaces property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.NamespacesRequestBuilder Namespaces
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces.NamespacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.WithBucket_nameItemRequestBuilder"/> and sets the default values.

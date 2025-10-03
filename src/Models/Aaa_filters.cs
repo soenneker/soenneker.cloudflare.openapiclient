@@ -338,6 +338,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Usage depends on specific alert type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+        public List<string>? Type { get; set; }
+#nullable restore
+#else
+        public List<string> Type { get; set; }
+#endif
+        /// <summary>Usage depends on specific alert type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public List<string>? Where { get; set; }
 #nullable restore
 #else
@@ -416,6 +424,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "traffic_exclusions", n => { TrafficExclusions = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters_traffic_exclusions>()?.AsList(); } },
                 { "tunnel_id", n => { TunnelId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "tunnel_name", n => { TunnelName = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "type", n => { Type = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "where", n => { Where = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "zones", n => { Zones = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -467,6 +476,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_filters_traffic_exclusions>("traffic_exclusions", TrafficExclusions);
             writer.WriteCollectionOfPrimitiveValues<string>("tunnel_id", TunnelId);
             writer.WriteCollectionOfPrimitiveValues<string>("tunnel_name", TunnelName);
+            writer.WriteCollectionOfPrimitiveValues<string>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("where", Where);
             writer.WriteCollectionOfPrimitiveValues<string>("zones", Zones);
             writer.WriteAdditionalData(AdditionalData);
