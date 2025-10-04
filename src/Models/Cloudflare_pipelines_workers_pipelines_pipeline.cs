@@ -8,8 +8,9 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Describes the configuration of a pipeline.
+    /// [DEPRECATED] Describes the configuration of a pipeline. Use the new streams/sinks/pipelines API instead.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cloudflare_pipelines_workers_pipelines_pipeline : IAdditionalDataHolder, IParsable
     {

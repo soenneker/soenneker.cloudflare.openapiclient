@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,9 +19,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PipelinesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The v1 property</summary>
+        [Obsolete("")]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.V1RequestBuilder V1
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.V1RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.pipelines.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.Item.WithPipeline_nameItemRequestBuilder"/></returns>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.Item.WithPipeline_nameItemRequestBuilder this[string position]
         {
             get
@@ -47,58 +55,61 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
         {
         }
         /// <summary>
-        /// List, filter, and paginate pipelines in an account.
+        /// [DEPRECATED] List, filter, and paginate pipelines in an account. Use the new /pipelines/v1/pipelines endpoint instead.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_deprecated_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_deprecated_4XX">When receiving a 4XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder.PipelinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_deprecated_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder.PipelinesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder.PipelinesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_deprecated_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder.PipelinesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_deprecated_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_deprecated_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelines_deprecated_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new pipeline.
+        /// [DEPRECATED] Create a new pipeline. Use the new /pipelines/v1/pipelines endpoint instead.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated_200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated_4XX">When receiving a 4XX status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List, filter, and paginate pipelines in an account.
+        /// [DEPRECATED] List, filter, and paginate pipelines in an account. Use the new /pipelines/v1/pipelines endpoint instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder.PipelinesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -114,18 +125,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
             return requestInfo;
         }
         /// <summary>
-        /// Create a new pipeline.
+        /// [DEPRECATED] Create a new pipeline. Use the new /pipelines/v1/pipelines endpoint instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.PostV4AccountsByAccount_idPipelines_deprecated body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -140,12 +152,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.PipelinesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List, filter, and paginate pipelines in an account.
+        /// [DEPRECATED] List, filter, and paginate pipelines in an account. Use the new /pipelines/v1/pipelines endpoint instead.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PipelinesRequestBuilderGetQueryParameters 
