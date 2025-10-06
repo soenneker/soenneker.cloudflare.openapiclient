@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,indicatorTypeIds*,maxDepth*,relationshipTypes*}", pathParameters)
+        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,indicatorTypeIds*,maxDepth*,relationshipTypes*}", rawUrl)
+        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", rawUrl)
         {
         }
         /// <summary>
@@ -117,6 +117,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             /// <summary>The maximum depth to traverse. Defaults to 5.</summary>
             [QueryParameter("maxDepth")]
             public double? MaxDepth { get; set; }
+            [QueryParameter("page")]
+            public double? Page { get; set; }
+            [QueryParameter("pageSize")]
+            public double? PageSize { get; set; }
             /// <summary>An optional array of relationship types to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
