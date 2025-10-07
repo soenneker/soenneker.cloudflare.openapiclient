@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_data_blob"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_images"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_inherit"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_send_email"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_text_blob"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_wasm_module"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_ai"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_analytics_engine"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_assets"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_browser"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_d1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_data_blob"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_dispatch_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_hyperdrive"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_images"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_inherit"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_json"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_kv_namespace"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_mtls_certificate"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_pipelines"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_plain_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_queue"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_r2_bucket"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secrets_store_secret"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_key"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_secret_text"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_send_email"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_text_blob"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_vectorize"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_version_metadata"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_wasm_module"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_workflow"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Workers_binding_item : IComposedTypeWrapper, IParsable
@@ -197,14 +197,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service WorkersBindingKindService { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer? WorkersBindingKindTailConsumer { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer WorkersBindingKindTailConsumer { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_text_blob"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -347,10 +339,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.WorkersBindingKindService = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service();
             }
-            else if("tail_consumer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.WorkersBindingKindTailConsumer = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer();
-            }
             else if("text_blob".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkersBindingKindTextBlob = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_text_blob();
@@ -470,10 +458,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(WorkersBindingKindService != null)
             {
                 return WorkersBindingKindService.GetFieldDeserializers();
-            }
-            else if(WorkersBindingKindTailConsumer != null)
-            {
-                return WorkersBindingKindTailConsumer.GetFieldDeserializers();
             }
             else if(WorkersBindingKindTextBlob != null)
             {
@@ -595,10 +579,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(WorkersBindingKindService != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_service>(null, WorkersBindingKindService);
-            }
-            else if(WorkersBindingKindTailConsumer != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_tail_consumer>(null, WorkersBindingKindTailConsumer);
             }
             else if(WorkersBindingKindTextBlob != null)
             {

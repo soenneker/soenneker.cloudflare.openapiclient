@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups.Item.References;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monito
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithMonitor_group_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The references property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups.Item.References.ReferencesRequestBuilder References
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups.Item.References.ReferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups.Item.WithMonitor_group_ItemRequestBuilder"/> and sets the default values.
         /// </summary>

@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Parent container details</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_managed_by? ManagedBy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_managed_by ManagedBy { get; set; }
+#endif
         /// <summary>Account name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "managed_by", n => { ManagedBy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_managed_by>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_managed_by.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_settings.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_type>(); } },
@@ -82,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_managed_by>("managed_by", ManagedBy);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_settings>("settings", Settings);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_account_type>("type", Type);

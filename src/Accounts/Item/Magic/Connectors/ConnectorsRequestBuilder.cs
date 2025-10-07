@@ -86,6 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,6 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors
                 { "401", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_bad_response.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_create_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_create_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

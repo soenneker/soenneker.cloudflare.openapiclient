@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move
         /// <summary>
         /// Move an account within an organization hierarchy or an account outside anorganization.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts_200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_api_V4ErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Move
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_api_V4ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Accounts_moveAccounts_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Move an account within an organization hierarchy or an account outside anorganization.
