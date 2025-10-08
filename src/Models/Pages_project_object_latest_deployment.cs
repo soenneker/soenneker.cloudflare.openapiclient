@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Most recent deployment to the repo.
+    /// Most recent deployment of the project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Pages_project_object_latest_deployment : global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployments, IParsable

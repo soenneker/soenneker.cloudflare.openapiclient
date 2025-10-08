@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The attachment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Attachment { get; set; }
+#nullable restore
+#else
+        public string Attachment { get; set; }
+#endif
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string Detail { get; set; }
+#endif
+        /// <summary>The detection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings_detection? Detection { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings_detection Detection { get; set; }
+#endif
+        /// <summary>The field property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Field { get; set; }
+#nullable restore
+#else
+        public string Field { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,6 +54,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The portion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Portion { get; set; }
+#nullable restore
+#else
+        public string Portion { get; set; }
+#endif
+        /// <summary>The reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Reason { get; set; }
+#nullable restore
+#else
+        public string Reason { get; set; }
+#endif
+        /// <summary>The score property</summary>
+        public double? Score { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,8 +105,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "attachment", n => { Attachment = n.GetStringValue(); } },
                 { "detail", n => { Detail = n.GetStringValue(); } },
+                { "detection", n => { Detection = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings_detection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings_detection.CreateFromDiscriminatorValue); } },
+                { "field", n => { Field = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "portion", n => { Portion = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "score", n => { Score = n.GetDoubleValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -75,8 +123,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("attachment", Attachment);
             writer.WriteStringValue("detail", Detail);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_findings_detection>("detection", Detection);
+            writer.WriteStringValue("field", Field);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("portion", Portion);
+            writer.WriteStringValue("reason", Reason);
+            writer.WriteDoubleValue("score", Score);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

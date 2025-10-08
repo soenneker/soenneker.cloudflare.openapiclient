@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,page*,per_page*,since*,until*}", pathParameters)
+        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,email*,email_exact*,limit*,page*,per_page*,since*,until*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,limit*,page*,per_page*,since*,until*}", rawUrl)
+        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?direction*,email*,email_exact*,limit*,page*,per_page*,since*,until*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -93,6 +93,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>The chronological sorting order for the logs.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetDirectionQueryParameterType? Direction { get; set; }
+            /// <summary>Filter by user email. Defaults to substring matching. To force exact matching, set `email_exact=true`.Example (default): `email=@example.com` returns all events with that domain.Example (exact): `email=user@example.com&amp;email_exact=true` returns only that user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("email")]
+            public string? Email { get; set; }
+#nullable restore
+#else
+            [QueryParameter("email")]
+            public string Email { get; set; }
+#endif
+            /// <summary>When true, `email` is matched exactly instead of substring matching.</summary>
+            [QueryParameter("email_exact")]
+            public bool? EmailExact { get; set; }
             /// <summary>The maximum number of log entries to retrieve.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -106,6 +119,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>The latest event timestamp to query.</summary>
             [QueryParameter("until")]
             public DateTimeOffset? Until { get; set; }
+            /// <summary>Filter by user UUID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
+#endif
         }
     }
 }

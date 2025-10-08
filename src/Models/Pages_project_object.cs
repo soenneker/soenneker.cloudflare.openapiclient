@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Configs for the project build process.</summary>
+        /// <summary>The build_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_build_config? BuildConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_build_config? BuildConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_build_config BuildConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_build_config BuildConfig { get; set; }
 #endif
         /// <summary>The canonical_deployment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Domains { get; private set; }
 #endif
-        /// <summary>Id of the project.</summary>
+        /// <summary>Framework the project is using.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Framework { get; private set; }
+#nullable restore
+#else
+        public string Framework { get; private set; }
+#endif
+        /// <summary>Version of the framework the project is using.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FrameworkVersion { get; private set; }
+#nullable restore
+#else
+        public string FrameworkVersion { get; private set; }
+#endif
+        /// <summary>ID of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; private set; }
@@ -72,6 +88,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Name of the preview script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewScriptName { get; private set; }
+#nullable restore
+#else
+        public string PreviewScriptName { get; private set; }
+#endif
         /// <summary>Production branch of the project. Used to identify production deployments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,6 +103,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string ProductionBranch { get; set; }
+#endif
+        /// <summary>Name of the production script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProductionScriptName { get; private set; }
+#nullable restore
+#else
+        public string ProductionScriptName { get; private set; }
 #endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,6 +128,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Subdomain { get; private set; }
 #endif
+        /// <summary>Whether the project uses functions.</summary>
+        public bool? UsesFunctions { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object"/> and sets the default values.
         /// </summary>
@@ -121,17 +155,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "build_config", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_build_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_build_config.CreateFromDiscriminatorValue); } },
+                { "build_config", n => { BuildConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_build_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_build_config.CreateFromDiscriminatorValue); } },
                 { "canonical_deployment", n => { CanonicalDeployment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_canonical_deployment>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_canonical_deployment.CreateFromDiscriminatorValue); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "deployment_configs", n => { DeploymentConfigs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs.CreateFromDiscriminatorValue); } },
                 { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "framework", n => { Framework = n.GetStringValue(); } },
+                { "framework_version", n => { FrameworkVersion = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latest_deployment", n => { LatestDeployment = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_latest_deployment>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_latest_deployment.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "preview_script_name", n => { PreviewScriptName = n.GetStringValue(); } },
                 { "production_branch", n => { ProductionBranch = n.GetStringValue(); } },
+                { "production_script_name", n => { ProductionScriptName = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_source>(global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_source.CreateFromDiscriminatorValue); } },
                 { "subdomain", n => { Subdomain = n.GetStringValue(); } },
+                { "uses_functions", n => { UsesFunctions = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -141,7 +180,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_build_config>("build_config", BuildConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_build_config>("build_config", BuildConfig);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_canonical_deployment>("canonical_deployment", CanonicalDeployment);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_deployment_configs>("deployment_configs", DeploymentConfigs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_project_object_latest_deployment>("latest_deployment", LatestDeployment);

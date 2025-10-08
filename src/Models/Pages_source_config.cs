@@ -14,9 +14,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The deployments_enabled property</summary>
+        /// <summary>Whether to enable automatic deployments when pushing to the source repository.When disabled, no deployments (production or preview) will be triggered automatically.</summary>
+        [Obsolete("")]
         public bool? DeploymentsEnabled { get; set; }
-        /// <summary>The owner property</summary>
+        /// <summary>The owner of the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Owner { get; set; }
@@ -24,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Owner { get; set; }
 #endif
-        /// <summary>The path_excludes property</summary>
+        /// <summary>A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PathExcludes { get; set; }
@@ -32,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> PathExcludes { get; set; }
 #endif
-        /// <summary>The path_includes property</summary>
+        /// <summary>A list of paths that should be watched to trigger a preview deployment. Wildcard syntax (`*`) is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PathIncludes { get; set; }
@@ -40,9 +41,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> PathIncludes { get; set; }
 #endif
-        /// <summary>The pr_comments_enabled property</summary>
+        /// <summary>Whether to enable PR comments.</summary>
         public bool? PrCommentsEnabled { get; set; }
-        /// <summary>The preview_branch_excludes property</summary>
+        /// <summary>A list of branches that should not trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PreviewBranchExcludes { get; set; }
@@ -50,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> PreviewBranchExcludes { get; set; }
 #endif
-        /// <summary>The preview_branch_includes property</summary>
+        /// <summary>A list of branches that should trigger a preview deployment. Wildcard syntax (`*`) is supported. Must be used with `preview_deployment_setting` set to `custom`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PreviewBranchIncludes { get; set; }
@@ -58,9 +59,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> PreviewBranchIncludes { get; set; }
 #endif
-        /// <summary>The preview_deployment_setting property</summary>
+        /// <summary>Controls whether commits to preview branches trigger a preview deployment.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_source_config_preview_deployment_setting? PreviewDeploymentSetting { get; set; }
-        /// <summary>The production_branch property</summary>
+        /// <summary>The production branch of the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProductionBranch { get; set; }
@@ -68,9 +69,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ProductionBranch { get; set; }
 #endif
-        /// <summary>The production_deployments_enabled property</summary>
+        /// <summary>Whether to trigger a production deployment on commits to the production branch.</summary>
         public bool? ProductionDeploymentsEnabled { get; set; }
-        /// <summary>The repo_name property</summary>
+        /// <summary>The name of the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RepoName { get; set; }
@@ -84,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Pages_source_config()
         {
             AdditionalData = new Dictionary<string, object>();
+            PreviewDeploymentSetting = global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_source_config_preview_deployment_setting.All;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
