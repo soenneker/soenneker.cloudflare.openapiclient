@@ -41,6 +41,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string InterfaceName { get; set; }
 #endif
+        /// <summary>MTU as measured between the two ends of the tunnel</summary>
+        public double? ProbedMtu { get; set; }
         /// <summary>Tunnel identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "health_state", n => { HealthState = n.GetStringValue(); } },
                 { "health_value", n => { HealthValue = n.GetDoubleValue(); } },
                 { "interface_name", n => { InterfaceName = n.GetStringValue(); } },
+                { "probed_mtu", n => { ProbedMtu = n.GetDoubleValue(); } },
                 { "tunnel_id", n => { TunnelId = n.GetStringValue(); } },
             };
         }
@@ -92,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("health_state", HealthState);
             writer.WriteDoubleValue("health_value", HealthValue);
             writer.WriteStringValue("interface_name", InterfaceName);
+            writer.WriteDoubleValue("probed_mtu", ProbedMtu);
             writer.WriteStringValue("tunnel_id", TunnelId);
             writer.WriteAdditionalData(AdditionalData);
         }

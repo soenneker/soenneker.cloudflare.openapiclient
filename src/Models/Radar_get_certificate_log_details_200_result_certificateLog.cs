@@ -16,6 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The API standard that the certificate log follows.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_api? Api { get; set; }
+        /// <summary>The average throughput of the CT log, measured in certificates per hour (certs/hour).</summary>
+        public double? AvgThroughput { get; set; }
         /// <summary>A brief description of the certificate log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,6 +28,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The end date and time for when the log will stop accepting certificates.</summary>
         public DateTimeOffset? EndExclusive { get; set; }
+        /// <summary>Timestamp of the most recent update to the CT log.</summary>
+        public DateTimeOffset? LastUpdate { get; set; }
         /// <summary>The organization responsible for operating the certificate log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +68,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_state? State { get; set; }
         /// <summary>Timestamp of when the log state was last updated.</summary>
         public DateTimeOffset? StateTimestamp { get; set; }
+        /// <summary>Number of certificates that are eligible for inclusion to this log but have not been included yet. Based on certificates signed by trusted root CAs within the log&apos;s accepted date range.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubmittableCertCount { get; set; }
+#nullable restore
+#else
+        public string SubmittableCertCount { get; set; }
+#endif
+        /// <summary>Number of certificates already included in this CT log.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubmittedCertCount { get; set; }
+#nullable restore
+#else
+        public string SubmittedCertCount { get; set; }
+#endif
         /// <summary>The URL for the certificate log.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,8 +118,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "api", n => { Api = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_api>(); } },
+                { "avgThroughput", n => { AvgThroughput = n.GetDoubleValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "endExclusive", n => { EndExclusive = n.GetDateTimeOffsetValue(); } },
+                { "lastUpdate", n => { LastUpdate = n.GetDateTimeOffsetValue(); } },
                 { "operator", n => { Operator = n.GetStringValue(); } },
                 { "performance", n => { Performance = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_performance>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_performance.CreateFromDiscriminatorValue); } },
                 { "related", n => { Related = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_related>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_related.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -107,6 +129,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "startInclusive", n => { StartInclusive = n.GetDateTimeOffsetValue(); } },
                 { "state", n => { State = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_state>(); } },
                 { "stateTimestamp", n => { StateTimestamp = n.GetDateTimeOffsetValue(); } },
+                { "submittableCertCount", n => { SubmittableCertCount = n.GetStringValue(); } },
+                { "submittedCertCount", n => { SubmittedCertCount = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -118,8 +142,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_api>("api", Api);
+            writer.WriteDoubleValue("avgThroughput", AvgThroughput);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("endExclusive", EndExclusive);
+            writer.WriteDateTimeOffsetValue("lastUpdate", LastUpdate);
             writer.WriteStringValue("operator", Operator);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_performance>("performance", Performance);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_related>("related", Related);
@@ -127,6 +153,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("startInclusive", StartInclusive);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_state>("state", State);
             writer.WriteDateTimeOffsetValue("stateTimestamp", StateTimestamp);
+            writer.WriteStringValue("submittableCertCount", SubmittableCertCount);
+            writer.WriteStringValue("submittedCertCount", SubmittedCertCount);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

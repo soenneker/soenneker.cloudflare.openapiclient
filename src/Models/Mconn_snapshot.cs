@@ -15,6 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The bonds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_bond>? Bonds { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_bond> Bonds { get; set; }
+#endif
         /// <summary>Count of reclaimed paths</summary>
         public double? CountReclaimedPaths { get; set; }
         /// <summary>Count of failures to reclaim space</summary>
@@ -432,6 +440,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bonds", n => { Bonds = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_bond>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_bond.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "count_reclaim_failures", n => { CountReclaimFailures = n.GetDoubleValue(); } },
                 { "count_reclaimed_paths", n => { CountReclaimedPaths = n.GetDoubleValue(); } },
                 { "count_record_failed", n => { CountRecordFailed = n.GetDoubleValue(); } },
@@ -610,6 +619,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_bond>("bonds", Bonds);
             writer.WriteDoubleValue("count_reclaimed_paths", CountReclaimedPaths);
             writer.WriteDoubleValue("count_reclaim_failures", CountReclaimFailures);
             writer.WriteDoubleValue("count_record_failed", CountRecordFailed);

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates;
@@ -30,6 +31,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The aiControls property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.AiControlsRequestBuilder AiControls
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.AiControlsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The apps property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.AppsRequestBuilder Apps
         {
