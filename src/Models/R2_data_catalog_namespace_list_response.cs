@@ -15,6 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contains detailed metadata for each namespace when return_details is true.Each object includes the namespace, UUID, and timestamps.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_namespace_details>? Details { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_namespace_details> Details { get; set; }
+#endif
         /// <summary>Lists namespaces in the catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "details", n => { Details = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_namespace_details>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_namespace_details.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "namespace_uuids", n => { NamespaceUuids = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "namespaces", n => { Namespaces = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "next_page_token", n => { NextPageToken = n.GetStringValue(); } },
@@ -76,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_namespace_details>("details", Details);
             writer.WriteObjectValue<UntypedNode>("namespaces", Namespaces);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("namespace_uuids", NamespaceUuids);
             writer.WriteStringValue("next_page_token", NextPageToken);

@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables{?page_size*,page_token*,return_uuids*}", pathParameters)
+        public TablesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables{?page_size*,page_token*,return_details*,return_uuids*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables{?page_size*,page_token*,return_uuids*}", rawUrl)
+        public TablesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces/{namespace}/tables{?page_size*,page_token*,return_details*,return_uuids*}", rawUrl)
         {
         }
         /// <summary>
@@ -124,6 +124,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
             [QueryParameter("page_token")]
             public string PageToken { get; set; }
 #endif
+            /// <summary>Whether to include additional metadata (timestamps, locations).When true, response includes created_at, updated_at, metadata_locations, and locations arrays.</summary>
+            [QueryParameter("return_details")]
+            public bool? ReturnDetails { get; set; }
             /// <summary>Whether to include table UUIDs in the response.Set to true to receive the table_uuids array.</summary>
             [QueryParameter("return_uuids")]
             public bool? ReturnUuids { get; set; }

@@ -16,15 +16,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
     public partial class AbuseReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.abuseReports.item collection</summary>
-        /// <param name="position">The report type to be submitted. Example: abuse_general</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_typeItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_typeItemRequestBuilder this[string position]
+        /// <param name="position">Identifier of the abuse report</param>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_paramItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_paramItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("report_type", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_typeItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("report_param", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_paramItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

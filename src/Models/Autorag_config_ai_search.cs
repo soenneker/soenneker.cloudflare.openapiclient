@@ -48,6 +48,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_ranking_options RankingOptions { get; set; }
 #endif
+        /// <summary>The reranking property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking? Reranking { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking Reranking { get; set; }
+#endif
         /// <summary>The rewrite_query property</summary>
         public bool? RewriteQuery { get; set; }
         /// <summary>The stream property</summary>
@@ -90,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "model", n => { Model = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search.Autorag_config_ai_search_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search.Autorag_config_ai_search_model.CreateFromDiscriminatorValue); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "ranking_options", n => { RankingOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_ranking_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_ranking_options.CreateFromDiscriminatorValue); } },
+                { "reranking", n => { Reranking = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.CreateFromDiscriminatorValue); } },
                 { "rewrite_query", n => { RewriteQuery = n.GetBoolValue(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "system_prompt", n => { SystemPrompt = n.GetStringValue(); } },
@@ -107,6 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search.Autorag_config_ai_search_model>("model", Model);
             writer.WriteStringValue("query", Query);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_ranking_options>("ranking_options", RankingOptions);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking>("reranking", Reranking);
             writer.WriteBoolValue("rewrite_query", RewriteQuery);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteStringValue("system_prompt", SystemPrompt);

@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NamespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_uuids*}", pathParameters)
+        public NamespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_details*,return_uuids*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NamespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_uuids*}", rawUrl)
+        public NamespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_details*,return_uuids*}", rawUrl)
         {
         }
         /// <summary>
@@ -134,6 +134,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
             [QueryParameter("parent")]
             public string Parent { get; set; }
 #endif
+            /// <summary>Whether to include additional metadata (timestamps).When true, response includes created_at and updated_at arrays.</summary>
+            [QueryParameter("return_details")]
+            public bool? ReturnDetails { get; set; }
             /// <summary>Whether to include namespace UUIDs in the response.Set to true to receive the namespace_uuids array.</summary>
             [QueryParameter("return_uuids")]
             public bool? ReturnUuids { get; set; }

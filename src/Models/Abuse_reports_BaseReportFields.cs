@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Abuse_reports_BaseReportFields : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The abuse report type.</summary>
+        /// <summary>The report type for submitted reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Act { get; set; }

@@ -15,6 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contains detailed metadata for each table when return_details is true.Each object includes identifier, UUID, timestamps, and locations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_details>? Details { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_details> Details { get; set; }
+#endif
         /// <summary>Lists tables in the namespace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "details", n => { Details = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_details>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_details.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "identifiers", n => { Identifiers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_identifier.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "next_page_token", n => { NextPageToken = n.GetStringValue(); } },
                 { "table_uuids", n => { TableUuids = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
@@ -76,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_details>("details", Details);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_table_identifier>("identifiers", Identifiers);
             writer.WriteStringValue("next_page_token", NextPageToken);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("table_uuids", TableUuids);

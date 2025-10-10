@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_ranking_options RankingOptions { get; set; }
 #endif
+        /// <summary>The reranking property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_reranking? Reranking { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_reranking Reranking { get; set; }
+#endif
         /// <summary>The rewrite_query property</summary>
         public bool? RewriteQuery { get; set; }
         /// <summary>
@@ -71,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "ranking_options", n => { RankingOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_ranking_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_ranking_options.CreateFromDiscriminatorValue); } },
+                { "reranking", n => { Reranking = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_reranking>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_reranking.CreateFromDiscriminatorValue); } },
                 { "rewrite_query", n => { RewriteQuery = n.GetBoolValue(); } },
             };
         }
@@ -85,6 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("max_num_results", MaxNumResults);
             writer.WriteStringValue("query", Query);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_ranking_options>("ranking_options", RankingOptions);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_search_reranking>("reranking", Reranking);
             writer.WriteBoolValue("rewrite_query", RewriteQuery);
             writer.WriteAdditionalData(AdditionalData);
         }
