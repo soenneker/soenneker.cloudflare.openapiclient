@@ -58,6 +58,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Spectrum;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Waiting_rooms;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Web3;
@@ -344,6 +345,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription.SubscriptionRequestBuilder Subscription
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Subscription.SubscriptionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The token_validation property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Token_validationRequestBuilder Token_validation
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Token_validationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The url_normalization property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Url_normalization.Url_normalizationRequestBuilder Url_normalization

@@ -5,7 +5,10 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura1;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura1Internal;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2En;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2Es;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Flux;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3Internal;
 using System.Collections.Generic;
@@ -39,6 +42,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2.Aura2RequestBuilder Aura2
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2.Aura2RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The aura2En property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2En.Aura2EnRequestBuilder Aura2En
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2En.Aura2EnRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The aura2Es property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2Es.Aura2EsRequestBuilder Aura2Es
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura2Es.Aura2EsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The flux property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Flux.FluxRequestBuilder Flux
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Flux.FluxRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The nova3 property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3.Nova3RequestBuilder Nova3

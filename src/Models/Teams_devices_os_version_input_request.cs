@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OsDistroRevision { get; set; }
 #endif
-        /// <summary>Additional version data. For Mac or iOS, the Product Version Extra. For Linux, the kernel release version. (Mac, iOS, and Linux only).</summary>
+        /// <summary>Additional version data. For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version. (Mac, iOS, and Linux only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersionExtra { get; set; }

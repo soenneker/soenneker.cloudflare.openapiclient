@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance;
@@ -22,6 +24,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MyshellAi;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Runwayml;
@@ -42,6 +45,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CfRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The ai4bharat property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.Ai4bharatRequestBuilder Ai4bharat
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.Ai4bharatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The aisingapore property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore.AisingaporeRequestBuilder Aisingapore
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore.AisingaporeRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The baai property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BaaiRequestBuilder Baai
         {
@@ -141,6 +154,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat.OpenchatRequestBuilder Openchat
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat.OpenchatRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pfnet property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.PfnetRequestBuilder Pfnet
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.PfnetRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pipecatAi property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.PipecatAiRequestBuilder PipecatAi

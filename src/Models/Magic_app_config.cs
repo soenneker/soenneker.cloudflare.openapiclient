@@ -25,6 +25,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>WAN interfaces to prefer over default WANs, highest-priority first. Can only be specified for breakout rules (breakout must be true).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PreferredWans { get; set; }
+#nullable restore
+#else
+        public List<string> PreferredWans { get; set; }
+#endif
         /// <summary>Priority of traffic. 0 is default, anything greater is prioritized. (Currently only 0 and 1 are supported)</summary>
         public int? Priority { get; set; }
         /// <summary>Identifier</summary>
@@ -62,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "breakout", n => { Breakout = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "preferred_wans", n => { PreferredWans = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "site_id", n => { SiteId = n.GetStringValue(); } },
             };
@@ -75,6 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("breakout", Breakout);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfPrimitiveValues<string>("preferred_wans", PreferredWans);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("site_id", SiteId);
             writer.WriteAdditionalData(AdditionalData);

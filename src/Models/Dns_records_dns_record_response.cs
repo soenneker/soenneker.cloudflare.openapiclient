@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Proxiable { get; private set; }
         /// <summary>When the record tags were last modified. Omitted if there are no tags.</summary>
         public DateTimeOffset? TagsModifiedOn { get; private set; }
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_records_dns_record_response"/> and sets the default values.
         /// </summary>
@@ -72,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "proxiable", n => { Proxiable = n.GetBoolValue(); } },
                 { "tags_modified_on", n => { TagsModifiedOn = n.GetDateTimeOffsetValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

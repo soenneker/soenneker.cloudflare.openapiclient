@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators{?page*,pageSize*}", pathParameters)
+        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators{?indicatorType*,page*,pageSize*,relatedEvent*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators{?page*,pageSize*}", rawUrl)
+        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators{?indicatorType*,page*,pageSize*,relatedEvent*}", rawUrl)
         {
         }
         /// <summary>
@@ -94,10 +94,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IndicatorsRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("indicatorType")]
+            public string? IndicatorType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("indicatorType")]
+            public string IndicatorType { get; set; }
+#endif
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("pageSize")]
             public double? PageSize { get; set; }
+            /// <summary>Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("relatedEvent")]
+            public string[]? RelatedEvent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("relatedEvent")]
+            public string[] RelatedEvent { get; set; }
+#endif
         }
     }
 }

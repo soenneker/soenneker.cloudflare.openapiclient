@@ -40,6 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_top_browsers_404">When receiving a 404 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_http_top_browsers_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder.BrowserRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -61,6 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder.BrowserRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -80,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder(rawUrl, RequestAdapter);
