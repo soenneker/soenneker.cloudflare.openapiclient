@@ -14,6 +14,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.IbmGranite;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Leonardo;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta;
@@ -104,6 +105,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.HuggingfaceRequestBuilder Huggingface
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.HuggingfaceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ibmGranite property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.IbmGranite.IbmGraniteRequestBuilder IbmGranite
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.IbmGranite.IbmGraniteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The leonardo property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Leonardo.LeonardoRequestBuilder Leonardo

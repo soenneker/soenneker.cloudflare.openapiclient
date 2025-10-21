@@ -42,6 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Cont
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_422">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_429">When receiving a 429 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Cont
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_400.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_422.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_429.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_500.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Content_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);

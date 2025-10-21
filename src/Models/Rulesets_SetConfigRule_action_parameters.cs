@@ -27,6 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to enable Browser Integrity Check (BIC).</summary>
         public bool? Bic { get; set; }
         /// <summary>Whether to disable Cloudflare Apps.</summary>
+        [Obsolete("")]
         public bool? DisableApps { get; set; }
         /// <summary>Whether to disable Pay Per Crawl.</summary>
         public bool? DisablePayPerCrawl { get; set; }
