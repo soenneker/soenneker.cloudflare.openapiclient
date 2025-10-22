@@ -10,6 +10,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Coun
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Create;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Raw;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Relate;
@@ -64,6 +65,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag.Event_tagRequestBuilder Event_tag
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag.Event_tagRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The indicatorTypes property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder IndicatorTypes
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The raw property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Raw.RawRequestBuilder Raw

@@ -42,6 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Whether to enable Hotlink Protection.</summary>
         public bool? HotlinkProtection { get; set; }
         /// <summary>Whether to enable Mirage.</summary>
+        [Obsolete("")]
         public bool? Mirage { get; set; }
         /// <summary>Whether to enable Opportunistic Encryption.</summary>
         public bool? OpportunisticEncryption { get; set; }

@@ -41,10 +41,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A summary of the mitigations related to this report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_AbuseReport_mitigation_summary? MitigationSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary? MitigationSummary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_AbuseReport_mitigation_summary MitigationSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary MitigationSummary { get; set; }
 #endif
         /// <summary>An enum value that represents the status of an abuse record</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportStatus? Status { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cdate", n => { Cdate = n.GetStringValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mitigation_summary", n => { MitigationSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_AbuseReport_mitigation_summary>(global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_AbuseReport_mitigation_summary.CreateFromDiscriminatorValue); } },
+                { "mitigation_summary", n => { MitigationSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary>(global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportStatus>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportType>(); } },
             };
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("cdate", Cdate);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_AbuseReport_mitigation_summary>("mitigation_summary", MitigationSummary);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary>("mitigation_summary", MitigationSummary);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
