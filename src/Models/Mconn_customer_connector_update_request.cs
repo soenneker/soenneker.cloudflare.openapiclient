@@ -9,46 +9,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Mconn_customer_connector_update_request : IAdditionalDataHolder, IParsable
+    public partial class Mconn_customer_connector_update_request : global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_fields, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The activated property</summary>
-        public bool? Activated { get; set; }
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The interrupt_window_duration_hours property</summary>
-        public double? InterruptWindowDurationHours { get; set; }
-        /// <summary>The interrupt_window_hour_of_day property</summary>
-        public double? InterruptWindowHourOfDay { get; set; }
-        /// <summary>The notes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Notes { get; set; }
-#nullable restore
-#else
-        public string Notes { get; set; }
-#endif
-        /// <summary>The timezone property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Timezone { get; set; }
-#nullable restore
-#else
-        public string Timezone { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_request"/> and sets the default values.
-        /// </summary>
-        public Mconn_customer_connector_update_request()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>When true, regenerate license key for the connector.</summary>
+        public bool? ProvisionLicense { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_request"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_request CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_request CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_update_request();
@@ -57,30 +28,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activated", n => { Activated = n.GetBoolValue(); } },
-                { "interrupt_window_duration_hours", n => { InterruptWindowDurationHours = n.GetDoubleValue(); } },
-                { "interrupt_window_hour_of_day", n => { InterruptWindowHourOfDay = n.GetDoubleValue(); } },
-                { "notes", n => { Notes = n.GetStringValue(); } },
-                { "timezone", n => { Timezone = n.GetStringValue(); } },
+                { "provision_license", n => { ProvisionLicense = n.GetBoolValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("activated", Activated);
-            writer.WriteDoubleValue("interrupt_window_duration_hours", InterruptWindowDurationHours);
-            writer.WriteDoubleValue("interrupt_window_hour_of_day", InterruptWindowHourOfDay);
-            writer.WriteStringValue("notes", Notes);
-            writer.WriteStringValue("timezone", Timezone);
-            writer.WriteAdditionalData(AdditionalData);
+            base.Serialize(writer);
+            writer.WriteBoolValue("provision_license", ProvisionLicense);
         }
     }
 }

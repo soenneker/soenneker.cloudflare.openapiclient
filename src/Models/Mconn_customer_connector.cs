@@ -60,6 +60,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LastUpdated { get; set; }
 #endif
+        /// <summary>The license_key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LicenseKey { get; set; }
+#nullable restore
+#else
+        public string LicenseKey { get; set; }
+#endif
         /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,6 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_heartbeat", n => { LastHeartbeat = n.GetStringValue(); } },
                 { "last_seen_version", n => { LastSeenVersion = n.GetStringValue(); } },
                 { "last_updated", n => { LastUpdated = n.GetStringValue(); } },
+                { "license_key", n => { LicenseKey = n.GetStringValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
             };
@@ -128,6 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("last_heartbeat", LastHeartbeat);
             writer.WriteStringValue("last_seen_version", LastSeenVersion);
             writer.WriteStringValue("last_updated", LastUpdated);
+            writer.WriteStringValue("license_key", LicenseKey);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteAdditionalData(AdditionalData);

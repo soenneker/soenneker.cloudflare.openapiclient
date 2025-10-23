@@ -12,13 +12,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Mconn_customer_connector_create_request : global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_connector_fields, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The device property</summary>
+        /// <summary>Exactly one of id, serial_number, or provision_license must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_identifier? Device { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_options? Device { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_identifier Device { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_options Device { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "device", n => { Device = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_identifier>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_identifier.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_options.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_identifier>("device", Device);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device_options>("device", Device);
         }
     }
 }

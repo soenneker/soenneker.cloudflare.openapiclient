@@ -137,7 +137,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OsVersionExtra { get; set; }
 #endif
-        /// <summary>The public IP address of the WARP client.</summary>
+        /// <summary>**Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicIp { get; set; }
