@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2();
         }
         /// <summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("frequency_penalty", FrequencyPenalty);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2_functions>("functions", Functions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2_guided_json>("guided_json", GuidedJson);
@@ -159,7 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2_tools CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2_tools();
                 if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -194,7 +194,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(WorkersAiPostRunCfMistralaiMistralSmall3124bInstructMember2ToolsMember1 != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instructMember2_toolsMember1>(null, WorkersAiPostRunCfMistralaiMistralSmall3124bInstructMember2ToolsMember1);

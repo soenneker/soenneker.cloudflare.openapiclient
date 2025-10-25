@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_summary_by_duration_200_result_summary_0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer3_summary_by_duration_200_result_summary_0();
         }
         /// <summary>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("_10_MINS_TO_20_MINS", N10MINSTO20MINS);
             writer.WriteStringValue("_1_HOUR_TO_3_HOURS", N1HOURTO3HOURS);
             writer.WriteStringValue("_20_MINS_TO_40_MINS", N20MINSTO40MINS);

@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Policies.Ite
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_get_zone_policy_response> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_update_policy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -157,7 +157,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield.Policies.Ite
         public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_update_policy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

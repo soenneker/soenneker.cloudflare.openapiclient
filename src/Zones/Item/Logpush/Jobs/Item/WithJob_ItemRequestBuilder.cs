@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Jobs.Item
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_zones_zone_id_logpush_jobs_job_id_200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Jobs.Item.WithJob_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Jobs.Item
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_logpush_job_response_single> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Put_zones_zone_id_logpush_jobs_job_id body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Jobs.Item
         public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Jobs.Item.WithJob_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -162,7 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush.Jobs.Item
         public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Put_zones_zone_id_logpush_jobs_job_id body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_200 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_200();
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_200.Workers_kv_namespace_get_multiple_key_value_pairs_200_result CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_200.Workers_kv_namespace_get_multiple_key_value_pairs_200_result();
                 if("workers_kv_bulk_get_result".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(WorkersKvBulkGetResult != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_bulk_get_result>(null, WorkersKvBulkGetResult);

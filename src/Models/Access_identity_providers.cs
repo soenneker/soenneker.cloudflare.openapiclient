@@ -132,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_providers CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_providers();
             result.AccessAzureAD = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD();
             result.AccessCentrify = new global::Soenneker.Cloudflare.OpenApiClient.Models.Access_centrify();
@@ -168,7 +168,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_azureAD>(null, AccessAzureAD, AccessCentrify, AccessFacebook, AccessGithub, AccessGoogle, AccessGoogleApps, AccessLinkedin, AccessOidc, AccessOkta, AccessOnelogin, AccessOnetimepin, AccessPingone, AccessSaml, AccessYandex);
         }
     }

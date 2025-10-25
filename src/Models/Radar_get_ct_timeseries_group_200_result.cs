@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result();
         }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result_meta>("meta", Meta);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result.Radar_get_ct_timeseries_group_200_result_serie_0>("serie_0", Serie0);
             writer.WriteAdditionalData(AdditionalData);
@@ -147,7 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result.Radar_get_ct_timeseries_group_200_result_serie_0 CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result.Radar_get_ct_timeseries_group_200_result_serie_0();
                 result.RadarGetCtTimeseriesGroup200ResultSerie0Member1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result_serie_0Member1();
                 result.RadarGetCtTimeseriesGroup200ResultSerie0Member2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result_serie_0Member2();
@@ -177,7 +177,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ct_timeseries_group_200_result_serie_0Member1>(null, RadarGetCtTimeseriesGroup200ResultSerie0Member1, RadarGetCtTimeseriesGroup200ResultSerie0Member2, RadarGetCtTimeseriesGroup200ResultSerie0Member3, RadarGetCtTimeseriesGroup200ResultSerie0Member4, RadarGetCtTimeseriesGroup200ResultSerie0Member5, RadarGetCtTimeseriesGroup200ResultSerie0Member6, RadarGetCtTimeseriesGroup200ResultSerie0Member7, RadarGetCtTimeseriesGroup200ResultSerie0Member8);
             }
         }

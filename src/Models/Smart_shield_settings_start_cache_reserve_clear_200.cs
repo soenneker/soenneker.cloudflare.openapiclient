@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_settings_start_cache_reserve_clear_200 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_settings_start_cache_reserve_clear_200();
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_messages_item>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Smartshield_messages_item>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_settings_start_cache_reserve_clear_200.Smart_shield_settings_start_cache_reserve_clear_200_result>("result", Result);
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_settings_start_cache_reserve_clear_200.Smart_shield_settings_start_cache_reserve_clear_200_result CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_settings_start_cache_reserve_clear_200.Smart_shield_settings_start_cache_reserve_clear_200_result();
                 result.SmartShieldSettingsStartCacheReserveClear200ResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_settings_start_cache_reserve_clear_200_resultMember1();
                 result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
@@ -137,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Smart_shield_settings_start_cache_reserve_clear_200_resultMember1>(null, SmartShieldSettingsStartCacheReserveClear200ResultMember1, UnionBranch);
             }
         }

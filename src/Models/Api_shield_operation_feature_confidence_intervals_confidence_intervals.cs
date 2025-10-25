@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation_feature_confidence_intervals_confidence_intervals CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation_feature_confidence_intervals_confidence_intervals();
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("last_updated", LastUpdated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_operation_feature_confidence_intervals_confidence_intervals_suggested_threshold>("suggested_threshold", SuggestedThreshold);
             writer.WriteAdditionalData(AdditionalData);

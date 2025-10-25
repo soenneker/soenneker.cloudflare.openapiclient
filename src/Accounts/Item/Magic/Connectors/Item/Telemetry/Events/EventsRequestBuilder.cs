@@ -98,8 +98,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// <param name="event_t">The path parameter: event_t</param>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder WithEvent_tWithEvent_n(double? event_n, double? event_t)
         {
-            _ = event_n ?? throw new ArgumentNullException(nameof(event_n));
-            _ = event_t ?? throw new ArgumentNullException(nameof(event_t));
+            if(ReferenceEquals(event_n, null)) throw new ArgumentNullException(nameof(event_n));
+            if(ReferenceEquals(event_t, null)) throw new ArgumentNullException(nameof(event_t));
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder(PathParameters, RequestAdapter, event_n, event_t);
         }
         /// <summary>

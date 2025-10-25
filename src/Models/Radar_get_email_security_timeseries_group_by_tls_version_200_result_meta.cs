@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_tls_version_200_result_meta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_tls_version_200_result_meta();
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_tls_version_200_result_meta_aggInterval>("aggInterval", AggInterval);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_tls_version_200_result_meta_confidenceInfo>("confidenceInfo", ConfidenceInfo);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_email_security_timeseries_group_by_tls_version_200_result_meta_dateRange>("dateRange", DateRange);

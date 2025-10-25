@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection();
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection.Tunnel_tunnel_response_collection_result CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection.Tunnel_tunnel_response_collection_result();
                 result.TunnelCfdTunnel = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel();
                 result.TunnelWarpConnectorTunnel = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_warp_connector_tunnel();
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel>(null, TunnelCfdTunnel, TunnelWarpConnectorTunnel);
             }
         }

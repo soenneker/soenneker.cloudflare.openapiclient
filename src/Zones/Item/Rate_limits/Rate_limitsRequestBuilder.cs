@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_ratelimit_response_single> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Rate_limits_for_a_zone_create_a_rate_limit body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits
         public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Rate_limits_for_a_zone_create_a_rate_limit body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

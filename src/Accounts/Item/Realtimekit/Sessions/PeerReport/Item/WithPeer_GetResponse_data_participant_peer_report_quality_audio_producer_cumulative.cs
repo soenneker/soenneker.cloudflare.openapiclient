@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.PeerReport.Item.WithPeer_GetResponse_data_participant_peer_report_quality_audio_producer_cumulative CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.PeerReport.Item.WithPeer_GetResponse_data_participant_peer_report_quality_audio_producer_cumulative();
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.PeerReport.Item.WithPeer_GetResponse_data_participant_peer_report_quality_audio_producer_cumulative_packet_loss>("packet_loss", PacketLoss);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.PeerReport.Item.WithPeer_GetResponse_data_participant_peer_report_quality_audio_producer_cumulative_quality_mos>("quality_mos", QualityMos);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.PeerReport.Item.WithPeer_GetResponse_data_participant_peer_report_quality_audio_producer_cumulative_rtt>("rtt", Rtt);

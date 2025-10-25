@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics_api_until CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics_api_until();
             result.ZoneAnalyticsApiUntilBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics_api_until_Branch1();
             result.ZoneAnalyticsApiUntilBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics_api_until_Branch2();
@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_analytics_api_until_Branch1>(null, ZoneAnalyticsApiUntilBranch1, ZoneAnalyticsApiUntilBranch2);
         }
     }

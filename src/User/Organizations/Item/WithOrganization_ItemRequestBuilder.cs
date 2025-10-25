@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.User_s_organizations_leave_organization_200> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item.WithOrganization_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item
         public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.User.Organizations.Item.WithOrganization_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

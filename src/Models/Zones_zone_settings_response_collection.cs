@@ -27,7 +27,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_zone_settings_response_collection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_zone_settings_response_collection();
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public override void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_zone_settings_response_collection.Zones_zone_settings_response_collection_result>("result", Result);
         }
@@ -536,7 +536,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_zone_settings_response_collection.Zones_zone_settings_response_collection_result CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_zone_settings_response_collection.Zones_zone_settings_response_collection_result();
                 result.Zones0rtt = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0rtt();
                 result.ZonesAdvancedDdos = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos();
@@ -617,7 +617,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0rtt>(null, Zones0rtt, ZonesAdvancedDdos, ZonesAlwaysOnline, ZonesBrotli, ZonesCacheRulesAegis, ZonesCacheRulesOriginH2MaxStreams, ZonesCacheRulesOriginMaxHttpVersion, ZonesChallengeTtl, ZonesCiphers, ZonesCnameFlattening, ZonesDevelopmentMode, ZonesEarlyHints, ZonesH2Prioritization, ZonesHotlinkProtection, ZonesHttp2, ZonesHttp3, ZonesImageResizing, ZonesIpv6, ZonesMaxUpload, ZonesMinTlsVersion, ZonesNel, ZonesOpportunisticOnion, ZonesOrangeToOrange, ZonesPrefetchPreload, ZonesPrivacyPass, ZonesProxyReadTimeout, ZonesPseudoIpv4, ZonesReplaceInsecureJs, ZonesSchemasAlwaysUseHttps, ZonesSchemasAutomaticHttpsRewrites, ZonesSchemasAutomaticPlatformOptimization, ZonesSchemasBrowserCacheTtl, ZonesSchemasBrowserCheck, ZonesSchemasCacheLevel, ZonesSchemasEdgeCacheTtl, ZonesSchemasEmailObfuscation, ZonesSchemasIpGeolocation, ZonesSchemasMirage, ZonesSchemasOpportunisticEncryption, ZonesSchemasOriginErrorPagePassThru, ZonesSchemasPolish, ZonesSchemasResponseBuffering, ZonesSchemasRocketLoader, ZonesSchemasSecurityLevel, ZonesSchemasSortQueryStringForCache, ZonesSchemasSsl, ZonesSchemasTrueClientIpHeader, ZonesSchemasWaf, ZonesSecurityHeader, ZonesServerSideExclude, ZonesSha1Support, ZonesSslRecommender, ZonesTls12Only, ZonesTls13, ZonesTlsClientAuth, ZonesTransformations, ZonesTransformationsAllowedOrigins, ZonesWebp, ZonesWebsockets);
             }
         }

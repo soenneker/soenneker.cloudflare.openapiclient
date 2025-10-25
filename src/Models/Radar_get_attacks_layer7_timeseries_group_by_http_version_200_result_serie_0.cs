@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_timeseries_group_by_http_version_200_result_serie_0 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_timeseries_group_by_http_version_200_result_serie_0();
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("HTTP/1.x", HTTP1X);
             writer.WriteCollectionOfPrimitiveValues<string>("HTTP/2", HTTP2);
             writer.WriteCollectionOfPrimitiveValues<string>("HTTP/3", HTTP3);

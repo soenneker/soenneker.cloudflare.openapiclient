@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
         /// <param name="scan_id">Scan UUID.</param>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder WithScan_idPng(Guid? scan_id)
         {
-            _ = scan_id ?? throw new ArgumentNullException(nameof(scan_id));
+            if(ReferenceEquals(scan_id, null)) throw new ArgumentNullException(nameof(scan_id));
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder(PathParameters, RequestAdapter, scan_id);
         }
     }

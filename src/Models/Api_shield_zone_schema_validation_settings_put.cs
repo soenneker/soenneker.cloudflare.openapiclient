@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_zone_schema_validation_settings_put CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_zone_schema_validation_settings_put();
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_validation_default_mitigation_action>("validation_default_mitigation_action", ValidationDefaultMitigationAction);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_validation_override_mitigation_action_write>("validation_override_mitigation_action", ValidationOverrideMitigationAction);
             writer.WriteAdditionalData(AdditionalData);

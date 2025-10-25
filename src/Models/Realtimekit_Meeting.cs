@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting();
         }
         /// <summary>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("live_stream_on_start", LiveStreamOnStart);
             writer.WriteBoolValue("persist_chat", PersistChat);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting_preferred_region>("preferred_region", PreferredRegion);

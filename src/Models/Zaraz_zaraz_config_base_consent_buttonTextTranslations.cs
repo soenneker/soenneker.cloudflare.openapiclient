@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations();
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations_accept_all>("accept_all", AcceptAll);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations_confirm_my_choices>("confirm_my_choices", ConfirmMyChoices);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations_reject_all>("reject_all", RejectAll);

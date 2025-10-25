@@ -144,7 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_zone_settings_response_collection> PatchAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder.Zones_multiple_settings> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -188,7 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         public RequestInformation ToPatchRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder.Zones_multiple_settings> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -674,7 +674,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder.Zones_multiple_settings CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.SettingsRequestBuilder.Zones_multiple_settings();
                 result.Zones0rtt = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0rtt();
                 result.ZonesAdvancedDdos = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos();
@@ -753,7 +753,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0rtt>(null, Zones0rtt, ZonesAdvancedDdos, ZonesAlwaysOnline, ZonesBrotli, ZonesCacheRulesAegis, ZonesCacheRulesOriginH2MaxStreams, ZonesCacheRulesOriginMaxHttpVersion, ZonesChallengeTtl, ZonesChinaNetworkEnabled, ZonesCiphers, ZonesCnameFlattening, ZonesDevelopmentMode, ZonesEarlyHints, ZonesH2Prioritization, ZonesHotlinkProtection, ZonesHttp2, ZonesHttp3, ZonesIpv6, ZonesMaxUpload, ZonesMinTlsVersion, ZonesNel, ZonesOpportunisticOnion, ZonesOrangeToOrange, ZonesPrefetchPreload, ZonesPrivacyPass, ZonesProxyReadTimeout, ZonesPseudoIpv4, ZonesReplaceInsecureJs, ZonesSchemasAlwaysUseHttps, ZonesSchemasAutomaticHttpsRewrites, ZonesSchemasAutomaticPlatformOptimization, ZonesSchemasBrowserCacheTtl, ZonesSchemasBrowserCheck, ZonesSchemasCacheLevel, ZonesSchemasEdgeCacheTtl, ZonesSchemasEmailObfuscation, ZonesSchemasIpGeolocation, ZonesSchemasMirage, ZonesSchemasOpportunisticEncryption, ZonesSchemasOriginErrorPagePassThru, ZonesSchemasPolish, ZonesSchemasResponseBuffering, ZonesSchemasRocketLoader, ZonesSchemasSecurityLevel, ZonesSchemasSortQueryStringForCache, ZonesSchemasSsl, ZonesSchemasTrueClientIpHeader, ZonesSchemasWaf, ZonesSecurityHeader, ZonesServerSideExclude, ZonesSha1Support, ZonesSslRecommender, ZonesTls12Only, ZonesTls13, ZonesTlsClientAuth, ZonesWebp, ZonesWebsockets);
             }
         }

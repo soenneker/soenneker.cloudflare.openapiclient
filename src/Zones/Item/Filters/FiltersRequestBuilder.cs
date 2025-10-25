@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Filters_create_filters_200> PostAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -139,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_response_collection> PutAsync(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rule_update_request> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
@@ -203,7 +203,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         public RequestInformation ToPostRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/zones/{zone_identifier%2Did}/filters", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
@@ -226,7 +226,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters
         public RequestInformation ToPutRequestInformation(List<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_filter_rule_update_request> body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            _ = body ?? throw new ArgumentNullException(nameof(body));
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/zones/{zone_identifier%2Did}/filters", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");

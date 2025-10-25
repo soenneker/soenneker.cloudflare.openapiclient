@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_configuration_delete_account_configuration_4XX CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_configuration_delete_account_configuration_4XX();
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_messages_item>("errors", Errors);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_visibility_mnm_messages_item>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_configuration_delete_account_configuration_4XX.Magic_network_monitoring_configuration_delete_account_configuration_4XX_result>("result", Result);
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_configuration_delete_account_configuration_4XX.Magic_network_monitoring_configuration_delete_account_configuration_4XX_result CreateFromDiscriminatorValue(IParseNode parseNode)
             {
-                _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_configuration_delete_account_configuration_4XX.Magic_network_monitoring_configuration_delete_account_configuration_4XX_result();
                 result.MagicNetworkMonitoringConfigurationDeleteAccountConfiguration4XXResultMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_configuration_delete_account_configuration_4XX_resultMember1();
                 result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
-                _ = writer ?? throw new ArgumentNullException(nameof(writer));
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_network_monitoring_configuration_delete_account_configuration_4XX_resultMember1>(null, MagicNetworkMonitoringConfigurationDeleteAccountConfiguration4XXResultMember1, UnionBranch);
             }
         }
