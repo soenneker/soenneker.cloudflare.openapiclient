@@ -2,14 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Analytics;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Livestreams;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Meetings;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Orgs;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Presets;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Recordings;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Webhooks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,45 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RealtimekitRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The analytics property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Analytics.AnalyticsRequestBuilder Analytics
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The livestreams property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Livestreams.LivestreamsRequestBuilder Livestreams
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Livestreams.LivestreamsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The meetings property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Meetings.MeetingsRequestBuilder Meetings
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Meetings.MeetingsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The orgs property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Orgs.OrgsRequestBuilder Orgs
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Orgs.OrgsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The presets property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Presets.PresetsRequestBuilder Presets
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Presets.PresetsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The recordings property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Recordings.RecordingsRequestBuilder Recordings
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Recordings.RecordingsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The sessions property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.SessionsRequestBuilder Sessions
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The webhooks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Webhooks.WebhooksRequestBuilder Webhooks
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Webhooks.WebhooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.RealtimekitRequestBuilder"/> and sets the default values.

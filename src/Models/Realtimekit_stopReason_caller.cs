@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type can be an organization or a user. If the type is `user`, then only the `user_Id` and `name` are returned.</summary>
+        /// <summary>The type can be an App or a user. If the type is `user`, then only the `user_Id` and `name` are returned.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_stopReason_caller_type? Type { get; set; }
         /// <summary>The user ID of the person who stopped the recording.</summary>
         public Guid? UserId { get; set; }

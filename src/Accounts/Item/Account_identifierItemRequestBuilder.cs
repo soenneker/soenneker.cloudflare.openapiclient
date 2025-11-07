@@ -58,6 +58,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Profile;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RequestTracer;
@@ -373,6 +374,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.R2CatalogRequestBuilder R2Catalog
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.R2CatalogRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The realtime property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.RealtimeRequestBuilder Realtime
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.RealtimeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The realtimekit property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.RealtimekitRequestBuilder Realtimekit

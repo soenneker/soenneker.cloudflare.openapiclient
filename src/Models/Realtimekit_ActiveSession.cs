@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>number of minutes consumed since the session started</summary>
         public double? MinutesConsumed { get; set; }
-        /// <summary>Organization id that hosted this session</summary>
+        /// <summary>App id that hosted this session</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The type can be an organization or a user. If the type is `user`, then only the `user_Id` and `name` are returned.</summary>
+    /// <summary>The type can be an App or a user. If the type is `user`, then only the `user_Id` and `name` are returned.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Realtimekit_startReason_caller_type
     {

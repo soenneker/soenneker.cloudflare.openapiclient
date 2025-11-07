@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Acls;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.App_configs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Lans;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Netflow_config;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Wans;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -35,6 +36,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Lans.LansRequestBuilder Lans
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Lans.LansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The netflow_config property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Netflow_config.Netflow_configRequestBuilder Netflow_config
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Netflow_config.Netflow_configRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The wans property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites.Item.Wans.WansRequestBuilder Wans

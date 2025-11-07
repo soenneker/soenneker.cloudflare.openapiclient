@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Recording statistics of an organization during the range specified</summary>
+        /// <summary>Recording statistics of an App during the range specified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_org_analytics_200_data_recording_stats? RecordingStats { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_org_analytics_200_data_recording_stats RecordingStats { get; set; }
 #endif
-        /// <summary>Session statistics of an organization during the range specified</summary>
+        /// <summary>Session statistics of an App during the range specified</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_org_analytics_200_data_session_stats? SessionStats { get; set; }

@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> FeatureFlags { get; set; }
 #endif
-        /// <summary>Must be a unique organization name</summary>
+        /// <summary>Must be a unique App name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

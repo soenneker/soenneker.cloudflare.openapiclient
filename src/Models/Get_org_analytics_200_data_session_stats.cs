@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Session statistics of an organization during the range specified
+    /// Session statistics of an App during the range specified
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Get_org_analytics_200_data_session_stats : IAdditionalDataHolder, IParsable

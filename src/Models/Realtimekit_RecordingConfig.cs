@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Recording Configurations to be used for this meeting. This level of configs takes higher preference over organization level configs on the RealtimeKit developer portal.
+    /// Recording Configurations to be used for this meeting. This level of configs takes higher preference over App level configs on the RealtimeKit developer portal.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Realtimekit_RecordingConfig : IAdditionalDataHolder, IParsable

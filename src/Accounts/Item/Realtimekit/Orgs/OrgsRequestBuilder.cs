@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Orgs
         {
         }
         /// <summary>
-        /// Returns organization details of all the users.
+        /// Returns App details of all the users.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_OrganizationListSuccessResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Orgs
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_OrganizationSuccessResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_OrganizationSuccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns organization details of all the users.
+        /// Returns App details of all the users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Orgs
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtimekit.Orgs.OrgsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns organization details of all the users.
+        /// Returns App details of all the users.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OrgsRequestBuilderGetQueryParameters 
