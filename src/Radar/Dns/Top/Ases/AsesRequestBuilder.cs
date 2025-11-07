@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AsesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/top/ases{?asn*,continent*,dateEnd*,dateRange*,dateStart*,domain*,format*,limit*,location*,name*}", pathParameters)
+        public AsesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/top/ases{?asn*,cacheHit*,continent*,dateEnd*,dateRange*,dateStart*,dnssec*,dnssecAware*,dnssecE2e*,domain*,format*,ipVersion*,limit*,location*,matchingAnswer*,name*,nodata*,protocol*,queryType*,responseCode*,responseTtl*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AsesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/top/ases{?asn*,continent*,dateEnd*,dateRange*,dateStart*,domain*,format*,limit*,location*,name*}", rawUrl)
+        public AsesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/top/ases{?asn*,cacheHit*,continent*,dateEnd*,dateRange*,dateStart*,dnssec*,dnssecAware*,dnssecE2e*,domain*,format*,ipVersion*,limit*,location*,matchingAnswer*,name*,nodata*,protocol*,queryType*,responseCode*,responseTtl*}", rawUrl)
         {
         }
         /// <summary>
@@ -100,6 +100,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             [QueryParameter("asn")]
             public string[] Asn { get; set; }
 #endif
+            /// <summary>Filters results based on cache status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cacheHit")]
+            public bool?[]? CacheHit { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cacheHit")]
+            public bool?[] CacheHit { get; set; }
+#endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,6 +150,36 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             [QueryParameter("dateStart")]
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
+            /// <summary>Filters results based on DNSSEC (DNS Security Extensions) support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dnssec")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecQueryParameterType[]? Dnssec { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dnssec")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecQueryParameterType[] Dnssec { get; set; }
+#endif
+            /// <summary>Filters results based on DNSSEC (DNS Security Extensions) client awareness.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dnssecAware")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecAwareQueryParameterType[]? DnssecAware { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dnssecAware")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetDnssecAwareQueryParameterType[] DnssecAware { get; set; }
+#endif
+            /// <summary>Filters results based on DNSSEC-validated answers by end-to-end security status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dnssecE2e")]
+            public bool?[]? DnssecE2e { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dnssecE2e")]
+            public bool?[] DnssecE2e { get; set; }
+#endif
             /// <summary>Filters results by domain name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +193,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetIpVersionQueryParameterType[] IpVersion { get; set; }
+#endif
             /// <summary>Limits the number of objects returned in the response.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
@@ -166,6 +216,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
             [QueryParameter("location")]
             public string[] Location { get; set; }
 #endif
+            /// <summary>Filters results based on whether the queries have a matching answer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("matchingAnswer")]
+            public bool?[]? MatchingAnswer { get; set; }
+#nullable restore
+#else
+            [QueryParameter("matchingAnswer")]
+            public bool?[] MatchingAnswer { get; set; }
+#endif
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -175,6 +235,56 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases
 #else
             [QueryParameter("name")]
             public string[] Name { get; set; }
+#endif
+            /// <summary>Specifies whether the response includes empty DNS responses (NODATA).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("nodata")]
+            public bool?[]? Nodata { get; set; }
+#nullable restore
+#else
+            [QueryParameter("nodata")]
+            public bool?[] Nodata { get; set; }
+#endif
+            /// <summary>Filters results by DNS transport protocol.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("protocol")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetProtocolQueryParameterType[]? Protocol { get; set; }
+#nullable restore
+#else
+            [QueryParameter("protocol")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetProtocolQueryParameterType[] Protocol { get; set; }
+#endif
+            /// <summary>Filters results by DNS query type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("queryType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetQueryTypeQueryParameterType[]? QueryType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("queryType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetQueryTypeQueryParameterType[] QueryType { get; set; }
+#endif
+            /// <summary>Filters results by DNS response code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("responseCode")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseCodeQueryParameterType[]? ResponseCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("responseCode")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseCodeQueryParameterType[] ResponseCode { get; set; }
+#endif
+            /// <summary>Filters results by DNS response TTL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("responseTtl")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseTtlQueryParameterType[]? ResponseTtl { get; set; }
+#nullable restore
+#else
+            [QueryParameter("responseTtl")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Top.Ases.GetResponseTtlQueryParameterType[] ResponseTtl { get; set; }
 #endif
         }
     }

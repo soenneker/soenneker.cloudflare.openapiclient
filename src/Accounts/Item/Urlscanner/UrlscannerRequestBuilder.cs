@@ -2,8 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Response;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2;
 using System.Collections.Generic;
 using System.IO;
@@ -17,16 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UrlscannerRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The response property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Response.ResponseRequestBuilder Response
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Response.ResponseRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The scan property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.ScanRequestBuilder Scan
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.Scan.ScanRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The v2 property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.V2RequestBuilder V2
         {

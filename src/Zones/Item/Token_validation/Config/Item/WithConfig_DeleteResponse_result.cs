@@ -15,13 +15,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The config_id property</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid? ConfigId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid ConfigId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid Id { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.Item.WithConfig_DeleteResponse_result"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config_id", n => { ConfigId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>("config_id", ConfigId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

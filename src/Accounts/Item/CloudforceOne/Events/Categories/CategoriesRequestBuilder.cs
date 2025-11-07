@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.All;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.Create;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.Item;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CategoriesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The all property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.All.AllRequestBuilder All
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.All.AllRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The create property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.Create.CreateRequestBuilder Create
         {
@@ -41,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CategoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/categories", pathParameters)
+        public CategoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/categories{?datasetIds*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,11 +55,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/categories", rawUrl)
+        public CategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/categories{?datasetIds*}", rawUrl)
         {
         }
         /// <summary>
-        /// Lists categories
+        /// Lists categories across multiple datasets
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Cloudflare.OpenApiClient.Models.Get_CategoryList_200&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,11 +67,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_CategoryList_400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_CategoryList_200>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_CategoryList_200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_CategoryList_200>> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_CategoryList_200>> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -77,17 +83,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Lists categories
+        /// Lists categories across multiple datasets
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -103,6 +109,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Categories.CategoriesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Lists categories across multiple datasets
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class CategoriesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Array of dataset IDs to query categories from. If not provided, returns all categories from D1 database.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("datasetIds")]
+            public string[]? DatasetIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("datasetIds")]
+            public string[] DatasetIds { get; set; }
+#endif
         }
     }
 }

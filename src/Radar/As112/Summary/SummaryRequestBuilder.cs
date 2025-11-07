@@ -2,13 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,36 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The dnssec property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec.DnssecRequestBuilder Dnssec
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The edns property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns.EdnsRequestBuilder Edns
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Edns.EdnsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The protocol property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol.ProtocolRequestBuilder Protocol
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The query_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type.Query_typeRequestBuilder Query_type
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The response_codes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder Response_codes
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Response_codes.Response_codesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.as112.summary.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Summary.Item.WithDimensionItemRequestBuilder"/></returns>

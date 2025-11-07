@@ -2,8 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Bot_class;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Compromised;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -17,16 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summ
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The bot_class property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Bot_class.Bot_classRequestBuilder Bot_class
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Bot_class.Bot_classRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The compromised property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Compromised.CompromisedRequestBuilder Compromised
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Compromised.CompromisedRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.leaked_credential_checks.summary.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks.Summary.Item.WithDimensionItemRequestBuilder"/></returns>

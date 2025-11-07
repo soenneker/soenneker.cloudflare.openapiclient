@@ -2,8 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Latency;
 using System.Collections.Generic;
 using System.IO;
@@ -17,16 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The colos property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder Colos
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Colos.ColosRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dashboard property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder Dashboard
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Dashboard.DashboardRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The latency property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.Latency.LatencyRequestBuilder Latency
         {

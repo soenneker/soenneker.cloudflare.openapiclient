@@ -34,9 +34,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ErrorMessage { get; set; }
 #endif
-        /// <summary>This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency? Frequency { get; set; }
+        /// <summary>The frequency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Frequency { get; set; }
+#nullable restore
+#else
+        public string Frequency { get; set; }
+#endif
         /// <summary>Unique id of the job.</summary>
         public int? Id { get; set; }
         /// <summary>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</summary>
@@ -45,8 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? LastComplete { get; set; }
         /// <summary>Records the last time the job failed. If not null, the job is currently. failing. If null, the job has either never failed or has run successfully at least once since last failure. See also the error_message field.</summary>
         public DateTimeOffset? LastError { get; set; }
-        /// <summary>This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</summary>
-        [Obsolete("")]
+        /// <summary>The logpull_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogpullOptions { get; set; }
@@ -101,7 +105,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Dataset = global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_dataset.Http_requests;
-            Frequency = global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency.High;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -125,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "error_message", n => { ErrorMessage = n.GetStringValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
                 { "last_complete", n => { LastComplete = n.GetDateTimeOffsetValue(); } },
@@ -149,7 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("destination_conf", DestinationConf);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("error_message", ErrorMessage);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
+            writer.WriteStringValue("frequency", Frequency);
             writer.WriteIntValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
             writer.WriteDateTimeOffsetValue("last_complete", LastComplete);

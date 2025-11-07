@@ -140,7 +140,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Hijacks.Events
             /// <summary>Number of entries per page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>Network prefix, IPv4 or IPv6.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("prefix")]

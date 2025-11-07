@@ -62,6 +62,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Status { get; set; }
 #endif
+        /// <summary>List of streams and sinks used by this pipeline.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id_200_result_tables>? Tables { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id_200_result_tables> Tables { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id_200_result"/> and sets the default values.
         /// </summary>
@@ -93,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "sql", n => { Sql = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
+                { "tables", n => { Tables = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id_200_result_tables>(global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id_200_result_tables.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -108,6 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("sql", Sql);
             writer.WriteStringValue("status", Status);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1PipelinesByPipeline_id_200_result_tables>("tables", Tables);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

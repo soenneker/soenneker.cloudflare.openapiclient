@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
         {
         }
         /// <summary>
-        /// Delete an organization. The organization MUST be empty before deleting.It must not contain any sub-organizations, accounts, members or users.
+        /// Delete an organization. The organization MUST be empty before deleting.It must not contain any sub-organizations, accounts, members or users. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_delete_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_delete_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_delete_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the details of a certain organization.
+        /// Retrieve the details of a certain organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_retrieve_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_retrieve_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_retrieve_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Modify organization
+        /// Modify organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_modify_200"/></returns>
         /// <param name="body">References an Organization in the Cloudflare data model.</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_modify_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_modify_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an organization. The organization MUST be empty before deleting.It must not contain any sub-organizations, accounts, members or users.
+        /// Delete an organization. The organization MUST be empty before deleting.It must not contain any sub-organizations, accounts, members or users. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the details of a certain organization.
+        /// Retrieve the details of a certain organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -173,7 +173,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Modify organization
+        /// Modify organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">References an Organization in the Cloudflare data model.</param>

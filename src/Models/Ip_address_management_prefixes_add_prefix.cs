@@ -24,13 +24,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Cidr { get; set; }
 #endif
-        /// <summary>Identifier for the uploaded LOA document.</summary>
+        /// <summary>Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.</summary>
+        public bool? DelegateLoaCreation { get; set; }
+        /// <summary>Description of the prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoaDocumentId { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public string LoaDocumentId { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_prefixes_add_prefix"/> and sets the default values.
@@ -59,7 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "asn", n => { Asn = n.GetIntValue(); } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
-                { "loa_document_id", n => { LoaDocumentId = n.GetStringValue(); } },
+                { "delegate_loa_creation", n => { DelegateLoaCreation = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +74,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("asn", Asn);
             writer.WriteStringValue("cidr", Cidr);
-            writer.WriteStringValue("loa_document_id", LoaDocumentId);
+            writer.WriteBoolValue("delegate_loa_creation", DelegateLoaCreation);
+            writer.WriteStringValue("description", Description);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -2,14 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Duration;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Industry;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Ip_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Protocol;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vertical;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,41 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_gro
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The bitrate property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder Bitrate
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Bitrate.BitrateRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The duration property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Duration.DurationRequestBuilder Duration
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Duration.DurationRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The industry property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Industry.IndustryRequestBuilder Industry
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The protocol property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Protocol.ProtocolRequestBuilder Protocol
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The vector property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.VectorRequestBuilder Vector
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vector.VectorRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The vertical property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vertical.VerticalRequestBuilder Vertical
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.attacks.layer3.timeseries_groups.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer3.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>

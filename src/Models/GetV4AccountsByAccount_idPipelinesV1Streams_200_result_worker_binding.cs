@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The enabled property</summary>
+        /// <summary>Indicates that the worker binding is enabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1Streams_200_result_worker_binding"/> and sets the default values.

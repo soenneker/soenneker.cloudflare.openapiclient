@@ -21,7 +21,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cloud_connector;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.ContentUploadScan;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_ns;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dcv_delegation;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Devices;
@@ -30,7 +29,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_settings;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold;
@@ -46,7 +44,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.PayPerCrawl;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Secondary_dns;
@@ -161,11 +158,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Custom_hostnamesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The custom_ns property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_ns.Custom_nsRequestBuilder Custom_ns
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_ns.Custom_nsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The custom_pages property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_pages.Custom_pagesRequestBuilder Custom_pages
         {
@@ -205,11 +197,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.EmailRequestBuilder Email
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The filters property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder Filters
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Filters.FiltersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The firewall property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder Firewall
@@ -285,11 +272,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache.Purge_cacheRequestBuilder Purge_cache
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Purge_cache.Purge_cacheRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The rate_limits property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Rate_limitsRequestBuilder Rate_limits
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rate_limits.Rate_limitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rulesets property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.RulesetsRequestBuilder Rulesets

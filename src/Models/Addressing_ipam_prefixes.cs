@@ -22,12 +22,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Prefix advertisement status to the Internet. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-        [Obsolete("")]
-        public bool? Advertised { get; set; }
-        /// <summary>Last time the advertisement status was changed. This field is only not &apos;null&apos; if on demand is enabled.</summary>
-        [Obsolete("")]
-        public DateTimeOffset? AdvertisedModifiedAt { get; set; }
+        /// <summary>The advertised property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Advertised { get; set; }
+#nullable restore
+#else
+        public string Advertised { get; set; }
+#endif
+        /// <summary>The advertised_modified_at property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AdvertisedModifiedAt { get; set; }
+#nullable restore
+#else
+        public string AdvertisedModifiedAt { get; set; }
+#endif
         /// <summary>Approval state of the prefix (P = pending, V = active).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Whether Cloudflare is allowed to generate the LOA document on behalf of the prefix owner.</summary>
+        public bool? DelegateLoaCreation { get; set; }
         /// <summary>Description of the prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +76,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>State of one kind of validation for an IP prefix.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IrrValidationState { get; set; }
+#nullable restore
+#else
+        public string IrrValidationState { get; set; }
+#endif
         /// <summary>Identifier for the uploaded LOA document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +98,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? OnDemandEnabled { get; set; }
         /// <summary>Whether advertisement status of the prefix is locked, meaning it cannot be changed.</summary>
         public bool? OnDemandLocked { get; set; }
+        /// <summary>State of one kind of validation for an IP prefix.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnershipValidationState { get; set; }
+#nullable restore
+#else
+        public string OwnershipValidationState { get; set; }
+#endif
+        /// <summary>Token provided to demonstrate ownership of the prefix.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnershipValidationToken { get; set; }
+#nullable restore
+#else
+        public string OwnershipValidationToken { get; set; }
+#endif
+        /// <summary>State of one kind of validation for an IP prefix.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RpkiValidationState { get; set; }
+#nullable restore
+#else
+        public string RpkiValidationState { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_ipam_prefixes"/> and sets the default values.
         /// </summary>
@@ -104,18 +148,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "advertised", n => { Advertised = n.GetBoolValue(); } },
-                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "advertised", n => { Advertised = n.GetStringValue(); } },
+                { "advertised_modified_at", n => { AdvertisedModifiedAt = n.GetStringValue(); } },
                 { "approved", n => { Approved = n.GetStringValue(); } },
                 { "asn", n => { Asn = n.GetIntValue(); } },
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "delegate_loa_creation", n => { DelegateLoaCreation = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "irr_validation_state", n => { IrrValidationState = n.GetStringValue(); } },
                 { "loa_document_id", n => { LoaDocumentId = n.GetStringValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "on_demand_enabled", n => { OnDemandEnabled = n.GetBoolValue(); } },
                 { "on_demand_locked", n => { OnDemandLocked = n.GetBoolValue(); } },
+                { "ownership_validation_state", n => { OwnershipValidationState = n.GetStringValue(); } },
+                { "ownership_validation_token", n => { OwnershipValidationToken = n.GetStringValue(); } },
+                { "rpki_validation_state", n => { RpkiValidationState = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -126,18 +175,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_id", AccountId);
-            writer.WriteBoolValue("advertised", Advertised);
-            writer.WriteDateTimeOffsetValue("advertised_modified_at", AdvertisedModifiedAt);
+            writer.WriteStringValue("advertised", Advertised);
+            writer.WriteStringValue("advertised_modified_at", AdvertisedModifiedAt);
             writer.WriteStringValue("approved", Approved);
             writer.WriteIntValue("asn", Asn);
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteBoolValue("delegate_loa_creation", DelegateLoaCreation);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("irr_validation_state", IrrValidationState);
             writer.WriteStringValue("loa_document_id", LoaDocumentId);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteBoolValue("on_demand_enabled", OnDemandEnabled);
             writer.WriteBoolValue("on_demand_locked", OnDemandLocked);
+            writer.WriteStringValue("ownership_validation_state", OwnershipValidationState);
+            writer.WriteStringValue("ownership_validation_token", OwnershipValidationToken);
+            writer.WriteStringValue("rpki_validation_state", RpkiValidationState);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

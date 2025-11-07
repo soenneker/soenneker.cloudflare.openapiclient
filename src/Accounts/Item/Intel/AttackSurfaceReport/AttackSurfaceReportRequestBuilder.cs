@@ -3,8 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,27 +15,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceRe
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AttackSurfaceReportRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The issues property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder Issues
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Issues.IssuesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The issueTypes property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes.IssueTypesRequestBuilder IssueTypes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.IssueTypes.IssueTypesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.intel.attackSurfaceReport.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("issue_id", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.Item.WithIssue_ItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.AttackSurfaceReport.AttackSurfaceReportRequestBuilder"/> and sets the default values.

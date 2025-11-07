@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V1RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v1{?creator*,page*,per_page*}", pathParameters)
+        public V1RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v1", pathParameters)
         {
         }
         /// <summary>
@@ -61,32 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V1RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v1{?creator*,page*,per_page*}", rawUrl)
+        public V1RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v1", rawUrl)
         {
-        }
-        /// <summary>
-        /// List up to 100 images with one request. Use the optional parameters below to get a specific range of images.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_images_list_images_4XX">When receiving a 4XX status code</exception>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder.V1RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder.V1RequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_images_list_images_4XX.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload an image with up to 10 Megabytes using a single HTTP POST (multipart/form-data) request.An image can be uploaded by sending an image file or passing an accessible to an API url.
@@ -112,26 +88,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_images_upload_an_image_via_url_4XX.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// List up to 100 images with one request. Use the optional parameters below to get a specific range of images.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder.V1RequestBuilderGetQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder.V1RequestBuilderGetQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
         }
         /// <summary>
         /// Upload an image with up to 10 Megabytes using a single HTTP POST (multipart/form-data) request.An image can be uploaded by sending an image file or passing an accessible to an API url.
@@ -163,26 +119,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V1.V1RequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// List up to 100 images with one request. Use the optional parameters below to get a specific range of images.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class V1RequestBuilderGetQueryParameters 
-        {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("creator")]
-            public string? Creator { get; set; }
-#nullable restore
-#else
-            [QueryParameter("creator")]
-            public string Creator { get; set; }
-#endif
-            [QueryParameter("page")]
-            public double? Page { get; set; }
-            [QueryParameter("per_page")]
-            public double? PerPage { get; set; }
         }
     }
 }

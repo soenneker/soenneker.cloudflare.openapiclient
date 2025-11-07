@@ -7,8 +7,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -45,16 +43,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder Schemas
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas.SchemasRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder Settings
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The user_schemas property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder User_schemas
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.User_schemas.User_schemasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Api_gatewayRequestBuilder"/> and sets the default values.

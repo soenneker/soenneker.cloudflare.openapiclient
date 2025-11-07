@@ -11,7 +11,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering;
@@ -139,11 +138,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.AutoragRequestBuilder Autorag
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.AutoragRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The billing property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BillingRequestBuilder Billing
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The botnet_feed property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Botnet_feedRequestBuilder Botnet_feed

@@ -4,9 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules;
 using System.Collections.Generic;
 using System.IO;
@@ -21,20 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoutingRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The disable property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder Disable
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The dns property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns.DnsRequestBuilder Dns
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Dns.DnsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The enable property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder Enable
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rules property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.Rules.RulesRequestBuilder Rules

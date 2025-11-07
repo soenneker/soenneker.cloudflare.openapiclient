@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.All;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -12,17 +13,22 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\events\indicatorTypes
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cloudforce-one\events\indicator-types
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndicatorTypesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The all property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.All.AllRequestBuilder All
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.All.AllRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicatorTypes", pathParameters)
+        public IndicatorTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicator-types{?datasetIds*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,46 +36,44 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicatorTypes", rawUrl)
+        public IndicatorTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicator-types{?datasetIds*}", rawUrl)
         {
         }
         /// <summary>
-        /// This Method is deprecated. Please use /events/dataset/:dataset_id/indicatorTypes instead.
+        /// Lists indicator types across multiple datasets
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_LegacyIndicatorTypesList_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorTypesList_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_LegacyIndicatorTypesList_400">When receiving a 400 status code</exception>
-        [Obsolete("")]
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorTypesList_400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_LegacyIndicatorTypesList_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorTypesList_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder.IndicatorTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_LegacyIndicatorTypesList_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorTypesList_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder.IndicatorTypesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Get_LegacyIndicatorTypesList_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorTypesList_400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_LegacyIndicatorTypesList_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_LegacyIndicatorTypesList_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorTypesList_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorTypesList_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This Method is deprecated. Please use /events/dataset/:dataset_id/indicatorTypes instead.
+        /// Lists indicator types across multiple datasets
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder.IndicatorTypesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder.IndicatorTypesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -82,10 +86,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Lists indicator types across multiple datasets
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class IndicatorTypesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Array of dataset IDs to query indicator types from. If not provided, uses the default dataset for the environment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("datasetIds")]
+            public string[]? DatasetIds { get; set; }
+#nullable restore
+#else
+            [QueryParameter("datasetIds")]
+            public string[] DatasetIds { get; set; }
+#endif
         }
     }
 }

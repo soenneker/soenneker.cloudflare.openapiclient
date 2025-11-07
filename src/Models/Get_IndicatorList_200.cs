@@ -14,21 +14,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The indicators property</summary>
+        /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators>? Indicators { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties? Properties { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators> Indicators { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties Properties { get; set; }
 #endif
-        /// <summary>The pagination property</summary>
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination? Pagination { get; set; }
+        public string? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination Pagination { get; set; }
+        public string Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_indicators>("indicators", Indicators);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_pagination>("pagination", Pagination);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties>("properties", Properties);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

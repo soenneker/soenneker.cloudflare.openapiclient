@@ -59,14 +59,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp LastUpdated { get; set; }
 #endif
-        /// <summary>The modified_by property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ModifiedBy { get; set; }
-#nullable restore
-#else
-        public string ModifiedBy { get; set; }
-#endif
         /// <summary>Select operations covered by this rule.For details on selectors, see the [Cloudflare Docs](https://developers.cloudflare.com/api-shield/security/jwt-validation/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +107,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expression", n => { Expression = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid.CreateFromDiscriminatorValue); } },
                 { "last_updated", n => { LastUpdated = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp.CreateFromDiscriminatorValue); } },
-                { "modified_by", n => { ModifiedBy = n.GetStringValue(); } },
                 { "selector", n => { Selector = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_selector>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_selector.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -134,7 +125,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("expression", Expression);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_uuid>("id", Id);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>("last_updated", LastUpdated);
-            writer.WriteStringValue("modified_by", ModifiedBy);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_selector>("selector", Selector);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

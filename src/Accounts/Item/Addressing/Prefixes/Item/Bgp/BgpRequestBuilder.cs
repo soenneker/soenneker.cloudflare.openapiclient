@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,11 +19,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.I
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder Prefixes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder Status
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.Item.Bgp.BgpRequestBuilder"/> and sets the default values.

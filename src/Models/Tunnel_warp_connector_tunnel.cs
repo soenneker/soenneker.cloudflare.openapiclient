@@ -23,14 +23,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The Cloudflare Tunnel connections between your origin and Cloudflare&apos;s edge.</summary>
-        [Obsolete("")]
+        /// <summary>The connections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection>? Connections { get; set; }
+        public string? Connections { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection> Connections { get; set; }
+        public string Connections { get; set; }
 #endif
         /// <summary>Timestamp of when the tunnel established at least one connection to Cloudflare&apos;s edge. If `null`, the tunnel is inactive.</summary>
         public DateTimeOffset? ConnsActiveAt { get; set; }
@@ -88,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account_tag", n => { AccountTag = n.GetStringValue(); } },
-                { "connections", n => { Connections = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "connections", n => { Connections = n.GetStringValue(); } },
                 { "conns_active_at", n => { ConnsActiveAt = n.GetDateTimeOffsetValue(); } },
                 { "conns_inactive_at", n => { ConnsInactiveAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -108,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("account_tag", AccountTag);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_schemas_connection>("connections", Connections);
+            writer.WriteStringValue("connections", Connections);
             writer.WriteDateTimeOffsetValue("conns_active_at", ConnsActiveAt);
             writer.WriteDateTimeOffsetValue("conns_inactive_at", ConnsInactiveAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);

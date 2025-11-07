@@ -2,14 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_version;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Industry;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Ip_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Vertical;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,41 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_gro
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The http_method property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.Http_methodRequestBuilder Http_method
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_method.Http_methodRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The http_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_version.Http_versionRequestBuilder Http_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Http_version.Http_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The industry property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Industry.IndustryRequestBuilder Industry
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The managed_rules property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder Managed_rules
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Managed_rules.Managed_rulesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The mitigation_product property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product.Mitigation_productRequestBuilder Mitigation_product
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Mitigation_product.Mitigation_productRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The vertical property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Vertical.VerticalRequestBuilder Vertical
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.attacks.layer7.timeseries_groups.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>

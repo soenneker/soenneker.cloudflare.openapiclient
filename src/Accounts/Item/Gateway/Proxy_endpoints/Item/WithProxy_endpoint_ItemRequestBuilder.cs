@@ -61,17 +61,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
         /// <summary>
         /// Get a single Zero Trust Gateway proxy endpoint.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_proxy_endpoint_details_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoin
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_proxy_endpoint_details_4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_proxy_endpoints_components_schemas_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a configured Zero Trust Gateway proxy endpoint.

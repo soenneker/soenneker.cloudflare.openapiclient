@@ -22,8 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Value of the zone setting.</summary>
-        [Obsolete("")]
+        /// <summary>The value property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage_value_Wrapper"/> and sets the default values.
@@ -31,7 +30,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Zones_mirage_value_Wrapper()
         {
             AdditionalData = new Dictionary<string, object>();
-            Value = global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage_value.Off;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

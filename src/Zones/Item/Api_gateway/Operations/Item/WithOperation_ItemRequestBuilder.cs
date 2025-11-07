@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.Schema_validation;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,11 +17,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.I
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithOperation_ItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The schema_validation property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.Schema_validation.Schema_validationRequestBuilder Schema_validation
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.Schema_validation.Schema_validationRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.WithOperation_ItemRequestBuilder"/> and sets the default values.
         /// </summary>

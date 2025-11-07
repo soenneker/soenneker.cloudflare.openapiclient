@@ -8,49 +8,42 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Identifier.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Custom_origin_trust_store_delete_4XX : ApiException, IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_errors? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_errors? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_errors Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_errors Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_messages? Messages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_messages Messages { get; set; }
 #endif
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_result? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_result Result { get; set; }
 #endif
         /// <summary>Whether the API call was successful.</summary>
         public bool? Success { get; set; }
-        /// <summary>The value property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Value { get; set; }
-#nullable restore
-#else
-        public string Value { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX"/> and sets the default values.
         /// </summary>
@@ -76,11 +69,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_errors.CreateFromDiscriminatorValue); } },
-                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages.CreateFromDiscriminatorValue); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_errors.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_messages.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
-                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -90,11 +82,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_messages>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_origin_trust_store_delete_4XX_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_errors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_messages>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_common_failure_result>("result", Result);
             writer.WriteBoolValue("success", Success);
-            writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

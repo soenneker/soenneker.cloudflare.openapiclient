@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
 {
-    /// <summary>Filters results by DNS transport protocol.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum GetProtocolQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "UDP")]
         #pragma warning disable CS1591

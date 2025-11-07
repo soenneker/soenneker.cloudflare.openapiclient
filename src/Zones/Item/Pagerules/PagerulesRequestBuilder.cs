@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,11 +18,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PagerulesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The settings property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings.SettingsRequestBuilder Settings
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.pagerules.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules.Item.WithPagerule_ItemRequestBuilder"/></returns>

@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2;
 using System.Collections.Generic;
 using System.IO;
@@ -16,11 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VectorizeRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The indexes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes.IndexesRequestBuilder Indexes
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.Indexes.IndexesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The v2 property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.V2RequestBuilder V2
         {

@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members
         {
         }
         /// <summary>
-        /// List memberships for an Organization.
+        /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Members_list_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Members_list_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Members_list_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a membership that grants access to a specific Organization.
+        /// Create a membership that grants access to a specific Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Members_create_200"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Members_create_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Members_create_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List memberships for an Organization.
+        /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members
             return requestInfo;
         }
         /// <summary>
-        /// Create a membership that grants access to a specific Organization.
+        /// Create a membership that grants access to a specific Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members
             return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members.MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List memberships for an Organization.
+        /// List memberships for an Organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MembersRequestBuilderGetQueryParameters 

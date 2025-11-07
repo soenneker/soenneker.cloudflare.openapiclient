@@ -28,5 +28,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Weak_authentication,
         #pragma warning restore CS1591
+        [EnumMember(Value = "configuration_suggestion")]
+        #pragma warning disable CS1591
+        Configuration_suggestion,
+        #pragma warning restore CS1591
     }
 }

@@ -160,14 +160,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item
             public string[] Name { get; set; }
 #endif
             /// <summary>Filters results by DNS transport protocol.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetProtocolQueryParameterType? Protocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetProtocolQueryParameterType[]? Protocol { get; set; }
+#nullable restore
+#else
+            [QueryParameter("protocol")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetProtocolQueryParameterType[] Protocol { get; set; }
+#endif
             /// <summary>Filters results by DNS query type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetQueryTypeQueryParameterType? QueryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetQueryTypeQueryParameterType[]? QueryType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("queryType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetQueryTypeQueryParameterType[] QueryType { get; set; }
+#endif
             /// <summary>Filters results by DNS response code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetResponseCodeQueryParameterType? ResponseCode { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetResponseCodeQueryParameterType[]? ResponseCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("responseCode")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.GetResponseCodeQueryParameterType[] ResponseCode { get; set; }
+#endif
         }
     }
 }

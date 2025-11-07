@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/timeseries_groups/{dimension}{?aggInterval*,asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*,nodata*,protocol*,queryType*,responseCode*,tld*}", pathParameters)
+        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/timeseries_groups/{dimension}{?aggInterval*,asn*,cacheHit*,continent*,dateEnd*,dateRange*,dateStart*,dnssec*,dnssecAware*,dnssecE2e*,format*,ipVersion*,limitPerGroup*,location*,matchingAnswer*,name*,nodata*,normalization*,protocol*,queryType*,responseCode*,responseTtl*,tld*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/timeseries_groups/{dimension}{?aggInterval*,asn*,continent*,dateEnd*,dateRange*,dateStart*,format*,limitPerGroup*,location*,name*,nodata*,protocol*,queryType*,responseCode*,tld*}", rawUrl)
+        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/dns/timeseries_groups/{dimension}{?aggInterval*,asn*,cacheHit*,continent*,dateEnd*,dateRange*,dateStart*,dnssec*,dnssecAware*,dnssecE2e*,format*,ipVersion*,limitPerGroup*,location*,matchingAnswer*,name*,nodata*,normalization*,protocol*,queryType*,responseCode*,responseTtl*,tld*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,6 +103,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             [QueryParameter("asn")]
             public string[] Asn { get; set; }
 #endif
+            /// <summary>Filters results based on cache status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cacheHit")]
+            public bool?[]? CacheHit { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cacheHit")]
+            public bool?[] CacheHit { get; set; }
+#endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,9 +153,49 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             [QueryParameter("dateStart")]
             public DateTimeOffset?[] DateStart { get; set; }
 #endif
+            /// <summary>Filters results based on DNSSEC (DNS Security Extensions) support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dnssec")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecQueryParameterType[]? Dnssec { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dnssec")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecQueryParameterType[] Dnssec { get; set; }
+#endif
+            /// <summary>Filters results based on DNSSEC (DNS Security Extensions) client awareness.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dnssecAware")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecAwareQueryParameterType[]? DnssecAware { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dnssecAware")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetDnssecAwareQueryParameterType[] DnssecAware { get; set; }
+#endif
+            /// <summary>Filters results based on DNSSEC-validated answers by end-to-end security status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dnssecE2e")]
+            public bool?[]? DnssecE2e { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dnssecE2e")]
+            public bool?[] DnssecE2e { get; set; }
+#endif
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Filters results by IP version (Ipv4 vs. IPv6).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetIpVersionQueryParameterType[]? IpVersion { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ipVersion")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetIpVersionQueryParameterType[] IpVersion { get; set; }
+#endif
             /// <summary>Limits the number of objects per group to the top items within the specified time range. When item count exceeds the limit, extra items appear grouped under an &quot;other&quot; category.</summary>
             [QueryParameter("limitPerGroup")]
             public int? LimitPerGroup { get; set; }
@@ -159,6 +209,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             [QueryParameter("location")]
             public string[] Location { get; set; }
 #endif
+            /// <summary>Filters results based on whether the queries have a matching answer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("matchingAnswer")]
+            public bool?[]? MatchingAnswer { get; set; }
+#nullable restore
+#else
+            [QueryParameter("matchingAnswer")]
+            public bool?[] MatchingAnswer { get; set; }
+#endif
             /// <summary>Array of names used to label the series in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -170,18 +230,59 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
             public string[] Name { get; set; }
 #endif
             /// <summary>Specifies whether the response includes empty DNS responses (NODATA).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("nodata")]
-            public bool? Nodata { get; set; }
+            public bool?[]? Nodata { get; set; }
+#nullable restore
+#else
+            [QueryParameter("nodata")]
+            public bool?[] Nodata { get; set; }
+#endif
+            /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
+            [QueryParameter("normalization")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetNormalizationQueryParameterType? Normalization { get; set; }
             /// <summary>Filters results by DNS transport protocol.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("protocol")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetProtocolQueryParameterType? Protocol { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetProtocolQueryParameterType[]? Protocol { get; set; }
+#nullable restore
+#else
+            [QueryParameter("protocol")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetProtocolQueryParameterType[] Protocol { get; set; }
+#endif
             /// <summary>Filters results by DNS query type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("queryType")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetQueryTypeQueryParameterType? QueryType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetQueryTypeQueryParameterType[]? QueryType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("queryType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetQueryTypeQueryParameterType[] QueryType { get; set; }
+#endif
             /// <summary>Filters results by DNS response code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("responseCode")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseCodeQueryParameterType? ResponseCode { get; set; }
-            /// <summary>Filters results by country code top-level domain (ccTLD).</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseCodeQueryParameterType[]? ResponseCode { get; set; }
+#nullable restore
+#else
+            [QueryParameter("responseCode")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseCodeQueryParameterType[] ResponseCode { get; set; }
+#endif
+            /// <summary>Filters results by DNS response TTL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("responseTtl")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseTtlQueryParameterType[]? ResponseTtl { get; set; }
+#nullable restore
+#else
+            [QueryParameter("responseTtl")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.GetResponseTtlQueryParameterType[] ResponseTtl { get; set; }
+#endif
+            /// <summary>Filters results by top-level domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tld")]

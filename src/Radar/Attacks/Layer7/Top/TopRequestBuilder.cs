@@ -4,9 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Ases;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Locations;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -29,20 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Attacks.AttacksRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The industry property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder Industry
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Industry.IndustryRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The locations property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Locations.LocationsRequestBuilder Locations
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The vertical property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder Vertical
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.Vertical.VerticalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Attacks.Layer7.Top.TopRequestBuilder"/> and sets the default values.

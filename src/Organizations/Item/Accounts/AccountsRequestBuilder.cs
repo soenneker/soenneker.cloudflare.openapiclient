@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
         {
         }
         /// <summary>
-        /// Retrieve a list of accounts that belong to a specific organization.
+        /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_getAccounts_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_getAccounts_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Organizations_getAccounts_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a list of accounts that belong to a specific organization.
+        /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             return new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve a list of accounts that belong to a specific organization.
+        /// Retrieve a list of accounts that belong to a specific organization. (Currently in Closed Beta - see https://developers.cloudflare.com/fundamentals/organizations/)
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AccountsRequestBuilderGetQueryParameters 

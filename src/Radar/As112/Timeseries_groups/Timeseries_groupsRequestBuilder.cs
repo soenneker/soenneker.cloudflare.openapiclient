@@ -2,13 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Dnssec;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Edns;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Ip_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Protocol;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Query_type;
-using Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Response_codes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,36 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The dnssec property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Dnssec.DnssecRequestBuilder Dnssec
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The edns property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Edns.EdnsRequestBuilder Edns
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Edns.EdnsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The protocol property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Protocol.ProtocolRequestBuilder Protocol
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The query_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Query_type.Query_typeRequestBuilder Query_type
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The response_codes property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Response_codes.Response_codesRequestBuilder Response_codes
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Response_codes.Response_codesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.as112.timeseries_groups.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.As112.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>

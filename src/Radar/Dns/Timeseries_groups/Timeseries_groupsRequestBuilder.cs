@@ -2,17 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Cache_hit;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_aware;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Ip_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Matching_answer;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Protocol;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Query_type;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_code;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,56 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The cache_hit property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Cache_hit.Cache_hitRequestBuilder Cache_hit
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Cache_hit.Cache_hitRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dnssec property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec.DnssecRequestBuilder Dnssec
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec.DnssecRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dnssec_aware property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_aware.Dnssec_awareRequestBuilder Dnssec_aware
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_aware.Dnssec_awareRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dnssec_e2e property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.Dnssec_e2eRequestBuilder Dnssec_e2e
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Dnssec_e2e.Dnssec_e2eRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The matching_answer property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Matching_answer.Matching_answerRequestBuilder Matching_answer
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Matching_answer.Matching_answerRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The protocol property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Protocol.ProtocolRequestBuilder Protocol
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Protocol.ProtocolRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The query_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Query_type.Query_typeRequestBuilder Query_type
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Query_type.Query_typeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The response_code property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_code.Response_codeRequestBuilder Response_code
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_code.Response_codeRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The response_ttl property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder Response_ttl
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Response_ttl.Response_ttlRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.dns.timeseries_groups.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>

@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authentication property</summary>
+        /// <summary>Indicates that authentication is required for the HTTP endpoint.</summary>
         public bool? Authentication { get; set; }
         /// <summary>Specifies the CORS options for the HTTP endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1Streams_200_result_http_cors Cors { get; set; }
 #endif
-        /// <summary>The enabled property</summary>
+        /// <summary>Indicates that the HTTP endpoint is enabled.</summary>
         public bool? Enabled { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1Streams_200_result_http"/> and sets the default values.

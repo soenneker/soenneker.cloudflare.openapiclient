@@ -24,13 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The action to apply to a matched request.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_mode? Mode { get; set; }
-        /// <summary>An informative summary of the rule, typically used as a reminder or explanation.</summary>
+        /// <summary>The notes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_create_an_ip_access_rule_notes? Notes { get; set; }
 #nullable restore
 #else
-        public string Notes { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_create_an_ip_access_rule_notes Notes { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_create_an_ip_access_rule"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration.CreateFromDiscriminatorValue); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_mode>(); } },
-                { "notes", n => { Notes = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_create_an_ip_access_rule_notes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_create_an_ip_access_rule_notes.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_configuration>("configuration", Configuration);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_schemas_mode>("mode", Mode);
-            writer.WriteStringValue("notes", Notes);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_create_an_ip_access_rule_notes>("notes", Notes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Analyze;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Universal;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Verification;
 using System.Collections.Generic;
@@ -28,11 +27,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder Certificate_packs
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.Certificate_packsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The recommendation property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder Recommendation
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Recommendation.RecommendationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The universal property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Universal.UniversalRequestBuilder Universal

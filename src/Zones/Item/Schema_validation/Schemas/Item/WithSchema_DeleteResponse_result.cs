@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the schema that was just deleted</summary>
-        public Guid? SchemaId { get; set; }
+        public Guid? Id { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.WithSchema_DeleteResponse_result"/> and sets the default values.
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "schema_id", n => { SchemaId = n.GetGuidValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("schema_id", SchemaId);
+            writer.WriteGuidValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

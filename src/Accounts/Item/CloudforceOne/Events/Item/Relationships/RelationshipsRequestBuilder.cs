@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", pathParameters)
+        public RelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,includeParent*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", rawUrl)
+        public RelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/{dataset_%2Did}/relationships?datasetId={datasetId}{&direction*,includeParent*,indicatorTypeIds*,maxDepth*,page*,pageSize*,relationshipTypes*}", rawUrl)
         {
         }
         /// <summary>
@@ -104,6 +104,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             /// <summary>The direction to traverse the graph. Defaults to &apos;both&apos; to search all.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Relationships.GetDirectionQueryParameterType? Direction { get; set; }
+            /// <summary>Whether to include the starting event in the results. Defaults to true.</summary>
+            [QueryParameter("includeParent")]
+            public bool? IncludeParent { get; set; }
             /// <summary>An optional array of indicator type IDs to filter the results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

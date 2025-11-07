@@ -32,13 +32,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Filter { get; set; }
 #endif
-        /// <summary>This field is deprecated. Please use `max_upload_*` parameters instead. . The frequency at which Cloudflare sends batches of logs to your destination. Setting frequency to high sends your logs in larger quantities of smaller files. Setting frequency to low sends logs in smaller quantities of larger files.</summary>
-        [Obsolete("")]
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency? Frequency { get; set; }
+        /// <summary>The frequency property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Frequency { get; set; }
+#nullable restore
+#else
+        public string Frequency { get; set; }
+#endif
         /// <summary>The kind parameter (optional) is used to differentiate between Logpush and Edge Log Delivery jobs (when supported by the dataset).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind? Kind { get; set; }
-        /// <summary>This field is deprecated. Use `output_options` instead. Configuration string. It specifies things like requested fields and timestamp formats. If migrating from the logpull api, copy the url (full url or just the query string) of your call here, and logpush will keep on making this call for you, setting start and end times appropriately.</summary>
-        [Obsolete("")]
+        /// <summary>The logpull_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LogpullOptions { get; set; }
@@ -100,7 +104,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Put_zones_zone_id_logpush_jobs_job_id()
         {
             AdditionalData = new Dictionary<string, object>();
-            Frequency = global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency.High;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -123,7 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "destination_conf", n => { DestinationConf = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "filter", n => { Filter = n.GetStringValue(); } },
-                { "frequency", n => { Frequency = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>(); } },
+                { "frequency", n => { Frequency = n.GetStringValue(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>(); } },
                 { "logpull_options", n => { LogpullOptions = n.GetStringValue(); } },
                 { "max_upload_bytes", n => { MaxUploadBytes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes.CreateFromDiscriminatorValue); } },
@@ -144,7 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("destination_conf", DestinationConf);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("filter", Filter);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_frequency>("frequency", Frequency);
+            writer.WriteStringValue("frequency", Frequency);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_kind>("kind", Kind);
             writer.WriteStringValue("logpull_options", LogpullOptions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_max_upload_bytes>("max_upload_bytes", MaxUploadBytes);

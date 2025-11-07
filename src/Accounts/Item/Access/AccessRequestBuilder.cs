@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Custom_pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Gateway_ca;
@@ -40,11 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.AppsRequestBuilder Apps
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The bookmarks property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder Bookmarks
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Bookmarks.BookmarksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder Certificates

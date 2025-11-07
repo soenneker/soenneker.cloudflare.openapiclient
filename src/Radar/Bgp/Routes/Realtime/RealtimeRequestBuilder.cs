@@ -93,7 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Realtime
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Realtime.GetFormatQueryParameterType? Format { get; set; }
-            /// <summary>Network prefix, IPv4 or IPv6.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("prefix")]

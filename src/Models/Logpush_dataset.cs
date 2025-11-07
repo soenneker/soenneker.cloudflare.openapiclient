@@ -31,6 +31,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Device_posture_results,
         #pragma warning restore CS1591
+        [EnumMember(Value = "dex_application_tests")]
+        #pragma warning disable CS1591
+        Dex_application_tests,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "dex_device_state_events")]
+        #pragma warning disable CS1591
+        Dex_device_state_events,
+        #pragma warning restore CS1591
         [EnumMember(Value = "dlp_forensic_copies")]
         #pragma warning disable CS1591
         Dlp_forensic_copies,
@@ -67,6 +75,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Http_requests,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ipsec_logs")]
+        #pragma warning disable CS1591
+        Ipsec_logs,
+        #pragma warning restore CS1591
         [EnumMember(Value = "magic_ids_detections")]
         #pragma warning disable CS1591
         Magic_ids_detections,
@@ -94,6 +106,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         [EnumMember(Value = "ssh_logs")]
         #pragma warning disable CS1591
         Ssh_logs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "warp_config_changes")]
+        #pragma warning disable CS1591
+        Warp_config_changes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "warp_toggle_changes")]
+        #pragma warning disable CS1591
+        Warp_toggle_changes,
         #pragma warning restore CS1591
         [EnumMember(Value = "workers_trace_events")]
         #pragma warning disable CS1591

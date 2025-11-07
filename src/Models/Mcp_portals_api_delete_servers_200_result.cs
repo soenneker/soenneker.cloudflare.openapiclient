@@ -17,14 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The auth_type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_auth_type? AuthType { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get; private set; }
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; private set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -37,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; set; }
+        public string? Error { get; private set; }
 #nullable restore
 #else
-        public string Error { get; set; }
+        public string Error { get; private set; }
 #endif
         /// <summary>The hostname property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,16 +59,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The last_synced property</summary>
-        public DateTimeOffset? LastSynced { get; set; }
+        public DateTimeOffset? LastSynced { get; private set; }
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The modified_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy { get; set; }
+        public string? ModifiedBy { get; private set; }
 #nullable restore
 #else
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy { get; private set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,26 +81,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The prompts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_prompts>? Prompts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_prompts>? Prompts { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_prompts> Prompts { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_prompts> Prompts { get; private set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get; private set; }
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get; private set; }
 #endif
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_tools>? Tools { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_tools>? Tools { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_tools> Tools { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_tools> Tools { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result"/> and sets the default values.
@@ -152,19 +152,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_auth_type>("auth_type", AuthType);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("error", Error);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("last_synced", LastSynced);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
-            writer.WriteStringValue("modified_by", ModifiedBy);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_prompts>("prompts", Prompts);
-            writer.WriteStringValue("status", Status);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_delete_servers_200_result_tools>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

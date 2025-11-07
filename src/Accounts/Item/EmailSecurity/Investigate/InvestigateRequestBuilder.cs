@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvestigateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/investigate{?action_log*,alert_id*,detections_only*,domain*,end*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", pathParameters)
+        public InvestigateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvestigateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/investigate{?action_log*,alert_id*,detections_only*,domain*,end*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", rawUrl)
+        public InvestigateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", rawUrl)
         {
         }
         /// <summary>
@@ -133,6 +133,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("alert_id")]
             public string AlertId { get; set; }
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
             /// <summary>Determines if the search results will include detections or not.</summary>
             [QueryParameter("detections_only")]
             public bool? DetectionsOnly { get; set; }
@@ -187,7 +196,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("metric")]
             public string Metric { get; set; }
 #endif
-            /// <summary>The page number of paginated results.</summary>
+            /// <summary>Deprecated: Use cursor pagination instead.</summary>
+            [Obsolete("")]
             [QueryParameter("page")]
             public int? Page { get; set; }
             /// <summary>The number of results per page.</summary>

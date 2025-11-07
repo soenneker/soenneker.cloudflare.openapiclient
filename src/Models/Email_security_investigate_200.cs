@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The result_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CursorWithLegacyResultInfo? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CursorWithLegacyResultInfo ResultInfo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CursorWithLegacyResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CursorWithLegacyResultInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage>("result", Result);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_ResultInfo>("result_info", ResultInfo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_CursorWithLegacyResultInfo>("result_info", ResultInfo);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? AdvertisedModifiedAt { get; set; }
         /// <summary>Whether advertisement of the prefix to the Internet may be dynamically enabled or disabled.</summary>
         public bool? OnDemandEnabled { get; set; }
-        /// <summary>Whether advertisement status of the prefix is locked, meaning it cannot be changed.</summary>
+        /// <summary>Whether the advertisement status of the prefix is locked, meaning it cannot be changed.</summary>
         public bool? OnDemandLocked { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Addressing_bgp_on_demand"/> and sets the default values.

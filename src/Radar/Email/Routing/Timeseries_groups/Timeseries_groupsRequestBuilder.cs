@@ -2,13 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Arc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dkim;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Ip_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Spf;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,36 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_grou
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Timeseries_groupsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The arc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Arc.ArcRequestBuilder Arc
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dkim property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dkim.DkimRequestBuilder Dkim
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dmarc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.DmarcRequestBuilder Dmarc
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The encrypted property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder Encrypted
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Encrypted.EncryptedRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Ip_version.Ip_versionRequestBuilder Ip_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The spf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Spf.SpfRequestBuilder Spf
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.routing.timeseries_groups.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Timeseries_groups.Item.WithDimensionItemRequestBuilder"/></returns>

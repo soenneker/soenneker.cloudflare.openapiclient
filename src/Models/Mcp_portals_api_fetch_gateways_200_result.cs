@@ -15,14 +15,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get; private set; }
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; private set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,14 +49,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The modified_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy { get; set; }
+        public string? ModifiedBy { get; private set; }
 #nullable restore
 #else
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy { get; private set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,13 +117,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
-            writer.WriteStringValue("modified_by", ModifiedBy);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_fetch_gateways_200_result_servers>("servers", Servers);
             writer.WriteAdditionalData(AdditionalData);

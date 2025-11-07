@@ -99,7 +99,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as
             /// <summary>Lookup prefixes originated by the given ASN.</summary>
             [QueryParameter("origin")]
             public int? Origin { get; set; }
-            /// <summary>Network prefix, IPv4 or IPv6.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("prefix")]

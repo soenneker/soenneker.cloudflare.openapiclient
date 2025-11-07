@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,11 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The user_agent property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder User_agent
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.User_agent.User_agentRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.ai.bots.summary.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Summary.Item.WithDimensionItemRequestBuilder"/></returns>

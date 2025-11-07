@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.D
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/deployments{?env*}", pathParameters)
+        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/deployments{?env*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.D
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/deployments{?env*}", rawUrl)
+        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/deployments{?env*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -152,6 +152,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.D
         {
             [QueryParameter("env")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.GetEnvQueryParameterType? Env { get; set; }
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
         }
     }
 }

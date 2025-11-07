@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_tags>? Tags { get; set; }
 #nullable restore
 #else
-        public List<string> Tags { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_tags> Tags { get; set; }
 #endif
         /// <summary>The updatedAt property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_relatedEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_relatedEvents.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_tags.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updatedAt", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uuid", n => { Uuid = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
@@ -102,7 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_relatedEvents>("relatedEvents", RelatedEvents);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Patch_IndicatorUpdate_200_tags>("tags", Tags);
             writer.WriteDateTimeOffsetValue("updatedAt", UpdatedAt);
             writer.WriteStringValue("uuid", Uuid);
             writer.WriteStringValue("value", Value);

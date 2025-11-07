@@ -49,6 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? KeepAliveConnections { get; set; }
         /// <summary>Timeout after which an idle keepalive connection can be discarded.</summary>
         public int? KeepAliveTimeout { get; set; }
+        /// <summary>Auto configure the Hostname on the origin server certificate.</summary>
+        public bool? MatchSNItoHost { get; set; }
         /// <summary>Disable the “happy eyeballs” algorithm for IPv4/IPv6 fallback if your local network has misconfigured one of the protocols.</summary>
         public bool? NoHappyEyeballs { get; set; }
         /// <summary>Disables TLS verification of the certificate presented by your origin. Will allow any certificate from the origin to be accepted.</summary>
@@ -106,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "httpHostHeader", n => { HttpHostHeader = n.GetStringValue(); } },
                 { "keepAliveConnections", n => { KeepAliveConnections = n.GetIntValue(); } },
                 { "keepAliveTimeout", n => { KeepAliveTimeout = n.GetIntValue(); } },
+                { "matchSNItoHost", n => { MatchSNItoHost = n.GetBoolValue(); } },
                 { "noHappyEyeballs", n => { NoHappyEyeballs = n.GetBoolValue(); } },
                 { "noTLSVerify", n => { NoTLSVerify = n.GetBoolValue(); } },
                 { "originServerName", n => { OriginServerName = n.GetStringValue(); } },
@@ -129,6 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("httpHostHeader", HttpHostHeader);
             writer.WriteIntValue("keepAliveConnections", KeepAliveConnections);
             writer.WriteIntValue("keepAliveTimeout", KeepAliveTimeout);
+            writer.WriteBoolValue("matchSNItoHost", MatchSNItoHost);
             writer.WriteBoolValue("noHappyEyeballs", NoHappyEyeballs);
             writer.WriteBoolValue("noTLSVerify", NoTLSVerify);
             writer.WriteStringValue("originServerName", OriginServerName);

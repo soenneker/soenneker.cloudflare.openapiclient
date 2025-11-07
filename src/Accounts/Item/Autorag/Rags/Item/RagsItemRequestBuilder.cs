@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.AiSearch;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Files;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Jobs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Search;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Sync;
@@ -22,6 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.AiSearch.AiSearchRequestBuilder AiSearch
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.AiSearch.AiSearchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The files property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Files.FilesRequestBuilder Files
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The jobs property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Jobs.JobsRequestBuilder Jobs

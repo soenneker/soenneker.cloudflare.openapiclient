@@ -2,16 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Arc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dkim;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dmarc;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Malicious;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spam;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spf;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spoof;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Threat_category;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Tls_version;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -24,51 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The arc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Arc.ArcRequestBuilder Arc
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dkim property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dkim.DkimRequestBuilder Dkim
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dmarc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dmarc.DmarcRequestBuilder Dmarc
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The malicious property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Malicious.MaliciousRequestBuilder Malicious
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Malicious.MaliciousRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The spam property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spam.SpamRequestBuilder Spam
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spam.SpamRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The spf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spf.SpfRequestBuilder Spf
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The spoof property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spoof.SpoofRequestBuilder Spoof
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Spoof.SpoofRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The threat_category property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Threat_category.Threat_categoryRequestBuilder Threat_category
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Threat_category.Threat_categoryRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The tls_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Tls_version.Tls_versionRequestBuilder Tls_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Tls_version.Tls_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.security.summary.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Security.Summary.Item.WithDimensionItemRequestBuilder"/></returns>

@@ -3,8 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,16 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The model property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder Model
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Model.ModelRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The task property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder Task
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.TaskNamespace.TaskRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.ai.inference.summary.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.Summary.Item.WithDimensionItemRequestBuilder"/></returns>

@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.I
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_service_bindings_list_service_bindings_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_service_bindings_list_service_bindings_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare&apos;s network.**Note:** This API may only be used on prefixes currently configured with a Magic Transit/Cloudflare CDN/Cloudflare Spectrum service binding, and only allows creating upgrade service bindings for the Cloudflare CDN or Cloudflare Spectrum.
+        /// Creates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare&apos;s network.**NOTE:** The first Service Binding created for an IP Prefix must exactly match the IP Prefix&apos;s CIDR. Subsequent Service Bindings may be created with a more-specific CIDR. Refer to the  [Service Bindings Documentation](https://developers.cloudflare.com/byoip/service-bindings/) for compatibility details.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_service_bindings_create_service_binding_201"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.I
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare&apos;s network.**Note:** This API may only be used on prefixes currently configured with a Magic Transit/Cloudflare CDN/Cloudflare Spectrum service binding, and only allows creating upgrade service bindings for the Cloudflare CDN or Cloudflare Spectrum.
+        /// Creates a new Service Binding, routing traffic to IPs within the given CIDR to a service running on Cloudflare&apos;s network.**NOTE:** The first Service Binding created for an IP Prefix must exactly match the IP Prefix&apos;s CIDR. Subsequent Service Bindings may be created with a more-specific CIDR. Refer to the  [Service Bindings Documentation](https://developers.cloudflare.com/byoip/service-bindings/) for compatibility details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

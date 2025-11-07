@@ -2,13 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Arc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dkim;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dmarc;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Encrypted;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Ip_version;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Item;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Spf;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,36 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SummaryRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The arc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Arc.ArcRequestBuilder Arc
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Arc.ArcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dkim property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dkim.DkimRequestBuilder Dkim
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dkim.DkimRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The dmarc property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dmarc.DmarcRequestBuilder Dmarc
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Dmarc.DmarcRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The encrypted property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Encrypted.EncryptedRequestBuilder Encrypted
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Encrypted.EncryptedRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The ip_version property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Ip_version.Ip_versionRequestBuilder Ip_version
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Ip_version.Ip_versionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The spf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Spf.SpfRequestBuilder Spf
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Spf.SpfRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.radar.email.routing.summary.item collection</summary>
         /// <param name="position">Specifies the attribute by which to group the results.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Email.Routing.Summary.Item.WithDimensionItemRequestBuilder"/></returns>

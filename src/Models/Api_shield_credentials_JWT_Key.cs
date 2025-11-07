@@ -8,18 +8,26 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_RSA"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES256"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES384"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_RSA"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Api_shield_credentials_JWT_Key : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES256"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC? ApiShieldCredentialsJWTKeyEC { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES256? ApiShieldCredentialsJWTKeyECES256 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC ApiShieldCredentialsJWTKeyEC { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES256 ApiShieldCredentialsJWTKeyECES256 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES384"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES384? ApiShieldCredentialsJWTKeyECES384 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES384 ApiShieldCredentialsJWTKeyECES384 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_RSA"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -39,9 +47,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key();
-            if("api_shield_credentials_JWT_Key_EC".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("api_shield_credentials_JWT_Key_EC_ES256".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ApiShieldCredentialsJWTKeyEC = new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC();
+                result.ApiShieldCredentialsJWTKeyECES256 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES256();
+            }
+            else if("api_shield_credentials_JWT_Key_EC_ES384".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ApiShieldCredentialsJWTKeyECES384 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES384();
             }
             else if("api_shield_credentials_JWT_Key_RSA".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -55,9 +67,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ApiShieldCredentialsJWTKeyEC != null)
+            if(ApiShieldCredentialsJWTKeyECES256 != null)
             {
-                return ApiShieldCredentialsJWTKeyEC.GetFieldDeserializers();
+                return ApiShieldCredentialsJWTKeyECES256.GetFieldDeserializers();
+            }
+            else if(ApiShieldCredentialsJWTKeyECES384 != null)
+            {
+                return ApiShieldCredentialsJWTKeyECES384.GetFieldDeserializers();
             }
             else if(ApiShieldCredentialsJWTKeyRSA != null)
             {
@@ -72,9 +88,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ApiShieldCredentialsJWTKeyEC != null)
+            if(ApiShieldCredentialsJWTKeyECES256 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC>(null, ApiShieldCredentialsJWTKeyEC);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES256>(null, ApiShieldCredentialsJWTKeyECES256);
+            }
+            else if(ApiShieldCredentialsJWTKeyECES384 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials_JWT_Key_EC_ES384>(null, ApiShieldCredentialsJWTKeyECES384);
             }
             else if(ApiShieldCredentialsJWTKeyRSA != null)
             {

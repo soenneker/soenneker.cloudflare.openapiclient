@@ -19,5 +19,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Terminate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "restart")]
+        #pragma warning disable CS1591
+        Restart,
+        #pragma warning restore CS1591
     }
 }

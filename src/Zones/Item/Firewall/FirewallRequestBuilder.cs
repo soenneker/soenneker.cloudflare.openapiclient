@@ -4,9 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Access_rules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Lockdowns;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Ua_rules;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -29,20 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Lockdowns.LockdownsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The rules property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder Rules
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The ua_rules property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Ua_rules.Ua_rulesRequestBuilder Ua_rules
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Ua_rules.Ua_rulesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The waf property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.WafRequestBuilder Waf
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.Waf.WafRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder"/> and sets the default values.

@@ -63,14 +63,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_certificate_settings Certificate { get; set; }
 #endif
-        /// <summary>Specify custom certificate settings for BYO-PKI. This field is deprecated; use `certificate` instead.</summary>
-        [Obsolete("")]
+        /// <summary>The custom_certificate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_custom_certificate_settings? CustomCertificate { get; set; }
+        public string? CustomCertificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_custom_certificate_settings CustomCertificate { get; set; }
+        public string CustomCertificate { get; set; }
 #endif
         /// <summary>Configures user email settings for firewall policies. When you enable this, the system standardizes email addresses in the identity portion of the rule to match extended email variants in firewall policies. When you disable this setting, the system matches email addresses exactly as you provide them. Enable this setting if your email uses `.` or `+` modifiers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,7 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "body_scanning", n => { BodyScanning = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_body_scanning_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_body_scanning_settings.CreateFromDiscriminatorValue); } },
                 { "browser_isolation", n => { BrowserIsolation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_browser_isolation_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_browser_isolation_settings.CreateFromDiscriminatorValue); } },
                 { "certificate", n => { Certificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_certificate_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_certificate_settings.CreateFromDiscriminatorValue); } },
-                { "custom_certificate", n => { CustomCertificate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_custom_certificate_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_custom_certificate_settings.CreateFromDiscriminatorValue); } },
+                { "custom_certificate", n => { CustomCertificate = n.GetStringValue(); } },
                 { "extended_email_matching", n => { ExtendedEmailMatching = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_extended_email_matching>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_extended_email_matching.CreateFromDiscriminatorValue); } },
                 { "fips", n => { Fips = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_fips_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_fips_settings.CreateFromDiscriminatorValue); } },
                 { "host_selector", n => { HostSelector = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_host_selector_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_host_selector_settings.CreateFromDiscriminatorValue); } },
@@ -182,7 +181,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_body_scanning_settings>("body_scanning", BodyScanning);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_browser_isolation_settings>("browser_isolation", BrowserIsolation);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_certificate_settings>("certificate", Certificate);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_custom_certificate_settings>("custom_certificate", CustomCertificate);
+            writer.WriteStringValue("custom_certificate", CustomCertificate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_extended_email_matching>("extended_email_matching", ExtendedEmailMatching);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_fips_settings>("fips", Fips);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_host_selector_settings>("host_selector", HostSelector);

@@ -129,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OsVersion { get; set; }
 #endif
-        /// <summary>Additional operating system version data. For macOS or iOS, the Product Version Extra. For Linux, the kernel release version.</summary>
+        /// <summary>Additional operating system version details. For Windows, the UBR (Update Build Revision). For Mac or iOS, the Product Version Extra. For Linux, the distribution name and version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OsVersionExtra { get; set; }

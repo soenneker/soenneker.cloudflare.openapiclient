@@ -3,8 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser;
-using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser_family;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations;
 using System.Collections.Generic;
 using System.IO;
@@ -22,16 +20,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder Ases
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Ases.AsesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The browser property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder Browser
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser.BrowserRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The browser_family property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser_family.Browser_familyRequestBuilder Browser_family
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Browser_family.Browser_familyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The locations property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Http.Top.Locations.LocationsRequestBuilder Locations

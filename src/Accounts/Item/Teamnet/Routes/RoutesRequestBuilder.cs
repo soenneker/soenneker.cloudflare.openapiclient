@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Ip;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Item;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -24,11 +23,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Ip.IpRequestBuilder Ip
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Ip.IpRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The network property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.NetworkRequestBuilder Network
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.Routes.Network.NetworkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.teamnet.routes.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

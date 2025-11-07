@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction? Jurisdiction { get; set; }
         /// <summary>D1 database name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "primary_location_hint", n => { PrimaryLocationHint = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primary_location_hint>(); } },
             };
@@ -60,6 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_primary_location_hint>("primary_location_hint", PrimaryLocationHint);
             writer.WriteAdditionalData(AdditionalData);

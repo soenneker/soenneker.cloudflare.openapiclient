@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Summary.Item
 {
-    /// <summary>Filters results by DNS response code.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum GetResponseCodeQueryParameterType
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "NOERROR")]
         #pragma warning disable CS1591

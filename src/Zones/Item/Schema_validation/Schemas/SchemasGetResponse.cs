@@ -16,10 +16,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_public_schema>? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema>? Result { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_public_schema> Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema> Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_public_schema>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_public_schema.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_public_schema>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema>("result", Result);
         }
     }
 }

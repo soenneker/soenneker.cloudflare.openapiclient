@@ -12,8 +12,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Workers_script_response_upload : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_response, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The entry point for the script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EntryPoint { get; private set; }
+#nullable restore
+#else
+        public string EntryPoint { get; private set; }
+#endif
         /// <summary>The startup_time_ms property</summary>
-        public int? StartupTimeMs { get; set; }
+        public int? StartupTimeMs { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,6 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "entry_point", n => { EntryPoint = n.GetStringValue(); } },
                 { "startup_time_ms", n => { StartupTimeMs = n.GetIntValue(); } },
             };
         }
@@ -43,7 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteIntValue("startup_time_ms", StartupTimeMs);
         }
     }
 }

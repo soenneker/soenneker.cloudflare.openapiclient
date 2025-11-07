@@ -20,14 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.abuseReports.item collection</summary>
         /// <param name="position">Identifier of the abuse report</param>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_paramItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_paramItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Report_ItemRequestBuilder"/></returns>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Report_ItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("report_param", position);
-                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.WithReport_paramItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("report_%2Did", position);
+                return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Report_ItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         {
         }
         /// <summary>
-        /// List the abuse reports for a given account.
+        /// List the abuse reports for a given account
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListAbuseReports_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the abuse reports for a given account.
+        /// List the abuse reports for a given account
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.AbuseReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the abuse reports for a given account.
+        /// List the abuse reports for a given account
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AbuseReportsRequestBuilderGetQueryParameters 

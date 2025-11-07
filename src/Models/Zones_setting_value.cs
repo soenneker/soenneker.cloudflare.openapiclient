@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0rtt_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_use_https_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_platform_optimization"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_brotli_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_browser_check_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_level_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_rules_aegis_value"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_rules_origin_max_http_version_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_challenge_ttl_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_china_network_enabled_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ciphers_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cname_flattening_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_early_hints_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_edge_cache_ttl_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_email_obfuscation_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_h2_prioritization_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_hotlink_protection_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_http2_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_http3_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_image_resizing_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ipv6_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ip_geolocation_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_max_upload_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_min_tls_version_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_nel_value"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_opportunistic_encryption_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_opportunistic_onion_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_orange_to_orange_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_polish_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_prefetch_preload_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_pseudo_ipv4_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_replace_insecure_js_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_rocket_loader_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_header_value"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_level_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_server_side_exclude_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch34"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch39"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_sha1_support_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_sort_query_string_for_cache_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_1_2_only_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_1_3_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_client_auth_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_true_client_ip_header_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_waf_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_webp_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_websockets_value_Wrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0rtt_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_online_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_always_use_https_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_https_rewrites_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_automatic_platform_optimization"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_brotli_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_browser_check_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_level_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_rules_aegis_value"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cache_rules_origin_max_http_version_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_challenge_ttl_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_china_network_enabled_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ciphers_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_early_hints_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_edge_cache_ttl_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_email_obfuscation_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_h2_prioritization_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_hotlink_protection_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_http2_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_http3_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_image_resizing_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ipv6_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ip_geolocation_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_max_upload_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_min_tls_version_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_mirage_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_nel_value"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_opportunistic_encryption_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_opportunistic_onion_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_orange_to_orange_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_origin_error_page_pass_thru_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_polish_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_prefetch_preload_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_pseudo_ipv4_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_replace_insecure_js_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_response_buffering_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_rocket_loader_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_header_value"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_security_level_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_server_side_exclude_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch34"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch39"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch8"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_sha1_support_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_sort_query_string_for_cache_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ssl_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_1_2_only_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_1_3_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_client_auth_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_true_client_ip_header_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_waf_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_webp_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_websockets_value_Wrapper"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_setting_value : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0rtt_value_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,14 +132,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ciphers_value_Wrapper ZonesCiphersValueWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cname_flattening_value_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cname_flattening_value_Wrapper? ZonesCnameFlatteningValueWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cname_flattening_value_Wrapper ZonesCnameFlatteningValueWrapper { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -300,14 +300,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_prefetch_preload_value_Wrapper ZonesPrefetchPreloadValueWrapper { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value_Wrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value_Wrapper? ZonesPrivacyPassValueWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value_Wrapper ZonesPrivacyPassValueWrapper { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_pseudo_ipv4_value_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -535,10 +527,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ZonesCiphersValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ciphers_value_Wrapper();
             }
-            else if("zones_cname_flattening_value".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ZonesCnameFlatteningValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cname_flattening_value_Wrapper();
-            }
             else if("zones_development_mode_value".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ZonesDevelopmentModeValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value_Wrapper();
@@ -623,10 +611,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ZonesPrefetchPreloadValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_prefetch_preload_value_Wrapper();
             }
-            else if("zones_privacy_pass_value".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ZonesPrivacyPassValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value_Wrapper();
-            }
             else if("zones_pseudo_ipv4_value".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ZonesPseudoIpv4ValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_pseudo_ipv4_value_Wrapper();
@@ -707,6 +691,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.ZonesWebsocketsValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_websockets_value_Wrapper();
             }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
             return result;
         }
         /// <summary>
@@ -770,10 +758,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(ZonesCiphersValueWrapper != null)
             {
                 return ZonesCiphersValueWrapper.GetFieldDeserializers();
-            }
-            else if(ZonesCnameFlatteningValueWrapper != null)
-            {
-                return ZonesCnameFlatteningValueWrapper.GetFieldDeserializers();
             }
             else if(ZonesDevelopmentModeValueWrapper != null)
             {
@@ -858,10 +842,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(ZonesPrefetchPreloadValueWrapper != null)
             {
                 return ZonesPrefetchPreloadValueWrapper.GetFieldDeserializers();
-            }
-            else if(ZonesPrivacyPassValueWrapper != null)
-            {
-                return ZonesPrivacyPassValueWrapper.GetFieldDeserializers();
             }
             else if(ZonesPseudoIpv4ValueWrapper != null)
             {
@@ -1008,10 +988,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_ciphers_value_Wrapper>(null, ZonesCiphersValueWrapper);
             }
-            else if(ZonesCnameFlatteningValueWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_cname_flattening_value_Wrapper>(null, ZonesCnameFlatteningValueWrapper);
-            }
             else if(ZonesDevelopmentModeValueWrapper != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_development_mode_value_Wrapper>(null, ZonesDevelopmentModeValueWrapper);
@@ -1096,10 +1072,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_prefetch_preload_value_Wrapper>(null, ZonesPrefetchPreloadValueWrapper);
             }
-            else if(ZonesPrivacyPassValueWrapper != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_privacy_pass_value_Wrapper>(null, ZonesPrivacyPassValueWrapper);
-            }
             else if(ZonesPseudoIpv4ValueWrapper != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_pseudo_ipv4_value_Wrapper>(null, ZonesPseudoIpv4ValueWrapper);
@@ -1179,6 +1151,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(ZonesWebsocketsValueWrapper != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_websockets_value_Wrapper>(null, ZonesWebsocketsValueWrapper);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

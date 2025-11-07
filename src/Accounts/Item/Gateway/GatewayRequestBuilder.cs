@@ -12,6 +12,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Locations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Pacfiles;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -72,6 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging.LoggingRequestBuilder Logging
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging.LoggingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pacfiles property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Pacfiles.PacfilesRequestBuilder Pacfiles
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Pacfiles.PacfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The proxy_endpoints property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints.Proxy_endpointsRequestBuilder Proxy_endpoints

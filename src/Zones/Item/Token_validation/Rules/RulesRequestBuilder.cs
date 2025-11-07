@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Bulk;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Item;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulk property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Bulk.BulkRequestBuilder Bulk
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The preview property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.Preview.PreviewRequestBuilder Preview
         {

@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Sinks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pipelines/v1/sinks{?page*,per_page*,pipelineId*}", pathParameters)
+        public SinksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pipelines/v1/sinks{?page*,per_page*,pipeline_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Sinks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pipelines/v1/sinks{?page*,per_page*,pipelineId*}", rawUrl)
+        public SinksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pipelines/v1/sinks{?page*,per_page*,pipeline_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -146,11 +146,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pipelines.V1.Sinks
             public double? PerPage { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("pipelineId")]
+            [QueryParameter("pipeline_id")]
             public string? PipelineId { get; set; }
 #nullable restore
 #else
-            [QueryParameter("pipelineId")]
+            [QueryParameter("pipeline_id")]
             public string PipelineId { get; set; }
 #endif
         }
