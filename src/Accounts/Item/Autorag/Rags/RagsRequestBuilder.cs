@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags
     public partial class RagsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.autorag.rags.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">rag id</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.RagsItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.RagsItemRequestBuilder this[string position]
         {

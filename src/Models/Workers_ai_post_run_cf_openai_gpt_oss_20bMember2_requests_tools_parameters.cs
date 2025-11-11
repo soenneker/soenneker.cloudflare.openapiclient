@@ -7,40 +7,29 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Account settings
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Iam_schemas_account_settings : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class Workers_ai_post_run_cf_openai_gpt_oss_20bMember2_requests_tools_parameters : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Sets an abuse contact email to notify for abuse reports.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AbuseContactEmail { get; set; }
-#nullable restore
-#else
-        public string AbuseContactEmail { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Indicates whether membership in this account requires thatTwo-Factor Authentication is enabled</summary>
-        public bool? EnforceTwofactor { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemas_account_settings"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember2_requests_tools_parameters"/> and sets the default values.
         /// </summary>
-        public Iam_schemas_account_settings()
+        public Workers_ai_post_run_cf_openai_gpt_oss_20bMember2_requests_tools_parameters()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemas_account_settings"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember2_requests_tools_parameters"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemas_account_settings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember2_requests_tools_parameters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_schemas_account_settings();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember2_requests_tools_parameters();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +39,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "abuse_contact_email", n => { AbuseContactEmail = n.GetStringValue(); } },
-                { "enforce_twofactor", n => { EnforceTwofactor = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("abuse_contact_email", AbuseContactEmail);
-            writer.WriteBoolValue("enforce_twofactor", EnforceTwofactor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

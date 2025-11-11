@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Available_ale
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Destinations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.History;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Policies;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Silences;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -37,6 +38,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Policies.PoliciesRequestBuilder Policies
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Policies.PoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The silences property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Silences.SilencesRequestBuilder Silences
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.Silences.SilencesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.V3.V3RequestBuilder"/> and sets the default values.
