@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_google_gemma_3_12b_itMember2_messages_contentMember1"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Workers_ai_post_run_cf_google_gemma_3_12b_itMember2_messages_content : IComposedTypeWrapper, IParsable
@@ -83,14 +83,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
             public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_google_gemma_3_12b_itMember2_messages_contentMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_google_gemma_3_12b_itMember2_messages_contentMember1? WorkersAiPostRunCfGoogleGemma312bItMember2MessagesContentMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_google_gemma_3_12b_itMember2_messages_contentMember1 WorkersAiPostRunCfGoogleGemma312bItMember2MessagesContentMember1 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -106,10 +98,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 {
                     result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
                 }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.WorkersAiPostRunCfGoogleGemma312bItMember2MessagesContentMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_google_gemma_3_12b_itMember2_messages_contentMember1();
-                }
                 return result;
             }
             /// <summary>
@@ -121,10 +109,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 if(UnionBranch != null)
                 {
                     return UnionBranch.GetFieldDeserializers();
-                }
-                else if(WorkersAiPostRunCfGoogleGemma312bItMember2MessagesContentMember1 != null)
-                {
-                    return WorkersAiPostRunCfGoogleGemma312bItMember2MessagesContentMember1.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -138,10 +122,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 if(UnionBranch != null)
                 {
                     writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-                else if(WorkersAiPostRunCfGoogleGemma312bItMember2MessagesContentMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_google_gemma_3_12b_itMember2_messages_contentMember1>(null, WorkersAiPostRunCfGoogleGemma312bItMember2MessagesContentMember1);
                 }
             }
         }

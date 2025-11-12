@@ -32,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Resource Version.</summary>
         public int? ResourceVersion { get; set; }
+        /// <summary>Whether the error is terminal or will be continually retried.</summary>
+        public bool? Terminal { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object"/> and sets the default values.
         /// </summary>
@@ -60,6 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
                 { "resource_version", n => { ResourceVersion = n.GetIntValue(); } },
+                { "terminal", n => { Terminal = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -72,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("error", Error);
             writer.WriteStringValue("resource_id", ResourceId);
             writer.WriteIntValue("resource_version", ResourceVersion);
+            writer.WriteBoolValue("terminal", Terminal);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

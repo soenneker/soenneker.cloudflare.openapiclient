@@ -44,14 +44,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object> Resources { get; set; }
 #endif
-        /// <summary>Share Recipient status message.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StatusMessage { get; set; }
-#nullable restore
-#else
-        public string StatusMessage { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_object"/> and sets the default values.
         /// </summary>
@@ -83,7 +75,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "resources", n => { Resources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status_message", n => { StatusMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -99,7 +90,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_resource_object>("resources", Resources);
-            writer.WriteStringValue("status_message", StatusMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

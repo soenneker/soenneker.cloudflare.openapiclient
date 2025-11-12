@@ -14,59 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The background property</summary>
-        public bool? Background { get; set; }
-        /// <summary>The conversation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation? Conversation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation Conversation { get; set; }
-#endif
-        /// <summary>The include property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_include? Include { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_include Include { get; set; }
-#endif
-        /// <summary>The input property</summary>
+        /// <summary>Responses API Input messages. Refer to OpenAI Responses API docs to learn more about supported content types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_input? Input { get; set; }
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_input Input { get; set; }
-#endif
-        /// <summary>The instructions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Instructions { get; set; }
-#nullable restore
-#else
-        public string Instructions { get; set; }
-#endif
-        /// <summary>The max_output_tokens property</summary>
-        public double? MaxOutputTokens { get; set; }
-        /// <summary>The parallel_tool_calls property</summary>
-        public bool? ParallelToolCalls { get; set; }
-        /// <summary>The previous_response_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PreviousResponseId { get; set; }
-#nullable restore
-#else
-        public string PreviousResponseId { get; set; }
-#endif
-        /// <summary>The prompt_cache_key property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PromptCacheKey { get; set; }
-#nullable restore
-#else
-        public string PromptCacheKey { get; set; }
 #endif
         /// <summary>The reasoning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,56 +30,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_reasoning Reasoning { get; set; }
 #endif
-        /// <summary>The safety_identifier property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SafetyIdentifier { get; set; }
-#nullable restore
-#else
-        public string SafetyIdentifier { get; set; }
-#endif
-        /// <summary>The service_tier property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_service_tier? ServiceTier { get; set; }
-        /// <summary>The stream property</summary>
-        public bool? Stream { get; set; }
-        /// <summary>The stream_options property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_stream_options? StreamOptions { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_stream_options StreamOptions { get; set; }
-#endif
-        /// <summary>The temperature property</summary>
-        public double? Temperature { get; set; }
-        /// <summary>The text property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_text? Text { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_text Text { get; set; }
-#endif
-        /// <summary>The tool_choice property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice? ToolChoice { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice ToolChoice { get; set; }
-#endif
-        /// <summary>The tools property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tools>? Tools { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tools> Tools { get; set; }
-#endif
-        /// <summary>The top_p property</summary>
-        public double? TopP { get; set; }
-        /// <summary>The truncation property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_truncation? Truncation { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1"/> and sets the default values.
         /// </summary>
@@ -151,26 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "background", n => { Background = n.GetBoolValue(); } },
-                { "conversation", n => { Conversation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation.CreateFromDiscriminatorValue); } },
-                { "include", n => { Include = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_include>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_include.CreateFromDiscriminatorValue); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_input>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_input.CreateFromDiscriminatorValue); } },
-                { "instructions", n => { Instructions = n.GetStringValue(); } },
-                { "max_output_tokens", n => { MaxOutputTokens = n.GetDoubleValue(); } },
-                { "parallel_tool_calls", n => { ParallelToolCalls = n.GetBoolValue(); } },
-                { "previous_response_id", n => { PreviousResponseId = n.GetStringValue(); } },
-                { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
                 { "reasoning", n => { Reasoning = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_reasoning>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_reasoning.CreateFromDiscriminatorValue); } },
-                { "safety_identifier", n => { SafetyIdentifier = n.GetStringValue(); } },
-                { "service_tier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_service_tier>(); } },
-                { "stream", n => { Stream = n.GetBoolValue(); } },
-                { "stream_options", n => { StreamOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_stream_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_stream_options.CreateFromDiscriminatorValue); } },
-                { "temperature", n => { Temperature = n.GetDoubleValue(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_text>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_text.CreateFromDiscriminatorValue); } },
-                { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice.CreateFromDiscriminatorValue); } },
-                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tools>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tools.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "top_p", n => { TopP = n.GetDoubleValue(); } },
-                { "truncation", n => { Truncation = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_truncation>(); } },
             };
         }
         /// <summary>
@@ -180,84 +66,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("background", Background);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation>("conversation", Conversation);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_include>("include", Include);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_input>("input", Input);
-            writer.WriteStringValue("instructions", Instructions);
-            writer.WriteDoubleValue("max_output_tokens", MaxOutputTokens);
-            writer.WriteBoolValue("parallel_tool_calls", ParallelToolCalls);
-            writer.WriteStringValue("previous_response_id", PreviousResponseId);
-            writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_reasoning>("reasoning", Reasoning);
-            writer.WriteStringValue("safety_identifier", SafetyIdentifier);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_service_tier>("service_tier", ServiceTier);
-            writer.WriteBoolValue("stream", Stream);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_stream_options>("stream_options", StreamOptions);
-            writer.WriteDoubleValue("temperature", Temperature);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_text>("text", Text);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice>("tool_choice", ToolChoice);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tools>("tools", Tools);
-            writer.WriteDoubleValue("top_p", TopP);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_truncation>("truncation", Truncation);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversationMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversationMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversationMember1? WorkersAiPostRunCfOpenaiGptOss20bMember1ConversationMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversationMember1 WorkersAiPostRunCfOpenaiGptOss20bMember1ConversationMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversation();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                result.WorkersAiPostRunCfOpenaiGptOss20bMember1ConversationMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_conversationMember1();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null || WorkersAiPostRunCfOpenaiGptOss20bMember1ConversationMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch, WorkersAiPostRunCfOpenaiGptOss20bMember1ConversationMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch, WorkersAiPostRunCfOpenaiGptOss20bMember1ConversationMember1);
-            }
         }
         /// <summary>
         /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
@@ -305,63 +116,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choiceMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choiceMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choiceMember1? WorkersAiPostRunCfOpenaiGptOss20bMember1ToolChoiceMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choiceMember1 WorkersAiPostRunCfOpenaiGptOss20bMember1ToolChoiceMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choice();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                result.WorkersAiPostRunCfOpenaiGptOss20bMember1ToolChoiceMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_tool_choiceMember1();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null || WorkersAiPostRunCfOpenaiGptOss20bMember1ToolChoiceMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch, WorkersAiPostRunCfOpenaiGptOss20bMember1ToolChoiceMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch, WorkersAiPostRunCfOpenaiGptOss20bMember1ToolChoiceMember1);
             }
         }
     }

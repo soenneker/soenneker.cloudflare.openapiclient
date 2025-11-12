@@ -14,17 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The effort property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Constrains effort on reasoning for reasoning models. Currently supported values are low, medium, and high. Reducing reasoning effort can result in faster responses and fewer tokens used on reasoning in a response.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_effort? Effort { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_effort Effort { get; set; }
-#endif
-        /// <summary>The generate_summary property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_generate_summary? GenerateSummary { get; set; }
-        /// <summary>The summary property</summary>
+        /// <summary>A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model&apos;s reasoning process. One of auto, concise, or detailed.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_summary? Summary { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning"/> and sets the default values.
@@ -51,8 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effort", n => { Effort = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_effort>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_effort.CreateFromDiscriminatorValue); } },
-                { "generate_summary", n => { GenerateSummary = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_generate_summary>(); } },
+                { "effort", n => { Effort = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_effort>(); } },
                 { "summary", n => { Summary = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_summary>(); } },
             };
         }
@@ -63,8 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_effort>("effort", Effort);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_generate_summary>("generate_summary", GenerateSummary);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_effort>("effort", Effort);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2_requests_reasoning_summary>("summary", Summary);
             writer.WriteAdditionalData(AdditionalData);
         }

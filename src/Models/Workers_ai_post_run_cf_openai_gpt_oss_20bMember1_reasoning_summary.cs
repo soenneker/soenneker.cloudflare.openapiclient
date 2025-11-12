@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>A summary of the reasoning performed by the model. This can be useful for debugging and understanding the model&apos;s reasoning process. One of auto, concise, or detailed.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Workers_ai_post_run_cf_openai_gpt_oss_20bMember1_reasoning_summary
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "auto")]
         #pragma warning disable CS1591

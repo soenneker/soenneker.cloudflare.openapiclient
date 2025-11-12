@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.SmartTurnV2;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.SmartTurnV3;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.SmartTurnV2.SmartTurnV2RequestBuilder SmartTurnV2
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.SmartTurnV2.SmartTurnV2RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The smartTurnV3 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.SmartTurnV3.SmartTurnV3RequestBuilder SmartTurnV3
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.SmartTurnV3.SmartTurnV3RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.PipecatAiRequestBuilder"/> and sets the default values.
