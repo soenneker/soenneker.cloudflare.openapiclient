@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.All;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,11 +17,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndicatorsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The all property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.All.AllRequestBuilder All
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.All.AllRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -102,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             /// <summary>Filter indicators created on or before this date. Accepts simple date (e.g., &apos;2024-01-15&apos;) or ISO 8601 timestamp (e.g., &apos;2024-01-15T10:30:00.000Z&apos;).</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
-            /// <summary>Array of dataset IDs to query indicators from. If not provided, uses the default dataset for the environment.</summary>
+            /// <summary>Array of dataset IDs to query indicators from. If not provided, queries all datasets for the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("datasetIds")]

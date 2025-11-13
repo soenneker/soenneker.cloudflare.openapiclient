@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.All;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,11 +17,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class IndicatorTypesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The all property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.All.AllRequestBuilder All
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.All.AllRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes.IndicatorTypesRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -96,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IndicatorTypesRequestBuilderGetQueryParameters 
         {
-            /// <summary>Array of dataset IDs to query indicator types from. If not provided, uses the default dataset for the environment.</summary>
+            /// <summary>Array of dataset IDs to query indicator types from. If not provided, queries all datasets for the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("datasetIds")]

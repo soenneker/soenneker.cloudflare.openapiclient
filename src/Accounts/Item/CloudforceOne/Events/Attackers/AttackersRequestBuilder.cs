@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttackersRequestBuilderGetQueryParameters 
         {
-            /// <summary>Array of dataset IDs to query attackers from. If not provided, returns all attackers from Event DO tables.</summary>
+            /// <summary>Array of dataset IDs to query attackers from. If not provided, uses the default dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("datasetIds")]
