@@ -38,6 +38,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Justification for the report.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Justification { get; set; }
+#nullable restore
+#else
+        public string Justification { get; set; }
+#endif
         /// <summary>A summary of the mitigations related to this report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,10 +54,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary MitigationSummary { get; set; }
 #endif
+        /// <summary>Original work / Targeted brand in the alleged abuse.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalWork { get; set; }
+#nullable restore
+#else
+        public string OriginalWork { get; set; }
+#endif
         /// <summary>An enum value that represents the status of an abuse record</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportStatus? Status { get; set; }
+        /// <summary>Information about the submitter of the report.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_SubmitterDetails? Submitter { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_SubmitterDetails Submitter { get; set; }
+#endif
         /// <summary>The abuse report type</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportType? Type { get; set; }
+        /// <summary>The urls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Urls { get; set; }
+#nullable restore
+#else
+        public List<string> Urls { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_AbuseReport"/> and sets the default values.
         /// </summary>
@@ -78,9 +110,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cdate", n => { Cdate = n.GetStringValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
                 { "mitigation_summary", n => { MitigationSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary>(global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary.CreateFromDiscriminatorValue); } },
+                { "original_work", n => { OriginalWork = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportStatus>(); } },
+                { "submitter", n => { Submitter = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_SubmitterDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_SubmitterDetails.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportType>(); } },
+                { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -93,9 +129,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("cdate", Cdate);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("justification", Justification);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationSummary>("mitigation_summary", MitigationSummary);
+            writer.WriteStringValue("original_work", OriginalWork);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_SubmitterDetails>("submitter", Submitter);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ReportType>("type", Type);
+            writer.WriteCollectionOfPrimitiveValues<string>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

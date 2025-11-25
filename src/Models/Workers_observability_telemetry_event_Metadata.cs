@@ -188,6 +188,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TraceId { get; set; }
 #endif
+        /// <summary>The transactionName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransactionName { get; set; }
+#nullable restore
+#else
+        public string TransactionName { get; set; }
+#endif
         /// <summary>The trigger property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -264,6 +272,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "statusCode", n => { StatusCode = n.GetIntValue(); } },
                 { "traceDuration", n => { TraceDuration = n.GetIntValue(); } },
                 { "traceId", n => { TraceId = n.GetStringValue(); } },
+                { "transactionName", n => { TransactionName = n.GetStringValue(); } },
                 { "trigger", n => { Trigger = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -303,6 +312,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("statusCode", StatusCode);
             writer.WriteIntValue("traceDuration", TraceDuration);
             writer.WriteStringValue("traceId", TraceId);
+            writer.WriteStringValue("transactionName", TransactionName);
             writer.WriteStringValue("trigger", Trigger);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);

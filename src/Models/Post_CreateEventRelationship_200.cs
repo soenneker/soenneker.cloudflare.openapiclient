@@ -14,7 +14,23 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The message property</summary>
+        /// <summary>Array of child event UUIDs that were processed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ChildIds { get; set; }
+#nullable restore
+#else
+        public List<Guid?> ChildIds { get; set; }
+#endif
+        /// <summary>Array of errors for relationships that failed to be created (only present if some relationships failed)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_errors>? Errors { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_errors> Errors { get; set; }
+#endif
+        /// <summary>Human-readable message describing the operation result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get; set; }
@@ -22,7 +38,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Message { get; set; }
 #endif
-        /// <summary>The success property</summary>
+        /// <summary>Array of successfully created relationship objects</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_relationships>? Relationships { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_relationships> Relationships { get; set; }
+#endif
+        /// <summary>Number of relationships that were successfully created</summary>
+        public double? RelationshipsCreated { get; set; }
+        /// <summary>Whether the relationship creation operation completed successfully</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200"/> and sets the default values.
@@ -49,7 +75,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "childIds", n => { ChildIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_relationships>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_relationships.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "relationshipsCreated", n => { RelationshipsCreated = n.GetDoubleValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -60,7 +90,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("childIds", ChildIds);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_errors>("errors", Errors);
             writer.WriteStringValue("message", Message);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_200_relationships>("relationships", Relationships);
+            writer.WriteDoubleValue("relationshipsCreated", RelationshipsCreated);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

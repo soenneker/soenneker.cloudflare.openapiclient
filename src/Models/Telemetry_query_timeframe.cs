@@ -7,16 +7,17 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Time range for the query execution
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Telemetry_query_timeframe : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The from property</summary>
+        /// <summary>Start timestamp for the query timeframe (Unix timestamp in milliseconds)</summary>
         public double? From { get; set; }
-        /// <summary>The to property</summary>
+        /// <summary>End timestamp for the query timeframe (Unix timestamp in milliseconds)</summary>
         public double? To { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe"/> and sets the default values.

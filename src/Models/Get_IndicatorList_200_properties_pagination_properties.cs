@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The count property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_count? Count { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_count Count { get; set; }
+#endif
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,29 +30,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_page Page { get; set; }
 #endif
-        /// <summary>The pageSize property</summary>
+        /// <summary>The per_page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_pageSize? PageSize { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_per_page? PerPage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_pageSize PageSize { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_per_page PerPage { get; set; }
 #endif
-        /// <summary>The totalCount property</summary>
+        /// <summary>The total_count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalCount? TotalCount { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_total_count? TotalCount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalCount TotalCount { get; set; }
-#endif
-        /// <summary>The totalPages property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalPages? TotalPages { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalPages TotalPages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_total_count TotalCount { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties"/> and sets the default values.
@@ -71,10 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "count", n => { Count = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_count.CreateFromDiscriminatorValue); } },
                 { "page", n => { Page = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_page>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_page.CreateFromDiscriminatorValue); } },
-                { "pageSize", n => { PageSize = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_pageSize>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_pageSize.CreateFromDiscriminatorValue); } },
-                { "totalCount", n => { TotalCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalCount>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalCount.CreateFromDiscriminatorValue); } },
-                { "totalPages", n => { TotalPages = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalPages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalPages.CreateFromDiscriminatorValue); } },
+                { "per_page", n => { PerPage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_per_page>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_per_page.CreateFromDiscriminatorValue); } },
+                { "total_count", n => { TotalCount = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_total_count>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_total_count.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -84,10 +84,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_count>("count", Count);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_page>("page", Page);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_pageSize>("pageSize", PageSize);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalCount>("totalCount", TotalCount);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_totalPages>("totalPages", TotalPages);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_per_page>("per_page", PerPage);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200_properties_pagination_properties_total_count>("total_count", TotalCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

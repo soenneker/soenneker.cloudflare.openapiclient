@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Secret { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_DatasetUploadStatus? Status { get; set; }
-        /// <summary>When the dataset was last updated.This includes name or description changes as well as uploads.</summary>
+        /// <summary>Stores when the dataset was last updated.This includes name or description changes as well as uploads.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The uploads property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

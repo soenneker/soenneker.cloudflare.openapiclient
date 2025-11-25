@@ -32,6 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_locationDetails LocationDetails { get; set; }
 #endif
+        /// <summary>The originDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_originDetails? OriginDetails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_originDetails OriginDetails { get; set; }
+#endif
         /// <summary>The startDate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "asnDetails", n => { AsnDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_asnDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_asnDetails.CreateFromDiscriminatorValue); } },
                 { "endDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
                 { "locationDetails", n => { LocationDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_locationDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_locationDetails.CreateFromDiscriminatorValue); } },
+                { "originDetails", n => { OriginDetails = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_originDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_originDetails.CreateFromDiscriminatorValue); } },
                 { "startDate", n => { StartDate = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -117,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_asnDetails>("asnDetails", AsnDetails);
             writer.WriteDateTimeOffsetValue("endDate", EndDate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_locationDetails>("locationDetails", LocationDetails);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_traffic_anomalies_200_result_trafficAnomalies_originDetails>("originDetails", OriginDetails);
             writer.WriteStringValue("startDate", StartDate);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("type", Type);

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Struct for creating a new predefined or integration entry. Predefined or integration entriescan not be updated via the API so these fields will simply update the entry&apos;s settings
+    /// Used to create a new predefined or integration entry.Predefined or integration entries can not be updated via the API sothese fields will update the entry&apos;s settings.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dlp_NewPredefinedEntry : IAdditionalDataHolder, IParsable
@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>The entry_id property</summary>
         public Guid? EntryId { get; set; }
-        /// <summary>This field is not actually used as the owning profile for a predefined entry is already setto a predefined profile</summary>
+        /// <summary>This field is not used as the owning profile.For predefined entries it is already set to a predefined profile.</summary>
         public Guid? ProfileId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewPredefinedEntry"/> and sets the default values.

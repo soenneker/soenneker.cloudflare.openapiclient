@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Workers_version_item_uploaded : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The startup_time_ms property</summary>
+        /// <summary>Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).</summary>
         public int? StartupTimeMs { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

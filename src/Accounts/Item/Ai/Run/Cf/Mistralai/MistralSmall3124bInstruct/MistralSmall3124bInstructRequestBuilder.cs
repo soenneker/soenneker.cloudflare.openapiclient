@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MistralSmall3124bInstructRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*}", pathParameters)
+        public MistralSmall3124bInstructRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MistralSmall3124bInstructRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*}", rawUrl)
+        public MistralSmall3124bInstructRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,6 +103,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
 #else
             [QueryParameter("queueRequest")]
             public string QueueRequest { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tags")]
+            public string? Tags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tags")]
+            public string Tags { get; set; }
 #endif
         }
     }

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,indicatorType*,page*,pageSize*,relatedEvent*,search*}", pathParameters)
+        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,indicatorType*,page*,pageSize*,relatedEvent*,search*}", rawUrl)
+        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves a paginated list of indicators across specified datasets for the account.
+        /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_IndicatorList_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a paginated list of indicators across specified datasets for the account.
+        /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,26 +85,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a paginated list of indicators across specified datasets for the account.
+        /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IndicatorsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter indicators created on or after this date. Accepts simple date (e.g., &apos;2024-01-15&apos;) or ISO 8601 timestamp (e.g., &apos;2024-01-15T10:30:00.000Z&apos;).</summary>
+            /// <summary>Filter indicators created on or after this date. Must use ISO 8601 format (e.g., &apos;2024-01-15T00:00:00Z&apos;).</summary>
             [QueryParameter("createdAfter")]
             public DateTimeOffset? CreatedAfter { get; set; }
-            /// <summary>Filter indicators created on or before this date. Accepts simple date (e.g., &apos;2024-01-15&apos;) or ISO 8601 timestamp (e.g., &apos;2024-01-15T10:30:00.000Z&apos;).</summary>
+            /// <summary>Filter indicators created on or before this date. Must use ISO 8601 format (e.g., &apos;2024-12-31T23:59:59Z&apos;).</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
-            /// <summary>Array of dataset IDs to query indicators from. If not provided, queries all datasets for the account.</summary>
+            /// <summary>Dataset IDs to query indicators from (comma-separated or array), or special value &apos;all&apos; or &apos;*&apos; to query all datasets. If not provided, uses the default dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("datasetIds")]
-            public string[]? DatasetIds { get; set; }
+            public string? DatasetIds { get; set; }
 #nullable restore
 #else
             [QueryParameter("datasetIds")]
-            public string[] DatasetIds { get; set; }
+            public string DatasetIds { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -122,13 +122,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             /// <summary>Filter by related event IDs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("relatedEvent")]
-            public string[]? RelatedEvent { get; set; }
+            [QueryParameter("relatedEvents")]
+            public string[]? RelatedEvents { get; set; }
 #nullable restore
 #else
-            [QueryParameter("relatedEvent")]
-            public string[] RelatedEvent { get; set; }
+            [QueryParameter("relatedEvents")]
+            public string[] RelatedEvents { get; set; }
 #endif
+            /// <summary>Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events.</summary>
+            [QueryParameter("relatedEventsLimit")]
+            public double? RelatedEventsLimit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -137,6 +140,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
 #else
             [QueryParameter("search")]
             public string Search { get; set; }
+#endif
+            /// <summary>Filter by tag values or UUIDs. Indicators must have at least one of the specified tags (OR logic). Supports both tag UUID and tag value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tags")]
+            public string[]? Tags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tags")]
+            public string[] Tags { get; set; }
 #endif
         }
     }

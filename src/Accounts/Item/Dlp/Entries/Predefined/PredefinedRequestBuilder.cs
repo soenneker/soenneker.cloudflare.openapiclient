@@ -47,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefine
         {
         }
         /// <summary>
-        /// Predefined entries can&apos;t be created, this will update an existing predefined entryThis is needed for our generated terraform API
+        /// Predefined entries can&apos;t be created, this will update an existing predefined entry.This is needed for our generated terraform API.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_create_predefined_entry_200"/></returns>
-        /// <param name="body">Struct for creating a new predefined or integration entry. Predefined or integration entriescan not be updated via the API so these fields will simply update the entry&apos;s settings</param>
+        /// <param name="body">Used to create a new predefined or integration entry.Predefined or integration entries can not be updated via the API sothese fields will update the entry&apos;s settings.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_api_response_common_failure">When receiving a 4XX status code</exception>
@@ -72,10 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefine
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_create_predefined_entry_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_create_predefined_entry_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Predefined entries can&apos;t be created, this will update an existing predefined entryThis is needed for our generated terraform API
+        /// Predefined entries can&apos;t be created, this will update an existing predefined entry.This is needed for our generated terraform API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Struct for creating a new predefined or integration entry. Predefined or integration entriescan not be updated via the API so these fields will simply update the entry&apos;s settings</param>
+        /// <param name="body">Used to create a new predefined or integration entry.Predefined or integration entries can not be updated via the API sothese fields will update the entry&apos;s settings.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

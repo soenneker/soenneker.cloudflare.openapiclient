@@ -30,6 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_filters> Filters { get; set; }
 #endif
+        /// <summary>The from property</summary>
+        public double? From { get; set; }
         /// <summary>Search for a specific substring in the keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The limit property</summary>
         public double? Limit { get; set; }
-        /// <summary>Search for a specific substring in the event.</summary>
+        /// <summary>Search for a specific substring in any of the events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_needle? Needle { get; set; }
@@ -48,14 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_needle Needle { get; set; }
 #endif
-        /// <summary>The timeframe property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_timeframe? Timeframe { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_timeframe Timeframe { get; set; }
-#endif
+        /// <summary>The to property</summary>
+        public double? To { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list"/> and sets the default values.
         /// </summary>
@@ -83,10 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_filters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "from", n => { From = n.GetDoubleValue(); } },
                 { "keyNeedle", n => { KeyNeedle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_keyNeedle>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_keyNeedle.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
                 { "needle", n => { Needle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_needle>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_needle.CreateFromDiscriminatorValue); } },
-                { "timeframe", n => { Timeframe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_timeframe>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_timeframe.CreateFromDiscriminatorValue); } },
+                { "to", n => { To = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -98,10 +95,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("datasets", Datasets);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_filters>("filters", Filters);
+            writer.WriteDoubleValue("from", From);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_keyNeedle>("keyNeedle", KeyNeedle);
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_needle>("needle", Needle);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_keys_list_timeframe>("timeframe", Timeframe);
+            writer.WriteDoubleValue("to", To);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,13 +12,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Tls_certificates_and_hostnames_advanced_certificate_pack_response_single : global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_api_response_single, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The result property</summary>
+        /// <summary>A certificate pack with all its properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_advanced_certificate_pack_response_single_result? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_pack? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_advanced_certificate_pack_response_single_result Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_pack Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_advanced_certificate_pack_response_single_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_advanced_certificate_pack_response_single_result.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_pack>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_pack.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_advanced_certificate_pack_response_single_result>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_pack>("result", Result);
         }
     }
 }

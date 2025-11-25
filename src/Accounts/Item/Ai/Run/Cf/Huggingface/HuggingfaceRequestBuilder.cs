@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.DistilbertSst2Int8;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.OmniDistilbertSst2Int8;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.DistilbertSst2Int8.DistilbertSst2Int8RequestBuilder DistilbertSst2Int8
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.DistilbertSst2Int8.DistilbertSst2Int8RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The omniDistilbertSst2Int8 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.OmniDistilbertSst2Int8.OmniDistilbertSst2Int8RequestBuilder OmniDistilbertSst2Int8
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.OmniDistilbertSst2Int8.OmniDistilbertSst2Int8RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.HuggingfaceRequestBuilder"/> and sets the default values.

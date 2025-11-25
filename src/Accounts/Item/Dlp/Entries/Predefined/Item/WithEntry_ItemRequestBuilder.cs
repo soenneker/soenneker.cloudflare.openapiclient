@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefine
         {
         }
         /// <summary>
-        /// This is a no-op as predefined entires can&apos;t be deleted but is needed for our generated terraform API
+        /// This is a no-op as predefined entires can&apos;t be deleted but is needed for our generated terraform API.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_delete_predefined_entry_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Entries.Predefine
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_update_predefined_entry_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_entries_update_predefined_entry_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This is a no-op as predefined entires can&apos;t be deleted but is needed for our generated terraform API
+        /// This is a no-op as predefined entires can&apos;t be deleted but is needed for our generated terraform API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

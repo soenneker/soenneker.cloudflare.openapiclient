@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_status? Status { get; set; }
-        /// <summary>The timeframe property</summary>
+        /// <summary>Time range for the query execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_timeframe? Timeframe { get; set; }

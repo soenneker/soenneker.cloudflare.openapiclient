@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GemmaSeaLionV427bItRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it{?queueRequest*}", pathParameters)
+        public GemmaSeaLionV427bItRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GemmaSeaLionV427bItRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it{?queueRequest*}", rawUrl)
+        public GemmaSeaLionV427bItRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,6 +103,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore
 #else
             [QueryParameter("queueRequest")]
             public string QueueRequest { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tags")]
+            public string? Tags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tags")]
+            public string Tags { get; set; }
 #endif
         }
     }

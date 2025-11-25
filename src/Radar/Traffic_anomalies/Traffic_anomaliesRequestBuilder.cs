@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Traffic_anomaliesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,status*}", pathParameters)
+        public Traffic_anomaliesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Traffic_anomaliesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,status*}", rawUrl)
+        public Traffic_anomaliesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/traffic_anomalies{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*,origin*,status*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -134,8 +134,28 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies
             /// <summary>Skips the specified number of objects before fetching the results.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Filters results by origin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("origin")]
+            public string? Origin { get; set; }
+#nullable restore
+#else
+            [QueryParameter("origin")]
+            public string Origin { get; set; }
+#endif
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.GetStatusQueryParameterType? Status { get; set; }
+            /// <summary>Filters results by entity type (LOCATION, AS, or ORIGIN).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.GetTypeQueryParameterType[]? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Traffic_anomalies.GetTypeQueryParameterType[] Type { get; set; }
+#endif
         }
     }
 }

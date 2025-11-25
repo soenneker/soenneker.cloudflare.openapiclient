@@ -15,14 +15,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dataSource property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DataSource { get; set; }
-#nullable restore
-#else
-        public string DataSource { get; set; }
-#endif
+        /// <summary>Data source for annotations.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_top_origin_as_200_result_meta_confidenceInfo_annotations_dataSource? DataSource { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,14 +27,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The endDate property</summary>
         public DateTimeOffset? EndDate { get; set; }
-        /// <summary>The eventType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventType { get; set; }
-#nullable restore
-#else
-        public string EventType { get; set; }
-#endif
+        /// <summary>Event type for annotations.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_top_origin_as_200_result_meta_confidenceInfo_annotations_eventType? EventType { get; set; }
         /// <summary>Whether event is a single point in time or a time range.</summary>
         public bool? IsInstantaneous { get; set; }
         /// <summary>The linkedUrl property</summary>
@@ -78,10 +66,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dataSource", n => { DataSource = n.GetStringValue(); } },
+                { "dataSource", n => { DataSource = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_top_origin_as_200_result_meta_confidenceInfo_annotations_dataSource>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "endDate", n => { EndDate = n.GetDateTimeOffsetValue(); } },
-                { "eventType", n => { EventType = n.GetStringValue(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_top_origin_as_200_result_meta_confidenceInfo_annotations_eventType>(); } },
                 { "isInstantaneous", n => { IsInstantaneous = n.GetBoolValue(); } },
                 { "linkedUrl", n => { LinkedUrl = n.GetStringValue(); } },
                 { "startDate", n => { StartDate = n.GetDateTimeOffsetValue(); } },
@@ -94,10 +82,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("dataSource", DataSource);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_top_origin_as_200_result_meta_confidenceInfo_annotations_dataSource>("dataSource", DataSource);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("endDate", EndDate);
-            writer.WriteStringValue("eventType", EventType);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_attacks_layer7_top_origin_as_200_result_meta_confidenceInfo_annotations_eventType>("eventType", EventType);
             writer.WriteBoolValue("isInstantaneous", IsInstantaneous);
             writer.WriteStringValue("linkedUrl", LinkedUrl);
             writer.WriteDateTimeOffsetValue("startDate", StartDate);

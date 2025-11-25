@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BuildCommand { get; set; }
 #endif
-        /// <summary>Output directory of the build.</summary>
+        /// <summary>Assets output directory of the build.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DestinationDir { get; set; }

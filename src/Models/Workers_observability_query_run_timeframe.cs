@@ -7,16 +7,17 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Time range for the query execution
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Workers_observability_query_run_timeframe : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Set the start time for your query using UNIX time in milliseconds.</summary>
+        /// <summary>Start timestamp for the query timeframe (Unix timestamp in milliseconds)</summary>
         public double? From { get; set; }
-        /// <summary>Set the end time for your query using UNIX time in milliseconds.</summary>
+        /// <summary>End timestamp for the query timeframe (Unix timestamp in milliseconds)</summary>
         public double? To { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_timeframe"/> and sets the default values.

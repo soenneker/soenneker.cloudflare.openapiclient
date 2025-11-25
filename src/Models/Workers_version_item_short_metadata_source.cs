@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>The source of the version upload.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Workers_version_item_short_metadata_source
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591

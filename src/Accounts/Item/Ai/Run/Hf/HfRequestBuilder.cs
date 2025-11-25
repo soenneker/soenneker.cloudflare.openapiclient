@@ -3,9 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Google;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistralai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke;
@@ -26,20 +24,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Google.GoogleRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The metaLlama property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlamaRequestBuilder MetaLlama
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.MetaLlama.MetaLlamaRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The mistral property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder Mistral
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.MistralRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The mistralai property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistralai.MistralaiRequestBuilder Mistralai
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistralai.MistralaiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The nexusflow property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.NexusflowRequestBuilder Nexusflow

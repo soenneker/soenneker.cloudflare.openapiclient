@@ -28,6 +28,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Search.Global
         #pragma warning disable CS1591
         CERTIFICATE_LOGS,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ORIGINS")]
+        #pragma warning disable CS1591
+        ORIGINS,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ORIGIN_REGIONS")]
+        #pragma warning disable CS1591
+        ORIGIN_REGIONS,
+        #pragma warning restore CS1591
         [EnumMember(Value = "INDUSTRIES")]
         #pragma warning disable CS1591
         INDUSTRIES,

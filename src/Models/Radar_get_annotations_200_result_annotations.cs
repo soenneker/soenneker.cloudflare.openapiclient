@@ -94,6 +94,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_locationsDetails> LocationsDetails { get; set; }
 #endif
+        /// <summary>The origins property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Origins { get; set; }
+#nullable restore
+#else
+        public List<string> Origins { get; set; }
+#endif
+        /// <summary>The originsDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_originsDetails>? OriginsDetails { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_originsDetails> OriginsDetails { get; set; }
+#endif
         /// <summary>The outage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,6 +169,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "linkedUrl", n => { LinkedUrl = n.GetStringValue(); } },
                 { "locations", n => { Locations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "locationsDetails", n => { LocationsDetails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_locationsDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_locationsDetails.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "origins", n => { Origins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "originsDetails", n => { OriginsDetails = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_originsDetails>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_originsDetails.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "outage", n => { Outage = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_outage>(global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_outage.CreateFromDiscriminatorValue); } },
                 { "scope", n => { Scope = n.GetStringValue(); } },
                 { "startDate", n => { StartDate = n.GetStringValue(); } },
@@ -175,6 +193,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("linkedUrl", LinkedUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("locations", Locations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_locationsDetails>("locationsDetails", LocationsDetails);
+            writer.WriteCollectionOfPrimitiveValues<string>("origins", Origins);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_originsDetails>("originsDetails", OriginsDetails);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_annotations_200_result_annotations_outage>("outage", Outage);
             writer.WriteStringValue("scope", Scope);
             writer.WriteStringValue("startDate", StartDate);

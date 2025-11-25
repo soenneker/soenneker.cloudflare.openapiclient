@@ -66,6 +66,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Indicator { get; set; }
 #endif
+        /// <summary>Array of indicators for this event. Supports multiple indicators per event for complex scenarios.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_indicators>? Indicators { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_indicators> Indicators { get; set; }
+#endif
         /// <summary>The indicatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,6 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "indicator", n => { Indicator = n.GetStringValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
+                { "indicators", n => { Indicators = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_indicators>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_indicators.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "insight", n => { Insight = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_raw>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_raw.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -179,6 +188,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteStringValue("event", Event);
             writer.WriteStringValue("indicator", Indicator);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_indicators>("indicators", Indicators);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteStringValue("insight", Insight);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate_raw>("raw", Raw);

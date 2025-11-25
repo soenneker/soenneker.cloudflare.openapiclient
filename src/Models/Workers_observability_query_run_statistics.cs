@@ -12,6 +12,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Workers_observability_query_run_statistics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The level of Adaptive Bit Rate (ABR) sampling used for the query. If empty the ABR level is 1</summary>
+        public double? AbrLevel { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of uncompressed bytes read from the table.</summary>
@@ -45,6 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "abr_level", n => { AbrLevel = n.GetDoubleValue(); } },
                 { "bytes_read", n => { BytesRead = n.GetDoubleValue(); } },
                 { "elapsed", n => { Elapsed = n.GetDoubleValue(); } },
                 { "rows_read", n => { RowsRead = n.GetDoubleValue(); } },
@@ -57,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("abr_level", AbrLevel);
             writer.WriteDoubleValue("bytes_read", BytesRead);
             writer.WriteDoubleValue("elapsed", Elapsed);
             writer.WriteDoubleValue("rows_read", RowsRead);

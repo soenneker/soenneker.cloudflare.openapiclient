@@ -16,6 +16,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Sets the time limit, in seconds, that a user can use an override code to bypass WARP.</summary>
         public double? DisableForTime { get; set; }
+        /// <summary>Controls whether the external emergency disconnect feature is enabled.</summary>
+        public bool? ExternalEmergencySignalEnabled { get; set; }
+        /// <summary>The SHA256 fingerprint (64 hexadecimal characters) of the HTTPS server certificate for the external_emergency_signal_url. If provided, the WARP client will use this value to verify the server&apos;s identity. The device will ignore any response if the server&apos;s certificate fingerprint does not exactly match this value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalEmergencySignalFingerprint { get; set; }
+#nullable restore
+#else
+        public string ExternalEmergencySignalFingerprint { get; set; }
+#endif
+        /// <summary>The interval at which the WARP client fetches the emergency disconnect signal, formatted as a duration string (e.g., &quot;5m&quot;, &quot;2m30s&quot;, &quot;1h&quot;). Minimum 30 seconds.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalEmergencySignalInterval { get; set; }
+#nullable restore
+#else
+        public string ExternalEmergencySignalInterval { get; set; }
+#endif
+        /// <summary>The HTTPS URL from which to fetch the emergency disconnect signal. Must use HTTPS and have an IPv4 or IPv6 address as the host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalEmergencySignalUrl { get; set; }
+#nullable restore
+#else
+        public string ExternalEmergencySignalUrl { get; set; }
+#endif
         /// <summary>Enable gateway proxy filtering on TCP.</summary>
         public bool? GatewayProxyEnabled { get; set; }
         /// <summary>Enable gateway proxy filtering on UDP.</summary>
@@ -50,6 +76,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "disable_for_time", n => { DisableForTime = n.GetDoubleValue(); } },
+                { "external_emergency_signal_enabled", n => { ExternalEmergencySignalEnabled = n.GetBoolValue(); } },
+                { "external_emergency_signal_fingerprint", n => { ExternalEmergencySignalFingerprint = n.GetStringValue(); } },
+                { "external_emergency_signal_interval", n => { ExternalEmergencySignalInterval = n.GetStringValue(); } },
+                { "external_emergency_signal_url", n => { ExternalEmergencySignalUrl = n.GetStringValue(); } },
                 { "gateway_proxy_enabled", n => { GatewayProxyEnabled = n.GetBoolValue(); } },
                 { "gateway_udp_proxy_enabled", n => { GatewayUdpProxyEnabled = n.GetBoolValue(); } },
                 { "root_certificate_installation_enabled", n => { RootCertificateInstallationEnabled = n.GetBoolValue(); } },
@@ -64,6 +94,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("disable_for_time", DisableForTime);
+            writer.WriteBoolValue("external_emergency_signal_enabled", ExternalEmergencySignalEnabled);
+            writer.WriteStringValue("external_emergency_signal_fingerprint", ExternalEmergencySignalFingerprint);
+            writer.WriteStringValue("external_emergency_signal_interval", ExternalEmergencySignalInterval);
+            writer.WriteStringValue("external_emergency_signal_url", ExternalEmergencySignalUrl);
             writer.WriteBoolValue("gateway_proxy_enabled", GatewayProxyEnabled);
             writer.WriteBoolValue("gateway_udp_proxy_enabled", GatewayUdpProxyEnabled);
             writer.WriteBoolValue("root_certificate_installation_enabled", RootCertificateInstallationEnabled);

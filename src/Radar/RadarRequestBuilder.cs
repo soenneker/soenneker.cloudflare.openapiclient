@@ -17,6 +17,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Geolocations;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Http;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Leaked_credential_checks;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Netflows;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Origins;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Quality;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ranking;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Robots_txt;
@@ -110,6 +111,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.NetflowsRequestBuilder Netflows
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Netflows.NetflowsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The origins property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.OriginsRequestBuilder Origins
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Origins.OriginsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The quality property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Quality.QualityRequestBuilder Quality

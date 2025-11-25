@@ -70,6 +70,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_performance_information Statistics { get; set; }
 #endif
+        /// <summary>The traces property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces>? Traces { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces> Traces { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results"/> and sets the default values.
         /// </summary>
@@ -102,6 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "patterns", n => { Patterns = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "run", n => { Run = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run.CreateFromDiscriminatorValue); } },
                 { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_performance_information>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_performance_information.CreateFromDiscriminatorValue); } },
+                { "traces", n => { Traces = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -118,6 +127,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns>("patterns", Patterns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run>("run", Run);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_performance_information>("statistics", Statistics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces>("traces", Traces);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

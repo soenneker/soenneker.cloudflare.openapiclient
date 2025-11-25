@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Destinations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ObservabilityRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The destinations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Destinations.DestinationsRequestBuilder Destinations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Destinations.DestinationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The telemetry property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.Telemetry.TelemetryRequestBuilder Telemetry
         {

@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full_resources_script Script { get; private set; }
 #endif
-        /// <summary>The script_runtime property</summary>
+        /// <summary>Runtime configuration for the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full_resources_script_runtime? ScriptRuntime { get; private set; }

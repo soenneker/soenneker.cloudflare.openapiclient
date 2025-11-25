@@ -14,19 +14,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The chart property</summary>
+        /// <summary>Whether to include timeseties data in the response</summary>
         public bool? Chart { get; set; }
-        /// <summary>The compare property</summary>
+        /// <summary>Whether to include comparison data with previous time periods</summary>
         public bool? Compare { get; set; }
-        /// <summary>The dry property</summary>
+        /// <summary>Whether to perform a dry run without saving the results of the query. Useful for validation</summary>
         public bool? Dry { get; set; }
-        /// <summary>The granularity property</summary>
+        /// <summary>Time granularity for aggregating results (in milliseconds). Controls the bucketing of time-series data</summary>
         public double? Granularity { get; set; }
-        /// <summary>The ignoreSeries property</summary>
+        /// <summary>Whether to ignore time-series data in the results and return only aggregated values</summary>
         public bool? IgnoreSeries { get; set; }
-        /// <summary>The limit property</summary>
+        /// <summary>Maximum number of events to return.</summary>
         public double? Limit { get; set; }
-        /// <summary>The offset property</summary>
+        /// <summary>Cursor for pagination to retrieve the next set of results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Offset { get; set; }
@@ -34,9 +34,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Offset { get; set; }
 #endif
-        /// <summary>The offsetBy property</summary>
+        /// <summary>Number of events to skip for pagination. Used in conjunction with offset</summary>
         public double? OffsetBy { get; set; }
-        /// <summary>The offsetDirection property</summary>
+        /// <summary>Direction for offset-based pagination (e.g., &apos;next&apos;, &apos;prev&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OffsetDirection { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OffsetDirection { get; set; }
 #endif
-        /// <summary>The parameters property</summary>
+        /// <summary>Optional parameters to pass to the query execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_parameters? Parameters { get; set; }
@@ -52,9 +52,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_parameters Parameters { get; set; }
 #endif
-        /// <summary>The patternType property</summary>
+        /// <summary>Type of pattern to search for when using pattern-based views</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_patternType? PatternType { get; set; }
-        /// <summary>The queryId property</summary>
+        /// <summary>Unique identifier for the query to execute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? QueryId { get; set; }
@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string QueryId { get; set; }
 #endif
-        /// <summary>The timeframe property</summary>
+        /// <summary>Time range for the query execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe? Timeframe { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe Timeframe { get; set; }
 #endif
-        /// <summary>The view property</summary>
+        /// <summary>View type for presenting the query results.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_view? View { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query"/> and sets the default values.

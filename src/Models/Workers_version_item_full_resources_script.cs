@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The etag property</summary>
+        /// <summary>Hashed script content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Etag { get; private set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Etag { get; private set; }
 #endif
-        /// <summary>The handlers property</summary>
+        /// <summary>The names of handlers exported as part of the default export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Handlers { get; private set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Handlers { get; private set; }
 #endif
-        /// <summary>The last_deployed_from property</summary>
+        /// <summary>The client most recently used to deploy this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastDeployedFrom { get; private set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string LastDeployedFrom { get; private set; }
 #endif
-        /// <summary>The named_handlers property</summary>
+        /// <summary>Named exports, such as Durable Object class implementations and named entrypoints.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full_resources_script_named_handlers>? NamedHandlers { get; private set; }

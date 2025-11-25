@@ -7,6 +7,8 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1514bC
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1518bChat;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen157bChatAwq;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25Coder32bInstruct;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen330bA3bFp8;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen3Embedding06b;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwq32b;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +46,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25Coder32bInstruct.Qwen25Coder32bInstructRequestBuilder Qwen25Coder32bInstruct
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25Coder32bInstruct.Qwen25Coder32bInstructRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The qwen330bA3bFp8 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen330bA3bFp8.Qwen330bA3bFp8RequestBuilder Qwen330bA3bFp8
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen330bA3bFp8.Qwen330bA3bFp8RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The qwen3Embedding06b property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen3Embedding06b.Qwen3Embedding06bRequestBuilder Qwen3Embedding06b
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen3Embedding06b.Qwen3Embedding06bRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The qwq32b property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwq32b.Qwq32bRequestBuilder Qwq32b

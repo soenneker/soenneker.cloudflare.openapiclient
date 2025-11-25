@@ -25,6 +25,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Owner { get; set; }
 #endif
+        /// <summary>The owner ID of the repository.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId { get; set; }
+#nullable restore
+#else
+        public string OwnerId { get; set; }
+#endif
         /// <summary>A list of paths that should be excluded from triggering a preview deployment. Wildcard syntax (`*`) is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +79,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether to trigger a production deployment on commits to the production branch.</summary>
         public bool? ProductionDeploymentsEnabled { get; set; }
+        /// <summary>The ID of the repository.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RepoId { get; set; }
+#nullable restore
+#else
+        public string RepoId { get; set; }
+#endif
         /// <summary>The name of the repository.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +101,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Pages_source_config()
         {
             AdditionalData = new Dictionary<string, object>();
-            PreviewDeploymentSetting = global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_source_config_preview_deployment_setting.All;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -107,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "deployments_enabled", n => { DeploymentsEnabled = n.GetBoolValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
+                { "owner_id", n => { OwnerId = n.GetStringValue(); } },
                 { "path_excludes", n => { PathExcludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "path_includes", n => { PathIncludes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pr_comments_enabled", n => { PrCommentsEnabled = n.GetBoolValue(); } },
@@ -115,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "preview_deployment_setting", n => { PreviewDeploymentSetting = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_source_config_preview_deployment_setting>(); } },
                 { "production_branch", n => { ProductionBranch = n.GetStringValue(); } },
                 { "production_deployments_enabled", n => { ProductionDeploymentsEnabled = n.GetBoolValue(); } },
+                { "repo_id", n => { RepoId = n.GetStringValue(); } },
                 { "repo_name", n => { RepoName = n.GetStringValue(); } },
             };
         }
@@ -127,6 +144,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("deployments_enabled", DeploymentsEnabled);
             writer.WriteStringValue("owner", Owner);
+            writer.WriteStringValue("owner_id", OwnerId);
             writer.WriteCollectionOfPrimitiveValues<string>("path_excludes", PathExcludes);
             writer.WriteCollectionOfPrimitiveValues<string>("path_includes", PathIncludes);
             writer.WriteBoolValue("pr_comments_enabled", PrCommentsEnabled);
@@ -135,6 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Pages_source_config_preview_deployment_setting>("preview_deployment_setting", PreviewDeploymentSetting);
             writer.WriteStringValue("production_branch", ProductionBranch);
             writer.WriteBoolValue("production_deployments_enabled", ProductionDeploymentsEnabled);
+            writer.WriteStringValue("repo_id", RepoId);
             writer.WriteStringValue("repo_name", RepoName);
             writer.WriteAdditionalData(AdditionalData);
         }

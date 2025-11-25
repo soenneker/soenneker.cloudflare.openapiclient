@@ -14,9 +14,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The childId property</summary>
-        public Guid? ChildId { get; set; }
-        /// <summary>The datasetId property</summary>
+        /// <summary>Array of UUIDs for child events. Single child = 1:1 relationship, multiple = 1:many relationships</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? ChildIds { get; set; }
+#nullable restore
+#else
+        public List<Guid?> ChildIds { get; set; }
+#endif
+        /// <summary>Dataset identifier where the events are stored</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DatasetId { get; set; }
@@ -24,10 +30,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DatasetId { get; set; }
 #endif
-        /// <summary>The parentId property</summary>
+        /// <summary>UUID of the parent event that will be the source of the relationship</summary>
         public Guid? ParentId { get; set; }
-        /// <summary>The type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type? Type { get; set; }
+        /// <summary>Type of relationship to create between parent and child events</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_relationshipType? RelationshipType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship"/> and sets the default values.
         /// </summary>
@@ -53,10 +59,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "childId", n => { ChildId = n.GetGuidValue(); } },
+                { "childIds", n => { ChildIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "datasetId", n => { DatasetId = n.GetStringValue(); } },
                 { "parentId", n => { ParentId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type>(); } },
+                { "relationshipType", n => { RelationshipType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_relationshipType>(); } },
             };
         }
         /// <summary>
@@ -66,10 +72,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("childId", ChildId);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("childIds", ChildIds);
             writer.WriteStringValue("datasetId", DatasetId);
             writer.WriteGuidValue("parentId", ParentId);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_CreateEventRelationship_relationshipType>("relationshipType", RelationshipType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

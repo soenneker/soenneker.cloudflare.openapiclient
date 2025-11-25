@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Event { get; set; }
 #endif
+        /// <summary>The hasChildren property</summary>
+        public bool? HasChildren { get; set; }
         /// <summary>The indicator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,6 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
+                { "hasChildren", n => { HasChildren = n.GetBoolValue(); } },
                 { "indicator", n => { Indicator = n.GetStringValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "indicatorTypeId", n => { IndicatorTypeId = n.GetDoubleValue(); } },
@@ -245,6 +248,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("date", Date);
             writer.WriteStringValue("event", Event);
+            writer.WriteBoolValue("hasChildren", HasChildren);
             writer.WriteStringValue("indicator", Indicator);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteDoubleValue("indicatorTypeId", IndicatorTypeId);

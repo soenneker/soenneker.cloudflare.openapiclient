@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", pathParameters)
+        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", rawUrl)
+        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", rawUrl)
         {
         }
         /// <summary>
@@ -270,24 +270,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             [QueryParameter("actor_type%2Enot")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetActor_typeNotQueryParameterType[] ActorTypeNot { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("audit_log_id")]
-            public string[]? AuditLogId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("audit_log_id")]
-            public string[] AuditLogId { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("audit_log_id%2Enot")]
-            public string[]? AuditLogIdNot { get; set; }
-#nullable restore
-#else
-            [QueryParameter("audit_log_id%2Enot")]
-            public string[] AuditLogIdNot { get; set; }
-#endif
             /// <summary>Limits the returned results to logs older than the specified date. This can be a date string 2019-04-30 (interpreted in UTC) or an absolute timestamp that conforms to RFC3339.</summary>
             [QueryParameter("before")]
             public Date? Before { get; set; }
@@ -302,6 +284,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
 #endif
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.GetDirectionQueryParameterType? Direction { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("id")]
+            public string[]? Id { get; set; }
+#nullable restore
+#else
+            [QueryParameter("id")]
+            public string[] Id { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("id%2Enot")]
+            public string[]? IdNot { get; set; }
+#nullable restore
+#else
+            [QueryParameter("id%2Enot")]
+            public string[] IdNot { get; set; }
+#endif
             [QueryParameter("limit")]
             public double? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

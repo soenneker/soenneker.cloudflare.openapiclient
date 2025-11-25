@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The durableObjectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DurableObjectId { get; set; }
+#nullable restore
+#else
+        public string DurableObjectId { get; set; }
+#endif
         /// <summary>The entrypoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "durableObjectId", n => { DurableObjectId = n.GetStringValue(); } },
                 { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember1_event>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember1_event.CreateFromDiscriminatorValue); } },
                 { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember1_eventType>(); } },
@@ -111,6 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("durableObjectId", DurableObjectId);
             writer.WriteStringValue("entrypoint", Entrypoint);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember1_event>("event", Event);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember1_eventType>("eventType", EventType);

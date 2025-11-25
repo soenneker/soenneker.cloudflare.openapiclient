@@ -32,6 +32,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DispatchNamespace { get; set; }
 #endif
+        /// <summary>The durableObjectId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DurableObjectId { get; set; }
+#nullable restore
+#else
+        public string DurableObjectId { get; set; }
+#endif
         /// <summary>The entrypoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cpuTimeMs", n => { CpuTimeMs = n.GetDoubleValue(); } },
                 { "diagnosticsChannelEvents", n => { DiagnosticsChannelEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_diagnosticsChannelEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_diagnosticsChannelEvents.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dispatchNamespace", n => { DispatchNamespace = n.GetStringValue(); } },
+                { "durableObjectId", n => { DurableObjectId = n.GetStringValue(); } },
                 { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_event>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_event.CreateFromDiscriminatorValue); } },
                 { "eventType", n => { EventType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_eventType>(); } },
@@ -138,6 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("cpuTimeMs", CpuTimeMs);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_diagnosticsChannelEvents>("diagnosticsChannelEvents", DiagnosticsChannelEvents);
             writer.WriteStringValue("dispatchNamespace", DispatchNamespace);
+            writer.WriteStringValue("durableObjectId", DurableObjectId);
             writer.WriteStringValue("entrypoint", Entrypoint);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_event>("event", Event);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_telemetry_event_WorkersMember2_eventType>("eventType", EventType);

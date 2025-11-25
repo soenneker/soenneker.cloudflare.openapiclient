@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnnotationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*}", pathParameters)
+        public AnnotationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations{?asn*,dataSource*,dateEnd*,dateRange*,dateStart*,eventType*,format*,limit*,location*,offset*,origin*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AnnotationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations{?asn*,dateEnd*,dateRange*,dateStart*,format*,limit*,location*,offset*}", rawUrl)
+        public AnnotationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/annotations{?asn*,dataSource*,dateEnd*,dateRange*,dateStart*,eventType*,format*,limit*,location*,offset*,origin*}", rawUrl)
         {
         }
         /// <summary>
@@ -99,6 +99,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations
             /// <summary>Filters results by Autonomous System. Specify a single Autonomous System Number (ASN) as integer.</summary>
             [QueryParameter("asn")]
             public int? Asn { get; set; }
+            /// <summary>Filters results by data source.</summary>
+            [QueryParameter("dataSource")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.GetDataSourceQueryParameterType? DataSource { get; set; }
             /// <summary>End of the date range (inclusive).</summary>
             [QueryParameter("dateEnd")]
             public DateTimeOffset? DateEnd { get; set; }
@@ -115,6 +118,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations
             /// <summary>Start of the date range (inclusive).</summary>
             [QueryParameter("dateStart")]
             public DateTimeOffset? DateStart { get; set; }
+            /// <summary>Filters results by event type.</summary>
+            [QueryParameter("eventType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.GetEventTypeQueryParameterType? EventType { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Annotations.GetFormatQueryParameterType? Format { get; set; }
@@ -134,6 +140,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Annotations
             /// <summary>Skips the specified number of objects before fetching the results.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Filters results by origin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("origin")]
+            public string? Origin { get; set; }
+#nullable restore
+#else
+            [QueryParameter("origin")]
+            public string Origin { get; set; }
+#endif
         }
     }
 }

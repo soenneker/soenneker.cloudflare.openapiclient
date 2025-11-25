@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefin
         {
         }
         /// <summary>
-        /// This is a no-op as predefined profiles can&apos;t be deleted but is needed for our generated terraform API
+        /// This is a no-op as predefined profiles can&apos;t be deleted but is needed for our generated terraform API.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_profiles_delete_predefined_profile_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.Predefin
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_profiles_update_predefined_profile_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_profiles_update_predefined_profile_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This is a no-op as predefined profiles can&apos;t be deleted but is needed for our generated terraform API
+        /// This is a no-op as predefined profiles can&apos;t be deleted but is needed for our generated terraform API.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

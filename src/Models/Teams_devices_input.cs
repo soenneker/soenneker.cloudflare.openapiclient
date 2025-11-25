@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_access_serial_number_list_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_application_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_carbonblack_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_client_certificate_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_client_certificate_v2_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_crowdstrike_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_custom_s2s_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_disk_encryption_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_domain_joined_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_file_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_firewall_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_intune_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_kolide_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_os_version_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_sentinelone_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_sentinelone_s2s_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_tanium_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_unique_client_id_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_workspace_one_input_request"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_access_serial_number_list_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_antivirus_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_application_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_carbonblack_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_client_certificate_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_client_certificate_v2_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_crowdstrike_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_custom_s2s_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_disk_encryption_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_domain_joined_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_file_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_firewall_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_intune_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_kolide_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_os_version_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_sentinelone_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_sentinelone_s2s_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_tanium_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_unique_client_id_input_request"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_workspace_one_input_request"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Teams_devices_input : IComposedTypeWrapper, IParsable
@@ -20,6 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_access_serial_number_list_input_request TeamsDevicesAccessSerialNumberListInputRequest { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_antivirus_input_request"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_antivirus_input_request? TeamsDevicesAntivirusInputRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_antivirus_input_request TeamsDevicesAntivirusInputRequest { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_application_input_request"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -179,6 +187,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.TeamsDevicesAccessSerialNumberListInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_access_serial_number_list_input_request();
             }
+            else if("teams_devices_antivirus_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TeamsDevicesAntivirusInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_antivirus_input_request();
+            }
             else if("teams_devices_application_input_request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.TeamsDevicesApplicationInputRequest = new global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_application_input_request();
@@ -262,6 +274,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(TeamsDevicesAccessSerialNumberListInputRequest != null)
             {
                 return TeamsDevicesAccessSerialNumberListInputRequest.GetFieldDeserializers();
+            }
+            else if(TeamsDevicesAntivirusInputRequest != null)
+            {
+                return TeamsDevicesAntivirusInputRequest.GetFieldDeserializers();
             }
             else if(TeamsDevicesApplicationInputRequest != null)
             {
@@ -347,6 +363,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(TeamsDevicesAccessSerialNumberListInputRequest != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_access_serial_number_list_input_request>(null, TeamsDevicesAccessSerialNumberListInputRequest);
+            }
+            else if(TeamsDevicesAntivirusInputRequest != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_antivirus_input_request>(null, TeamsDevicesAntivirusInputRequest);
             }
             else if(TeamsDevicesApplicationInputRequest != null)
             {

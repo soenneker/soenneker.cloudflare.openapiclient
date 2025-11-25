@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Runtime configuration for the Worker.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Workers_version_item_full_resources_script_runtime : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The compatibility_date property</summary>
+        /// <summary>Date indicating targeted support in the Workers runtime. Backwards incompatible fixes to the runtime following this date will not affect this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CompatibilityDate { get; private set; }
@@ -22,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CompatibilityDate { get; private set; }
 #endif
-        /// <summary>The compatibility_flags property</summary>
+        /// <summary>Flags that enable or disable certain features in the Workers runtime.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CompatibilityFlags { get; private set; }
@@ -30,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> CompatibilityFlags { get; private set; }
 #endif
-        /// <summary>The limits property</summary>
+        /// <summary>Resource limits for the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full_resources_script_runtime_limits? Limits { get; private set; }
@@ -38,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full_resources_script_runtime_limits Limits { get; private set; }
 #endif
-        /// <summary>The migration_tag property</summary>
+        /// <summary>The tag of the Durable Object migration that was most recently applied for this Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MigrationTag { get; private set; }
@@ -46,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MigrationTag { get; private set; }
 #endif
-        /// <summary>The usage_model property</summary>
+        /// <summary>Usage model for the Worker invocations.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full_resources_script_runtime_usage_model? UsageModel { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_full_resources_script_runtime"/> and sets the default values.

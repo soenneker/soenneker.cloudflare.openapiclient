@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Apps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KitRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The apps property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Apps.AppsRequestBuilder Apps
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.realtime.kit.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.WithApp_ItemRequestBuilder"/></returns>

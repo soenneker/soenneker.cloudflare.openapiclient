@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.BartLargeCnn;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.OmniBartLargeCnn;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.OmniDetrResnet50;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +21,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.BartLargeCnn.BartLargeCnnRequestBuilder BartLargeCnn
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.BartLargeCnn.BartLargeCnnRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The omniBartLargeCnn property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.OmniBartLargeCnn.OmniBartLargeCnnRequestBuilder OmniBartLargeCnn
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.OmniBartLargeCnn.OmniBartLargeCnnRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The omniDetrResnet50 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.OmniDetrResnet50.OmniDetrResnet50RequestBuilder OmniDetrResnet50
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.OmniDetrResnet50.OmniDetrResnet50RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.FacebookRequestBuilder"/> and sets the default values.

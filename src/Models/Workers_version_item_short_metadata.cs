@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The author_email property</summary>
+        /// <summary>Email of the user who created the version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorEmail { get; private set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string AuthorEmail { get; private set; }
 #endif
-        /// <summary>The author_id property</summary>
+        /// <summary>Identifier of the user who created the version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorId { get; private set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string AuthorId { get; private set; }
 #endif
-        /// <summary>The created_on property</summary>
+        /// <summary>When the version was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CreatedOn { get; private set; }
@@ -38,9 +38,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CreatedOn { get; private set; }
 #endif
-        /// <summary>The hasPreview property</summary>
+        /// <summary>Whether the version can be previewed.</summary>
         public bool? HasPreview { get; private set; }
-        /// <summary>The modified_on property</summary>
+        /// <summary>When the version was last modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ModifiedOn { get; private set; }
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ModifiedOn { get; private set; }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>The source of the version upload.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_short_metadata_source? Source { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_version_item_short_metadata"/> and sets the default values.

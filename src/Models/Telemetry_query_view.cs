@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>View type for presenting the query results.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum Telemetry_query_view
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "traces")]
         #pragma warning disable CS1591

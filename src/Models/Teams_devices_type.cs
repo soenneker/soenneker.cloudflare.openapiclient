@@ -63,6 +63,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Client_certificate_v2,
         #pragma warning restore CS1591
+        [EnumMember(Value = "antivirus")]
+        #pragma warning disable CS1591
+        Antivirus,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unique_client_id")]
         #pragma warning disable CS1591
         Unique_client_id,
