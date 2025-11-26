@@ -31,6 +31,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_subscriptions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall;
@@ -237,6 +238,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.EmailRequestBuilder Email
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The emailSecurity property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.EmailSecurityRequestBuilder EmailSecurity
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.EmailSecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The event_notifications property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Event_notifications.Event_notificationsRequestBuilder Event_notifications
