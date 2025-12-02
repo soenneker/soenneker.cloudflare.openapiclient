@@ -8,6 +8,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag;
@@ -123,6 +124,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.AiGatewayRequestBuilder AiGateway
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.AiGatewayRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The aiSearch property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.AiSearchRequestBuilder AiSearch
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.AiSearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The alerting property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting.AlertingRequestBuilder Alerting

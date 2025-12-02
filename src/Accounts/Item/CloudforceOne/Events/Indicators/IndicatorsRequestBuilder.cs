@@ -96,15 +96,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             /// <summary>Filter indicators created on or before this date. Must use ISO 8601 format (e.g., &apos;2024-12-31T23:59:59Z&apos;).</summary>
             [QueryParameter("createdBefore")]
             public DateTimeOffset? CreatedBefore { get; set; }
-            /// <summary>Dataset IDs to query indicators from (comma-separated or array), or special value &apos;all&apos; or &apos;*&apos; to query all datasets. If not provided, uses the default dataset.</summary>
+            /// <summary>Dataset IDs to query indicators from (array of UUIDs), or special value &apos;all&apos; or &apos;*&apos; to query all datasets. If not provided, uses the default dataset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("datasetIds")]
-            public string? DatasetIds { get; set; }
+            public string[]? DatasetIds { get; set; }
 #nullable restore
 #else
             [QueryParameter("datasetIds")]
-            public string DatasetIds { get; set; }
+            public string[] DatasetIds { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

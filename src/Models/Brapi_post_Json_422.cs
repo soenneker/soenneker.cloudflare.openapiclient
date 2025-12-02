@@ -25,6 +25,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
+        /// <summary>Raw AI response will be returned, if it couldn&apos;t be parsed into valid JSON.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RawAiResponse { get; set; }
+#nullable restore
+#else
+        public string RawAiResponse { get; set; }
+#endif
         /// <summary>Response status</summary>
         public bool? Status { get; set; }
         /// <summary>
@@ -53,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Json_422_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Json_422_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rawAiResponse", n => { RawAiResponse = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetBoolValue(); } },
             };
         }
@@ -64,6 +73,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Json_422_errors>("errors", Errors);
+            writer.WriteStringValue("rawAiResponse", RawAiResponse);
             writer.WriteBoolValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

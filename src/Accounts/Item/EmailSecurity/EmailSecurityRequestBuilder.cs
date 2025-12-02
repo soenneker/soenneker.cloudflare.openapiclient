@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishguard;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.InvestigateRequestBuilder Investigate
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investigate.InvestigateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The phishguard property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishguard.PhishguardRequestBuilder Phishguard
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishguard.PhishguardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.SettingsRequestBuilder Settings

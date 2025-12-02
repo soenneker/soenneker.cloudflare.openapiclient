@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Binary;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -37,6 +38,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans.ScansRequestBuilder Scans
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v2 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.V2RequestBuilder V2
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.V2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.CloudforceOneRequestBuilder"/> and sets the default values.

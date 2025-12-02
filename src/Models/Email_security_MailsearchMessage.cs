@@ -146,6 +146,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string PostfixId { get; set; }
 #endif
+        /// <summary>The postfix_id_outbound property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PostfixIdOutbound { get; set; }
+#nullable restore
+#else
+        public string PostfixIdOutbound { get; set; }
+#endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -261,6 +269,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_quarantined", n => { IsQuarantined = n.GetBoolValue(); } },
                 { "message_id", n => { MessageId = n.GetStringValue(); } },
                 { "postfix_id", n => { PostfixId = n.GetStringValue(); } },
+                { "postfix_id_outbound", n => { PostfixIdOutbound = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_properties>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_properties.CreateFromDiscriminatorValue); } },
                 { "replyto", n => { Replyto = n.GetStringValue(); } },
                 { "sent_date", n => { SentDate = n.GetStringValue(); } },
@@ -297,6 +306,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_quarantined", IsQuarantined);
             writer.WriteStringValue("message_id", MessageId);
             writer.WriteStringValue("postfix_id", PostfixId);
+            writer.WriteStringValue("postfix_id_outbound", PostfixIdOutbound);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_properties>("properties", Properties);
             writer.WriteStringValue("replyto", Replyto);
             writer.WriteStringValue("sent_date", SentDate);
