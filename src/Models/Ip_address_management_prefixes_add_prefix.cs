@@ -34,6 +34,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>Identifier for the uploaded LOA document.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LoaDocumentId { get; set; }
+#nullable restore
+#else
+        public string LoaDocumentId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_address_management_prefixes_add_prefix"/> and sets the default values.
         /// </summary>
@@ -63,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cidr", n => { Cidr = n.GetStringValue(); } },
                 { "delegate_loa_creation", n => { DelegateLoaCreation = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "loa_document_id", n => { LoaDocumentId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("cidr", Cidr);
             writer.WriteBoolValue("delegate_loa_creation", DelegateLoaCreation);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("loa_document_id", LoaDocumentId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

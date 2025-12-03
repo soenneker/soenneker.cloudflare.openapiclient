@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_aws"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_s3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class R2_put_bucket_sippy_config : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs R2EnableSippyGcs { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_s3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_s3? R2EnableSippyS3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_s3 R2EnableSippyS3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +55,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.R2EnableSippyGcs = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs();
             }
+            else if("r2_enable_sippy_s3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.R2EnableSippyS3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_s3();
+            }
             return result;
         }
         /// <summary>
@@ -62,6 +74,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(R2EnableSippyGcs != null)
             {
                 return R2EnableSippyGcs.GetFieldDeserializers();
+            }
+            else if(R2EnableSippyS3 != null)
+            {
+                return R2EnableSippyS3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,6 +95,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(R2EnableSippyGcs != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_gcs>(null, R2EnableSippyGcs);
+            }
+            else if(R2EnableSippyS3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_enable_sippy_s3>(null, R2EnableSippyS3);
             }
         }
     }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.Flux1Schnell;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.Flux2Dev;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForest
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.Flux1Schnell.Flux1SchnellRequestBuilder Flux1Schnell
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.Flux1Schnell.Flux1SchnellRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The flux2Dev property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.Flux2Dev.Flux2DevRequestBuilder Flux2Dev
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.Flux2Dev.Flux2DevRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.BlackForestLabsRequestBuilder"/> and sets the default values.

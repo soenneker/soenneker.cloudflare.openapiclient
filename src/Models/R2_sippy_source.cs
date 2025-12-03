@@ -15,13 +15,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Name of the bucket on the provider.</summary>
+        /// <summary>Name of the bucket on the provider (AWS, GCS only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Bucket { get; set; }
 #nullable restore
 #else
         public string Bucket { get; set; }
+#endif
+        /// <summary>S3-compatible URL (Generic S3-compatible providers only).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BucketUrl { get; set; }
+#nullable restore
+#else
+        public string BucketUrl { get; set; }
 #endif
         /// <summary>The provider property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_sippy_source_provider? Provider { get; set; }
@@ -59,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
+                { "bucketUrl", n => { BucketUrl = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_sippy_source_provider>(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
             };
@@ -71,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
+            writer.WriteStringValue("bucketUrl", BucketUrl);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_sippy_source_provider>("provider", Provider);
             writer.WriteStringValue("region", Region);
             writer.WriteAdditionalData(AdditionalData);
