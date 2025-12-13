@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Path { get; set; }
 #endif
-        /// <summary>The port number to connect to for the health check. Required for TCP, UDP, and SMTP checks. HTTP and HTTPS checks should only define the port when using a non-standard port (HTTP: default 80, HTTPS: default 443).</summary>
+        /// <summary>&quot;The port number to connect to for the health check. Required for TCP, UDP, and SMTP checks. HTTP and HTTPS checks should only define the port when using a non-standard port (HTTP: default 80, HTTPS: default 443).&quot;</summary>
         public int? Port { get; set; }
         /// <summary>Assign this monitor to emulate the specified zone while probing. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

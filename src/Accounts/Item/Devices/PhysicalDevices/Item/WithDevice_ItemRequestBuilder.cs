@@ -128,7 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevic
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDevice_ItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>Comma-separated list of additional information that should be included in the device response. Supported values are: &quot;last_seen_registration.policy&quot;.</summary>
+            /// <summary>&quot;Comma-separated list of additional information that should be included in the device response. Supported values are: \&quot;last_seen_registration.policy\&quot;.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]

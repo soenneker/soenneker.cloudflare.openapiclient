@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This will update attributes of a Keyless SSL. Consists of one or more of the following:  host,name,port.
+        /// &quot;This will update attributes of a Keyless SSL. Consists of one or more of the following:  host,name,port.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Ite
             return requestInfo;
         }
         /// <summary>
-        /// This will update attributes of a Keyless SSL. Consists of one or more of the following:  host,name,port.
+        /// &quot;This will update attributes of a Keyless SSL. Consists of one or more of the following:  host,name,port.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

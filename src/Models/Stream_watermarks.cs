@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? Opacity { get; set; }
         /// <summary>The whitespace between the adjacent edges (determined by position) of the video and the image. `0.0` indicates no padding, and `1.0` indicates a fully padded video width or length, as determined by the algorithm.</summary>
         public double? Padding { get; set; }
-        /// <summary>The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.</summary>
+        /// <summary>&quot;The location of the image. Valid positions are: `upperRight`, `upperLeft`, `lowerLeft`, `lowerRight`, and `center`. Note that `center` ignores the `padding` parameter.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Position { get; set; }

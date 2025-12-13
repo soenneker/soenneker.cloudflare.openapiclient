@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Abuse_reports_RegistrarWhoisReport : global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_BaseReportFields, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoisReport_owner_notification? OwnerNotification { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

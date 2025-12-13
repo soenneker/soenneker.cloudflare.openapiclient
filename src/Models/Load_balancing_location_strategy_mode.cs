@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.- `&quot;pop&quot;`: Use the Cloudflare PoP location.- `&quot;resolver_ip&quot;`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.</summary>
+    /// <summary>&quot;Determines the authoritative location when ECS is not preferred, does not exist in the request, or its GeoIP lookup is unsuccessful.- `\&quot;pop\&quot;`: Use the Cloudflare PoP location.- `\&quot;resolver_ip\&quot;`: Use the DNS resolver GeoIP location. If the GeoIP lookup is unsuccessful, use the Cloudflare PoP location.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Load_balancing_location_strategy_mode
     {

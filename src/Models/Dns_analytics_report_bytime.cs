@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Dns_analytics_report_bytime : global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_analytics_result, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Array of time intervals in the response data. Each interval is represented as an array containing two values: the start time, and the end time.</summary>
+        /// <summary>&quot;Array of time intervals in the response data. Each interval is represented as an array containing two values: the start time, and the end time.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? TimeIntervals { get; set; }

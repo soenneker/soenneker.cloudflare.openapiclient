@@ -104,6 +104,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe Stripe { get; set; }
 #endif
+        /// <summary>The zdr property</summary>
+        public bool? Zdr { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result"/> and sets the default values.
         /// </summary>
@@ -150,6 +152,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_rate_limiting_technique>(); } },
                 { "store_id", n => { StoreId = n.GetStringValue(); } },
                 { "stripe", n => { Stripe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe.CreateFromDiscriminatorValue); } },
+                { "zdr", n => { Zdr = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -180,6 +183,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
             writer.WriteStringValue("store_id", StoreId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe>("stripe", Stripe);
+            writer.WriteBoolValue("zdr", Zdr);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>

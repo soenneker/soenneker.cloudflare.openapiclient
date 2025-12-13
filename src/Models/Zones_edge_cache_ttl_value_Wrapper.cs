@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Value of the zone setting.Notes: The minimum TTL available depends on the plan level of the zone. (Enterprise = 30, Business = 1800, Pro = 3600, Free = 7200)</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: The minimum TTL available depends on the plan level of the zone. (Enterprise = 30, Business = 1800, Pro = 3600, Free = 7200)&quot;</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_edge_cache_ttl_value_Wrapper"/> and sets the default values.

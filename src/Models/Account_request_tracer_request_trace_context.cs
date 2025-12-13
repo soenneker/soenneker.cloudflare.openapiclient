@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Account_request_tracer_request_trace_context_geoloc Geoloc { get; set; }
 #endif
-        /// <summary>Whether to skip any challenges for tracing request (e.g.: captcha)</summary>
+        /// <summary>&quot;Whether to skip any challenges for tracing request (e.g.: captcha)&quot;</summary>
         public bool? SkipChallenge { get; set; }
         /// <summary>Threat score used for evaluating tracing request processing</summary>
         public int? ThreatScore { get; set; }

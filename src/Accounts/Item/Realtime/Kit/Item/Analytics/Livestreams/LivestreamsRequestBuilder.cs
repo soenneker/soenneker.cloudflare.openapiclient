@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Daywise;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Overall;
 using System.Collections.Generic;
 using System.IO;
@@ -16,11 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ana
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LivestreamsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The daywise property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Daywise.DaywiseRequestBuilder Daywise
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Daywise.DaywiseRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The overall property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Analytics.Livestreams.Overall.OverallRequestBuilder Overall
         {

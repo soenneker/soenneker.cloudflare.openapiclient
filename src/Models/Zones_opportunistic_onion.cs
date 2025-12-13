@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_opportunistic_onion : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Value of the zone setting.Notes: Default value depends on the zone&apos;s plan level.</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: Default value depends on the zone&apos;s plan level.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_opportunistic_onion_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_opportunistic_onion"/> and sets the default values.

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Value of the zone setting.Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)&quot;</summary>
         public int? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_max_upload_value_Wrapper"/> and sets the default values.

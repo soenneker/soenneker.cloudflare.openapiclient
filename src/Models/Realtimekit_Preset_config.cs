@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Preset_config_max_video_streams MaxVideoStreams { get; set; }
 #endif
-        /// <summary>Media configuration options. eg: Video quality</summary>
+        /// <summary>&quot;Media configuration options. eg: Video quality&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Preset_config_media? Media { get; set; }

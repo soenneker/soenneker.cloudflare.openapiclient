@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.It
         {
         }
         /// <summary>
-        /// Deletes an IP Access rule at the user level.Note: Deleting a user-level rule will affect all zones owned by the user.
+        /// &quot;Deletes an IP Access rule at the user level.Note: Deleting a user-level rule will affect all zones owned by the user.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_id_response"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an IP Access rule at the user level.Note: Deleting a user-level rule will affect all zones owned by the user.
+        /// &quot;Deletes an IP Access rule at the user level.Note: Deleting a user-level rule will affect all zones owned by the user.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -9,6 +9,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Export;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Import;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Item;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Usage;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -41,6 +42,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder Scan
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Scan.ScanRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The usage property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Usage.UsageRequestBuilder Usage
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records.Usage.UsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.dns_records.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>

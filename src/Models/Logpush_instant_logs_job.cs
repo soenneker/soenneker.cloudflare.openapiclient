@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Filter { get; set; }
 #endif
-        /// <summary>The sample parameter is the sample rate of the records set by the client: &quot;sample&quot;: 1 is 100% of records &quot;sample&quot;: 10 is 10% and so on.</summary>
+        /// <summary>&quot;The sample parameter is the sample rate of the records set by the client: \&quot;sample\&quot;: 1 is 100% of records \&quot;sample\&quot;: 10 is 10% and so on.&quot;</summary>
         public int? Sample { get; set; }
         /// <summary>Unique session id of the job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

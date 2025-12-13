@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>The type of origin steering policy to use.- `&quot;random&quot;`: Select an origin randomly.- `&quot;hash&quot;`: Select an origin by computing a hash over the CF-Connecting-IP address.- `&quot;least_outstanding_requests&quot;`: Select an origin by taking into consideration origin weights, as well as each origin&apos;s number of outstanding requests. Origins with more pending requests are weighted proportionately less relative to others.- `&quot;least_connections&quot;`: Select an origin by taking into consideration origin weights, as well as each origin&apos;s number of open connections. Origins with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.</summary>
+    /// <summary>&quot;The type of origin steering policy to use.- `\&quot;random\&quot;`: Select an origin randomly.- `\&quot;hash\&quot;`: Select an origin by computing a hash over the CF-Connecting-IP address.- `\&quot;least_outstanding_requests\&quot;`: Select an origin by taking into consideration origin weights, as well as each origin&apos;s number of outstanding requests. Origins with more pending requests are weighted proportionately less relative to others.- `\&quot;least_connections\&quot;`: Select an origin by taking into consideration origin weights, as well as each origin&apos;s number of open connections. Origins with more open connections are weighted proportionately less relative to others. Supported for HTTP/1 and HTTP/2 connections.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Load_balancing_origin_steering_policy
     {

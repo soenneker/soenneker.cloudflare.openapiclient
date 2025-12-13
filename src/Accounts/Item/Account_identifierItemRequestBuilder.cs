@@ -30,6 +30,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_records;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Email;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity;
@@ -234,6 +235,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Dns_firewallRequestBuilder Dns_firewall
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Dns_firewallRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dns_records property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_records.Dns_recordsRequestBuilder Dns_records
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_records.Dns_recordsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns_settings property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Dns_settingsRequestBuilder Dns_settings

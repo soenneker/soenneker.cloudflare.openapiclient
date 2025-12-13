@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>The chronological sorting order for the logs.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetDirectionQueryParameterType? Direction { get; set; }
-            /// <summary>Filter by user email. Defaults to substring matching. To force exact matching, set `email_exact=true`.Example (default): `email=@example.com` returns all events with that domain.Example (exact): `email=user@example.com&amp;email_exact=true` returns only that user.</summary>
+            /// <summary>&quot;Filter by user email. Defaults to substring matching. To force exact matching, set `email_exact=true`.Example (default): `email=@example.com` returns all events with that domain.Example (exact): `email=user@example.com&amp;email_exact=true` returns only that user.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("email")]

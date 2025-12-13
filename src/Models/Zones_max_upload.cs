@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_max_upload : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Value of the zone setting.Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: The size depends on the plan level of the zone. (Enterprise = 500, Business = 200, Pro = 100, Free = 100)&quot;</summary>
         public int? Value { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

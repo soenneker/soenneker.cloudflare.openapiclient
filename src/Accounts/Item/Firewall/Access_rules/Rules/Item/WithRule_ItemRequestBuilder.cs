@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
         {
         }
         /// <summary>
-        /// Deletes an existing IP Access rule defined at the account level.Note: This operation will affect all zones in the account.
+        /// &quot;Deletes an existing IP Access rule defined at the account level.Note: This operation will affect all zones in the account.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_api_response_single_id"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an IP Access rule defined at the account level.Note: This operation will affect all zones in the account.
+        /// &quot;Updates an IP Access rule defined at the account level.Note: This operation will affect all zones in the account.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes an existing IP Access rule defined at the account level.Note: This operation will affect all zones in the account.
+        /// &quot;Deletes an existing IP Access rule defined at the account level.Note: This operation will affect all zones in the account.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             return requestInfo;
         }
         /// <summary>
-        /// Updates an IP Access rule defined at the account level.Note: This operation will affect all zones in the account.
+        /// &quot;Updates an IP Access rule defined at the account level.Note: This operation will affect all zones in the account.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

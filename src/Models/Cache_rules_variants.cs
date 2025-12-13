@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
+    /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cache_rules_variants : global::Soenneker.Cloudflare.OpenApiClient.Models.Cache_rules_base, IParsable

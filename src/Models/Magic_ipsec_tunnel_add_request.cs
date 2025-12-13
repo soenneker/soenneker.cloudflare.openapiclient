@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CustomerEndpoint { get; set; }
 #endif
+        /// <summary>The custom_remote_identities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities? CustomRemoteIdentities { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities CustomRemoteIdentities { get; set; }
+#endif
         /// <summary>An optional description forthe IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check HealthCheck { get; set; }
 #endif
-        /// <summary>A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.</summary>
+        /// <summary>&quot;A 31-bit prefix (/31 in CIDR notation) supporting two hosts, one for each side of the tunnel. Select the subnet from the following private IP space: 10.0.0.0–10.255.255.255, 172.16.0.0–172.31.255.255, 192.168.0.0–192.168.255.255.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InterfaceAddress { get; set; }
@@ -118,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "automatic_return_routing", n => { AutomaticReturnRouting = n.GetBoolValue(); } },
                 { "bgp", n => { Bgp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config.CreateFromDiscriminatorValue); } },
                 { "cloudflare_endpoint", n => { CloudflareEndpoint = n.GetStringValue(); } },
+                { "custom_remote_identities", n => { CustomRemoteIdentities = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities.CreateFromDiscriminatorValue); } },
                 { "customer_endpoint", n => { CustomerEndpoint = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "health_check", n => { HealthCheck = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check.CreateFromDiscriminatorValue); } },
@@ -139,6 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_bgp_config>("bgp", Bgp);
             writer.WriteStringValue("cloudflare_endpoint", CloudflareEndpoint);
             writer.WriteStringValue("customer_endpoint", CustomerEndpoint);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_custom_remote_identities>("custom_remote_identities", CustomRemoteIdentities);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_tunnel_health_check>("health_check", HealthCheck);
             writer.WriteStringValue("interface_address", InterfaceAddress);

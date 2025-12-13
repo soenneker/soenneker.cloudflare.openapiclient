@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Value of the zone setting in seconds.Minimum values by plan:- Free: 1 second- Pro: 1 second- Business: 1 second- Enterprise: 1 secondSetting a TTL of 0 is equivalent to selecting `Respect Existing Headers` and is allowed for all plans.</summary>
+        /// <summary>&quot;Value of the zone setting in seconds.Minimum values by plan:- Free: 1 second- Pro: 1 second- Business: 1 second- Enterprise: 1 secondSetting a TTL of 0 is equivalent to selecting `Respect Existing Headers` and is allowed for all plans.&quot;</summary>
         public int? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch8"/> and sets the default values.

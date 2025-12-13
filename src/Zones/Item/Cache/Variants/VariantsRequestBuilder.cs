@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
         {
         }
         /// <summary>
-        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
+        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_delete_variants_setting_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_delete_variants_setting_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_delete_variants_setting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
+        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_variants_setting_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_variants_setting_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_variants_setting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
+        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_variants_setting_200"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_variants_setting_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_variants_setting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
+        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
             return requestInfo;
         }
         /// <summary>
-        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
+        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Variants
             return requestInfo;
         }
         /// <summary>
-        /// Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.
+        /// &quot;Variant support enables caching variants of images with certain file extensions in addition to the original. This only applies when the origin server sends the &apos;Vary: Accept&apos; response header. If the origin server sends &apos;Vary: Accept&apos; but does not serve the variant requested, the response will not be cached. This will be indicated with BYPASS cache status in the response headers.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

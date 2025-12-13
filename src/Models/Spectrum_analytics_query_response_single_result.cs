@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Total number of rows in the result.</summary>
         public double? Rows { get; set; }
-        /// <summary>List of time interval buckets: [start, end]</summary>
+        /// <summary>&quot;List of time interval buckets: [start, end]&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? TimeIntervals { get; set; }

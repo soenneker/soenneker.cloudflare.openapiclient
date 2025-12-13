@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Value of the zone setting.Notes: Default value depends on the zone&apos;s plan level.</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: Default value depends on the zone&apos;s plan level.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_1_3_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_tls_1_3_value_Wrapper"/> and sets the default values.

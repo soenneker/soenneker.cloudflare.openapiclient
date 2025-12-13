@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Filler Words can help transcribe interruptions in your audio, like &apos;uh&apos; and &apos;um&apos;</summary>
         public bool? FillerWords { get; set; }
-        /// <summary>Specifies whether the streaming endpoint should provide ongoing transcription updates as more audio is received. When set to true, the endpoint sends continuous updates, meaning transcription results may evolve over time. Note: Supported only for webosockets.</summary>
+        /// <summary>&quot;Specifies whether the streaming endpoint should provide ongoing transcription updates as more audio is received. When set to true, the endpoint sends continuous updates, meaning transcription results may evolve over time. Note: Supported only for webosockets.&quot;</summary>
         public bool? InterimResults { get; set; }
         /// <summary>Key term prompting can boost or suppress specialized terminology and brands.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,13 +144,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? SmartFormat { get; set; }
         /// <summary>Detect topics throughout a transcript or text.</summary>
         public bool? Topics { get; set; }
-        /// <summary>Indicates how long model will wait to send an UtteranceEnd message after a word has been transcribed. Use with interim_results. Note: Supported only for webosockets.</summary>
+        /// <summary>&quot;Indicates how long model will wait to send an UtteranceEnd message after a word has been transcribed. Use with interim_results. Note: Supported only for webosockets.&quot;</summary>
         public bool? UtteranceEndMs { get; set; }
         /// <summary>Segments speech into meaningful semantic units.</summary>
         public bool? Utterances { get; set; }
         /// <summary>Seconds to wait before detecting a pause between words in submitted audio.</summary>
         public double? UttSplit { get; set; }
-        /// <summary>Indicates that speech has started. You&apos;ll begin receiving Speech Started messages upon speech starting. Note: Supported only for webosockets.</summary>
+        /// <summary>&quot;Indicates that speech has started. You&apos;ll begin receiving Speech Started messages upon speech starting. Note: Supported only for webosockets.&quot;</summary>
         public bool? VadEvents { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_deepgram_nova_3"/> and sets the default values.

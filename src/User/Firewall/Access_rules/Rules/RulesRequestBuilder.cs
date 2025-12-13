@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_collection_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_collection_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
+        /// &quot;Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
+        /// &quot;Creates a new IP Access rule for all zones owned by the current user.Note: To create an IP Access rule that applies to a specific zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

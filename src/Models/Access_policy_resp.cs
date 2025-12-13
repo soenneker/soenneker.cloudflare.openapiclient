@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Require users to enter a justification when they log in to the application.</summary>
         public bool? PurposeJustificationRequired { get; set; }
-        /// <summary>The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.</summary>
+        /// <summary>&quot;The amount of time that tokens issued for the application will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionDuration { get; set; }

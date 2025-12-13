@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? NoData { get; set; }
         /// <summary>Export only each table&apos;s contents, not its definition</summary>
         public bool? NoSchema { get; set; }
-        /// <summary>Filter the export to just one or more tables. Passing an empty array is the same as not passing anything and means: export all tables.</summary>
+        /// <summary>&quot;Filter the export to just one or more tables. Passing an empty array is the same as not passing anything and means: export all tables.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Tables { get; set; }

@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Abuse_reports_ThreatReport : global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_BaseReportFields, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ThreatReport_host_notification? HostNotification { get; set; }
         /// <summary>A detailed description of the infringement, including any necessary access details and the exact steps needed to view the content, not exceeding 5000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Justification { get; set; }
 #endif
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_ThreatReport_owner_notification? OwnerNotification { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

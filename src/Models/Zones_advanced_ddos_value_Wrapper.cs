@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>Value of the zone setting.Notes: Defaults to on for Business+ plans</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: Defaults to on for Business+ plans&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos_value_Wrapper"/> and sets the default values.

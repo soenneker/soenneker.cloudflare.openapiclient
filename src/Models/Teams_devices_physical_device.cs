@@ -137,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OsVersionExtra { get; set; }
 #endif
-        /// <summary>**Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/</summary>
+        /// <summary>&quot;**Deprecated**: IP information is provided by DEX - see https://developers.cloudflare.com/api/resources/zero_trust/subresources/dex/subresources/fleet_status/subresources/devices/methods/list/&quot;</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

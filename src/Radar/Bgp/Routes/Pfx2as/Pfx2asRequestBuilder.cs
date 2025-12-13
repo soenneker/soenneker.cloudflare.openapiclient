@@ -108,7 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as
             [QueryParameter("prefix")]
             public string Prefix { get; set; }
 #endif
-            /// <summary>Return only results with matching rpki status: valid, invalid or unknown.</summary>
+            /// <summary>&quot;Return only results with matching rpki status: valid, invalid or unknown.&quot;</summary>
             [QueryParameter("rpkiStatus")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as.GetRpkiStatusQueryParameterType? RpkiStatus { get; set; }
         }

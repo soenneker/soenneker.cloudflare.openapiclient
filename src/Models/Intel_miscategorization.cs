@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<int?> SecurityRemoves { get; set; }
 #endif
-        /// <summary>Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.</summary>
+        /// <summary>&quot;Provide only if indicator_type is `domain` or `url`. Example if indicator_type is `domain`: `example.com`. Example if indicator_type is `url`: `https://example.com/news/`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }

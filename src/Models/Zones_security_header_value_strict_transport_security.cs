@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? IncludeSubdomains { get; set; }
         /// <summary>Max age in seconds of the strict transport security.</summary>
         public double? MaxAge { get; set; }
-        /// <summary>Whether or not to include &apos;X-Content-Type-Options: nosniff&apos; header.</summary>
+        /// <summary>&quot;Whether or not to include &apos;X-Content-Type-Options: nosniff&apos; header.&quot;</summary>
         public bool? Nosniff { get; set; }
         /// <summary>Enable automatic preload of the HSTS configuration.</summary>
         public bool? Preload { get; set; }

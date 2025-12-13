@@ -196,7 +196,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("metric")]
             public string Metric { get; set; }
 #endif
-            /// <summary>Deprecated: Use cursor pagination instead.</summary>
+            /// <summary>&quot;Deprecated: Use cursor pagination instead.&quot;</summary>
             [Obsolete("")]
             [QueryParameter("page")]
             public int? Page { get; set; }

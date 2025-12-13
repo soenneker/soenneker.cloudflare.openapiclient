@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Spectrum_config_app_config : global::Soenneker.Cloudflare.OpenApiClient.Models.Spectrum_config_base_app_config, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Enables Argo Smart Routing for this application.Notes: Only available for TCP applications with traffic_type set to &quot;direct&quot;.</summary>
+        /// <summary>&quot;Enables Argo Smart Routing for this application.Notes: Only available for TCP applications with traffic_type set to \&quot;direct\&quot;.&quot;</summary>
         public bool? ArgoSmartRouting { get; set; }
         /// <summary>The name and type of DNS record for the Spectrum application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Spectrum_config_edge_ips EdgeIps { get; set; }
 #endif
-        /// <summary>Enables IP Access Rules for this application.Notes: Only available for TCP applications.</summary>
+        /// <summary>&quot;Enables IP Access Rules for this application.Notes: Only available for TCP applications.&quot;</summary>
         public bool? IpFirewall { get; set; }
         /// <summary>List of origin IP addresses. Array may contain multiple IP addresses for load balancing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Spectrum_config_origin_dns OriginDns { get; set; }
 #endif
-        /// <summary>The destination port at the origin. Only specified in conjunction with origin_dns. May use an integer to specify a single origin port, for example `1000`, or a string to specify a range of origin ports, for example `&quot;1000-2000&quot;`.Notes: If specifying a port range, the number of ports in the range must match the number of ports specified in the &quot;protocol&quot; field.</summary>
+        /// <summary>&quot;The destination port at the origin. Only specified in conjunction with origin_dns. May use an integer to specify a single origin port, for example `1000`, or a string to specify a range of origin ports, for example `\&quot;1000-2000\&quot;`.Notes: If specifying a port range, the number of ports in the range must match the number of ports specified in the \&quot;protocol\&quot; field.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Spectrum_config_origin_port? OriginPort { get; set; }

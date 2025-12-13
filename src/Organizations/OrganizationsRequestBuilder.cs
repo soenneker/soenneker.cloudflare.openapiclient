@@ -170,7 +170,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations
             [QueryParameter("containing%2Eorganization")]
             public string ContainingOrganization { get; set; }
 #endif
-            /// <summary>Filter the list of organizations to the ones that contain this particularuser.IMPORTANT: Just because an organization &quot;contains&quot; a user is not arepresentation of any authorization or privilege to manage any resourcestherein. An organization &quot;containing&quot; a user simply means the user is managed bythat organization.</summary>
+            /// <summary>&quot;Filter the list of organizations to the ones that contain this particularuser.IMPORTANT: Just because an organization \&quot;contains\&quot; a user is not arepresentation of any authorization or privilege to manage any resourcestherein. An organization \&quot;containing\&quot; a user simply means the user is managed bythat organization.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("containing%2Euser")]

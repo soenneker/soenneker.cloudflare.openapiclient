@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The start date and time for when the log starts accepting certificates.</summary>
         public DateTimeOffset? StartInclusive { get; set; }
-        /// <summary>The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html</summary>
+        /// <summary>&quot;The current state of the certificate log. More details about log states can be found here: https://googlechrome.github.io/CertificateTransparency/log_states.html&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_certificate_log_details_200_result_certificateLog_state? State { get; set; }
         /// <summary>Timestamp of when the log state was last updated.</summary>
         public DateTimeOffset? StateTimestamp { get; set; }

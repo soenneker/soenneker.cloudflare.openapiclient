@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.- `&quot;always&quot;`: Always prefer ECS.- `&quot;never&quot;`: Never prefer ECS.- `&quot;proximity&quot;`: Prefer ECS only when `steering_policy=&quot;proximity&quot;`.- `&quot;geo&quot;`: Prefer ECS only when `steering_policy=&quot;geo&quot;`.</summary>
+    /// <summary>&quot;Whether the EDNS Client Subnet (ECS) GeoIP should be preferred as the authoritative location.- `\&quot;always\&quot;`: Always prefer ECS.- `\&quot;never\&quot;`: Never prefer ECS.- `\&quot;proximity\&quot;`: Prefer ECS only when `steering_policy=\&quot;proximity\&quot;`.- `\&quot;geo\&quot;`: Prefer ECS only when `steering_policy=\&quot;geo\&quot;`.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Load_balancing_location_strategy_prefer_ecs
     {

@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Value of the zone setting.Notes: Value must be between 1 and 6000</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: Value must be between 1 and 6000&quot;</summary>
         public double? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_setting_value_Branch39"/> and sets the default values.

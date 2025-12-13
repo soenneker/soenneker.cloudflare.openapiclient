@@ -40,6 +40,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Queued { get; set; }
         /// <summary>The running property</summary>
         public int? Running { get; set; }
+        /// <summary>The skipped property</summary>
+        public int? Skipped { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200_result"/> and sets the default values.
         /// </summary>
@@ -72,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_activity", n => { LastActivity = n.GetDateTimeOffsetValue(); } },
                 { "queued", n => { Queued = n.GetIntValue(); } },
                 { "running", n => { Running = n.GetIntValue(); } },
+                { "skipped", n => { Skipped = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -88,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_activity", LastActivity);
             writer.WriteIntValue("queued", Queued);
             writer.WriteIntValue("running", Running);
+            writer.WriteIntValue("skipped", Skipped);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

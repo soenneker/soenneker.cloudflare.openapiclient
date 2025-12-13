@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Path { get; set; }
 #endif
-        /// <summary>Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:[code] e.g. &apos;http_status:404&apos;.</summary>
+        /// <summary>&quot;Protocol and address of destination server. Supported protocols: http://, https://, unix://, tcp://, ssh://, rdp://, unix+tls://, smb://. Alternatively can return a HTTP status code http_status:[code] e.g. &apos;http_status:404&apos;.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Service { get; set; }

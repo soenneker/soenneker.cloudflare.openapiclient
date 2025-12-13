@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OriginServerName { get; set; }
 #endif
-        /// <summary>cloudflared starts a proxy server to translate HTTP traffic into TCP when proxying, for example, SSH or RDP. This configures what type of proxy will be started. Valid options are: &quot;&quot; for the regular proxy and &quot;socks&quot; for a SOCKS5 proxy.</summary>
+        /// <summary>&quot;cloudflared starts a proxy server to translate HTTP traffic into TCP when proxying, for example, SSH or RDP. This configures what type of proxy will be started. Valid options are: \&quot;\&quot; for the regular proxy and \&quot;socks\&quot; for a SOCKS5 proxy.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProxyType { get; set; }

@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new IP Access rule for an account. The rule will apply to all zones in the account.Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
+        /// &quot;Creates a new IP Access rule for an account. The rule will apply to all zones in the account.Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Firewall.Access_rules
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new IP Access rule for an account. The rule will apply to all zones in the account.Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.
+        /// &quot;Creates a new IP Access rule for an account. The rule will apply to all zones in the account.Note: To create an IP Access rule that applies to a single zone, refer to the [IP Access rules for a zone](#ip-access-rules-for-a-zone) endpoints.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

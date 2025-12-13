@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Flag that indicates if the job is enabled.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>If not null, the job is currently failing. Failures are usually. repetitive (example: no permissions to write to destination bucket). Only the last failure is recorded. On successful execution of a job the error_message and last_error are set to null.</summary>
+        /// <summary>&quot;If not null, the job is currently failing. Failures are usually. repetitive (example: no permissions to write to destination bucket). Only the last failure is recorded. On successful execution of a job the error_message and last_error are set to null.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ErrorMessage { get; set; }

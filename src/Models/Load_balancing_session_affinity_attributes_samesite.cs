@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Configures the SameSite attribute on session affinity cookie. Value &quot;Auto&quot; will be translated to &quot;Lax&quot; or &quot;None&quot; depending if Always Use HTTPS is enabled. Note: when using value &quot;None&quot;, the secure attribute can not be set to &quot;Never&quot;.</summary>
+    /// <summary>&quot;Configures the SameSite attribute on session affinity cookie. Value \&quot;Auto\&quot; will be translated to \&quot;Lax\&quot; or \&quot;None\&quot; depending if Always Use HTTPS is enabled. Note: when using value \&quot;None\&quot;, the secure attribute can not be set to \&quot;Never\&quot;.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Load_balancing_session_affinity_attributes_samesite
     {

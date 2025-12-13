@@ -62,7 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`.</summary>
+        /// <summary>&quot;Polling frequency for the WARP client posture check. Default: `5m` (poll every five minutes). Minimum: `1m`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Schedule { get; set; }

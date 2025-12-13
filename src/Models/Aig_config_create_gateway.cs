@@ -50,6 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? RateLimitingLimit { get; set; }
         /// <summary>The rate_limiting_technique property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique? RateLimitingTechnique { get; set; }
+        /// <summary>The zdr property</summary>
+        public bool? Zdr { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway"/> and sets the default values.
         /// </summary>
@@ -87,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rate_limiting_interval", n => { RateLimitingInterval = n.GetIntValue(); } },
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique>(); } },
+                { "zdr", n => { Zdr = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -108,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("rate_limiting_interval", RateLimitingInterval);
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
+            writer.WriteBoolValue("zdr", Zdr);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

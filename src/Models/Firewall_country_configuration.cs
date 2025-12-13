@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration target. You must set the target to `country` when specifying a country code in the rule.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_country_configuration_target? Target { get; set; }
-        /// <summary>The two-letter ISO-3166-1 alpha-2 code to match. For more information, refer to [IP Access rules: Parameters](https://developers.cloudflare.com/waf/tools/ip-access-rules/parameters/#country).</summary>
+        /// <summary>&quot;The two-letter ISO-3166-1 alpha-2 code to match. For more information, refer to [IP Access rules: Parameters](https://developers.cloudflare.com/waf/tools/ip-access-rules/parameters/#country).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get; set; }

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve
         {
         }
         /// <summary>
-        /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
+        /// &quot;Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_cache_reserve_setting_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_cache_reserve_setting_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_get_cache_reserve_setting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
+        /// &quot;Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_cache_reserve_setting_200"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_cache_reserve_setting_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zone_cache_settings_change_cache_reserve_setting_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
+        /// &quot;Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve
             return requestInfo;
         }
         /// <summary>
-        /// Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.
+        /// &quot;Increase cache lifetimes by automatically storing all cacheable files into Cloudflare&apos;s persistent object storage buckets. Requires Cache Reserve subscription. Note: using Tiered Cache with Cache Reserve is highly recommended to reduce Reserve operations costs. See the [developer docs](https://developers.cloudflare.com/cache/about/cache-reserve) for more information.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

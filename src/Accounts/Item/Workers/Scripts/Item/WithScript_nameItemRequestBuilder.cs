@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Worker_script_download_worker_200_Response_multipart_form_data>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Worker_script_download_worker_200_Response_multipart_form_data.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// &quot;Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Worker_script_upload_worker_module_200"/></returns>
         /// <param name="body">The request body</param>
@@ -214,7 +214,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
             return requestInfo;
         }
         /// <summary>
-        /// Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// &quot;Upload a worker module. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

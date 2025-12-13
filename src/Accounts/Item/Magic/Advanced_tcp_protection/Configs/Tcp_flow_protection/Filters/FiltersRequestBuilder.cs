@@ -202,7 +202,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_tcp_pr
             [QueryParameter("direction")]
             public string Direction { get; set; }
 #endif
-            /// <summary>The mode of the filters to get. Optional. Valid values: &apos;enabled&apos;, &apos;disabled&apos;, &apos;monitoring&apos;.</summary>
+            /// <summary>&quot;The mode of the filters to get. Optional. Valid values: &apos;enabled&apos;, &apos;disabled&apos;, &apos;monitoring&apos;.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("mode")]

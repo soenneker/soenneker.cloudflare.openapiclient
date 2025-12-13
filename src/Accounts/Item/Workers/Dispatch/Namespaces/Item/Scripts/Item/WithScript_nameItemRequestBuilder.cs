@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespace_script_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_namespace_script_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// &quot;Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -184,7 +184,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
             return requestInfo;
         }
         /// <summary>
-        /// Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// &quot;Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

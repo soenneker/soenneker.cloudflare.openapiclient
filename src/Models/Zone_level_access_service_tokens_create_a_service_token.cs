@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A version number identifying the current `client_secret` associated with the service token. Incrementing it triggers a rotation; the previous secret will still be accepted until the time indicated by `previous_client_secret_expires_at`.</summary>
         public double? ClientSecretVersion { get; set; }
-        /// <summary>The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).</summary>
+        /// <summary>&quot;The duration for how long the service token will be valid. Must be in the format `300ms` or `2h45m`. Valid time units are: ns, us (or µs), ms, s, m, h. The default is 1 year in hours (8760h).&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Duration { get; set; }

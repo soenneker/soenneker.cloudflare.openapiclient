@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
         {
         }
         /// <summary>
-        /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is &quot;give me all the logs for zone Z for minute M&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
+        /// &quot;The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is \&quot;give me all the logs for zone Z for minute M\&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Logshare_logs_response_json_lines.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is &quot;give me all the logs for zone Z for minute M&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
+        /// &quot;The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is \&quot;give me all the logs for zone Z for minute M\&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received.ReceivedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is &quot;give me all the logs for zone Z for minute M&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.
+        /// &quot;The `/received` api route allows customers to retrieve their edge HTTP logs. The basic access pattern is \&quot;give me all the logs for zone Z for minute M\&quot;, where the minute M refers to the time records were received at Cloudflare&apos;s central data center. `start` is inclusive, and `end` is exclusive. Because of that, to get all data, at minutely cadence, starting at 10AM, the proper values are: `start=2018-05-20T10:00:00Z&amp;end=2018-05-20T10:01:00Z`, then `start=2018-05-20T10:01:00Z&amp;end=2018-05-20T10:02:00Z` and so on; the overlap will be handled properly.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReceivedRequestBuilderGetQueryParameters 

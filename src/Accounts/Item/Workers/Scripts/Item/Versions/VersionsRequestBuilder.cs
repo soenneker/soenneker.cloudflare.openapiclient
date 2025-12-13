@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versions_list_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versions_list_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a Worker Version without deploying to Cloudflare&apos;s network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// &quot;Upload a Worker Version without deploying to Cloudflare&apos;s network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versions_upload_response"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
             return requestInfo;
         }
         /// <summary>
-        /// Upload a Worker Version without deploying to Cloudflare&apos;s network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.
+        /// &quot;Upload a Worker Version without deploying to Cloudflare&apos;s network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

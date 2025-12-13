@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.Pfx2as
 {
-    /// <summary>Return only results with matching rpki status: valid, invalid or unknown.</summary>
+    /// <summary>&quot;Return only results with matching rpki status: valid, invalid or unknown.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetRpkiStatusQueryParameterType
     {

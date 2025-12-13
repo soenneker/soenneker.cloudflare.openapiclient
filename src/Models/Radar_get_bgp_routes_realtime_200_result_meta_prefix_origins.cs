@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Prefix { get; set; }
 #endif
-        /// <summary>Prefix-origin RPKI validation: valid, invalid, unknown.</summary>
+        /// <summary>&quot;Prefix-origin RPKI validation: valid, invalid, unknown.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RpkiValidation { get; set; }

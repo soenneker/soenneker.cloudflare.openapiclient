@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The unique identifier for the allow policy.</summary>
         public int? Id { get; set; }
-        /// <summary>Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.Note: This will not exempt messages with Malicious or Suspicious dispositions.</summary>
+        /// <summary>&quot;Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.Note: This will not exempt messages with Malicious or Suspicious dispositions.&quot;</summary>
         public bool? IsAcceptableSender { get; set; }
         /// <summary>Messages to this recipient will bypass all detections.</summary>
         public bool? IsExemptRecipient { get; set; }

@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScriptsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Filter scripts by tags. Format: comma-separated list of tag:allowed pairs where allowed is &apos;yes&apos; or &apos;no&apos;.</summary>
+            /// <summary>&quot;Filter scripts by tags. Format: comma-separated list of tag:allowed pairs where allowed is &apos;yes&apos; or &apos;no&apos;.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tags")]

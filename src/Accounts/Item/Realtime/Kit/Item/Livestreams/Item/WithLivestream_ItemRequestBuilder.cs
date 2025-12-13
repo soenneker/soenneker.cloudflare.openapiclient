@@ -4,9 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.ActiveLivestreamSession;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.Disable;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.Enable;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.ResetStreamKey;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -25,21 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Liv
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.ActiveLivestreamSession.ActiveLivestreamSessionRequestBuilder ActiveLivestreamSession
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.ActiveLivestreamSession.ActiveLivestreamSessionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The disable property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.Disable.DisableRequestBuilder Disable
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.Disable.DisableRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The enable property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.Enable.EnableRequestBuilder Enable
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.Enable.EnableRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The resetStreamKey property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.ResetStreamKey.ResetStreamKeyRequestBuilder ResetStreamKey
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.ResetStreamKey.ResetStreamKeyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Livestreams.Item.WithLivestream_ItemRequestBuilder"/> and sets the default values.

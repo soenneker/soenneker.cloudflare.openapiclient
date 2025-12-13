@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Filter { get; set; }
 #endif
-        /// <summary>The sample parameter is the sample rate of the records set by the client: &quot;sample&quot;: 1 is 100% of records &quot;sample&quot;: 10 is 10% and so on.</summary>
+        /// <summary>&quot;The sample parameter is the sample rate of the records set by the client: \&quot;sample\&quot;: 1 is 100% of records \&quot;sample\&quot;: 10 is 10% and so on.&quot;</summary>
         public int? Sample { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_zones_zone_id_logpush_edge_jobs"/> and sets the default values.

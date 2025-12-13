@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Namespace_worker_get_script_bindings_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
+        /// <summary>&quot;List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>? Result { get; set; }

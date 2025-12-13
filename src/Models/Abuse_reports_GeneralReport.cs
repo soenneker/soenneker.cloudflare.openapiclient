@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DestinationIps { get; set; }
 #endif
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_GeneralReport_host_notification? HostNotification { get; set; }
         /// <summary>A detailed description of the infringement, including any necessary access details and the exact steps needed to view the content, not exceeding 5000 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Justification { get; set; }
 #endif
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_GeneralReport_owner_notification? OwnerNotification { get; set; }
         /// <summary>A comma separated list of ports and protocols e.g. 80/TCP, 22/UDP. The total size of the field should not exceed 2000 characters. Each individual port/protocol should not exceed 100 characters. The list should not have more than 30 unique ports and protocols.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configures pool weights.- `steering_policy=&quot;random&quot;`: A random pool is selected with probability proportional to pool weights.- `steering_policy=&quot;least_outstanding_requests&quot;`: Use pool weights to scale each pool&apos;s outstanding requests.- `steering_policy=&quot;least_connections&quot;`: Use pool weights to scale each pool&apos;s open connections.
+    /// &quot;Configures pool weights.- `steering_policy=\&quot;random\&quot;`: A random pool is selected with probability proportional to pool weights.- `steering_policy=\&quot;least_outstanding_requests\&quot;`: Use pool weights to scale each pool&apos;s outstanding requests.- `steering_policy=\&quot;least_connections\&quot;`: Use pool weights to scale each pool&apos;s open connections.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Load_balancing_random_steering : IAdditionalDataHolder, IParsable

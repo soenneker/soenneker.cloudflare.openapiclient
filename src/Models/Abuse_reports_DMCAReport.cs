@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string AgentName { get; set; }
 #endif
-        /// <summary>Can be `0` for false or `1` for true. Must be value: 1 for DMCA reports</summary>
+        /// <summary>&quot;Can be `0` for false or `1` for true. Must be value: 1 for DMCA reports&quot;</summary>
         public int? Agree { get; set; }
         /// <summary>Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_DMCAReport_host_notification? HostNotification { get; set; }
         /// <summary>Text not exceeding 255 characters. This field may be released by Cloudflare to third parties such as the Lumen Database (https://lumendatabase.org/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string OriginalWork { get; set; }
 #endif
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_DMCAReport_owner_notification? OwnerNotification { get; set; }
         /// <summary>Required for DMCA reports, should be same as Name. An affirmation that all information in the report is true and accurate while agreeing to the policies of Cloudflare&apos;s abuse reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

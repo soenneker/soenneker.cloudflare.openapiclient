@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_assets Assets { get; set; }
 #endif
-        /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
+        /// <summary>&quot;List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>? Bindings { get; set; }
@@ -108,6 +108,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Source { get; private set; }
 #endif
+        /// <summary>Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).</summary>
+        public int? StartupTimeMs { get; private set; }
         /// <summary>Usage model for the version.</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_usage_model? UsageModel { get; set; }
@@ -151,6 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "number", n => { Number = n.GetIntValue(); } },
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_placement>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_placement.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
+                { "startup_time_ms", n => { StartupTimeMs = n.GetIntValue(); } },
                 { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_usage_model>(); } },
             };
         }

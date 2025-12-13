@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Media configuration options. eg: Video quality
+    /// &quot;Media configuration options. eg: Video quality&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Realtimekit_UpdatePreset_config_media : IAdditionalDataHolder, IParsable

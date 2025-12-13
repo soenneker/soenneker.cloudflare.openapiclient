@@ -129,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("relatedEvents")]
             public string[] RelatedEvents { get; set; }
 #endif
-            /// <summary>Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events.</summary>
+            /// <summary>&quot;Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events.&quot;</summary>
             [QueryParameter("relatedEventsLimit")]
             public double? RelatedEventsLimit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

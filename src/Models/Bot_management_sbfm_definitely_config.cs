@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? OptimizeWordpress { get; set; }
         /// <summary>Super Bot Fight Mode (SBFM) action to take on definitely automated requests.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_definitely_automated? SbfmDefinitelyAutomated { get; set; }
-        /// <summary>Super Bot Fight Mode (SBFM) to enable static resource protection.Enable if static resources on your application need bot protection.Note: Static resource protection can also result in legitimate traffic being blocked.</summary>
+        /// <summary>&quot;Super Bot Fight Mode (SBFM) to enable static resource protection.Enable if static resources on your application need bot protection.Note: Static resource protection can also result in legitimate traffic being blocked.&quot;</summary>
         public bool? SbfmStaticResourceProtection { get; set; }
         /// <summary>Super Bot Fight Mode (SBFM) action to take on verified bots requests.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Bot_management_sbfm_verified_bots? SbfmVerifiedBots { get; set; }

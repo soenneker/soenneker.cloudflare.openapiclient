@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Comments { get; set; }
 #endif
-        /// <summary>Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.Note: This will not exempt messages with Malicious or Suspicious dispositions.</summary>
+        /// <summary>&quot;Messages from this sender will be exempted from Spam, Spoof and Bulk dispositions.Note: This will not exempt messages with Malicious or Suspicious dispositions.&quot;</summary>
         public bool? IsAcceptableSender { get; set; }
         /// <summary>Messages to this recipient will bypass all detections.</summary>
         public bool? IsExemptRecipient { get; set; }

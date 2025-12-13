@@ -22,8 +22,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? LiveStreamOnStart { get; set; }
         /// <summary>Specifies if Chat within a meeting should persist for a week.</summary>
         public bool? PersistChat { get; set; }
-        /// <summary>The region in which this meeting should be created.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting_preferred_region? PreferredRegion { get; set; }
         /// <summary>Specifies if the meeting should start getting recorded as soon as someone joins the meeting.</summary>
         public bool? RecordOnStart { get; set; }
         /// <summary>Time in seconds, for which a session remains active, after the last participant has left the meeting.</summary>
@@ -71,7 +69,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "live_stream_on_start", n => { LiveStreamOnStart = n.GetBoolValue(); } },
                 { "persist_chat", n => { PersistChat = n.GetBoolValue(); } },
-                { "preferred_region", n => { PreferredRegion = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting_preferred_region>(); } },
                 { "record_on_start", n => { RecordOnStart = n.GetBoolValue(); } },
                 { "session_keep_alive_time_in_secs", n => { SessionKeepAliveTimeInSecs = n.GetDoubleValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting_status>(); } },
@@ -89,7 +86,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("live_stream_on_start", LiveStreamOnStart);
             writer.WriteBoolValue("persist_chat", PersistChat);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting_preferred_region>("preferred_region", PreferredRegion);
             writer.WriteBoolValue("record_on_start", RecordOnStart);
             writer.WriteDoubleValue("session_keep_alive_time_in_secs", SessionKeepAliveTimeInSecs);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting_status>("status", Status);

@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Next { get; set; }
 #endif
-        /// <summary>Deprecated: Returns always 0</summary>
+        /// <summary>&quot;Deprecated: Returns always 0&quot;</summary>
         [Obsolete("")]
         public int? Page { get; set; }
         /// <summary>number of items per page</summary>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Previous { get; set; }
 #endif
-        /// <summary>Deprecated: Returns always 0</summary>
+        /// <summary>&quot;Deprecated: Returns always 0&quot;</summary>
         [Obsolete("")]
         public int? TotalCount { get; set; }
         /// <summary>

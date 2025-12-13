@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+    /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Abuse_reports_NCSEIReport_owner_notification
     {

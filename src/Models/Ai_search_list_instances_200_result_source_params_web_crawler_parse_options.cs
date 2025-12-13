@@ -14,14 +14,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The exclude_regex property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExcludeRegex { get; set; }
-#nullable restore
-#else
-        public string ExcludeRegex { get; set; }
-#endif
         /// <summary>The include_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,14 +24,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The include_images property</summary>
         public bool? IncludeImages { get; set; }
-        /// <summary>The include_regex property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? IncludeRegex { get; set; }
-#nullable restore
-#else
-        public string IncludeRegex { get; set; }
-#endif
         /// <summary>The use_browser_rendering property</summary>
         public bool? UseBrowserRendering { get; set; }
         /// <summary>
@@ -67,10 +51,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exclude_regex", n => { ExcludeRegex = n.GetStringValue(); } },
                 { "include_headers", n => { IncludeHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_source_params_web_crawler_parse_options_include_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_source_params_web_crawler_parse_options_include_headers.CreateFromDiscriminatorValue); } },
                 { "include_images", n => { IncludeImages = n.GetBoolValue(); } },
-                { "include_regex", n => { IncludeRegex = n.GetStringValue(); } },
                 { "use_browser_rendering", n => { UseBrowserRendering = n.GetBoolValue(); } },
             };
         }
@@ -81,10 +63,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("exclude_regex", ExcludeRegex);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_source_params_web_crawler_parse_options_include_headers>("include_headers", IncludeHeaders);
             writer.WriteBoolValue("include_images", IncludeImages);
-            writer.WriteStringValue("include_regex", IncludeRegex);
             writer.WriteBoolValue("use_browser_rendering", UseBrowserRendering);
             writer.WriteAdditionalData(AdditionalData);
         }

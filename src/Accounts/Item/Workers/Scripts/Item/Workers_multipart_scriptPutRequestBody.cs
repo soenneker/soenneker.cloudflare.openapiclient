@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_assets Assets { get; set; }
 #endif
-        /// <summary>List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.</summary>
+        /// <summary>&quot;List of bindings attached to a Worker. You can find more about bindings on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/#bindings.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_item>? Bindings { get; set; }

@@ -14,6 +14,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>List of path patterns to exclude. Supports wildcards (e.g., */admin/*, /private/**, *\private\*)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ExcludeItems { get; set; }
+#nullable restore
+#else
+        public List<string> ExcludeItems { get; set; }
+#endif
+        /// <summary>List of path patterns to include. Supports wildcards (e.g., */blog/*.html, /docs/**, *\blog\*.html)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? IncludeItems { get; set; }
+#nullable restore
+#else
+        public List<string> IncludeItems { get; set; }
+#endif
         /// <summary>The prefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,6 +80,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "exclude_items", n => { ExcludeItems = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "include_items", n => { IncludeItems = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
                 { "r2_jurisdiction", n => { R2Jurisdiction = n.GetStringValue(); } },
                 { "web_crawler", n => { WebCrawler = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_source_params_web_crawler>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_source_params_web_crawler.CreateFromDiscriminatorValue); } },
@@ -76,6 +94,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("exclude_items", ExcludeItems);
+            writer.WriteCollectionOfPrimitiveValues<string>("include_items", IncludeItems);
             writer.WriteStringValue("prefix", Prefix);
             writer.WriteStringValue("r2_jurisdiction", R2Jurisdiction);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_source_params_web_crawler>("web_crawler", WebCrawler);

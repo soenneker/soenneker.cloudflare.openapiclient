@@ -3,10 +3,9 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Files;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Jobs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Stats;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Sync;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -21,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The files property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Files.FilesRequestBuilder Files
+        /// <summary>The items property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items.ItemsRequestBuilder Items
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The jobs property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Jobs.JobsRequestBuilder Jobs
@@ -35,11 +34,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Stats.StatsRequestBuilder Stats
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Stats.StatsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The sync property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Sync.SyncRequestBuilder Sync
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Sync.SyncRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.InstancesItemRequestBuilder"/> and sets the default values.

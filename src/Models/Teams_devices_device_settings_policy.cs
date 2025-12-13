@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? LanAllowMinutes { get; set; }
         /// <summary>The size of the subnet for the local access network. Note that this field is omitted from the response if null or unset.</summary>
         public double? LanAllowSubnetSize { get; set; }
-        /// <summary>The wirefilter expression to match devices. Available values: &quot;identity.email&quot;, &quot;identity.groups.id&quot;, &quot;identity.groups.name&quot;, &quot;identity.groups.email&quot;, &quot;identity.service_token_uuid&quot;, &quot;identity.saml_attributes&quot;, &quot;network&quot;, &quot;os.name&quot;, &quot;os.version&quot;.</summary>
+        /// <summary>&quot;The wirefilter expression to match devices. Available values: \&quot;identity.email\&quot;, \&quot;identity.groups.id\&quot;, \&quot;identity.groups.name\&quot;, \&quot;identity.groups.email\&quot;, \&quot;identity.service_token_uuid\&quot;, \&quot;identity.saml_attributes\&quot;, \&quot;network\&quot;, \&quot;os.name\&quot;, \&quot;os.version\&quot;.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Match { get; set; }

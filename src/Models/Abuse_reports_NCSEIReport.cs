@@ -20,11 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Country { get; set; }
 #endif
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_NCSEIReport_host_notification? HostNotification { get; set; }
         /// <summary>If the submitter is the target of NCSEI in the URLs of the abuse report.</summary>
         public bool? NcseiSubjectRepresentation { get; set; }
-        /// <summary>Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.</summary>
+        /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_NCSEIReport_owner_notification? OwnerNotification { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

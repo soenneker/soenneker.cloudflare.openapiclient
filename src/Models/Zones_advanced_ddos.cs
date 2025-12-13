@@ -13,7 +13,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_advanced_ddos : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_base, IParsable
     {
-        /// <summary>Value of the zone setting.Notes: Defaults to on for Business+ plans</summary>
+        /// <summary>&quot;Value of the zone setting.Notes: Defaults to on for Business+ plans&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos_value? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_advanced_ddos"/> and sets the default values.
