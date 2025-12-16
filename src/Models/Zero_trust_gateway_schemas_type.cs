@@ -27,5 +27,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         IP,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CATEGORY")]
+        #pragma warning disable CS1591
+        CATEGORY,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "LOCATION")]
+        #pragma warning disable CS1591
+        LOCATION,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "DEVICE")]
+        #pragma warning disable CS1591
+        DEVICE,
+        #pragma warning restore CS1591
     }
 }

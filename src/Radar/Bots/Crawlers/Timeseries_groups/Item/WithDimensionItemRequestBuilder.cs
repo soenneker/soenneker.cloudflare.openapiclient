@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_grou
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/crawlers/timeseries_groups/{dimension}{?aggInterval*,botOperator*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,name*,vertical*}", pathParameters)
+        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/crawlers/timeseries_groups/{dimension}{?aggInterval*,botOperator*,clientType*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,name*,vertical*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_grou
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/crawlers/timeseries_groups/{dimension}{?aggInterval*,botOperator*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,name*,vertical*}", rawUrl)
+        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/bots/crawlers/timeseries_groups/{dimension}{?aggInterval*,botOperator*,clientType*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,name*,vertical*}", rawUrl)
         {
         }
         /// <summary>
@@ -102,6 +102,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_grou
 #else
             [QueryParameter("botOperator")]
             public string[] BotOperator { get; set; }
+#endif
+            /// <summary>Filters results by agent type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("clientType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_groups.Item.GetClientTypeQueryParameterType[]? ClientType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("clientType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_groups.Item.GetClientTypeQueryParameterType[] ClientType { get; set; }
 #endif
             /// <summary>End of the date range (inclusive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

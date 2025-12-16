@@ -85,6 +85,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_egress Egress { get; set; }
 #endif
+        /// <summary>Configure whether a copy of the HTTP request will be sent to storage when the rule matches.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_forensic_copy? ForensicCopy { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_forensic_copy ForensicCopy { get; set; }
+#endif
         /// <summary>Ignore category matches at CNAME domains in a response. When off, evaluate categories in this rule against all CNAME domain categories in the response. Settable only for `dns` and `dns_resolver` rules.</summary>
         public bool? IgnoreCnameCategoryMatches { get; set; }
         /// <summary>Specify whether to disable DNSSEC validation (for Allow actions) [INSECURE]. Settable only for `dns` rules.</summary>
@@ -203,6 +211,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "check_session", n => { CheckSession = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_check_session>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_check_session.CreateFromDiscriminatorValue); } },
                 { "dns_resolvers", n => { DnsResolvers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_dns_resolvers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_dns_resolvers.CreateFromDiscriminatorValue); } },
                 { "egress", n => { Egress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_egress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_egress.CreateFromDiscriminatorValue); } },
+                { "forensic_copy", n => { ForensicCopy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_forensic_copy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_forensic_copy.CreateFromDiscriminatorValue); } },
                 { "ignore_cname_category_matches", n => { IgnoreCnameCategoryMatches = n.GetBoolValue(); } },
                 { "insecure_disable_dnssec_validation", n => { InsecureDisableDnssecValidation = n.GetBoolValue(); } },
                 { "ip_categories", n => { IpCategories = n.GetBoolValue(); } },
@@ -237,6 +246,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_check_session>("check_session", CheckSession);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_dns_resolvers>("dns_resolvers", DnsResolvers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_egress>("egress", Egress);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_rule_settings_forensic_copy>("forensic_copy", ForensicCopy);
             writer.WriteBoolValue("ignore_cname_category_matches", IgnoreCnameCategoryMatches);
             writer.WriteBoolValue("insecure_disable_dnssec_validation", InsecureDisableDnssecValidation);
             writer.WriteBoolValue("ip_categories", IpCategories);
