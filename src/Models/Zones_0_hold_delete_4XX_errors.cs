@@ -9,18 +9,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Observatory_api_response_collection : global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_common, IParsable
+    public partial class Zones_0_hold_delete_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_schemas_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_hold_delete_4XX_errors"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_collection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_hold_delete_4XX_errors CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_api_response_collection();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_hold_delete_4XX_errors();
         }
         /// <summary>
         /// The deserialization information for the current model
