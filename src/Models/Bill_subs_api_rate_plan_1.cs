@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Scope { get; set; }
 #endif
-        /// <summary>The list of sets this rate plan applies to.</summary>
+        /// <summary>The list of sets this rate plan applies to. Returns array of strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Sets { get; set; }

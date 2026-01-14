@@ -8,15 +8,47 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
+    /// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify either mode for Smart Placement, or one of region/hostname/host for targeted placement.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Workers_placement_info_no_status : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>TCP host and port for targeted placement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Host { get; set; }
+#nullable restore
+#else
+        public string Host { get; set; }
+#endif
+        /// <summary>HTTP hostname for targeted placement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Hostname { get; set; }
+#nullable restore
+#else
+        public string Hostname { get; set; }
+#endif
         /// <summary>Enables [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode? Mode { get; set; }
+        /// <summary>Cloud region for targeted placement in format &apos;provider:region&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
+#endif
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status"/> and sets the default values.
         /// </summary>
@@ -42,7 +74,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -52,7 +88,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("host", Host);
+            writer.WriteStringValue("hostname", Hostname);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>("mode", Mode);
+            writer.WriteStringValue("region", Region);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

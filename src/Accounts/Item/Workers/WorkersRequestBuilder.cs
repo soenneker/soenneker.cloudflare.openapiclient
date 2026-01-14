@@ -8,6 +8,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Placement;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.ScriptsSearch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Services;
@@ -53,6 +54,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.ObservabilityRequestBuilder Observability
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.ObservabilityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The placement property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Placement.PlacementRequestBuilder Placement
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Placement.PlacementRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scripts property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.ScriptsRequestBuilder Scripts

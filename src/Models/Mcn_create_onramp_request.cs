@@ -32,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<Guid?> AttachedVpcs { get; set; }
 #endif
+        /// <summary>the ASN to use on the cloud side. If unset or zero, the cloud&apos;s default will be used.</summary>
+        public int? CloudAsn { get; set; }
         /// <summary>The cloud_type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type? CloudType { get; set; }
         /// <summary>The description property</summary>
@@ -42,6 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>if set to true, install_routes_in_cloud and install_routes_in_magic_wan should be set to false</summary>
+        public bool? DynamicRouting { get; set; }
         /// <summary>The hub_provider_id property</summary>
         public Guid? HubProviderId { get; set; }
         /// <summary>The install_routes_in_cloud property</summary>
@@ -100,8 +104,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "adopted_hub_id", n => { AdoptedHubId = n.GetGuidValue(); } },
                 { "attached_hubs", n => { AttachedHubs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "attached_vpcs", n => { AttachedVpcs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "cloud_asn", n => { CloudAsn = n.GetIntValue(); } },
                 { "cloud_type", n => { CloudType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "dynamic_routing", n => { DynamicRouting = n.GetBoolValue(); } },
                 { "hub_provider_id", n => { HubProviderId = n.GetGuidValue(); } },
                 { "install_routes_in_cloud", n => { InstallRoutesInCloud = n.GetBoolValue(); } },
                 { "install_routes_in_magic_wan", n => { InstallRoutesInMagicWan = n.GetBoolValue(); } },
@@ -123,8 +129,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("adopted_hub_id", AdoptedHubId);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_hubs", AttachedHubs);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_vpcs", AttachedVpcs);
+            writer.WriteIntValue("cloud_asn", CloudAsn);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>("cloud_type", CloudType);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("dynamic_routing", DynamicRouting);
             writer.WriteGuidValue("hub_provider_id", HubProviderId);
             writer.WriteBoolValue("install_routes_in_cloud", InstallRoutesInCloud);
             writer.WriteBoolValue("install_routes_in_magic_wan", InstallRoutesInMagicWan);

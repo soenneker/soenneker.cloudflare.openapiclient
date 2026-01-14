@@ -38,6 +38,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
+        /// <summary>The createdAt property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The datasetId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DatasetId { get; set; }
+#nullable restore
+#else
+        public string DatasetId { get; set; }
+#endif
         /// <summary>The date property</summary>
         public DateTimeOffset? Date { get; set; }
         /// <summary>The event property</summary>
@@ -132,6 +142,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "attacker", n => { Attacker = n.GetStringValue(); } },
                 { "attackerCountry", n => { AttackerCountry = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
+                { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "datasetId", n => { DatasetId = n.GetStringValue(); } },
                 { "date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "indicator", n => { Indicator = n.GetStringValue(); } },
@@ -153,6 +165,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("attacker", Attacker);
             writer.WriteStringValue("attackerCountry", AttackerCountry);
             writer.WriteStringValue("category", Category);
+            writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("datasetId", DatasetId);
             writer.WriteDateTimeOffsetValue("date", Date);
             writer.WriteStringValue("event", Event);
             writer.WriteStringValue("indicator", Indicator);

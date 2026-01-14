@@ -125,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events{?datasetId*,forceRefresh*,order*,orderBy*,page*,pageSize*,search*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events{?datasetId*,forceRefresh*,format*,order*,orderBy*,page*,pageSize*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -133,7 +133,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events{?datasetId*,forceRefresh*,order*,orderBy*,page*,pageSize*,search*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events{?datasetId*,forceRefresh*,format*,order*,orderBy*,page*,pageSize*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -205,6 +205,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
 #endif
             [QueryParameter("forceRefresh")]
             public bool? ForceRefresh { get; set; }
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.GetFormatQueryParameterType? Format { get; set; }
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.GetOrderQueryParameterType? Order { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

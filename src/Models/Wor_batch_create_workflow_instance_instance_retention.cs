@@ -14,6 +14,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Duration in milliseconds or as a string like &apos;5 minutes&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_error_retention? ErrorRetention { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_error_retention ErrorRetention { get; set; }
+#endif
+        /// <summary>Duration in milliseconds or as a string like &apos;5 minutes&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_success_retention? SuccessRetention { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_success_retention SuccessRetention { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention"/> and sets the default values.
         /// </summary>
@@ -39,6 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "error_retention", n => { ErrorRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_error_retention>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_error_retention.CreateFromDiscriminatorValue); } },
+                { "success_retention", n => { SuccessRetention = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_success_retention>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_success_retention.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_error_retention>("error_retention", ErrorRetention);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_success_retention>("success_retention", SuccessRetention);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

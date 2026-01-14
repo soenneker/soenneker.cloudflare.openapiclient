@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ErrorReasonText { get; set; }
 #endif
-        /// <summary>Indicates the size of the entire upload in bytes. The value must be a non-negative integer.</summary>
+        /// <summary>Indicates the progress as a percentage between 0 and 100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PctComplete { get; set; }

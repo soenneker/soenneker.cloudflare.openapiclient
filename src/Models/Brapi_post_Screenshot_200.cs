@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_200_errors> Errors { get; set; }
 #endif
         /// <summary>Response status</summary>
-        public bool? Status { get; set; }
+        public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_200"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_200_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_200_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetBoolValue(); } },
+                { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_200_errors>("errors", Errors);
-            writer.WriteBoolValue("status", Status);
+            writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

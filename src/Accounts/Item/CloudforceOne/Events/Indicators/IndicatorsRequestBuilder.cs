@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", pathParameters)
+        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", rawUrl)
+        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -106,6 +106,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("datasetIds")]
             public string[] DatasetIds { get; set; }
 #endif
+            /// <summary>Output format for indicator data. &apos;json&apos; returns the default format, &apos;stix2&apos; returns STIX 2.1 Indicator SDOs.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.GetFormatQueryParameterType? Format { get; set; }
+            /// <summary>Whether to include full tag details for each indicator. Defaults to false for performance.</summary>
+            [QueryParameter("includeTags")]
+            public bool? IncludeTags { get; set; }
+            /// <summary>Whether to compute accurate total count via COUNT(*). Defaults to false for performance. When false, total_count is an approximation.</summary>
+            [QueryParameter("includeTotalCount")]
+            public bool? IncludeTotalCount { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("indicatorType")]

@@ -34,13 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Required for MX, SRV and URI records. Unused by other record types. Records with lower priorities are preferred.</summary>
         public double? Priority { get; set; }
         /// <summary>Time to live, in seconds, of the DNS record. Must be between 60 and 86400, or 1 for &apos;automatic&apos;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl? Ttl { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl Ttl { get; set; }
-#endif
+        public double? Ttl { get; set; }
         /// <summary>DNS record type.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record_type? Type { get; private set; }
         /// <summary>
@@ -71,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
-                { "ttl", n => { Ttl = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl.CreateFromDiscriminatorValue); } },
+                { "ttl", n => { Ttl = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record_type>(); } },
             };
         }
@@ -85,56 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("priority", Priority);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl>("ttl", Ttl);
+            writer.WriteDoubleValue("ttl", Ttl);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Email_dns_record_ttl : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Email_dns_record.Email_dns_record_ttl();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-            }
         }
     }
 }

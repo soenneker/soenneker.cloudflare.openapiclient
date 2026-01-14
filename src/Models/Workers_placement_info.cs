@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).
+    /// Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify either mode for Smart Placement, or one of region/hostname/host for targeted placement.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Workers_placement_info : IAdditionalDataHolder, IParsable
@@ -17,8 +17,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The last time the script was analyzed for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
         public DateTimeOffset? LastAnalyzedAt { get; private set; }
-        /// <summary>Enables [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode? Mode { get; set; }
         /// <summary>Status of [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status? Status { get; private set; }
         /// <summary>
@@ -47,7 +45,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "last_analyzed_at", n => { LastAnalyzedAt = n.GetDateTimeOffsetValue(); } },
-                { "mode", n => { Mode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_status>(); } },
             };
         }
@@ -58,7 +55,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_mode>("mode", Mode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

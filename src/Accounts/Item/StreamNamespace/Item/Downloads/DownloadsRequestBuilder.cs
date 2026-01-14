@@ -95,18 +95,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.
         /// <summary>
         /// Creates a download for a video when a video is ready to view. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_single"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_single?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_single> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.Downloads.DownloadsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -115,7 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Item.
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete the downloads for a video. Use `/downloads/{download_type}` instead for type-specific downloads. Available types are `default` and `audio`.

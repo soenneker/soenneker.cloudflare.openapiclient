@@ -12,9 +12,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Hyperdrive_hyperdrive_caching_enabled : global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdrive_caching_common, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Specify the maximum duration items should persist in the cache. Not returned if set to the default (60).</summary>
+        /// <summary>Specify the maximum duration (in seconds) items should persist in the cache. Defaults to 60 seconds if not specified.</summary>
         public int? MaxAge { get; set; }
-        /// <summary>Specify the number of seconds the cache may serve a stale response. Omitted if set to the default (15).</summary>
+        /// <summary>Specify the number of seconds the cache may serve a stale response. Defaults to 15 seconds if not specified.</summary>
         public int? StaleWhileRevalidate { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

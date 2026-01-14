@@ -48,6 +48,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? OpportunisticEncryption { get; set; }
         /// <summary>The Polish level to configure.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_polish? Polish { get; set; }
+        /// <summary>The request body buffering mode.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_request_body_buffering? RequestBodyBuffering { get; set; }
+        /// <summary>The response body buffering mode.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_response_body_buffering? ResponseBodyBuffering { get; set; }
         /// <summary>Whether to enable Rocket Loader.</summary>
         public bool? RocketLoader { get; set; }
         /// <summary>The Security Level to configure.</summary>
@@ -96,6 +100,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mirage", n => { Mirage = n.GetBoolValue(); } },
                 { "opportunistic_encryption", n => { OpportunisticEncryption = n.GetBoolValue(); } },
                 { "polish", n => { Polish = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_polish>(); } },
+                { "request_body_buffering", n => { RequestBodyBuffering = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_request_body_buffering>(); } },
+                { "response_body_buffering", n => { ResponseBodyBuffering = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_response_body_buffering>(); } },
                 { "rocket_loader", n => { RocketLoader = n.GetBoolValue(); } },
                 { "security_level", n => { SecurityLevel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_security_level>(); } },
                 { "server_side_excludes", n => { ServerSideExcludes = n.GetBoolValue(); } },
@@ -123,6 +129,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("mirage", Mirage);
             writer.WriteBoolValue("opportunistic_encryption", OpportunisticEncryption);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_polish>("polish", Polish);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_request_body_buffering>("request_body_buffering", RequestBodyBuffering);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_response_body_buffering>("response_body_buffering", ResponseBodyBuffering);
             writer.WriteBoolValue("rocket_loader", RocketLoader);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_security_level>("security_level", SecurityLevel);
             writer.WriteBoolValue("server_side_excludes", ServerSideExcludes);

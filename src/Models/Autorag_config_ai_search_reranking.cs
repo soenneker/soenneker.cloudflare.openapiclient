@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model? Model { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking_model? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model Model { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking_model Model { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking_model.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,56 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model>("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking_model>("model", Model);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Autorag_config_ai_search_reranking_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Autorag_config_ai_search_reranking.Autorag_config_ai_search_reranking_model();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-            }
         }
     }
 }

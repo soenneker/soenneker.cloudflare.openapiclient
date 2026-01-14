@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdrive_mtls Mtls { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The name of the Hyperdrive configuration. Used to identify the configuration in the Cloudflare dashboard and API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

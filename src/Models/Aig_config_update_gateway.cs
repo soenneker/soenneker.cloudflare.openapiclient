@@ -30,6 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway.Aig_config_update_gateway_dlp Dlp { get; set; }
 #endif
+        /// <summary>The is_default property</summary>
+        public bool? IsDefault { get; set; }
         /// <summary>The log_management property</summary>
         public int? LogManagement { get; set; }
         /// <summary>The log_management_strategy property</summary>
@@ -106,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "collect_logs", n => { CollectLogs = n.GetBoolValue(); } },
                 { "dlp", n => { Dlp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway.Aig_config_update_gateway_dlp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway.Aig_config_update_gateway_dlp.CreateFromDiscriminatorValue); } },
+                { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "log_management", n => { LogManagement = n.GetIntValue(); } },
                 { "log_management_strategy", n => { LogManagementStrategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_log_management_strategy>(); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
@@ -131,6 +134,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteBoolValue("collect_logs", CollectLogs);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway.Aig_config_update_gateway_dlp>("dlp", Dlp);
+            writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteIntValue("log_management", LogManagement);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_update_gateway_log_management_strategy>("log_management_strategy", LogManagementStrategy);
             writer.WriteBoolValue("logpush", Logpush);

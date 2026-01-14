@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The ai_search_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model? AiSearchModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model? AiSearchModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model AiSearchModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model AiSearchModel { get; set; }
 #endif
         /// <summary>The chunk property</summary>
         public bool? Chunk { get; set; }
@@ -39,11 +39,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The embedding_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model? EmbeddingModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_embedding_model? EmbeddingModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model EmbeddingModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_embedding_model EmbeddingModel { get; set; }
 #endif
+        /// <summary>The hybrid_search_enabled property</summary>
+        public bool? HybridSearchEnabled { get; set; }
         /// <summary>Use your AI Search ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,23 +64,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_metadata Metadata { get; set; }
 #endif
+        /// <summary>The public_endpoint_params property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_public_endpoint_params? PublicEndpointParams { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_public_endpoint_params PublicEndpointParams { get; set; }
+#endif
         /// <summary>The reranking property</summary>
         public bool? Reranking { get; set; }
         /// <summary>The reranking_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model? RerankingModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_reranking_model? RerankingModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model RerankingModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_reranking_model RerankingModel { get; set; }
 #endif
         /// <summary>The rewrite_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model? RewriteModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_rewrite_model? RewriteModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model RewriteModel { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_rewrite_model RewriteModel { get; set; }
 #endif
         /// <summary>The rewrite_query property</summary>
         public bool? RewriteQuery { get; set; }
@@ -130,17 +140,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ai_gateway_id", n => { AiGatewayId = n.GetStringValue(); } },
-                { "ai_search_model", n => { AiSearchModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model.CreateFromDiscriminatorValue); } },
+                { "ai_search_model", n => { AiSearchModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model.CreateFromDiscriminatorValue); } },
                 { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetIntValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
-                { "embedding_model", n => { EmbeddingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model.CreateFromDiscriminatorValue); } },
+                { "embedding_model", n => { EmbeddingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_embedding_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_embedding_model.CreateFromDiscriminatorValue); } },
+                { "hybrid_search_enabled", n => { HybridSearchEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_metadata.CreateFromDiscriminatorValue); } },
+                { "public_endpoint_params", n => { PublicEndpointParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_public_endpoint_params>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_public_endpoint_params.CreateFromDiscriminatorValue); } },
                 { "reranking", n => { Reranking = n.GetBoolValue(); } },
-                { "reranking_model", n => { RerankingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model.CreateFromDiscriminatorValue); } },
-                { "rewrite_model", n => { RewriteModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model.CreateFromDiscriminatorValue); } },
+                { "reranking_model", n => { RerankingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_reranking_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_reranking_model.CreateFromDiscriminatorValue); } },
+                { "rewrite_model", n => { RewriteModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_rewrite_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_rewrite_model.CreateFromDiscriminatorValue); } },
                 { "rewrite_query", n => { RewriteQuery = n.GetBoolValue(); } },
                 { "score_threshold", n => { ScoreThreshold = n.GetDoubleValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
@@ -157,17 +169,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ai_gateway_id", AiGatewayId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model>("ai_search_model", AiSearchModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model>("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model>("embedding_model", EmbeddingModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_embedding_model>("embedding_model", EmbeddingModel);
+            writer.WriteBoolValue("hybrid_search_enabled", HybridSearchEnabled);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("max_num_results", MaxNumResults);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_public_endpoint_params>("public_endpoint_params", PublicEndpointParams);
             writer.WriteBoolValue("reranking", Reranking);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model>("reranking_model", RerankingModel);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model>("rewrite_model", RewriteModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_reranking_model>("reranking_model", RerankingModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_rewrite_model>("rewrite_model", RewriteModel);
             writer.WriteBoolValue("rewrite_query", RewriteQuery);
             writer.WriteDoubleValue("score_threshold", ScoreThreshold);
             writer.WriteStringValue("source", Source);
@@ -175,198 +189,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("token_id", TokenId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Ai_search_create_instances_ai_search_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_ai_search_model();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Ai_search_create_instances_embedding_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_embedding_model();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Ai_search_create_instances_reranking_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_reranking_model();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Ai_search_create_instances_rewrite_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances.Ai_search_create_instances_rewrite_model();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-            }
         }
     }
 }

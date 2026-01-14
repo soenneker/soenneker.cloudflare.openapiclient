@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.Configs
     public partial class ConfigsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.hyperdrive.configs.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The unique identifier of the Hyperdrive configuration.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.Configs.Item.WithHyperdrive_ItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Hyperdrive.Configs.Item.WithHyperdrive_ItemRequestBuilder this[string position]
         {

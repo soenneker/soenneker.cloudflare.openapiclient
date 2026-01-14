@@ -7,13 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// An object with download type keys. Each key is optional and only present if that download type has been created.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Stream_downloads_response_result : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The audio-only download. Only present if this download type has been created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_audio? Audio { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_audio Audio { get; set; }
+#endif
+        /// <summary>The default video download. Only present if this download type has been created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_default? Default { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_default Default { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result"/> and sets the default values.
         /// </summary>
@@ -39,6 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "audio", n => { Audio = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_audio>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_audio.CreateFromDiscriminatorValue); } },
+                { "default", n => { Default = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_default>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_default.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +67,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_audio>("audio", Audio);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result_default>("default", Default);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

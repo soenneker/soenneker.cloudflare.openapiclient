@@ -23,6 +23,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_compaction_config Compaction { get; set; }
 #endif
+        /// <summary>Configures snapshot expiration settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_snapshot_expiration_config? SnapshotExpiration { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_snapshot_expiration_config SnapshotExpiration { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_maintenance_config"/> and sets the default values.
         /// </summary>
@@ -49,6 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "compaction", n => { Compaction = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_compaction_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_compaction_config.CreateFromDiscriminatorValue); } },
+                { "snapshot_expiration", n => { SnapshotExpiration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_snapshot_expiration_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_snapshot_expiration_config.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -59,6 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_compaction_config>("compaction", Compaction);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_snapshot_expiration_config>("snapshot_expiration", SnapshotExpiration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Stream_downloads_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_api_response_single, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The result property</summary>
+        /// <summary>An object with download type keys. Each key is optional and only present if that download type has been created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_downloads_response_result? Result { get; set; }

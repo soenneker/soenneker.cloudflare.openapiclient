@@ -19,10 +19,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text? Text { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text? Text { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text Text { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text Text { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests"/> and sets the default values.
@@ -51,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "pooling", n => { Pooling = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_pooling>(); } },
-                { "text", n => { Text = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text.CreateFromDiscriminatorValue); } },
+                { "text", n => { Text = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,63 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_pooling>("pooling", Pooling);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text>("text", Text);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text>("text", Text);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests.Workers_ai_post_run_cf_baai_bge_small_en_v1_5Member2_requests_text();
-                if("UnionBranch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null)
-                {
-                    return UnionBranch.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(UnionBranch != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch);
-                }
-            }
         }
     }
 }

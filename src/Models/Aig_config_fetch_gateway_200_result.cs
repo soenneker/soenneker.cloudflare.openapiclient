@@ -58,6 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The internal_id property</summary>
         public Guid? InternalId { get; set; }
+        /// <summary>The is_default property</summary>
+        public bool? IsDefault { get; set; }
         /// <summary>The log_management property</summary>
         public int? LogManagement { get; set; }
         /// <summary>The log_management_strategy property</summary>
@@ -141,6 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dlp", n => { Dlp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result.Aig_config_fetch_gateway_200_result_dlp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result.Aig_config_fetch_gateway_200_result_dlp.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "internal_id", n => { InternalId = n.GetGuidValue(); } },
+                { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "log_management", n => { LogManagement = n.GetIntValue(); } },
                 { "log_management_strategy", n => { LogManagementStrategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_log_management_strategy>(); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
@@ -172,6 +175,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result.Aig_config_fetch_gateway_200_result_dlp>("dlp", Dlp);
             writer.WriteStringValue("id", Id);
             writer.WriteGuidValue("internal_id", InternalId);
+            writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteIntValue("log_management", LogManagement);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_log_management_strategy>("log_management_strategy", LogManagementStrategy);
             writer.WriteBoolValue("logpush", Logpush);

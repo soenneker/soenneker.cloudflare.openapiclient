@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_result Result { get; set; }
 #endif
         /// <summary>Response status</summary>
-        public bool? Status { get; set; }
+        public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200"/> and sets the default values.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_meta.CreateFromDiscriminatorValue); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_result.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetBoolValue(); } },
+                { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_errors>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_meta>("meta", Meta);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_result>("result", Result);
-            writer.WriteBoolValue("status", Status);
+            writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

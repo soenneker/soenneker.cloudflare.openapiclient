@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Export;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Import;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Query;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Raw;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +41,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Raw.RawRequestBuilder Raw
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Raw.RawRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The time_travel property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel.Time_travelRequestBuilder Time_travel
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel.Time_travelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.WithDatabase_ItemRequestBuilder"/> and sets the default values.

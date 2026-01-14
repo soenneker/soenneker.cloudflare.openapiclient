@@ -30,6 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<Guid?> AttachedVpcs { get; set; }
 #endif
+        /// <summary>The cloud_asn property</summary>
+        public int? CloudAsn { get; set; }
         /// <summary>The cloud_type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type? CloudType { get; set; }
         /// <summary>The description property</summary>
@@ -40,6 +42,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>The dynamic_routing property</summary>
+        public bool? DynamicRouting { get; set; }
         /// <summary>The hub property</summary>
         public Guid? Hub { get; set; }
         /// <summary>The id property</summary>
@@ -191,8 +195,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "attached_hubs", n => { AttachedHubs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "attached_vpcs", n => { AttachedVpcs = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "cloud_asn", n => { CloudAsn = n.GetIntValue(); } },
                 { "cloud_type", n => { CloudType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "dynamic_routing", n => { DynamicRouting = n.GetBoolValue(); } },
                 { "hub", n => { Hub = n.GetGuidValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "install_routes_in_cloud", n => { InstallRoutesInCloud = n.GetBoolValue(); } },
@@ -227,8 +233,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_hubs", AttachedHubs);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("attached_vpcs", AttachedVpcs);
+            writer.WriteIntValue("cloud_asn", CloudAsn);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type>("cloud_type", CloudType);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("dynamic_routing", DynamicRouting);
             writer.WriteGuidValue("hub", Hub);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("install_routes_in_cloud", InstallRoutesInCloud);

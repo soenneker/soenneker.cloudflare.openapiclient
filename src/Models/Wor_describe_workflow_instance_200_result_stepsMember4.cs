@@ -37,10 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The output property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output? Output { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_output? Output { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output Output { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_output Output { get; set; }
 #endif
         /// <summary>The start property</summary>
         public DateTimeOffset? Start { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_error>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_error.CreateFromDiscriminatorValue); } },
                 { "finished", n => { Finished = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output.CreateFromDiscriminatorValue); } },
+                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_output>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_output.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_type>(); } },
             };
@@ -91,67 +91,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_error>("error", Error);
             writer.WriteBoolValue("finished", Finished);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output>("output", Output);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_output>("output", Output);
             writer.WriteDateTimeOffsetValue("start", Start);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_outputMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Wor_describe_workflow_instance_200_result_stepsMember4_output : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch? UnionBranch { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch UnionBranch { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_outputMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_outputMember1? WorDescribeWorkflowInstance200ResultStepsMember4OutputMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_outputMember1 WorDescribeWorkflowInstance200ResultStepsMember4OutputMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4.Wor_describe_workflow_instance_200_result_stepsMember4_output();
-                result.UnionBranch = new global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch();
-                result.WorDescribeWorkflowInstance200ResultStepsMember4OutputMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember4_outputMember1();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(UnionBranch != null || WorDescribeWorkflowInstance200ResultStepsMember4OutputMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(UnionBranch, WorDescribeWorkflowInstance200ResultStepsMember4OutputMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(null, UnionBranch, WorDescribeWorkflowInstance200ResultStepsMember4OutputMember1);
-            }
         }
     }
 }

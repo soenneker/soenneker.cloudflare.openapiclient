@@ -24,13 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? AutoConnect { get; set; }
         /// <summary>Turn on the captive portal after the specified amount of time.</summary>
         public double? CaptivePortal { get; set; }
-        /// <summary>A description of the policy.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_create_device_settings_policy_description? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_create_device_settings_policy_description Description { get; set; }
 #endif
         /// <summary>If the `dns_server` field of a fallback domain is not present, the client will fall back to a best guess of the default/system DNS resolvers unless this policy option is set to `true`.</summary>
         public bool? DisableAutoFallback { get; set; }
@@ -136,7 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowed_to_leave", n => { AllowedToLeave = n.GetBoolValue(); } },
                 { "auto_connect", n => { AutoConnect = n.GetDoubleValue(); } },
                 { "captive_portal", n => { CaptivePortal = n.GetDoubleValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_create_device_settings_policy_description>(global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_create_device_settings_policy_description.CreateFromDiscriminatorValue); } },
                 { "disable_auto_fallback", n => { DisableAutoFallback = n.GetBoolValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "exclude", n => { Exclude = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_split_tunnel>(global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_split_tunnel.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -167,7 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("allow_updates", AllowUpdates);
             writer.WriteDoubleValue("auto_connect", AutoConnect);
             writer.WriteDoubleValue("captive_portal", CaptivePortal);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Devices_create_device_settings_policy_description>("description", Description);
             writer.WriteBoolValue("disable_auto_fallback", DisableAutoFallback);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Teams_devices_split_tunnel>("exclude", Exclude);

@@ -26,6 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? RowsRead { get; set; }
         /// <summary>Number of rows written during the SQL query execution, including indices.</summary>
         public double? RowsWritten { get; set; }
+        /// <summary>The three letters airport code of the colo that handled the query.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServedByColo { get; set; }
+#nullable restore
+#else
+        public string ServedByColo { get; set; }
+#endif
         /// <summary>Denotes if the query has been handled by the database primary instance.</summary>
         public bool? ServedByPrimary { get; set; }
         /// <summary>Region location hint of the database instance that handled the query.</summary>
@@ -71,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "last_row_id", n => { LastRowId = n.GetDoubleValue(); } },
                 { "rows_read", n => { RowsRead = n.GetDoubleValue(); } },
                 { "rows_written", n => { RowsWritten = n.GetDoubleValue(); } },
+                { "served_by_colo", n => { ServedByColo = n.GetStringValue(); } },
                 { "served_by_primary", n => { ServedByPrimary = n.GetBoolValue(); } },
                 { "served_by_region", n => { ServedByRegion = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_served_by_region>(); } },
                 { "size_after", n => { SizeAfter = n.GetDoubleValue(); } },
@@ -90,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("last_row_id", LastRowId);
             writer.WriteDoubleValue("rows_read", RowsRead);
             writer.WriteDoubleValue("rows_written", RowsWritten);
+            writer.WriteStringValue("served_by_colo", ServedByColo);
             writer.WriteBoolValue("served_by_primary", ServedByPrimary);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_served_by_region>("served_by_region", ServedByRegion);
             writer.WriteDoubleValue("size_after", SizeAfter);

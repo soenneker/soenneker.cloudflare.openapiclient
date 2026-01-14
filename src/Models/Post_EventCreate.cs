@@ -130,6 +130,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Tlp { get; set; }
 #endif
+        /// <summary>Optional UUID for the event. Only used when preserveUuid=true in bulk create. Must be a valid UUID format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Uuid { get; set; }
+#nullable restore
+#else
+        public string Uuid { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreate"/> and sets the default values.
         /// </summary>
@@ -171,6 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "targetCountry", n => { TargetCountry = n.GetStringValue(); } },
                 { "targetIndustry", n => { TargetIndustry = n.GetStringValue(); } },
                 { "tlp", n => { Tlp = n.GetStringValue(); } },
+                { "uuid", n => { Uuid = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -196,6 +205,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("targetCountry", TargetCountry);
             writer.WriteStringValue("targetIndustry", TargetIndustry);
             writer.WriteStringValue("tlp", Tlp);
+            writer.WriteStringValue("uuid", Uuid);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

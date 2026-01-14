@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
         /// <summary>Response status</summary>
-        public bool? Status { get; set; }
+        public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Links_400"/> and sets the default values.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Links_400_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Links_400_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetBoolValue(); } },
+                { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Links_400_errors>("errors", Errors);
-            writer.WriteBoolValue("status", Status);
+            writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

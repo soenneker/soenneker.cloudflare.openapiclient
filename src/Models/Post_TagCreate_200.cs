@@ -72,6 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CategoryName { get; set; }
 #endif
+        /// <summary>The categoryUuid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CategoryUuid { get; set; }
+#nullable restore
+#else
+        public string CategoryUuid { get; set; }
+#endif
         /// <summary>The externalReferenceLinks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -171,6 +179,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "attributionConfidence", n => { AttributionConfidence = n.GetStringValue(); } },
                 { "attributionOrganization", n => { AttributionOrganization = n.GetStringValue(); } },
                 { "categoryName", n => { CategoryName = n.GetStringValue(); } },
+                { "categoryUuid", n => { CategoryUuid = n.GetStringValue(); } },
                 { "externalReferenceLinks", n => { ExternalReferenceLinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "internalDescription", n => { InternalDescription = n.GetStringValue(); } },
                 { "motive", n => { Motive = n.GetStringValue(); } },
@@ -197,6 +206,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("attributionConfidence", AttributionConfidence);
             writer.WriteStringValue("attributionOrganization", AttributionOrganization);
             writer.WriteStringValue("categoryName", CategoryName);
+            writer.WriteStringValue("categoryUuid", CategoryUuid);
             writer.WriteCollectionOfPrimitiveValues<string>("externalReferenceLinks", ExternalReferenceLinks);
             writer.WriteStringValue("internalDescription", InternalDescription);
             writer.WriteStringValue("motive", Motive);

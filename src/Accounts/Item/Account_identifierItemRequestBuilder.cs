@@ -22,6 +22,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cni;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Custom_ns;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Custom_pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1;
@@ -195,6 +196,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.ConnectivityRequestBuilder Connectivity
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.ConnectivityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The containers property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.ContainersRequestBuilder Containers
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.ContainersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The custom_ns property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Custom_ns.Custom_nsRequestBuilder Custom_ns
