@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         {
         }
         /// <summary>
-        /// Get Security Center Insight Counts by Severity
+        /// Retrieves Security Center Insight Counts by Severity
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_valueCountsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_valueCountsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_valueCountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Security Center Insight Counts by Severity
+        /// Retrieves Security Center Insight Counts by Severity
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Severity.SeverityRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Security Center Insight Counts by Severity
+        /// Retrieves Security Center Insight Counts by Severity
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SeverityRequestBuilderGetQueryParameters 

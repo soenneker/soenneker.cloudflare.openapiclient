@@ -3,13 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Enables [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement).</summary>
+    /// <summary>Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode=&apos;smart&apos; for Smart Placement, or one of region/hostname/host.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Workers_placement_mode
     {
         [EnumMember(Value = "smart")]
         #pragma warning disable CS1591
         Smart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "targeted")]
+        #pragma warning disable CS1591
+        Targeted,
         #pragma warning restore CS1591
     }
 }

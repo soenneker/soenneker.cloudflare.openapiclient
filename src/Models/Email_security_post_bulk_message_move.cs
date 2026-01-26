@@ -16,7 +16,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The destination property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_bulk_message_move_destination? Destination { get; set; }
-        /// <summary>The postfix_ids property</summary>
+        /// <summary>List of message IDs to move.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Ids { get; set; }
+#nullable restore
+#else
+        public List<string> Ids { get; set; }
+#endif
+        /// <summary>&quot;Deprecated: Use `ids` instead. List of message IDs to move.&quot;</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PostfixIds { get; set; }
@@ -50,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "destination", n => { Destination = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_bulk_message_move_destination>(); } },
+                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "postfix_ids", n => { PostfixIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -61,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_bulk_message_move_destination>("destination", Destination);
+            writer.WriteCollectionOfPrimitiveValues<string>("ids", Ids);
             writer.WriteCollectionOfPrimitiveValues<string>("postfix_ids", PostfixIds);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versions.Item.Dag;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versio
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithVersion_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The dag property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versions.Item.Dag.DagRequestBuilder Dag
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versions.Item.Dag.DagRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versions.Item.WithVersion_ItemRequestBuilder"/> and sets the default values.
         /// </summary>

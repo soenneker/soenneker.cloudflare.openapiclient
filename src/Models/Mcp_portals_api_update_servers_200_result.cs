@@ -58,6 +58,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The last_successful_sync property</summary>
+        public DateTimeOffset? LastSuccessfulSync { get; private set; }
         /// <summary>The last_synced property</summary>
         public DateTimeOffset? LastSynced { get; private set; }
         /// <summary>The modified_at property</summary>
@@ -135,6 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "last_successful_sync", n => { LastSuccessfulSync = n.GetDateTimeOffsetValue(); } },
                 { "last_synced", n => { LastSynced = n.GetDateTimeOffsetValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "modified_by", n => { ModifiedBy = n.GetStringValue(); } },

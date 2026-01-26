@@ -30,8 +30,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DatasetId { get; set; }
 #endif
-        /// <summary>When true, use provided UUIDs from event data instead of generating new ones. Used for migration scenarios where original UUIDs must be preserved. Duplicate UUIDs will be skipped.</summary>
-        public bool? PreserveUuid { get; set; }
+        /// <summary>When true, response includes array of created event UUIDs and shard IDs. Useful for tracking which events were created and where.</summary>
+        public bool? IncludeCreatedEvents { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk"/> and sets the default values.
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_data>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_data.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "datasetId", n => { DatasetId = n.GetStringValue(); } },
-                { "preserveUuid", n => { PreserveUuid = n.GetBoolValue(); } },
+                { "includeCreatedEvents", n => { IncludeCreatedEvents = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_data>("data", Data);
             writer.WriteStringValue("datasetId", DatasetId);
-            writer.WriteBoolValue("preserveUuid", PreserveUuid);
+            writer.WriteBoolValue("includeCreatedEvents", IncludeCreatedEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

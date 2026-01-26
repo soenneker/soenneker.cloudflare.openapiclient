@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The backoff property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_backoff? Backoff { get; set; }
-        /// <summary>The delay property</summary>
+        /// <summary>Specifies the delay duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config_retries_delay? Delay { get; set; }

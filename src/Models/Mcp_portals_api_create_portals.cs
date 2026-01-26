@@ -46,6 +46,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>Route outbound MCP traffic through Zero Trust Secure Web Gateway</summary>
+        public bool? SecureWebGateway { get; set; }
         /// <summary>The servers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "secure_web_gateway", n => { SecureWebGateway = n.GetBoolValue(); } },
                 { "servers", n => { Servers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_create_portals_servers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_create_portals_servers.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -97,6 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("secure_web_gateway", SecureWebGateway);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_create_portals_servers>("servers", Servers);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -38,6 +38,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
+        /// <summary>The datasetId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DatasetId { get; set; }
+#nullable restore
+#else
+        public string DatasetId { get; set; }
+#endif
         /// <summary>The date property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -212,6 +220,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "attacker", n => { Attacker = n.GetStringValue(); } },
                 { "attackerCountry", n => { AttackerCountry = n.GetStringValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
+                { "datasetId", n => { DatasetId = n.GetStringValue(); } },
                 { "date", n => { Date = n.GetStringValue(); } },
                 { "event", n => { Event = n.GetStringValue(); } },
                 { "hasChildren", n => { HasChildren = n.GetBoolValue(); } },
@@ -246,6 +255,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("attacker", Attacker);
             writer.WriteStringValue("attackerCountry", AttackerCountry);
             writer.WriteStringValue("category", Category);
+            writer.WriteStringValue("datasetId", DatasetId);
             writer.WriteStringValue("date", Date);
             writer.WriteStringValue("event", Event);
             writer.WriteBoolValue("hasChildren", HasChildren);

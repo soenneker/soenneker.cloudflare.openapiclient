@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.
         {
         }
         /// <summary>
-        /// Get Zone Security Center Insight Counts by Type
+        /// Retrieves Zone Security Center Insight Counts by Type
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_valueCountsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_valueCountsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_valueCountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Zone Security Center Insight Counts by Type
+        /// Retrieves Zone Security Center Insight Counts by Type
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.TypeNamespace.TypeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Zone Security Center Insight Counts by Type
+        /// Retrieves Zone Security Center Insight Counts by Type
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TypeRequestBuilderGetQueryParameters 

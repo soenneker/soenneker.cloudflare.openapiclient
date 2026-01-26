@@ -30,6 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Failed { get; set; }
 #endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The identifier of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "delivered", n => { Delivered = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "failed", n => { Failed = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "postfix_id", n => { PostfixId = n.GetStringValue(); } },
                 { "undelivered", n => { Undelivered = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -86,6 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("delivered", Delivered);
             writer.WriteCollectionOfPrimitiveValues<string>("failed", Failed);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("postfix_id", PostfixId);
             writer.WriteCollectionOfPrimitiveValues<string>("undelivered", Undelivered);
             writer.WriteAdditionalData(AdditionalData);

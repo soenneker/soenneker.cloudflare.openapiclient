@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
 {
-    /// <summary>Sorting order by upload time.</summary>
+    /// <summary>Sorting order by upload time</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetSort_orderQueryParameterType
     {

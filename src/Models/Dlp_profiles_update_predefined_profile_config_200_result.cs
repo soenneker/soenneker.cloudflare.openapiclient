@@ -26,7 +26,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ConfidenceThreshold { get; set; }
 #endif
-        /// <summary>The enabled_entries property</summary>
+        /// <summary>Entries to enable for this predefined profile. Any entries not provided will be disabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Guid?>? EnabledEntries { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<Guid?> EnabledEntries { get; set; }
 #endif
-        /// <summary>The entries property</summary>
+        /// <summary>This field has been deprecated for `enabled_entries`.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

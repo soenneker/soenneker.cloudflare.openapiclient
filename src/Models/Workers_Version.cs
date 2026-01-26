@@ -92,13 +92,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The integer version number, starting from one.</summary>
         public int? Number { get; private set; }
-        /// <summary>Placement settings for the version.</summary>
+        /// <summary>Configuration for [Smart Placement](https://developers.cloudflare.com/workers/configuration/smart-placement). Specify mode=&apos;smart&apos; for Smart Placement, or one of region/hostname/host.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_placement? Placement { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status? Placement { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_placement Placement { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status Placement { get; set; }
 #endif
         /// <summary>The client used to create the version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "migrations", n => { Migrations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version.Workers_Version_migrations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version.Workers_Version_migrations.CreateFromDiscriminatorValue); } },
                 { "modules", n => { Modules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
-                { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_placement>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_placement.CreateFromDiscriminatorValue); } },
+                { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "startup_time_ms", n => { StartupTimeMs = n.GetIntValue(); } },
                 { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_usage_model>(); } },
@@ -173,7 +173,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("main_module", MainModule);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version.Workers_Version_migrations>("migrations", Migrations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules>("modules", Modules);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_placement>("placement", Placement);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status>("placement", Placement);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_usage_model>("usage_model", UsageModel);
             writer.WriteAdditionalData(AdditionalData);
         }

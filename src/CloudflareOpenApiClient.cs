@@ -16,6 +16,7 @@ using Soenneker.Cloudflare.OpenApiClient.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Radar;
 using Soenneker.Cloudflare.OpenApiClient.Ready;
 using Soenneker.Cloudflare.OpenApiClient.SignedUrl;
+using Soenneker.Cloudflare.OpenApiClient.System;
 using Soenneker.Cloudflare.OpenApiClient.Tenants;
 using Soenneker.Cloudflare.OpenApiClient.User;
 using Soenneker.Cloudflare.OpenApiClient.Users;
@@ -81,6 +82,11 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.SignedUrl.SignedUrlRequestBuilder SignedUrl
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.SignedUrl.SignedUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The system property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.System.SystemRequestBuilder System
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.System.SystemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tenants property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.TenantsRequestBuilder Tenants

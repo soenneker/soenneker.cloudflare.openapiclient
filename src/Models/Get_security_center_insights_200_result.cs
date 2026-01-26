@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Total number of results</summary>
+        /// <summary>Indicates the total number of results.</summary>
         public int? Count { get; set; }
         /// <summary>The issues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -24,9 +24,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issue> Issues { get; set; }
 #endif
-        /// <summary>Current page within paginated list of results</summary>
+        /// <summary>Specifies the current page within paginated list of results.</summary>
         public int? Page { get; set; }
-        /// <summary>Number of results per page of results</summary>
+        /// <summary>Sets the number of results per page of results.</summary>
         public int? PerPage { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200_result"/> and sets the default values.

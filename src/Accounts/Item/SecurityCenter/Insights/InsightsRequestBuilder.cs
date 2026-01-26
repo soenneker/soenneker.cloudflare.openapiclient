@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         {
         }
         /// <summary>
-        /// Get Security Center Insights
+        /// Retrieves Security Center Insights
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Security Center Insights
+        /// Retrieves Security Center Insights
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -116,7 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.InsightsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Security Center Insights
+        /// Retrieves Security Center Insights
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InsightsRequestBuilderGetQueryParameters 

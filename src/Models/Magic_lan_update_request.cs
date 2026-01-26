@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The bond_id property</summary>
+        public int? BondId { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bond_id", n => { BondId = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nat", n => { Nat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat.CreateFromDiscriminatorValue); } },
                 { "physport", n => { Physport = n.GetIntValue(); } },
@@ -90,6 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("bond_id", BondId);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>("nat", Nat);
             writer.WriteIntValue("physport", Physport);

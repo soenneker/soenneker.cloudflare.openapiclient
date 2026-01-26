@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,per_page*,sort_order*}", pathParameters)
+        public V2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,meta%2E%3Cfield%3E%5B%3Coperator%3E%5D*,per_page*,sort_order*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,15 +36,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,per_page*,sort_order*}", rawUrl)
+        public V2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/images/v2{?continuation_token*,creator*,meta%2E%3Cfield%3E%5B%3Coperator%3E%5D*,per_page*,sort_order*}", rawUrl)
         {
         }
         /// <summary>
-        /// List up to 10000 images with one request. Use the optional parameters below to get a specific range of images.Endpoint returns continuation_token if more images are present.
+        /// List up to 10000 images with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types**Examples:**```# List all images/v2/images# Filter by metadata/v2/images?meta.status[eq]=active# Filter by nested metadata/v2/images?meta.region.name[eq]=eu-west# Combine metadata filters with creator/v2/images?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/v2/images?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response_v2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_images_list_images_v2_400">When receiving a 400 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_images_list_images_v2_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,12 +59,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_images_list_images_v2_400.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_images_list_images_v2_4XX.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response_v2>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Images_images_list_response_v2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List up to 10000 images with one request. Use the optional parameters below to get a specific range of images.Endpoint returns continuation_token if more images are present.
+        /// List up to 10000 images with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types**Examples:**```# List all images/v2/images# Filter by metadata/v2/images?meta.status[eq]=active# Filter by nested metadata/v2/images?meta.region.name[eq]=eu-west# Combine metadata filters with creator/v2/images?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/v2/images?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2.V2RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List up to 10000 images with one request. Use the optional parameters below to get a specific range of images.Endpoint returns continuation_token if more images are present.
+        /// List up to 10000 images with up to 1000 results per page. Use the optional parameters below to get a specific range of images.Pagination is supported via continuation_token.**Metadata Filtering (Optional):**You can optionally filter images by custom metadata fields using the `meta.&lt;field&gt;[&lt;operator&gt;]=&lt;value&gt;` syntax.**Supported Operators:**- `eq` / `eq:string` / `eq:number` / `eq:boolean` - Exact match- `in` / `in:string` / `in:number` - Match any value in list (pipe-separated)**Metadata Filter Constraints:**- Maximum 5 metadata filters per request- Maximum 5 levels of nesting (e.g., `meta.first.second.third.fourth.fifth`)- Maximum 10 elements for list operators (`in`)- Supports string, number, and boolean value types**Examples:**```# List all images/v2/images# Filter by metadata/v2/images?meta.status[eq]=active# Filter by nested metadata/v2/images?meta.region.name[eq]=eu-west# Combine metadata filters with creator/v2/images?meta.status[eq]=active&amp;creator=user123# Multiple metadata filters (AND logic)/v2/images?meta.status[eq]=active&amp;meta.priority[eq:number]=5```
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class V2RequestBuilderGetQueryParameters 
@@ -113,6 +115,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Images.V2
 #else
             [QueryParameter("creator")]
             public string Creator { get; set; }
+#endif
+            /// <summary>Optional metadata filter(s). Multiple filters can be combined with AND logic.**Operators:**- `eq`, `eq:string`, `eq:number`, `eq:boolean` - Exact match- `in`, `in:string`, `in:number` - Match any value in pipe-separated list**Examples:**- `meta.status[eq]=active`- `meta.priority[eq:number]=5`- `meta.enabled[eq:boolean]=true`- `meta.region[in]=us-east|us-west|eu-west`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("meta%2E%3Cfield%3E%5B%3Coperator%3E%5D")]
+            public string? Metafieldoperator { get; set; }
+#nullable restore
+#else
+            [QueryParameter("meta%2E%3Cfield%3E%5B%3Coperator%3E%5D")]
+            public string Metafieldoperator { get; set; }
 #endif
             [QueryParameter("per_page")]
             public double? PerPage { get; set; }

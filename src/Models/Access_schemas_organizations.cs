@@ -24,6 +24,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Determines whether to deny all requests to Cloudflare-protected resources that lack an associated Access application. If enabled, you must explicitly configure an Access application and policy to allow traffic to your Cloudflare-protected resources. For domains you want to be public across all subdomains, add the domain to the `deny_unmatched_requests_exempted_zone_names` array.</summary>
+        public bool? DenyUnmatchedRequests { get; set; }
+        /// <summary>Contains zone names to exempt from the `deny_unmatched_requests` feature. Requests to a subdomain in an exempted zone will block unauthenticated traffic by default if there is a configured Access application and policy that matches the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? DenyUnmatchedRequestsExemptedZoneNames { get; set; }
+#nullable restore
+#else
+        public List<string> DenyUnmatchedRequestsExemptedZoneNames { get; set; }
+#endif
         /// <summary>Lock all settings as Read-Only in the Dashboard, regardless of user permission. Updates may only be made via the API or Terraform for this account when enabled.</summary>
         public bool? IsUiReadOnly { get; set; }
         /// <summary>The login_design property</summary>
@@ -87,6 +97,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "auth_domain", n => { AuthDomain = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "deny_unmatched_requests", n => { DenyUnmatchedRequests = n.GetBoolValue(); } },
+                { "deny_unmatched_requests_exempted_zone_names", n => { DenyUnmatchedRequestsExemptedZoneNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
                 { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -104,6 +116,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("auth_domain", AuthDomain);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteBoolValue("deny_unmatched_requests", DenyUnmatchedRequests);
+            writer.WriteCollectionOfPrimitiveValues<string>("deny_unmatched_requests_exempted_zone_names", DenyUnmatchedRequestsExemptedZoneNames);
             writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_schemas_login_design>("login_design", LoginDesign);
             writer.WriteStringValue("name", Name);

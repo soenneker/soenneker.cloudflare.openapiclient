@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The include_images property</summary>
         public bool? IncludeImages { get; set; }
+        /// <summary>List of specific sitemap URLs to use for crawling. Only valid when parse_type is &apos;sitemap&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SpecificSitemaps { get; set; }
+#nullable restore
+#else
+        public List<string> SpecificSitemaps { get; set; }
+#endif
         /// <summary>The use_browser_rendering property</summary>
         public bool? UseBrowserRendering { get; set; }
         /// <summary>
@@ -53,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "include_headers", n => { IncludeHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_options_include_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_options_include_headers.CreateFromDiscriminatorValue); } },
                 { "include_images", n => { IncludeImages = n.GetBoolValue(); } },
+                { "specific_sitemaps", n => { SpecificSitemaps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "use_browser_rendering", n => { UseBrowserRendering = n.GetBoolValue(); } },
             };
         }
@@ -65,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_options_include_headers>("include_headers", IncludeHeaders);
             writer.WriteBoolValue("include_images", IncludeImages);
+            writer.WriteCollectionOfPrimitiveValues<string>("specific_sitemaps", SpecificSitemaps);
             writer.WriteBoolValue("use_browser_rendering", UseBrowserRendering);
             writer.WriteAdditionalData(AdditionalData);
         }

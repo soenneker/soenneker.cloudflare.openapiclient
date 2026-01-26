@@ -17,6 +17,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Correlation ID for async indicator processing</summary>
         public Guid? CreateBulkEventsRequestId { get; set; }
+        /// <summary>Array of created events with UUIDs and shard locations. Only present when includeCreatedEvents=true</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_createdEvents>? CreatedEvents { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_createdEvents> CreatedEvents { get; set; }
+#endif
         /// <summary>Number of events created</summary>
         public double? CreatedEventsCount { get; set; }
         /// <summary>Number of new tags created in SoT</summary>
@@ -33,8 +41,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Number of indicators queued for async processing</summary>
         public double? QueuedIndicatorsCount { get; set; }
-        /// <summary>Number of events skipped due to duplicate UUID (only when preserveUuid=true)</summary>
-        public double? SkippedEventsCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202"/> and sets the default values.
         /// </summary>
@@ -61,12 +67,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createBulkEventsRequestId", n => { CreateBulkEventsRequestId = n.GetGuidValue(); } },
+                { "createdEvents", n => { CreatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_createdEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_createdEvents.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "createdEventsCount", n => { CreatedEventsCount = n.GetDoubleValue(); } },
                 { "createdTagsCount", n => { CreatedTagsCount = n.GetDoubleValue(); } },
                 { "errorCount", n => { ErrorCount = n.GetDoubleValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "queuedIndicatorsCount", n => { QueuedIndicatorsCount = n.GetDoubleValue(); } },
-                { "skippedEventsCount", n => { SkippedEventsCount = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -77,12 +83,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("createBulkEventsRequestId", CreateBulkEventsRequestId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_createdEvents>("createdEvents", CreatedEvents);
             writer.WriteDoubleValue("createdEventsCount", CreatedEventsCount);
             writer.WriteDoubleValue("createdTagsCount", CreatedTagsCount);
             writer.WriteDoubleValue("errorCount", ErrorCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_EventCreateBulk_202_errors>("errors", Errors);
             writer.WriteDoubleValue("queuedIndicatorsCount", QueuedIndicatorsCount);
-            writer.WriteDoubleValue("skippedEventsCount", SkippedEventsCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

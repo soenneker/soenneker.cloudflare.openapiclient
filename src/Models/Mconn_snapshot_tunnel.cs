@@ -43,6 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>MTU as measured between the two ends of the tunnel</summary>
         public double? ProbedMtu { get; set; }
+        /// <summary>Number of recent healthy pings for this tunnel</summary>
+        public double? RecentHealthyPings { get; set; }
+        /// <summary>Number of recent unhealthy pings for this tunnel</summary>
+        public double? RecentUnhealthyPings { get; set; }
         /// <summary>Tunnel identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "health_value", n => { HealthValue = n.GetDoubleValue(); } },
                 { "interface_name", n => { InterfaceName = n.GetStringValue(); } },
                 { "probed_mtu", n => { ProbedMtu = n.GetDoubleValue(); } },
+                { "recent_healthy_pings", n => { RecentHealthyPings = n.GetDoubleValue(); } },
+                { "recent_unhealthy_pings", n => { RecentUnhealthyPings = n.GetDoubleValue(); } },
                 { "tunnel_id", n => { TunnelId = n.GetStringValue(); } },
             };
         }
@@ -96,6 +102,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("health_value", HealthValue);
             writer.WriteStringValue("interface_name", InterfaceName);
             writer.WriteDoubleValue("probed_mtu", ProbedMtu);
+            writer.WriteDoubleValue("recent_healthy_pings", RecentHealthyPings);
+            writer.WriteDoubleValue("recent_unhealthy_pings", RecentUnhealthyPings);
             writer.WriteStringValue("tunnel_id", TunnelId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Duration in milliseconds or as a string like &apos;5 minutes&apos;</summary>
+        /// <summary>Specifies the duration in milliseconds or as a string like &apos;5 minutes&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_error_retention? ErrorRetention { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_error_retention ErrorRetention { get; set; }
 #endif
-        /// <summary>Duration in milliseconds or as a string like &apos;5 minutes&apos;</summary>
+        /// <summary>Specifies the duration in milliseconds or as a string like &apos;5 minutes&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_create_workflow_instance_instance_retention_success_retention? SuccessRetention { get; set; }

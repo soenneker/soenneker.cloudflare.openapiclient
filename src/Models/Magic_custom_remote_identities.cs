@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A custom IKE ID of type FQDN that may be used to identity the IPsec tunnel. Thegenerated IKE IDs can still be used even if this custom value is specified.Must be of the form `&lt;custom label&gt;.&lt;account ID&gt;.custom.ipsec.cloudflare.com`.This custom ID does not need to be unique. Two IPsec tunnels may have the same custom fqdn_id. However, if another IPsec tunnel has the same value then the two tunnels cannot have the same cloudflare_endpoint.</summary>
+        /// <summary>A custom IKE ID of type FQDN that may be used to identity the IPsec tunnel. Thegenerated IKE IDs can still be used even if this custom value is specified.Must be of the form `&lt;custom label&gt;.&lt;account ID&gt;.custom.ipsec.cloudflare.com`.This custom ID does not need to be unique. Two IPsec tunnels may have the same customfqdn_id. However, if another IPsec tunnel has the same value then the two tunnelscannot have the same cloudflare_endpoint.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FqdnId { get; set; }

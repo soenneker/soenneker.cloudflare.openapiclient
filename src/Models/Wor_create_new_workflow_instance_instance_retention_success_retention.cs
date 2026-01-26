@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Duration in milliseconds or as a string like &apos;5 minutes&apos;
+    /// Specifies the duration in milliseconds or as a string like &apos;5 minutes&apos;.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Wor_create_new_workflow_instance_instance_retention_success_retention : IAdditionalDataHolder, IParsable

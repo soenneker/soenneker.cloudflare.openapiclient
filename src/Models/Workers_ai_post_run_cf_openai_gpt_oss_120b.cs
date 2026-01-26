@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Workers_ai_post_run_cf_openai_gpt_oss_120b : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2 WorkersAiPostRunCfOpenaiGptOss120bMember2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember3"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember3? WorkersAiPostRunCfOpenaiGptOss120bMember3 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember3 WorkersAiPostRunCfOpenaiGptOss120bMember3 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +55,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.WorkersAiPostRunCfOpenaiGptOss120bMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2();
             }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.WorkersAiPostRunCfOpenaiGptOss120bMember3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember3();
+            }
             return result;
         }
         /// <summary>
@@ -62,6 +74,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(WorkersAiPostRunCfOpenaiGptOss120bMember2 != null)
             {
                 return WorkersAiPostRunCfOpenaiGptOss120bMember2.GetFieldDeserializers();
+            }
+            else if(WorkersAiPostRunCfOpenaiGptOss120bMember3 != null)
+            {
+                return WorkersAiPostRunCfOpenaiGptOss120bMember3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -79,6 +95,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             else if(WorkersAiPostRunCfOpenaiGptOss120bMember2 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember2>(null, WorkersAiPostRunCfOpenaiGptOss120bMember2);
+            }
+            else if(WorkersAiPostRunCfOpenaiGptOss120bMember3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_gpt_oss_120bMember3>(null, WorkersAiPostRunCfOpenaiGptOss120bMember3);
             }
         }
     }

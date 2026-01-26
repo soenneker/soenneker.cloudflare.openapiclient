@@ -9,7 +9,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Domain;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.DomainHistory;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpList;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpLists;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Miscategorization;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Sinkholes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Whois;
@@ -60,10 +60,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Ip.IpRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The ipList property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpList.IpListRequestBuilder IpList
+        /// <summary>The ipLists property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpLists.IpListsRequestBuilder IpLists
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpList.IpListRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IpLists.IpListsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The miscategorization property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.Miscategorization.MiscategorizationRequestBuilder Miscategorization

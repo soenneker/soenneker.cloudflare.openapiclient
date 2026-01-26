@@ -30,6 +30,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_settings;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hostnames;
@@ -202,6 +203,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder Firewall
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The fraud_detection property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection.Fraud_detectionRequestBuilder Fraud_detection
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection.Fraud_detectionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The healthchecks property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks.HealthchecksRequestBuilder Healthchecks
