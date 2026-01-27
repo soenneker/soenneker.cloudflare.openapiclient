@@ -3,8 +3,10 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Jobs;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Search;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Stats;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -20,6 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstancesItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The chat property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.ChatRequestBuilder Chat
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The items property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items.ItemsRequestBuilder Items
         {
@@ -29,6 +36,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Jobs.JobsRequestBuilder Jobs
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The search property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Search.SearchRequestBuilder Search
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Stats.StatsRequestBuilder Stats

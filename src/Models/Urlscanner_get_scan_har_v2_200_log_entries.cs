@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Connection { get; set; }
 #endif
-        /// <summary>The _initialPriority property</summary>
+        /// <summary>The initialPriority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InitialPriority { get; set; }
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string InitialPriority { get; set; }
 #endif
-        /// <summary>The _initiator_type property</summary>
+        /// <summary>The initiator_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InitiatorType { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Pageref { get; set; }
 #endif
-        /// <summary>The _priority property</summary>
+        /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Priority { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_har_v2_200_log_entries_request Request { get; set; }
 #endif
-        /// <summary>The _requestId property</summary>
+        /// <summary>The requestId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestId { get; set; }
@@ -78,9 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RequestId { get; set; }
 #endif
-        /// <summary>The _requestTime property</summary>
+        /// <summary>The requestTime property</summary>
         public double? RequestTime { get; set; }
-        /// <summary>The _resourceType property</summary>
+        /// <summary>The resourceType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ResourceType { get; set; }

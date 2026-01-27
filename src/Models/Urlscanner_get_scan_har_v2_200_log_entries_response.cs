@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string StatusText { get; set; }
 #endif
-        /// <summary>The _transferSize property</summary>
+        /// <summary>The transferSize property</summary>
         public double? TransferSize { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_har_v2_200_log_entries_response"/> and sets the default values.

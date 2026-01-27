@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Cors;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lifecycle;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.LocalUploads;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lock;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Sippy;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -36,6 +37,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lifecycle.LifecycleRequestBuilder Lifecycle
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lifecycle.LifecycleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The localUploads property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.LocalUploads.LocalUploadsRequestBuilder LocalUploads
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.LocalUploads.LocalUploadsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The lock property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Lock.LockRequestBuilder Lock

@@ -23,10 +23,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_events_series_data_aggregates_bin Bin { get; set; }
 #endif
-        /// <summary>The _count property</summary>
+        /// <summary>The count property</summary>
         [Obsolete("")]
         public int? Count { get; set; }
-        /// <summary>The _firstSeen property</summary>
+        /// <summary>The firstSeen property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FirstSeen { get; set; }
 #endif
-        /// <summary>The _interval property</summary>
+        /// <summary>The interval property</summary>
         [Obsolete("")]
         public int? Interval { get; set; }
-        /// <summary>The _lastSeen property</summary>
+        /// <summary>The lastSeen property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
