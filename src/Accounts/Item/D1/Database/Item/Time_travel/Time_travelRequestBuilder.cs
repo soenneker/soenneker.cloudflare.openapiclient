@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\d1\database\{database_id}\time_travel
+    /// Builds and executes requests for operations under \accounts\{account-id}\d1\database\{database_id}\time_travel
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Time_travelRequestBuilder : BaseRequestBuilder
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Time_travelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/d1/database/{database_id}/time_travel", pathParameters)
+        public Time_travelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/d1/database/{database_id}/time_travel", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Time_travelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/d1/database/{database_id}/time_travel", rawUrl)
+        public Time_travelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/d1/database/{database_id}/time_travel", rawUrl)
         {
         }
     }

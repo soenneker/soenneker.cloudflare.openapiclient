@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Purge
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\queues\{queue_id}\purge
+    /// Builds and executes requests for operations under \accounts\{account-id}\queues\{queue_id}\purge
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PurgeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Purge
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PurgeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/queues/{queue_id}/purge", pathParameters)
+        public PurgeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/queues/{queue_id}/purge", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Queues.Item.Purge
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PurgeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/queues/{queue_id}/purge", rawUrl)
+        public PurgeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/queues/{queue_id}/purge", rawUrl)
         {
         }
         /// <summary>

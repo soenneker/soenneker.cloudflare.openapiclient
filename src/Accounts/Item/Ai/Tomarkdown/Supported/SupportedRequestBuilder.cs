@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown.Supported
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\tomarkdown\supported
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\tomarkdown\supported
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SupportedRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown.Support
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SupportedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/tomarkdown/supported", pathParameters)
+        public SupportedRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/tomarkdown/supported", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Tomarkdown.Support
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SupportedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/tomarkdown/supported", rawUrl)
+        public SupportedRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/tomarkdown/supported", rawUrl)
         {
         }
         /// <summary>

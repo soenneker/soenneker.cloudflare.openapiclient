@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Portals
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\ai-controls\mcp\portals
+    /// Builds and executes requests for operations under \accounts\{account-id}\access\ai-controls\mcp\portals
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PortalsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PortalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/ai-controls/mcp/portals{?page*,per_page*,search*}", pathParameters)
+        public PortalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/ai-controls/mcp/portals{?page*,per_page*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PortalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/ai-controls/mcp/portals{?page*,per_page*,search*}", rawUrl)
+        public PortalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/ai-controls/mcp/portals{?page*,per_page*,search*}", rawUrl)
         {
         }
         /// <summary>

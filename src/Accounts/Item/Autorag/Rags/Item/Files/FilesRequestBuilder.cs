@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Files
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\autorag\rags\{id}\files
+    /// Builds and executes requests for operations under \accounts\{account-id}\autorag\rags\{id}\files
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FilesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Fil
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/autorag/rags/{id}/files{?page*,per_page*,search*,status*}", pathParameters)
+        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/autorag/rags/{id}/files{?page*,per_page*,search*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.Rags.Item.Fil
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/autorag/rags/{id}/files{?page*,per_page*,search*,status*}", rawUrl)
+        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/autorag/rags/{id}/files{?page*,per_page*,search*,status*}", rawUrl)
         {
         }
         /// <summary>

@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\registrar
+    /// Builds and executes requests for operations under \accounts\{account-id}\registrar
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RegistrarRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/registrar", pathParameters)
+        public RegistrarRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/registrar", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/registrar", rawUrl)
+        public RegistrarRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/registrar", rawUrl)
         {
         }
     }

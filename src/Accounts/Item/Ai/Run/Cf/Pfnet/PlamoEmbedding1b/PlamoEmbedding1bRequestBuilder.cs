@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.PlamoEmbedding1b
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\pfnet\plamo-embedding-1b
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@cf\pfnet\plamo-embedding-1b
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlamoEmbedding1bRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.Plamo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlamoEmbedding1bRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/pfnet/plamo-embedding-1b{?queueRequest*,tags*}", pathParameters)
+        public PlamoEmbedding1bRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/pfnet/plamo-embedding-1b{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.Plamo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PlamoEmbedding1bRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/pfnet/plamo-embedding-1b{?queueRequest*,tags*}", rawUrl)
+        public PlamoEmbedding1bRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/pfnet/plamo-embedding-1b{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\tests\overview
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\tests\overview
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OverviewRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", pathParameters)
+        public OverviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", rawUrl)
+        public OverviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", rawUrl)
         {
         }
         /// <summary>

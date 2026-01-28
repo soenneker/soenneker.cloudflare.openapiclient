@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Connectors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cfd_tunnel\{tunnel_id}\connectors
+    /// Builds and executes requests for operations under \accounts\{account-id}\cfd_tunnel\{tunnel_id}\connectors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectorsRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Conne
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cfd_tunnel/{tunnel_id}/connectors", pathParameters)
+        public ConnectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cfd_tunnel/{tunnel_id}/connectors", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.Conne
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cfd_tunnel/{tunnel_id}/connectors", rawUrl)
+        public ConnectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cfd_tunnel/{tunnel_id}/connectors", rawUrl)
         {
         }
     }

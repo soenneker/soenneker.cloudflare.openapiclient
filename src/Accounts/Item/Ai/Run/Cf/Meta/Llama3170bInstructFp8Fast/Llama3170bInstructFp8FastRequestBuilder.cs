@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama3170bInstructFp8Fast
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\meta\llama-3.1-70b-instruct-fp8-fast
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@cf\meta\llama-3.1-70b-instruct-fp8-fast
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Llama3170bInstructFp8FastRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama3
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Llama3170bInstructFp8FastRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast{?queueRequest*,tags*}", pathParameters)
+        public Llama3170bInstructFp8FastRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama3
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Llama3170bInstructFp8FastRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast{?queueRequest*,tags*}", rawUrl)
+        public Llama3170bInstructFp8FastRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/meta/llama-3.1-70b-instruct-fp8-fast{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

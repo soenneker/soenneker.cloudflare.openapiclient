@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\abuse-reports\{report_-id}\mitigations
+    /// Builds and executes requests for operations under \accounts\{account-id}\abuse-reports\{report_-id}\mitigations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MitigationsRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MitigationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", pathParameters)
+        public MitigationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MitigationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", rawUrl)
+        public MitigationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", rawUrl)
         {
         }
         /// <summary>

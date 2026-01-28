@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\addressing\address_maps
+    /// Builds and executes requests for operations under \accounts\{account-id}\addressing\address_maps
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Address_mapsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_ma
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Address_mapsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/addressing/address_maps", pathParameters)
+        public Address_mapsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/addressing/address_maps", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_ma
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Address_mapsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/addressing/address_maps", rawUrl)
+        public Address_mapsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/addressing/address_maps", rawUrl)
         {
         }
         /// <summary>

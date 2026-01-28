@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versions.Item.Dag
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workflows\{workflow_name}\versions\{version_id}\dag
+    /// Builds and executes requests for operations under \accounts\{account-id}\workflows\{workflow_name}\versions\{version_id}\dag
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DagRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DagRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/versions/{version_id}/dag", pathParameters)
+        public DagRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflow_name}/versions/{version_id}/dag", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Versio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DagRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/versions/{version_id}/dag", rawUrl)
+        public DagRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflow_name}/versions/{version_id}/dag", rawUrl)
         {
         }
         /// <summary>

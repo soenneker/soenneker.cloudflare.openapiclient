@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monitor_groups.Item.References
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\load_balancers\monitor_groups\{monitor_group_id}\references
+    /// Builds and executes requests for operations under \accounts\{account-id}\load_balancers\monitor_groups\{monitor_group_id}\references
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReferencesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monito
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReferencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/monitor_groups/{monitor_group_id}/references", pathParameters)
+        public ReferencesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/load_balancers/monitor_groups/{monitor_group_id}/references", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Monito
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReferencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/monitor_groups/{monitor_group_id}/references", rawUrl)
+        public ReferencesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/load_balancers/monitor_groups/{monitor_group_id}/references", rawUrl)
         {
         }
         /// <summary>

@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\r2\buckets
+    /// Builds and executes requests for operations under \accounts\{account-id}\r2\buckets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BucketsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BucketsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2/buckets{?cursor*,direction*,name_contains*,order*,per_page*,start_after*}", pathParameters)
+        public BucketsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2/buckets{?cursor*,direction*,name_contains*,order*,per_page*,start_after*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BucketsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2/buckets{?cursor*,direction*,name_contains*,order*,per_page*,start_after*}", rawUrl)
+        public BucketsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2/buckets{?cursor*,direction*,name_contains*,order*,per_page*,start_after*}", rawUrl)
         {
         }
         /// <summary>

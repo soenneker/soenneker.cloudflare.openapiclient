@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.EndpointHealthchecks.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\diagnostics\endpoint-healthchecks\{id}
+    /// Builds and executes requests for operations under \accounts\{account-id}\diagnostics\endpoint-healthchecks\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EndpointHealthchecksItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.EndpointH
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EndpointHealthchecksItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/diagnostics/endpoint-healthchecks/{id}", pathParameters)
+        public EndpointHealthchecksItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/diagnostics/endpoint-healthchecks/{id}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics.EndpointH
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EndpointHealthchecksItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/diagnostics/endpoint-healthchecks/{id}", rawUrl)
+        public EndpointHealthchecksItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/diagnostics/endpoint-healthchecks/{id}", rawUrl)
         {
         }
         /// <summary>

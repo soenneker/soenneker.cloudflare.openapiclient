@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Url
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway\gateways\{gateway_-id}\url
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway\gateways\{gateway_-id}\url
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UrlRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/gateways/{gateway_%2Did}/url", pathParameters)
+        public UrlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/gateways/{gateway_%2Did}/url", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/gateways/{gateway_%2Did}/url", rawUrl)
+        public UrlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/gateways/{gateway_%2Did}/url", rawUrl)
         {
         }
     }

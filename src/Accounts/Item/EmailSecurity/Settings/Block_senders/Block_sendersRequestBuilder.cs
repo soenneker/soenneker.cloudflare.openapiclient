@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Block_senders
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\settings\block_senders
+    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\settings\block_senders
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Block_sendersRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Block_sendersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/block_senders{?direction*,order*,page*,pattern*,pattern_type*,per_page*,search*}", pathParameters)
+        public Block_sendersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/block_senders{?direction*,order*,page*,pattern*,pattern_type*,per_page*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Block_sendersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/block_senders{?direction*,order*,page*,pattern*,pattern_type*,per_page*,search*}", rawUrl)
+        public Block_sendersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/block_senders{?direction*,order*,page*,pattern*,pattern_type*,per_page*,search*}", rawUrl)
         {
         }
         /// <summary>

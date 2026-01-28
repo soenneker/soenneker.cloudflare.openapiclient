@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.Downloads.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\commands\{command_id}\downloads\{filename}
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\commands\{command_id}\downloads\{filename}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFilenameItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.Dow
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFilenameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands/{command_id}/downloads/{filename}", pathParameters)
+        public WithFilenameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/commands/{command_id}/downloads/{filename}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands.Item.Dow
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFilenameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands/{command_id}/downloads/{filename}", rawUrl)
+        public WithFilenameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/commands/{command_id}/downloads/{filename}", rawUrl)
         {
         }
         /// <summary>

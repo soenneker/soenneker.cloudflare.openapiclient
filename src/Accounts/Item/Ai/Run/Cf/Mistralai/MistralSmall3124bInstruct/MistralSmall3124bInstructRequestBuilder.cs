@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.MistralSmall3124bInstruct
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\mistralai\mistral-small-3.1-24b-instruct
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@cf\mistralai\mistral-small-3.1-24b-instruct
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MistralSmall3124bInstructRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MistralSmall3124bInstructRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*,tags*}", pathParameters)
+        public MistralSmall3124bInstructRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MistralSmall3124bInstructRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*,tags*}", rawUrl)
+        public MistralSmall3124bInstructRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/mistralai/mistral-small-3.1-24b-instruct{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Metadata_index
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\vectorize\v2\indexes\{index_name}\metadata_index
+    /// Builds and executes requests for operations under \accounts\{account-id}\vectorize\v2\indexes\{index_name}\metadata_index
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Metadata_indexRequestBuilder : BaseRequestBuilder
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Metadata_indexRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/vectorize/v2/indexes/{index_name}/metadata_index", pathParameters)
+        public Metadata_indexRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vectorize/v2/indexes/{index_name}/metadata_index", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Metadata_indexRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/vectorize/v2/indexes/{index_name}/metadata_index", rawUrl)
+        public Metadata_indexRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vectorize/v2/indexes/{index_name}/metadata_index", rawUrl)
         {
         }
     }

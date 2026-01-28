@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bBaseAwq
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\thebloke\deepseek-coder-6.7b-base-awq
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@hf\thebloke\deepseek-coder-6.7b-base-awq
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeepseekCoder67bBaseAwqRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.De
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeepseekCoder67bBaseAwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq{?queueRequest*,tags*}", pathParameters)
+        public DeepseekCoder67bBaseAwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.De
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeepseekCoder67bBaseAwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq{?queueRequest*,tags*}", rawUrl)
+        public DeepseekCoder67bBaseAwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/deepseek-coder-6.7b-base-awq{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

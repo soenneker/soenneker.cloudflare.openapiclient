@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logs\control
+    /// Builds and executes requests for operations under \accounts\{account-id}\logs\control
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ControlRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ControlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/control", pathParameters)
+        public ControlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/control", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Control
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ControlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/control", rawUrl)
+        public ControlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/control", rawUrl)
         {
         }
     }

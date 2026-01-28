@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rulesets\{ruleset_id}
+    /// Builds and executes requests for operations under \accounts\{account-id}\rulesets\{ruleset_id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRuleset_ItemRequestBuilder : BaseRequestBuilder
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRuleset_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rulesets/{ruleset_id}", pathParameters)
+        public WithRuleset_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/{ruleset_id}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRuleset_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rulesets/{ruleset_id}", rawUrl)
+        public WithRuleset_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/{ruleset_id}", rawUrl)
         {
         }
         /// <summary>

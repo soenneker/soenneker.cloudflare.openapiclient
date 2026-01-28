@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.Item.Routes.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway\gateways\{gateway_-id}\routes\{id}
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway\gateways\{gateway_-id}\routes\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RoutesItemRequestBuilder : BaseRequestBuilder
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoutesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/gateways/{gateway_%2Did}/routes/{id}", pathParameters)
+        public RoutesItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/gateways/{gateway_%2Did}/routes/{id}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RoutesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway/gateways/{gateway_%2Did}/routes/{id}", rawUrl)
+        public RoutesItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway/gateways/{gateway_%2Did}/routes/{id}", rawUrl)
         {
         }
         /// <summary>

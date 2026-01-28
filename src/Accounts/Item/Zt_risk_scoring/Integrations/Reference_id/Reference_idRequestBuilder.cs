@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integrations.Reference_id
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zt_risk_scoring\integrations\reference_id
+    /// Builds and executes requests for operations under \accounts\{account-id}\zt_risk_scoring\integrations\reference_id
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Reference_idRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Reference_idRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zt_risk_scoring/integrations/reference_id", pathParameters)
+        public Reference_idRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zt_risk_scoring/integrations/reference_id", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Reference_idRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zt_risk_scoring/integrations/reference_id", rawUrl)
+        public Reference_idRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zt_risk_scoring/integrations/reference_id", rawUrl)
         {
         }
     }

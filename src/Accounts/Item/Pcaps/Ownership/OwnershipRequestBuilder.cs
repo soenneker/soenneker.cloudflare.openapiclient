@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Ownership
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pcaps\ownership
+    /// Builds and executes requests for operations under \accounts\{account-id}\pcaps\ownership
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OwnershipRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Ownership
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OwnershipRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pcaps/ownership", pathParameters)
+        public OwnershipRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pcaps/ownership", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pcaps.Ownership
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OwnershipRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pcaps/ownership", rawUrl)
+        public OwnershipRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pcaps/ownership", rawUrl)
         {
         }
         /// <summary>

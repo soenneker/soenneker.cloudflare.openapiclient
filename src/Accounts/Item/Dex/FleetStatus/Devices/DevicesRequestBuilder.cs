@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devices
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\fleet-status\devices
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\fleet-status\devices
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DevicesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", pathParameters)
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.Devic
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", rawUrl)
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/fleet-status/devices?from={from}&page={page}&per_page={per_page}&to={to}{&colo*,device_id*,mode*,platform*,sort_by*,source*,status*,version*}", rawUrl)
         {
         }
         /// <summary>

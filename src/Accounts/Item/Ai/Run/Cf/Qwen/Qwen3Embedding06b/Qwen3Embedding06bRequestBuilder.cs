@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen3Embedding06b
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\qwen\qwen3-embedding-0.6b
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@cf\qwen\qwen3-embedding-0.6b
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Qwen3Embedding06bRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen3E
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Qwen3Embedding06bRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/qwen/qwen3-embedding-0.6b{?queueRequest*,tags*}", pathParameters)
+        public Qwen3Embedding06bRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/qwen/qwen3-embedding-0.6b{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen3E
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Qwen3Embedding06bRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/qwen/qwen3-embedding-0.6b{?queueRequest*,tags*}", rawUrl)
+        public Qwen3Embedding06bRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/qwen/qwen3-embedding-0.6b{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

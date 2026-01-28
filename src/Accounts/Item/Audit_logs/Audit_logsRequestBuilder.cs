@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\audit_logs
+    /// Builds and executes requests for operations under \accounts\{account-id}\audit_logs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Audit_logsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Audit_logsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/audit_logs{?action%2Etype*,actor%2Eemail*,actor%2Eip*,before*,direction*,export*,hide_user_logs*,id*,page*,per_page*,since*,zone%2Ename*}", pathParameters)
+        public Audit_logsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/audit_logs{?action%2Etype*,actor%2Eemail*,actor%2Eip*,before*,direction*,export*,hide_user_logs*,id*,page*,per_page*,since*,zone%2Ename*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Audit_logsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/audit_logs{?action%2Etype*,actor%2Eemail*,actor%2Eip*,before*,direction*,export*,hide_user_logs*,id*,page*,per_page*,since*,zone%2Ename*}", rawUrl)
+        public Audit_logsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/audit_logs{?action%2Etype*,actor%2Eemail*,actor%2Eip*,before*,direction*,export*,hide_user_logs*,id*,page*,per_page*,since*,zone%2Ename*}", rawUrl)
         {
         }
         /// <summary>

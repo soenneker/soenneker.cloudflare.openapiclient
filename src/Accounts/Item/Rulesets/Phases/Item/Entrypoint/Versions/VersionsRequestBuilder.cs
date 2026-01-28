@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.Entrypoint.Versions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rulesets\phases\{ruleset_phase}\entrypoint\versions
+    /// Builds and executes requests for operations under \accounts\{account-id}\rulesets\phases\{ruleset_phase}\entrypoint\versions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class VersionsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint/versions", pathParameters)
+        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/phases/{ruleset_phase}/entrypoint/versions", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rulesets/phases/{ruleset_phase}/entrypoint/versions", rawUrl)
+        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/phases/{ruleset_phase}/entrypoint/versions", rawUrl)
         {
         }
         /// <summary>

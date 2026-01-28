@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Versions.Item.By_tag.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\rulesets\{ruleset_id}\versions\{ruleset_version}\by_tag\{rule_tag}
+    /// Builds and executes requests for operations under \accounts\{account-id}\rulesets\{ruleset_id}\versions\{ruleset_version}\by_tag\{rule_tag}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithRule_tagItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Version
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRule_tagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}", pathParameters)
+        public WithRule_tagItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Version
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithRule_tagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}", rawUrl)
+        public WithRule_tagItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/rulesets/{ruleset_id}/versions/{ruleset_version}/by_tag/{rule_tag}", rawUrl)
         {
         }
         /// <summary>

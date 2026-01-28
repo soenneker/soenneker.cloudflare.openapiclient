@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Allow_policies
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\settings\allow_policies
+    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\settings\allow_policies
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Allow_policiesRequestBuilder : BaseRequestBuilder
@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Allow_policiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/allow_policies{?direction*,is_acceptable_sender*,is_exempt_recipient*,is_recipient*,is_sender*,is_spoof*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", pathParameters)
+        public Allow_policiesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/allow_policies{?direction*,is_acceptable_sender*,is_exempt_recipient*,is_recipient*,is_sender*,is_spoof*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Allow_policiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/allow_policies{?direction*,is_acceptable_sender*,is_exempt_recipient*,is_recipient*,is_sender*,is_spoof*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", rawUrl)
+        public Allow_policiesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/allow_policies{?direction*,is_acceptable_sender*,is_exempt_recipient*,is_recipient*,is_sender*,is_spoof*,is_trusted_sender*,order*,page*,pattern*,pattern_type*,per_page*,search*,verify_sender*}", rawUrl)
         {
         }
         /// <summary>

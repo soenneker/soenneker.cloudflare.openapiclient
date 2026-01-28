@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\thebloke\openhermes-2.5-mistral-7b-awq
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@hf\thebloke\openhermes-2.5-mistral-7b-awq
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Openhermes25Mistral7bAwqRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Op
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Openhermes25Mistral7bAwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq{?queueRequest*,tags*}", pathParameters)
+        public Openhermes25Mistral7bAwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Op
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Openhermes25Mistral7bAwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq{?queueRequest*,tags*}", rawUrl)
+        public Openhermes25Mistral7bAwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/openhermes-2.5-mistral-7b-awq{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

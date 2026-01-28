@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\abuse-reports
+    /// Builds and executes requests for operations under \accounts\{account-id}\abuse-reports
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AbuseReportsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,sort*,status*,type*}", pathParameters)
+        public AbuseReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,sort*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,sort*,status*,type*}", rawUrl)
+        public AbuseReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports{?created_after*,created_before*,domain*,mitigation_status*,page*,per_page*,sort*,status*,type*}", rawUrl)
         {
         }
         /// <summary>

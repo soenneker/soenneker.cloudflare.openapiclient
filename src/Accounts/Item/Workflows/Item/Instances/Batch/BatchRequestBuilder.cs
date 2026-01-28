@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Batch
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workflows\{workflow_name}\instances\batch
+    /// Builds and executes requests for operations under \accounts\{account-id}\workflows\{workflow_name}\instances\batch
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BatchRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances/batch", pathParameters)
+        public BatchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflow_name}/instances/batch", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BatchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workflows/{workflow_name}/instances/batch", rawUrl)
+        public BatchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workflows/{workflow_name}/instances/batch", rawUrl)
         {
         }
         /// <summary>

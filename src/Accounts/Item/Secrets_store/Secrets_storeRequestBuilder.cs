@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\secrets_store
+    /// Builds and executes requests for operations under \accounts\{account-id}\secrets_store
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Secrets_storeRequestBuilder : BaseRequestBuilder
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Secrets_storeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/secrets_store", pathParameters)
+        public Secrets_storeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Secrets_storeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/secrets_store", rawUrl)
+        public Secrets_storeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store", rawUrl)
         {
         }
     }

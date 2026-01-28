@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\profiles
+    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\profiles
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProfilesRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/profiles{?all*}", pathParameters)
+        public ProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/profiles{?all*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/profiles{?all*}", rawUrl)
+        public ProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/profiles{?all*}", rawUrl)
         {
         }
         /// <summary>

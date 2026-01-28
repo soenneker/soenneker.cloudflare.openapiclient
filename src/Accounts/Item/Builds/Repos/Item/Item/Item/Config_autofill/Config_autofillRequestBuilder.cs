@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Item.Item.Config_autofill
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\builds\repos\{provider_type}\{provider_account_id}\{repo_id}\config_autofill
+    /// Builds and executes requests for operations under \accounts\{account-id}\builds\repos\{provider_type}\{provider_account_id}\{repo_id}\config_autofill
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Config_autofillRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Config_autofillRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill?branch={branch}{&root_directory*}", pathParameters)
+        public Config_autofillRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill?branch={branch}{&root_directory*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Config_autofillRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill?branch={branch}{&root_directory*}", rawUrl)
+        public Config_autofillRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/repos/{provider_type}/{provider_account_id}/{repo_id}/config_autofill?branch={branch}{&root_directory*}", rawUrl)
         {
         }
         /// <summary>

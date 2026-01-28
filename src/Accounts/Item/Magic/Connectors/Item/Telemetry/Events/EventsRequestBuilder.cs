@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\connectors\{connector_id}\telemetry\events
+    /// Builds and executes requests for operations under \accounts\{account-id}\magic\connectors\{connector_id}\telemetry\events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/connectors/{connector_id}/telemetry/events?from={from}&to={to}{&cursor*,k*,limit*}", rawUrl)
         {
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\connectors\{connector_id}\telemetry\events\{event_t}.{event_n}
+        /// Builds and executes requests for operations under \accounts\{account-id}\magic\connectors\{connector_id}\telemetry\events\{event_t}.{event_n}
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors.Item.Telemetry.Events.WithEvent_tWithEvent_n.WithEvent_tWithEvent_nRequestBuilder"/></returns>
         /// <param name="event_n">The path parameter: event_n</param>

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.OverTime
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\fleet-status\over-time
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\fleet-status\over-time
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OverTimeRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.OverT
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/over-time?from={from}&to={to}{&colo*,device_id*}", pathParameters)
+        public OverTimeRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/fleet-status/over-time?from={from}&to={to}{&colo*,device_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus.OverT
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/fleet-status/over-time?from={from}&to={to}{&colo*,device_id*}", rawUrl)
+        public OverTimeRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/fleet-status/over-time?from={from}&to={to}{&colo*,device_id*}", rawUrl)
         {
         }
         /// <summary>

@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\builds\repos
+    /// Builds and executes requests for operations under \accounts\{account-id}\builds\repos
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReposRequestBuilder : BaseRequestBuilder
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/repos", pathParameters)
+        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/repos", pathParameters)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/builds/repos", rawUrl)
+        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/builds/repos", rawUrl)
         {
         }
     }

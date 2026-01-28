@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Pools.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\load_balancers\pools\{pool_id}
+    /// Builds and executes requests for operations under \accounts\{account-id}\load_balancers\pools\{pool_id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPool_ItemRequestBuilder : BaseRequestBuilder
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Pools.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPool_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/pools/{pool_id}", pathParameters)
+        public WithPool_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/load_balancers/pools/{pool_id}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Load_balancers.Pools.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithPool_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/load_balancers/pools/{pool_id}", rawUrl)
+        public WithPool_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/load_balancers/pools/{pool_id}", rawUrl)
         {
         }
         /// <summary>

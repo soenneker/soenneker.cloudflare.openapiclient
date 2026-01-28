@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domains
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\r2\buckets\{bucket_name}\domains
+    /// Builds and executes requests for operations under \accounts\{account-id}\r2\buckets\{bucket_name}\domains
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DomainsRequestBuilder : BaseRequestBuilder
@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domai
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DomainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2/buckets/{bucket_name}/domains", pathParameters)
+        public DomainsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2/buckets/{bucket_name}/domains", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2.Buckets.Item.Domai
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DomainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2/buckets/{bucket_name}/domains", rawUrl)
+        public DomainsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2/buckets/{bucket_name}/domains", rawUrl)
         {
         }
     }

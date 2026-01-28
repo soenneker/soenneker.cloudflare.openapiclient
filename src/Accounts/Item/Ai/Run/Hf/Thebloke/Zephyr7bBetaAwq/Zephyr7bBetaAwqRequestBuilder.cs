@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\thebloke\zephyr-7b-beta-awq
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@hf\thebloke\zephyr-7b-beta-awq
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zephyr7bBetaAwqRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ze
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Zephyr7bBetaAwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/zephyr-7b-beta-awq{?queueRequest*,tags*}", pathParameters)
+        public Zephyr7bBetaAwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/zephyr-7b-beta-awq{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ze
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Zephyr7bBetaAwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/zephyr-7b-beta-awq{?queueRequest*,tags*}", rawUrl)
+        public Zephyr7bBetaAwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/zephyr-7b-beta-awq{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

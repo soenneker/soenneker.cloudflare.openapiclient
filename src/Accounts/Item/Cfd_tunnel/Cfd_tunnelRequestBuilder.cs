@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\cfd_tunnel
+    /// Builds and executes requests for operations under \accounts\{account-id}\cfd_tunnel
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cfd_tunnelRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Cfd_tunnelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cfd_tunnel{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", pathParameters)
+        public Cfd_tunnelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cfd_tunnel{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Cfd_tunnelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cfd_tunnel{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", rawUrl)
+        public Cfd_tunnelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cfd_tunnel{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", rawUrl)
         {
         }
         /// <summary>

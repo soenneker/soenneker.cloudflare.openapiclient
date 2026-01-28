@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Deployments.Item.Retry
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pages\projects\{project_name}\deployments\{deployment_id}\retry
+    /// Builds and executes requests for operations under \accounts\{account-id}\pages\projects\{project_name}\deployments\{deployment_id}\retry
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RetryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.D
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RetryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/deployments/{deployment_id}/retry", pathParameters)
+        public RetryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pages/projects/{project_name}/deployments/{deployment_id}/retry", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.D
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RetryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/deployments/{deployment_id}/retry", rawUrl)
+        public RetryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pages/projects/{project_name}/deployments/{deployment_id}/retry", rawUrl)
         {
         }
         /// <summary>

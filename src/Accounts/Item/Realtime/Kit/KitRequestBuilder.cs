@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KitRequestBuilder : BaseRequestBuilder
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit", pathParameters)
+        public KitRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit", pathParameters)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit", rawUrl)
+        public KitRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit", rawUrl)
         {
         }
     }

@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\warp_connector
+    /// Builds and executes requests for operations under \accounts\{account-id}\warp_connector
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Warp_connectorRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Warp_connectorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/warp_connector{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", pathParameters)
+        public Warp_connectorRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/warp_connector{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Warp_connectorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/warp_connector{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", rawUrl)
+        public Warp_connectorRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/warp_connector{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,uuid*,was_active_at*,was_inactive_at*}", rawUrl)
         {
         }
         /// <summary>

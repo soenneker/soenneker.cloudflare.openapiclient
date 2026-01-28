@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.Item.Secrets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\secrets_store\stores\{store_id}\secrets
+    /// Builds and executes requests for operations under \accounts\{account-id}\secrets_store\stores\{store_id}\secrets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SecretsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/secrets_store/stores/{store_id}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", pathParameters)
+        public SecretsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store/stores/{store_id}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store.Stores.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/secrets_store/stores/{store_id}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", rawUrl)
+        public SecretsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/secrets_store/stores/{store_id}/secrets{?direction*,order*,page*,per_page*,scopes,search*}", rawUrl)
         {
         }
         /// <summary>

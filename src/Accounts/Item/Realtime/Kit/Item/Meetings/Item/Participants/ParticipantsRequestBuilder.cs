@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Meetings.Item.Participants
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit\{app_id}\meetings\{meeting_id}\participants
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{app_id}\meetings\{meeting_id}\participants
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ParticipantsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParticipantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/participants{?page_no*,per_page*}", pathParameters)
+        public ParticipantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/participants{?page_no*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParticipantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/participants{?page_no*,per_page*}", rawUrl)
+        public ParticipantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/participants{?page_no*,per_page*}", rawUrl)
         {
         }
         /// <summary>

@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Meetings.Item.ActiveSession.KickAll
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit\{app_id}\meetings\{meeting_id}\active-session\kick-all
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{app_id}\meetings\{meeting_id}\active-session\kick-all
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KickAllRequestBuilder : BaseRequestBuilder
@@ -21,7 +21,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KickAllRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all", pathParameters)
+        public KickAllRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all", pathParameters)
         {
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public KickAllRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all", rawUrl)
+        public KickAllRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/meetings/{meeting_id}/active-session/kick-all", rawUrl)
         {
         }
         /// <summary>

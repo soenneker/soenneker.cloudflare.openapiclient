@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\slurper
+    /// Builds and executes requests for operations under \accounts\{account-id}\slurper
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SlurperRequestBuilder : BaseRequestBuilder
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlurperRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/slurper", pathParameters)
+        public SlurperRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/slurper", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SlurperRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/slurper", rawUrl)
+        public SlurperRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/slurper", rawUrl)
         {
         }
     }

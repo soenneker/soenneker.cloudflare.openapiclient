@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dns_settings\views
+    /// Builds and executes requests for operations under \accounts\{account-id}\dns_settings\views
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ViewsRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dns_settings/views{?direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,zone_id*,zone_name*}", pathParameters)
+        public ViewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dns_settings/views{?direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,zone_id*,zone_name*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings.Views
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dns_settings/views{?direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,zone_id*,zone_name*}", rawUrl)
+        public ViewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dns_settings/views{?direction*,match*,name*,name%2Econtains*,name%2Eendswith*,name%2Eexact*,name%2Estartswith*,order*,page*,per_page*,zone_id*,zone_name*}", rawUrl)
         {
         }
         /// <summary>

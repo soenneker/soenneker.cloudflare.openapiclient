@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit\{app_id}\sessions\{session_id}\participants
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{app_id}\sessions\{session_id}\participants
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ParticipantsRequestBuilder : BaseRequestBuilder
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParticipantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/sessions/{session_id}/participants{?include_peer_events*,page_no*,per_page*,search*,sort_by*,sort_order*,view*}", pathParameters)
+        public ParticipantsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/sessions/{session_id}/participants{?include_peer_events*,page_no*,per_page*,search*,sort_by*,sort_order*,view*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ParticipantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/sessions/{session_id}/participants{?include_peer_events*,page_no*,per_page*,search*,sort_by*,sort_order*,view*}", rawUrl)
+        public ParticipantsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/sessions/{session_id}/participants{?include_peer_events*,page_no*,per_page*,search*,sort_by*,sort_order*,view*}", rawUrl)
         {
         }
         /// <summary>

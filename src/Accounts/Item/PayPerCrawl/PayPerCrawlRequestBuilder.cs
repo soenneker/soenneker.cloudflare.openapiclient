@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pay-per-crawl
+    /// Builds and executes requests for operations under \accounts\{account-id}\pay-per-crawl
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PayPerCrawlRequestBuilder : BaseRequestBuilder
@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayPerCrawlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pay-per-crawl", pathParameters)
+        public PayPerCrawlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pay-per-crawl", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PayPerCrawlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pay-per-crawl", rawUrl)
+        public PayPerCrawlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pay-per-crawl", rawUrl)
         {
         }
     }

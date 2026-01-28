@@ -64,6 +64,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Registrar;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RequestTracer;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets;
@@ -97,10 +98,10 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}
+    /// Builds and executes requests for operations under \accounts\{account-id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Account_identifierItemRequestBuilder : BaseRequestBuilder
+    public partial class AccountItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The abuseReports property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.AbuseReportsRequestBuilder AbuseReports
@@ -407,6 +408,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.RequestTracer.RequestTracerRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The resourceLibrary property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.ResourceLibraryRequestBuilder ResourceLibrary
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.ResourceLibrary.ResourceLibraryRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The roles property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles.RolesRequestBuilder Roles
         {
@@ -528,19 +534,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Zt_risk_scoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Account_identifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Account_identifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}", pathParameters)
+        public AccountItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Account_identifierItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Account_identifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}", rawUrl)
+        public AccountItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -677,11 +683,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Account_identifierItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Account_identifierItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Account_identifierItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AccountItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

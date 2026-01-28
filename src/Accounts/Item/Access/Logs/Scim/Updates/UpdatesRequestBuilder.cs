@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Updates
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\logs\scim\updates
+    /// Builds and executes requests for operations under \accounts\{account-id}\access\logs\scim\updates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdatesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", pathParameters)
+        public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Scim.Upda
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", rawUrl)
+        public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/scim/updates?idp_id={idp_id}{&cf_resource_id*,direction*,idp_resource_id*,limit*,page*,per_page*,request_method*,resource_group_name*,resource_type*,resource_user_email*,since*,status*,until*}", rawUrl)
         {
         }
         /// <summary>

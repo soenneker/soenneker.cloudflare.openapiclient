@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_inputs.Item.Outputs.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\stream\live_inputs\{live_input_identifier}\outputs\{output_identifier}
+    /// Builds and executes requests for operations under \accounts\{account-id}\stream\live_inputs\{live_input_identifier}\outputs\{output_identifier}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithOutput_identifierItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithOutput_identifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}", pathParameters)
+        public WithOutput_identifierItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace.Live_
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithOutput_identifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}", rawUrl)
+        public WithOutput_identifierItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream/live_inputs/{live_input_identifier}/outputs/{output_identifier}", rawUrl)
         {
         }
         /// <summary>

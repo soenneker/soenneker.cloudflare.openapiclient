@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Settings.Impersonation_registry
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\settings\impersonation_registry
+    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\settings\impersonation_registry
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Impersonation_registryRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Impersonation_registryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/impersonation_registry{?direction*,order*,page*,per_page*,provenance*,search*}", pathParameters)
+        public Impersonation_registryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/impersonation_registry{?direction*,order*,page*,per_page*,provenance*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Impersonation_registryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/settings/impersonation_registry{?direction*,order*,page*,per_page*,provenance*,search*}", rawUrl)
+        public Impersonation_registryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/settings/impersonation_registry{?direction*,order*,page*,per_page*,provenance*,search*}", rawUrl)
         {
         }
         /// <summary>

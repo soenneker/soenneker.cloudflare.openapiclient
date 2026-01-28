@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Targets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\infrastructure\targets
+    /// Builds and executes requests for operations under \accounts\{account-id}\infrastructure\targets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TargetsRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TargetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,target_ids*,virtual_network_id*}", pathParameters)
+        public TargetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,target_ids*,virtual_network_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Infrastructure.Target
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TargetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,target_ids*,virtual_network_id*}", rawUrl)
+        public TargetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/infrastructure/targets{?created_after*,created_before*,direction*,hostname*,hostname_contains*,ip_like*,ip_v4*,ip_v6*,ips*,ipv4_end*,ipv4_start*,ipv6_end*,ipv6_start*,modified_after*,modified_before*,order*,page*,per_page*,target_ids*,virtual_network_id*}", rawUrl)
         {
         }
         /// <summary>

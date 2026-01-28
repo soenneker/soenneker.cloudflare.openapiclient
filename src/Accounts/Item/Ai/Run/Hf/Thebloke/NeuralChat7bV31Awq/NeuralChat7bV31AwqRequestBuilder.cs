@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\thebloke\neural-chat-7b-v3-1-awq
+    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@hf\thebloke\neural-chat-7b-v3-1-awq
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NeuralChat7bV31AwqRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ne
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NeuralChat7bV31AwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq{?queueRequest*,tags*}", pathParameters)
+        public NeuralChat7bV31AwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ne
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NeuralChat7bV31AwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq{?queueRequest*,tags*}", rawUrl)
+        public NeuralChat7bV31AwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/thebloke/neural-chat-7b-v3-1-awq{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>

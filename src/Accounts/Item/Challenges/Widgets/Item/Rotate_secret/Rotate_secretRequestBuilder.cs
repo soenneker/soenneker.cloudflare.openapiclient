@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.Item.Rotate_secret
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\challenges\widgets\{sitekey}\rotate_secret
+    /// Builds and executes requests for operations under \accounts\{account-id}\challenges\widgets\{sitekey}\rotate_secret
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Rotate_secretRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Rotate_secretRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/challenges/widgets/{sitekey}/rotate_secret", pathParameters)
+        public Rotate_secretRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets/{sitekey}/rotate_secret", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Rotate_secretRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/challenges/widgets/{sitekey}/rotate_secret", rawUrl)
+        public Rotate_secretRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets/{sitekey}/rotate_secret", rawUrl)
         {
         }
         /// <summary>

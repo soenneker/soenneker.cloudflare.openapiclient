@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Versions.Item.Entries
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp\datasets\{dataset_id}\versions\{version}\entries
+    /// Builds and executes requests for operations under \accounts\{account-id}\dlp\datasets\{dataset_id}\versions\{version}\entries
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EntriesRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Ver
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/datasets/{dataset_id}/versions/{version}/entries", pathParameters)
+        public EntriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/datasets/{dataset_id}/versions/{version}/entries", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Ver
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp/datasets/{dataset_id}/versions/{version}/entries", rawUrl)
+        public EntriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp/datasets/{dataset_id}/versions/{version}/entries", rawUrl)
         {
         }
     }

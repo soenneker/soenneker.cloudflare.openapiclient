@@ -21,7 +21,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\stream
+    /// Builds and executes requests for operations under \accounts\{account-id}\stream
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StreamRequestBuilder : BaseRequestBuilder
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream{?asc*,creator*,direct_user*,end*,include_counts*,search*,start*,status*,type*,video_name*}", pathParameters)
+        public StreamRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream{?asc*,creator*,direct_user*,end*,include_counts*,search*,start*,status*,type*,video_name*}", pathParameters)
         {
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/stream{?asc*,creator*,direct_user*,end*,include_counts*,search*,start*,status*,type*,video_name*}", rawUrl)
+        public StreamRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/stream{?asc*,creator*,direct_user*,end*,include_counts*,search*,start*,status*,type*,video_name*}", rawUrl)
         {
         }
         /// <summary>

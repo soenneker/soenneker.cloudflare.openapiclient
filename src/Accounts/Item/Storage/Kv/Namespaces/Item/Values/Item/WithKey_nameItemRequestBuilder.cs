@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces.Item.Values.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\storage\kv\namespaces\{namespace_id}\values\{key_name}
+    /// Builds and executes requests for operations under \accounts\{account-id}\storage\kv\namespaces\{namespace_id}\values\{key_name}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithKey_nameItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithKey_nameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/storage/kv/namespaces/{namespace_id}/values/{key_name}{?expiration*,expiration_ttl*}", pathParameters)
+        public WithKey_nameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/storage/kv/namespaces/{namespace_id}/values/{key_name}{?expiration*,expiration_ttl*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage.Kv.Namespaces
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithKey_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/storage/kv/namespaces/{namespace_id}/values/{key_name}{?expiration*,expiration_ttl*}", rawUrl)
+        public WithKey_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/storage/kv/namespaces/{namespace_id}/values/{key_name}{?expiration*,expiration_ttl*}", rawUrl)
         {
         }
         /// <summary>

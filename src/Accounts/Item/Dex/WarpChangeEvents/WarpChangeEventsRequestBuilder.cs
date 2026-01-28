@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\warp-change-events
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\warp-change-events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WarpChangeEventsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarpChangeEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/warp-change-events?from={from}&page={page}&per_page={per_page}&to={to}{&account_name*,config_name*,sort_order*,toggle*,type*}", pathParameters)
+        public WarpChangeEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/warp-change-events?from={from}&page={page}&per_page={per_page}&to={to}{&account_name*,config_name*,sort_order*,toggle*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.WarpChangeEvents
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WarpChangeEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/warp-change-events?from={from}&page={page}&per_page={per_page}&to={to}{&account_name*,config_name*,sort_order*,toggle*,type*}", rawUrl)
+        public WarpChangeEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/warp-change-events?from={from}&page={page}&per_page={per_page}&to={to}{&account_name*,config_name*,sort_order*,toggle*,type*}", rawUrl)
         {
         }
         /// <summary>

@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Hostname
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zerotrust\routes\hostname
+    /// Builds and executes requests for operations under \accounts\{account-id}\zerotrust\routes\hostname
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class HostnameRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostnameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", pathParameters)
+        public HostnameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Routes.Host
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public HostnameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", rawUrl)
+        public HostnameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/routes/hostname{?comment*,existed_at*,hostname*,id*,is_deleted*,page*,per_page*,tunnel_id*}", rawUrl)
         {
         }
         /// <summary>

@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\zerotrust\subnets\cloudflare_source
+    /// Builds and executes requests for operations under \accounts\{account-id}\zerotrust\subnets\cloudflare_source
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cloudflare_sourceRequestBuilder : BaseRequestBuilder
@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Clo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Cloudflare_sourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/subnets/cloudflare_source", pathParameters)
+        public Cloudflare_sourceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/subnets/cloudflare_source", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Clo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Cloudflare_sourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/zerotrust/subnets/cloudflare_source", rawUrl)
+        public Cloudflare_sourceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/zerotrust/subnets/cloudflare_source", rawUrl)
         {
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.Purge_build_cache
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pages\projects\{project_name}\purge_build_cache
+    /// Builds and executes requests for operations under \accounts\{account-id}\pages\projects\{project_name}\purge_build_cache
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Purge_build_cacheRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.P
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Purge_build_cacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/purge_build_cache", pathParameters)
+        public Purge_build_cacheRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pages/projects/{project_name}/purge_build_cache", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Pages.Projects.Item.P
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Purge_build_cacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pages/projects/{project_name}/purge_build_cache", rawUrl)
+        public Purge_build_cacheRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pages/projects/{project_name}/purge_build_cache", rawUrl)
         {
         }
         /// <summary>

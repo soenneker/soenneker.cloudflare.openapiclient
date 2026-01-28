@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.AssetsUploadSession
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\workers\dispatch\namespaces\{dispatch_namespace}\scripts\{script_name}\assets-upload-session
+    /// Builds and executes requests for operations under \accounts\{account-id}\workers\dispatch\namespaces\{dispatch_namespace}\scripts\{script_name}\assets-upload-session
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AssetsUploadSessionRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsUploadSessionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/assets-upload-session", pathParameters)
+        public AssetsUploadSessionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/assets-upload-session", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AssetsUploadSessionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/assets-upload-session", rawUrl)
+        public AssetsUploadSessionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}/assets-upload-session", rawUrl)
         {
         }
         /// <summary>

@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\security-center\insights
+    /// Builds and executes requests for operations under \accounts\{account-id}\security-center\insights
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InsightsRequestBuilder : BaseRequestBuilder
@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
+        public InsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
+        public InsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
         {
         }
         /// <summary>

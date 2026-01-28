@@ -14,7 +14,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\realtime\kit\{app_id}\recordings
+    /// Builds and executes requests for operations under \accounts\{account-id}\realtime\kit\{app_id}\recordings
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordingsRequestBuilder : BaseRequestBuilder
@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", pathParameters)
+        public RecordingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", pathParameters)
         {
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/realtime/kit/{app_id}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", rawUrl)
+        public RecordingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/realtime/kit/{app_id}/recordings{?end_time*,expired*,meeting_id*,page_no*,per_page*,search*,sort_by*,sort_order*,start_time*,status}", rawUrl)
         {
         }
         /// <summary>

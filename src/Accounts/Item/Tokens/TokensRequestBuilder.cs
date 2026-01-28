@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\tokens
+    /// Builds and executes requests for operations under \accounts\{account-id}\tokens
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TokensRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tokens{?direction*,page*,per_page*}", pathParameters)
+        public TokensRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tokens{?direction*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tokens{?direction*,page*,per_page*}", rawUrl)
+        public TokensRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tokens{?direction*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>

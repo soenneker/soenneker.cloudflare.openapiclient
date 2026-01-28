@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.Item.Get_by_ids
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\vectorize\v2\indexes\{index_name}\get_by_ids
+    /// Builds and executes requests for operations under \accounts\{account-id}\vectorize\v2\indexes\{index_name}\get_by_ids
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Get_by_idsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Get_by_idsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/vectorize/v2/indexes/{index_name}/get_by_ids", pathParameters)
+        public Get_by_idsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vectorize/v2/indexes/{index_name}/get_by_ids", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Vectorize.V2.Indexes.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Get_by_idsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/vectorize/v2/indexes/{index_name}/get_by_ids", rawUrl)
+        public Get_by_idsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/vectorize/v2/indexes/{index_name}/get_by_ids", rawUrl)
         {
         }
         /// <summary>

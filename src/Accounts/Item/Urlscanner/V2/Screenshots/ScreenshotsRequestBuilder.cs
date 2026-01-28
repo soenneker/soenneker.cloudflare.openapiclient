@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\urlscanner\v2\screenshots
+    /// Builds and executes requests for operations under \accounts\{account-id}\urlscanner\v2\screenshots
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScreenshotsRequestBuilder : BaseRequestBuilder
@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScreenshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/screenshots", pathParameters)
+        public ScreenshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/v2/screenshots", pathParameters)
         {
         }
         /// <summary>
@@ -28,11 +28,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screens
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScreenshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/screenshots", rawUrl)
+        public ScreenshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/v2/screenshots", rawUrl)
         {
         }
         /// <summary>
-        /// Builds and executes requests for operations under \accounts\{account_identifier-id}\urlscanner\v2\screenshots\{scan_id}.png
+        /// Builds and executes requests for operations under \accounts\{account-id}\urlscanner\v2\screenshots\{scan_id}.png
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Screenshots.WithScan_idPng.WithScan_idPngRequestBuilder"/></returns>
         /// <param name="scan_id">Scan UUID.</param>

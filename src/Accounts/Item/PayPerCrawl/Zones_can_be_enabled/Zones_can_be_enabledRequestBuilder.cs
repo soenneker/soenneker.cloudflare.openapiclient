@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Zones_can_be_enabled
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\pay-per-crawl\zones_can_be_enabled
+    /// Builds and executes requests for operations under \accounts\{account-id}\pay-per-crawl\zones_can_be_enabled
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zones_can_be_enabledRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Zones_can
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Zones_can_be_enabledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pay-per-crawl/zones_can_be_enabled", pathParameters)
+        public Zones_can_be_enabledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pay-per-crawl/zones_can_be_enabled", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.PayPerCrawl.Zones_can
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Zones_can_be_enabledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/pay-per-crawl/zones_can_be_enabled", rawUrl)
+        public Zones_can_be_enabledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/pay-per-crawl/zones_can_be_enabled", rawUrl)
         {
         }
         /// <summary>

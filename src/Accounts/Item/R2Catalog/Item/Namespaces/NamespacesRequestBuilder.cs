@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namespaces
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\r2-catalog\{bucket_name}\namespaces
+    /// Builds and executes requests for operations under \accounts\{account-id}\r2-catalog\{bucket_name}\namespaces
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NamespacesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NamespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_details*,return_uuids*}", pathParameters)
+        public NamespacesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_details*,return_uuids*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.R2Catalog.Item.Namesp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NamespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_details*,return_uuids*}", rawUrl)
+        public NamespacesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/r2-catalog/{bucket_name}/namespaces{?page_size*,page_token*,parent*,return_details*,return_uuids*}", rawUrl)
         {
         }
         /// <summary>

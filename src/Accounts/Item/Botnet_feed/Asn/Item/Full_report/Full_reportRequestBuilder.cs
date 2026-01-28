@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.Full_report
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\botnet_feed\asn\{asn_id}\full_report
+    /// Builds and executes requests for operations under \accounts\{account-id}\botnet_feed\asn\{asn_id}\full_report
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Full_reportRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Full_reportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/botnet_feed/asn/{asn_id}/full_report", pathParameters)
+        public Full_reportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/botnet_feed/asn/{asn_id}/full_report", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Asn.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Full_reportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/botnet_feed/asn/{asn_id}/full_report", rawUrl)
+        public Full_reportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/botnet_feed/asn/{asn_id}/full_report", rawUrl)
         {
         }
         /// <summary>

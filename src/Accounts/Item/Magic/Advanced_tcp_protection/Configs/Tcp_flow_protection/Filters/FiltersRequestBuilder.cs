@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_tcp_protection.Configs.Tcp_flow_protection.Filters
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic\advanced_tcp_protection\configs\tcp_flow_protection\filters
+    /// Builds and executes requests for operations under \accounts\{account-id}\magic\advanced_tcp_protection\configs\tcp_flow_protection\filters
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FiltersRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_tcp_pr
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FiltersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters{?direction,mode,order,page,per_page}", pathParameters)
+        public FiltersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters{?direction,mode,order,page,per_page}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Advanced_tcp_pr
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FiltersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters{?direction,mode,order,page,per_page}", rawUrl)
+        public FiltersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic/advanced_tcp_protection/configs/tcp_flow_protection/filters{?direction,mode,order,page,per_page}", rawUrl)
         {
         }
         /// <summary>

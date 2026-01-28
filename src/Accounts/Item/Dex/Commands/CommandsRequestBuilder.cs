@@ -15,7 +15,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dex\commands
+    /// Builds and executes requests for operations under \accounts\{account-id}\dex\commands
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CommandsRequestBuilder : BaseRequestBuilder
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommandsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands?page={page}&per_page={per_page}{&command_type*,device_id*,from*,status*,to*,user_email*}", pathParameters)
+        public CommandsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/commands?page={page}&per_page={per_page}{&command_type*,device_id*,from*,status*,to*,user_email*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CommandsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands?page={page}&per_page={per_page}{&command_type*,device_id*,from*,status*,to*,user_email*}", rawUrl)
+        public CommandsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/commands?page={page}&per_page={per_page}{&command_type*,device_id*,from*,status*,to*,user_email*}", rawUrl)
         {
         }
         /// <summary>
@@ -141,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/accounts/{account_identifier%2Did}/dex/commands", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/accounts/{account%2Did}/dex/commands", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
