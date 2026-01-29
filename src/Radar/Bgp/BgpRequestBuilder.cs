@@ -6,6 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Hijacks;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Leaks;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Timeseries;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Top;
 using System.Collections.Generic;
@@ -39,6 +40,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.RoutesRequestBuilder Routes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Routes.RoutesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The rpki property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.RpkiRequestBuilder Rpki
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.RpkiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timeseries property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Timeseries.TimeseriesRequestBuilder Timeseries
