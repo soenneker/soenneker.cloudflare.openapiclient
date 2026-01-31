@@ -9,16 +9,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Dex_endpoints_list_colos_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_api_response_collection, IParsable
+    public partial class Dex_endpoints_list_colos_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_api_response_common, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>array of colos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response? Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response_item>? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response Result { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response_item> Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response_item.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response>("result", Result);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_colos_response_item>("result", Result);
         }
     }
 }

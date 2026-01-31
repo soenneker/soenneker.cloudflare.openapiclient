@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", pathParameters)
+        public OverviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/tests/overview{?colo*,deviceId*,kind*,page*,per_page*,testName*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OverviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/tests/overview{?colo*,deviceId*,page*,per_page*,testName*}", rawUrl)
+        public OverviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/tests/overview{?colo*,deviceId*,kind*,page*,per_page*,testName*}", rawUrl)
         {
         }
         /// <summary>
@@ -110,6 +110,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview
             [QueryParameter("deviceId")]
             public string[] DeviceId { get; set; }
 #endif
+            /// <summary>Filter by test type</summary>
+            [QueryParameter("kind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.Overview.GetKindQueryParameterType? Kind { get; set; }
             /// <summary>Page number of paginated results</summary>
             [QueryParameter("page")]
             public double? Page { get; set; }

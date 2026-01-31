@@ -24,21 +24,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Host { get; set; }
 #endif
         /// <summary>The type of test.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Kind { get; set; }
-#nullable restore
-#else
-        public string Kind { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device_dex_test_schemas_data_kind? Kind { get; set; }
         /// <summary>The HTTP request method type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Method { get; set; }
-#nullable restore
-#else
-        public string Method { get; set; }
-#endif
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device_dex_test_schemas_data_method? Method { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device_dex_test_schemas_data"/> and sets the default values.
         /// </summary>
@@ -65,8 +53,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "host", n => { Host = n.GetStringValue(); } },
-                { "kind", n => { Kind = n.GetStringValue(); } },
-                { "method", n => { Method = n.GetStringValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device_dex_test_schemas_data_kind>(); } },
+                { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device_dex_test_schemas_data_method>(); } },
             };
         }
         /// <summary>
@@ -77,8 +65,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("host", Host);
-            writer.WriteStringValue("kind", Kind);
-            writer.WriteStringValue("method", Method);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device_dex_test_schemas_data_kind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_device_dex_test_schemas_data_method>("method", Method);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

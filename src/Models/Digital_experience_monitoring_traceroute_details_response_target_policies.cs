@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the policy is the default for the account</summary>
         public bool? Default { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

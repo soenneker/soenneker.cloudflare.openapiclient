@@ -7,6 +7,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Commands;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.FleetStatus;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTestResults;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.TracerouteTests;
@@ -47,6 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder HttpTests
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.HttpTests.HttpTestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The rules property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Rules.RulesRequestBuilder Rules
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tests property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Tests.TestsRequestBuilder Tests

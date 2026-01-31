@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dex_testsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/dex_tests", pathParameters)
+        public Dex_testsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/dex_tests{?kind*,page*,per_page*,testName*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dex_testsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/dex_tests", rawUrl)
+        public Dex_testsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dex/devices/dex_tests{?kind*,page*,per_page*,testName*}", rawUrl)
         {
         }
         /// <summary>
@@ -55,11 +55,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Device_dex_test_details_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_dex_response_collection?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_dex_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.Dex_testsRequestBuilder.Dex_testsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_dex_response_collection> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_dex_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.Dex_testsRequestBuilder.Dex_testsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -101,11 +101,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.Dex_testsRequestBuilder.Dex_testsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.Dex_testsRequestBuilder.Dex_testsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,6 +143,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.Dex_testsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.Dex_testsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Fetch all DEX tests
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Dex_testsRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Filter by test type</summary>
+            [QueryParameter("kind")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex.Devices.Dex_tests.GetKindQueryParameterType? Kind { get; set; }
+            /// <summary>Page number of paginated results</summary>
+            [QueryParameter("page")]
+            public double? Page { get; set; }
+            /// <summary>Number of items per page</summary>
+            [QueryParameter("per_page")]
+            public double? PerPage { get; set; }
+            /// <summary>Filter by test name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("testName")]
+            public string? TestName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("testName")]
+            public string TestName { get; set; }
+#endif
         }
     }
 }

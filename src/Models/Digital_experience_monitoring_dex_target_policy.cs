@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the DEX rule is the account default</summary>
         public bool? Default { get; set; }
-        /// <summary>The id of the DEX rule</summary>
+        /// <summary>API Resource UUID tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
