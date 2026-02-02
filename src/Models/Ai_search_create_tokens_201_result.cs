@@ -15,18 +15,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The account_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get; private set; }
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get; private set; }
 #endif
         /// <summary>The account_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountTag { get; set; }
+        public string? AccountTag { get; private set; }
 #nullable restore
 #else
-        public string AccountTag { get; set; }
+        public string AccountTag { get; private set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -47,30 +47,30 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CfApiKey { get; set; }
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get; private set; }
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; private set; }
 #endif
         /// <summary>The enabled property</summary>
         public bool? Enabled { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The legacy property</summary>
-        public bool? Legacy { get; set; }
+        public bool? Legacy { get; private set; }
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The modified_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy { get; set; }
+        public string? ModifiedBy { get; private set; }
 #nullable restore
 #else
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy { get; private set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The synced_at property</summary>
-        public DateTimeOffset? SyncedAt { get; set; }
+        public DateTimeOffset? SyncedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_tokens_201_result"/> and sets the default values.
         /// </summary>
@@ -129,19 +129,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("account_tag", AccountTag);
             writer.WriteStringValue("cf_api_id", CfApiId);
             writer.WriteStringValue("cf_api_key", CfApiKey);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("created_by", CreatedBy);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteGuidValue("id", Id);
-            writer.WriteBoolValue("legacy", Legacy);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
-            writer.WriteStringValue("modified_by", ModifiedBy);
             writer.WriteStringValue("name", Name);
-            writer.WriteDateTimeOffsetValue("synced_at", SyncedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

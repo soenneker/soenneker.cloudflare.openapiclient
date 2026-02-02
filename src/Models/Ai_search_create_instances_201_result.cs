@@ -15,18 +15,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The account_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountId { get; set; }
+        public string? AccountId { get; private set; }
 #nullable restore
 #else
-        public string AccountId { get; set; }
+        public string AccountId { get; private set; }
 #endif
         /// <summary>The account_tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountTag { get; set; }
+        public string? AccountTag { get; private set; }
 #nullable restore
 #else
-        public string AccountTag { get; set; }
+        public string AccountTag { get; private set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -57,14 +57,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The chunk_size property</summary>
         public int? ChunkSize { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get; private set; }
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get; private set; }
+#endif
+        /// <summary>The custom_metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata>? CustomMetadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata> CustomMetadata { get; set; }
 #endif
         /// <summary>The embedding_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The enable property</summary>
         public bool? Enable { get; set; }
         /// <summary>The engine_version property</summary>
-        public double? EngineVersion { get; set; }
+        public double? EngineVersion { get; private set; }
         /// <summary>The hybrid_search_enabled property</summary>
         public bool? HybridSearchEnabled { get; set; }
         /// <summary>Use your AI Search ID.</summary>
@@ -89,9 +97,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The internal_id property</summary>
-        public Guid? InternalId { get; set; }
+        public Guid? InternalId { get; private set; }
         /// <summary>The last_activity property</summary>
-        public DateTimeOffset? LastActivity { get; set; }
+        public DateTimeOffset? LastActivity { get; private set; }
         /// <summary>The max_num_results property</summary>
         public int? MaxNumResults { get; set; }
         /// <summary>The metadata property</summary>
@@ -103,24 +111,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_metadata Metadata { get; set; }
 #endif
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get; private set; }
         /// <summary>The modified_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy { get; set; }
+        public string? ModifiedBy { get; private set; }
 #nullable restore
 #else
-        public string ModifiedBy { get; set; }
+        public string ModifiedBy { get; private set; }
 #endif
         /// <summary>The paused property</summary>
         public bool? Paused { get; set; }
         /// <summary>The public_endpoint_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicEndpointId { get; set; }
+        public string? PublicEndpointId { get; private set; }
 #nullable restore
 #else
-        public string PublicEndpointId { get; set; }
+        public string PublicEndpointId { get; private set; }
 #endif
         /// <summary>The public_endpoint_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -171,10 +179,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get; private set; }
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get; private set; }
 #endif
         /// <summary>The summarization property</summary>
         public bool? Summarization { get; set; }
@@ -217,18 +225,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The vectorize_active_namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VectorizeActiveNamespace { get; set; }
+        public string? VectorizeActiveNamespace { get; private set; }
 #nullable restore
 #else
-        public string VectorizeActiveNamespace { get; set; }
+        public string VectorizeActiveNamespace { get; private set; }
 #endif
         /// <summary>The vectorize_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VectorizeName { get; set; }
+        public string? VectorizeName { get; private set; }
 #nullable restore
 #else
-        public string VectorizeName { get; set; }
+        public string VectorizeName { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result"/> and sets the default values.
@@ -268,6 +276,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
+                { "custom_metadata", n => { CustomMetadata = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "embedding_model", n => { EmbeddingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model.CreateFromDiscriminatorValue); } },
                 { "enable", n => { Enable = n.GetBoolValue(); } },
                 { "engine_version", n => { EngineVersion = n.GetDoubleValue(); } },
@@ -308,8 +317,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("account_tag", AccountTag);
             writer.WriteStringValue("ai_gateway_id", AiGatewayId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_ai_search_model>("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("cache", Cache);
@@ -317,21 +324,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("created_by", CreatedBy);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata>("custom_metadata", CustomMetadata);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model>("embedding_model", EmbeddingModel);
             writer.WriteBoolValue("enable", Enable);
-            writer.WriteDoubleValue("engine_version", EngineVersion);
             writer.WriteBoolValue("hybrid_search_enabled", HybridSearchEnabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteGuidValue("internal_id", InternalId);
-            writer.WriteDateTimeOffsetValue("last_activity", LastActivity);
             writer.WriteIntValue("max_num_results", MaxNumResults);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_metadata>("metadata", Metadata);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
-            writer.WriteStringValue("modified_by", ModifiedBy);
             writer.WriteBoolValue("paused", Paused);
-            writer.WriteStringValue("public_endpoint_id", PublicEndpointId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_public_endpoint_params>("public_endpoint_params", PublicEndpointParams);
             writer.WriteBoolValue("reranking", Reranking);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_reranking_model>("reranking_model", RerankingModel);
@@ -340,7 +340,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("score_threshold", ScoreThreshold);
             writer.WriteStringValue("source", Source);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_source_params>("source_params", SourceParams);
-            writer.WriteStringValue("status", Status);
             writer.WriteBoolValue("summarization", Summarization);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_summarization_model>("summarization_model", SummarizationModel);
             writer.WriteStringValue("system_prompt_ai_search", SystemPromptAiSearch);
@@ -348,8 +347,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("system_prompt_rewrite_query", SystemPromptRewriteQuery);
             writer.WriteGuidValue("token_id", TokenId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_type>("type", Type);
-            writer.WriteStringValue("vectorize_active_namespace", VectorizeActiveNamespace);
-            writer.WriteStringValue("vectorize_name", VectorizeName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

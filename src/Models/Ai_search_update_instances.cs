@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? ChunkOverlap { get; set; }
         /// <summary>The chunk_size property</summary>
         public int? ChunkSize { get; set; }
+        /// <summary>The custom_metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata>? CustomMetadata { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata> CustomMetadata { get; set; }
+#endif
         /// <summary>The embedding_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,6 +177,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetIntValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
+                { "custom_metadata", n => { CustomMetadata = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "embedding_model", n => { EmbeddingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_embedding_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_embedding_model.CreateFromDiscriminatorValue); } },
                 { "hybrid_search_enabled", n => { HybridSearchEnabled = n.GetBoolValue(); } },
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
@@ -203,6 +212,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata>("custom_metadata", CustomMetadata);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_embedding_model>("embedding_model", EmbeddingModel);
             writer.WriteBoolValue("hybrid_search_enabled", HybridSearchEnabled);
             writer.WriteIntValue("max_num_results", MaxNumResults);

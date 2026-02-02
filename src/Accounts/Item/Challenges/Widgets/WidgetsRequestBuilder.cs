@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WidgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets{?direction*,order*,page*,per_page*}", pathParameters)
+        public WidgetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets{?direction*,filter*,order*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WidgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets{?direction*,order*,page*,per_page*}", rawUrl)
+        public WidgetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/challenges/widgets{?direction*,filter*,order*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -152,6 +152,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
         {
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.GetDirectionQueryParameterType? Direction { get; set; }
+            /// <summary>Filter widgets by field using case-insensitive substring matching.Format: `field:value`Supported fields:- `name` - Filter by widget name (e.g., `filter=name:login-form`)- `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`)Returns 400 Bad Request if the field is unsupported or format is invalid.An empty filter value returns all results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter")]
+            public string? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter")]
+            public string Filter { get; set; }
+#endif
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.GetOrderQueryParameterType? Order { get; set; }
             [QueryParameter("page")]
@@ -167,6 +177,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets
         {
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.PostDirectionQueryParameterType? Direction { get; set; }
+            /// <summary>Filter widgets by field using case-insensitive substring matching.Format: `field:value`Supported fields:- `name` - Filter by widget name (e.g., `filter=name:login-form`)- `sitekey` - Filter by sitekey (e.g., `filter=sitekey:0x4AAA`)Returns 400 Bad Request if the field is unsupported or format is invalid.An empty filter value returns all results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter")]
+            public string? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter")]
+            public string Filter { get; set; }
+#endif
             [QueryParameter("order")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Challenges.Widgets.PostOrderQueryParameterType? Order { get; set; }
             [QueryParameter("page")]

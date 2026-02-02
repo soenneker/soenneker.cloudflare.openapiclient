@@ -31,7 +31,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string CfApiKey { get; set; }
 #endif
         /// <summary>The legacy property</summary>
-        public bool? Legacy { get; set; }
+        public bool? Legacy { get; private set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +80,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cf_api_id", CfApiId);
             writer.WriteStringValue("cf_api_key", CfApiKey);
-            writer.WriteBoolValue("legacy", Legacy);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
