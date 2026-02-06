@@ -9,18 +9,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Delete_accounts_account_id_logs_control_cmb_config_4XX_errors : global::Soenneker.Cloudflare.OpenApiClient.Models.Logcontrol_messages_Wrapper, IParsable
+    public partial class Notification_mechanism_eligibility_get_delivery_mechanism_eligibility_4XX_messages : global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_components_schemas_messages_Wrapper, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_accounts_account_id_logs_control_cmb_config_4XX_errors"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Notification_mechanism_eligibility_get_delivery_mechanism_eligibility_4XX_messages"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_accounts_account_id_logs_control_cmb_config_4XX_errors CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Notification_mechanism_eligibility_get_delivery_mechanism_eligibility_4XX_messages CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_accounts_account_id_logs_control_cmb_config_4XX_errors();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Notification_mechanism_eligibility_get_delivery_mechanism_eligibility_4XX_messages();
         }
         /// <summary>
         /// The deserialization information for the current model
