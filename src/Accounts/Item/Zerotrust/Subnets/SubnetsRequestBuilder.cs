@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Warp;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder Cloudflare_source
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Cloudflare_source.Cloudflare_sourceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The warp property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Warp.WarpRequestBuilder Warp
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.Warp.WarpRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zerotrust.Subnets.SubnetsRequestBuilder"/> and sets the default values.

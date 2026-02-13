@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Emails;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Report_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The emails property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Emails.EmailsRequestBuilder Emails
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Emails.EmailsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The mitigations property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations.MitigationsRequestBuilder Mitigations
         {

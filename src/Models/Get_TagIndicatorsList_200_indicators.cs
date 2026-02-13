@@ -16,6 +16,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The dataset ID this indicator belongs to. Included in list responses.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DatasetId { get; set; }
+#nullable restore
+#else
+        public string DatasetId { get; set; }
+#endif
         /// <summary>The indicatorType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "datasetId", n => { DatasetId = n.GetStringValue(); } },
                 { "indicatorType", n => { IndicatorType = n.GetStringValue(); } },
                 { "relatedEvents", n => { RelatedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_TagIndicatorsList_200_indicators_relatedEvents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_TagIndicatorsList_200_indicators_relatedEvents.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_TagIndicatorsList_200_indicators_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_TagIndicatorsList_200_indicators_tags.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -100,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
+            writer.WriteStringValue("datasetId", DatasetId);
             writer.WriteStringValue("indicatorType", IndicatorType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_TagIndicatorsList_200_indicators_relatedEvents>("relatedEvents", RelatedEvents);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_TagIndicatorsList_200_indicators_tags>("tags", Tags);

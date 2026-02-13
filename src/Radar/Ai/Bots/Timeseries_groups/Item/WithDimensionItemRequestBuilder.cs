@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries_groups/{dimension}{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,normalization*,vertical*}", pathParameters)
+        public WithDimensionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries_groups/{dimension}{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,normalization*,userAgent*,vertical*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries_groups/{dimension}{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,normalization*,vertical*}", rawUrl)
+        public WithDimensionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries_groups/{dimension}{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,normalization*,userAgent*,vertical*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves the distribution of HTTP requests from AI bots, grouped by chosen the specified dimension over time.
+        /// Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_group_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_group_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_group_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the distribution of HTTP requests from AI bots, grouped by chosen the specified dimension over time.
+        /// Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Ite
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item.WithDimensionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the distribution of HTTP requests from AI bots, grouped by chosen the specified dimension over time.
+        /// Retrieves the distribution of HTTP requests from AI bots, grouped by the specified dimension over time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDimensionItemRequestBuilderGetQueryParameters 
@@ -102,6 +102,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Ite
 #else
             [QueryParameter("asn")]
             public string[] Asn { get; set; }
+#endif
+            /// <summary>Filters results by content type category.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("contentType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item.GetContentTypeQueryParameterType[]? ContentType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("contentType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item.GetContentTypeQueryParameterType[] ContentType { get; set; }
 #endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -192,6 +202,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Ite
             /// <summary>Normalization method applied to the results. Refer to [Normalization methods](https://developers.cloudflare.com/radar/concepts/normalization/).</summary>
             [QueryParameter("normalization")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Item.GetNormalizationQueryParameterType? Normalization { get; set; }
+            /// <summary>Filters results by user agent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("userAgent")]
+            public string[]? UserAgent { get; set; }
+#nullable restore
+#else
+            [QueryParameter("userAgent")]
+            public string[] UserAgent { get; set; }
+#endif
             /// <summary>Filters results by vertical.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -30,15 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Roles { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_roles_status? Status { get; set; }
+        /// <summary>Status of the member invitation. If not provided during creation, defaults to &apos;pending&apos;.Changing from &apos;accepted&apos; back to &apos;pending&apos; will trigger a replacement of the member resource in Terraform.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_member_invitation_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_roles"/> and sets the default values.
         /// </summary>
         public Iam_create_member_with_roles()
         {
             AdditionalData = new Dictionary<string, object>();
-            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_roles_status.Pending;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_roles_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_member_invitation_status>(); } },
             };
         }
         /// <summary>
@@ -72,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_roles_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_member_invitation_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

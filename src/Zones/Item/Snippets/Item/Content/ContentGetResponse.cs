@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item.Content
 {
     /// <summary>
-    /// A snippet content response object.
+    /// Contain the snippet content response data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ContentGetResponse : IAdditionalDataHolder, IParsable

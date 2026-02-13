@@ -24,6 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; set; }
+        /// <summary>The has_dag property</summary>
+        public bool? HasDag { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The modified_on property</summary>
@@ -57,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "has_dag", n => { HasDag = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "workflow_id", n => { WorkflowId = n.GetGuidValue(); } },
@@ -71,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("class_name", ClassName);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
+            writer.WriteBoolValue("has_dag", HasDag);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteGuidValue("workflow_id", WorkflowId);

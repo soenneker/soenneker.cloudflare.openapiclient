@@ -11,5 +11,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Cloudflare_source,
         #pragma warning restore CS1591
+        [EnumMember(Value = "warp")]
+        #pragma warning disable CS1591
+        Warp,
+        #pragma warning restore CS1591
     }
 }

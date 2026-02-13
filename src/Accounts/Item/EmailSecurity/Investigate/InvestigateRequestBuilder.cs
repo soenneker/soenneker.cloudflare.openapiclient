@@ -155,7 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("domain")]
             public string Domain { get; set; }
 #endif
-            /// <summary>The end of the search date range.Defaults to `now`.</summary>
+            /// <summary>The end of the search date range.Defaults to `now` if not provided.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
             /// <summary>The dispositions the search filters by.</summary>
@@ -231,7 +231,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("sender")]
             public string Sender { get; set; }
 #endif
-            /// <summary>The beginning of the search date range.Defaults to `now - 30 days`.</summary>
+            /// <summary>The beginning of the search date range.Defaults to `now - 30 days` if not provided.</summary>
             [QueryParameter("start")]
             public DateTimeOffset? Start { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

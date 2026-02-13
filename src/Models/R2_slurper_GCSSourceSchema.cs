@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Bucket { get; set; }
 #endif
+        /// <summary>The keys property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Keys { get; set; }
+#nullable restore
+#else
+        public List<string> Keys { get; set; }
+#endif
         /// <summary>The pathPrefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
+                { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pathPrefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_GCSLikeCredsSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_GCSLikeCredsSchema.CreateFromDiscriminatorValue); } },
                 { "vendor", n => { Vendor = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_GCSSourceSchema_vendor>(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
+            writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteStringValue("pathPrefix", PathPrefix);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_GCSLikeCredsSchema>("secret", Secret);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_GCSSourceSchema_vendor>("vendor", Vendor);

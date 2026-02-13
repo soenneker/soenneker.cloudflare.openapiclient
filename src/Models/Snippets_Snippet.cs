@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A snippet object.
+    /// Define a snippet.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Snippets_Snippet : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The timestamp of when the snippet was created.</summary>
+        /// <summary>Indicates when the snippet was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
-        /// <summary>The timestamp of when the snippet was last modified.</summary>
+        /// <summary>Indicates when the snippet was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>The identifying name of the snippet.</summary>
+        /// <summary>Identify the snippet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnippetName { get; set; }

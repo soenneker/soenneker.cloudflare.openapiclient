@@ -36,17 +36,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time
         /// <summary>
         /// Restores a D1 database to a previous point in time either via a bookmark or a timestamp.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_d1_time_travel_restore_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1_time_travel_restore_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.D1_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_d1_time_travel_restore_200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_time_travel_restore_200?> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_d1_time_travel_restore_200> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_time_travel_restore_200> PostAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time_travel.Restore.RestoreRequestBuilder.RestoreRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.D1.Database.Item.Time
             {
                 { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.D1_api_response_common_failure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_d1_time_travel_restore_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_d1_time_travel_restore_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_time_travel_restore_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.D1_time_travel_restore_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Restores a D1 database to a previous point in time either via a bookmark or a timestamp.

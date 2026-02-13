@@ -54,7 +54,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the zone was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; private set; }
-        /// <summary>The domain name.</summary>
+        /// <summary>The domain name. Per [RFC 1035](https://datatracker.ietf.org/doc/html/rfc1035#section-2.3.4) the overall zone name can be up to 253 characters, with each segment (&quot;label&quot;) not exceeding 63 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }

@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item
 {
     /// <summary>
-    /// Metadata about the snippet.
+    /// Provide metadata about the snippet.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSnippet_namePutRequestBody : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Name of the file that contains the main module of the snippet.</summary>
+        /// <summary>Specify the name of the file that contains the main module of the snippet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MainModule { get; set; }

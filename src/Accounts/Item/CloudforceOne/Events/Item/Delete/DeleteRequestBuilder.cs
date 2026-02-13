@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// <returns>A <see cref="double"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_EventDeleteDO_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_EventDelete_400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<double?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item.Delete.DeleteRequestBuilder.DeleteRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_EventDeleteDO_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_EventDelete_400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<double?>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

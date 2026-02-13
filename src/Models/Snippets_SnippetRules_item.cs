@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// A snippet rule.
+    /// Define a snippet rule.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Snippets_SnippetRules_item : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An informative description of the rule.</summary>
+        /// <summary>Provide an informative description of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -23,9 +23,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>Whether the rule should be executed.</summary>
+        /// <summary>Indicate whether to execute the rule.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>The expression defining which traffic will match the rule.</summary>
+        /// <summary>Define the expression that determines which traffic matches the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Expression { get; set; }
@@ -33,7 +33,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Expression { get; set; }
 #endif
-        /// <summary>The unique ID of the rule.</summary>
+        /// <summary>Specify the unique ID of the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; private set; }
@@ -41,9 +41,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
-        /// <summary>The timestamp of when the rule was last modified.</summary>
+        /// <summary>Specify the timestamp of when the rule was last modified.</summary>
         public DateTimeOffset? LastUpdated { get; private set; }
-        /// <summary>The identifying name of the snippet.</summary>
+        /// <summary>Identify the snippet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnippetName { get; set; }

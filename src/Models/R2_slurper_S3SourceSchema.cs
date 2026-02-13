@@ -30,6 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Endpoint { get; set; }
 #endif
+        /// <summary>The keys property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Keys { get; set; }
+#nullable restore
+#else
+        public List<string> Keys { get; set; }
+#endif
         /// <summary>The pathPrefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +91,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
+                { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pathPrefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_S3LikeCredsSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_S3LikeCredsSchema.CreateFromDiscriminatorValue); } },
@@ -98,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteStringValue("endpoint", Endpoint);
+            writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteStringValue("pathPrefix", PathPrefix);
             writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_S3LikeCredsSchema>("secret", Secret);

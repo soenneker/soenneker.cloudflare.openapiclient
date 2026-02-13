@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>Disable MCP endpoint for this public endpoint</summary>
         public bool? Disabled { get; set; }
         /// <summary>
@@ -22,6 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Ai_search_delete_instances_200_result_public_endpoint_params_mcp()
         {
             AdditionalData = new Dictionary<string, object>();
+            Description = "Finds exactly what you're looking for";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "disabled", n => { Disabled = n.GetBoolValue(); } },
             };
         }
@@ -51,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("disabled", Disabled);
             writer.WriteAdditionalData(AdditionalData);
         }

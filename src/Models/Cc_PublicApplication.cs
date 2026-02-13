@@ -31,6 +31,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId DurableObject { get; set; }
 #endif
+        /// <summary>Egress settings for an application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress? Egress { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress Egress { get; set; }
+#endif
         /// <summary>Shows a count of application instance states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +128,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "durable_object", n => { DurableObject = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId.CreateFromDiscriminatorValue); } },
+                { "egress", n => { Egress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress.CreateFromDiscriminatorValue); } },
                 { "health", n => { Health = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationHealthInstances>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationHealthInstances.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
@@ -141,6 +150,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId>("durable_object", DurableObject);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress>("egress", Egress);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationHealthInstances>("health", Health);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image", Image);

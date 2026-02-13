@@ -15,6 +15,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The CNAME record hostname for DCV delegation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Cname { get; private set; }
+#nullable restore
+#else
+        public string Cname { get; private set; }
+#endif
+        /// <summary>The CNAME record target value for DCV delegation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CnameTarget { get; private set; }
+#nullable restore
+#else
+        public string CnameTarget { get; private set; }
+#endif
         /// <summary>The set of email addresses that the certificate authority (CA) will use to complete domain validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string HttpUrl { get; set; }
+#endif
+        /// <summary>Status of the validation record.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; private set; }
+#nullable restore
+#else
+        public string Status { get; private set; }
 #endif
         /// <summary>The hostname that the certificate authority (CA) will check for a TXT record during domain validation .</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,9 +104,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cname", n => { Cname = n.GetStringValue(); } },
+                { "cname_target", n => { CnameTarget = n.GetStringValue(); } },
                 { "emails", n => { Emails = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "http_body", n => { HttpBody = n.GetStringValue(); } },
                 { "http_url", n => { HttpUrl = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "txt_name", n => { TxtName = n.GetStringValue(); } },
                 { "txt_value", n => { TxtValue = n.GetStringValue(); } },
             };

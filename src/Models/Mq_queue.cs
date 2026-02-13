@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The consumers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer>? Consumers { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_response>? Consumers { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer> Consumers { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_response> Consumers { get; private set; }
 #endif
         /// <summary>The consumers_total_count property</summary>
         public double? ConsumersTotalCount { get; private set; }
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consumers", n => { Consumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "consumers", n => { Consumers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mq_consumer_response.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "consumers_total_count", n => { ConsumersTotalCount = n.GetDoubleValue(); } },
                 { "created_on", n => { CreatedOn = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetStringValue(); } },

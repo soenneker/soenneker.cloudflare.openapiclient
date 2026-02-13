@@ -12,22 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Ai_search_create_tokens_201_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountId { get; private set; }
-#nullable restore
-#else
-        public string AccountId { get; private set; }
-#endif
-        /// <summary>The account_tag property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountTag { get; private set; }
-#nullable restore
-#else
-        public string AccountTag { get; private set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cf_api_id property</summary>
@@ -37,14 +21,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string CfApiId { get; set; }
-#endif
-        /// <summary>The cf_api_key property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CfApiKey { get; set; }
-#nullable restore
-#else
-        public string CfApiKey { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
@@ -80,8 +56,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The synced_at property</summary>
-        public DateTimeOffset? SyncedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_tokens_201_result"/> and sets the default values.
         /// </summary>
@@ -107,10 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "cf_api_id", n => { CfApiId = n.GetStringValue(); } },
-                { "cf_api_key", n => { CfApiKey = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
@@ -119,7 +90,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "modified_by", n => { ModifiedBy = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "synced_at", n => { SyncedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -130,7 +100,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cf_api_id", CfApiId);
-            writer.WriteStringValue("cf_api_key", CfApiKey);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);

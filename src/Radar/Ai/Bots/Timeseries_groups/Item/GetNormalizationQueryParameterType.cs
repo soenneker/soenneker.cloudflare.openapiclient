@@ -7,9 +7,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries_groups.Ite
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetNormalizationQueryParameterType
     {
-        [EnumMember(Value = "PERCENTAGE_CHANGE")]
+        [EnumMember(Value = "PERCENTAGE")]
         #pragma warning disable CS1591
-        PERCENTAGE_CHANGE,
+        PERCENTAGE,
         #pragma warning restore CS1591
         [EnumMember(Value = "MIN0_MAX")]
         #pragma warning disable CS1591

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Queries.Alerts;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Queries.Create;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Queries.Item;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class QueriesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The alerts property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Queries.Alerts.AlertsRequestBuilder Alerts
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Queries.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The create property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Queries.Create.CreateRequestBuilder Create
         {

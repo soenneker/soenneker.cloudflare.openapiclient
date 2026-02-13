@@ -43,6 +43,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CustomKey { get; set; }
 #endif
+        /// <summary>DCV Delegation records for domain validation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record>? DcvDelegationRecords { get; private set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record> DcvDelegationRecords { get; private set; }
+#endif
         /// <summary>The time the custom certificate expires on.</summary>
         public DateTimeOffset? ExpiresOn { get; set; }
         /// <summary>A list of Hostnames on a custom uploaded certificate.</summary>
@@ -156,6 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "custom_certificate", n => { CustomCertificate = n.GetStringValue(); } },
                 { "custom_csr_id", n => { CustomCsrId = n.GetStringValue(); } },
                 { "custom_key", n => { CustomKey = n.GetStringValue(); } },
+                { "dcv_delegation_records", n => { DcvDelegationRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "expires_on", n => { ExpiresOn = n.GetDateTimeOffsetValue(); } },
                 { "hosts", n => { Hosts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },

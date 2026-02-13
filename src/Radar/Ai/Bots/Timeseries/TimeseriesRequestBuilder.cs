@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", pathParameters)
+        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", rawUrl)
+        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", rawUrl)
         {
         }
         /// <summary>
@@ -102,6 +102,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
 #else
             [QueryParameter("asn")]
             public string[] Asn { get; set; }
+#endif
+            /// <summary>Filters results by content type category.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("contentType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.GetContentTypeQueryParameterType[]? ContentType { get; set; }
+#nullable restore
+#else
+            [QueryParameter("contentType")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.GetContentTypeQueryParameterType[] ContentType { get; set; }
 #endif
             /// <summary>Filters results by continent. Specify a comma-separated list of alpha-2 codes. Prefix with `-` to exclude continents from results. For example, `-EU,NA` excludes results from EU, but includes results from NA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -35,6 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The profile_id property</summary>
+        [Obsolete("")]
         public Guid? ProfileId { get; set; }
         /// <summary>The variant property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

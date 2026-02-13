@@ -109,7 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             /// <summary>Output format for indicator data. &apos;json&apos; returns the default format, &apos;stix2&apos; returns STIX 2.1 Indicator SDOs.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.GetFormatQueryParameterType? Format { get; set; }
-            /// <summary>Whether to include full tag details for each indicator. Defaults to false for performance.</summary>
+            /// <summary>Whether to include full tag details for each indicator. Defaults to true.</summary>
             [QueryParameter("includeTags")]
             public bool? IncludeTags { get; set; }
             /// <summary>Whether to compute accurate total count via COUNT(*). Defaults to false for performance. When false, total_count is an approximation.</summary>

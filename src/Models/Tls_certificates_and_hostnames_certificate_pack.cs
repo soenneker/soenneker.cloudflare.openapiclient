@@ -27,6 +27,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether or not to add Cloudflare Branding for the order.  This will add a subdomain of sni.cloudflaressl.com as the Common Name if set to true.</summary>
         public bool? CloudflareBranding { get; set; }
+        /// <summary>DCV Delegation records for domain validation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record>? DcvDelegationRecords { get; private set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record> DcvDelegationRecords { get; private set; }
+#endif
         /// <summary>Comma separated list of valid host names for the certificate packs. Must contain the zone apex, may not contain more than 50 hosts, and may not be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "certificate_authority", n => { CertificateAuthority = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_schemas_certificate_authority>(); } },
                 { "certificates", n => { Certificates = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_pack_certificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_pack_certificate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cloudflare_branding", n => { CloudflareBranding = n.GetBoolValue(); } },
+                { "dcv_delegation_records", n => { DcvDelegationRecords = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_validation_record.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hosts", n => { Hosts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "primary_certificate", n => { PrimaryCertificate = n.GetStringValue(); } },

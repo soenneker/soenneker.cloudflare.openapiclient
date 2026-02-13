@@ -24,6 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Certificate { get; set; }
 #endif
+        /// <summary>The environment to deploy the certificate to, defaults to production</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy? Deploy { get; set; }
         /// <summary>Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions GeoRestrictions { get; set; }
 #endif
-        /// <summary>&quot;Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as &apos;country: IN&apos;, as well as &apos;region: EU&apos; which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.&quot;</summary>
+        /// <summary>&quot;Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as &apos;country: IN&apos;, as well as &apos;region: EU&apos; which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.Note: The API accepts this field as either \&quot;policy\&quot; or \&quot;policy_restrictions\&quot; in requests. Responses return this field as \&quot;policy_restrictions\&quot;. example: \&quot;(country: US) or (region: EU)\&quot;&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Policy { get; set; }
@@ -57,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             BundleMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method.Ubiquitous;
+            Deploy = global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy.Production;
             Type = global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_type.Legacy_custom;
         }
         /// <summary>
@@ -79,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>(); } },
                 { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "deploy", n => { Deploy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy>(); } },
                 { "geo_restrictions", n => { GeoRestrictions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions.CreateFromDiscriminatorValue); } },
                 { "policy", n => { Policy = n.GetStringValue(); } },
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
@@ -94,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>("bundle_method", BundleMethod);
             writer.WriteStringValue("certificate", Certificate);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy>("deploy", Deploy);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions>("geo_restrictions", GeoRestrictions);
             writer.WriteStringValue("policy", Policy);
             writer.WriteStringValue("private_key", PrivateKey);

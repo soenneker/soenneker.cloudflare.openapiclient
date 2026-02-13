@@ -7,28 +7,58 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Custom_ssl_for_a_zone_edit_ssl_configuration : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class Custom_ssl_for_a_zone_edit_ssl_configuration : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>A ubiquitous bundle has the highest probability of being verified everywhere, even by clients using outdated or unusual trust stores. An optimal bundle uses the shortest chain and newest intermediates. And the force bundle verifies the chain, but does not otherwise modify it.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method? BundleMethod { get; set; }
+        /// <summary>The zone&apos;s SSL certificate or certificate and the intermediate(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember1? CustomSslForAZoneEditSslConfigurationMember1 { get; set; }
+        public string? Certificate { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember1 CustomSslForAZoneEditSslConfigurationMember1 { get; set; }
+        public string Certificate { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember2"/></summary>
+        /// <summary>The environment to deploy the certificate to, defaults to production</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy? Deploy { get; set; }
+        /// <summary>Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember2? CustomSslForAZoneEditSslConfigurationMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions? GeoRestrictions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember2 CustomSslForAZoneEditSslConfigurationMember2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions GeoRestrictions { get; set; }
 #endif
+        /// <summary>&quot;Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as &apos;country: IN&apos;, as well as &apos;region: EU&apos; which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.Note: The API accepts this field as either \&quot;policy\&quot; or \&quot;policy_restrictions\&quot; in requests. Responses return this field as \&quot;policy_restrictions\&quot;. example: \&quot;(country: US) or (region: EU)\&quot;&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Policy { get; set; }
+#nullable restore
+#else
+        public string Policy { get; set; }
+#endif
+        /// <summary>The zone&apos;s private key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PrivateKey { get; set; }
+#nullable restore
+#else
+        public string PrivateKey { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configuration"/> and sets the default values.
+        /// </summary>
+        public Custom_ssl_for_a_zone_edit_ssl_configuration()
+        {
+            AdditionalData = new Dictionary<string, object>();
+            BundleMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method.Ubiquitous;
+            Deploy = global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy.Production;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,10 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configuration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configuration();
-            result.CustomSslForAZoneEditSslConfigurationMember1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember1();
-            result.CustomSslForAZoneEditSslConfigurationMember2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember2();
-            return result;
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configuration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +75,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CustomSslForAZoneEditSslConfigurationMember1 != null || CustomSslForAZoneEditSslConfigurationMember2 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CustomSslForAZoneEditSslConfigurationMember1, CustomSslForAZoneEditSslConfigurationMember2);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>(); } },
+                { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "deploy", n => { Deploy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy>(); } },
+                { "geo_restrictions", n => { GeoRestrictions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions.CreateFromDiscriminatorValue); } },
+                { "policy", n => { Policy = n.GetStringValue(); } },
+                { "private_key", n => { PrivateKey = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,7 +92,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_ssl_for_a_zone_edit_ssl_configurationMember1>(null, CustomSslForAZoneEditSslConfigurationMember1, CustomSslForAZoneEditSslConfigurationMember2);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>("bundle_method", BundleMethod);
+            writer.WriteStringValue("certificate", Certificate);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy>("deploy", Deploy);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions>("geo_restrictions", GeoRestrictions);
+            writer.WriteStringValue("policy", Policy);
+            writer.WriteStringValue("private_key", PrivateKey);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

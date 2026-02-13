@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The jurisdiction property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_Jurisdiction? Jurisdiction { get; set; }
+        /// <summary>The keys property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Keys { get; set; }
+#nullable restore
+#else
+        public List<string> Keys { get; set; }
+#endif
         /// <summary>The pathPrefix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_Jurisdiction>(); } },
+                { "keys", n => { Keys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pathPrefix", n => { PathPrefix = n.GetStringValue(); } },
                 { "secret", n => { Secret = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_S3LikeCredsSchema>(global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_S3LikeCredsSchema.CreateFromDiscriminatorValue); } },
                 { "vendor", n => { Vendor = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_R2SourceSchema_vendor>(); } },
@@ -83,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_Jurisdiction>("jurisdiction", Jurisdiction);
+            writer.WriteCollectionOfPrimitiveValues<string>("keys", Keys);
             writer.WriteStringValue("pathPrefix", PathPrefix);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_S3LikeCredsSchema>("secret", Secret);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.R2_slurper_R2SourceSchema_vendor>("vendor", Vendor);

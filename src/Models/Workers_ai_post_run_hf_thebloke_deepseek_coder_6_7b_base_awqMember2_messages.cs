@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The content of the message as a string.</summary>
+        /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_base_awqMember2_messages_content? Content { get; set; }
 #nullable restore
 #else
-        public string Content { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_base_awqMember2_messages_content Content { get; set; }
 #endif
         /// <summary>The role of the message sender (e.g., &apos;user&apos;, &apos;assistant&apos;, &apos;system&apos;, &apos;tool&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_base_awqMember2_messages_content>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_base_awqMember2_messages_content.CreateFromDiscriminatorValue); } },
                 { "role", n => { Role = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("content", Content);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_base_awqMember2_messages_content>("content", Content);
             writer.WriteStringValue("role", Role);
             writer.WriteAdditionalData(AdditionalData);
         }

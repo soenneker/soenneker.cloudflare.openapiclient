@@ -26,6 +26,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Whether to enable Browser Integrity Check (BIC).</summary>
         public bool? Bic { get; set; }
+        /// <summary>Whether to enable content conversion (e.g., HTML to Markdown).</summary>
+        public bool? ContentConverter { get; set; }
         /// <summary>Whether to disable Cloudflare Apps.</summary>
         [Obsolete("")]
         public bool? DisableApps { get; set; }
@@ -90,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "automatic_https_rewrites", n => { AutomaticHttpsRewrites = n.GetBoolValue(); } },
                 { "autominify", n => { Autominify = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify.CreateFromDiscriminatorValue); } },
                 { "bic", n => { Bic = n.GetBoolValue(); } },
+                { "content_converter", n => { ContentConverter = n.GetBoolValue(); } },
                 { "disable_apps", n => { DisableApps = n.GetBoolValue(); } },
                 { "disable_pay_per_crawl", n => { DisablePayPerCrawl = n.GetBoolValue(); } },
                 { "disable_rum", n => { DisableRum = n.GetBoolValue(); } },
@@ -119,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("automatic_https_rewrites", AutomaticHttpsRewrites);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigAutominify>("autominify", Autominify);
             writer.WriteBoolValue("bic", Bic);
+            writer.WriteBoolValue("content_converter", ContentConverter);
             writer.WriteBoolValue("disable_apps", DisableApps);
             writer.WriteBoolValue("disable_pay_per_crawl", DisablePayPerCrawl);
             writer.WriteBoolValue("disable_rum", DisableRum);

@@ -60,13 +60,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>When the certificate was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>&quot;Specify the policy that determines the region where your private key will be held locally. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Any combination of countries, specified by their two letter country code (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements) can be chosen, such as &apos;country: IN&apos;, as well as &apos;region: EU&apos; which refers to the EU region. If there are too few data centers satisfying the policy, it will be rejected.&quot;</summary>
+        /// <summary>&quot;The policy restrictions returned by the API. This field is returned in responseswhen a policy has been set. The API accepts the \&quot;policy\&quot; field in requests butreturns this field as \&quot;policy_restrictions\&quot; in responses.Specifies the region(s) where your private key can be held locally for optimalTLS performance. Format is a boolean expression, for example:\&quot;(country: US) or (region: EU)\&quot;&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Policy { get; set; }
+        public string? PolicyRestrictions { get; set; }
 #nullable restore
 #else
-        public string Policy { get; set; }
+        public string PolicyRestrictions { get; set; }
 #endif
         /// <summary>The order/priority in which the certificate will be used in a request. The higher priority will break ties across overlapping &apos;legacy_custom&apos; certificates, but &apos;legacy_custom&apos; certificates will always supercede &apos;sni_custom&apos; certificates.</summary>
         public double? Priority { get; set; }
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "issuer", n => { Issuer = n.GetStringValue(); } },
                 { "keyless_server", n => { KeylessServer = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_certificate>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_certificate.CreateFromDiscriminatorValue); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
-                { "policy", n => { Policy = n.GetStringValue(); } },
+                { "policy_restrictions", n => { PolicyRestrictions = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_status>(); } },
@@ -147,7 +147,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_certificate>("keyless_server", KeylessServer);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
-            writer.WriteStringValue("policy", Policy);
+            writer.WriteStringValue("policy_restrictions", PolicyRestrictions);
             writer.WriteDoubleValue("priority", Priority);
             writer.WriteStringValue("signature", Signature);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);

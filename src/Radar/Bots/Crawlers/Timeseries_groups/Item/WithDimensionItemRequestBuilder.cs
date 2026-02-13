@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_grou
         {
         }
         /// <summary>
-        /// Retrieves the distribution of HTTP requests from crawlers, grouped by chosen the specified dimension over time.
+        /// Retrieves the distribution of HTTP requests from crawlers, grouped by the specified dimension over time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_crawlers_timeseries_group_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_grou
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_crawlers_timeseries_group_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_crawlers_timeseries_group_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the distribution of HTTP requests from crawlers, grouped by chosen the specified dimension over time.
+        /// Retrieves the distribution of HTTP requests from crawlers, grouped by the specified dimension over time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_grou
             return new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bots.Crawlers.Timeseries_groups.Item.WithDimensionItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the distribution of HTTP requests from crawlers, grouped by chosen the specified dimension over time.
+        /// Retrieves the distribution of HTTP requests from crawlers, grouped by the specified dimension over time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithDimensionItemRequestBuilderGetQueryParameters 

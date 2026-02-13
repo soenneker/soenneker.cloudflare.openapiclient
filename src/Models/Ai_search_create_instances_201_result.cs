@@ -12,22 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Ai_search_create_instances_201_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountId { get; private set; }
-#nullable restore
-#else
-        public string AccountId { get; private set; }
-#endif
-        /// <summary>The account_tag property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountTag { get; private set; }
-#nullable restore
-#else
-        public string AccountTag { get; private set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ai_gateway_id property</summary>
@@ -50,8 +34,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Cache { get; set; }
         /// <summary>The cache_threshold property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_cache_threshold? CacheThreshold { get; set; }
-        /// <summary>The chunk property</summary>
-        public bool? Chunk { get; set; }
         /// <summary>The chunk_overlap property</summary>
         public int? ChunkOverlap { get; set; }
         /// <summary>The chunk_size property</summary>
@@ -84,8 +66,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The enable property</summary>
         public bool? Enable { get; set; }
-        /// <summary>The engine_version property</summary>
-        public double? EngineVersion { get; private set; }
         /// <summary>The hybrid_search_enabled property</summary>
         public bool? HybridSearchEnabled { get; set; }
         /// <summary>Use your AI Search ID.</summary>
@@ -96,8 +76,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The internal_id property</summary>
-        public Guid? InternalId { get; private set; }
         /// <summary>The last_activity property</summary>
         public DateTimeOffset? LastActivity { get; private set; }
         /// <summary>The max_num_results property</summary>
@@ -184,52 +162,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Status { get; private set; }
 #endif
-        /// <summary>The summarization property</summary>
-        public bool? Summarization { get; set; }
-        /// <summary>The summarization_model property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_summarization_model? SummarizationModel { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_summarization_model SummarizationModel { get; set; }
-#endif
-        /// <summary>The system_prompt_ai_search property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SystemPromptAiSearch { get; set; }
-#nullable restore
-#else
-        public string SystemPromptAiSearch { get; set; }
-#endif
-        /// <summary>The system_prompt_index_summarization property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SystemPromptIndexSummarization { get; set; }
-#nullable restore
-#else
-        public string SystemPromptIndexSummarization { get; set; }
-#endif
-        /// <summary>The system_prompt_rewrite_query property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SystemPromptRewriteQuery { get; set; }
-#nullable restore
-#else
-        public string SystemPromptRewriteQuery { get; set; }
-#endif
         /// <summary>The token_id property</summary>
         public Guid? TokenId { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_type? Type { get; set; }
-        /// <summary>The vectorize_active_namespace property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VectorizeActiveNamespace { get; private set; }
-#nullable restore
-#else
-        public string VectorizeActiveNamespace { get; private set; }
-#endif
         /// <summary>The vectorize_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -265,13 +201,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "ai_gateway_id", n => { AiGatewayId = n.GetStringValue(); } },
                 { "ai_search_model", n => { AiSearchModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_ai_search_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_ai_search_model.CreateFromDiscriminatorValue); } },
                 { "cache", n => { Cache = n.GetBoolValue(); } },
                 { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_cache_threshold>(); } },
-                { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetIntValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
@@ -279,10 +212,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "custom_metadata", n => { CustomMetadata = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "embedding_model", n => { EmbeddingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model.CreateFromDiscriminatorValue); } },
                 { "enable", n => { Enable = n.GetBoolValue(); } },
-                { "engine_version", n => { EngineVersion = n.GetDoubleValue(); } },
                 { "hybrid_search_enabled", n => { HybridSearchEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "internal_id", n => { InternalId = n.GetGuidValue(); } },
                 { "last_activity", n => { LastActivity = n.GetDateTimeOffsetValue(); } },
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_metadata.CreateFromDiscriminatorValue); } },
@@ -299,14 +230,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "source_params", n => { SourceParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_source_params>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_source_params.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "summarization", n => { Summarization = n.GetBoolValue(); } },
-                { "summarization_model", n => { SummarizationModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_summarization_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_summarization_model.CreateFromDiscriminatorValue); } },
-                { "system_prompt_ai_search", n => { SystemPromptAiSearch = n.GetStringValue(); } },
-                { "system_prompt_index_summarization", n => { SystemPromptIndexSummarization = n.GetStringValue(); } },
-                { "system_prompt_rewrite_query", n => { SystemPromptRewriteQuery = n.GetStringValue(); } },
                 { "token_id", n => { TokenId = n.GetGuidValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_type>(); } },
-                { "vectorize_active_namespace", n => { VectorizeActiveNamespace = n.GetStringValue(); } },
                 { "vectorize_name", n => { VectorizeName = n.GetStringValue(); } },
             };
         }
@@ -321,7 +246,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_ai_search_model>("ai_search_model", AiSearchModel);
             writer.WriteBoolValue("cache", Cache);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_cache_threshold>("cache_threshold", CacheThreshold);
-            writer.WriteBoolValue("chunk", Chunk);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata>("custom_metadata", CustomMetadata);
@@ -340,11 +264,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("score_threshold", ScoreThreshold);
             writer.WriteStringValue("source", Source);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_source_params>("source_params", SourceParams);
-            writer.WriteBoolValue("summarization", Summarization);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_summarization_model>("summarization_model", SummarizationModel);
-            writer.WriteStringValue("system_prompt_ai_search", SystemPromptAiSearch);
-            writer.WriteStringValue("system_prompt_index_summarization", SystemPromptIndexSummarization);
-            writer.WriteStringValue("system_prompt_rewrite_query", SystemPromptRewriteQuery);
             writer.WriteGuidValue("token_id", TokenId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

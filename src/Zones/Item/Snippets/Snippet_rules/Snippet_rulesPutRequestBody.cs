@@ -9,14 +9,14 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Snippet_rules
 {
     /// <summary>
-    /// A snippet rules object.
+    /// Define a snippet rules object.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Snippet_rulesPutRequestBody : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A list of snippet rules.</summary>
+        /// <summary>Lists snippet rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_SnippetRules_item>? Rules { get; set; }

@@ -39,6 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The entries property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry>? Entries { get; set; }
@@ -58,6 +59,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The ocr_enabled property</summary>
         public bool? OcrEnabled { get; set; }
+        /// <summary>The shared_entries property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry>? SharedEntries { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry> SharedEntries { get; set; }
+#endif
         /// <summary>When the profile was lasted updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -95,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ocr_enabled", n => { OcrEnabled = n.GetBoolValue(); } },
+                { "shared_entries", n => { SharedEntries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -115,6 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("ocr_enabled", OcrEnabled);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry>("shared_entries", SharedEntries);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -30,15 +30,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_policy> Policies { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_policies_status? Status { get; set; }
+        /// <summary>Status of the member invitation. If not provided during creation, defaults to &apos;pending&apos;.Changing from &apos;accepted&apos; back to &apos;pending&apos; will trigger a replacement of the member resource in Terraform.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_member_invitation_status? Status { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_policies"/> and sets the default values.
         /// </summary>
         public Iam_create_member_with_policies()
         {
             AdditionalData = new Dictionary<string, object>();
-            Status = global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_policies_status.Pending;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "policies", n => { Policies = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_policy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_policy.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_policies_status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_member_invitation_status>(); } },
             };
         }
         /// <summary>
@@ -72,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_policy>("policies", Policies);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_create_member_with_policies_status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_member_invitation_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

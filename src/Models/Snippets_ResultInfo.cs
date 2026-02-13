@@ -15,15 +15,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The number of results in the current page.</summary>
+        /// <summary>Specify the number of results in the current page.</summary>
         public int? Count { get; set; }
-        /// <summary>The current page number.</summary>
+        /// <summary>Specifies the current page number.</summary>
         public int? Page { get; set; }
-        /// <summary>The number of results to return per page.</summary>
+        /// <summary>Specifies how many results to return per page.</summary>
         public int? PerPage { get; set; }
-        /// <summary>The total number of results.</summary>
+        /// <summary>Specify the total number of results.</summary>
         public int? TotalCount { get; set; }
-        /// <summary>The total number of pages.</summary>
+        /// <summary>Specify the total number of pages.</summary>
         public int? TotalPages { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_ResultInfo"/> and sets the default values.
