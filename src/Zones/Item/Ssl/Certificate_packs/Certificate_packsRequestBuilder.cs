@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Certificate_packsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ssl/certificate_packs{?status*}", pathParameters)
+        public Certificate_packsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ssl/certificate_packs{?deploy*,page*,per_page*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Certificate_packsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ssl/certificate_packs{?status*}", rawUrl)
+        public Certificate_packsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/ssl/certificate_packs{?deploy*,page*,per_page*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -115,6 +115,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Certificate_packsRequestBuilderGetQueryParameters 
         {
+            [QueryParameter("deploy")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.GetDeployQueryParameterType? Deploy { get; set; }
+            [QueryParameter("page")]
+            public double? Page { get; set; }
+            [QueryParameter("per_page")]
+            public double? PerPage { get; set; }
             [QueryParameter("status")]
             public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Ssl.Certificate_packs.GetStatusQueryParameterType? Status { get; set; }
         }
