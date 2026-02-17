@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>This is the time the tls setting was updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>The tls setting value.</summary>
+        /// <summary>&quot;The TLS setting value. The type depends on the `setting_id` used in the request path:- `ciphers`: an array of allowed cipher suite strings in BoringSSL format (e.g., `[\&quot;ECDHE-RSA-AES128-GCM-SHA256\&quot;, \&quot;AES128-GCM-SHA256\&quot;]`)- `min_tls_version`: a string indicating the minimum TLS version — one of `\&quot;1.0\&quot;`, `\&quot;1.1\&quot;`, `\&quot;1.2\&quot;`, or `\&quot;1.3\&quot;` (e.g., `\&quot;1.2\&quot;`)- `http2`: a string indicating whether HTTP/2 is enabled — `\&quot;on\&quot;` or `\&quot;off\&quot;` (e.g., `\&quot;on\&quot;`)&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value? Value { get; set; }

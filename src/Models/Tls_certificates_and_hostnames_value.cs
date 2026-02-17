@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch2"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch3"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper_2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Tls_certificates_and_hostnames_value : IComposedTypeWrapper, IParsable
@@ -21,21 +21,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch1 TlsCertificatesAndHostnamesValueBranch1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch2? TlsCertificatesAndHostnamesValueBranch2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper? TlsCertificatesAndHostnamesValueWrapper { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch2 TlsCertificatesAndHostnamesValueBranch2 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper TlsCertificatesAndHostnamesValueWrapper { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper_2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch3? TlsCertificatesAndHostnamesValueBranch3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper_2? TlsCertificatesAndHostnamesValueWrapper2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch3 TlsCertificatesAndHostnamesValueBranch3 { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper_2 TlsCertificatesAndHostnamesValueWrapper2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,13 +51,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.TlsCertificatesAndHostnamesValueBranch1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch1();
             }
-            else if("tls_certificates_and_hostnames_value_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TlsCertificatesAndHostnamesValueBranch2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch2();
+                result.TlsCertificatesAndHostnamesValueWrapper = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper();
             }
-            else if("tls_certificates_and_hostnames_value_3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TlsCertificatesAndHostnamesValueBranch3 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch3();
+                result.TlsCertificatesAndHostnamesValueWrapper2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper_2();
             }
             return result;
         }
@@ -71,13 +71,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return TlsCertificatesAndHostnamesValueBranch1.GetFieldDeserializers();
             }
-            else if(TlsCertificatesAndHostnamesValueBranch2 != null)
+            else if(TlsCertificatesAndHostnamesValueWrapper != null)
             {
-                return TlsCertificatesAndHostnamesValueBranch2.GetFieldDeserializers();
+                return TlsCertificatesAndHostnamesValueWrapper.GetFieldDeserializers();
             }
-            else if(TlsCertificatesAndHostnamesValueBranch3 != null)
+            else if(TlsCertificatesAndHostnamesValueWrapper2 != null)
             {
-                return TlsCertificatesAndHostnamesValueBranch3.GetFieldDeserializers();
+                return TlsCertificatesAndHostnamesValueWrapper2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -92,13 +92,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch1>(null, TlsCertificatesAndHostnamesValueBranch1);
             }
-            else if(TlsCertificatesAndHostnamesValueBranch2 != null)
+            else if(TlsCertificatesAndHostnamesValueWrapper != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch2>(null, TlsCertificatesAndHostnamesValueBranch2);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper>(null, TlsCertificatesAndHostnamesValueWrapper);
             }
-            else if(TlsCertificatesAndHostnamesValueBranch3 != null)
+            else if(TlsCertificatesAndHostnamesValueWrapper2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Branch3>(null, TlsCertificatesAndHostnamesValueBranch3);
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_value_Wrapper_2>(null, TlsCertificatesAndHostnamesValueWrapper2);
             }
         }
     }

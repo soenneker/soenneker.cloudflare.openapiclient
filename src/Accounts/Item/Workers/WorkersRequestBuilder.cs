@@ -7,7 +7,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Assets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Domains;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Placement;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.ScriptsSearch;
@@ -49,11 +48,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Durable_objectsRequestBuilder Durable_objects
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Durable_objects.Durable_objectsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The observability property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.ObservabilityRequestBuilder Observability
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Observability.ObservabilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The placement property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Placement.PlacementRequestBuilder Placement

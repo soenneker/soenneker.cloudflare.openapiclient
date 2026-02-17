@@ -32,6 +32,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The skipPreflightCheck property</summary>
+        public bool? SkipPreflightCheck { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create"/> and sets the default values.
         /// </summary>
@@ -60,6 +62,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "configuration", n => { Configuration = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_configuration>(global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_configuration.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "skipPreflightCheck", n => { SkipPreflightCheck = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -72,6 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_configuration>("configuration", Configuration);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("skipPreflightCheck", SkipPreflightCheck);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

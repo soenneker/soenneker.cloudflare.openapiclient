@@ -8,6 +8,7 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Cloudflare.OpenApiClient.Accounts;
 using Soenneker.Cloudflare.OpenApiClient.Certificates;
+using Soenneker.Cloudflare.OpenApiClient.Destinations;
 using Soenneker.Cloudflare.OpenApiClient.Internal;
 using Soenneker.Cloudflare.OpenApiClient.Ips;
 using Soenneker.Cloudflare.OpenApiClient.Live;
@@ -17,6 +18,7 @@ using Soenneker.Cloudflare.OpenApiClient.Radar;
 using Soenneker.Cloudflare.OpenApiClient.Ready;
 using Soenneker.Cloudflare.OpenApiClient.SignedUrl;
 using Soenneker.Cloudflare.OpenApiClient.System;
+using Soenneker.Cloudflare.OpenApiClient.Telemetry;
 using Soenneker.Cloudflare.OpenApiClient.Tenants;
 using Soenneker.Cloudflare.OpenApiClient.User;
 using Soenneker.Cloudflare.OpenApiClient.Users;
@@ -42,6 +44,11 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder Certificates
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Certificates.CertificatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The destinations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Destinations.DestinationsRequestBuilder Destinations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Destinations.DestinationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The internal property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Internal.InternalRequestBuilder Internal
@@ -87,6 +94,11 @@ namespace Soenneker.Cloudflare.OpenApiClient
         public global::Soenneker.Cloudflare.OpenApiClient.System.SystemRequestBuilder System
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.System.SystemRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The telemetry property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Telemetry.TelemetryRequestBuilder Telemetry
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Telemetry.TelemetryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tenants property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.TenantsRequestBuilder Tenants

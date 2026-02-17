@@ -26,6 +26,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EnvironmentName { get; set; }
 #endif
+        /// <summary>Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>When the script was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>Name of the script, used in URLs and route configuration.</summary>
@@ -35,14 +43,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string ScriptName { get; set; }
-#endif
-        /// <summary>Identifier.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ScriptTag { get; set; }
-#nullable restore
-#else
-        public string ScriptTag { get; set; }
 #endif
         /// <summary>Name of the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,9 +80,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "environment_is_default", n => { EnvironmentIsDefault = n.GetBoolValue(); } },
                 { "environment_name", n => { EnvironmentName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
-                { "script_tag", n => { ScriptTag = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
             };
         }
@@ -96,9 +96,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteBoolValue("environment_is_default", EnvironmentIsDefault);
             writer.WriteStringValue("environment_name", EnvironmentName);
+            writer.WriteStringValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("script_name", ScriptName);
-            writer.WriteStringValue("script_tag", ScriptTag);
             writer.WriteStringValue("service_name", ServiceName);
             writer.WriteAdditionalData(AdditionalData);
         }
