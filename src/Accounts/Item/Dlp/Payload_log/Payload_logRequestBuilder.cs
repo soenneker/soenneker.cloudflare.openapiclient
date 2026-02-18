@@ -60,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
         /// Set payload log settings
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Request model for updating payload log settings - supports partial updates.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_api_response_common_failure">When receiving a 4XX status code</exception>
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
         /// Set payload log settings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Request model for updating payload log settings - supports partial updates.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

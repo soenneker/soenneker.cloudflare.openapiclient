@@ -31,14 +31,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId DurableObject { get; set; }
 #endif
-        /// <summary>Egress settings for an application</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress? Egress { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress Egress { get; set; }
-#endif
         /// <summary>Shows a count of application instance states.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>Network settings for an application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationNetwork? Network { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationNetwork Network { get; set; }
 #endif
         /// <summary>Settings for observability such as logging.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,13 +128,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "durable_object", n => { DurableObject = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId.CreateFromDiscriminatorValue); } },
-                { "egress", n => { Egress = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress.CreateFromDiscriminatorValue); } },
                 { "health", n => { Health = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationHealthInstances>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationHealthInstances.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image", n => { Image = n.GetStringValue(); } },
                 { "instance_type", n => { InstanceType = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_PublicInstanceType>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_PublicInstanceType.CreateFromDiscriminatorValue); } },
                 { "max_instances", n => { MaxInstances = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "network", n => { Network = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationNetwork>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationNetwork.CreateFromDiscriminatorValue); } },
                 { "observability", n => { Observability = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_Observability>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_Observability.CreateFromDiscriminatorValue); } },
                 { "rollout_active_grace_period", n => { RolloutActiveGracePeriod = n.GetIntValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -150,13 +150,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_DurableObjectsConfigurationNamespaceId>("durable_object", DurableObject);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationEgress>("egress", Egress);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationHealthInstances>("health", Health);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("image", Image);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_PublicInstanceType>("instance_type", InstanceType);
             writer.WriteIntValue("max_instances", MaxInstances);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationNetwork>("network", Network);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_Observability>("observability", Observability);
             writer.WriteIntValue("rollout_active_grace_period", RolloutActiveGracePeriod);
             writer.WriteStringValue("updated_at", UpdatedAt);

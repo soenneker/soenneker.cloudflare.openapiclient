@@ -18,7 +18,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Count { get; set; }
         /// <summary>The current page (starts from zero).</summary>
         public int? Page { get; set; }
-        /// <summary>The maximum numnber of items per page.</summary>
+        /// <summary>The maximum number of items per page.</summary>
         public int? PerPage { get; set; }
         /// <summary>The total number of items in the entire result set.</summary>
         public int? TotalCount { get; set; }

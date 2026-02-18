@@ -58,8 +58,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Status of the certificate or the association.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_status? Status { get; private set; }
-        /// <summary>The time when the certificate was updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The time when the certificate was uploaded.</summary>
         public DateTimeOffset? UploadedOn { get; set; }
         /// <summary>
@@ -94,7 +92,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "serial_number", n => { SerialNumber = n.GetStringValue(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_status>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "uploaded_on", n => { UploadedOn = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -111,7 +108,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("issuer", Issuer);
             writer.WriteStringValue("serial_number", SerialNumber);
             writer.WriteStringValue("signature", Signature);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteDateTimeOffsetValue("uploaded_on", UploadedOn);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<Guid?> AttachedVpcs { get; set; }
 #endif
-        /// <summary>the ASN to use on the cloud side. If unset or zero, the cloud&apos;s default will be used.</summary>
+        /// <summary>Sets the cloud-side ASN. If unset or zero, the cloud&apos;s default ASN takes effect.</summary>
         public int? CloudAsn { get; set; }
         /// <summary>The cloud_type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Mcn_onramp_cloud_type? CloudType { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>if set to true, install_routes_in_cloud and install_routes_in_magic_wan should be set to false</summary>
+        /// <summary>Enables BGP routing. When enabling this feature, set both install_routes_in_cloud and install_routes_in_magic_wan to false.</summary>
         public bool? DynamicRouting { get; set; }
         /// <summary>The hub_provider_id property</summary>
         public Guid? HubProviderId { get; set; }
