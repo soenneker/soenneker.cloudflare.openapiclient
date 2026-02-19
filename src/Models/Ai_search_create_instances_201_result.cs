@@ -66,6 +66,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The enable property</summary>
         public bool? Enable { get; set; }
+        /// <summary>The fusion_method property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_fusion_method? FusionMethod { get; set; }
         /// <summary>The hybrid_search_enabled property</summary>
         public bool? HybridSearchEnabled { get; set; }
         /// <summary>Use your AI Search ID.</summary>
@@ -181,6 +183,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CacheThreshold = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_cache_threshold.Close_enough;
+            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_fusion_method.Max;
             Status = "waiting";
         }
         /// <summary>
@@ -212,6 +215,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "custom_metadata", n => { CustomMetadata = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "embedding_model", n => { EmbeddingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model.CreateFromDiscriminatorValue); } },
                 { "enable", n => { Enable = n.GetBoolValue(); } },
+                { "fusion_method", n => { FusionMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_fusion_method>(); } },
                 { "hybrid_search_enabled", n => { HybridSearchEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_activity", n => { LastActivity = n.GetDateTimeOffsetValue(); } },
@@ -251,6 +255,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_custom_metadata>("custom_metadata", CustomMetadata);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_embedding_model>("embedding_model", EmbeddingModel);
             writer.WriteBoolValue("enable", Enable);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201_result_fusion_method>("fusion_method", FusionMethod);
             writer.WriteBoolValue("hybrid_search_enabled", HybridSearchEnabled);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("max_num_results", MaxNumResults);

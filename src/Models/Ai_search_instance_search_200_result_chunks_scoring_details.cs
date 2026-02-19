@@ -18,6 +18,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? KeywordRank { get; set; }
         /// <summary>The keyword_score property</summary>
         public double? KeywordScore { get; set; }
+        /// <summary>The reranking_score property</summary>
+        public double? RerankingScore { get; set; }
         /// <summary>The vector_rank property</summary>
         public double? VectorRank { get; set; }
         /// <summary>The vector_score property</summary>
@@ -49,6 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "keyword_rank", n => { KeywordRank = n.GetDoubleValue(); } },
                 { "keyword_score", n => { KeywordScore = n.GetDoubleValue(); } },
+                { "reranking_score", n => { RerankingScore = n.GetDoubleValue(); } },
                 { "vector_rank", n => { VectorRank = n.GetDoubleValue(); } },
                 { "vector_score", n => { VectorScore = n.GetDoubleValue(); } },
             };
@@ -62,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("keyword_rank", KeywordRank);
             writer.WriteDoubleValue("keyword_score", KeywordScore);
+            writer.WriteDoubleValue("reranking_score", RerankingScore);
             writer.WriteDoubleValue("vector_rank", VectorRank);
             writer.WriteDoubleValue("vector_score", VectorScore);
             writer.WriteAdditionalData(AdditionalData);

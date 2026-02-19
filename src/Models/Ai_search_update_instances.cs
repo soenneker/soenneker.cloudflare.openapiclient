@@ -56,6 +56,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_embedding_model EmbeddingModel { get; set; }
 #endif
+        /// <summary>The fusion_method property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_fusion_method? FusionMethod { get; set; }
         /// <summary>The hybrid_search_enabled property</summary>
         public bool? HybridSearchEnabled { get; set; }
         /// <summary>The max_num_results property</summary>
@@ -151,6 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CacheThreshold = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_cache_threshold.Close_enough;
+            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_fusion_method.Max;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -179,6 +182,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
                 { "custom_metadata", n => { CustomMetadata = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "embedding_model", n => { EmbeddingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_embedding_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_embedding_model.CreateFromDiscriminatorValue); } },
+                { "fusion_method", n => { FusionMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_fusion_method>(); } },
                 { "hybrid_search_enabled", n => { HybridSearchEnabled = n.GetBoolValue(); } },
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_metadata.CreateFromDiscriminatorValue); } },
@@ -214,6 +218,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("chunk_size", ChunkSize);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_custom_metadata>("custom_metadata", CustomMetadata);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_embedding_model>("embedding_model", EmbeddingModel);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_fusion_method>("fusion_method", FusionMethod);
             writer.WriteBoolValue("hybrid_search_enabled", HybridSearchEnabled);
             writer.WriteIntValue("max_num_results", MaxNumResults);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_metadata>("metadata", Metadata);

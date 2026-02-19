@@ -15,5 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Log,
         #pragma warning restore CS1591
+        [EnumMember(Value = "add_reporting_directives")]
+        #pragma warning disable CS1591
+        Add_reporting_directives,
+        #pragma warning restore CS1591
     }
 }

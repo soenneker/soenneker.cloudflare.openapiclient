@@ -24,6 +24,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_filters Filters { get; set; }
 #endif
+        /// <summary>The fusion_method property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_fusion_method? FusionMethod { get; set; }
         /// <summary>The match_threshold property</summary>
         public double? MatchThreshold { get; set; }
         /// <summary>The max_num_results property</summary>
@@ -59,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "context_expansion", n => { ContextExpansion = n.GetIntValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_filters.CreateFromDiscriminatorValue); } },
+                { "fusion_method", n => { FusionMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_fusion_method>(); } },
                 { "match_threshold", n => { MatchThreshold = n.GetDoubleValue(); } },
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
                 { "retrieval_type", n => { RetrievalType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_retrieval_type>(); } },
@@ -74,6 +77,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("context_expansion", ContextExpansion);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_filters>("filters", Filters);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_fusion_method>("fusion_method", FusionMethod);
             writer.WriteDoubleValue("match_threshold", MatchThreshold);
             writer.WriteIntValue("max_num_results", MaxNumResults);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_retrieval_type>("retrieval_type", RetrievalType);
