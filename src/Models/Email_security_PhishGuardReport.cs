@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Content { get; set; }
 #endif
+        /// <summary>The created_at property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel? Disposition { get; set; }
         /// <summary>The fields property</summary>
@@ -60,6 +62,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The ts property</summary>
         public DateTimeOffset? Ts { get; set; }
+        /// <summary>The updated_at property</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_PhishGuardReport"/> and sets the default values.
         /// </summary>
@@ -86,6 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "disposition", n => { Disposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_PhishGuardReport_fields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_PhishGuardReport_fields.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
@@ -93,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_PhishGuardReportTag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_PhishGuardReportTag.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "ts", n => { Ts = n.GetDateTimeOffsetValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -103,6 +109,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("content", Content);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("disposition", Disposition);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_PhishGuardReport_fields>("fields", Fields);
             writer.WriteIntValue("id", Id);
@@ -110,6 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_PhishGuardReportTag>("tags", Tags);
             writer.WriteStringValue("title", Title);
             writer.WriteDateTimeOffsetValue("ts", Ts);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

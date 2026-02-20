@@ -35,6 +35,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Test;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tiiuae;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tinyllama;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.ZaiOrg;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -211,6 +212,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tinyllama.TinyllamaRequestBuilder Tinyllama
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tinyllama.TinyllamaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The zaiOrg property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.ZaiOrg.ZaiOrgRequestBuilder ZaiOrg
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.ZaiOrg.ZaiOrgRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.CfRequestBuilder"/> and sets the default values.

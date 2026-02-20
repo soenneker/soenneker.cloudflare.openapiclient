@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? ApprovalRequired { get; set; }
         /// <summary>Require this application to be served in an isolated browser for users matching this policy. &apos;Client Web Isolation&apos; must be on for the account in order to use this feature.</summary>
         public bool? IsolationRequired { get; set; }
+        /// <summary>Configures multi-factor authentication (MFA) settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config? MfaConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config MfaConfig { get; set; }
+#endif
         /// <summary>A custom message that will appear on the purpose justification screen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "approval_groups", n => { ApprovalGroups = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_group>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_group.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "approval_required", n => { ApprovalRequired = n.GetBoolValue(); } },
                 { "isolation_required", n => { IsolationRequired = n.GetBoolValue(); } },
+                { "mfa_config", n => { MfaConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config.CreateFromDiscriminatorValue); } },
                 { "purpose_justification_prompt", n => { PurposeJustificationPrompt = n.GetStringValue(); } },
                 { "purpose_justification_required", n => { PurposeJustificationRequired = n.GetBoolValue(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_approval_group>("approval_groups", ApprovalGroups);
             writer.WriteBoolValue("approval_required", ApprovalRequired);
             writer.WriteBoolValue("isolation_required", IsolationRequired);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config>("mfa_config", MfaConfig);
             writer.WriteStringValue("purpose_justification_prompt", PurposeJustificationPrompt);
             writer.WriteBoolValue("purpose_justification_required", PurposeJustificationRequired);
             writer.WriteStringValue("session_duration", SessionDuration);
