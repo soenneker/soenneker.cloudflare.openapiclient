@@ -128,6 +128,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_reranking_model RerankingModel { get; set; }
 #endif
+        /// <summary>The retrieval_options property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options? RetrievalOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options RetrievalOptions { get; set; }
+#endif
         /// <summary>The rewrite_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -228,6 +236,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "public_endpoint_params", n => { PublicEndpointParams = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_public_endpoint_params>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_public_endpoint_params.CreateFromDiscriminatorValue); } },
                 { "reranking", n => { Reranking = n.GetBoolValue(); } },
                 { "reranking_model", n => { RerankingModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_reranking_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_reranking_model.CreateFromDiscriminatorValue); } },
+                { "retrieval_options", n => { RetrievalOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options.CreateFromDiscriminatorValue); } },
                 { "rewrite_model", n => { RewriteModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_rewrite_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_rewrite_model.CreateFromDiscriminatorValue); } },
                 { "rewrite_query", n => { RewriteQuery = n.GetBoolValue(); } },
                 { "score_threshold", n => { ScoreThreshold = n.GetDoubleValue(); } },
@@ -264,6 +273,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_public_endpoint_params>("public_endpoint_params", PublicEndpointParams);
             writer.WriteBoolValue("reranking", Reranking);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_reranking_model>("reranking_model", RerankingModel);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options>("retrieval_options", RetrievalOptions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_rewrite_model>("rewrite_model", RewriteModel);
             writer.WriteBoolValue("rewrite_query", RewriteQuery);
             writer.WriteDoubleValue("score_threshold", ScoreThreshold);

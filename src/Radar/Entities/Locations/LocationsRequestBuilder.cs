@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/locations{?format*,limit*,location*,offset*}", pathParameters)
+        public LocationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/locations{?continent*,format*,limit*,location*,offset*,region*,subregion*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/locations{?format*,limit*,location*,offset*}", rawUrl)
+        public LocationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/entities/locations{?continent*,format*,limit*,location*,offset*,region*,subregion*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,6 +103,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LocationsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filters results by continent code.</summary>
+            [QueryParameter("continent")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.GetContinentQueryParameterType? Continent { get; set; }
             /// <summary>Format in which results will be returned.</summary>
             [QueryParameter("format")]
             public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations.GetFormatQueryParameterType? Format { get; set; }
@@ -122,6 +125,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Locations
             /// <summary>Skips the specified number of objects before fetching the results.</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Filters results by region.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("region")]
+            public string? Region { get; set; }
+#nullable restore
+#else
+            [QueryParameter("region")]
+            public string Region { get; set; }
+#endif
+            /// <summary>Filters results by subregion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("subregion")]
+            public string? Subregion { get; set; }
+#nullable restore
+#else
+            [QueryParameter("subregion")]
+            public string Subregion { get; set; }
+#endif
         }
     }
 }

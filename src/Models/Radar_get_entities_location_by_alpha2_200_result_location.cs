@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The confidenceLevel property</summary>
         public int? ConfidenceLevel { get; set; }
+        /// <summary>The continent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Continent { get; set; }
+#nullable restore
+#else
+        public string Continent { get; set; }
+#endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -91,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "alpha2", n => { Alpha2 = n.GetStringValue(); } },
                 { "confidenceLevel", n => { ConfidenceLevel = n.GetIntValue(); } },
+                { "continent", n => { Continent = n.GetStringValue(); } },
                 { "latitude", n => { Latitude = n.GetStringValue(); } },
                 { "longitude", n => { Longitude = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -107,6 +116,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alpha2", Alpha2);
             writer.WriteIntValue("confidenceLevel", ConfidenceLevel);
+            writer.WriteStringValue("continent", Continent);
             writer.WriteStringValue("latitude", Latitude);
             writer.WriteStringValue("longitude", Longitude);
             writer.WriteStringValue("name", Name);

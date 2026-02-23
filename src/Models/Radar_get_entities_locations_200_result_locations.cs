@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Alpha2 { get; set; }
 #endif
+        /// <summary>The continent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Continent { get; set; }
+#nullable restore
+#else
+        public string Continent { get; set; }
+#endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,6 +53,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The region property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
+#endif
+        /// <summary>The subregion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Subregion { get; set; }
+#nullable restore
+#else
+        public string Subregion { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_entities_locations_200_result_locations"/> and sets the default values.
@@ -72,9 +96,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "alpha2", n => { Alpha2 = n.GetStringValue(); } },
+                { "continent", n => { Continent = n.GetStringValue(); } },
                 { "latitude", n => { Latitude = n.GetStringValue(); } },
                 { "longitude", n => { Longitude = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "subregion", n => { Subregion = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -85,9 +112,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("alpha2", Alpha2);
+            writer.WriteStringValue("continent", Continent);
             writer.WriteStringValue("latitude", Latitude);
             writer.WriteStringValue("longitude", Longitude);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("region", Region);
+            writer.WriteStringValue("subregion", Subregion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

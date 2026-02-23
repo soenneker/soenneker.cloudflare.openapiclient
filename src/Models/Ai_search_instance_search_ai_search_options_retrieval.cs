@@ -26,6 +26,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The fusion_method property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_fusion_method? FusionMethod { get; set; }
+        /// <summary>Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_keyword_match_mode? KeywordMatchMode { get; set; }
         /// <summary>The match_threshold property</summary>
         public double? MatchThreshold { get; set; }
         /// <summary>The max_num_results property</summary>
@@ -40,6 +42,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Ai_search_instance_search_ai_search_options_retrieval()
         {
             AdditionalData = new Dictionary<string, object>();
+            KeywordMatchMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_keyword_match_mode.Exact_match;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "context_expansion", n => { ContextExpansion = n.GetIntValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_filters.CreateFromDiscriminatorValue); } },
                 { "fusion_method", n => { FusionMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_fusion_method>(); } },
+                { "keyword_match_mode", n => { KeywordMatchMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_keyword_match_mode>(); } },
                 { "match_threshold", n => { MatchThreshold = n.GetDoubleValue(); } },
                 { "max_num_results", n => { MaxNumResults = n.GetIntValue(); } },
                 { "retrieval_type", n => { RetrievalType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_retrieval_type>(); } },
@@ -78,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("context_expansion", ContextExpansion);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_filters>("filters", Filters);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_fusion_method>("fusion_method", FusionMethod);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_keyword_match_mode>("keyword_match_mode", KeywordMatchMode);
             writer.WriteDoubleValue("match_threshold", MatchThreshold);
             writer.WriteIntValue("max_num_results", MaxNumResults);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval_retrieval_type>("retrieval_type", RetrievalType);

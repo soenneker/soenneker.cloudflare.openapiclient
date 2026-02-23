@@ -14,42 +14,60 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The checksum property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Checksum { get; private set; }
+#nullable restore
+#else
+        public string Checksum { get; private set; }
+#endif
+        /// <summary>The chunks_count property</summary>
+        public int? ChunksCount { get; private set; }
+        /// <summary>The created_at property</summary>
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; set; }
+        public string? Error { get; private set; }
 #nullable restore
 #else
-        public string Error { get; set; }
+        public string Error { get; private set; }
 #endif
+        /// <summary>The file_size property</summary>
+        public double? FileSize { get; private set; }
         /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        public double? Id { get; private set; }
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get; private set; }
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get; private set; }
 #endif
         /// <summary>The last_seen_at property</summary>
-        public DateTimeOffset? LastSeenAt { get; set; }
-        /// <summary>The next_action property</summary>
+        public DateTimeOffset? LastSeenAt { get; private set; }
+        /// <summary>The namespace property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextAction { get; set; }
+        public string? Namespace { get; private set; }
 #nullable restore
 #else
-        public string NextAction { get; set; }
+        public string Namespace { get; private set; }
+#endif
+        /// <summary>The next_action property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200_result_next_action? NextAction { get; private set; }
+        /// <summary>The public_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PublicId { get; private set; }
+#nullable restore
+#else
+        public string PublicId { get; private set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200_result_status? Status { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200_result_status? Status { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200_result"/> and sets the default values.
         /// </summary>
@@ -75,11 +93,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "checksum", n => { Checksum = n.GetStringValue(); } },
+                { "chunks_count", n => { ChunksCount = n.GetIntValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "file_size", n => { FileSize = n.GetDoubleValue(); } },
+                { "id", n => { Id = n.GetDoubleValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "last_seen_at", n => { LastSeenAt = n.GetDateTimeOffsetValue(); } },
-                { "next_action", n => { NextAction = n.GetStringValue(); } },
+                { "namespace", n => { Namespace = n.GetStringValue(); } },
+                { "next_action", n => { NextAction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200_result_next_action>(); } },
+                { "public_id", n => { PublicId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200_result_status>(); } },
             };
         }
@@ -90,12 +114,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("error", Error);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("key", Key);
-            writer.WriteDateTimeOffsetValue("last_seen_at", LastSeenAt);
-            writer.WriteStringValue("next_action", NextAction);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200_result_status>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

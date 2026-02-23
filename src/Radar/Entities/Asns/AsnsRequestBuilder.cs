@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Ip;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Item;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AsnsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The botnet_threat_feed property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.Botnet_threat_feedRequestBuilder Botnet_threat_feed
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Botnet_threat_feed.Botnet_threat_feedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The ip property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Entities.Asns.Ip.IpRequestBuilder Ip
         {
