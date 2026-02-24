@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create Keyless SSL Configuration
+        /// Creates a Keyless SSL configuration that allows SSL/TLS termination without exposing private keys to Cloudflare. Keys remain on your infrastructure.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates
             return requestInfo;
         }
         /// <summary>
-        /// Create Keyless SSL Configuration
+        /// Creates a Keyless SSL configuration that allows SSL/TLS termination without exposing private keys to Cloudflare. Keys remain on your infrastructure.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

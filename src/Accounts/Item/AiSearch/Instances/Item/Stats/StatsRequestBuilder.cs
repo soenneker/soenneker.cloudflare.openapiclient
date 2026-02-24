@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
         {
         }
         /// <summary>
-        /// Stats
+        /// Retrieves usage statistics for AI Search instances.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Stats
+        /// Retrieves usage statistics for AI Search instances.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

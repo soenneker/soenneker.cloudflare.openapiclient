@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.H
         {
         }
         /// <summary>
-        /// Delete Hostname Client Certificate
+        /// &quot;Removes a client certificate used for authenticated origin pulls on a specific hostname.Note: Before deleting the certificate, you must first invalidate the hostname for client authentication by sending a PUT request with `enabled` set to null. After invalidating the association, the certificate can be safely deleted.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.H
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Hostname Client Certificate
+        /// &quot;Removes a client certificate used for authenticated origin pulls on a specific hostname.Note: Before deleting the certificate, you must first invalidate the hostname for client authentication by sending a PUT request with `enabled` set to null. After invalidating the association, the certificate can be safely deleted.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

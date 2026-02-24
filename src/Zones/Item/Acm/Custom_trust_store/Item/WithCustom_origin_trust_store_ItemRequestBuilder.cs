@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Custom_trust_store.I
         {
         }
         /// <summary>
-        /// Delete Custom Origin Trust Store
+        /// Removes a CA certificate from the custom origin trust store. Origins using certificates signed by this CA will no longer be trusted.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_trust_store_response_id_only"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Custom_trust_store.I
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_trust_store_response_id_only>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_trust_store_response_id_only.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Custom Origin Trust Store Details
+        /// Retrieves details about a specific certificate in the custom origin trust store, including expiration and subject information.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_trust_store_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Custom_trust_store.I
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_trust_store_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_trust_store_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Custom Origin Trust Store
+        /// Removes a CA certificate from the custom origin trust store. Origins using certificates signed by this CA will no longer be trusted.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm.Custom_trust_store.I
             return requestInfo;
         }
         /// <summary>
-        /// Custom Origin Trust Store Details
+        /// Retrieves details about a specific certificate in the custom origin trust store, including expiration and subject information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.I
         {
         }
         /// <summary>
-        /// Delete Certificate
+        /// Removes a client certificate used for zone-level authenticated origin pulls.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_certificate_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.I
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_certificate_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_certificate_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Certificate Details
+        /// Retrieves details for a specific client certificate used in zone-level authenticated origin pulls.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_certificate_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.I
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_certificate_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_components_schemas_certificate_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Certificate
+        /// Removes a client certificate used for zone-level authenticated origin pulls.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.I
             return requestInfo;
         }
         /// <summary>
-        /// Get Certificate Details
+        /// Retrieves details for a specific client certificate used in zone-level authenticated origin pulls.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

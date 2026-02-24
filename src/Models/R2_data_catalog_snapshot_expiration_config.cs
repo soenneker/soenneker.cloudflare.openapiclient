@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Specifies the maximum age for snapshots. The system deletes snapshots older than this age.Format: &lt;number&gt;&lt;unit&gt; where unit is d (days), h (hours), m (minutes), or s (seconds).Examples: \&quot;7d\&quot; (7 days), \&quot;48h\&quot; (48 hours), \&quot;2880m\&quot; (2,880 minutes).&quot;</summary>
+        /// <summary>&quot;Specifies the maximum age for snapshots. The system deletes snapshots older than this age.Format: &lt;number&gt;&lt;unit&gt; where unit is d (days), h (hours), m (minutes), or s (seconds).Examples: \&quot;7d\&quot; (7 days), \&quot;48h\&quot; (48 hours), \&quot;2880m\&quot; (2,880 minutes).Defaults to \&quot;7d\&quot;.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MaxSnapshotAge { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MaxSnapshotAge { get; set; }
 #endif
-        /// <summary>Specifies the minimum number of snapshots to retain.</summary>
+        /// <summary>Specifies the minimum number of snapshots to retain. Defaults to 100.</summary>
         public long? MinSnapshotsToKeep { get; set; }
         /// <summary>Specifies the state of maintenance operations.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_maintenance_state? State { get; set; }
@@ -33,7 +33,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public R2_data_catalog_snapshot_expiration_config()
         {
             AdditionalData = new Dictionary<string, object>();
-            MaxSnapshotAge = "7d";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new instances.
+        /// Create a new instances.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_201"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances
             return requestInfo;
         }
         /// <summary>
-        /// Create new instances.
+        /// Create a new instances.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

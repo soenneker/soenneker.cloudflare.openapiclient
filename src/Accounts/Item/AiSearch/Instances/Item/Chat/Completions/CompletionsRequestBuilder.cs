@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
         {
         }
         /// <summary>
-        /// Chat Completions
+        /// Performs a chat completion request against an AI Search instance, using indexed content as context for generating responses.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Chat Completions
+        /// Performs a chat completion request against an AI Search instance, using indexed content as context for generating responses.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

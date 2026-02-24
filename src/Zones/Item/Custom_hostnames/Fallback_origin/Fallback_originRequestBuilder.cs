@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
         {
         }
         /// <summary>
-        /// Delete Fallback Origin for Custom Hostnames
+        /// Removes the fallback origin configuration for custom hostnames on a zone. Custom hostnames without specific origins will no longer have a fallback.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Fallback Origin for Custom Hostnames
+        /// Retrieves the current fallback origin configuration for custom hostnames on a zone. The fallback origin handles traffic when specific custom hostname origins are unavailable.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update Fallback Origin for Custom Hostnames
+        /// Updates the fallback origin configuration for custom hostnames on a zone. Sets the default origin server for custom hostname traffic.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_fallback_origin_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Fallback Origin for Custom Hostnames
+        /// Removes the fallback origin configuration for custom hostnames on a zone. Custom hostnames without specific origins will no longer have a fallback.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
             return requestInfo;
         }
         /// <summary>
-        /// Get Fallback Origin for Custom Hostnames
+        /// Retrieves the current fallback origin configuration for custom hostnames on a zone. The fallback origin handles traffic when specific custom hostname origins are unavailable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Fallbac
             return requestInfo;
         }
         /// <summary>
-        /// Update Fallback Origin for Custom Hostnames
+        /// Updates the fallback origin configuration for custom hostnames on a zone. Sets the default origin server for custom hostname traffic.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

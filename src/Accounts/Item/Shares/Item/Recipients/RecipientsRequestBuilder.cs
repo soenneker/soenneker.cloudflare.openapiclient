@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new share recipient
+        /// Adds a recipient to a resource share, granting them access to the shared resources.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_recipient_response_single"/></returns>
         /// <param name="body">Account or organization ID must be provided.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Recipient
             return requestInfo;
         }
         /// <summary>
-        /// Create a new share recipient
+        /// Adds a recipient to a resource share, granting them access to the shared resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Account or organization ID must be provided.</param>

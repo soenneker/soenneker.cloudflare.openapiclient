@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.H
         {
         }
         /// <summary>
-        /// List Certificates
+        /// Lists all client certificates configured for per-hostname authenticated origin pulls on the zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.H
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_hostname_authenticated_origin_pull_components_schemas_certificate_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Certificates
+        /// Lists all client certificates configured for per-hostname authenticated origin pulls on the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

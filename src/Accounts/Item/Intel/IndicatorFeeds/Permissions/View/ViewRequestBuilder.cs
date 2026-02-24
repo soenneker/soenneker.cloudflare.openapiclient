@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         {
         }
         /// <summary>
-        /// List indicator feed permissions
+        /// Lists current access permissions for custom threat indicator feeds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_permission_list_item_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_permission_list_item_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_permission_list_item_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List indicator feed permissions
+        /// Lists current access permissions for custom threat indicator feeds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new share resource
+        /// Adds a resource to an existing share, making it available to share recipients.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Shares.Item.Resources
             return requestInfo;
         }
         /// <summary>
-        /// Create a new share resource
+        /// Adds a resource to an existing share, making it available to share recipients.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

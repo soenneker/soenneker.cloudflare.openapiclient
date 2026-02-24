@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
         {
         }
         /// <summary>
-        /// Get Item.
+        /// Retrieves a specific indexed item from an AI Search instance.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_get_item_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sync Item.
+        /// Syncs an item to an AI Search instance index.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_sync_item_200"/></returns>
         /// <param name="body">The request body</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_sync_item_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_sync_item_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Item.
+        /// Retrieves a specific indexed item from an AI Search instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return requestInfo;
         }
         /// <summary>
-        /// Sync Item.
+        /// Syncs an item to an AI Search instance index.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

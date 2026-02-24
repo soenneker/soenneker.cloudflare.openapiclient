@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithScript_nameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}{?force*}", pathParameters)
+        public WithScript_nameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}{?bindings_inherit*,force*}", pathParameters)
         {
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithScript_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}{?force*}", rawUrl)
+        public WithScript_nameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/dispatch/namespaces/{dispatch_namespace}/scripts/{script_name}{?bindings_inherit*,force*}", rawUrl)
         {
         }
         /// <summary>
@@ -127,11 +127,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse?> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse?> PutAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse> PutAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_namePutResponse> PutAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -191,11 +191,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.WithScript_nameItemRequestBuilder.WithScript_nameItemRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -223,6 +223,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Name
             /// <summary>If set to true, delete will not be stopped by associated service binding, durable object, or other binding. Any of these associated bindings/durable objects will be deleted along with the script.</summary>
             [QueryParameter("force")]
             public bool? Force { get; set; }
+        }
+        /// <summary>
+        /// &quot;Upload a worker module to a Workers for Platforms namespace. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithScript_nameItemRequestBuilderPutQueryParameters 
+        {
+            /// <summary>When set to &quot;strict&quot;, the upload will fail if any `inherit` type bindings cannot be resolved against the previous version of the script. Without this, unresolvable inherit bindings are silently dropped.</summary>
+            [QueryParameter("bindings_inherit")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Dispatch.Namespaces.Item.Scripts.Item.PutBindings_inheritQueryParameterType? BindingsInherit { get; set; }
         }
     }
 }

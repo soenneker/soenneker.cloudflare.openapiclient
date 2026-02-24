@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         {
         }
         /// <summary>
-        /// Update indicator feed data
+        /// Retrieves the raw data entries in a custom threat indicator feed.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_update_feed_response"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_update_feed_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_update_feed_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update indicator feed data
+        /// Retrieves the raw data entries in a custom threat indicator feed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

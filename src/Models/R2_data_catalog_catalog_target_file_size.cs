@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Sets the target file size for compaction in megabytes.</summary>
+    /// <summary>Sets the target file size for compaction in megabytes. Defaults to &quot;128&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum R2_data_catalog_catalog_target_file_size
     {

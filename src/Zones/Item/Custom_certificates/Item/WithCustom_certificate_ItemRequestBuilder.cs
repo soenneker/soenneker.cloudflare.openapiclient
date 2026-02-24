@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_id_only>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_id_only.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// SSL Configuration Details
+        /// Retrieves details for a specific custom SSL certificate, including certificate metadata, bundle method, geographic restrictions, and associated keyless server configuration.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_certificate_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_certificates.Item
             return requestInfo;
         }
         /// <summary>
-        /// SSL Configuration Details
+        /// Retrieves details for a specific custom SSL certificate, including certificate metadata, bundle method, geographic restrictions, and associated keyless server configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

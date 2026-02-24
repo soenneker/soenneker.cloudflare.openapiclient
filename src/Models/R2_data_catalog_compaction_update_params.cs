@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the state of maintenance operations.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_maintenance_state? State { get; set; }
-        /// <summary>Sets the target file size for compaction in megabytes.</summary>
+        /// <summary>Sets the target file size for compaction in megabytes. Defaults to &quot;128&quot;.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_target_file_size? TargetSizeMb { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_compaction_update_params"/> and sets the default values.
@@ -25,7 +25,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public R2_data_catalog_compaction_update_params()
         {
             AdditionalData = new Dictionary<string, object>();
-            TargetSizeMb = global::Soenneker.Cloudflare.OpenApiClient.Models.R2_data_catalog_catalog_target_file_size.OneTwoEight;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

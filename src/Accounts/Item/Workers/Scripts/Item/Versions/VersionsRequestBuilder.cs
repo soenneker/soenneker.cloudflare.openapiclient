@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/scripts/{script_name}/versions{?deployable*,page*,per_page*}", pathParameters)
+        public VersionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/scripts/{script_name}/versions{?bindings_inherit*,deployable*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/scripts/{script_name}/versions{?deployable*,page*,per_page*}", rawUrl)
+        public VersionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/scripts/{script_name}/versions{?bindings_inherit*,deployable*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -79,11 +79,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Worker_versions_upload_version_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versions_upload_response?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versions_upload_response?> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versions_upload_response> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_versions_upload_response> PostAsync(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -121,11 +121,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.VersionsRequestBuilder.VersionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -159,6 +159,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
             /// <summary>Items per-page.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+        }
+        /// <summary>
+        /// &quot;Upload a Worker Version without deploying to Cloudflare&apos;s network. You can find more about the multipart metadata on our docs: https://developers.cloudflare.com/workers/configuration/multipart-upload-metadata/.&quot;
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class VersionsRequestBuilderPostQueryParameters 
+        {
+            /// <summary>When set to &quot;strict&quot;, the upload will fail if any `inherit` type bindings cannot be resolved against the previous version of the Worker. Without this, unresolvable inherit bindings are silently dropped.</summary>
+            [QueryParameter("bindings_inherit")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.Versions.PostBindings_inheritQueryParameterType? BindingsInherit { get; set; }
         }
     }
 }

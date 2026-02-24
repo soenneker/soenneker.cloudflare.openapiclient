@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item
         {
         }
         /// <summary>
-        /// Delete Custom Hostname (and any issued SSL certificates)
+        /// Permanently deletes a custom hostname and revokes any SSL certificates that were issued for it. This action cannot be undone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname_and_any_issued_ssl_certificates_200"/></returns>
         /// <param name="body">The request body</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname_and_any_issued_ssl_certificates_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_hostname_for_a_zone_delete_custom_hostname_and_any_issued_ssl_certificates_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Custom Hostname Details
+        /// Retrieves detailed information about a specific custom hostname, including SSL certificate status, ownership verification, and origin configuration.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_hostname_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Custom Hostname (and any issued SSL certificates)
+        /// Permanently deletes a custom hostname and revokes any SSL certificates that were issued for it. This action cannot be undone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.Item
             return requestInfo;
         }
         /// <summary>
-        /// Custom Hostname Details
+        /// Retrieves detailed information about a specific custom hostname, including SSL certificate status, ownership verification, and origin configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

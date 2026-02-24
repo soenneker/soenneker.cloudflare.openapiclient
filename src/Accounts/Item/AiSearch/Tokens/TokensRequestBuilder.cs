@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Tokens
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_tokens_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_tokens_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new tokens.
+        /// Create a new tokens.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_tokens_201"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Tokens
             return requestInfo;
         }
         /// <summary>
-        /// Create new tokens.
+        /// Create a new tokens.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

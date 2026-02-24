@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds
         {
         }
         /// <summary>
-        /// Get indicator feeds owned by this account
+        /// Retrieves details for a specific custom threat indicator feed.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_indicator_feed_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_indicator_feed_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_indicator_feed_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new indicator feed
+        /// Creates a new custom threat indicator feed for sharing threat intelligence data.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_create_feed_response"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_create_feed_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Custom_indicator_feeds_create_feed_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get indicator feeds owned by this account
+        /// Retrieves details for a specific custom threat indicator feed.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds
             return requestInfo;
         }
         /// <summary>
-        /// Create new indicator feed
+        /// Creates a new custom threat indicator feed for sharing threat intelligence data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

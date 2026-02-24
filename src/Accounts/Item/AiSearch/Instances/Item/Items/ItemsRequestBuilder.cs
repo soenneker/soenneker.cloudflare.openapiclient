@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
         {
         }
         /// <summary>
-        /// Items List.
+        /// Lists indexed items in an AI Search instance.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_list_items_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_list_items_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_list_items_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or Update Item.
+        /// Creates or updates an indexed item in an AI Search instance.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_create_or_update_item_200"/></returns>
         /// <param name="body">The request body</param>
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_create_or_update_item_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_create_or_update_item_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Items List.
+        /// Lists indexed items in an AI Search instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return requestInfo;
         }
         /// <summary>
-        /// Create or Update Item.
+        /// Creates or updates an indexed item in an AI Search instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +149,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Items List.
+        /// Lists indexed items in an AI Search instance.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 

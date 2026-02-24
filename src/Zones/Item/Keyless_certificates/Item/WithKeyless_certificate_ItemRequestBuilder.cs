@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Ite
         {
         }
         /// <summary>
-        /// Delete Keyless SSL Configuration
+        /// Removes a Keyless SSL configuration. SSL connections will no longer use the keyless server for cryptographic operations.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_single_id"/></returns>
         /// <param name="body">The request body</param>
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Keyless_certificates.Ite
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_single>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_keyless_response_single.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Keyless SSL Configuration
+        /// Removes a Keyless SSL configuration. SSL connections will no longer use the keyless server for cryptographic operations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
