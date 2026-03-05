@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
         {
         }
         /// <summary>
-        /// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model.
+        /// Runs inference on the @cf/mistralai/mistral-small-3.1-24b-instruct model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instruct_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instruct_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistralai_mistral_small_3_1_24b_instruct_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model.
+        /// Runs inference on the @cf/mistralai/mistral-small-3.1-24b-instruct model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.M
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistralai.MistralSmall3124bInstruct.MistralSmall3124bInstructRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model.
+        /// Runs inference on the @cf/mistralai/mistral-small-3.1-24b-instruct model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MistralSmall3124bInstructRequestBuilderPostQueryParameters 

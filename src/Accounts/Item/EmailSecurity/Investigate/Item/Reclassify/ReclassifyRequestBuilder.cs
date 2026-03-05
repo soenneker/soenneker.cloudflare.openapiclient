@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         {
         }
         /// <summary>
-        /// Change email classfication
+        /// Submits an email message for reclassification, updating its threat assessmentbased on new analysis.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_reclassify_202"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_reclassify_202>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_reclassify_202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Change email classfication
+        /// Submits an email message for reclassification, updating its threat assessmentbased on new analysis.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama2
         {
         }
         /// <summary>
-        /// Execute @cf/meta/llama-2-7b-chat-int8 model.
+        /// Runs inference on the @cf/meta/llama-2-7b-chat-int8 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_2_7b_chat_int8_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama2
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_2_7b_chat_int8_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_2_7b_chat_int8_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-2-7b-chat-int8 model.
+        /// Runs inference on the @cf/meta/llama-2-7b-chat-int8 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama2
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama27bChatInt8.Llama27bChatInt8RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-2-7b-chat-int8 model.
+        /// Runs inference on the @cf/meta/llama-2-7b-chat-int8 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Llama27bChatInt8RequestBuilderPostQueryParameters 

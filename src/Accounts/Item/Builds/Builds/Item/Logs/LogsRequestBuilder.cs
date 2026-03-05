@@ -90,7 +90,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Item.Lo
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Pagination cursor for log retrieval</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("cursor")]

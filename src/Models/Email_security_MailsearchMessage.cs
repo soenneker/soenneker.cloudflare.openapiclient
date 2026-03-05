@@ -138,6 +138,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MessageId { get; set; }
 #endif
+        /// <summary>The post_delivery_operations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_post_delivery_operations?>? PostDeliveryOperations { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_post_delivery_operations?> PostDeliveryOperations { get; set; }
+#endif
         /// <summary>The identifier of the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -268,6 +276,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_phish_submission", n => { IsPhishSubmission = n.GetBoolValue(); } },
                 { "is_quarantined", n => { IsQuarantined = n.GetBoolValue(); } },
                 { "message_id", n => { MessageId = n.GetStringValue(); } },
+                { "post_delivery_operations", n => { PostDeliveryOperations = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_post_delivery_operations>()?.AsList(); } },
                 { "postfix_id", n => { PostfixId = n.GetStringValue(); } },
                 { "postfix_id_outbound", n => { PostfixIdOutbound = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_properties>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_properties.CreateFromDiscriminatorValue); } },
@@ -305,6 +314,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_phish_submission", IsPhishSubmission);
             writer.WriteBoolValue("is_quarantined", IsQuarantined);
             writer.WriteStringValue("message_id", MessageId);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_post_delivery_operations>("post_delivery_operations", PostDeliveryOperations);
             writer.WriteStringValue("postfix_id", PostfixId);
             writer.WriteStringValue("postfix_id_outbound", PostfixIdOutbound);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_MailsearchMessage_properties>("properties", Properties);

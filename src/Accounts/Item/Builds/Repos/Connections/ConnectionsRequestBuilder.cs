@@ -19,9 +19,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Connecti
     public partial class ConnectionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.repos.connections.item collection</summary>
-        /// <param name="position">Repository connection UUID</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Connections.Item.WithRepo_connection_uuItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Connections.Item.WithRepo_connection_uuItemRequestBuilder this[Guid position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Connections.Item.WithRepo_connection_uuItemRequestBuilder this[string position]
         {
             get
             {

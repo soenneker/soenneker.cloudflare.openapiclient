@@ -16,8 +16,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Activated { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Allowed days of the week for upgrades. Default is all days.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week?>? InterruptWindowDaysOfWeek { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week?> InterruptWindowDaysOfWeek { get; set; }
+#endif
         /// <summary>The interrupt_window_duration_hours property</summary>
         public double? InterruptWindowDurationHours { get; set; }
+        /// <summary>List of dates (YYYY-MM-DD) when upgrades are blocked.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? InterruptWindowEmbargoDates { get; set; }
+#nullable restore
+#else
+        public List<string> InterruptWindowEmbargoDates { get; set; }
+#endif
         /// <summary>The interrupt_window_hour_of_day property</summary>
         public double? InterruptWindowHourOfDay { get; set; }
         /// <summary>The notes property</summary>
@@ -62,7 +78,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "activated", n => { Activated = n.GetBoolValue(); } },
+                { "interrupt_window_days_of_week", n => { InterruptWindowDaysOfWeek = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week>()?.AsList(); } },
                 { "interrupt_window_duration_hours", n => { InterruptWindowDurationHours = n.GetDoubleValue(); } },
+                { "interrupt_window_embargo_dates", n => { InterruptWindowEmbargoDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interrupt_window_hour_of_day", n => { InterruptWindowHourOfDay = n.GetDoubleValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
@@ -76,7 +94,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("activated", Activated);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week>("interrupt_window_days_of_week", InterruptWindowDaysOfWeek);
             writer.WriteDoubleValue("interrupt_window_duration_hours", InterruptWindowDurationHours);
+            writer.WriteCollectionOfPrimitiveValues<string>("interrupt_window_embargo_dates", InterruptWindowEmbargoDates);
             writer.WriteDoubleValue("interrupt_window_hour_of_day", InterruptWindowHourOfDay);
             writer.WriteStringValue("notes", Notes);
             writer.WriteStringValue("timezone", Timezone);

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.No
         {
         }
         /// <summary>
-        /// Open Websocket connection with @cf/deepgram/nova-3-internal model.
+        /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3-internal model.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.No
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Open Websocket connection with @cf/deepgram/nova-3-internal model.
+        /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3-internal model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

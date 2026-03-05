@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
         {
         }
         /// <summary>
-        /// Delete a blocked email sender
+        /// Removes a sender from the email block list, allowing their messages to be deliverednormally.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_delete_blocked_sender_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_delete_blocked_sender_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_delete_blocked_sender_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a blocked email sender
+        /// Gets information about a specific blocked sender entry, including the pattern andblock reason.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_blocked_sender_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_blocked_sender_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_blocked_sender_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a blocked email sender
+        /// Modifies a blocked sender entry, updating its pattern or block reason.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_blocked_sender_200"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_blocked_sender_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_update_blocked_sender_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a blocked email sender
+        /// Removes a sender from the email block list, allowing their messages to be deliverednormally.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return requestInfo;
         }
         /// <summary>
-        /// Get a blocked email sender
+        /// Gets information about a specific blocked sender entry, including the pattern andblock reason.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return requestInfo;
         }
         /// <summary>
-        /// Update a blocked email sender
+        /// Modifies a blocked sender entry, updating its pattern or block reason.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

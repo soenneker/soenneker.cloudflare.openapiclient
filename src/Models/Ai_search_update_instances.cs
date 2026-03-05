@@ -161,7 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CacheThreshold = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_cache_threshold.Close_enough;
-            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_fusion_method.Max;
+            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_fusion_method.Rrf;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

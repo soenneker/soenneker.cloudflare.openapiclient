@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Stabilityai
         {
         }
         /// <summary>
-        /// Execute @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
+        /// Runs inference on the @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base_1_0_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Stabilityai
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base_1_0_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_stabilityai_stable_diffusion_xl_base_1_0_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
+        /// Runs inference on the @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Stabilityai
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Stabilityai.StableDiffusionXlBase10.StableDiffusionXlBase10RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
+        /// Runs inference on the @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StableDiffusionXlBase10RequestBuilderPostQueryParameters 

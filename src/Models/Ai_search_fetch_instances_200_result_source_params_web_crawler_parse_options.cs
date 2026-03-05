@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>List of path-to-selector mappings for extracting specific content from crawled pages. Each entry pairs a URL glob pattern with a CSS selector. The first matching path wins. Only the matched HTML fragment is stored and indexed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_content_selector>? ContentSelector { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_content_selector> ContentSelector { get; set; }
+#endif
         /// <summary>The include_headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "content_selector", n => { ContentSelector = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_content_selector>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_content_selector.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "include_headers", n => { IncludeHeaders = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_include_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_include_headers.CreateFromDiscriminatorValue); } },
                 { "include_images", n => { IncludeImages = n.GetBoolValue(); } },
                 { "specific_sitemaps", n => { SpecificSitemaps = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -72,6 +81,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_content_selector>("content_selector", ContentSelector);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_source_params_web_crawler_parse_options_include_headers>("include_headers", IncludeHeaders);
             writer.WriteBoolValue("include_images", IncludeImages);
             writer.WriteCollectionOfPrimitiveValues<string>("specific_sitemaps", SpecificSitemaps);

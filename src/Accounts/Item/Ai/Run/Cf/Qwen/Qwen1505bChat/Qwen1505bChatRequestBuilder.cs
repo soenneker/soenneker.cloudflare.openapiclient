@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen15
         {
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen1.5-0.5b-chat model.
+        /// Runs inference on the @cf/qwen/qwen1.5-0.5b-chat model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen1_5_0_5b_chat_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen15
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen1_5_0_5b_chat_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen1_5_0_5b_chat_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen1.5-0.5b-chat model.
+        /// Runs inference on the @cf/qwen/qwen1.5-0.5b-chat model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen15
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen1505bChat.Qwen1505bChatRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen1.5-0.5b-chat model.
+        /// Runs inference on the @cf/qwen/qwen1.5-0.5b-chat model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Qwen1505bChatRequestBuilderPostQueryParameters 

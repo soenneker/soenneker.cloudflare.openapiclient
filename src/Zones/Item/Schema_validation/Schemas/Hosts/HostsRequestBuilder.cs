@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         {
         }
         /// <summary>
-        /// List hosts covered by uploaded schemas
+        /// Lists all unique hosts found in uploaded OpenAPI schemas for the zone.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Hosts.HostsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Hosts.HostsGetResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Hosts.HostsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List hosts covered by uploaded schemas
+        /// Lists all unique hosts found in uploaded OpenAPI schemas for the zone.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Hosts.HostsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List hosts covered by uploaded schemas
+        /// Lists all unique hosts found in uploaded OpenAPI schemas for the zone.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HostsRequestBuilderGetQueryParameters 

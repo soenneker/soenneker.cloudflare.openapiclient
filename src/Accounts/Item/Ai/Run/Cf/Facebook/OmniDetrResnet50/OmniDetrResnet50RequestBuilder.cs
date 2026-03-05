@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.Om
         {
         }
         /// <summary>
-        /// Execute @cf/facebook/omni-detr-resnet-50 model.
+        /// Runs inference on the @cf/facebook/omni-detr-resnet-50 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_200"/></returns>
         /// <param name="body">Binary request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.Om
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_facebook_omni_detr_resnet_50_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/facebook/omni-detr-resnet-50 model.
+        /// Runs inference on the @cf/facebook/omni-detr-resnet-50 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.Om
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Facebook.OmniDetrResnet50.OmniDetrResnet50RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/facebook/omni-detr-resnet-50 model.
+        /// Runs inference on the @cf/facebook/omni-detr-resnet-50 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class OmniDetrResnet50RequestBuilderPostQueryParameters 

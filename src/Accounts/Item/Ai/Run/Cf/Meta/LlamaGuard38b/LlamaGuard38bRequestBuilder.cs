@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.LlamaG
         {
         }
         /// <summary>
-        /// Execute @cf/meta/llama-guard-3-8b model.
+        /// Runs inference on the @cf/meta/llama-guard-3-8b model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_guard_3_8b_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.LlamaG
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_guard_3_8b_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_guard_3_8b_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-guard-3-8b model.
+        /// Runs inference on the @cf/meta/llama-guard-3-8b model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.LlamaG
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.LlamaGuard38b.LlamaGuard38bRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-guard-3-8b model.
+        /// Runs inference on the @cf/meta/llama-guard-3-8b model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LlamaGuard38bRequestBuilderPostQueryParameters 

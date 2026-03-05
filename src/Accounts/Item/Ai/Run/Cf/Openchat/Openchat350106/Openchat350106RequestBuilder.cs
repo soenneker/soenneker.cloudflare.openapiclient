@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat.Op
         {
         }
         /// <summary>
-        /// Execute @cf/openchat/openchat-3.5-0106 model.
+        /// Runs inference on the @cf/openchat/openchat-3.5-0106 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openchat_openchat_3_5_0106_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat.Op
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openchat_openchat_3_5_0106_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openchat_openchat_3_5_0106_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/openchat/openchat-3.5-0106 model.
+        /// Runs inference on the @cf/openchat/openchat-3.5-0106 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat.Op
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openchat.Openchat350106.Openchat350106RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/openchat/openchat-3.5-0106 model.
+        /// Runs inference on the @cf/openchat/openchat-3.5-0106 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Openchat350106RequestBuilderPostQueryParameters 

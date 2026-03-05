@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama4
         {
         }
         /// <summary>
-        /// Execute @cf/meta/llama-4-scout-17b-16e-instruct model.
+        /// Runs inference on the @cf/meta/llama-4-scout-17b-16e-instruct model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama4
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_4_scout_17b_16e_instruct_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-4-scout-17b-16e-instruct model.
+        /// Runs inference on the @cf/meta/llama-4-scout-17b-16e-instruct model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama4
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama4Scout17b16eInstruct.Llama4Scout17b16eInstructRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-4-scout-17b-16e-instruct model.
+        /// Runs inference on the @cf/meta/llama-4-scout-17b-16e-instruct model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Llama4Scout17b16eInstructRequestBuilderPostQueryParameters 

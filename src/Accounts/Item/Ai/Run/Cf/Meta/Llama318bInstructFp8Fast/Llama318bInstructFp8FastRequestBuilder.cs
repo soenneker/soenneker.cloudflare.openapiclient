@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama3
         {
         }
         /// <summary>
-        /// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
+        /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_3_1_8b_instruct_fp8_fast_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama3
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_3_1_8b_instruct_fp8_fast_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_3_1_8b_instruct_fp8_fast_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
+        /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama3
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Meta.Llama318bInstructFp8Fast.Llama318bInstructFp8FastRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
+        /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Llama318bInstructFp8FastRequestBuilderPostQueryParameters 

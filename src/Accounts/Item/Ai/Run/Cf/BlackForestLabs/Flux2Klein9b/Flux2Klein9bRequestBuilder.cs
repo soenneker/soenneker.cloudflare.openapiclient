@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForest
         {
         }
         /// <summary>
-        /// Execute @cf/black-forest-labs/flux-2-klein-9b model.
+        /// Runs inference on the @cf/black-forest-labs/flux-2-klein-9b model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_black_forest_labs_flux_2_klein_9b_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForest
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_black_forest_labs_flux_2_klein_9b_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_black_forest_labs_flux_2_klein_9b_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/black-forest-labs/flux-2-klein-9b model.
+        /// Runs inference on the @cf/black-forest-labs/flux-2-klein-9b model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForest
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.BlackForestLabs.Flux2Klein9b.Flux2Klein9bRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/black-forest-labs/flux-2-klein-9b model.
+        /// Runs inference on the @cf/black-forest-labs/flux-2-klein-9b model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Flux2Klein9bRequestBuilderPostQueryParameters 

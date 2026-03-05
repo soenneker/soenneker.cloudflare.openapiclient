@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Runwayml.St
         {
         }
         /// <summary>
-        /// Execute @cf/runwayml/stable-diffusion-v1-5-img2img model.
+        /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-img2img model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_runwayml_stable_diffusion_v1_5_img2img_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Runwayml.St
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_runwayml_stable_diffusion_v1_5_img2img_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_runwayml_stable_diffusion_v1_5_img2img_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/runwayml/stable-diffusion-v1-5-img2img model.
+        /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-img2img model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Runwayml.St
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Runwayml.StableDiffusionV15Img2img.StableDiffusionV15Img2imgRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/runwayml/stable-diffusion-v1-5-img2img model.
+        /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-img2img model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StableDiffusionV15Img2imgRequestBuilderPostQueryParameters 

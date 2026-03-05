@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore
         {
         }
         /// <summary>
-        /// Execute @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
+        /// Runs inference on the @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_aisingapore_gemma_sea_lion_v4_27b_it_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_aisingapore_gemma_sea_lion_v4_27b_it_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_aisingapore_gemma_sea_lion_v4_27b_it_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
+        /// Runs inference on the @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Aisingapore.GemmaSeaLionV427bIt.GemmaSeaLionV427bItRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
+        /// Runs inference on the @cf/aisingapore/gemma-sea-lion-v4-27b-it model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GemmaSeaLionV427bItRequestBuilderPostQueryParameters 

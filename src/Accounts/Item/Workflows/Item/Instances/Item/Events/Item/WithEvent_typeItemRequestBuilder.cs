@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         {
         }
         /// <summary>
-        /// Send event to instance
+        /// Sends an event to a running workflow instance to trigger state transitions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_send_event_workflow_instance_200"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_send_event_workflow_instance_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_send_event_workflow_instance_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send event to instance
+        /// Sends an event to a running workflow instance to trigger state transitions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

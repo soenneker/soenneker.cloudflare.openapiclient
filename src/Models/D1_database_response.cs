@@ -16,6 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies the timestamp the resource was created as an ISO8601 string.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction_nullable? Jurisdiction { get; set; }
         /// <summary>D1 database name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction_nullable>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -79,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction_nullable>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("uuid", Uuid);
             writer.WriteStringValue("version", Version);

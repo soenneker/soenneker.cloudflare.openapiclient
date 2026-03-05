@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeM3
         {
         }
         /// <summary>
-        /// Execute @cf/baai/bge-m3 model.
+        /// Runs inference on the @cf/baai/bge-m3 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_m3_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeM3
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_m3_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_baai_bge_m3_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/baai/bge-m3 model.
+        /// Runs inference on the @cf/baai/bge-m3 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeM3
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Baai.BgeM3.BgeM3RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/baai/bge-m3 model.
+        /// Runs inference on the @cf/baai/bge-m3 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BgeM3RequestBuilderPostQueryParameters 

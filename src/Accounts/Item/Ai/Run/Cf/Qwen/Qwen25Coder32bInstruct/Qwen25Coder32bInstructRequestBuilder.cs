@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25
         {
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen2.5-coder-32b-instruct model.
+        /// Runs inference on the @cf/qwen/qwen2.5-coder-32b-instruct model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen2_5_coder_32b_instruct_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen2_5_coder_32b_instruct_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen2_5_coder_32b_instruct_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen2.5-coder-32b-instruct model.
+        /// Runs inference on the @cf/qwen/qwen2.5-coder-32b-instruct model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen25Coder32bInstruct.Qwen25Coder32bInstructRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen2.5-coder-32b-instruct model.
+        /// Runs inference on the @cf/qwen/qwen2.5-coder-32b-instruct model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Qwen25Coder32bInstructRequestBuilderPostQueryParameters 

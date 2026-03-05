@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_delete_workflow_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_delete_workflow_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Workflow details
+        /// Retrieves configuration and metadata for a specific workflow.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_get_workflow_details_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +96,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_get_workflow_details_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_get_workflow_details_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create/modify Workflow
+        /// Creates a new workflow or updates an existing workflow definition.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_create_or_modify_workflow_200"/></returns>
         /// <param name="body">The request body</param>
@@ -140,7 +140,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get Workflow details
+        /// Retrieves configuration and metadata for a specific workflow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -159,7 +159,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item
             return requestInfo;
         }
         /// <summary>
-        /// Create/modify Workflow
+        /// Creates a new workflow or updates an existing workflow definition.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

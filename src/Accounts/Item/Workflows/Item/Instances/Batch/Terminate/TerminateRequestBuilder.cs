@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         {
         }
         /// <summary>
-        /// Batch terminate instances of a workflow
+        /// Terminates multiple workflow instances in a single batch operation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_terminate_workflow_instances_200"/></returns>
         /// <param name="body">The request body</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_terminate_workflow_instances_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_batch_terminate_workflow_instances_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Batch terminate instances of a workflow
+        /// Terminates multiple workflow instances in a single batch operation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

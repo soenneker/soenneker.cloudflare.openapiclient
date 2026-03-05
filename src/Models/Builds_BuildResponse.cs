@@ -24,7 +24,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Builds_BuildTriggerMetadataResponse BuildTriggerMetadata { get; set; }
 #endif
-        /// <summary>The build_uuid property</summary>
+        /// <summary>Build UUID.</summary>
         public Guid? BuildUuid { get; set; }
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; set; }

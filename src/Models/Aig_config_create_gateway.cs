@@ -30,8 +30,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The is_default property</summary>
-        public bool? IsDefault { get; set; }
         /// <summary>The log_management property</summary>
         public int? LogManagement { get; set; }
         /// <summary>The log_management_strategy property</summary>
@@ -52,6 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? RateLimitingLimit { get; set; }
         /// <summary>The rate_limiting_technique property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique? RateLimitingTechnique { get; set; }
+        /// <summary>Controls how Workers AI inference calls routed through this gateway are billed</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode? WorkersAiBillingMode { get; set; }
         /// <summary>The zdr property</summary>
         public bool? Zdr { get; set; }
         /// <summary>
@@ -60,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Aig_config_create_gateway()
         {
             AdditionalData = new Dictionary<string, object>();
+            WorkersAiBillingMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode.Postpaid;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,7 +85,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
                 { "collect_logs", n => { CollectLogs = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "log_management", n => { LogManagement = n.GetIntValue(); } },
                 { "log_management_strategy", n => { LogManagementStrategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_log_management_strategy>(); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
@@ -92,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rate_limiting_interval", n => { RateLimitingInterval = n.GetIntValue(); } },
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique>(); } },
+                { "workers_ai_billing_mode", n => { WorkersAiBillingMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode>(); } },
                 { "zdr", n => { Zdr = n.GetBoolValue(); } },
             };
         }
@@ -107,7 +108,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("cache_ttl", CacheTtl);
             writer.WriteBoolValue("collect_logs", CollectLogs);
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteIntValue("log_management", LogManagement);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_log_management_strategy>("log_management_strategy", LogManagementStrategy);
             writer.WriteBoolValue("logpush", Logpush);
@@ -115,6 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("rate_limiting_interval", RateLimitingInterval);
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode>("workers_ai_billing_mode", WorkersAiBillingMode);
             writer.WriteBoolValue("zdr", Zdr);
             writer.WriteAdditionalData(AdditionalData);
         }

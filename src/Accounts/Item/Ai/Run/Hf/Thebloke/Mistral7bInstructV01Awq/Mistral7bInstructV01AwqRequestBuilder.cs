@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mi
         {
         }
         /// <summary>
-        /// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
+        /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mi
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
+        /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mi
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
+        /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Mistral7bInstructV01AwqRequestBuilderPostQueryParameters 

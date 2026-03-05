@@ -19,9 +19,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers
     public partial class TriggersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.triggers.item collection</summary>
-        /// <param name="position">Trigger UUID</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.WithTrigger_uuItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.WithTrigger_uuItemRequestBuilder this[Guid position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.WithTrigger_uuItemRequestBuilder this[string position]
         {
             get
             {

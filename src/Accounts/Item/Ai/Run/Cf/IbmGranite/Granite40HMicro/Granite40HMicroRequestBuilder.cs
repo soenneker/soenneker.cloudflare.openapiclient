@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.IbmGranite.
         {
         }
         /// <summary>
-        /// Execute @cf/ibm-granite/granite-4.0-h-micro model.
+        /// Runs inference on the @cf/ibm-granite/granite-4.0-h-micro model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_ibm_granite_granite_4_0_h_micro_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.IbmGranite.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_ibm_granite_granite_4_0_h_micro_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_ibm_granite_granite_4_0_h_micro_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/ibm-granite/granite-4.0-h-micro model.
+        /// Runs inference on the @cf/ibm-granite/granite-4.0-h-micro model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.IbmGranite.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.IbmGranite.Granite40HMicro.Granite40HMicroRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/ibm-granite/granite-4.0-h-micro model.
+        /// Runs inference on the @cf/ibm-granite/granite-4.0-h-micro model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Granite40HMicroRequestBuilderPostQueryParameters 

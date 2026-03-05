@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BuildTokenName { get; set; }
 #endif
-        /// <summary>The build_token_uuid property</summary>
+        /// <summary>Build token UUID.</summary>
         public Guid? BuildTokenUuid { get; set; }
         /// <summary>The cloudflare_token_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

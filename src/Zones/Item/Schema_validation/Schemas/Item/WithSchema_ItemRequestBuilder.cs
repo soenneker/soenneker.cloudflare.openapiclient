@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
         {
         }
         /// <summary>
-        /// Delete a schema
+        /// Permanently removes an uploaded OpenAPI schema from API Shield. Operations using this schema will lose their validation rules.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.WithSchema_DeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.WithSchema_DeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.WithSchema_DeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get details of a schema
+        /// Gets the contents and metadata of a specific OpenAPI schema uploaded to API Shield.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema_success_result"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema_success_result>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema_success_result.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Edit details of a schema to enable validation
+        /// Modifies an existing OpenAPI schema in API Shield, updating the validation rules for associated API operations.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema_success_result"/></returns>
         /// <param name="body">The request body</param>
@@ -111,7 +111,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema_success_result>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_public_schema_success_result.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a schema
+        /// Permanently removes an uploaded OpenAPI schema from API Shield. Operations using this schema will lose their validation rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return requestInfo;
         }
         /// <summary>
-        /// Get details of a schema
+        /// Gets the contents and metadata of a specific OpenAPI schema uploaded to API Shield.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -149,7 +149,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return requestInfo;
         }
         /// <summary>
-        /// Edit details of a schema to enable validation
+        /// Modifies an existing OpenAPI schema in API Shield, updating the validation rules for associated API operations.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -180,7 +180,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schema
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Schema_validation.Schemas.Item.WithSchema_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get details of a schema
+        /// Gets the contents and metadata of a specific OpenAPI schema uploaded to API Shield.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithSchema_ItemRequestBuilderGetQueryParameters 

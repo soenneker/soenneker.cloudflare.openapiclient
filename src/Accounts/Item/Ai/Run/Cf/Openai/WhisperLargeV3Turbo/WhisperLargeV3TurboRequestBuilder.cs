@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whis
         {
         }
         /// <summary>
-        /// Execute @cf/openai/whisper-large-v3-turbo model.
+        /// Runs inference on the @cf/openai/whisper-large-v3-turbo model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_whisper_large_v3_turbo_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whis
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_whisper_large_v3_turbo_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_openai_whisper_large_v3_turbo_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/openai/whisper-large-v3-turbo model.
+        /// Runs inference on the @cf/openai/whisper-large-v3-turbo model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.Whis
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Openai.WhisperLargeV3Turbo.WhisperLargeV3TurboRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/openai/whisper-large-v3-turbo model.
+        /// Runs inference on the @cf/openai/whisper-large-v3-turbo model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WhisperLargeV3TurboRequestBuilderPostQueryParameters 

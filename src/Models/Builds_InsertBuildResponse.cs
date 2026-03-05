@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The build_uuid property</summary>
+        /// <summary>Build UUID.</summary>
         public Guid? BuildUuid { get; set; }
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; set; }

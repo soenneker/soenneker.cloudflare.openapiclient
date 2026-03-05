@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ClassName { get; set; }
 #endif
+        /// <summary>The limits property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_create_or_modify_workflow_limits? Limits { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_create_or_modify_workflow_limits Limits { get; set; }
+#endif
         /// <summary>The script_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
+                { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_create_or_modify_workflow_limits>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_create_or_modify_workflow_limits.CreateFromDiscriminatorValue); } },
                 { "script_name", n => { ScriptName = n.GetStringValue(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("class_name", ClassName);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_create_or_modify_workflow_limits>("limits", Limits);
             writer.WriteStringValue("script_name", ScriptName);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.
     public partial class Environment_variablesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.triggers.item.environment_variables.item collection</summary>
-        /// <param name="position">Environment variable key</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironment_variable_keyItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Triggers.Item.Environment_variables.Item.WithEnvironment_variable_keyItemRequestBuilder this[string position]
         {

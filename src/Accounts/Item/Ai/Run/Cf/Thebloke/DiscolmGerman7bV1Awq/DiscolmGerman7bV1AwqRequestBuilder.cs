@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.Di
         {
         }
         /// <summary>
-        /// Execute @cf/thebloke/discolm-german-7b-v1-awq model.
+        /// Runs inference on the @cf/thebloke/discolm-german-7b-v1-awq model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.Di
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/thebloke/discolm-german-7b-v1-awq model.
+        /// Runs inference on the @cf/thebloke/discolm-german-7b-v1-awq model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.Di
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/thebloke/discolm-german-7b-v1-awq model.
+        /// Runs inference on the @cf/thebloke/discolm-german-7b-v1-awq model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters 

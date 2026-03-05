@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MetaLlama.L
         {
         }
         /// <summary>
-        /// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model.
+        /// Runs inference on the @cf/meta-llama/llama-2-7b-chat-hf-lora model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_llama_2_7b_chat_hf_lora_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MetaLlama.L
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_llama_2_7b_chat_hf_lora_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_meta_llama_llama_2_7b_chat_hf_lora_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model.
+        /// Runs inference on the @cf/meta-llama/llama-2-7b-chat-hf-lora model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MetaLlama.L
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.MetaLlama.Llama27bChatHfLora.Llama27bChatHfLoraRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model.
+        /// Runs inference on the @cf/meta-llama/llama-2-7b-chat-hf-lora model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Llama27bChatHfLoraRequestBuilderPostQueryParameters 

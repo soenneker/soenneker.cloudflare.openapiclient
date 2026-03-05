@@ -191,7 +191,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CacheThreshold = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_cache_threshold.Close_enough;
-            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_fusion_method.Max;
+            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_fusion_method.Rrf;
             Status = "waiting";
         }
         /// <summary>

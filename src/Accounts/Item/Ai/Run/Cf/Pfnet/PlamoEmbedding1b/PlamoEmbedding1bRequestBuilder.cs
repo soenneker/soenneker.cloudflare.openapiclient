@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.Plamo
         {
         }
         /// <summary>
-        /// Execute @cf/pfnet/plamo-embedding-1b model.
+        /// Runs inference on the @cf/pfnet/plamo-embedding-1b model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_pfnet_plamo_embedding_1b_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.Plamo
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_pfnet_plamo_embedding_1b_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_pfnet_plamo_embedding_1b_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/pfnet/plamo-embedding-1b model.
+        /// Runs inference on the @cf/pfnet/plamo-embedding-1b model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.Plamo
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Pfnet.PlamoEmbedding1b.PlamoEmbedding1bRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/pfnet/plamo-embedding-1b model.
+        /// Runs inference on the @cf/pfnet/plamo-embedding-1b model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PlamoEmbedding1bRequestBuilderPostQueryParameters 

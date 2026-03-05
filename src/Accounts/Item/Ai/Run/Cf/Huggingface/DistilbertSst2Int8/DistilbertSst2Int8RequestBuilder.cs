@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface
         {
         }
         /// <summary>
-        /// Execute @cf/huggingface/distilbert-sst-2-int8 model.
+        /// Runs inference on the @cf/huggingface/distilbert-sst-2-int8 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_huggingface_distilbert_sst_2_int8_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_huggingface_distilbert_sst_2_int8_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_huggingface_distilbert_sst_2_int8_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/huggingface/distilbert-sst-2-int8 model.
+        /// Runs inference on the @cf/huggingface/distilbert-sst-2-int8 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Huggingface.DistilbertSst2Int8.DistilbertSst2Int8RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/huggingface/distilbert-sst-2-int8 model.
+        /// Runs inference on the @cf/huggingface/distilbert-sst-2-int8 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DistilbertSst2Int8RequestBuilderPostQueryParameters 

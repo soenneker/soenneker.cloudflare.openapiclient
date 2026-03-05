@@ -27,19 +27,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_EventRawReadDS_200_data? Data { get; set; }
+        public string? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Get_EventRawReadDS_200_data Data { get; set; }
+        public string Data { get; set; }
 #endif
         /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        public double? Id { get; set; }
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,8 +77,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "accountId", n => { AccountId = n.GetDoubleValue(); } },
                 { "created", n => { Created = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_EventRawReadDS_200_data>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_EventRawReadDS_200_data.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "data", n => { Data = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetDoubleValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "tlp", n => { Tlp = n.GetStringValue(); } },
             };
@@ -98,8 +92,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("accountId", AccountId);
             writer.WriteStringValue("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_EventRawReadDS_200_data>("data", Data);
-            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("data", Data);
+            writer.WriteDoubleValue("id", Id);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("tlp", Tlp);
             writer.WriteAdditionalData(AdditionalData);

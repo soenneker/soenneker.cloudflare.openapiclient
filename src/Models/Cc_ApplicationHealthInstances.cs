@@ -17,6 +17,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of instances assigned to a container, but the container is not yet running.</summary>
+        public int? Assigned { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_ApplicationHealthInstances"/> and sets the default values.
         /// </summary>
@@ -43,6 +45,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "active", n => { Active = n.GetIntValue(); } },
+                { "assigned", n => { Assigned = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -53,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("active", Active);
+            writer.WriteIntValue("assigned", Assigned);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

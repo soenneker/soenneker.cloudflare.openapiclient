@@ -85,7 +85,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Ite
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Config_autofillRequestBuilderGetQueryParameters 
         {
-            /// <summary>Git branch to analyze</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("branch")]
@@ -95,7 +94,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Repos.Item.Ite
             [QueryParameter("branch")]
             public string Branch { get; set; }
 #endif
-            /// <summary>Root directory path</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("root_directory")]

@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Authorization { get; set; }
 #endif
+        /// <summary>The content_type property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_otel_content_type? ContentType { get; set; }
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -44,6 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Aig_config_fetch_gateway_200_result_otel()
         {
             AdditionalData = new Dictionary<string, object>();
+            ContentType = global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_otel_content_type.Json;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authorization", n => { Authorization = n.GetStringValue(); } },
+                { "content_type", n => { ContentType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_otel_content_type>(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_otel_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_otel_headers.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -76,6 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("authorization", Authorization);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_otel_content_type>("content_type", ContentType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_fetch_gateway_200_result_otel_headers>("headers", Headers);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

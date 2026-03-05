@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         {
         }
         /// <summary>
-        /// Get status of the job responsible for terminate all instances of a workflow
+        /// Gets the status of a bulk workflow instance termination job.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_status_terminate_workflow_instances_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_status_terminate_workflow_instances_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_status_terminate_workflow_instances_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get status of the job responsible for terminate all instances of a workflow
+        /// Gets the status of a bulk workflow instance termination job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

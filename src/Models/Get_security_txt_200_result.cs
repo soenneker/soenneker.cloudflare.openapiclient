@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Policy { get; set; }
 #endif
-        /// <summary>The preferredLanguages property</summary>
+        /// <summary>The preferred_languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredLanguages { get; set; }
@@ -107,7 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expires", n => { Expires = n.GetDateTimeOffsetValue(); } },
                 { "hiring", n => { Hiring = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "policy", n => { Policy = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "preferredLanguages", n => { PreferredLanguages = n.GetStringValue(); } },
+                { "preferred_languages", n => { PreferredLanguages = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -125,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("expires", Expires);
             writer.WriteCollectionOfPrimitiveValues<string>("hiring", Hiring);
             writer.WriteCollectionOfPrimitiveValues<string>("policy", Policy);
-            writer.WriteStringValue("preferredLanguages", PreferredLanguages);
+            writer.WriteStringValue("preferred_languages", PreferredLanguages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

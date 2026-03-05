@@ -40,7 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BuildCommand { get; set; }
 #endif
-        /// <summary>The build_token_uuid property</summary>
+        /// <summary>Build token UUID.</summary>
         public Guid? BuildTokenUuid { get; set; }
         /// <summary>The deploy_command property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> PathIncludes { get; set; }
 #endif
-        /// <summary>The root_directory property</summary>
+        /// <summary>Root directory path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RootDirectory { get; set; }

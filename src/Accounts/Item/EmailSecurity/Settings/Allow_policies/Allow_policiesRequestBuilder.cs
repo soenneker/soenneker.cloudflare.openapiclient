@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_list_allow_policies_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_list_allow_policies_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create an email allow policy
+        /// Creates a new email allow policy that permits specific senders, domains, or patternsto bypass security scanning.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_create_allow_policy_201"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Setting
             return requestInfo;
         }
         /// <summary>
-        /// Create an email allow policy
+        /// Creates a new email allow policy that permits specific senders, domains, or patternsto bypass security scanning.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

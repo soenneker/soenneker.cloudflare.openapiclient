@@ -15,9 +15,5 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         SendAnon,
         #pragma warning restore CS1591
-        [EnumMember(Value = "none")]
-        #pragma warning disable CS1591
-        None,
-        #pragma warning restore CS1591
     }
 }

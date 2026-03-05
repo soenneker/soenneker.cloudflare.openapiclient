@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tiiuae.Falc
         {
         }
         /// <summary>
-        /// Execute @cf/tiiuae/falcon-7b-instruct model.
+        /// Runs inference on the @cf/tiiuae/falcon-7b-instruct model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_tiiuae_falcon_7b_instruct_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tiiuae.Falc
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_tiiuae_falcon_7b_instruct_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_tiiuae_falcon_7b_instruct_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/tiiuae/falcon-7b-instruct model.
+        /// Runs inference on the @cf/tiiuae/falcon-7b-instruct model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tiiuae.Falc
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Tiiuae.Falcon7bInstruct.Falcon7bInstructRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/tiiuae/falcon-7b-instruct model.
+        /// Runs inference on the @cf/tiiuae/falcon-7b-instruct model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Falcon7bInstructRequestBuilderPostQueryParameters 

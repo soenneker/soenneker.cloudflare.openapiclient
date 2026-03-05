@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.ZaiOrg.Glm4
         {
         }
         /// <summary>
-        /// Execute @cf/zai-org/glm-4.7-flash model.
+        /// Runs inference on the @cf/zai-org/glm-4.7-flash model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_zai_org_glm_4_7_flash_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.ZaiOrg.Glm4
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_zai_org_glm_4_7_flash_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_zai_org_glm_4_7_flash_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/zai-org/glm-4.7-flash model.
+        /// Runs inference on the @cf/zai-org/glm-4.7-flash model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.ZaiOrg.Glm4
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.ZaiOrg.Glm47Flash.Glm47FlashRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/zai-org/glm-4.7-flash model.
+        /// Runs inference on the @cf/zai-org/glm-4.7-flash model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Glm47FlashRequestBuilderPostQueryParameters 

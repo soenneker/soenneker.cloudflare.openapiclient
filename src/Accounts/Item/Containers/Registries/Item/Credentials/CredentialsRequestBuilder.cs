@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries
         {
         }
         /// <summary>
-        /// Generate a JWT to interact with the specified image registry.
+        /// Generates temporary credentials for accessing Cloudflare&apos;s container image registry. Used for pulling and pushing container images.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries.Item.Credentials.CredentialsPostResponse"/></returns>
         /// <param name="body">Specifies the configuration for the image registry credential to create.</param>
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries.Item.Credentials.CredentialsPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries.Item.Credentials.CredentialsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Generate a JWT to interact with the specified image registry.
+        /// Generates temporary credentials for accessing Cloudflare&apos;s container image registry. Used for pulling and pushing container images.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Specifies the configuration for the image registry credential to create.</param>

@@ -46,7 +46,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
         {
         }
         /// <summary>
-        /// Get Gateway Log Detail
+        /// Retrieves detailed information for a specific AI Gateway log entry.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_get_gateway_log_detail_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -69,7 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_get_gateway_log_detail_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_get_gateway_log_detail_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Patch Gateway Log
+        /// Updates metadata for an AI Gateway log entry.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_patch_gateway_log_200"/></returns>
         /// <param name="body">The request body</param>
@@ -94,7 +94,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_patch_gateway_log_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_patch_gateway_log_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Gateway Log Detail
+        /// Retrieves detailed information for a specific AI Gateway log entry.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,7 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways.It
             return requestInfo;
         }
         /// <summary>
-        /// Patch Gateway Log
+        /// Updates metadata for an AI Gateway log entry.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

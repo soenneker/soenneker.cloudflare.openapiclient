@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dream
         {
         }
         /// <summary>
-        /// Execute @cf/lykon/dreamshaper-8-lcm model.
+        /// Runs inference on the @cf/lykon/dreamshaper-8-lcm model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dream
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_lykon_dreamshaper_8_lcm_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/lykon/dreamshaper-8-lcm model.
+        /// Runs inference on the @cf/lykon/dreamshaper-8-lcm model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dream
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Lykon.Dreamshaper8Lcm.Dreamshaper8LcmRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/lykon/dreamshaper-8-lcm model.
+        /// Runs inference on the @cf/lykon/dreamshaper-8-lcm model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Dreamshaper8LcmRequestBuilderPostQueryParameters 

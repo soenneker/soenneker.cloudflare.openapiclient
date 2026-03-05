@@ -32,8 +32,24 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Allowed days of the week for upgrades. Default is all days.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week?>? InterruptWindowDaysOfWeek { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week?> InterruptWindowDaysOfWeek { get; set; }
+#endif
         /// <summary>The interrupt_window_duration_hours property</summary>
         public double? InterruptWindowDurationHours { get; set; }
+        /// <summary>List of dates (YYYY-MM-DD) when upgrades are blocked.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? InterruptWindowEmbargoDates { get; set; }
+#nullable restore
+#else
+        public List<string> InterruptWindowEmbargoDates { get; set; }
+#endif
         /// <summary>The interrupt_window_hour_of_day property</summary>
         public double? InterruptWindowHourOfDay { get; set; }
         /// <summary>The last_heartbeat property</summary>
@@ -112,7 +128,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "activated", n => { Activated = n.GetBoolValue(); } },
                 { "device", n => { Device = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "interrupt_window_days_of_week", n => { InterruptWindowDaysOfWeek = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week>()?.AsList(); } },
                 { "interrupt_window_duration_hours", n => { InterruptWindowDurationHours = n.GetDoubleValue(); } },
+                { "interrupt_window_embargo_dates", n => { InterruptWindowEmbargoDates = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interrupt_window_hour_of_day", n => { InterruptWindowHourOfDay = n.GetDoubleValue(); } },
                 { "last_heartbeat", n => { LastHeartbeat = n.GetStringValue(); } },
                 { "last_seen_version", n => { LastSeenVersion = n.GetStringValue(); } },
@@ -132,7 +150,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("activated", Activated);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_customer_device>("device", Device);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_day_of_week>("interrupt_window_days_of_week", InterruptWindowDaysOfWeek);
             writer.WriteDoubleValue("interrupt_window_duration_hours", InterruptWindowDurationHours);
+            writer.WriteCollectionOfPrimitiveValues<string>("interrupt_window_embargo_dates", InterruptWindowEmbargoDates);
             writer.WriteDoubleValue("interrupt_window_hour_of_day", InterruptWindowHourOfDay);
             writer.WriteStringValue("last_heartbeat", LastHeartbeat);
             writer.WriteStringValue("last_seen_version", LastSeenVersion);

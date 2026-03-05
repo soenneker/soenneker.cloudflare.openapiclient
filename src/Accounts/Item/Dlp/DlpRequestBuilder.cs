@@ -10,6 +10,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Patterns;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Settings;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -61,6 +62,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder Profiles
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Profiles.ProfilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The settings property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.DlpRequestBuilder"/> and sets the default values.

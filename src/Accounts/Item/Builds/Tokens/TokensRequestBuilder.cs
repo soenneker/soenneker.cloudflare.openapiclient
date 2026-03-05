@@ -19,9 +19,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Tokens
     public partial class TokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.tokens.item collection</summary>
-        /// <param name="position">Build token UUID</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Tokens.Item.WithBuild_token_uuItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Tokens.Item.WithBuild_token_uuItemRequestBuilder this[Guid position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Tokens.Item.WithBuild_token_uuItemRequestBuilder this[string position]
         {
             get
             {

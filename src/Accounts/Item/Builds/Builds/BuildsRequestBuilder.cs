@@ -25,9 +25,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Latest.LatestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.builds.builds.item collection</summary>
-        /// <param name="position">Build UUID</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Item.WithBuild_uuItemRequestBuilder"/></returns>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Item.WithBuild_uuItemRequestBuilder this[Guid position]
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Item.WithBuild_uuItemRequestBuilder this[string position]
         {
             get
             {
@@ -104,7 +104,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BuildsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Comma-separated list of version UUIDs (max 20)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("version_ids")]

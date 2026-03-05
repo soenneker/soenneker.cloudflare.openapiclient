@@ -26,6 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>mark true to use this LAN for source-based breakout traffic</summary>
+        public bool? IsBreakout { get; set; }
+        /// <summary>mark true to use this LAN for source-based prioritized traffic</summary>
+        public bool? IsPrioritized { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,6 +102,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "bond_id", n => { BondId = n.GetIntValue(); } },
                 { "ha_link", n => { HaLink = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "is_breakout", n => { IsBreakout = n.GetBoolValue(); } },
+                { "is_prioritized", n => { IsPrioritized = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nat", n => { Nat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat.CreateFromDiscriminatorValue); } },
                 { "physport", n => { Physport = n.GetIntValue(); } },
@@ -117,6 +123,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("bond_id", BondId);
             writer.WriteBoolValue("ha_link", HaLink);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_breakout", IsBreakout);
+            writer.WriteBoolValue("is_prioritized", IsPrioritized);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>("nat", Nat);
             writer.WriteIntValue("physport", Physport);

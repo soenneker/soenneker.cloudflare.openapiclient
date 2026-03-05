@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.
         {
         }
         /// <summary>
-        /// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
+        /// Runs inference on the @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_deepseek_ai_deepseek_r1_distill_qwen_32b_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_deepseek_ai_deepseek_r1_distill_qwen_32b_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_deepseek_ai_deepseek_r1_distill_qwen_32b_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
+        /// Runs inference on the @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.DeepseekAi.DeepseekR1DistillQwen32b.DeepseekR1DistillQwen32bRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
+        /// Runs inference on the @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeepseekR1DistillQwen32bRequestBuilderPostQueryParameters 

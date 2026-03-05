@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
         {
         }
         /// <summary>
-        /// Generate fallthrough WAF expression template from a set of API hosts
+        /// Creates an expression template fallthrough rule for API Shield. Used for configuring default behavior when no other expression templates match.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_expression_templates_fallthrough_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTe
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_expression_templates_fallthrough_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_expression_templates_fallthrough_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Generate fallthrough WAF expression template from a set of API hosts
+        /// Creates an expression template fallthrough rule for API Shield. Used for configuring default behavior when no other expression templates match.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

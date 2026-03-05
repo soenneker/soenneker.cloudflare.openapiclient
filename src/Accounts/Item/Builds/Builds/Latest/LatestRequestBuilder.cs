@@ -85,7 +85,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Builds.Builds.Latest
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LatestRequestBuilderGetQueryParameters 
         {
-            /// <summary>Comma-separated list of external script IDs (max 20)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("external_script_ids")]

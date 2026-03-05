@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Op
         {
         }
         /// <summary>
-        /// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
+        /// Runs inference on the @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_openhermes_2_5_mistral_7b_awq_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Op
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_openhermes_2_5_mistral_7b_awq_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_openhermes_2_5_mistral_7b_awq_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
+        /// Runs inference on the @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Op
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Openhermes25Mistral7bAwq.Openhermes25Mistral7bAwqRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
+        /// Runs inference on the @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Openhermes25Mistral7bAwqRequestBuilderPostQueryParameters 

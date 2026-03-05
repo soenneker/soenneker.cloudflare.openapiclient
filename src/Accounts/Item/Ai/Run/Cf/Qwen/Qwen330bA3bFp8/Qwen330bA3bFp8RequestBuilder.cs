@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen33
         {
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen3-30b-a3b-fp8 model.
+        /// Runs inference on the @cf/qwen/qwen3-30b-a3b-fp8 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen3_30b_a3b_fp8_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen33
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen3_30b_a3b_fp8_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_qwen_qwen3_30b_a3b_fp8_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen3-30b-a3b-fp8 model.
+        /// Runs inference on the @cf/qwen/qwen3-30b-a3b-fp8 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen33
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Qwen.Qwen330bA3bFp8.Qwen330bA3bFp8RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/qwen/qwen3-30b-a3b-fp8 model.
+        /// Runs inference on the @cf/qwen/qwen3-30b-a3b-fp8 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Qwen330bA3bFp8RequestBuilderPostQueryParameters 

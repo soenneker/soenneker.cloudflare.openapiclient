@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.S
         {
         }
         /// <summary>
-        /// Execute @hf/nexusflow/starling-lm-7b-beta model.
+        /// Runs inference on the @hf/nexusflow/starling-lm-7b-beta model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.S
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nexusflow_starling_lm_7b_beta_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/nexusflow/starling-lm-7b-beta model.
+        /// Runs inference on the @hf/nexusflow/starling-lm-7b-beta model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.S
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nexusflow.StarlingLm7bBeta.StarlingLm7bBetaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/nexusflow/starling-lm-7b-beta model.
+        /// Runs inference on the @hf/nexusflow/starling-lm-7b-beta model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StarlingLm7bBetaRequestBuilderPostQueryParameters 

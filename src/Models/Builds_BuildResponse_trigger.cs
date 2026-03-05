@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string DeployCommand { get; set; }
 #endif
-        /// <summary>The external_script_id property</summary>
+        /// <summary>External script identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalScriptId { get; set; }
@@ -87,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Builds_UpsertRepoConnectionResponse RepoConnection { get; set; }
 #endif
-        /// <summary>The root_directory property</summary>
+        /// <summary>Root directory path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RootDirectory { get; set; }
@@ -103,7 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string TriggerName { get; set; }
 #endif
-        /// <summary>The trigger_uuid property</summary>
+        /// <summary>Trigger UUID.</summary>
         public Guid? TriggerUuid { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Builds_BuildResponse_trigger"/> and sets the default values.

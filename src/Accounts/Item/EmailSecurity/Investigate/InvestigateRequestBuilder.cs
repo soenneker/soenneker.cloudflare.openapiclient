@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvestigateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", pathParameters)
+        public InvestigateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,exact_subject*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvestigateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", rawUrl)
+        public InvestigateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,exact_subject*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", rawUrl)
         {
         }
         /// <summary>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             /// <summary>Determines if the search results will include detections or not.</summary>
             [QueryParameter("detections_only")]
             public bool? DetectionsOnly { get; set; }
-            /// <summary>The sender domains the search filters by.</summary>
+            /// <summary>&quot;Filter by a domain found in the email: sender domain, recipient domain, or a domain in a link.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("domain")]
@@ -158,6 +158,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             /// <summary>The end of the search date range.Defaults to `now` if not provided.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
+            /// <summary>Search for messages with an exact subject match.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("exact_subject")]
+            public string? ExactSubject { get; set; }
+#nullable restore
+#else
+            [QueryParameter("exact_subject")]
+            public string ExactSubject { get; set; }
+#endif
             /// <summary>The dispositions the search filters by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,6 +223,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
+            /// <summary>Filter by recipient. Matches either an email address or a domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("recipient")]
@@ -222,6 +233,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("recipient")]
             public string Recipient { get; set; }
 #endif
+            /// <summary>Filter by sender. Matches either an email address or a domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sender")]
@@ -234,6 +246,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             /// <summary>The beginning of the search date range.Defaults to `now - 30 days` if not provided.</summary>
             [QueryParameter("start")]
             public DateTimeOffset? Start { get; set; }
+            /// <summary>Search for messages containing individual keywords in any order within the subject.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("subject")]

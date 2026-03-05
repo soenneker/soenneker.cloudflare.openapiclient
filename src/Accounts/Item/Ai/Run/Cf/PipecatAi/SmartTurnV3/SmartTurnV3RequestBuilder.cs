@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.S
         {
         }
         /// <summary>
-        /// Open Websocket connection with @cf/pipecat-ai/smart-turn-v3 model.
+        /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v3 model.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.PipecatAi.S
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Open Websocket connection with @cf/pipecat-ai/smart-turn-v3 model.
+        /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v3 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ze
         {
         }
         /// <summary>
-        /// Execute @hf/thebloke/zephyr-7b-beta-awq model.
+        /// Runs inference on the @hf/thebloke/zephyr-7b-beta-awq model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_zephyr_7b_beta_awq_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ze
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_zephyr_7b_beta_awq_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_zephyr_7b_beta_awq_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/thebloke/zephyr-7b-beta-awq model.
+        /// Runs inference on the @hf/thebloke/zephyr-7b-beta-awq model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ze
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Zephyr7bBetaAwq.Zephyr7bBetaAwqRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/thebloke/zephyr-7b-beta-awq model.
+        /// Runs inference on the @hf/thebloke/zephyr-7b-beta-awq model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Zephyr7bBetaAwqRequestBuilderPostQueryParameters 

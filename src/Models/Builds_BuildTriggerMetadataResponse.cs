@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Author { get; set; }
 #endif
-        /// <summary>The branch property</summary>
+        /// <summary>Git branch name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Branch { get; set; }
@@ -46,11 +46,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string BuildTokenName { get; set; }
 #endif
-        /// <summary>The build_token_uuid property</summary>
+        /// <summary>Build token UUID.</summary>
         public Guid? BuildTokenUuid { get; set; }
         /// <summary>The build_trigger_source property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Builds_BuildTriggerSource? BuildTriggerSource { get; set; }
-        /// <summary>The commit_hash property</summary>
+        /// <summary>Git commit hash</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CommitHash { get; set; }
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RepoName { get; set; }
 #endif
-        /// <summary>The root_directory property</summary>
+        /// <summary>Root directory path.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RootDirectory { get; set; }

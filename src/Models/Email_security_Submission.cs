@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The customer_status property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Submission_customer_status? CustomerStatus { get; set; }
         /// <summary>The original_disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel? OriginalDisposition { get; set; }
         /// <summary>The original_edf_hash property</summary>
@@ -103,6 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customer_status", n => { CustomerStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Submission_customer_status>(); } },
                 { "original_disposition", n => { OriginalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
                 { "original_edf_hash", n => { OriginalEdfHash = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
@@ -123,6 +126,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Submission_customer_status>("customer_status", CustomerStatus);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("original_disposition", OriginalDisposition);
             writer.WriteStringValue("original_edf_hash", OriginalEdfHash);
             writer.WriteStringValue("outcome", Outcome);

@@ -18,6 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? BondId { get; set; }
         /// <summary>mark true to use this LAN for HA probing. only works for site with HA turned on. only one LAN can be set as the ha_link.</summary>
         public bool? HaLink { get; set; }
+        /// <summary>mark true to use this LAN for source-based breakout traffic</summary>
+        public bool? IsBreakout { get; set; }
+        /// <summary>mark true to use this LAN for source-based prioritized traffic</summary>
+        public bool? IsPrioritized { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +85,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bond_id", n => { BondId = n.GetIntValue(); } },
                 { "ha_link", n => { HaLink = n.GetBoolValue(); } },
+                { "is_breakout", n => { IsBreakout = n.GetBoolValue(); } },
+                { "is_prioritized", n => { IsPrioritized = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nat", n => { Nat = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat.CreateFromDiscriminatorValue); } },
                 { "physport", n => { Physport = n.GetIntValue(); } },
@@ -98,6 +104,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("bond_id", BondId);
             writer.WriteBoolValue("ha_link", HaLink);
+            writer.WriteBoolValue("is_breakout", IsBreakout);
+            writer.WriteBoolValue("is_prioritized", IsPrioritized);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_nat>("nat", Nat);
             writer.WriteIntValue("physport", Physport);

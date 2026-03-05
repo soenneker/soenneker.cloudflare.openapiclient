@@ -12,6 +12,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Alerting;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Audit_logs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrandProtection;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering;
@@ -78,6 +79,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Sso_connectors;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Storage;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.StreamNamespace;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Subscriptions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tokens;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels;
@@ -147,6 +149,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.AutoragRequestBuilder Autorag
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Autorag.AutoragRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The billing property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BillingRequestBuilder Billing
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The botnet_feed property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Botnet_feed.Botnet_feedRequestBuilder Botnet_feed
@@ -477,6 +484,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Subscriptions.SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tags property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.TagsRequestBuilder Tags
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teamnet property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Teamnet.TeamnetRequestBuilder Teamnet

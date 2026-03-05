@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The build_outcome property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Builds_BuildOutcome? BuildOutcome { get; set; }
-        /// <summary>The build_uuid property</summary>
+        /// <summary>Build UUID.</summary>
         public Guid? BuildUuid { get; set; }
         /// <summary>The stopped_on property</summary>
         public DateTimeOffset? StoppedOn { get; set; }

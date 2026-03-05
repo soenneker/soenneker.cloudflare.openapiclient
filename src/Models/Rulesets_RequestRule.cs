@@ -142,6 +142,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ServeErrorRule RulesetsServeErrorRule { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheControlRule"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheControlRule? RulesetsSetCacheControlRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheControlRule RulesetsSetCacheControlRule { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,6 +157,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule RulesetsSetCacheSettingsRule { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheTagsRule"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheTagsRule? RulesetsSetCacheTagsRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheTagsRule RulesetsSetCacheTagsRule { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -243,9 +259,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 result.RulesetsServeErrorRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ServeErrorRule();
             }
+            else if("rulesets_SetCacheControlRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RulesetsSetCacheControlRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheControlRule();
+            }
             else if("rulesets_SetCacheSettingsRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.RulesetsSetCacheSettingsRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule();
+            }
+            else if("rulesets_SetCacheTagsRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RulesetsSetCacheTagsRule = new global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheTagsRule();
             }
             else if("rulesets_SetConfigRule".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -327,9 +351,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 return RulesetsServeErrorRule.GetFieldDeserializers();
             }
+            else if(RulesetsSetCacheControlRule != null)
+            {
+                return RulesetsSetCacheControlRule.GetFieldDeserializers();
+            }
             else if(RulesetsSetCacheSettingsRule != null)
             {
                 return RulesetsSetCacheSettingsRule.GetFieldDeserializers();
+            }
+            else if(RulesetsSetCacheTagsRule != null)
+            {
+                return RulesetsSetCacheTagsRule.GetFieldDeserializers();
             }
             else if(RulesetsSetConfigRule != null)
             {
@@ -408,9 +440,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_ServeErrorRule>(null, RulesetsServeErrorRule);
             }
+            else if(RulesetsSetCacheControlRule != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheControlRule>(null, RulesetsSetCacheControlRule);
+            }
             else if(RulesetsSetCacheSettingsRule != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule>(null, RulesetsSetCacheSettingsRule);
+            }
+            else if(RulesetsSetCacheTagsRule != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheTagsRule>(null, RulesetsSetCacheTagsRule);
             }
             else if(RulesetsSetConfigRule != null)
             {

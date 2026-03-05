@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
         {
         }
         /// <summary>
-        /// Retrieve information about specific configuration properties
+        /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_configuration_single_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_configuration_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_configuration_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update configuration properties
+        /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_configuration_single_response"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_configuration_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_configuration_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve information about specific configuration properties
+        /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return requestInfo;
         }
         /// <summary>
-        /// Update configuration properties
+        /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +132,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             return new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuration.ConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve information about specific configuration properties
+        /// Gets the current API Shield configuration settings for a zone, including validation behavior and enforcement mode.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationRequestBuilderGetQueryParameters 
@@ -142,7 +142,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuratio
             public bool? Normalize { get; set; }
         }
         /// <summary>
-        /// Update configuration properties
+        /// Updates API Shield configuration settings for a zone. Can modify validation strictness, enforcement mode, and other global settings.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigurationRequestBuilderPutQueryParameters 

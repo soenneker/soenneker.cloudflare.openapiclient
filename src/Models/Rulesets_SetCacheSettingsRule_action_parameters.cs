@@ -72,6 +72,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale ServeStale { get; set; }
 #endif
+        /// <summary>Whether to strip ETag headers from the origin response before caching.</summary>
+        public bool? StripEtags { get; set; }
+        /// <summary>Whether to strip Last-Modified headers from the origin response before caching.</summary>
+        public bool? StripLastModified { get; set; }
+        /// <summary>Whether to strip Set-Cookie headers from the origin response before caching.</summary>
+        public bool? StripSetCookie { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsRule_action_parameters"/> and sets the default values.
         /// </summary>
@@ -108,6 +114,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "read_timeout", n => { ReadTimeout = n.GetIntValue(); } },
                 { "respect_strong_etags", n => { RespectStrongEtags = n.GetBoolValue(); } },
                 { "serve_stale", n => { ServeStale = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale.CreateFromDiscriminatorValue); } },
+                { "strip_etags", n => { StripEtags = n.GetBoolValue(); } },
+                { "strip_last_modified", n => { StripLastModified = n.GetBoolValue(); } },
+                { "strip_set_cookie", n => { StripSetCookie = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -128,6 +137,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("read_timeout", ReadTimeout);
             writer.WriteBoolValue("respect_strong_etags", RespectStrongEtags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>("serve_stale", ServeStale);
+            writer.WriteBoolValue("strip_etags", StripEtags);
+            writer.WriteBoolValue("strip_last_modified", StripLastModified);
+            writer.WriteBoolValue("strip_set_cookie", StripSetCookie);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

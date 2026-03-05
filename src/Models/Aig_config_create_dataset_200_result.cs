@@ -12,22 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Aig_config_create_dataset_200_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountId { get; set; }
-#nullable restore
-#else
-        public string AccountId { get; set; }
-#endif
-        /// <summary>The account_tag property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountTag { get; set; }
-#nullable restore
-#else
-        public string AccountTag { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
@@ -93,8 +77,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "enable", n => { Enable = n.GetBoolValue(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_200_result_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_200_result_filters.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -111,8 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("account_tag", AccountTag);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("enable", Enable);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_dataset_200_result_filters>("filters", Filters);

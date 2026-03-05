@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mis
         {
         }
         /// <summary>
-        /// Execute @hf/mistral/mistral-7b-instruct-v0.2 model.
+        /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mis
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/mistral/mistral-7b-instruct-v0.2 model.
+        /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mis
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/mistral/mistral-7b-instruct-v0.2 model.
+        /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Mistral7bInstructV02RequestBuilderPostQueryParameters 

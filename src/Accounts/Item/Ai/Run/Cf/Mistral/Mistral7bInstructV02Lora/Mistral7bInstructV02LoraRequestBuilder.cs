@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mis
         {
         }
         /// <summary>
-        /// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model.
+        /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.2-lora model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistral_mistral_7b_instruct_v0_2_lora_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mis
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistral_mistral_7b_instruct_v0_2_lora_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_mistral_mistral_7b_instruct_v0_2_lora_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model.
+        /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.2-lora model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mis
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Mistral.Mistral7bInstructV02Lora.Mistral7bInstructV02LoraRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model.
+        /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.2-lora model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Mistral7bInstructV02LoraRequestBuilderPostQueryParameters 

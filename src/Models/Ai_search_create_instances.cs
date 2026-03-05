@@ -30,6 +30,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model AiSearchModel { get; set; }
 #endif
+        /// <summary>The cache property</summary>
+        public bool? Cache { get; set; }
+        /// <summary>The cache_threshold property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_cache_threshold? CacheThreshold { get; set; }
         /// <summary>The chunk property</summary>
         public bool? Chunk { get; set; }
         /// <summary>The chunk_overlap property</summary>
@@ -138,7 +142,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Ai_search_create_instances()
         {
             AdditionalData = new Dictionary<string, object>();
-            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_fusion_method.Max;
+            CacheThreshold = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_cache_threshold.Close_enough;
+            FusionMethod = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_fusion_method.Rrf;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -160,6 +165,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "ai_gateway_id", n => { AiGatewayId = n.GetStringValue(); } },
                 { "ai_search_model", n => { AiSearchModel = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model.CreateFromDiscriminatorValue); } },
+                { "cache", n => { Cache = n.GetBoolValue(); } },
+                { "cache_threshold", n => { CacheThreshold = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_cache_threshold>(); } },
                 { "chunk", n => { Chunk = n.GetBoolValue(); } },
                 { "chunk_overlap", n => { ChunkOverlap = n.GetIntValue(); } },
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
@@ -192,6 +199,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("ai_gateway_id", AiGatewayId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_ai_search_model>("ai_search_model", AiSearchModel);
+            writer.WriteBoolValue("cache", Cache);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_create_instances_cache_threshold>("cache_threshold", CacheThreshold);
             writer.WriteBoolValue("chunk", Chunk);
             writer.WriteIntValue("chunk_overlap", ChunkOverlap);
             writer.WriteIntValue("chunk_size", ChunkSize);

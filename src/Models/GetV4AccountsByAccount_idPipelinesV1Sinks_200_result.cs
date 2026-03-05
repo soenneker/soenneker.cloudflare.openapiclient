@@ -113,26 +113,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2Table"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTable"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2TablePublic"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTablePublic"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class GetV4AccountsByAccount_idPipelinesV1Sinks_200_result_config : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTable"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTablePublic"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTable? CloudflarePipelinesR2DataCatalogTable { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTablePublic? CloudflarePipelinesR2DataCatalogTablePublic { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTable CloudflarePipelinesR2DataCatalogTable { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTablePublic CloudflarePipelinesR2DataCatalogTablePublic { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2Table"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2TablePublic"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2Table? CloudflarePipelinesR2Table { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2TablePublic? CloudflarePipelinesR2TablePublic { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2Table CloudflarePipelinesR2Table { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2TablePublic CloudflarePipelinesR2TablePublic { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
@@ -144,13 +144,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.GetV4AccountsByAccount_idPipelinesV1Sinks_200_result.GetV4AccountsByAccount_idPipelinesV1Sinks_200_result_config();
-                if("cloudflare_pipelines_r2_data_catalogTable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                if("cloudflare_pipelines_r2_data_catalogTablePublic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CloudflarePipelinesR2DataCatalogTable = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTable();
+                    result.CloudflarePipelinesR2DataCatalogTablePublic = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTablePublic();
                 }
-                else if("cloudflare_pipelines_r2Table".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+                else if("cloudflare_pipelines_r2TablePublic".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.CloudflarePipelinesR2Table = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2Table();
+                    result.CloudflarePipelinesR2TablePublic = new global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2TablePublic();
                 }
                 return result;
             }
@@ -160,13 +160,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
             public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
             {
-                if(CloudflarePipelinesR2DataCatalogTable != null)
+                if(CloudflarePipelinesR2DataCatalogTablePublic != null)
                 {
-                    return CloudflarePipelinesR2DataCatalogTable.GetFieldDeserializers();
+                    return CloudflarePipelinesR2DataCatalogTablePublic.GetFieldDeserializers();
                 }
-                else if(CloudflarePipelinesR2Table != null)
+                else if(CloudflarePipelinesR2TablePublic != null)
                 {
-                    return CloudflarePipelinesR2Table.GetFieldDeserializers();
+                    return CloudflarePipelinesR2TablePublic.GetFieldDeserializers();
                 }
                 return new Dictionary<string, Action<IParseNode>>();
             }
@@ -177,13 +177,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             public virtual void Serialize(ISerializationWriter writer)
             {
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(CloudflarePipelinesR2DataCatalogTable != null)
+                if(CloudflarePipelinesR2DataCatalogTablePublic != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTable>(null, CloudflarePipelinesR2DataCatalogTable);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2_data_catalogTablePublic>(null, CloudflarePipelinesR2DataCatalogTablePublic);
                 }
-                else if(CloudflarePipelinesR2Table != null)
+                else if(CloudflarePipelinesR2TablePublic != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2Table>(null, CloudflarePipelinesR2Table);
+                    writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_pipelines_r2TablePublic>(null, CloudflarePipelinesR2TablePublic);
                 }
             }
         }

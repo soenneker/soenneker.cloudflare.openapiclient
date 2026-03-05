@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.UnaC
         {
         }
         /// <summary>
-        /// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model.
+        /// Runs inference on the @cf/fblgit/una-cybertron-7b-v2-bf16 model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_fblgit_una_cybertron_7b_v2_bf16_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.UnaC
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_fblgit_una_cybertron_7b_v2_bf16_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_fblgit_una_cybertron_7b_v2_bf16_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model.
+        /// Runs inference on the @cf/fblgit/una-cybertron-7b-v2-bf16 model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.UnaC
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Fblgit.UnaCybertron7bV2Bf16.UnaCybertron7bV2Bf16RequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model.
+        /// Runs inference on the @cf/fblgit/una-cybertron-7b-v2-bf16 model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UnaCybertron7bV2Bf16RequestBuilderPostQueryParameters 

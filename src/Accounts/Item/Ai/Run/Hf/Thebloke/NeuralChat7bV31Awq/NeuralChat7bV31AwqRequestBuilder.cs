@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ne
         {
         }
         /// <summary>
-        /// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model.
+        /// Runs inference on the @hf/thebloke/neural-chat-7b-v3-1-awq model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_neural_chat_7b_v3_1_awq_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ne
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_neural_chat_7b_v3_1_awq_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_neural_chat_7b_v3_1_awq_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model.
+        /// Runs inference on the @hf/thebloke/neural-chat-7b-v3-1-awq model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Ne
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.NeuralChat7bV31Awq.NeuralChat7bV31AwqRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model.
+        /// Runs inference on the @hf/thebloke/neural-chat-7b-v3-1-awq model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class NeuralChat7bV31AwqRequestBuilderPostQueryParameters 

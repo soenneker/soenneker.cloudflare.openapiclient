@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishgu
         {
         }
         /// <summary>
-        /// Get `PhishGuard` reports
+        /// Retrieves `PhishGuard` reports showing phishing attempts and suspicious email patternsdetected.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_phishguard_reports_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishgu
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_phishguard_reports_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_phishguard_reports_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get `PhishGuard` reports
+        /// Retrieves `PhishGuard` reports showing phishing attempts and suspicious email patternsdetected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishgu
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Phishguard.Reports.ReportsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get `PhishGuard` reports
+        /// Retrieves `PhishGuard` reports showing phishing attempts and suspicious email patternsdetected.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReportsRequestBuilderGetQueryParameters 

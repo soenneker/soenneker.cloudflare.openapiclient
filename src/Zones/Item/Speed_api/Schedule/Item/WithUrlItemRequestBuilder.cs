@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Schedule.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUrlItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/speed_api/schedule/{url}{?region*}", pathParameters)
+        public WithUrlItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/speed_api/schedule/{url}{?frequency*,region*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Schedule.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUrlItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/speed_api/schedule/{url}{?region*}", rawUrl)
+        public WithUrlItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/speed_api/schedule/{url}{?frequency*,region*}", rawUrl)
         {
         }
         /// <summary>
@@ -206,6 +206,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Speed_api.Schedule.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUrlItemRequestBuilderPostQueryParameters 
         {
+            /// <summary>The frequency of the scheduled test. Defaults to WEEKLY for free plans, DAILY for paid plans.</summary>
+            [QueryParameter("frequency")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.Observatory_schedule_frequency? Frequency { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("region")]

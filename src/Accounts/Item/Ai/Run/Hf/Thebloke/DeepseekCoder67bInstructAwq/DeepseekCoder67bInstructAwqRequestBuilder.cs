@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.De
         {
         }
         /// <summary>
-        /// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
+        /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_instruct_awq_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.De
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_instruct_awq_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_deepseek_coder_6_7b_instruct_awq_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
+        /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.De
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.DeepseekCoder67bInstructAwq.DeepseekCoder67bInstructAwqRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
+        /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DeepseekCoder67bInstructAwqRequestBuilderPostQueryParameters 

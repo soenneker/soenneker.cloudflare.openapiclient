@@ -110,6 +110,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Time in milliseconds spent on [Worker startup](https://developers.cloudflare.com/workers/platform/limits/#worker-startup-time).</summary>
         public int? StartupTimeMs { get; private set; }
+        /// <summary>All routable URLs that always point to this version. Does not include alias URLs, since aliases can be updated to point to a different version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Urls { get; private set; }
+#nullable restore
+#else
+        public List<string> Urls { get; private set; }
+#endif
         /// <summary>Usage model for the version.</summary>
         [Obsolete("")]
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_usage_model? UsageModel { get; set; }
@@ -154,6 +162,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "placement", n => { Placement = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_placement_info_no_status.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "startup_time_ms", n => { StartupTimeMs = n.GetIntValue(); } },
+                { "urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "usage_model", n => { UsageModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_usage_model>(); } },
             };
         }

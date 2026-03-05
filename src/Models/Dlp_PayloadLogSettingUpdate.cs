@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Request model for updating payload log settings - supports partial updates.
+    /// Request model for payload log settings within the DLP settings endpoint.Unlike the legacy endpoint, null and missing are treated identically here(both mean &quot;not provided&quot; for PATCH, &quot;reset to default&quot; for PUT).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dlp_PayloadLogSettingUpdate : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>&quot;Masking level for payload logs.- `full`: The entire payload is masked.- `partial`: Only partial payload content is masked.- `clear`: No masking is applied to the payload content.- `default`: DLP uses its default masking behavior.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogMaskingLevel? MaskingLevel { get; set; }
-        /// <summary>Base64-encoded public key for encrypting payload logs.- Set to null or empty string to disable payload logging.- Set to a non-empty base64 string to enable payload logging with the given key.For customers with configurable payload masking feature rolled out:- If the field is missing, the existing setting will be kept. Note that this is different from setting to null or empty string.For all other customers:- If the field is missing, the existing setting will be cleared.</summary>
+        /// <summary>Base64-encoded public key for encrypting payload logs.- Set to a non-empty base64 string to enable payload logging with the given key.- Set to an empty string to disable payload logging.- Omit or set to null to leave unchanged (PATCH) or reset to disabled (PUT).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicKey { get; set; }

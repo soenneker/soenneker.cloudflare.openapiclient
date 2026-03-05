@@ -60,17 +60,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
         /// Set payload log settings
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200"/></returns>
-        /// <param name="body">Request model for updating payload log settings - supports partial updates.</param>
+        /// <param name="body">Request model for the legacy payload log settings endpoint.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_api_response_common_failure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdateLegacy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdateLegacy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,15 +104,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
         /// Set payload log settings
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request model for updating payload log settings - supports partial updates.</param>
+        /// <param name="body">Request model for the legacy payload log settings endpoint.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdateLegacy body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_PayloadLogSettingUpdateLegacy body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

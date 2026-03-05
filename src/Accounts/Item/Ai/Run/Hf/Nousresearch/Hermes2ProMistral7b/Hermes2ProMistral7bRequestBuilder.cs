@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearc
         {
         }
         /// <summary>
-        /// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model.
+        /// Runs inference on the @hf/nousresearch/hermes-2-pro-mistral-7b model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearc
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model.
+        /// Runs inference on the @hf/nousresearch/hermes-2-pro-mistral-7b model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearc
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model.
+        /// Runs inference on the @hf/nousresearch/hermes-2-pro-mistral-7b model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Hermes2ProMistral7bRequestBuilderPostQueryParameters 

@@ -28,6 +28,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? HasDag { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
+        /// <summary>The limits property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_list_workflow_versions_200_result_limits? Limits { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_list_workflow_versions_200_result_limits Limits { get; set; }
+#endif
         /// <summary>The modified_on property</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
         /// <summary>The workflow_id property</summary>
@@ -61,6 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
                 { "has_dag", n => { HasDag = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
+                { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_list_workflow_versions_200_result_limits>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_list_workflow_versions_200_result_limits.CreateFromDiscriminatorValue); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "workflow_id", n => { WorkflowId = n.GetGuidValue(); } },
             };
@@ -76,6 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
             writer.WriteBoolValue("has_dag", HasDag);
             writer.WriteGuidValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_list_workflow_versions_200_result_limits>("limits", Limits);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteGuidValue("workflow_id", WorkflowId);
             writer.WriteAdditionalData(AdditionalData);

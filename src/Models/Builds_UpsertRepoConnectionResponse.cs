@@ -20,7 +20,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? DeletedOn { get; set; }
         /// <summary>The modified_on property</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>The provider_account_id property</summary>
+        /// <summary>Provider account identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProviderAccountId { get; set; }
@@ -38,9 +38,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The provider_type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Builds_SCMProviderType? ProviderType { get; set; }
-        /// <summary>The repo_connection_uuid property</summary>
+        /// <summary>Repository connection UUID.</summary>
         public Guid? RepoConnectionUuid { get; set; }
-        /// <summary>The repo_id property</summary>
+        /// <summary>Repository identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RepoId { get; set; }

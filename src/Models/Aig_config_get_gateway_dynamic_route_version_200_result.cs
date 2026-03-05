@@ -12,14 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Aig_config_get_gateway_dynamic_route_version_200_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_tag property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountTag { get; set; }
-#nullable restore
-#else
-        public string AccountTag { get; set; }
-#endif
         /// <summary>The active property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_get_gateway_dynamic_route_version_200_result_active? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -115,7 +107,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "active", n => { Active = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_get_gateway_dynamic_route_version_200_result_active>(); } },
                 { "comment", n => { Comment = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetStringValue(); } },
@@ -135,7 +126,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("account_tag", AccountTag);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_get_gateway_dynamic_route_version_200_result_active>("active", Active);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("created_at", CreatedAt);

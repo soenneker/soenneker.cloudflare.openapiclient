@@ -19,6 +19,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The D1 database&apos;s size, in bytes.</summary>
         public double? FileSize { get; set; }
+        /// <summary>Specify the location to restrict the D1 database to run and store data. If this option is present, the location hint is ignored.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction_nullable? Jurisdiction { get; set; }
         /// <summary>D1 database name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "file_size", n => { FileSize = n.GetDoubleValue(); } },
+                { "jurisdiction", n => { Jurisdiction = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction_nullable>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "num_tables", n => { NumTables = n.GetDoubleValue(); } },
                 { "read_replication", n => { ReadReplication = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_read_replication_details>(global::Soenneker.Cloudflare.OpenApiClient.Models.D1_read_replication_details.CreateFromDiscriminatorValue); } },
@@ -96,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDoubleValue("file_size", FileSize);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_jurisdiction_nullable>("jurisdiction", Jurisdiction);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("num_tables", NumTables);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.D1_read_replication_details>("read_replication", ReadReplication);

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.S
         {
         }
         /// <summary>
-        /// Execute @cf/bytedance/stable-diffusion-xl-lightning model.
+        /// Runs inference on the @cf/bytedance/stable-diffusion-xl-lightning model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.S
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/bytedance/stable-diffusion-xl-lightning model.
+        /// Runs inference on the @cf/bytedance/stable-diffusion-xl-lightning model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.S
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/bytedance/stable-diffusion-xl-lightning model.
+        /// Runs inference on the @cf/bytedance/stable-diffusion-xl-lightning model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StableDiffusionXlLightningRequestBuilderPostQueryParameters 

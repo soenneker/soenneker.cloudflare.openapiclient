@@ -34,6 +34,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ContextAwareness { get; set; }
 #endif
+        /// <summary>Data class IDs to associate with the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? DataClasses { get; set; }
+#nullable restore
+#else
+        public List<Guid?> DataClasses { get; set; }
+#endif
+        /// <summary>Data tag IDs to associate with the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Guid?>? DataTags { get; set; }
+#nullable restore
+#else
+        public List<Guid?> DataTags { get; set; }
+#endif
         /// <summary>The description of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +76,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The ocr_enabled property</summary>
         public bool? OcrEnabled { get; set; }
+        /// <summary>Sensitivity levels to associate with the profile as (group_id, level_id) tuples.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? SensitivityLevels { get; set; }
+#nullable restore
+#else
+        public UntypedNode SensitivityLevels { get; set; }
+#endif
         /// <summary>Entries from other profiles (e.g. pre-defined Cloudflare profiles, or your Microsoft Information Protection profiles).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,10 +122,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "allowed_match_count", n => { AllowedMatchCount = n.GetIntValue(); } },
                 { "confidence_threshold", n => { ConfidenceThreshold = n.GetStringValue(); } },
                 { "context_awareness", n => { ContextAwareness = n.GetStringValue(); } },
+                { "data_classes", n => { DataClasses = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "data_tags", n => { DataTags = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryOfNewProfile>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryOfNewProfile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ocr_enabled", n => { OcrEnabled = n.GetBoolValue(); } },
+                { "sensitivity_levels", n => { SensitivityLevels = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "shared_entries", n => { SharedEntries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntry>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntry.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -116,10 +143,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("allowed_match_count", AllowedMatchCount);
             writer.WriteStringValue("confidence_threshold", ConfidenceThreshold);
             writer.WriteStringValue("context_awareness", ContextAwareness);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("data_classes", DataClasses);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("data_tags", DataTags);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_EntryOfNewProfile>("entries", Entries);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("ocr_enabled", OcrEnabled);
+            writer.WriteObjectValue<UntypedNode>("sensitivity_levels", SensitivityLevels);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_NewSharedEntry>("shared_entries", SharedEntries);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -12,22 +12,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Aig_config_list_gateway_200_result : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountId { get; set; }
-#nullable restore
-#else
-        public string AccountId { get; set; }
-#endif
-        /// <summary>The account_tag property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AccountTag { get; set; }
-#nullable restore
-#else
-        public string AccountTag { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authentication property</summary>
@@ -56,8 +40,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The internal_id property</summary>
-        public Guid? InternalId { get; set; }
         /// <summary>The is_default property</summary>
         public bool? IsDefault { get; set; }
         /// <summary>The log_management property</summary>
@@ -106,6 +88,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe Stripe { get; set; }
 #endif
+        /// <summary>Controls how Workers AI inference calls routed through this gateway are billed</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_workers_ai_billing_mode? WorkersAiBillingMode { get; set; }
         /// <summary>The zdr property</summary>
         public bool? Zdr { get; set; }
         /// <summary>
@@ -114,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Aig_config_list_gateway_200_result()
         {
             AdditionalData = new Dictionary<string, object>();
+            WorkersAiBillingMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_workers_ai_billing_mode.Postpaid;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -133,8 +118,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account_id", n => { AccountId = n.GetStringValue(); } },
-                { "account_tag", n => { AccountTag = n.GetStringValue(); } },
                 { "authentication", n => { Authentication = n.GetBoolValue(); } },
                 { "cache_invalidate_on_update", n => { CacheInvalidateOnUpdate = n.GetBoolValue(); } },
                 { "cache_ttl", n => { CacheTtl = n.GetIntValue(); } },
@@ -142,7 +125,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dlp", n => { Dlp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result.Aig_config_list_gateway_200_result_dlp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result.Aig_config_list_gateway_200_result_dlp.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "internal_id", n => { InternalId = n.GetGuidValue(); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "log_management", n => { LogManagement = n.GetIntValue(); } },
                 { "log_management_strategy", n => { LogManagementStrategy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_log_management_strategy>(); } },
@@ -155,6 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_rate_limiting_technique>(); } },
                 { "store_id", n => { StoreId = n.GetStringValue(); } },
                 { "stripe", n => { Stripe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe.CreateFromDiscriminatorValue); } },
+                { "workers_ai_billing_mode", n => { WorkersAiBillingMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_workers_ai_billing_mode>(); } },
                 { "zdr", n => { Zdr = n.GetBoolValue(); } },
             };
         }
@@ -165,8 +148,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("account_id", AccountId);
-            writer.WriteStringValue("account_tag", AccountTag);
             writer.WriteBoolValue("authentication", Authentication);
             writer.WriteBoolValue("cache_invalidate_on_update", CacheInvalidateOnUpdate);
             writer.WriteIntValue("cache_ttl", CacheTtl);
@@ -174,7 +155,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result.Aig_config_list_gateway_200_result_dlp>("dlp", Dlp);
             writer.WriteStringValue("id", Id);
-            writer.WriteGuidValue("internal_id", InternalId);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteIntValue("log_management", LogManagement);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_log_management_strategy>("log_management_strategy", LogManagementStrategy);
@@ -187,6 +167,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
             writer.WriteStringValue("store_id", StoreId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_stripe>("stripe", Stripe);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_list_gateway_200_result_workers_ai_billing_mode>("workers_ai_billing_mode", WorkersAiBillingMode);
             writer.WriteBoolValue("zdr", Zdr);
             writer.WriteAdditionalData(AdditionalData);
         }

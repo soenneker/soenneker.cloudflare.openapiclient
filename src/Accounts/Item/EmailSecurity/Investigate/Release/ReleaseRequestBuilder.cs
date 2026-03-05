@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         {
         }
         /// <summary>
-        /// Release messages from quarantine
+        /// Releases a quarantined email message, allowing it to be delivered to the recipient.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_release_200"/></returns>
         /// <param name="body">A list of messages identfied by their `postfix_id`s that should be released.</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_release_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_post_release_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Release messages from quarantine
+        /// Releases a quarantined email message, allowing it to be delivered to the recipient.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A list of messages identfied by their `postfix_id`s that should be released.</param>

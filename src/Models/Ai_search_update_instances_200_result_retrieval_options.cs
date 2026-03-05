@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Metadata fields to boost search results by. Each entry specifies a metadata field and an optional direction. Direction defaults to &apos;asc&apos; for numeric fields and &apos;exists&apos; for text/boolean fields. Fields must match &apos;timestamp&apos; or a defined custom_metadata field.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_boost_by>? BoostBy { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_boost_by> BoostBy { get; set; }
+#endif
         /// <summary>Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_keyword_match_mode? KeywordMatchMode { get; set; }
         /// <summary>
@@ -42,6 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "boost_by", n => { BoostBy = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_boost_by>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_boost_by.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "keyword_match_mode", n => { KeywordMatchMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_keyword_match_mode>(); } },
             };
         }
@@ -52,6 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_boost_by>("boost_by", BoostBy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_retrieval_options_keyword_match_mode>("keyword_match_mode", KeywordMatchMode);
             writer.WriteAdditionalData(AdditionalData);
         }

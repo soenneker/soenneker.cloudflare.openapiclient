@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Metadata fields to boost search results by. Overrides the instance-level boost_by config. Direction defaults to &apos;asc&apos; for numeric fields, &apos;exists&apos; for text/boolean fields. Fields must match &apos;timestamp&apos; or a defined custom_metadata field.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_boost_by>? BoostBy { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_boost_by> BoostBy { get; set; }
+#endif
         /// <summary>The context_expansion property</summary>
         public int? ContextExpansion { get; set; }
         /// <summary>The filters property</summary>
@@ -62,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "boost_by", n => { BoostBy = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_boost_by>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_boost_by.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "context_expansion", n => { ContextExpansion = n.GetIntValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_filters.CreateFromDiscriminatorValue); } },
                 { "fusion_method", n => { FusionMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_fusion_method>(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_boost_by>("boost_by", BoostBy);
             writer.WriteIntValue("context_expansion", ContextExpansion);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_filters>("filters", Filters);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_ai_search_options_retrieval_fusion_method>("fusion_method", FusionMethod);

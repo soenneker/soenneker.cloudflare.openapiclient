@@ -71,6 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Http_request_transform,
         #pragma warning restore CS1591
+        [EnumMember(Value = "http_response_cache_settings")]
+        #pragma warning disable CS1591
+        Http_response_cache_settings,
+        #pragma warning restore CS1591
         [EnumMember(Value = "http_response_compression")]
         #pragma warning disable CS1591
         Http_response_compression,

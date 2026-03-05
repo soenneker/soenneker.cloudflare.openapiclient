@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.I
         {
         }
         /// <summary>
-        /// Execute @cf/ai4bharat/indictrans2-en-indic-1B model.
+        /// Runs inference on the @cf/ai4bharat/indictrans2-en-indic-1B model.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic_1B_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.I
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic_1B_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_ai4bharat_indictrans2_en_indic_1B_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Execute @cf/ai4bharat/indictrans2-en-indic-1B model.
+        /// Runs inference on the @cf/ai4bharat/indictrans2-en-indic-1B model.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.I
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.Indictrans2EnIndic1B.Indictrans2EnIndic1BRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Execute @cf/ai4bharat/indictrans2-en-indic-1B model.
+        /// Runs inference on the @cf/ai4bharat/indictrans2-en-indic-1B model.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Indictrans2EnIndic1BRequestBuilderPostQueryParameters 
