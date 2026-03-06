@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The crawl_options property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_crawl_options? CrawlOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_crawl_options CrawlOptions { get; set; }
+#endif
         /// <summary>The parse_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "crawl_options", n => { CrawlOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_crawl_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_crawl_options.CreateFromDiscriminatorValue); } },
                 { "parse_options", n => { ParseOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_options.CreateFromDiscriminatorValue); } },
                 { "parse_type", n => { ParseType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_type>(); } },
                 { "store_options", n => { StoreOptions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_store_options>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_store_options.CreateFromDiscriminatorValue); } },
@@ -70,6 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_crawl_options>("crawl_options", CrawlOptions);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_options>("parse_options", ParseOptions);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_parse_type>("parse_type", ParseType);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_instances_200_result_source_params_web_crawler_store_options>("store_options", StoreOptions);

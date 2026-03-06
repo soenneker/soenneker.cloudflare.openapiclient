@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>This is a combination of pre-defined resource name and identifier (like Account ID etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scope_key? Key { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scope_key? Key { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scope_key Key { get; private set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scope_key Key { get; set; }
 #endif
         /// <summary>A list of scope objects for additional context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scope_key>("key", Key);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scope_object>("objects", Objects);
             writer.WriteAdditionalData(AdditionalData);
         }

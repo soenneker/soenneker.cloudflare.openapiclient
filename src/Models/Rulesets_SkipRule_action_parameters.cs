@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A mapping of ruleset IDs to a list of rule IDs in that ruleset to skip the execution of. This option is incompatible with the ruleset option.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules? Rules { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules? Rules { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules Rules { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules Rules { get; set; }
 #endif
         /// <summary>A ruleset to skip the execution of. This option is incompatible with the rulesets option.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRuleset? Ruleset { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipPhase>(); } },
                 { "phases", n => { Phases = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "products", n => { Products = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "rules", n => { Rules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules.CreateFromDiscriminatorValue); } },
+                { "rules", n => { Rules = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules.CreateFromDiscriminatorValue); } },
                 { "ruleset", n => { Ruleset = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRuleset>(); } },
                 { "rulesets", n => { Rulesets = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipPhase>("phase", Phase);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>("phases", Phases);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>("products", Products);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRules>("rules", Rules);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRule_action_parameters_rules>("rules", Rules);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SkipRuleset>("ruleset", Ruleset);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets>("rulesets", Rulesets);
             writer.WriteAdditionalData(AdditionalData);

@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The HTTP request headers to send in the health check. It is recommended you set a Host header by default. The User-Agent header cannot be overridden. This parameter is only valid for HTTP and HTTPS monitors.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_header? Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_monitor_editable_header? Header { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_header Header { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_monitor_editable_header Header { get; set; }
 #endif
         /// <summary>The interval between each health check. Shorter intervals may improve failover time, but will increase load on the origins as we check from multiple locations.</summary>
         public int? Interval { get; set; }
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "expected_body", n => { ExpectedBody = n.GetStringValue(); } },
                 { "expected_codes", n => { ExpectedCodes = n.GetStringValue(); } },
                 { "follow_redirects", n => { FollowRedirects = n.GetBoolValue(); } },
-                { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_header>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_header.CreateFromDiscriminatorValue); } },
+                { "header", n => { Header = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_monitor_editable_header>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_monitor_editable_header.CreateFromDiscriminatorValue); } },
                 { "interval", n => { Interval = n.GetIntValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
@@ -146,7 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("expected_body", ExpectedBody);
             writer.WriteStringValue("expected_codes", ExpectedCodes);
             writer.WriteBoolValue("follow_redirects", FollowRedirects);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_header>("header", Header);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_monitor_editable_header>("header", Header);
             writer.WriteIntValue("interval", Interval);
             writer.WriteStringValue("method", Method);
             writer.WriteStringValue("path", Path);

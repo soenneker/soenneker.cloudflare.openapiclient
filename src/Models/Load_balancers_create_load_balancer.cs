@@ -25,10 +25,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A mapping of country codes to a list of pool IDs (ordered by their failover priority) for the given country. Any country not explicitly defined will fall back to using the corresponding region_pool mapping if it exists else to default_pools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_country_pools? CountryPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_country_pools? CountryPools { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_country_pools CountryPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_country_pools CountryPools { get; set; }
 #endif
         /// <summary>A list of pool IDs ordered by their failover priority. Pools defined here are used by default, or when region_pools are not configured for a given region.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,10 +81,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>&quot;Enterprise only: A mapping of Cloudflare PoP identifiers to a list of pool IDs (ordered by their failover priority) for the PoP (datacenter). Any PoPs not explicitly defined will fall back to using the corresponding country_pool, then region_pool mapping if it exists else to default_pools.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_pop_pools? PopPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_pop_pools? PopPools { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_pop_pools PopPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_pop_pools PopPools { get; set; }
 #endif
         /// <summary>Whether the hostname should be gray clouded (false) or orange clouded (true).</summary>
         public bool? Proxied { get; set; }
@@ -99,10 +99,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A mapping of region codes to a list of pool IDs (ordered by their failover priority) for the given region. Any regions not explicitly defined will fall back to using default_pools.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_region_pools? RegionPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_region_pools? RegionPools { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_region_pools RegionPools { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_region_pools RegionPools { get; set; }
 #endif
         /// <summary>&quot;BETA Field Not General Access: A list of rules for this load balancer to execute.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -155,17 +155,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "adaptive_routing", n => { AdaptiveRouting = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_adaptive_routing>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_adaptive_routing.CreateFromDiscriminatorValue); } },
-                { "country_pools", n => { CountryPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_country_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_country_pools.CreateFromDiscriminatorValue); } },
+                { "country_pools", n => { CountryPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_country_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_country_pools.CreateFromDiscriminatorValue); } },
                 { "default_pools", n => { DefaultPools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "fallback_pool", n => { FallbackPool = n.GetStringValue(); } },
                 { "location_strategy", n => { LocationStrategy = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_location_strategy>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_location_strategy.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "networks", n => { Networks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "pop_pools", n => { PopPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_pop_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_pop_pools.CreateFromDiscriminatorValue); } },
+                { "pop_pools", n => { PopPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_pop_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_pop_pools.CreateFromDiscriminatorValue); } },
                 { "proxied", n => { Proxied = n.GetBoolValue(); } },
                 { "random_steering", n => { RandomSteering = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_random_steering>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_random_steering.CreateFromDiscriminatorValue); } },
-                { "region_pools", n => { RegionPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_region_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_region_pools.CreateFromDiscriminatorValue); } },
+                { "region_pools", n => { RegionPools = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_region_pools>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_region_pools.CreateFromDiscriminatorValue); } },
                 { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_rules_item>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_rules_item.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "session_affinity", n => { SessionAffinity = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_session_affinity>(); } },
                 { "session_affinity_attributes", n => { SessionAffinityAttributes = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_session_affinity_attributes>(global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_session_affinity_attributes.CreateFromDiscriminatorValue); } },
@@ -182,17 +182,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_adaptive_routing>("adaptive_routing", AdaptiveRouting);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_country_pools>("country_pools", CountryPools);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_country_pools>("country_pools", CountryPools);
             writer.WriteCollectionOfPrimitiveValues<string>("default_pools", DefaultPools);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("fallback_pool", FallbackPool);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_location_strategy>("location_strategy", LocationStrategy);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("networks", Networks);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_pop_pools>("pop_pools", PopPools);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_pop_pools>("pop_pools", PopPools);
             writer.WriteBoolValue("proxied", Proxied);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_random_steering>("random_steering", RandomSteering);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_region_pools>("region_pools", RegionPools);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancers_create_load_balancer_region_pools>("region_pools", RegionPools);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_rules_item>("rules", Rules);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_session_affinity>("session_affinity", SessionAffinity);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Load_balancing_session_affinity_attributes>("session_affinity_attributes", SessionAffinityAttributes);

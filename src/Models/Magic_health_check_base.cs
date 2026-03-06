@@ -35,7 +35,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Rate = global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base_rate.Mid;
-            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_health_check_base_type.Reply;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

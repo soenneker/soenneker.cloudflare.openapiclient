@@ -24,10 +24,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing live inputs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_meta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_meta Meta { get; set; }
 #endif
         /// <summary>The date and time the live input was last modified.</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -125,7 +125,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "deleteRecordingAfterDays", n => { DeleteRecordingAfterDays = n.GetDoubleValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_meta.CreateFromDiscriminatorValue); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "recording", n => { Recording = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_settings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_settings.CreateFromDiscriminatorValue); } },
                 { "rtmps", n => { Rtmps = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_rtmps>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_rtmps.CreateFromDiscriminatorValue); } },
@@ -148,7 +148,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteDoubleValue("deleteRecordingAfterDays", DeleteRecordingAfterDays);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_metadata>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_meta>("meta", Meta);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_live_input_recording_settings>("recording", Recording);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_input_rtmps>("rtmps", Rtmps);

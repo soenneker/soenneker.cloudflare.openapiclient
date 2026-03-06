@@ -32,7 +32,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Workers_kv_namespace_get_multiple_key_value_pairs()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_kv_namespace_get_multiple_key_value_pairs_type.Text;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

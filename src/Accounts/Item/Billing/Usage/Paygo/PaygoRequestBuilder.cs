@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
         {
         }
         /// <summary>
-        /// &quot;Returns billable usage data for PayGo (self-serve) accounts within a specified date range. Supports two mutually exclusive query modes: billing-period mode (last_year_period_start + last_month_period_start) or date-range mode (from + to).&quot;
+        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period. Supports two mutually exclusive query modes:**Billing period mode:** Use `last_year_period_start` and`last_month_period_start` to query a specific billing period.**Date range mode:** Use `from` and `to` to query a custom date range(maximum 62 days).This endpoint is currently in beta and access is restricted to selectaccounts.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Billable_usage_api_usage_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Billable_usage_api_usage_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Billable_usage_api_usage_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Returns billable usage data for PayGo (self-serve) accounts within a specified date range. Supports two mutually exclusive query modes: billing-period mode (last_year_period_start + last_month_period_start) or date-range mode (from + to).&quot;
+        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period. Supports two mutually exclusive query modes:**Billing period mode:** Use `last_year_period_start` and`last_month_period_start` to query a specific billing period.**Date range mode:** Use `from` and `to` to query a custom date range(maximum 62 days).This endpoint is currently in beta and access is restricted to selectaccounts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo.PaygoRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Returns billable usage data for PayGo (self-serve) accounts within a specified date range. Supports two mutually exclusive query modes: billing-period mode (last_year_period_start + last_month_period_start) or date-range mode (from + to).&quot;
+        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period. Supports two mutually exclusive query modes:**Billing period mode:** Use `last_year_period_start` and`last_month_period_start` to query a specific billing period.**Date range mode:** Use `from` and `to` to query a custom date range(maximum 62 days).This endpoint is currently in beta and access is restricted to selectaccounts.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PaygoRequestBuilderGetQueryParameters 

@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mis
         /// <summary>
         /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.TwoPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder.Mistral7bInstructV02RequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.TwoPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder.Mistral7bInstructV02RequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder.Mistral7bInstructV02RequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.TwoPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.Mistral7bInstructV02RequestBuilder.Mistral7bInstructV02RequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mis
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_mistral_mistral_7b_instruct_v0_2_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.TwoPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Mistral.Mistral7bInstructV02.TwoPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.

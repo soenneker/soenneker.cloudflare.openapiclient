@@ -21,10 +21,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for the async mutation operation containing the changeset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid? ProcessedUpToMutation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_index_info_response_processedUpToMutation? ProcessedUpToMutation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid ProcessedUpToMutation { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_index_info_response_processedUpToMutation ProcessedUpToMutation { get; set; }
 #endif
         /// <summary>Specifies the number of vectors present in the index</summary>
         public int? VectorCount { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "dimensions", n => { Dimensions = n.GetIntValue(); } },
                 { "processedUpToDatetime", n => { ProcessedUpToDatetime = n.GetDateTimeOffsetValue(); } },
-                { "processedUpToMutation", n => { ProcessedUpToMutation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid.CreateFromDiscriminatorValue); } },
+                { "processedUpToMutation", n => { ProcessedUpToMutation = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_index_info_response_processedUpToMutation>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_index_info_response_processedUpToMutation.CreateFromDiscriminatorValue); } },
                 { "vectorCount", n => { VectorCount = n.GetIntValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dimensions", Dimensions);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid>("processedUpToMutation", ProcessedUpToMutation);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_index_info_response_processedUpToMutation>("processedUpToMutation", ProcessedUpToMutation);
             writer.WriteIntValue("vectorCount", VectorCount);
             writer.WriteAdditionalData(AdditionalData);
         }

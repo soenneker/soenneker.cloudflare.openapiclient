@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A map of headers to rewrite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders? Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders Headers { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers Headers { get; set; }
 #endif
         /// <summary>The uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers.CreateFromDiscriminatorValue); } },
                 { "uri", n => { Uri = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteRule_action_parameters_headers>("headers", Headers);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RewriteUri>("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

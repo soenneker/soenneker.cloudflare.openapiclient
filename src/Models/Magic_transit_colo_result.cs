@@ -35,10 +35,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Aggregated statistics from all hops about the target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_target_summary? TargetSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo_result_target_summary? TargetSummary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_target_summary TargetSummary { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo_result_target_summary TargetSummary { get; set; }
 #endif
         /// <summary>Total time of traceroute in ms.</summary>
         public int? TracerouteTimeMs { get; set; }
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "colo", n => { Colo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo.CreateFromDiscriminatorValue); } },
                 { "error", n => { Error = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_error>(); } },
                 { "hops", n => { Hops = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_hop_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_hop_result.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "target_summary", n => { TargetSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_target_summary>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_target_summary.CreateFromDiscriminatorValue); } },
+                { "target_summary", n => { TargetSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo_result_target_summary>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo_result_target_summary.CreateFromDiscriminatorValue); } },
                 { "traceroute_time_ms", n => { TracerouteTimeMs = n.GetIntValue(); } },
             };
         }
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo>("colo", Colo);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_error>("error", Error);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_hop_result>("hops", Hops);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_target_summary>("target_summary", TargetSummary);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_transit_colo_result_target_summary>("target_summary", TargetSummary);
             writer.WriteIntValue("traceroute_time_ms", TracerouteTimeMs);
             writer.WriteAdditionalData(AdditionalData);
         }

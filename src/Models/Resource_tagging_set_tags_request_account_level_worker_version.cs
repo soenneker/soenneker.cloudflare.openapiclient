@@ -16,10 +16,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contains key-value pairs of tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_set_tags_request_account_level_worker_version_tags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_set_tags_request_account_level_worker_version_tags Tags { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_set_tags_request_account_level_worker_version_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_set_tags_request_account_level_worker_version_tags.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_set_tags_request_account_level_worker_version_tags>("tags", Tags);
         }
     }
 }

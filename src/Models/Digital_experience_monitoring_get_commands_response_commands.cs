@@ -42,6 +42,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Unique identifier for the device registration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationId { get; set; }
+#nullable restore
+#else
+        public string RegistrationId { get; set; }
+#endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "device_id", n => { DeviceId = n.GetStringValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "registration_id", n => { RegistrationId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "user_email", n => { UserEmail = n.GetStringValue(); } },
@@ -113,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("device_id", DeviceId);
             writer.WriteStringValue("filename", Filename);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("registration_id", RegistrationId);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("user_email", UserEmail);

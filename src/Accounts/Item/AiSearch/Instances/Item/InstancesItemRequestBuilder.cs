@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Jobs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Search;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Stats;
@@ -26,11 +25,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.It
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.ChatRequestBuilder Chat
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The items property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items.ItemsRequestBuilder Items
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The jobs property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.Jobs.JobsRequestBuilder Jobs

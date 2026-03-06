@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Floating number to specify sampling rate. Sampling is applied on top of filtering, and regardless of the current `sample_interval` of the data.</summary>
         public float? SampleRate { get; set; }
-        /// <summary>String to specify the format for timestamps, such as `unixnano`, `unix`, or `rfc3339`.</summary>
+        /// <summary>String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options_timestamp_format? TimestampFormat { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options"/> and sets the default values.

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The unique identifier for the async mutation operation containing the changeset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid? MutationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_metadata_index_response_mutationId? MutationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid MutationId { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_metadata_index_response_mutationId MutationId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_metadata_index_response"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "mutationId", n => { MutationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid.CreateFromDiscriminatorValue); } },
+                { "mutationId", n => { MutationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_metadata_index_response_mutationId>(global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_metadata_index_response_mutationId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_mutation_uuid>("mutationId", MutationId);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Vectorize_create_metadata_index_response_mutationId>("mutationId", MutationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

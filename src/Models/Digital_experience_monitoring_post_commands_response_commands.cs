@@ -38,6 +38,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>Unique identifier for the device registration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationId { get; set; }
+#nullable restore
+#else
+        public string RegistrationId { get; set; }
+#endif
         /// <summary>Current status of the command</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_post_commands_response_commands_status? Status { get; set; }
         /// <summary>Type of the command (e.g., &quot;pcap&quot; or &quot;warp-diag&quot;)</summary>
@@ -76,6 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "args", n => { Args = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_post_commands_response_commands_args>(global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_post_commands_response_commands_args.CreateFromDiscriminatorValue); } },
                 { "device_id", n => { DeviceId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "registration_id", n => { RegistrationId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_post_commands_response_commands_status>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -90,6 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_post_commands_response_commands_args>("args", Args);
             writer.WriteStringValue("device_id", DeviceId);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("registration_id", RegistrationId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Digital_experience_monitoring_post_commands_response_commands_status>("status", Status);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

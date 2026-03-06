@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlco
         /// <summary>
         /// Runs inference on the @cf/defog/sqlcoder-7b-2 model.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2PostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2_400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2RequestBuilder.Sqlcoder7b2RequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2PostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2RequestBuilder.Sqlcoder7b2RequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2RequestBuilder.Sqlcoder7b2RequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2PostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2 body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2RequestBuilder.Sqlcoder7b2RequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlco
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2_400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_defog_sqlcoder_7b_2_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2PostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Defog.Sqlcoder7b2.Sqlcoder7b2PostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Runs inference on the @cf/defog/sqlcoder-7b-2 model.

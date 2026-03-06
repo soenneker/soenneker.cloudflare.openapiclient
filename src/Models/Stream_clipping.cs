@@ -47,10 +47,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>A user modifiable key-value store used to reference other systems of record for managing videos.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_meta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_meta Meta { get; set; }
 #endif
         /// <summary>The date and time the live input was last modified.</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -117,7 +117,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "endTimeSeconds", n => { EndTimeSeconds = n.GetIntValue(); } },
                 { "maxDurationSeconds", n => { MaxDurationSeconds = n.GetIntValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_meta.CreateFromDiscriminatorValue); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "playback", n => { Playback = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback>(global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback.CreateFromDiscriminatorValue); } },
                 { "preview", n => { Preview = n.GetStringValue(); } },
@@ -141,7 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("creator", Creator);
             writer.WriteIntValue("endTimeSeconds", EndTimeSeconds);
             writer.WriteIntValue("maxDurationSeconds", MaxDurationSeconds);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_media_metadata>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_clipping_meta>("meta", Meta);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Stream_playback>("playback", Playback);
             writer.WriteStringValue("preview", Preview);

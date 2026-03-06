@@ -27,10 +27,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Resource Metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_meta? Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object_meta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_meta Meta { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object_meta Meta { get; set; }
 #endif
         /// <summary>When the share was modified.</summary>
         public DateTimeOffset? Modified { get; set; }
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "created", n => { Created = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object_meta.CreateFromDiscriminatorValue); } },
                 { "modified", n => { Modified = n.GetDateTimeOffsetValue(); } },
                 { "resource_account_id", n => { ResourceAccountId = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created", Created);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_resource_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_sharing_share_resource_object_meta>("meta", Meta);
             writer.WriteDateTimeOffsetValue("modified", Modified);
             writer.WriteStringValue("resource_account_id", ResourceAccountId);
             writer.WriteStringValue("resource_id", ResourceId);

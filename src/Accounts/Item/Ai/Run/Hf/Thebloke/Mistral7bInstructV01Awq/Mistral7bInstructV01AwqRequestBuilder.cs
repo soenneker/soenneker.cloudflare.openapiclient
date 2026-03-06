@@ -36,18 +36,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mi
         /// <summary>
         /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.OneAwqPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder.Mistral7bInstructV01AwqRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.OneAwqPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder.Mistral7bInstructV01AwqRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder.Mistral7bInstructV01AwqRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.OneAwqPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.Mistral7bInstructV01AwqRequestBuilder.Mistral7bInstructV01AwqRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mi
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_thebloke_mistral_7b_instruct_v0_1_awq_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.OneAwqPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Thebloke.Mistral7bInstructV01Awq.OneAwqPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.

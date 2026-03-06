@@ -73,11 +73,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_delete_a_cloudflare_tunnel_4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_response_single?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_delete_a_cloudflare_tunnel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_response_single?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.WithTunnel_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_response_single> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_delete_a_cloudflare_tunnel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_response_single> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.WithTunnel_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_delete_a_cloudflare_tunnel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.WithTunnel_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_delete_a_cloudflare_tunnel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Cfd_tunnel.Item.WithTunnel_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

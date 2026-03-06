@@ -46,10 +46,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Metadata associated with the tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata? Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata Metadata { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_metadata Metadata { get; set; }
 #endif
         /// <summary>A user-friendly name for a tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_metadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "remote_config", n => { RemoteConfig = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status>(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_cfd_tunnel_metadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("remote_config", RemoteConfig);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status>("status", Status);

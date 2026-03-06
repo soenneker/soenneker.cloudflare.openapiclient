@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The schemas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi_with_thresholds>? Schemas { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_with_thresholds_result_schemas>? Schemas { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi_with_thresholds> Schemas { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_with_thresholds_result_schemas> Schemas { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "schemas", n => { Schemas = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi_with_thresholds>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi_with_thresholds.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_with_thresholds_result_schemas>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_with_thresholds_result_schemas.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timestamp", n => { Timestamp = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi_with_thresholds>("schemas", Schemas);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schema_response_with_thresholds_result_schemas>("schemas", Schemas);
             writer.WriteStringValue("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,10 +17,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The schemas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi>? Schemas { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX_result_schemas>? Schemas { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi> Schemas { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX_result_schemas> Schemas { get; set; }
 #endif
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "schemas", n => { Schemas = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX_result_schemas>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX_result_schemas.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timestamp", n => { Timestamp = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_openapi>("schemas", Schemas);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_discovery_retrieve_discovered_operations_on_a_zone_as_openapi_4XX_result_schemas>("schemas", Schemas);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_schemas_timestamp>("timestamp", Timestamp);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -42,10 +42,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Contains key-value pairs of tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags? Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tagged_resource_object_zone_level_base_tags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags Tags { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tagged_resource_object_zone_level_base_tags Tags { get; set; }
 #endif
         /// <summary>Zone ID is required only for zone-level resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "etag", n => { Etag = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tagged_resource_object_zone_level_base_tags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tagged_resource_object_zone_level_base_tags.CreateFromDiscriminatorValue); } },
                 { "zone_id", n => { ZoneId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_zone_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_zone_id.CreateFromDiscriminatorValue); } },
             };
         }
@@ -97,7 +97,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("etag", Etag);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_tagged_resource_object_zone_level_base_tags>("tags", Tags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Resource_tagging_zone_id>("zone_id", ZoneId);
             writer.WriteAdditionalData(AdditionalData);
         }

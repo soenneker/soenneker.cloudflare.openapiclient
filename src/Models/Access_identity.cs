@@ -57,10 +57,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The device_sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_string_key_map_device_session? DeviceSessions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_device_sessions? DeviceSessions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_string_key_map_device_session DeviceSessions { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_device_sessions DeviceSessions { get; set; }
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,7 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "common_name", n => { CommonName = n.GetStringValue(); } },
                 { "device_id", n => { DeviceId = n.GetStringValue(); } },
                 { "devicePosture", n => { DevicePosture = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_devicePosture>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_devicePosture.CreateFromDiscriminatorValue); } },
-                { "device_sessions", n => { DeviceSessions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_string_key_map_device_session>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_string_key_map_device_session.CreateFromDiscriminatorValue); } },
+                { "device_sessions", n => { DeviceSessions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_device_sessions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_device_sessions.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_geo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_geo.CreateFromDiscriminatorValue); } },
                 { "iat", n => { Iat = n.GetDoubleValue(); } },
@@ -185,7 +185,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("common_name", CommonName);
             writer.WriteStringValue("device_id", DeviceId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_devicePosture>("devicePosture", DevicePosture);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_string_key_map_device_session>("device_sessions", DeviceSessions);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_identity_device_sessions>("device_sessions", DeviceSessions);
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_geo>("geo", Geo);
             writer.WriteDoubleValue("iat", Iat);

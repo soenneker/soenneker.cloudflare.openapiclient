@@ -70,8 +70,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Access_org_mfa_config MfaConfig { get; set; }
 #endif
-        /// <summary>Indicates if this organization can enforce multi-factor authentication (MFA) requirements at the application and policy level.</summary>
-        public bool? MfaConfigurationAllowed { get; set; }
         /// <summary>Determines whether global MFA settings apply to applications by default. The organization must have MFA enabled with at least one authentication method and a session duration configured.</summary>
         public bool? MfaRequiredForAllApps { get; set; }
         /// <summary>The name of your Zero Trust organization.</summary>
@@ -157,7 +155,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_ui_read_only", n => { IsUiReadOnly = n.GetBoolValue(); } },
                 { "login_design", n => { LoginDesign = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design.CreateFromDiscriminatorValue); } },
                 { "mfa_config", n => { MfaConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_org_mfa_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Access_org_mfa_config.CreateFromDiscriminatorValue); } },
-                { "mfa_configuration_allowed", n => { MfaConfigurationAllowed = n.GetBoolValue(); } },
                 { "mfa_required_for_all_apps", n => { MfaRequiredForAllApps = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
@@ -184,7 +181,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_ui_read_only", IsUiReadOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_login_design>("login_design", LoginDesign);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_org_mfa_config>("mfa_config", MfaConfig);
-            writer.WriteBoolValue("mfa_configuration_allowed", MfaConfigurationAllowed);
             writer.WriteBoolValue("mfa_required_for_all_apps", MfaRequiredForAllApps);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("session_duration", SessionDuration);

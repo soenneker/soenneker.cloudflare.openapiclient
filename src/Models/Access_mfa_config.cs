@@ -23,8 +23,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config_allowed_authenticators?> AllowedAuthenticators { get; set; }
 #endif
-        /// <summary>Indicates whether to bypass MFA for this resource. This option is available at the application and policy level.</summary>
-        public bool? MfaBypass { get; set; }
+        /// <summary>Indicates whether to disable MFA for this resource. This option is available at the application and policy level.</summary>
+        public bool? MfaDisabled { get; set; }
         /// <summary>&quot;Defines the duration of an MFA session. Must be in minutes (m) or hours (h). Minimum: 0m. Maximum: 720h (30 days). Examples:`5m` or `24h`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_authenticators", n => { AllowedAuthenticators = n.GetCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config_allowed_authenticators>()?.AsList(); } },
-                { "mfa_bypass", n => { MfaBypass = n.GetBoolValue(); } },
+                { "mfa_disabled", n => { MfaDisabled = n.GetBoolValue(); } },
                 { "session_duration", n => { SessionDuration = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_mfa_config_allowed_authenticators>("allowed_authenticators", AllowedAuthenticators);
-            writer.WriteBoolValue("mfa_bypass", MfaBypass);
+            writer.WriteBoolValue("mfa_disabled", MfaDisabled);
             writer.WriteStringValue("session_duration", SessionDuration);
             writer.WriteAdditionalData(AdditionalData);
         }

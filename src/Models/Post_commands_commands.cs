@@ -24,13 +24,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Type of command to execute on the device</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Post_commands_commands_command_type? CommandType { get; set; }
-        /// <summary>Unique identifier for the device</summary>
+        /// <summary>Unique identifier for the physical device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DeviceId { get; set; }
 #nullable restore
 #else
         public string DeviceId { get; set; }
+#endif
+        /// <summary>Unique identifier for the device registration. Required for multi-user devices to target the correct user session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationId { get; set; }
+#nullable restore
+#else
+        public string RegistrationId { get; set; }
 #endif
         /// <summary>Email tied to the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "command_args", n => { CommandArgs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_commands_commands_command_args>(global::Soenneker.Cloudflare.OpenApiClient.Models.Post_commands_commands_command_args.CreateFromDiscriminatorValue); } },
                 { "command_type", n => { CommandType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_commands_commands_command_type>(); } },
                 { "device_id", n => { DeviceId = n.GetStringValue(); } },
+                { "registration_id", n => { RegistrationId = n.GetStringValue(); } },
                 { "user_email", n => { UserEmail = n.GetStringValue(); } },
             };
         }
@@ -81,6 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_commands_commands_command_args>("command_args", CommandArgs);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Post_commands_commands_command_type>("command_type", CommandType);
             writer.WriteStringValue("device_id", DeviceId);
+            writer.WriteStringValue("registration_id", RegistrationId);
             writer.WriteStringValue("user_email", UserEmail);
             writer.WriteAdditionalData(AdditionalData);
         }

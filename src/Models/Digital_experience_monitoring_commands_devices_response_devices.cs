@@ -56,6 +56,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Platform { get; set; }
 #endif
+        /// <summary>Device registration identifier (UUID v4). On multi-user devices, this uniquely identifies a user&apos;s registration on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RegistrationId { get; set; }
+#nullable restore
+#else
+        public string RegistrationId { get; set; }
+#endif
         /// <summary>Network status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,6 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "ineligibleReason", n => { IneligibleReason = n.GetStringValue(); } },
                 { "personEmail", n => { PersonEmail = n.GetStringValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
+                { "registrationId", n => { RegistrationId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -129,6 +138,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("ineligibleReason", IneligibleReason);
             writer.WriteStringValue("personEmail", PersonEmail);
             writer.WriteStringValue("platform", Platform);
+            writer.WriteStringValue("registrationId", RegistrationId);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("timestamp", Timestamp);
             writer.WriteStringValue("version", Version);

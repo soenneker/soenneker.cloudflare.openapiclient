@@ -16,5 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         FeedRss,
         #pragma warning restore CS1591
+        [EnumMember(Value = "crawl")]
+        #pragma warning disable CS1591
+        Crawl,
+        #pragma warning restore CS1591
     }
 }
