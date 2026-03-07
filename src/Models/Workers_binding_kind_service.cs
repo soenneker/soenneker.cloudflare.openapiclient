@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Entrypoint to invoke on the target Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Entrypoint { get; set; }
+#nullable restore
+#else
+        public string Entrypoint { get; set; }
+#endif
         /// <summary>Optional environment if the Worker utilizes one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "entrypoint", n => { Entrypoint = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
@@ -79,6 +88,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("entrypoint", Entrypoint);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("service", Service);

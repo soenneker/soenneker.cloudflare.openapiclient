@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/workers{?page*,per_page*}", pathParameters)
+        public WorkersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/workers{?order*,order_by*,page*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/workers{?page*,per_page*}", rawUrl)
+        public WorkersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/workers/workers{?order*,order_by*,page*,per_page*}", rawUrl)
         {
         }
         /// <summary>
@@ -160,6 +160,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkersRequestBuilderGetQueryParameters 
         {
+            /// <summary>Sort direction.</summary>
+            [QueryParameter("order")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.GetOrderQueryParameterType? Order { get; set; }
+            /// <summary>Property to sort results by.</summary>
+            [QueryParameter("order_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Workers.GetOrder_byQueryParameterType? OrderBy { get; set; }
             /// <summary>Current page.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

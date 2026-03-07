@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Annotations for the Worker version. Annotations are not inherited across settings updates; omitting this field means the new version will have no annotations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_annotations? Annotations { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_annotations Annotations { get; set; }
+#endif
         /// <summary>The bindings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_annotations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_annotations.CreateFromDiscriminatorValue); } },
                 { "bindings", n => { Bindings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_bindings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_bindings.CreateFromDiscriminatorValue); } },
                 { "compatibility_date", n => { CompatibilityDate = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_compatibility_date>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_compatibility_date.CreateFromDiscriminatorValue); } },
                 { "compatibility_flags", n => { CompatibilityFlags = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_compatibility_flags>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_compatibility_flags.CreateFromDiscriminatorValue); } },
@@ -136,6 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_annotations>("annotations", Annotations);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_bindings>("bindings", Bindings);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_compatibility_date>("compatibility_date", CompatibilityDate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_script_and_version_settings_item_compatibility_flags>("compatibility_flags", CompatibilityFlags);

@@ -63,6 +63,29 @@ namespace Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Returns details of a single store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_system_get_store_by_id_4XX">When receiving a 4XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_system_get_store_by_id_4XX.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Deletes a store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -77,6 +100,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Returns details of a single store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

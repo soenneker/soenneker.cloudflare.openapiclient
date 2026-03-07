@@ -15,5 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Fedramp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "fedramp-high")]
+        #pragma warning disable CS1591
+        FedrampHigh,
+        #pragma warning restore CS1591
     }
 }

@@ -22,6 +22,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ClassName { get; set; }
 #endif
+        /// <summary>The dispatch namespace the Durable Object script belongs to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DispatchNamespace { get; set; }
+#nullable restore
+#else
+        public string DispatchNamespace { get; set; }
+#endif
         /// <summary>The environment of the script_name to bind to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -82,6 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
+                { "dispatch_namespace", n => { DispatchNamespace = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace_id", n => { NamespaceId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id.CreateFromDiscriminatorValue); } },
@@ -97,6 +106,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("class_name", ClassName);
+            writer.WriteStringValue("dispatch_namespace", DispatchNamespace);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_binding_kind_durable_object_namespace_namespace_id>("namespace_id", NamespaceId);

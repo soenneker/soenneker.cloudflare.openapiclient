@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft.NonomniResnet50;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft.Phi2;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft.Resnet50;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MicrosoftRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The nonomniResnet50 property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft.NonomniResnet50.NonomniResnet50RequestBuilder NonomniResnet50
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft.NonomniResnet50.NonomniResnet50RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The phi2 property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Microsoft.Phi2.Phi2RequestBuilder Phi2
         {

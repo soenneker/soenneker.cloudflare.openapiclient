@@ -16,6 +16,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the Worker was created.</summary>
         public DateTimeOffset? CreatedOn { get; private set; }
+        /// <summary>When the Worker&apos;s most recent deployment was created. `null` if the Worker has never been deployed.</summary>
+        public DateTimeOffset? DeployedOn { get; private set; }
         /// <summary>Immutable ID of the Worker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
+                { "deployed_on", n => { DeployedOn = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "logpush", n => { Logpush = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
