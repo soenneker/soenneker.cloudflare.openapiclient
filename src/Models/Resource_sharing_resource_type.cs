@@ -11,10 +11,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         CustomRuleset,
         #pragma warning restore CS1591
-        [EnumMember(Value = "widget")]
-        #pragma warning disable CS1591
-        Widget,
-        #pragma warning restore CS1591
         [EnumMember(Value = "gateway-policy")]
         #pragma warning disable CS1591
         GatewayPolicy,

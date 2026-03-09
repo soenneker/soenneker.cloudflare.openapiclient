@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Aegis;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGateway;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Item;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_max_http_version;
@@ -32,6 +33,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder Fonts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Fonts.FontsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The googleTagGateway property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGateway.GoogleTagGatewayRequestBuilder GoogleTagGateway
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.GoogleTagGateway.GoogleTagGatewayRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_h2_max_streams property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Origin_h2_max_streams.Origin_h2_max_streamsRequestBuilder Origin_h2_max_streams

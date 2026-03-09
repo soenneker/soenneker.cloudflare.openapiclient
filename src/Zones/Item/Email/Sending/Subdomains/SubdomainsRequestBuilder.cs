@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains.Item;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains.Preview;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubdomainsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The preview property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains.Preview.PreviewRequestBuilder Preview
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.email.sending.subdomains.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains.Item.WithSubdomain_ItemRequestBuilder"/></returns>
@@ -65,7 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_sending_subdomains_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_sending_subdomains_response_collection.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled.
+        /// Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled. If zone-level Email Sending has not been enabled yet, the zone flag is automatically set when the entitlement is present.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_sending_subdomain_response_single"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.Subdomains
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled.
+        /// Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled. If zone-level Email Sending has not been enabled yet, the zone flag is automatically set when the entitlement is present.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
