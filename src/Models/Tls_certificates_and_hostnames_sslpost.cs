@@ -37,6 +37,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string CustomCertificate { get; set; }
 #endif
+        /// <summary>The identifier for the Custom CSR that was used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomCsrId { get; set; }
+#nullable restore
+#else
+        public string CustomCsrId { get; set; }
+#endif
         /// <summary>The key for a custom uploaded certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,6 +104,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cloudflare_branding", n => { CloudflareBranding = n.GetBoolValue(); } },
                 { "custom_cert_bundle", n => { CustomCertBundle = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_cert_and_key>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_cert_and_key.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "custom_certificate", n => { CustomCertificate = n.GetStringValue(); } },
+                { "custom_csr_id", n => { CustomCsrId = n.GetStringValue(); } },
                 { "custom_key", n => { CustomKey = n.GetStringValue(); } },
                 { "method", n => { Method = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_sslpost_method>(); } },
                 { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_sslsettings>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_sslsettings.CreateFromDiscriminatorValue); } },
@@ -115,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("cloudflare_branding", CloudflareBranding);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_custom_cert_and_key>("custom_cert_bundle", CustomCertBundle);
             writer.WriteStringValue("custom_certificate", CustomCertificate);
+            writer.WriteStringValue("custom_csr_id", CustomCsrId);
             writer.WriteStringValue("custom_key", CustomKey);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_sslpost_method>("method", Method);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_sslsettings>("settings", Settings);

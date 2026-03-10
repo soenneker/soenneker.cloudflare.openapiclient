@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Boost direction. &apos;desc&apos; = higher values rank higher (e.g. newer timestamps). &apos;asc&apos; = lower values rank higher. &apos;exists&apos; = boost chunks that have the field. &apos;not_exists&apos; = boost chunks that lack the field. Optional ��� defaults to &apos;asc&apos; for numeric fields, &apos;exists&apos; for text/boolean fields.</summary>
+    /// <summary>Boost direction. &apos;desc&apos; = higher values rank higher (e.g. newer timestamps). &apos;asc&apos; = lower values rank higher. &apos;exists&apos; = boost chunks that have the field. &apos;not_exists&apos; = boost chunks that lack the field. Optional ��� defaults to &apos;asc&apos; for numeric/datetime fields, &apos;exists&apos; for text/boolean fields.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Ai_search_instance_chat_completion_ai_search_options_retrieval_boost_by_direction
     {

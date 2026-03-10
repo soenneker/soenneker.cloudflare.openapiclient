@@ -14,9 +14,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Boost direction. &apos;desc&apos; = higher values rank higher (e.g. newer timestamps). &apos;asc&apos; = lower values rank higher. &apos;exists&apos; = boost chunks that have the field. &apos;not_exists&apos; = boost chunks that lack the field. Optional ��� defaults to &apos;asc&apos; for numeric fields, &apos;exists&apos; for text/boolean fields.</summary>
+        /// <summary>Boost direction. &apos;desc&apos; = higher values rank higher (e.g. newer timestamps). &apos;asc&apos; = lower values rank higher. &apos;exists&apos; = boost chunks that have the field. &apos;not_exists&apos; = boost chunks that lack the field. Optional ��� defaults to &apos;asc&apos; for numeric/datetime fields, &apos;exists&apos; for text/boolean fields.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_retrieval_options_boost_by_direction? Direction { get; set; }
-        /// <summary>Metadata field name to boost by. Use &apos;timestamp&apos; for document freshness, or any custom_metadata field. Numeric fields support asc/desc directions; text/boolean fields support exists/not_exists.</summary>
+        /// <summary>Metadata field name to boost by. Use &apos;timestamp&apos; for document freshness, or any custom_metadata field. Numeric and datetime fields support asc/desc directions; text/boolean fields support exists/not_exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Field { get; set; }

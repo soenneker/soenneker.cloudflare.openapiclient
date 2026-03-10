@@ -176,14 +176,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Guid? TokenId { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_type? Type { get; set; }
-        /// <summary>The vectorize_name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? VectorizeName { get; private set; }
-#nullable restore
-#else
-        public string VectorizeName { get; private set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result"/> and sets the default values.
         /// </summary>
@@ -245,7 +237,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "token_id", n => { TokenId = n.GetGuidValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_list_instances_200_result_type>(); } },
-                { "vectorize_name", n => { VectorizeName = n.GetStringValue(); } },
             };
         }
         /// <summary>

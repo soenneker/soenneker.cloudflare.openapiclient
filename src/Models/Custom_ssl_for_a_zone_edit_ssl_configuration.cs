@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Certificate { get; set; }
 #endif
+        /// <summary>The identifier for the Custom CSR that was used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomCsrId { get; set; }
+#nullable restore
+#else
+        public string CustomCsrId { get; set; }
+#endif
         /// <summary>The environment to deploy the certificate to, defaults to production</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy? Deploy { get; set; }
         /// <summary>Specify the region where your private key can be held locally for optimal TLS performance. HTTPS connections to any excluded data center will still be fully encrypted, but will incur some latency while Keyless SSL is used to complete the handshake with the nearest allowed data center. Options allow distribution to only to U.S. data centers, only to E.U. data centers, or only to highest security data centers. Default distribution is to all Cloudflare datacenters, for optimal performance.</summary>
@@ -79,6 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "bundle_method", n => { BundleMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>(); } },
                 { "certificate", n => { Certificate = n.GetStringValue(); } },
+                { "custom_csr_id", n => { CustomCsrId = n.GetStringValue(); } },
                 { "deploy", n => { Deploy = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy>(); } },
                 { "geo_restrictions", n => { GeoRestrictions = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions>(global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions.CreateFromDiscriminatorValue); } },
                 { "policy", n => { Policy = n.GetStringValue(); } },
@@ -94,6 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_bundle_method>("bundle_method", BundleMethod);
             writer.WriteStringValue("certificate", Certificate);
+            writer.WriteStringValue("custom_csr_id", CustomCsrId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_deploy>("deploy", Deploy);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Tls_certificates_and_hostnames_geo_restrictions>("geo_restrictions", GeoRestrictions);
             writer.WriteStringValue("policy", Policy);
