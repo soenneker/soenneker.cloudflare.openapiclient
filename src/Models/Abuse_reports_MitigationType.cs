@@ -11,6 +11,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Legal_block,
         #pragma warning restore CS1591
+        [EnumMember(Value = "misleading_interstitial")]
+        #pragma warning disable CS1591
+        Misleading_interstitial,
+        #pragma warning restore CS1591
         [EnumMember(Value = "phishing_interstitial")]
         #pragma warning disable CS1591
         Phishing_interstitial,

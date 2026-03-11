@@ -70,6 +70,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Roles;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secrets_store;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter;
@@ -439,6 +440,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.RumRequestBuilder Rum
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rum.RumRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scim property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.ScimRequestBuilder Scim
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Scim.ScimRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The secondary_dns property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Secondary_dns.Secondary_dnsRequestBuilder Secondary_dns

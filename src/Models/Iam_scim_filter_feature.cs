@@ -7,29 +7,34 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Configuration for SCIM filtering operations.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Get_zones_zone_id_logs_rayids_ray_id_4XX_result : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Iam_scim_filter_feature : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The maximum number of filter results per page.</summary>
+        public int? MaxResults { get; set; }
+        /// <summary>Whether filtering is supported.</summary>
+        public bool? Supported { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_rayids_ray_id_4XX_result"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scim_filter_feature"/> and sets the default values.
         /// </summary>
-        public Get_zones_zone_id_logs_rayids_ray_id_4XX_result()
+        public Iam_scim_filter_feature()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_rayids_ray_id_4XX_result"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scim_filter_feature"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_rayids_ray_id_4XX_result CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scim_filter_feature CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Get_zones_zone_id_logs_rayids_ray_id_4XX_result();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Iam_scim_filter_feature();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +44,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "maxResults", n => { MaxResults = n.GetIntValue(); } },
+                { "supported", n => { Supported = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +55,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("maxResults", MaxResults);
+            writer.WriteBoolValue("supported", Supported);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

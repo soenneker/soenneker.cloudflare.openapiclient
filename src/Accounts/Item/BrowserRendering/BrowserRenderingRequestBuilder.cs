@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEscaped;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Links;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Markdown;
@@ -26,6 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content.ContentRequestBuilder Content
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The crawl property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl.CrawlRequestBuilder Crawl
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl.CrawlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The json property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEscaped.JsonRequestBuilder Json

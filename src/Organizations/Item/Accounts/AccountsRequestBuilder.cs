@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,page_size,page_token}", pathParameters)
+        public AccountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,page_size,page_token}", rawUrl)
+        public AccountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/organizations/{organization_id}/accounts{?account_pubname,account_pubname%2Econtains,account_pubname%2EendsWith,account_pubname%2EstartsWith,direction,name,name%2Econtains,name%2EendsWith,name%2EstartsWith,order_by,page_size,page_token}", rawUrl)
         {
         }
         /// <summary>
@@ -134,6 +134,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             [QueryParameter("account_pubname%2EstartsWith")]
             public string AccountPubnameStartsWith { get; set; }
 #endif
+            /// <summary>&quot;Sort direction for the order_by field. Valid values: `asc`, `desc`.Defaults to `asc` when order_by is specified.&quot;</summary>
+            [QueryParameter("direction")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.GetDirectionQueryParameterType? Direction { get; set; }
             /// <summary>(case-insensitive) Filter the list of accounts to where the name is equal to aparticular string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,6 +177,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts
             [QueryParameter("name%2EstartsWith")]
             public string NameStartsWith { get; set; }
 #endif
+            /// <summary>&quot;Field to order results by. Currently supported values: `account_name`.When not specified, results are ordered by internal account ID.&quot;</summary>
+            [QueryParameter("order_by")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.GetOrder_byQueryParameterType? OrderBy { get; set; }
             /// <summary>The amount of items to return. Defaults to 10.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
