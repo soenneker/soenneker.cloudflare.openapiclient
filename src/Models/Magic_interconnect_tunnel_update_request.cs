@@ -58,6 +58,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The Maximum Transmission Unit (MTU) in bytes for the interconnect. The minimum value is 576.</summary>
         public int? Mtu { get; set; }
+        /// <summary>The name of the interconnect. The name cannot share a name with other tunnels.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_tunnel_update_request"/> and sets the default values.
         /// </summary>
@@ -90,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "interface_address", n => { InterfaceAddress = n.GetStringValue(); } },
                 { "interface_address6", n => { InterfaceAddress6 = n.GetStringValue(); } },
                 { "mtu", n => { Mtu = n.GetIntValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -106,6 +115,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("interface_address", InterfaceAddress);
             writer.WriteStringValue("interface_address6", InterfaceAddress6);
             writer.WriteIntValue("mtu", Mtu);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

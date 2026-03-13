@@ -86,6 +86,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The virtual_port_reservation_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_virtual_port_reservation_id? VirtualPortReservationId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_virtual_port_reservation_id VirtualPortReservationId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect"/> and sets the default values.
         /// </summary>
@@ -123,6 +131,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "mtu", n => { Mtu = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "virtual_port_reservation_id", n => { VirtualPortReservationId = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_virtual_port_reservation_id>(global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_virtual_port_reservation_id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -144,6 +153,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteIntValue("mtu", Mtu);
             writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Magic_interconnect_virtual_port_reservation_id>("virtual_port_reservation_id", VirtualPortReservationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

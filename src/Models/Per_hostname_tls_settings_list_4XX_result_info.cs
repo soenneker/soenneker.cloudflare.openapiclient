@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? PerPage { get; set; }
         /// <summary>Total results available without any search parameters.</summary>
         public double? TotalCount { get; set; }
+        /// <summary>The number of total pages in the entire result set.</summary>
+        public double? TotalPages { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Per_hostname_tls_settings_list_4XX_result_info"/> and sets the default values.
         /// </summary>
@@ -51,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "page", n => { Page = n.GetDoubleValue(); } },
                 { "per_page", n => { PerPage = n.GetDoubleValue(); } },
                 { "total_count", n => { TotalCount = n.GetDoubleValue(); } },
+                { "total_pages", n => { TotalPages = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -64,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("page", Page);
             writer.WriteDoubleValue("per_page", PerPage);
             writer.WriteDoubleValue("total_count", TotalCount);
+            writer.WriteDoubleValue("total_pages", TotalPages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
