@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_static;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Labels;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_static.Item_staticRequestBuilder Item_static
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item_static.Item_staticRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The labels property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Labels.LabelsRequestBuilder Labels
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.zones.item.api_gateway.operations.item collection</summary>
         /// <param name="position">Identifier for the operation</param>

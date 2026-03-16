@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         {
         }
         /// <summary>
-        /// Archives Security Center Insight
+        /// Archives a Security Center insight for an account, removing it from the active insights list while preserving historical data.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Archive_security_center_insight_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Archive_security_center_insight_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Archive_security_center_insight_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Archives Security Center Insight
+        /// Archives a Security Center insight for an account, removing it from the active insights list while preserving historical data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

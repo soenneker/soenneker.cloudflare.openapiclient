@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Securityt
         {
         }
         /// <summary>
-        /// Deletes security.txt
+        /// Removes the security.txt file configuration for a zone. The /.well-known/security.txt endpoint will no longer be served.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_security_txt_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Securityt
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_security_txt_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Delete_security_txt_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves security.txt
+        /// Retrieves the current security.txt file configuration for a zone, used for security vulnerability reporting.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_txt_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Securityt
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_txt_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_txt_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates security.txt
+        /// Updates the security.txt file configuration for a zone, which provides security researchers with vulnerability reporting information.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Update_security_txt_200"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Securityt
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Update_security_txt_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Update_security_txt_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes security.txt
+        /// Removes the security.txt file configuration for a zone. The /.well-known/security.txt endpoint will no longer be served.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Securityt
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves security.txt
+        /// Retrieves the current security.txt file configuration for a zone, used for security vulnerability reporting.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -143,7 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Securityt
             return requestInfo;
         }
         /// <summary>
-        /// Updates security.txt
+        /// Updates the security.txt file configuration for a zone, which provides security researchers with vulnerability reporting information.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

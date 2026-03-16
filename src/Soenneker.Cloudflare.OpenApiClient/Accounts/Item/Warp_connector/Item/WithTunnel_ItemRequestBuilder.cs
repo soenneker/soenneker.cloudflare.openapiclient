@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connections;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Token;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithTunnel_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The connections property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connections.ConnectionsRequestBuilder Connections
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Connections.ConnectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The token property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Warp_connector.Item.Token.TokenRequestBuilder Token
         {

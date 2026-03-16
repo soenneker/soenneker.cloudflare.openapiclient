@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Whether to enforce DNS-only records for the entire account. Omitted when account settings are unavailable.</summary>
+        public bool? EnforceDnsOnly { get; set; }
         /// <summary>The zone_defaults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enforce_dns_only", n => { EnforceDnsOnly = n.GetBoolValue(); } },
                 { "zone_defaults", n => { ZoneDefaults = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response.CreateFromDiscriminatorValue); } },
             };
         }
@@ -57,6 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enforce_dns_only", EnforceDnsOnly);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Dns_settings_dns_settings_account_response>("zone_defaults", ZoneDefaults);
             writer.WriteAdditionalData(AdditionalData);
         }

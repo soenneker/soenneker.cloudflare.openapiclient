@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.Labels;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.I
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithOperation_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The labels property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.Labels.LabelsRequestBuilder Labels
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.Item.WithOperation_ItemRequestBuilder"/> and sets the default values.
         /// </summary>

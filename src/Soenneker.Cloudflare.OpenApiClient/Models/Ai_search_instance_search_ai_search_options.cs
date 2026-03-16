@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The cache property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_cache? Cache { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_cache Cache { get; set; }
+#endif
         /// <summary>The query_rewrite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +71,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cache", n => { Cache = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_cache>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_cache.CreateFromDiscriminatorValue); } },
                 { "query_rewrite", n => { QueryRewrite = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_query_rewrite>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_query_rewrite.CreateFromDiscriminatorValue); } },
                 { "reranking", n => { Reranking = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_reranking>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_reranking.CreateFromDiscriminatorValue); } },
                 { "retrieval", n => { Retrieval = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval.CreateFromDiscriminatorValue); } },
@@ -75,6 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_cache>("cache", Cache);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_query_rewrite>("query_rewrite", QueryRewrite);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_reranking>("reranking", Reranking);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_search_ai_search_options_retrieval>("retrieval", Retrieval);

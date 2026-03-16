@@ -9,18 +9,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages : global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_messages_Wrapper, IParsable
+    public partial class Api_shield_labels_get_managed_label_200 : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_common, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The result property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_full_managed_label? Result { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_full_managed_label Result { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_labels_get_managed_label_200"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_labels_get_managed_label_200 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Get_accounts_account_id_logpush_datasets_dataset_id_fields_4XX_messages();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_labels_get_managed_label_200();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -30,6 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_full_managed_label>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_full_managed_label.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -40,6 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_full_managed_label>("result", Result);
         }
     }
 }

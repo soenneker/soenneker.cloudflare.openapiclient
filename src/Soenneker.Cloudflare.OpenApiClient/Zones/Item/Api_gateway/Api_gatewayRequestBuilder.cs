@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Configuration;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Discovery;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Schemas;
 using System.Collections.Generic;
@@ -33,6 +34,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder ExpressionTemplate
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.ExpressionTemplate.ExpressionTemplateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The labels property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.LabelsRequestBuilder Labels
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Labels.LabelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The operations property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway.Operations.OperationsRequestBuilder Operations
