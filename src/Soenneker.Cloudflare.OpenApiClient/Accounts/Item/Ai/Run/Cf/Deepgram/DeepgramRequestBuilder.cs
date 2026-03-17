@@ -11,6 +11,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Aura;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Flux;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3Internal;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3Ws;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -67,6 +68,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3Internal.Nova3InternalRequestBuilder Nova3Internal
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3Internal.Nova3InternalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The nova3Ws property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3Ws.Nova3WsRequestBuilder Nova3Ws
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.Nova3Ws.Nova3WsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Deepgram.DeepgramRequestBuilder"/> and sets the default values.

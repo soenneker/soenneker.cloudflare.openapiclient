@@ -50,6 +50,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? OpportunisticEncryption { get; set; }
         /// <summary>The Polish level to configure.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_polish? Polish { get; set; }
+        /// <summary>Whether to redirect verified AI training crawlers to canonical URLs found in the HTML response.</summary>
+        public bool? RedirectsForAiTraining { get; set; }
         /// <summary>The request body buffering mode.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_request_body_buffering? RequestBodyBuffering { get; set; }
         /// <summary>The response body buffering mode.</summary>
@@ -103,6 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "mirage", n => { Mirage = n.GetBoolValue(); } },
                 { "opportunistic_encryption", n => { OpportunisticEncryption = n.GetBoolValue(); } },
                 { "polish", n => { Polish = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_polish>(); } },
+                { "redirects_for_ai_training", n => { RedirectsForAiTraining = n.GetBoolValue(); } },
                 { "request_body_buffering", n => { RequestBodyBuffering = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_request_body_buffering>(); } },
                 { "response_body_buffering", n => { ResponseBodyBuffering = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_response_body_buffering>(); } },
                 { "rocket_loader", n => { RocketLoader = n.GetBoolValue(); } },
@@ -133,6 +136,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("mirage", Mirage);
             writer.WriteBoolValue("opportunistic_encryption", OpportunisticEncryption);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_polish>("polish", Polish);
+            writer.WriteBoolValue("redirects_for_ai_training", RedirectsForAiTraining);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_request_body_buffering>("request_body_buffering", RequestBodyBuffering);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetConfigRule_action_parameters_response_body_buffering>("response_body_buffering", ResponseBodyBuffering);
             writer.WriteBoolValue("rocket_loader", RocketLoader);

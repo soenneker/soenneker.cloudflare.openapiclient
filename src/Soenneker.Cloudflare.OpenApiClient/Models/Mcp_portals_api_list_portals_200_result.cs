@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Allow remote code execution in Dynamic Workers (beta)</summary>
+        public bool? AllowCodeMode { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>The created_by property</summary>
@@ -68,6 +70,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Route outbound MCP traffic through Zero Trust Secure Web Gateway</summary>
         public bool? SecureWebGateway { get; set; }
+        /// <summary>The servers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_portals_200_result_servers>? Servers { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_portals_200_result_servers> Servers { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_portals_200_result"/> and sets the default values.
         /// </summary>
@@ -93,6 +103,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allow_code_mode", n => { AllowCodeMode = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_by", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
@@ -102,6 +113,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "modified_by", n => { ModifiedBy = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "secure_web_gateway", n => { SecureWebGateway = n.GetBoolValue(); } },
+                { "servers", n => { Servers = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_portals_200_result_servers>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_portals_200_result_servers.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -111,11 +123,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("allow_code_mode", AllowCodeMode);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("secure_web_gateway", SecureWebGateway);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_portals_200_result_servers>("servers", Servers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

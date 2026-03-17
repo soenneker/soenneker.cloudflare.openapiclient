@@ -27,6 +27,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_logs Logs { get; set; }
 #endif
+        /// <summary>Trace settings for the Worker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_traces? Traces { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_traces Traces { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability"/> and sets the default values.
         /// </summary>
@@ -55,6 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "head_sampling_rate", n => { HeadSamplingRate = n.GetDoubleValue(); } },
                 { "logs", n => { Logs = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_logs>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_logs.CreateFromDiscriminatorValue); } },
+                { "traces", n => { Traces = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_traces>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_traces.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteDoubleValue("head_sampling_rate", HeadSamplingRate);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_logs>("logs", Logs);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Worker_observability_traces>("traces", Traces);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

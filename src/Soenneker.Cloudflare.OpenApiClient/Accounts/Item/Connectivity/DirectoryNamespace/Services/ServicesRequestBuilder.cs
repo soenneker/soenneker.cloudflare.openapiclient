@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
         {
         }
         /// <summary>
-        /// List connectivity services
+        /// List Workers VPC connectivity services
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Connectivity_services_list_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Connectivity_services_list_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Connectivity_services_list_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create connectivity service
+        /// Create Workers VPC connectivity service
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Connectivity_services_post_200"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Connectivity_services_post_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Connectivity_services_post_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List connectivity services
+        /// List Workers VPC connectivity services
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
             return requestInfo;
         }
         /// <summary>
-        /// Create connectivity service
+        /// Create Workers VPC connectivity service
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.Director
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Connectivity.DirectoryNamespace.Services.ServicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List connectivity services
+        /// List Workers VPC connectivity services
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServicesRequestBuilderGetQueryParameters 

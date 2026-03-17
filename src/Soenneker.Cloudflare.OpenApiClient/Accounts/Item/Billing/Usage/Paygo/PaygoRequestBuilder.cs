@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaygoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/billing/usage/paygo{?from*,last_month_period_start*,last_year_period_start*,to*}", pathParameters)
+        public PaygoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/billing/usage/paygo{?from*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaygoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/billing/usage/paygo{?from*,last_month_period_start*,last_year_period_start*,to*}", rawUrl)
+        public PaygoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/billing/usage/paygo{?from*,to*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period. Supports two mutually exclusive query modes:**Billing period mode:** Use `last_year_period_start` and`last_month_period_start` to query a specific billing period.**Date range mode:** Use `from` and `to` to query a custom date range(maximum 62 days).This endpoint is currently in beta and access is restricted to selectaccounts.
+        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period.This endpoint is currently in beta and access is restricted to selectaccounts.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Billable_usage_api_usage_response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Billable_usage_api_usage_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Billable_usage_api_usage_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period. Supports two mutually exclusive query modes:**Billing period mode:** Use `last_year_period_start` and`last_month_period_start` to query a specific billing period.**Date range mode:** Use `from` and `to` to query a custom date range(maximum 62 days).This endpoint is currently in beta and access is restricted to selectaccounts.
+        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period.This endpoint is currently in beta and access is restricted to selectaccounts.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo.PaygoRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period. Supports two mutually exclusive query modes:**Billing period mode:** Use `last_year_period_start` and`last_month_period_start` to query a specific billing period.**Date range mode:** Use `from` and `to` to query a custom date range(maximum 62 days).This endpoint is currently in beta and access is restricted to selectaccounts.
+        /// Returns billable usage data for PayGo (self-serve) accounts.When no query parameters are provided, returns usage for the currentbilling period.This endpoint is currently in beta and access is restricted to selectaccounts.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PaygoRequestBuilderGetQueryParameters 
@@ -93,12 +93,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Billing.Usage.Paygo
             /// <summary>Defines the start date for the usage query (e.g., 2025-02-01).</summary>
             [QueryParameter("from")]
             public Date? From { get; set; }
-            /// <summary>Specifies the month of the billing period to query (1-12). Must be provided together with last_year_period_start. Mutually exclusive with from/to.</summary>
-            [QueryParameter("last_month_period_start")]
-            public int? LastMonthPeriodStart { get; set; }
-            /// <summary>Specifies the year of the billing period to query (e.g., 2025). Must be provided together with last_month_period_start. Mutually exclusive with from/to.</summary>
-            [QueryParameter("last_year_period_start")]
-            public int? LastYearPeriodStart { get; set; }
             /// <summary>Defines the end date for the usage query (e.g., 2025-03-01).</summary>
             [QueryParameter("to")]
             public Date? To { get; set; }

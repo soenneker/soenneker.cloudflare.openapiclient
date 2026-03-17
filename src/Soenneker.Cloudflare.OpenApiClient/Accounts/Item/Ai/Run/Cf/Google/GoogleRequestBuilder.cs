@@ -6,7 +6,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Embeddin
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma2bItLora;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma312bIt;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.OmniEmbeddinggemma300m;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.NonomniEmbeddinggemma300m;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -39,10 +39,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.Gemma7bItLora.Gemma7bItLoraRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The omniEmbeddinggemma300m property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.OmniEmbeddinggemma300m.OmniEmbeddinggemma300mRequestBuilder OmniEmbeddinggemma300m
+        /// <summary>The nonomniEmbeddinggemma300m property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.NonomniEmbeddinggemma300m.NonomniEmbeddinggemma300mRequestBuilder NonomniEmbeddinggemma300m
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.OmniEmbeddinggemma300m.OmniEmbeddinggemma300mRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.NonomniEmbeddinggemma300m.NonomniEmbeddinggemma300mRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Google.GoogleRequestBuilder"/> and sets the default values.

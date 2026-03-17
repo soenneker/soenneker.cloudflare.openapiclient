@@ -3,7 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.Indictrans2EnIndic1B;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.OmniIndictrans2EnIndic1b;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.NonomniIndictrans2EnIndic1b;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,10 +21,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.Indictrans2EnIndic1B.Indictrans2EnIndic1BRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The omniIndictrans2EnIndic1b property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.OmniIndictrans2EnIndic1b.OmniIndictrans2EnIndic1bRequestBuilder OmniIndictrans2EnIndic1b
+        /// <summary>The nonomniIndictrans2EnIndic1b property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.NonomniIndictrans2EnIndic1b.NonomniIndictrans2EnIndic1bRequestBuilder NonomniIndictrans2EnIndic1b
         {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.OmniIndictrans2EnIndic1b.OmniIndictrans2EnIndic1bRequestBuilder(PathParameters, RequestAdapter);
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.NonomniIndictrans2EnIndic1b.NonomniIndictrans2EnIndic1bRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Ai4bharat.Ai4bharatRequestBuilder"/> and sets the default values.

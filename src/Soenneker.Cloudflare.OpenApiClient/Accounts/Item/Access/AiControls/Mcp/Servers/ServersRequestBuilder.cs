@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
         {
         }
         /// <summary>
-        /// List MCP Servers
+        /// Lists all MCP portals configured for the account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_servers_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_servers_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_list_servers_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new MCP Server
+        /// Creates a new MCP portal for managing AI tool access through Cloudflare Access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_create_servers_201"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_create_servers_201>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Mcp_portals_api_create_servers_201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List MCP Servers
+        /// Lists all MCP portals configured for the account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             return requestInfo;
         }
         /// <summary>
-        /// Create a new MCP Server
+        /// Creates a new MCP portal for managing AI tool access through Cloudflare Access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls.Mcp.Servers.ServersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List MCP Servers
+        /// Lists all MCP portals configured for the account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ServersRequestBuilderGetQueryParameters 

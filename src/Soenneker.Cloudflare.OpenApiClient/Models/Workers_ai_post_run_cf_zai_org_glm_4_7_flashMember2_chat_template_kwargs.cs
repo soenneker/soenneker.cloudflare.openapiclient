@@ -16,7 +16,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If false, preserves reasoning context between turns.</summary>
         public bool? ClearThinking { get; set; }
-        /// <summary>Wether to enable reasoning, enabled by default.</summary>
+        /// <summary>Whether to enable reasoning, enabled by default.</summary>
         public bool? EnableThinking { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_zai_org_glm_4_7_flashMember2_chat_template_kwargs"/> and sets the default values.

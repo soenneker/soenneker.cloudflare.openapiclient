@@ -38,6 +38,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Latitude { get; set; }
 #endif
+        /// <summary>BCP 47 locale code used for the geolocation name translation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Locale { get; set; }
+#nullable restore
+#else
+        public string Locale { get; set; }
+#endif
         /// <summary>A numeric string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "geoId", n => { GeoId = n.GetStringValue(); } },
                 { "latitude", n => { Latitude = n.GetStringValue(); } },
+                { "locale", n => { Locale = n.GetStringValue(); } },
                 { "longitude", n => { Longitude = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_geolocation_details_200_result_geolocation_parent_parent_type>(); } },
@@ -99,6 +108,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("geoId", GeoId);
             writer.WriteStringValue("latitude", Latitude);
+            writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("longitude", Longitude);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_geolocation_details_200_result_geolocation_parent_parent_type>("type", Type);

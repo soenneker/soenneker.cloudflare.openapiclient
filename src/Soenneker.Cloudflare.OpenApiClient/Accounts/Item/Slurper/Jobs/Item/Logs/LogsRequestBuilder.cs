@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Log
         {
         }
         /// <summary>
-        /// Get job logs
+        /// Gets log entries for an R2 Super Slurper migration job, showing migration status changes, errors, etc.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_get_job_logs_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Log
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_get_job_logs_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Slurper_get_job_logs_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get job logs
+        /// Gets log entries for an R2 Super Slurper migration job, showing migration status changes, errors, etc.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Log
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Slurper.Jobs.Item.Logs.LogsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get job logs
+        /// Gets log entries for an R2 Super Slurper migration job, showing migration status changes, errors, etc.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class LogsRequestBuilderGetQueryParameters 
