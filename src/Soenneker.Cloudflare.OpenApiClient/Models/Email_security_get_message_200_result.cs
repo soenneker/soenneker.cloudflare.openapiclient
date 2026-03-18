@@ -178,7 +178,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Replyto { get; set; }
 #endif
-        /// <summary>The sent_date property</summary>
+        /// <summary>The scanned_at property</summary>
+        public DateTimeOffset? ScannedAt { get; set; }
+        /// <summary>The sent_at property</summary>
+        public DateTimeOffset? SentAt { get; set; }
+        /// <summary>Deprecated, use `sent_at` instead</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SentDate { get; set; }
@@ -218,7 +223,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> ToName { get; set; }
 #endif
-        /// <summary>The ts property</summary>
+        /// <summary>Deprecated, use `scanned_at` instead</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ts { get; set; }
@@ -281,6 +287,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "postfix_id_outbound", n => { PostfixIdOutbound = n.GetStringValue(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties>(global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties.CreateFromDiscriminatorValue); } },
                 { "replyto", n => { Replyto = n.GetStringValue(); } },
+                { "scanned_at", n => { ScannedAt = n.GetDateTimeOffsetValue(); } },
+                { "sent_at", n => { SentAt = n.GetDateTimeOffsetValue(); } },
                 { "sent_date", n => { SentDate = n.GetStringValue(); } },
                 { "subject", n => { Subject = n.GetStringValue(); } },
                 { "threat_categories", n => { ThreatCategories = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -319,6 +327,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("postfix_id_outbound", PostfixIdOutbound);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_get_message_200_result_properties>("properties", Properties);
             writer.WriteStringValue("replyto", Replyto);
+            writer.WriteDateTimeOffsetValue("scanned_at", ScannedAt);
+            writer.WriteDateTimeOffsetValue("sent_at", SentAt);
             writer.WriteStringValue("sent_date", SentDate);
             writer.WriteStringValue("subject", Subject);
             writer.WriteCollectionOfPrimitiveValues<string>("threat_categories", ThreatCategories);

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.Public
         {
         }
         /// <summary>
-        /// List Public Finetunes
+        /// Lists publicly available fine-tuned models that can be used with Workers AI.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_list_public_finetunes_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.Public
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_list_public_finetunes_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_list_public_finetunes_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Public Finetunes
+        /// Lists publicly available fine-tuned models that can be used with Workers AI.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.Public
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.Public.PublicRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List Public Finetunes
+        /// Lists publicly available fine-tuned models that can be used with Workers AI.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PublicRequestBuilderGetQueryParameters 

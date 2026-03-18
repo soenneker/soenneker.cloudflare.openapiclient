@@ -14,7 +14,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completed_timestamp property</summary>
+        /// <summary>The completed_at property</summary>
+        public DateTimeOffset? CompletedAt { get; set; }
+        /// <summary>Deprecated, use `completed_at` instead</summary>
+        [Obsolete("")]
         public DateTimeOffset? CompletedTimestamp { get; set; }
         /// <summary>The destination property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -86,6 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "completed_timestamp", n => { CompletedTimestamp = n.GetDateTimeOffsetValue(); } },
                 { "destination", n => { Destination = n.GetStringValue(); } },
                 { "item_count", n => { ItemCount = n.GetIntValue(); } },
@@ -103,6 +107,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteDateTimeOffsetValue("completed_timestamp", CompletedTimestamp);
             writer.WriteStringValue("destination", Destination);
             writer.WriteIntValue("item_count", ItemCount);

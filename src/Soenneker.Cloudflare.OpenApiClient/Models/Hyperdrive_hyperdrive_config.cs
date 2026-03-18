@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdrive_config_origin Origin { get; set; }
 #endif
-        /// <summary>The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.</summary>
+        /// <summary>&quot;The (soft) maximum number of connections the Hyperdrive is allowed to make to the origin database.Maximum allowed: 20 for free tier accounts, 100 for paid tier accounts.If not specified, defaults to 20 for free tier and 60 for paid tier.Contact Cloudflare if you need a higher limit.&quot;</summary>
         public int? OriginConnectionLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Hyperdrive_hyperdrive_config"/> and sets the default values.

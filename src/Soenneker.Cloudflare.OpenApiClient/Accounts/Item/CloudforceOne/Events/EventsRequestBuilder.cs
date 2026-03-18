@@ -11,6 +11,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Crea
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Dataset;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Datasets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Graphql;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.IndicatorTypes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Item;
@@ -20,6 +21,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Rela
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Relationships;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.TargetIndustries;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Update;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -74,6 +76,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Event_tag.Event_tagRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The graphql property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Graphql.GraphqlRequestBuilder Graphql
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Graphql.GraphqlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The indicators property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators.IndicatorsRequestBuilder Indicators
         {
@@ -113,6 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.TargetIndustries.TargetIndustriesRequestBuilder TargetIndustries
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.TargetIndustries.TargetIndustriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The update property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Update.UpdateRequestBuilder Update
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Update.UpdateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.events.item collection</summary>
         /// <param name="position">Event UUID.</param>

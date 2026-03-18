@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.Item.Fin
         {
         }
         /// <summary>
-        /// Upload a Finetune Asset
+        /// Uploads training data assets for a Workers AI fine-tuning job.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_upload_finetune_asset_200"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.Item.Fin
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_upload_finetune_asset_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_upload_finetune_asset_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a Finetune Asset
+        /// Uploads training data assets for a Workers AI fine-tuning job.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

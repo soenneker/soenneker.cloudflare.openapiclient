@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvestigateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,exact_subject*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", pathParameters)
+        public InvestigateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,exact_subject*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*,submissions*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InvestigateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,exact_subject*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*}", rawUrl)
+        public InvestigateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/investigate{?action_log*,alert_id*,cursor*,detections_only*,domain*,end*,exact_subject*,final_disposition*,message_action*,message_id*,metric*,page*,per_page*,query*,recipient*,sender*,start*,subject*,submissions*}", rawUrl)
         {
         }
         /// <summary>
@@ -256,6 +256,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Investi
             [QueryParameter("subject")]
             public string Subject { get; set; }
 #endif
+            /// <summary>Search for submissions instead of original messages</summary>
+            [QueryParameter("submissions")]
+            public bool? Submissions { get; set; }
         }
     }
 }

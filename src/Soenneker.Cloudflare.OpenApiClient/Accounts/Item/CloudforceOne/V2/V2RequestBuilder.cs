@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Events;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V2RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The brandProtection property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.BrandProtectionRequestBuilder BrandProtection
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.BrandProtectionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The events property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Events.EventsRequestBuilder Events
         {

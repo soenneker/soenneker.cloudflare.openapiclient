@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes
         {
         }
         /// <summary>
-        /// List Finetunes
+        /// Lists all fine-tuning jobs created by the account, including status and metrics.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_list_finetunes_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_list_finetunes_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_list_finetunes_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new Finetune
+        /// Creates a new fine-tuning job for a Workers AI model using custom training data.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_create_finetune_200"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_create_finetune_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_create_finetune_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List Finetunes
+        /// Lists all fine-tuning jobs created by the account, including status and metrics.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes
             return requestInfo;
         }
         /// <summary>
-        /// Create a new Finetune
+        /// Creates a new fine-tuning job for a Workers AI model using custom training data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

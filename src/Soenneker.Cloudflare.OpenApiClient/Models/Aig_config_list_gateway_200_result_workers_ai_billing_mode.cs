@@ -3,17 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Controls how Workers AI inference calls routed through this gateway are billed</summary>
+    /// <summary>Controls how Workers AI inference calls routed through this gateway are billed. Only &apos;postpaid&apos; is currently supported.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Aig_config_list_gateway_200_result_workers_ai_billing_mode
     {
         [EnumMember(Value = "postpaid")]
         #pragma warning disable CS1591
         Postpaid,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "unified")]
-        #pragma warning disable CS1591
-        Unified,
         #pragma warning restore CS1591
     }
 }

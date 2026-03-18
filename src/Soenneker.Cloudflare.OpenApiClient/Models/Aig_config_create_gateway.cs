@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? RateLimitingLimit { get; set; }
         /// <summary>The rate_limiting_technique property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique? RateLimitingTechnique { get; set; }
-        /// <summary>Controls how Workers AI inference calls routed through this gateway are billed</summary>
+        /// <summary>Controls how Workers AI inference calls routed through this gateway are billed. Only &apos;postpaid&apos; is currently supported.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode? WorkersAiBillingMode { get; set; }
         /// <summary>The zdr property</summary>
         public bool? Zdr { get; set; }
