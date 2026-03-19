@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339` or `rfc3339nano`.</summary>
+    /// <summary>String to specify the format for timestamps, such as `unixnano`, `unix`, `rfc3339`, `rfc3339ms` or `rfc3339ns`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Logpush_output_options_timestamp_format
     {
@@ -19,9 +19,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Rfc3339,
         #pragma warning restore CS1591
-        [EnumMember(Value = "rfc3339nano")]
+        [EnumMember(Value = "rfc3339ms")]
         #pragma warning disable CS1591
-        Rfc3339nano,
+        Rfc3339ms,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "rfc3339ns")]
+        #pragma warning disable CS1591
+        Rfc3339ns,
         #pragma warning restore CS1591
     }
 }
