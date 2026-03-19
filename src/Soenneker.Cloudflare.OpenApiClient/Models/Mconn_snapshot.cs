@@ -61,6 +61,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? CpuTimeSystemMs { get; set; }
         /// <summary>Time spent in user mode (milliseconds)</summary>
         public double? CpuTimeUserMs { get; set; }
+        /// <summary>Number of network operations applied during state transition</summary>
+        public double? Delta { get; set; }
         /// <summary>The dhcp_leases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +79,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_disk> Disks { get; set; }
 #endif
+        /// <summary>Simulated number of network operations applied during state transition</summary>
+        public double? Epsilon { get; set; }
         /// <summary>Name of high availability state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -460,8 +464,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "cpu_time_steal_ms", n => { CpuTimeStealMs = n.GetDoubleValue(); } },
                 { "cpu_time_system_ms", n => { CpuTimeSystemMs = n.GetDoubleValue(); } },
                 { "cpu_time_user_ms", n => { CpuTimeUserMs = n.GetDoubleValue(); } },
+                { "delta", n => { Delta = n.GetDoubleValue(); } },
                 { "dhcp_leases", n => { DhcpLeases = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_dhcp_lease>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_dhcp_lease.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "disks", n => { Disks = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_disk>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_disk.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "epsilon", n => { Epsilon = n.GetDoubleValue(); } },
                 { "ha_state", n => { HaState = n.GetStringValue(); } },
                 { "ha_value", n => { HaValue = n.GetDoubleValue(); } },
                 { "interfaces", n => { Interfaces = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_interface>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_interface.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -639,8 +645,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("cpu_time_steal_ms", CpuTimeStealMs);
             writer.WriteDoubleValue("cpu_time_system_ms", CpuTimeSystemMs);
             writer.WriteDoubleValue("cpu_time_user_ms", CpuTimeUserMs);
+            writer.WriteDoubleValue("delta", Delta);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_dhcp_lease>("dhcp_leases", DhcpLeases);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_disk>("disks", Disks);
+            writer.WriteDoubleValue("epsilon", Epsilon);
             writer.WriteStringValue("ha_state", HaState);
             writer.WriteDoubleValue("ha_value", HaValue);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_interface>("interfaces", Interfaces);

@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
         {
         }
         /// <summary>
-        /// Delete a risk score integration.
+        /// Removes a Zero Trust risk score integration, disconnecting the external risk signal source.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_delete_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_update_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_update_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a risk score integration.
+        /// Removes a Zero Trust risk score integration, disconnecting the external risk signal source.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

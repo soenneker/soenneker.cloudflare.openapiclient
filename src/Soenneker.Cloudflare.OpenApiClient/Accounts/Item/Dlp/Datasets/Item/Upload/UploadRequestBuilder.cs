@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upl
         {
         }
         /// <summary>
-        /// Prepare to upload a new version of a dataset
+        /// Creates a new version of a DLP dataset, allowing you to stage changes before activation. Used for single-column EDM and custom word lists.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_datasets_create_version_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item.Upl
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_datasets_create_version_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_datasets_create_version_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Prepare to upload a new version of a dataset
+        /// Creates a new version of a DLP dataset, allowing you to stage changes before activation. Used for single-column EDM and custom word lists.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

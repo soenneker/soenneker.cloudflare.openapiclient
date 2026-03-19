@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.
         {
         }
         /// <summary>
-        /// Clear the risk score for a particular user
+        /// Resets risk scores for specified users, clearing their accumulated risk history.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_reset_post_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Item.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_reset_post_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_reset_post_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Clear the risk score for a particular user
+        /// Resets risk scores for specified users, clearing their accumulated risk history.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

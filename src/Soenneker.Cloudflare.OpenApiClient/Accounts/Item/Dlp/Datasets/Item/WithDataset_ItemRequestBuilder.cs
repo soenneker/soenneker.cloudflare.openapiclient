@@ -92,7 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_datasets_read_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_datasets_read_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update details about a dataset
+        /// Updates the configuration of an existing DLP dataset, such as its name, description, or detection settings.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_datasets_update_200"/></returns>
         /// <param name="body">The request body</param>
@@ -155,7 +155,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update details about a dataset
+        /// Updates the configuration of an existing DLP dataset, such as its name, description, or detection settings.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

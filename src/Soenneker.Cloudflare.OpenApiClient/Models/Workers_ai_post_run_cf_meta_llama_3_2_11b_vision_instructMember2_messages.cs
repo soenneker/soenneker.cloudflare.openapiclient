@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Role { get; set; }
 #endif
-        /// <summary>The tool call id. Must be supplied for tool calls for Mistral-3. If you don&apos;t know what to put here you can fall back to 000000001</summary>
+        /// <summary>The tool call id. If you don&apos;t know what to put here you can fall back to 000000001</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ToolCallId { get; set; }

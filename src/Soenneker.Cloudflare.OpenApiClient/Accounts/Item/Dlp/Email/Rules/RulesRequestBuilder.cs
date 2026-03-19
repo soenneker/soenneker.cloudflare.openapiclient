@@ -70,7 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_list_all_rules_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_list_all_rules_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update email scanner rule priorities
+        /// Reorders DLP email scanning rules by updating their priority values. Higher priority rules are evaluated first.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_update_rule_priorities_200"/></returns>
         /// <param name="body">Used to update multiple email rule priorities as an atomic action,to support patterns such as swapping the priorities of two email rules.</param>
@@ -95,7 +95,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_update_rule_priorities_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_update_rule_priorities_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create email scanner rule
+        /// Creates a new DLP email scanning rule that defines what content patterns to detect in email messages and what actions to take.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_create_rule_200"/></returns>
         /// <param name="body">The request body</param>
@@ -139,7 +139,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules
             return requestInfo;
         }
         /// <summary>
-        /// Update email scanner rule priorities
+        /// Reorders DLP email scanning rules by updating their priority values. Higher priority rules are evaluated first.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Used to update multiple email rule priorities as an atomic action,to support patterns such as swapping the priorities of two email rules.</param>
@@ -161,7 +161,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules
             return requestInfo;
         }
         /// <summary>
-        /// Create email scanner rule
+        /// Creates a new DLP email scanning rule that defines what content patterns to detect in email messages and what actions to take.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

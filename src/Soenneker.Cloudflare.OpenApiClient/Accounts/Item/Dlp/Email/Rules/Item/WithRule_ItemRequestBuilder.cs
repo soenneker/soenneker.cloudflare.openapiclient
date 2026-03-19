@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules.Item
         {
         }
         /// <summary>
-        /// Delete email scanner rule
+        /// Removes a DLP email scanning rule. The rule will no longer be applied to email messages.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_delete_rule_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_delete_rule_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_delete_rule_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get an email scanner rule
+        /// Gets detailed configuration for a specific DLP email scanning rule, including detection patterns and actions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_get_rule_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_update_rule_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_update_rule_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete email scanner rule
+        /// Removes a DLP email scanning rule. The rule will no longer be applied to email messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Rules.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get an email scanner rule
+        /// Gets detailed configuration for a specific DLP email scanning rule, including detection patterns and actions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

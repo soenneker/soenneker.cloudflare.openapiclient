@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Account_map
         {
         }
         /// <summary>
-        /// Get mapping
+        /// Retrieves the email provider mapping configuration for DLP email scanning.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_get_account_mapping_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Account_map
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_get_account_mapping_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_get_account_mapping_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create mapping
+        /// Creates a mapping between a Cloudflare account and an email provider for DLP email scanning integration.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_create_account_mapping_200"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Account_map
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_create_account_mapping_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_email_scanner_create_account_mapping_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get mapping
+        /// Retrieves the email provider mapping configuration for DLP email scanning.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email.Account_map
             return requestInfo;
         }
         /// <summary>
-        /// Create mapping
+        /// Creates a mapping between a Cloudflare account and an email provider for DLP email scanning integration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

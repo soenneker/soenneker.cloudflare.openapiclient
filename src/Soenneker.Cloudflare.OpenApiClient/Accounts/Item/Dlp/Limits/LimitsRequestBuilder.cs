@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits
         {
         }
         /// <summary>
-        /// Fetch limits associated with DLP for account
+        /// Retrieves current DLP usage limits and quotas for the account, including dataset limits and scan quotas.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_limits_get_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Limits
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_limits_get_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_limits_get_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Fetch limits associated with DLP for account
+        /// Retrieves current DLP usage limits and quotas for the account, including dataset limits and scan quotas.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

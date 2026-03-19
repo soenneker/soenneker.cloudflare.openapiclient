@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Behav
         {
         }
         /// <summary>
-        /// Get all behaviors and associated configuration
+        /// Retrieves configured risk score behaviors that define how user actions affect their overall risk score.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_behaviors_get_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Behav
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_behaviors_get_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_behaviors_get_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update configuration for risk behaviors
+        /// Updates risk score behavior configurations, defining weights and thresholds for risk calculation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_behaviors_put_200"/></returns>
         /// <param name="body">The request body</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Behav
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_behaviors_put_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_risk_score_behaviors_put_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get all behaviors and associated configuration
+        /// Retrieves configured risk score behaviors that define how user actions affect their overall risk score.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Behav
             return requestInfo;
         }
         /// <summary>
-        /// Update configuration for risk behaviors
+        /// Updates risk score behavior configurations, defining weights and thresholds for risk calculation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

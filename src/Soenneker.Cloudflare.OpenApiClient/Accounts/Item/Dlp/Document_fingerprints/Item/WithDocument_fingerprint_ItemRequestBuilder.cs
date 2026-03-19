@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerpr
         {
         }
         /// <summary>
-        /// Delete a single document fingerprint.
+        /// Removes a document fingerprint from DLP configuration. Documents matching this fingerprint will no longer be detected.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerpr
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_read_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_read_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the attributes of a single document fingerprint.
+        /// Updates metadata for an existing document fingerprint, such as its name or description.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_update_200"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerpr
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_update_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_update_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uploads a new version for a document fingerprint.
+        /// Uploads a new document to create or update a fingerprint. The document structure is analyzed to enable detection of similar documents.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_upload_200"/></returns>
         /// <param name="body">The request body</param>
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerpr
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_upload_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_document_fingerprints_upload_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a single document fingerprint.
+        /// Removes a document fingerprint from DLP configuration. Documents matching this fingerprint will no longer be detected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -168,7 +168,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerpr
             return requestInfo;
         }
         /// <summary>
-        /// Update the attributes of a single document fingerprint.
+        /// Updates metadata for an existing document fingerprint, such as its name or description.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -190,7 +190,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerpr
             return requestInfo;
         }
         /// <summary>
-        /// Uploads a new version for a document fingerprint.
+        /// Uploads a new document to create or update a fingerprint. The document structure is analyzed to enable detection of similar documents.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -53,7 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
         {
         }
         /// <summary>
-        /// List all risk score integrations for the account.
+        /// Lists all configured Zero Trust risk score integrations for the account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_list_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_list_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_list_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create new risk score integration.
+        /// Creates a new Zero Trust risk score integration, connecting external risk signals to Cloudflare&apos;s risk scoring system.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_create_200"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_create_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_zt_risk_score_integration_create_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all risk score integrations for the account.
+        /// Lists all configured Zero Trust risk score integrations for the account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Zt_risk_scoring.Integ
             return requestInfo;
         }
         /// <summary>
-        /// Create new risk score integration.
+        /// Creates a new Zero Trust risk score integration, connecting external risk signals to Cloudflare&apos;s risk scoring system.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

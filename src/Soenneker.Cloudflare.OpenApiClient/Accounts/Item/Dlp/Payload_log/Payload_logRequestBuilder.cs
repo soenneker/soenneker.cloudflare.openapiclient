@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
         {
         }
         /// <summary>
-        /// Get payload log settings
+        /// Gets the current payload logging configuration for DLP, showing whether matched content is being logged.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_get_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_get_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_get_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Set payload log settings
+        /// Enables or disables payload logging for DLP matches. When enabled, matched content is stored for review.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200"/></returns>
         /// <param name="body">Request model for the legacy payload log settings endpoint.</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_payload_log_put_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get payload log settings
+        /// Gets the current payload logging configuration for DLP, showing whether matched content is being logged.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Payload_log
             return requestInfo;
         }
         /// <summary>
-        /// Set payload log settings
+        /// Enables or disables payload logging for DLP matches. When enabled, matched content is stored for review.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request model for the legacy payload log settings endpoint.</param>
