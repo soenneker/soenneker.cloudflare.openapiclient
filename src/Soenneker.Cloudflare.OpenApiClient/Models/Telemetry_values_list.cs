@@ -14,7 +14,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The datasets property</summary>
+        /// <summary>Leave this empty to use the default datasets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Datasets { get; set; }
@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Datasets { get; set; }
 #endif
-        /// <summary>The filters property</summary>
+        /// <summary>&quot;Apply filters before listing values. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_filters>? Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_filter_node>? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_filters> Filters { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_filter_node> Filters { get; set; }
 #endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,7 +84,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "datasets", n => { Datasets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_filters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_filters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_filter_node>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_filter_node.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "limit", n => { Limit = n.GetDoubleValue(); } },
                 { "needle", n => { Needle = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_needle>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_needle.CreateFromDiscriminatorValue); } },
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("datasets", Datasets);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_filters>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_filter_node>("filters", Filters);
             writer.WriteStringValue("key", Key);
             writer.WriteDoubleValue("limit", Limit);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_values_list_needle>("needle", Needle);

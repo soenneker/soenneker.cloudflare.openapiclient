@@ -33,15 +33,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The dry property</summary>
         public bool? Dry { get; set; }
-        /// <summary>The environmentId property</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EnvironmentId { get; set; }
-#nullable restore
-#else
-        public string EnvironmentId { get; set; }
-#endif
         /// <summary>The granularity property</summary>
         public double? Granularity { get; set; }
         /// <summary>The id property</summary>
@@ -55,10 +46,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query? Query { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_query? Query { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query Query { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_query Query { get; set; }
 #endif
         /// <summary>The statistics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,15 +85,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string UserId { get; set; }
 #endif
-        /// <summary>The workspaceId property</summary>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WorkspaceId { get; set; }
-#nullable restore
-#else
-        public string WorkspaceId { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run"/> and sets the default values.
         /// </summary>
@@ -131,16 +113,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "accountId", n => { AccountId = n.GetStringValue(); } },
                 { "created", n => { Created = n.GetStringValue(); } },
                 { "dry", n => { Dry = n.GetBoolValue(); } },
-                { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
                 { "granularity", n => { Granularity = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "query", n => { Query = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query.CreateFromDiscriminatorValue); } },
+                { "query", n => { Query = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_query>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_query.CreateFromDiscriminatorValue); } },
                 { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_statistics>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_statistics.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_status>(); } },
                 { "timeframe", n => { Timeframe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_timeframe>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_timeframe.CreateFromDiscriminatorValue); } },
                 { "updated", n => { Updated = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
-                { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -153,16 +133,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("accountId", AccountId);
             writer.WriteStringValue("created", Created);
             writer.WriteBoolValue("dry", Dry);
-            writer.WriteStringValue("environmentId", EnvironmentId);
             writer.WriteDoubleValue("granularity", Granularity);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query>("query", Query);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_query>("query", Query);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_statistics>("statistics", Statistics);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run_timeframe>("timeframe", Timeframe);
             writer.WriteStringValue("updated", Updated);
             writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("workspaceId", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

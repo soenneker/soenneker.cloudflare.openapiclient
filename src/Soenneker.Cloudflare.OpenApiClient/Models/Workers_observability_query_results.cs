@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The agents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_agents>? Agents { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_agents> Agents { get; set; }
+#endif
         /// <summary>The calculations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,14 +53,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_invocations Invocations { get; set; }
-#endif
-        /// <summary>The patterns property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns>? Patterns { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns> Patterns { get; set; }
 #endif
         /// <summary>A Workers Observability Query Object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,11 +103,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "agents", n => { Agents = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_agents>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_agents.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "calculations", n => { Calculations = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_calculations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_calculations.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "compare", n => { Compare = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_compare>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_compare.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "events", n => { Events = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_events>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_events.CreateFromDiscriminatorValue); } },
                 { "invocations", n => { Invocations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_invocations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_invocations.CreateFromDiscriminatorValue); } },
-                { "patterns", n => { Patterns = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "run", n => { Run = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run.CreateFromDiscriminatorValue); } },
                 { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_performance_information>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_performance_information.CreateFromDiscriminatorValue); } },
                 { "traces", n => { Traces = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -120,11 +120,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_agents>("agents", Agents);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_calculations>("calculations", Calculations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_compare>("compare", Compare);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_events>("events", Events);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_invocations>("invocations", Invocations);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_patterns>("patterns", Patterns);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_run>("run", Run);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_performance_information>("statistics", Statistics);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_traces>("traces", Traces);

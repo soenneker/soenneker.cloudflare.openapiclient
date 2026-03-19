@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Time range for the query execution
+    /// Timeframe for your query using Unix timestamps in milliseconds. Provide from/to epoch ms; narrower timeframes provide faster responses and more specific results.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Telemetry_query_timeframe : IAdditionalDataHolder, IParsable

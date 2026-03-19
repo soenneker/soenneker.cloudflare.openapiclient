@@ -16,6 +16,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The customer_status property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Submission_customer_status? CustomerStatus { get; set; }
+        /// <summary>The escalated_as property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel? EscalatedAs { get; set; }
+        /// <summary>The escalated_at property</summary>
+        public DateTimeOffset? EscalatedAt { get; set; }
+        /// <summary>The escalated_by property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EscalatedBy { get; set; }
+#nullable restore
+#else
+        public string EscalatedBy { get; set; }
+#endif
         /// <summary>The original_disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel? OriginalDisposition { get; set; }
         /// <summary>The original_edf_hash property</summary>
@@ -106,6 +118,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customer_status", n => { CustomerStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Submission_customer_status>(); } },
+                { "escalated_as", n => { EscalatedAs = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
+                { "escalated_at", n => { EscalatedAt = n.GetDateTimeOffsetValue(); } },
+                { "escalated_by", n => { EscalatedBy = n.GetStringValue(); } },
                 { "original_disposition", n => { OriginalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
                 { "original_edf_hash", n => { OriginalEdfHash = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
@@ -127,6 +142,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_Submission_customer_status>("customer_status", CustomerStatus);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("escalated_as", EscalatedAs);
+            writer.WriteDateTimeOffsetValue("escalated_at", EscalatedAt);
+            writer.WriteStringValue("escalated_by", EscalatedBy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("original_disposition", OriginalDisposition);
             writer.WriteStringValue("original_edf_hash", OriginalEdfHash);
             writer.WriteStringValue("outcome", Outcome);

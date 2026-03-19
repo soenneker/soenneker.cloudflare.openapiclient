@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>View type for presenting the query results.</summary>
+    /// <summary>&quot;Examples by view type. Events: show errors for a worker in the last 30 minutes. Calculations: p99 of wall time or count by status code. Invocations: find a specific request that resulted in a 500.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Telemetry_query_view
     {
@@ -27,9 +27,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Requests,
         #pragma warning restore CS1591
-        [EnumMember(Value = "patterns")]
+        [EnumMember(Value = "agents")]
         #pragma warning disable CS1591
-        Patterns,
+        Agents,
         #pragma warning restore CS1591
     }
 }

@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Alias { get; set; }
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>The key to use for the calculation. This key must exist in the logs. Use the observability_keys response to confirm. Do not guess keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get; set; }

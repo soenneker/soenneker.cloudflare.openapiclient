@@ -20,13 +20,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Compare { get; set; }
         /// <summary>Whether to perform a dry run without saving the results of the query. Useful for validation</summary>
         public bool? Dry { get; set; }
-        /// <summary>Time granularity for aggregating results (in milliseconds). Controls the bucketing of time-series data</summary>
+        /// <summary>This is only used when the view is calculations. Leaving it empty lets Workers Observability detect the correct granularity.</summary>
         public double? Granularity { get; set; }
         /// <summary>Whether to ignore time-series data in the results and return only aggregated values</summary>
         public bool? IgnoreSeries { get; set; }
-        /// <summary>Maximum number of events to return.</summary>
+        /// <summary>Use this limit to cap the number of events returned when the view is events.</summary>
         public double? Limit { get; set; }
-        /// <summary>Cursor for pagination to retrieve the next set of results</summary>
+        /// <summary>Cursor pagination for event/trace/invocation views. Pass the last item&apos;s $metadata.id as the next offset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Offset { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Offset { get; set; }
 #endif
-        /// <summary>Number of events to skip for pagination. Used in conjunction with offset</summary>
+        /// <summary>Numeric offset for pattern results (top-N list). Use with limit to page pattern groups; not used by cursor pagination.</summary>
         public double? OffsetBy { get; set; }
         /// <summary>Direction for offset-based pagination (e.g., &apos;next&apos;, &apos;prev&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,8 +52,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_parameters Parameters { get; set; }
 #endif
-        /// <summary>Type of pattern to search for when using pattern-based views</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_patternType? PatternType { get; set; }
         /// <summary>Unique identifier for the query to execute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +60,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string QueryId { get; set; }
 #endif
-        /// <summary>Time range for the query execution</summary>
+        /// <summary>Timeframe for your query using Unix timestamps in milliseconds. Provide from/to epoch ms; narrower timeframes provide faster responses and more specific results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe? Timeframe { get; set; }
@@ -70,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe Timeframe { get; set; }
 #endif
-        /// <summary>View type for presenting the query results.</summary>
+        /// <summary>&quot;Examples by view type. Events: show errors for a worker in the last 30 minutes. Calculations: p99 of wall time or count by status code. Invocations: find a specific request that resulted in a 500.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_view? View { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query"/> and sets the default values.
@@ -108,7 +106,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "offsetBy", n => { OffsetBy = n.GetDoubleValue(); } },
                 { "offsetDirection", n => { OffsetDirection = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_parameters.CreateFromDiscriminatorValue); } },
-                { "patternType", n => { PatternType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_patternType>(); } },
                 { "queryId", n => { QueryId = n.GetStringValue(); } },
                 { "timeframe", n => { Timeframe = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe>(global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe.CreateFromDiscriminatorValue); } },
                 { "view", n => { View = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_view>(); } },
@@ -131,7 +128,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("offsetBy", OffsetBy);
             writer.WriteStringValue("offsetDirection", OffsetDirection);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_parameters>("parameters", Parameters);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_patternType>("patternType", PatternType);
             writer.WriteStringValue("queryId", QueryId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_timeframe>("timeframe", Timeframe);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Telemetry_query_view>("view", View);

@@ -37,7 +37,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The interval property</summary>
         [Obsolete("")]
-        public int? Interval { get; set; }
+        public double? Interval { get; set; }
         /// <summary>The lastSeen property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "bin", n => { Bin = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_events_series_data_aggregates_bin>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_events_series_data_aggregates_bin.CreateFromDiscriminatorValue); } },
                 { "_count", n => { Count = n.GetIntValue(); } },
                 { "_firstSeen", n => { FirstSeen = n.GetStringValue(); } },
-                { "_interval", n => { Interval = n.GetIntValue(); } },
+                { "_interval", n => { Interval = n.GetDoubleValue(); } },
                 { "_lastSeen", n => { LastSeen = n.GetStringValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_results_events_series_data_aggregates_bin>("bin", Bin);
             writer.WriteIntValue("_count", Count);
             writer.WriteStringValue("_firstSeen", FirstSeen);
-            writer.WriteIntValue("_interval", Interval);
+            writer.WriteDoubleValue("_interval", Interval);
             writer.WriteStringValue("_lastSeen", LastSeen);
             writer.WriteAdditionalData(AdditionalData);
         }
