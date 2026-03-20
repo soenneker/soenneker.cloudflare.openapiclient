@@ -50,6 +50,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? RateLimitingLimit { get; set; }
         /// <summary>The rate_limiting_technique property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique? RateLimitingTechnique { get; set; }
+        /// <summary>Backoff strategy for retry delays</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_retry_backoff? RetryBackoff { get; set; }
+        /// <summary>Delay between retry attempts in milliseconds (0-5000)</summary>
+        public int? RetryDelay { get; set; }
+        /// <summary>Maximum number of retry attempts for failed requests (1-5)</summary>
+        public int? RetryMaxAttempts { get; set; }
         /// <summary>Controls how Workers AI inference calls routed through this gateway are billed. Only &apos;postpaid&apos; is currently supported.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode? WorkersAiBillingMode { get; set; }
         /// <summary>The zdr property</summary>
@@ -92,6 +98,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "rate_limiting_interval", n => { RateLimitingInterval = n.GetIntValue(); } },
                 { "rate_limiting_limit", n => { RateLimitingLimit = n.GetIntValue(); } },
                 { "rate_limiting_technique", n => { RateLimitingTechnique = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique>(); } },
+                { "retry_backoff", n => { RetryBackoff = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_retry_backoff>(); } },
+                { "retry_delay", n => { RetryDelay = n.GetIntValue(); } },
+                { "retry_max_attempts", n => { RetryMaxAttempts = n.GetIntValue(); } },
                 { "workers_ai_billing_mode", n => { WorkersAiBillingMode = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode>(); } },
                 { "zdr", n => { Zdr = n.GetBoolValue(); } },
             };
@@ -115,6 +124,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("rate_limiting_interval", RateLimitingInterval);
             writer.WriteIntValue("rate_limiting_limit", RateLimitingLimit);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_rate_limiting_technique>("rate_limiting_technique", RateLimitingTechnique);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_retry_backoff>("retry_backoff", RetryBackoff);
+            writer.WriteIntValue("retry_delay", RetryDelay);
+            writer.WriteIntValue("retry_max_attempts", RetryMaxAttempts);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aig_config_create_gateway_workers_ai_billing_mode>("workers_ai_billing_mode", WorkersAiBillingMode);
             writer.WriteBoolValue("zdr", Zdr);
             writer.WriteAdditionalData(AdditionalData);
