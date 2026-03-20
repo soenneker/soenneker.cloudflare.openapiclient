@@ -28,6 +28,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string EscalatedBy { get; set; }
 #endif
+        /// <summary>The escalated_submission_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EscalatedSubmissionId { get; set; }
+#nullable restore
+#else
+        public string EscalatedSubmissionId { get; set; }
+#endif
         /// <summary>The original_disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel? OriginalDisposition { get; set; }
         /// <summary>The original_edf_hash property</summary>
@@ -37,6 +45,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string OriginalEdfHash { get; set; }
+#endif
+        /// <summary>The original_postfix_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalPostfixId { get; set; }
+#nullable restore
+#else
+        public string OriginalPostfixId { get; set; }
 #endif
         /// <summary>The outcome property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,6 +64,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The outcome_disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel? OutcomeDisposition { get; set; }
+        /// <summary>The requested_at property</summary>
+        public DateTimeOffset? RequestedAt { get; set; }
         /// <summary>The requested_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +76,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The requested_disposition property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel? RequestedDisposition { get; set; }
-        /// <summary>The requested_ts property</summary>
+        /// <summary>deprecated as of 2026-04-01, use `requested_at` instead.</summary>
+        [Obsolete("")]
         public DateTimeOffset? RequestedTs { get; set; }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,10 +140,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "escalated_as", n => { EscalatedAs = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
                 { "escalated_at", n => { EscalatedAt = n.GetDateTimeOffsetValue(); } },
                 { "escalated_by", n => { EscalatedBy = n.GetStringValue(); } },
+                { "escalated_submission_id", n => { EscalatedSubmissionId = n.GetStringValue(); } },
                 { "original_disposition", n => { OriginalDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
                 { "original_edf_hash", n => { OriginalEdfHash = n.GetStringValue(); } },
+                { "original_postfix_id", n => { OriginalPostfixId = n.GetStringValue(); } },
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "outcome_disposition", n => { OutcomeDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
+                { "requested_at", n => { RequestedAt = n.GetDateTimeOffsetValue(); } },
                 { "requested_by", n => { RequestedBy = n.GetStringValue(); } },
                 { "requested_disposition", n => { RequestedDisposition = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>(); } },
                 { "requested_ts", n => { RequestedTs = n.GetDateTimeOffsetValue(); } },
@@ -145,10 +167,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("escalated_as", EscalatedAs);
             writer.WriteDateTimeOffsetValue("escalated_at", EscalatedAt);
             writer.WriteStringValue("escalated_by", EscalatedBy);
+            writer.WriteStringValue("escalated_submission_id", EscalatedSubmissionId);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("original_disposition", OriginalDisposition);
             writer.WriteStringValue("original_edf_hash", OriginalEdfHash);
+            writer.WriteStringValue("original_postfix_id", OriginalPostfixId);
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("outcome_disposition", OutcomeDisposition);
+            writer.WriteDateTimeOffsetValue("requested_at", RequestedAt);
             writer.WriteStringValue("requested_by", RequestedBy);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_DispositionLabel>("requested_disposition", RequestedDisposition);
             writer.WriteDateTimeOffsetValue("requested_ts", RequestedTs);
