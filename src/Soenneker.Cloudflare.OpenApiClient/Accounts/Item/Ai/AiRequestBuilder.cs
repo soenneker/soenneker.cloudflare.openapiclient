@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Authors;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Catalog;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run;
@@ -24,6 +25,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Authors.AuthorsRequestBuilder Authors
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Authors.AuthorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The catalog property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Catalog.CatalogRequestBuilder Catalog
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Catalog.CatalogRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The finetunes property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Finetunes.FinetunesRequestBuilder Finetunes
