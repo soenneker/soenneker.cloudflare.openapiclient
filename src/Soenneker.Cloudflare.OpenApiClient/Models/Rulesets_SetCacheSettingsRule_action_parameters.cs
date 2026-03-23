@@ -72,6 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale ServeStale { get; set; }
 #endif
+        /// <summary>Configuration for shared dictionary compression. When set, Cloudflare injects Use-As-Dictionary headers on matching cacheable responses.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsSharedDictionary? SharedDictionary { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsSharedDictionary SharedDictionary { get; set; }
+#endif
         /// <summary>Whether to strip ETag headers from the origin response before caching.</summary>
         public bool? StripEtags { get; set; }
         /// <summary>Whether to strip Last-Modified headers from the origin response before caching.</summary>
@@ -114,6 +122,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "read_timeout", n => { ReadTimeout = n.GetIntValue(); } },
                 { "respect_strong_etags", n => { RespectStrongEtags = n.GetBoolValue(); } },
                 { "serve_stale", n => { ServeStale = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale.CreateFromDiscriminatorValue); } },
+                { "shared_dictionary", n => { SharedDictionary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsSharedDictionary>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsSharedDictionary.CreateFromDiscriminatorValue); } },
                 { "strip_etags", n => { StripEtags = n.GetBoolValue(); } },
                 { "strip_last_modified", n => { StripLastModified = n.GetBoolValue(); } },
                 { "strip_set_cookie", n => { StripSetCookie = n.GetBoolValue(); } },
@@ -137,6 +146,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteIntValue("read_timeout", ReadTimeout);
             writer.WriteBoolValue("respect_strong_etags", RespectStrongEtags);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsServeStale>("serve_stale", ServeStale);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_SetCacheSettingsSharedDictionary>("shared_dictionary", SharedDictionary);
             writer.WriteBoolValue("strip_etags", StripEtags);
             writer.WriteBoolValue("strip_last_modified", StripLastModified);
             writer.WriteBoolValue("strip_set_cookie", StripSetCookie);

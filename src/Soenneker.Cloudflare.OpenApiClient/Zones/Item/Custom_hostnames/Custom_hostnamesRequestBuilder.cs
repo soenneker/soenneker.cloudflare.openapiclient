@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?certificate_authority*,direction*,hostname*,hostname%2Econtain*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", pathParameters)
+        public Custom_hostnamesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?certificate_authority*,direction*,hostname*,hostname%2Econtain*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", rawUrl)
+        public Custom_hostnamesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/zones/{zone_identifier%2Did}/custom_hostnames{?certificate_authority*,custom_origin_server*,direction*,hostname*,hostname%2Econtain*,hostname_status*,id*,order*,page*,per_page*,ssl*,ssl_status*,wildcard*}", rawUrl)
         {
         }
         /// <summary>
@@ -158,6 +158,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames
         {
             [QueryParameter("certificate_authority")]
             public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.GetCertificate_authorityQueryParameterType? CertificateAuthority { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("custom_origin_server")]
+            public string? CustomOriginServer { get; set; }
+#nullable restore
+#else
+            [QueryParameter("custom_origin_server")]
+            public string CustomOriginServer { get; set; }
+#endif
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Custom_hostnames.GetDirectionQueryParameterType? Direction { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
