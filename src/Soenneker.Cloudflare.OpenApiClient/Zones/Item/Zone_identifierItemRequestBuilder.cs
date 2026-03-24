@@ -29,6 +29,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_records;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dns_settings;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
@@ -199,6 +200,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.EmailRequestBuilder Email
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.EmailRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The environments property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.EnvironmentsRequestBuilder Environments
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.EnvironmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The firewall property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder Firewall

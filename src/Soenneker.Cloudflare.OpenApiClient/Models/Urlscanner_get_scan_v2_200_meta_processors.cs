@@ -54,6 +54,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing Phishing { get; set; }
 #endif
+        /// <summary>The phishing_v2 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing_v2? PhishingV2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing_v2 PhishingV2 { get; set; }
+#endif
         /// <summary>The radarRank property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "domainCategories", n => { DomainCategories = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_domainCategories>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_domainCategories.CreateFromDiscriminatorValue); } },
                 { "geoip", n => { Geoip = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_geoip>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_geoip.CreateFromDiscriminatorValue); } },
                 { "phishing", n => { Phishing = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing.CreateFromDiscriminatorValue); } },
+                { "phishing_v2", n => { PhishingV2 = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing_v2>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing_v2.CreateFromDiscriminatorValue); } },
                 { "radarRank", n => { RadarRank = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_radarRank>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_radarRank.CreateFromDiscriminatorValue); } },
                 { "robotsTxt", n => { RobotsTxt = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_robotsTxt>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_robotsTxt.CreateFromDiscriminatorValue); } },
                 { "urlCategories", n => { UrlCategories = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_urlCategories>(global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_urlCategories.CreateFromDiscriminatorValue); } },
@@ -134,6 +143,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_domainCategories>("domainCategories", DomainCategories);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_geoip>("geoip", Geoip);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing>("phishing", Phishing);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_phishing_v2>("phishing_v2", PhishingV2);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_radarRank>("radarRank", RadarRank);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_robotsTxt>("robotsTxt", RobotsTxt);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_get_scan_v2_200_meta_processors_urlCategories>("urlCategories", UrlCategories);
