@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = ">=")]
         #pragma warning disable CS1591
-        GreaterThanEqual,
+        GreaterThanOrEqual,
         #pragma warning restore CS1591
         [EnumMember(Value = "<")]
         #pragma warning disable CS1591
@@ -86,7 +86,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "<=")]
         #pragma warning disable CS1591
-        LessThanEqual,
+        LessThanOrEqual,
         #pragma warning restore CS1591
         [EnumMember(Value = "DOES_NOT_INCLUDE")]
         #pragma warning disable CS1591
