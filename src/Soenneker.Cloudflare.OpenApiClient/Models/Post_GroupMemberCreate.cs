@@ -20,6 +20,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string AccountId { get; set; }
 #endif
+        /// <summary>The accountTag property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountTag { get; set; }
+#nullable restore
+#else
+        public string AccountTag { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountId", n => { AccountId = n.GetStringValue(); } },
+                { "accountTag", n => { AccountTag = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountId", AccountId);
+            writer.WriteStringValue("accountTag", AccountTag);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

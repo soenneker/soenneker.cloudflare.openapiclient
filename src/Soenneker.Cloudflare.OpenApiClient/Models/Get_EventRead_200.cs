@@ -100,6 +100,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> MitreAttack { get; set; }
 #endif
+        /// <summary>The mitreCapec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MitreCapec { get; set; }
+#nullable restore
+#else
+        public List<string> MitreCapec { get; set; }
+#endif
         /// <summary>The numReferenced property</summary>
         public double? NumReferenced { get; set; }
         /// <summary>The numReferences property</summary>
@@ -230,6 +238,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "insight", n => { Insight = n.GetStringValue(); } },
                 { "killChain", n => { KillChain = n.GetDoubleValue(); } },
                 { "mitreAttack", n => { MitreAttack = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "mitreCapec", n => { MitreCapec = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "numReferenced", n => { NumReferenced = n.GetDoubleValue(); } },
                 { "numReferences", n => { NumReferences = n.GetDoubleValue(); } },
                 { "rawId", n => { RawId = n.GetStringValue(); } },
@@ -265,6 +274,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteStringValue("insight", Insight);
             writer.WriteDoubleValue("killChain", KillChain);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreAttack", MitreAttack);
+            writer.WriteCollectionOfPrimitiveValues<string>("mitreCapec", MitreCapec);
             writer.WriteDoubleValue("numReferenced", NumReferenced);
             writer.WriteDoubleValue("numReferences", NumReferences);
             writer.WriteStringValue("rawId", RawId);

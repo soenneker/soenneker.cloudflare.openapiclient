@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", pathParameters)
+        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", rawUrl)
+        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -124,6 +124,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("indicatorType")]
             public string IndicatorType { get; set; }
 #endif
+            /// <summary>Filter indicators by value using substring match (LIKE). Legacy alternative to structured search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("name")]
+            public string? Name { get; set; }
+#nullable restore
+#else
+            [QueryParameter("name")]
+            public string Name { get; set; }
+#endif
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("pageSize")]
@@ -141,14 +151,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             /// <summary>&quot;Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events.&quot;</summary>
             [QueryParameter("relatedEventsLimit")]
             public double? RelatedEventsLimit { get; set; }
+            /// <summary>&quot;Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType. Supports operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use the &apos;in&apos; operator with an array value to bulk-check up to 100 indicators in a single request, e.g. search=[{\&quot;field\&quot;:\&quot;value\&quot;,\&quot;op\&quot;:\&quot;in\&quot;,\&quot;value\&quot;:[\&quot;evil.com\&quot;,\&quot;bad.org\&quot;]}]. Multiple conditions are AND&apos;d together. Max 10 conditions per request.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
-            public string? Search { get; set; }
+            public string[]? Search { get; set; }
 #nullable restore
 #else
             [QueryParameter("search")]
-            public string Search { get; set; }
+            public string[] Search { get; set; }
 #endif
             /// <summary>Filter by tag values or UUIDs. Indicators must have at least one of the specified tags (OR logic). Supports both tag UUID and tag value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

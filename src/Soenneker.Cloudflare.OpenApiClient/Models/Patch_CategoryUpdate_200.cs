@@ -24,6 +24,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> MitreAttack { get; set; }
 #endif
+        /// <summary>The mitreCapec property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? MitreCapec { get; set; }
+#nullable restore
+#else
+        public List<string> MitreCapec { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "killChain", n => { KillChain = n.GetDoubleValue(); } },
                 { "mitreAttack", n => { MitreAttack = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "mitreCapec", n => { MitreCapec = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "shortname", n => { Shortname = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetStringValue(); } },
@@ -89,6 +98,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("killChain", KillChain);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreAttack", MitreAttack);
+            writer.WriteCollectionOfPrimitiveValues<string>("mitreCapec", MitreCapec);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("shortname", Shortname);
             writer.WriteStringValue("uuid", Uuid);

@@ -100,15 +100,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("aggregateBy")]
             public string AggregateBy { get; set; }
 #endif
-            /// <summary>Dataset ID(s) to filter by. Can be a single dataset ID or array of dataset IDs. If not provided, uses default dataset</summary>
+            /// <summary>Dataset ID(s) to filter by. Can be a single dataset ID, comma-separated list, or array. If not provided, uses default dataset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("datasetId")]
-            public string? DatasetId { get; set; }
+            public string[]? DatasetId { get; set; }
 #nullable restore
 #else
             [QueryParameter("datasetId")]
-            public string DatasetId { get; set; }
+            public string[] DatasetId { get; set; }
 #endif
             /// <summary>End date for filtering (ISO 8601 format, e.g., &apos;2024-12-31&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
