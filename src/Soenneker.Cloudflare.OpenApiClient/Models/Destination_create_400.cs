@@ -24,7 +24,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_400_errors> Errors { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
-        public override string Message { get => base.Message; }
+        public override string Message { get => MessageEscaped ?? string.Empty; }
+        /// <summary>The primary error message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageEscaped { get; set; }
+#nullable restore
+#else
+        public string MessageEscaped { get; set; }
+#endif
         /// <summary>The messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,6 +69,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_400_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_400_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "message", n => { MessageEscaped = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_400_messages>(global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_400_messages.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
@@ -73,6 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_400_errors>("errors", Errors);
+            writer.WriteStringValue("message", MessageEscaped);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Destination_create_400_messages>("messages", Messages);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);

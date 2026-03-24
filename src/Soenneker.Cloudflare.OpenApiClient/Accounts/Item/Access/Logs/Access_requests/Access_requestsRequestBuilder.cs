@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/access_requests{?direction*,email*,email_exact*,limit*,page*,per_page*,since*,until*,user_id*}", pathParameters)
+        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/access_requests{?allowedOp*,app_typeOp*,app_uidOp*,country_codeOp*,direction*,email*,emailOp*,email_exact*,fields*,idpOp*,limit*,non_identityOp*,page*,per_page*,ray_idOp*,since*,until*,user_id*,user_idOp*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/access_requests{?direction*,email*,email_exact*,limit*,page*,per_page*,since*,until*,user_id*}", rawUrl)
+        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/access_requests{?allowedOp*,app_typeOp*,app_uidOp*,country_codeOp*,direction*,email*,emailOp*,email_exact*,fields*,idpOp*,limit*,non_identityOp*,page*,per_page*,ray_idOp*,since*,until*,user_id*,user_idOp*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,6 +90,18 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Access_requestsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Operator for the `allowed` filter.</summary>
+            [QueryParameter("allowedOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetAllowedOpQueryParameterType? AllowedOp { get; set; }
+            /// <summary>Operator for the `app_type` filter.</summary>
+            [QueryParameter("app_typeOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetApp_typeOpQueryParameterType? AppTypeOp { get; set; }
+            /// <summary>Operator for the `app_uid` filter.</summary>
+            [QueryParameter("app_uidOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetApp_uidOpQueryParameterType? AppUidOp { get; set; }
+            /// <summary>Operator for the `country_code` filter.</summary>
+            [QueryParameter("country_codeOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetCountry_codeOpQueryParameterType? CountryCodeOp { get; set; }
             /// <summary>The chronological sorting order for the logs.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetDirectionQueryParameterType? Direction { get; set; }
@@ -106,13 +118,35 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>When true, `email` is matched exactly instead of substring matching.</summary>
             [QueryParameter("email_exact")]
             public bool? EmailExact { get; set; }
+            /// <summary>Operator for the `email` filter.</summary>
+            [QueryParameter("emailOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetEmailOpQueryParameterType? EmailOp { get; set; }
+            /// <summary>Comma-separated list of fields to include in the response.When omitted, all fields are returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("fields")]
+            public string? Fields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("fields")]
+            public string Fields { get; set; }
+#endif
+            /// <summary>Operator for the `idp` filter.</summary>
+            [QueryParameter("idpOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetIdpOpQueryParameterType? IdpOp { get; set; }
             /// <summary>The maximum number of log entries to retrieve.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            /// <summary>Operator for the `non_identity` filter.</summary>
+            [QueryParameter("non_identityOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetNon_identityOpQueryParameterType? NonIdentityOp { get; set; }
             [QueryParameter("page")]
             public int? Page { get; set; }
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Operator for the `ray_id` filter.</summary>
+            [QueryParameter("ray_idOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetRay_idOpQueryParameterType? RayIdOp { get; set; }
             /// <summary>The earliest event timestamp to query.</summary>
             [QueryParameter("since")]
             public DateTimeOffset? Since { get; set; }
@@ -129,6 +163,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             [QueryParameter("user_id")]
             public string UserId { get; set; }
 #endif
+            /// <summary>Operator for the `user_id` filter.</summary>
+            [QueryParameter("user_idOp")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetUser_idOpQueryParameterType? UserIdOp { get; set; }
         }
     }
 }
