@@ -32,7 +32,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Set a Flag to describe how to combine the filters on the query.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_parameters_filterCombination? FilterCombination { get; set; }
-        /// <summary>&quot;Configure the Filters to apply to the query. Supports nested groups via kind: &apos;group&apos;. Maximum nesting depth is 4.&quot;</summary>
+        /// <summary>&quot;Configure the Filters to apply to the query. Supports nested groups via kind: &apos;group&apos;.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_filter_node>? Filters { get; set; }

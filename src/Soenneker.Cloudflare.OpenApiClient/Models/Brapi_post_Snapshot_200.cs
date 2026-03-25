@@ -38,7 +38,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200_result Result { get; set; }
 #endif
-        /// <summary>Response status</summary>
+        /// <summary>Response status.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Snapshot_200"/> and sets the default values.

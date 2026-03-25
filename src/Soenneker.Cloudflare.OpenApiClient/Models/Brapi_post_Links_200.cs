@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> Result { get; set; }
 #endif
-        /// <summary>Response status</summary>
+        /// <summary>Response status.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Links_200"/> and sets the default values.

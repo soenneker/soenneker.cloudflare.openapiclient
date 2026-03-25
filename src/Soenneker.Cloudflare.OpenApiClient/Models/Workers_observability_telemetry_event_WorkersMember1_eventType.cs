@@ -44,6 +44,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Websocket,
         #pragma warning restore CS1591
+        [EnumMember(Value = "workflow")]
+        #pragma warning disable CS1591
+        Workflow,
+        #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591
         Unknown,

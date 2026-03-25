@@ -15,5 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Push,
         #pragma warning restore CS1591
+        [EnumMember(Value = "library_push")]
+        #pragma warning disable CS1591
+        Library_push,
+        #pragma warning restore CS1591
     }
 }

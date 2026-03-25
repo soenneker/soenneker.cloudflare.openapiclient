@@ -22,9 +22,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Scrape_200_result_results_attributes> Attributes { get; set; }
 #endif
-        /// <summary>Element height</summary>
+        /// <summary>Element height.</summary>
         public double? Height { get; set; }
-        /// <summary>Html content</summary>
+        /// <summary>HTML content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Html { get; set; }
@@ -32,9 +32,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Html { get; set; }
 #endif
-        /// <summary>Element left</summary>
+        /// <summary>Element left.</summary>
         public double? Left { get; set; }
-        /// <summary>Text content</summary>
+        /// <summary>Text content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }
@@ -42,9 +42,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>Element top</summary>
+        /// <summary>Element top.</summary>
         public double? Top { get; set; }
-        /// <summary>Element width</summary>
+        /// <summary>Element width.</summary>
         public double? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Scrape_200_result_results"/> and sets the default values.

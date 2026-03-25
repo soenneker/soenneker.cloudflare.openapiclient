@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The fusion_method property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_200_chunks_scoring_details_fusion_method? FusionMethod { get; set; }
         /// <summary>The keyword_rank property</summary>
         public double? KeywordRank { get; set; }
         /// <summary>The keyword_score property</summary>
@@ -49,6 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "fusion_method", n => { FusionMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_200_chunks_scoring_details_fusion_method>(); } },
                 { "keyword_rank", n => { KeywordRank = n.GetDoubleValue(); } },
                 { "keyword_score", n => { KeywordScore = n.GetDoubleValue(); } },
                 { "reranking_score", n => { RerankingScore = n.GetDoubleValue(); } },
@@ -63,6 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_instance_chat_completion_200_chunks_scoring_details_fusion_method>("fusion_method", FusionMethod);
             writer.WriteDoubleValue("keyword_rank", KeywordRank);
             writer.WriteDoubleValue("keyword_score", KeywordScore);
             writer.WriteDoubleValue("reranking_score", RerankingScore);

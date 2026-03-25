@@ -34,7 +34,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         {
         }
         /// <summary>
-        /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;
+        /// Gets a list of audit logs for an account.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;
+        /// Gets a list of audit logs for an account.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Gets a list of audit logs for an account. &lt;br /&gt;  &lt;br /&gt; This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  &lt;br /&gt; &lt;ul&gt; &lt;li&gt;Audit logs are available only for the past 30 days. &lt;br /&gt;&lt;/li&gt; &lt;li&gt;Error handling is not yet implemented.  &lt;br /&gt; &lt;/li&gt; &lt;/ul&gt;
+        /// Gets a list of audit logs for an account.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AuditRequestBuilderGetQueryParameters 

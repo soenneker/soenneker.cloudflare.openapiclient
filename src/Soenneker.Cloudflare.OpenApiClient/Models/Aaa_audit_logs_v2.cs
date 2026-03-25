@@ -23,12 +23,12 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Provides information about the action performed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_action? Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_action? Action { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_action Action { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_action Action { get; set; }
 #endif
-        /// <summary>Provides details about the actor who performed the action.</summary>
+        /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_actor? Actor { get; set; }
@@ -49,10 +49,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Provides raw information about the request and response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_raw? Raw { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_raw? Raw { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_raw Raw { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_raw Raw { get; set; }
 #endif
         /// <summary>Provides details about the affected resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -96,10 +96,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_account>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_account.CreateFromDiscriminatorValue); } },
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_action.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_action>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_action.CreateFromDiscriminatorValue); } },
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_actor>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_actor.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_raw>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_raw.CreateFromDiscriminatorValue); } },
+                { "raw", n => { Raw = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_raw>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_raw.CreateFromDiscriminatorValue); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_resource>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_resource.CreateFromDiscriminatorValue); } },
                 { "zone", n => { Zone = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_zone>(global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_zone.CreateFromDiscriminatorValue); } },
             };
@@ -112,10 +112,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_account>("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_action>("action", Action);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_action>("action", Action);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_actor>("actor", Actor);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_raw>("raw", Raw);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_log_raw>("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_resource>("resource", Resource);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_zone>("zone", Zone);
             writer.WriteAdditionalData(AdditionalData);

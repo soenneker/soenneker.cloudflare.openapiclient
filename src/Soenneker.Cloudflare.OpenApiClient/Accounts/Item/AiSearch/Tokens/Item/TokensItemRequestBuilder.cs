@@ -89,7 +89,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Tokens.Item
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_404">When receiving a 404 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_200?> PutAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -104,7 +103,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Tokens.Item
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_404.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -14,6 +14,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>If the query wasn&apos;t explcitly saved</summary>
+        public bool? Adhoc { get; set; }
         /// <summary>The created property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +23,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #nullable restore
 #else
         public string Created { get; set; }
+#endif
+        /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedBy { get; set; }
+#nullable restore
+#else
+        public string CreatedBy { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,17 +40,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>ID of your environment</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EnvironmentId { get; set; }
-#nullable restore
-#else
-        public string EnvironmentId { get; set; }
-#endif
-        /// <summary>Flag for alerts automatically created</summary>
-        public bool? Generated { get; set; }
-        /// <summary>ID of the query</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -72,21 +72,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Updated { get; set; }
 #endif
-        /// <summary>The userId property</summary>
+        /// <summary>The updatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UpdatedBy { get; set; }
 #nullable restore
 #else
-        public string UserId { get; set; }
-#endif
-        /// <summary>ID of your workspace</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? WorkspaceId { get; set; }
-#nullable restore
-#else
-        public string WorkspaceId { get; set; }
+        public string UpdatedBy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query"/> and sets the default values.
@@ -113,16 +105,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "adhoc", n => { Adhoc = n.GetBoolValue(); } },
                 { "created", n => { Created = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "environmentId", n => { EnvironmentId = n.GetStringValue(); } },
-                { "generated", n => { Generated = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_parameters>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_parameters.CreateFromDiscriminatorValue); } },
                 { "updated", n => { Updated = n.GetStringValue(); } },
-                { "userId", n => { UserId = n.GetStringValue(); } },
-                { "workspaceId", n => { WorkspaceId = n.GetStringValue(); } },
+                { "updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -132,16 +123,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("adhoc", Adhoc);
             writer.WriteStringValue("created", Created);
+            writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("environmentId", EnvironmentId);
-            writer.WriteBoolValue("generated", Generated);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_observability_query_parameters>("parameters", Parameters);
             writer.WriteStringValue("updated", Updated);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("workspaceId", WorkspaceId);
+            writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

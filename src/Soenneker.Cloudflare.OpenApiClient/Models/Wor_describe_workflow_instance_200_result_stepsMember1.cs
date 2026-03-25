@@ -43,10 +43,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>The output property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_output? Output { get; set; }
+        public string? Output { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_output Output { get; set; }
+        public string Output { get; set; }
 #endif
         /// <summary>The start property</summary>
         public DateTimeOffset? Start { get; set; }
@@ -83,7 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config.CreateFromDiscriminatorValue); } },
                 { "end", n => { End = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_output>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_output.CreateFromDiscriminatorValue); } },
+                { "output", n => { Output = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_type>(); } },
@@ -100,7 +100,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_config>("config", Config);
             writer.WriteDateTimeOffsetValue("end", End);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_output>("output", Output);
+            writer.WriteStringValue("output", Output);
             writer.WriteDateTimeOffsetValue("start", Start);
             writer.WriteBoolValue("success", Success);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_instance_200_result_stepsMember1_type>("type", Type);

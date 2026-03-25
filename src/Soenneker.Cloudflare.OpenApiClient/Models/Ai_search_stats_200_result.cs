@@ -36,6 +36,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The last_activity property</summary>
         public DateTimeOffset? LastActivity { get; set; }
+        /// <summary>The outdated property</summary>
+        public int? Outdated { get; set; }
         /// <summary>The queued property</summary>
         public int? Queued { get; set; }
         /// <summary>The running property</summary>
@@ -72,6 +74,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "file_embed_errors", n => { FileEmbedErrors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200_result_file_embed_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200_result_file_embed_errors.CreateFromDiscriminatorValue); } },
                 { "index_source_errors", n => { IndexSourceErrors = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200_result_index_source_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200_result_index_source_errors.CreateFromDiscriminatorValue); } },
                 { "last_activity", n => { LastActivity = n.GetDateTimeOffsetValue(); } },
+                { "outdated", n => { Outdated = n.GetIntValue(); } },
                 { "queued", n => { Queued = n.GetIntValue(); } },
                 { "running", n => { Running = n.GetIntValue(); } },
                 { "skipped", n => { Skipped = n.GetIntValue(); } },
@@ -89,6 +92,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200_result_file_embed_errors>("file_embed_errors", FileEmbedErrors);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_stats_200_result_index_source_errors>("index_source_errors", IndexSourceErrors);
             writer.WriteDateTimeOffsetValue("last_activity", LastActivity);
+            writer.WriteIntValue("outdated", Outdated);
             writer.WriteIntValue("queued", Queued);
             writer.WriteIntValue("running", Running);
             writer.WriteIntValue("skipped", Skipped);

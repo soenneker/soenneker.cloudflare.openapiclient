@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances
     public partial class InstancesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.aiSearch.instances.item collection</summary>
-        /// <param name="position">Use your AI Search ID.</param>
+        /// <param name="position">AI Search instance ID. Lowercase alphanumeric, hyphens, and underscores.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.InstancesItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.Item.InstancesItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/instances{?order_by*,order_by_direction*,page*,per_page*,search*}", pathParameters)
+        public InstancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/instances{?namespace*,order_by*,order_by_direction*,page*,per_page*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/instances{?order_by*,order_by_direction*,page*,per_page*,search*}", rawUrl)
+        public InstancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-search/instances{?namespace*,order_by*,order_by_direction*,page*,per_page*,search*}", rawUrl)
         {
         }
         /// <summary>
@@ -150,6 +150,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InstancesRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("namespace")]
+            public string? Namespace { get; set; }
+#nullable restore
+#else
+            [QueryParameter("namespace")]
+            public string Namespace { get; set; }
+#endif
             /// <summary>Order By Column Name</summary>
             [QueryParameter("order_by")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiSearch.Instances.GetOrder_byQueryParameterType? OrderBy { get; set; }

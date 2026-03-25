@@ -41,6 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_V4BaseErrorResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_RegistryTokenPermissionsNotAllowedError">When receiving a 403 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_V4BaseErrorResponse">When receiving a 404 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Credentials409Error">When receiving a 409 status code</exception>
         /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_V4BaseErrorResponse">When receiving a 500 status code</exception>
@@ -58,6 +59,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_V4BaseErrorResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_RegistryTokenPermissionsNotAllowedError.CreateFromDiscriminatorValue },
                 { "404", global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_V4BaseErrorResponse.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.Credentials409Error.CreateFromDiscriminatorValue },
                 { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_V4BaseErrorResponse.CreateFromDiscriminatorValue },

@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts;
+using Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Logs;
 using Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members;
 using Soenneker.Cloudflare.OpenApiClient.Organizations.Item.MembersBatchCreate;
 using Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Profile;
@@ -26,6 +27,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Organizations.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder Accounts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The logs property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Logs.LogsRequestBuilder Logs
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The members property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Organizations.Item.Members.MembersRequestBuilder Members

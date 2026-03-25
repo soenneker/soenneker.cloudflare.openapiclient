@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_200_errors> Errors { get; set; }
 #endif
-        /// <summary>Response status</summary>
+        /// <summary>Response status.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Screenshot_200"/> and sets the default values.

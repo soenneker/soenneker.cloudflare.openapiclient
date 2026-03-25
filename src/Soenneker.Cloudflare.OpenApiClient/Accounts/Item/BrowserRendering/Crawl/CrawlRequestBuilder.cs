@@ -19,7 +19,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Craw
     public partial class CrawlRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.browserRendering.crawl.item collection</summary>
-        /// <param name="position">The ID of the crawl job to cancel</param>
+        /// <param name="position">The ID of the crawl job to cancel.</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl.Item.WithJob_ItemRequestBuilder"/></returns>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl.Item.WithJob_ItemRequestBuilder this[string position]
         {

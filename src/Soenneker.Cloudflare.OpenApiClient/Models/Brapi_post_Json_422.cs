@@ -41,7 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string RawAiResponse { get; set; }
 #endif
-        /// <summary>Response status</summary>
+        /// <summary>Response status.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Json_422"/> and sets the default values.

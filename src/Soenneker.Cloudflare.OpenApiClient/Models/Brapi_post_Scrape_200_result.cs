@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Brapi_post_Scrape_200_result_results Results { get; set; }
 #endif
-        /// <summary>Selector</summary>
+        /// <summary>Selector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Selector { get; set; }

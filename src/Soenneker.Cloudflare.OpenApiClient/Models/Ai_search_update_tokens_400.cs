@@ -33,6 +33,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string MessageEscaped { get; set; }
 #endif
+        /// <summary>The result property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_result? Result { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_result Result { get; set; }
+#endif
         /// <summary>The success property</summary>
         public bool? Success { get; set; }
         /// <summary>
@@ -62,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "message", n => { MessageEscaped = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_result.CreateFromDiscriminatorValue); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -74,6 +83,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_errors>("errors", Errors);
             writer.WriteStringValue("message", MessageEscaped);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_update_tokens_400_result>("result", Result);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }
