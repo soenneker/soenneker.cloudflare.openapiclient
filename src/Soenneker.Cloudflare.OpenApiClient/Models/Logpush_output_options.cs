@@ -49,6 +49,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<string> FieldNames { get; set; }
 #endif
+        /// <summary>If set to true, subrequests will be merged into the parent request. Only supported for the `http_requests` dataset.</summary>
+        public bool? MergeSubrequests { get; set; }
         /// <summary>Specifies the output type, such as `ndjson` or `csv`. This sets default values for the rest of the settings, depending on the chosen output type. Some formatting rules, like string quoting, are different between output types.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options_output_type? OutputType { get; set; }
         /// <summary>String to be inserted in-between the records as separator.</summary>
@@ -117,6 +119,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "CVE-2021-44228", n => { CVE202144228 = n.GetBoolValue(); } },
                 { "field_delimiter", n => { FieldDelimiter = n.GetStringValue(); } },
                 { "field_names", n => { FieldNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "merge_subrequests", n => { MergeSubrequests = n.GetBoolValue(); } },
                 { "output_type", n => { OutputType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options_output_type>(); } },
                 { "record_delimiter", n => { RecordDelimiter = n.GetStringValue(); } },
                 { "record_prefix", n => { RecordPrefix = n.GetStringValue(); } },
@@ -138,6 +141,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("CVE-2021-44228", CVE202144228);
             writer.WriteStringValue("field_delimiter", FieldDelimiter);
             writer.WriteCollectionOfPrimitiveValues<string>("field_names", FieldNames);
+            writer.WriteBoolValue("merge_subrequests", MergeSubrequests);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Logpush_output_options_output_type>("output_type", OutputType);
             writer.WriteStringValue("record_delimiter", RecordDelimiter);
             writer.WriteStringValue("record_prefix", RecordPrefix);

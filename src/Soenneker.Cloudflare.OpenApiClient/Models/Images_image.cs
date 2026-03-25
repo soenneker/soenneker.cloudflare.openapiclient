@@ -53,10 +53,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <summary>Object specifying available variants for an image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.V1>? Variants { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.V2>? Variants { get; private set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.V1> Variants { get; private set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.V2> Variants { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image"/> and sets the default values.
@@ -89,7 +89,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_meta>(global::Soenneker.Cloudflare.OpenApiClient.Models.Images_image_meta.CreateFromDiscriminatorValue); } },
                 { "requireSignedURLs", n => { RequireSignedURLs = n.GetBoolValue(); } },
                 { "uploaded", n => { Uploaded = n.GetDateTimeOffsetValue(); } },
-                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.V1>(global::Soenneker.Cloudflare.OpenApiClient.Models.V1.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.V2>(global::Soenneker.Cloudflare.OpenApiClient.Models.V2.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
