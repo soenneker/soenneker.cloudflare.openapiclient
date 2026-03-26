@@ -3,17 +3,17 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
-    /// <summary>Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.</summary>
+    /// <summary>Controls which documents are candidates for BM25 scoring. &apos;and&apos; restricts candidates to documents containing all query terms; &apos;or&apos; includes any document containing at least one term, ranked by BM25 relevance. Defaults to &apos;and&apos;. Legacy values &apos;exact_match&apos; and &apos;fuzzy_match&apos; are accepted and map to &apos;and&apos; and &apos;or&apos; respectively.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum Ai_search_fetch_instances_200_result_retrieval_options_keyword_match_mode
     {
-        [EnumMember(Value = "exact_match")]
+        [EnumMember(Value = "and")]
         #pragma warning disable CS1591
-        Exact_match,
+        And,
         #pragma warning restore CS1591
-        [EnumMember(Value = "fuzzy_match")]
+        [EnumMember(Value = "or")]
         #pragma warning disable CS1591
-        Fuzzy_match,
+        Or,
         #pragma warning restore CS1591
     }
 }

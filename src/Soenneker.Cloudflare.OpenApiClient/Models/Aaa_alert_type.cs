@@ -71,6 +71,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Cloudforce_one_request_notification,
         #pragma warning restore CS1591
+        [EnumMember(Value = "cni_maintenance_notification")]
+        #pragma warning disable CS1591
+        Cni_maintenance_notification,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom_analytics")]
         #pragma warning disable CS1591
         Custom_analytics,

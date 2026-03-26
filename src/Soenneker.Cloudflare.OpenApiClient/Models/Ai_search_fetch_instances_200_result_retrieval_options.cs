@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options_boost_by> BoostBy { get; set; }
 #endif
-        /// <summary>Controls how keyword search terms are matched. exact_match requires all terms to appear (AND); fuzzy_match returns results containing any term (OR). Defaults to exact_match.</summary>
+        /// <summary>Controls which documents are candidates for BM25 scoring. &apos;and&apos; restricts candidates to documents containing all query terms; &apos;or&apos; includes any document containing at least one term, ranked by BM25 relevance. Defaults to &apos;and&apos;. Legacy values &apos;exact_match&apos; and &apos;fuzzy_match&apos; are accepted and map to &apos;and&apos; and &apos;or&apos; respectively.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options_keyword_match_mode? KeywordMatchMode { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options"/> and sets the default values.
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public Ai_search_fetch_instances_200_result_retrieval_options()
         {
             AdditionalData = new Dictionary<string, object>();
-            KeywordMatchMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options_keyword_match_mode.Exact_match;
+            KeywordMatchMode = global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_fetch_instances_200_result_retrieval_options_keyword_match_mode.And;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

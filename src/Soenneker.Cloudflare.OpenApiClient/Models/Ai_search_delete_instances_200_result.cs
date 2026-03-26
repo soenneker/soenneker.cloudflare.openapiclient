@@ -54,6 +54,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_embedding_model? EmbeddingModel { get; set; }
         /// <summary>The enable property</summary>
         public bool? Enable { get; set; }
+        /// <summary>The engine_version property</summary>
+        public double? EngineVersion { get; private set; }
         /// <summary>The fusion_method property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_fusion_method? FusionMethod { get; set; }
         /// <summary>The hybrid_search_enabled property</summary>
@@ -207,6 +209,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "custom_metadata", n => { CustomMetadata = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_custom_metadata>(global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_custom_metadata.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "embedding_model", n => { EmbeddingModel = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_embedding_model>(); } },
                 { "enable", n => { Enable = n.GetBoolValue(); } },
+                { "engine_version", n => { EngineVersion = n.GetDoubleValue(); } },
                 { "fusion_method", n => { FusionMethod = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Ai_search_delete_instances_200_result_fusion_method>(); } },
                 { "hybrid_search_enabled", n => { HybridSearchEnabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
