@@ -3,17 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Logo.Matches
 {
-    /// <summary>&quot;Column to sort by. Options: &apos;tag&apos; or &apos;date&apos;&quot;</summary>
+    /// <summary>&quot;Column to sort by. Options: &apos;matchedAt&apos;, &apos;domain&apos;, or &apos;similarityScore&apos;&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetOrderByQueryParameterType
     {
-        [EnumMember(Value = "tag")]
+        [EnumMember(Value = "matchedAt")]
         #pragma warning disable CS1591
-        Tag,
+        MatchedAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "date")]
+        [EnumMember(Value = "domain")]
         #pragma warning disable CS1591
-        Date,
+        Domain,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "similarityScore")]
+        #pragma warning disable CS1591
+        SimilarityScore,
         #pragma warning restore CS1591
     }
 }
