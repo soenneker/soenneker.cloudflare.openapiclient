@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Object where keys are numericc onfiguration IDs
+    /// Object where keys are numeric configuration IDs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zaraz_zaraz_config_history_response_result : IAdditionalDataHolder, IParsable

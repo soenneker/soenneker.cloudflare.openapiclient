@@ -49,7 +49,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? HideIPAddress { get; set; }
         /// <summary>Removing URL query params enabled.</summary>
         public bool? HideQueryParams { get; set; }
-        /// <summary>Removing sensitive data from User Aagent string enabled.</summary>
+        /// <summary>Removing sensitive data from User Agent string enabled.</summary>
         public bool? HideUserAgent { get; set; }
         /// <summary>Custom endpoint for Zaraz init script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -90,7 +90,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Settings.Zaraz.History.C
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConfigsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Comma separated list of Zaraz configuration IDs</summary>
+            /// <summary>Comma separated list of Zaraz configuration IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]

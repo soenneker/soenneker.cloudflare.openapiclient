@@ -15,14 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Connector identifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectorId { get; set; }
-#nullable restore
-#else
-        public string ConnectorId { get; set; }
-#endif
         /// <summary>Name of the network device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,7 +80,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "recv_bytes", n => { RecvBytes = n.GetDoubleValue(); } },
                 { "recv_compressed", n => { RecvCompressed = n.GetDoubleValue(); } },
@@ -115,7 +106,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("connector_id", ConnectorId);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("recv_bytes", RecvBytes);
             writer.WriteDoubleValue("recv_compressed", RecvCompressed);

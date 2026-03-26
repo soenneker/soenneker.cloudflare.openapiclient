@@ -14,13 +14,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Date and time the configuration was created</summary>
+        /// <summary>Date and time the configuration was created.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>ID of the configuration</summary>
+        /// <summary>ID of the configuration.</summary>
         public int? Id { get; set; }
-        /// <summary>Date and time the configuration was last updated</summary>
+        /// <summary>Date and time the configuration was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>Alpha-numeric ID of the account user who published the configuration</summary>
+        /// <summary>Alpha-numeric ID of the account user who published the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserId { get; set; }

@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zaraz_zaraz_history_response_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_row_base, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Configuration description provided by the user who published this configuration</summary>
+        /// <summary>Configuration description provided by the user who published this configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }

@@ -17,14 +17,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Available disk size (bytes)</summary>
         public double? AvailableBytes { get; set; }
-        /// <summary>Connector identifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectorId { get; set; }
-#nullable restore
-#else
-        public string ConnectorId { get; set; }
-#endif
         /// <summary>File system on disk (EXT4, NTFS, etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,7 +81,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "available_bytes", n => { AvailableBytes = n.GetDoubleValue(); } },
-                { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
                 { "file_system", n => { FileSystem = n.GetStringValue(); } },
                 { "is_read_only", n => { IsReadOnly = n.GetBoolValue(); } },
                 { "is_removable", n => { IsRemovable = n.GetBoolValue(); } },
@@ -107,7 +98,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("available_bytes", AvailableBytes);
-            writer.WriteStringValue("connector_id", ConnectorId);
             writer.WriteStringValue("file_system", FileSystem);
             writer.WriteBoolValue("is_read_only", IsReadOnly);
             writer.WriteBoolValue("is_removable", IsRemovable);

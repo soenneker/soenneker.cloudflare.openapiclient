@@ -8,29 +8,29 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Object where keys are purpose alpha-numeric IDs.
+    /// The dataflow score of the JavaScript content. This field has been deprecated in favour of js_integrity_score.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Zaraz_zaraz_config_base_consent_purposesWithTranslations : IAdditionalDataHolder, IParsable
+    public partial class Page_shield_dataflow_score : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_purposesWithTranslations"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_dataflow_score"/> and sets the default values.
         /// </summary>
-        public Zaraz_zaraz_config_base_consent_purposesWithTranslations()
+        public Page_shield_dataflow_score()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_purposesWithTranslations"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_dataflow_score"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_purposesWithTranslations CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_dataflow_score CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_purposesWithTranslations();
+            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_dataflow_score();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -15,14 +15,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Connector identifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectorId { get; set; }
-#nullable restore
-#else
-        public string ConnectorId { get; set; }
-#endif
         /// <summary>Name of tunnel health state (unknown, healthy, degraded, down)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,7 +72,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
                 { "health_state", n => { HealthState = n.GetStringValue(); } },
                 { "health_value", n => { HealthValue = n.GetDoubleValue(); } },
                 { "interface_name", n => { InterfaceName = n.GetStringValue(); } },
@@ -97,7 +88,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("connector_id", ConnectorId);
             writer.WriteStringValue("health_state", HealthState);
             writer.WriteDoubleValue("health_value", HealthValue);
             writer.WriteStringValue("interface_name", InterfaceName);

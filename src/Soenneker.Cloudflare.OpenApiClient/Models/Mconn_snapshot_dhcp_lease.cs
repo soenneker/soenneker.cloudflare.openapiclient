@@ -23,14 +23,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
-        /// <summary>Connector identifier</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ConnectorId { get; set; }
-#nullable restore
-#else
-        public string ConnectorId { get; set; }
-#endif
         /// <summary>Expiry time of the DHCP lease (seconds since the Unix epoch)</summary>
         public double? ExpiryTime { get; set; }
         /// <summary>Hostname of the device the IP Address was leased to</summary>
@@ -91,7 +83,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
                 { "expiry_time", n => { ExpiryTime = n.GetDoubleValue(); } },
                 { "hostname", n => { Hostname = n.GetStringValue(); } },
                 { "interface_name", n => { InterfaceName = n.GetStringValue(); } },
@@ -107,7 +98,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteStringValue("connector_id", ConnectorId);
             writer.WriteDoubleValue("expiry_time", ExpiryTime);
             writer.WriteStringValue("hostname", Hostname);
             writer.WriteStringValue("interface_name", InterfaceName);

@@ -17,8 +17,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cryptomining score of the JavaScript content.</summary>
         public int? CryptominingScore { get; set; }
-        /// <summary>The dataflow score of the JavaScript content.</summary>
-        public int? DataflowScore { get; set; }
+        /// <summary>The dataflow_score property</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_dataflow_score? DataflowScore { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_dataflow_score DataflowScore { get; set; }
+#endif
         /// <summary>The timestamp of when the script was last fetched.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,8 +48,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public int? MagecartScore { get; set; }
         /// <summary>The malware score of the JavaScript content.</summary>
         public int? MalwareScore { get; set; }
-        /// <summary>The obfuscation score of the JavaScript content.</summary>
-        public int? ObfuscationScore { get; set; }
+        /// <summary>The obfuscation_score property</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_obfuscation_score? ObfuscationScore { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_obfuscation_score ObfuscationScore { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version"/> and sets the default values.
         /// </summary>
@@ -69,13 +83,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cryptomining_score", n => { CryptominingScore = n.GetIntValue(); } },
-                { "dataflow_score", n => { DataflowScore = n.GetIntValue(); } },
+                { "dataflow_score", n => { DataflowScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_dataflow_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_dataflow_score.CreateFromDiscriminatorValue); } },
                 { "fetched_at", n => { FetchedAt = n.GetStringValue(); } },
                 { "hash", n => { Hash = n.GetStringValue(); } },
                 { "js_integrity_score", n => { JsIntegrityScore = n.GetIntValue(); } },
                 { "magecart_score", n => { MagecartScore = n.GetIntValue(); } },
                 { "malware_score", n => { MalwareScore = n.GetIntValue(); } },
-                { "obfuscation_score", n => { ObfuscationScore = n.GetIntValue(); } },
+                { "obfuscation_score", n => { ObfuscationScore = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_obfuscation_score>(global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_obfuscation_score.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,13 +100,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("cryptomining_score", CryptominingScore);
-            writer.WriteIntValue("dataflow_score", DataflowScore);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_dataflow_score>("dataflow_score", DataflowScore);
             writer.WriteStringValue("fetched_at", FetchedAt);
             writer.WriteStringValue("hash", Hash);
             writer.WriteIntValue("js_integrity_score", JsIntegrityScore);
             writer.WriteIntValue("magecart_score", MagecartScore);
             writer.WriteIntValue("malware_score", MalwareScore);
-            writer.WriteIntValue("obfuscation_score", ObfuscationScore);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Page_shield_version_obfuscation_score>("obfuscation_score", ObfuscationScore);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

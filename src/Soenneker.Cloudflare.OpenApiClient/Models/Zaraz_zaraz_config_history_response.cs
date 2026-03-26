@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zaraz_zaraz_config_history_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_api_response_common, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Object where keys are numericc onfiguration IDs</summary>
+        /// <summary>Object where keys are numeric configuration IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_history_response_result? Result { get; set; }

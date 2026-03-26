@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zaraz_zaraz_config_base_consent_buttonTextTranslations : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Object where keys are language codes</summary>
+        /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations_accept_all? AcceptAll { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Object where keys are language codes</summary>
+        /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations_confirm_my_choices? ConfirmMyChoices { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations_confirm_my_choices ConfirmMyChoices { get; set; }
 #endif
-        /// <summary>Object where keys are language codes</summary>
+        /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_buttonTextTranslations_reject_all? RejectAll { get; set; }

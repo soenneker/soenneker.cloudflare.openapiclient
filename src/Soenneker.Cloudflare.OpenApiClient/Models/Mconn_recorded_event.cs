@@ -27,6 +27,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public double? N { get; set; }
         /// <summary>Time the Event was recorded (seconds since the Unix epoch)</summary>
         public double? T { get; set; }
+        /// <summary>Version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? V { get; set; }
+#nullable restore
+#else
+        public string V { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_recorded_event"/> and sets the default values.
         /// </summary>
@@ -55,6 +63,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "e", n => { E = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_event>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_event.CreateFromDiscriminatorValue); } },
                 { "n", n => { N = n.GetDoubleValue(); } },
                 { "t", n => { T = n.GetDoubleValue(); } },
+                { "v", n => { V = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,6 +76,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_event>("e", E);
             writer.WriteDoubleValue("n", N);
             writer.WriteDoubleValue("t", T);
+            writer.WriteStringValue("v", V);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Object where keys are purpose alpha-numeric IDs
+    /// Object where keys are purpose alpha-numeric IDs.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Zaraz_zaraz_config_base_consent_purposes : IAdditionalDataHolder, IParsable

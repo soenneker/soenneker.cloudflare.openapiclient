@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class Zaraz_zaraz_workflow_response : global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_api_response_common, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Zaraz workflow</summary>
+        /// <summary>Zaraz workflow.</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_workflow? Result { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

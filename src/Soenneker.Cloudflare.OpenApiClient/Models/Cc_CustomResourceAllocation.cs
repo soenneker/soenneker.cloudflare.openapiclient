@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
     /// <summary>
-    /// Custom resource allocation with explicit vcpu, memory, and disk. Custom resource allocations must adhere to the following limits:- At least 1 vCPU- At least 3 GiB memory for each vCPU- Disk GB can be at most 2x memory in GiB
+    /// Custom resource allocation with explicit vcpu, memory, and disk. Custom resource allocations must adhere to the following limits:- At least 1 vCPU- At least 3 GiB memory for each of the first 4 vCPUs (minimum 12 GiB when exceeding 4 vCPUs)- Disk GB can be at most 2x memory in GiB
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Cc_CustomResourceAllocation : IAdditionalDataHolder, IParsable

@@ -55,7 +55,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string ConsentModalIntroHTML { get; set; }
 #endif
-        /// <summary>Object where keys are language codes</summary>
+        /// <summary>Object where keys are language codes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_consentModalIntroHTMLWithTranslations? ConsentModalIntroHTMLWithTranslations { get; set; }
@@ -93,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public bool? Enabled { get; set; }
         /// <summary>The hideModal property</summary>
         public bool? HideModal { get; set; }
-        /// <summary>Object where keys are purpose alpha-numeric IDs</summary>
+        /// <summary>Object where keys are purpose alpha-numeric IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_purposes? Purposes { get; set; }
@@ -101,7 +101,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_purposes Purposes { get; set; }
 #endif
-        /// <summary>Object where keys are purpose alpha-numeric IDs</summary>
+        /// <summary>Object where keys are purpose alpha-numeric IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Zaraz_zaraz_config_base_consent_purposesWithTranslations? PurposesWithTranslations { get; set; }
