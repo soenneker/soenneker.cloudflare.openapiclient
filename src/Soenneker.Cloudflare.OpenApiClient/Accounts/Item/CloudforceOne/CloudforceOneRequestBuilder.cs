@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Binary;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2;
 using System.Collections.Generic;
@@ -33,6 +34,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder Requests
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Requests.RequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The rules property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.RulesRequestBuilder Rules
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The scans property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Scans.ScansRequestBuilder Scans

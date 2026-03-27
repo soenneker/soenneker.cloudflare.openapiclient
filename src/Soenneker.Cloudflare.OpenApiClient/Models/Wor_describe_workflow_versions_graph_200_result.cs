@@ -24,13 +24,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The created_on property</summary>
         public DateTimeOffset? CreatedOn { get; set; }
-        /// <summary>The dag property</summary>
+        /// <summary>Versioned workflow graph payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_dag? Dag { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_graph? Graph { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_dag Dag { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_graph Graph { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -65,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             {
                 { "class_name", n => { ClassName = n.GetStringValue(); } },
                 { "created_on", n => { CreatedOn = n.GetDateTimeOffsetValue(); } },
-                { "dag", n => { Dag = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_dag>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_dag.CreateFromDiscriminatorValue); } },
+                { "graph", n => { Graph = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_graph>(global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_graph.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "workflow_id", n => { WorkflowId = n.GetGuidValue(); } },
@@ -80,7 +80,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("class_name", ClassName);
             writer.WriteDateTimeOffsetValue("created_on", CreatedOn);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_dag>("dag", Dag);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Wor_describe_workflow_versions_graph_200_result_graph>("graph", Graph);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteGuidValue("workflow_id", WorkflowId);
