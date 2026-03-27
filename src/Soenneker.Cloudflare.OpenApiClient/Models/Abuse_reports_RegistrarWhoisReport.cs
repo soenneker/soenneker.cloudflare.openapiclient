@@ -14,6 +14,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     {
         /// <summary>&quot;Notification type based on the abuse type. NOTE: Copyright (DMCA) and Trademark reports cannot be anonymous.&quot;</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoisReport_owner_notification? OwnerNotification { get; set; }
+        /// <summary>ICANN-mandated fields for registrar WHOIS data disclosure requests.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoIsFields? RegWhoRequest { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoIsFields RegWhoRequest { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,6 +41,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "owner_notification", n => { OwnerNotification = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoisReport_owner_notification>(); } },
+                { "reg_who_request", n => { RegWhoRequest = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoIsFields>(global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoIsFields.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -44,6 +53,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoisReport_owner_notification>("owner_notification", OwnerNotification);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_RegistrarWhoIsFields>("reg_who_request", RegWhoRequest);
         }
     }
 }
