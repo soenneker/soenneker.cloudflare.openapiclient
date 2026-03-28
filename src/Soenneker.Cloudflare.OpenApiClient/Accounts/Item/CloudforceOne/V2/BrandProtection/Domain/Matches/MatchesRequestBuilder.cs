@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/brand-protection/domain/matches?query_id={query_id}{&include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*}", pathParameters)
+        public MatchesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/brand-protection/domain/matches?query_id={query_id}{&domain_search*,include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/brand-protection/domain/matches?query_id={query_id}{&include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*}", rawUrl)
+        public MatchesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/cloudforce-one/v2/brand-protection/domain/matches?query_id={query_id}{&domain_search*,include_dismissed*,include_domain_id*,limit*,offset*,order*,orderBy*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get paginated list of domain matches for a specific brand protection query
+        /// Get paginated list of domain matches for one or more brand protection queries. When multiple query_ids are provided (comma-separated), matches are deduplicated across queries and each match includes a matched_queries array.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_DomainMatchList_200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_DomainMatchList_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_DomainMatchList_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get paginated list of domain matches for a specific brand protection query
+        /// Get paginated list of domain matches for one or more brand protection queries. When multiple query_ids are provided (comma-separated), matches are deduplicated across queries and each match includes a matched_queries array.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,11 +80,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Domain.Matches.MatchesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get paginated list of domain matches for a specific brand protection query
+        /// Get paginated list of domain matches for one or more brand protection queries. When multiple query_ids are provided (comma-separated), matches are deduplicated across queries and each match includes a matched_queries array.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MatchesRequestBuilderGetQueryParameters 
         {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("domain_search")]
+            public string? DomainSearch { get; set; }
+#nullable restore
+#else
+            [QueryParameter("domain_search")]
+            public string DomainSearch { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include_dismissed")]
@@ -128,11 +137,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query_id")]
-            public string? QueryId { get; set; }
+            public string[]? QueryId { get; set; }
 #nullable restore
 #else
             [QueryParameter("query_id")]
-            public string QueryId { get; set; }
+            public string[] QueryId { get; set; }
 #endif
         }
     }

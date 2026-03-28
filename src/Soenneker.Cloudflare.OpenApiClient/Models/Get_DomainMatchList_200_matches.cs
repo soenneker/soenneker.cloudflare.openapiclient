@@ -32,6 +32,22 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string FirstSeen { get; set; }
 #endif
+        /// <summary>List of query IDs that produced this match. Only present when multiple query_ids are requested.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? MatchedQueries { get; set; }
+#nullable restore
+#else
+        public List<int?> MatchedQueries { get; set; }
+#endif
+        /// <summary>All underlying match row IDs for this domain. Only present when multiple query_ids are requested.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? MatchIds { get; set; }
+#nullable restore
+#else
+        public List<int?> MatchIds { get; set; }
+#endif
         /// <summary>The public_scans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +102,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "dismissed", n => { Dismissed = n.GetBoolValue(); } },
                 { "domain", n => { Domain = n.GetStringValue(); } },
                 { "first_seen", n => { FirstSeen = n.GetStringValue(); } },
+                { "match_ids", n => { MatchIds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "matched_queries", n => { MatchedQueries = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "public_scans", n => { PublicScans = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_DomainMatchList_200_matches_public_scans>(global::Soenneker.Cloudflare.OpenApiClient.Models.Get_DomainMatchList_200_matches_public_scans.CreateFromDiscriminatorValue); } },
                 { "scan_status", n => { ScanStatus = n.GetStringValue(); } },
                 { "scan_submission_id", n => { ScanSubmissionId = n.GetIntValue(); } },
@@ -102,6 +120,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("dismissed", Dismissed);
             writer.WriteStringValue("domain", Domain);
             writer.WriteStringValue("first_seen", FirstSeen);
+            writer.WriteCollectionOfPrimitiveValues<int?>("matched_queries", MatchedQueries);
+            writer.WriteCollectionOfPrimitiveValues<int?>("match_ids", MatchIds);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_DomainMatchList_200_matches_public_scans>("public_scans", PublicScans);
             writer.WriteStringValue("scan_status", ScanStatus);
             writer.WriteIntValue("scan_submission_id", ScanSubmissionId);
