@@ -7,28 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_HttpServiceConfig"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_TcpServiceConfig"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Infra_ServiceConfig : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Infra_ServiceConfig : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_HttpServiceConfig"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_HttpServiceConfig? InfraHttpServiceConfig { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_HttpServiceConfig InfraHttpServiceConfig { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_ServiceConfig"/> and sets the default values.
-        /// </summary>
-        public Infra_ServiceConfig()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_TcpServiceConfig"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_TcpServiceConfig? InfraTcpServiceConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_TcpServiceConfig InfraTcpServiceConfig { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +37,17 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_ServiceConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_ServiceConfig();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_ServiceConfig();
+            if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InfraHttpServiceConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_HttpServiceConfig();
+            }
+            else if("infra_TcpServiceConfig".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InfraTcpServiceConfig = new global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_TcpServiceConfig();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,10 +55,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(InfraHttpServiceConfig != null)
             {
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return InfraHttpServiceConfig.GetFieldDeserializers();
+            }
+            else if(InfraTcpServiceConfig != null)
+            {
+                return InfraTcpServiceConfig.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -57,8 +72,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(InfraHttpServiceConfig != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_HttpServiceConfig>(null, InfraHttpServiceConfig);
+            }
+            else if(InfraTcpServiceConfig != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Infra_TcpServiceConfig>(null, InfraTcpServiceConfig);
+            }
         }
     }
 }

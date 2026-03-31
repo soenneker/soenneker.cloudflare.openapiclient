@@ -75,13 +75,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>The ocr_enabled property</summary>
         public bool? OcrEnabled { get; set; }
-        /// <summary>Sensitivity levels associated with this profile as (group_id, level_id) tuples.</summary>
+        /// <summary>Sensitivity levels associated with this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? SensitivityLevels { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_SensitivityLevelRef>? SensitivityLevels { get; set; }
 #nullable restore
 #else
-        public UntypedNode SensitivityLevels { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_SensitivityLevelRef> SensitivityLevels { get; set; }
 #endif
         /// <summary>The shared_entries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "ocr_enabled", n => { OcrEnabled = n.GetBoolValue(); } },
-                { "sensitivity_levels", n => { SensitivityLevels = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "sensitivity_levels", n => { SensitivityLevels = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_SensitivityLevelRef>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_SensitivityLevelRef.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "shared_entries", n => { SharedEntries = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry>(global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -154,7 +154,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("ocr_enabled", OcrEnabled);
-            writer.WriteObjectValue<UntypedNode>("sensitivity_levels", SensitivityLevels);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_SensitivityLevelRef>("sensitivity_levels", SensitivityLevels);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Dlp_Entry>("shared_entries", SharedEntries);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
