@@ -259,6 +259,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_netdev> Netdevs { get; set; }
 #endif
+        /// <summary>Platform identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Platform { get; set; }
+#nullable restore
+#else
+        public string Platform { get; set; }
+#endif
         /// <summary>Number of ICMP Address Mask Reply messages received</summary>
         public double? SnmpIcmpInAddrMaskReps { get; set; }
         /// <summary>Number of ICMP Address Mask Request messages received</summary>
@@ -545,6 +553,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "memory_z_swapped_bytes", n => { MemoryZSwappedBytes = n.GetDoubleValue(); } },
                 { "mounts", n => { Mounts = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_mount>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_mount.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "netdevs", n => { Netdevs = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_netdev>(global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_netdev.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "platform", n => { Platform = n.GetStringValue(); } },
                 { "snmp_icmp_in_addr_mask_reps", n => { SnmpIcmpInAddrMaskReps = n.GetDoubleValue(); } },
                 { "snmp_icmp_in_addr_masks", n => { SnmpIcmpInAddrMasks = n.GetDoubleValue(); } },
                 { "snmp_icmp_in_csum_errors", n => { SnmpIcmpInCsumErrors = n.GetDoubleValue(); } },
@@ -726,6 +735,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteDoubleValue("memory_z_swapped_bytes", MemoryZSwappedBytes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_mount>("mounts", Mounts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Mconn_snapshot_netdev>("netdevs", Netdevs);
+            writer.WriteStringValue("platform", Platform);
             writer.WriteDoubleValue("snmp_icmp_in_addr_mask_reps", SnmpIcmpInAddrMaskReps);
             writer.WriteDoubleValue("snmp_icmp_in_addr_masks", SnmpIcmpInAddrMasks);
             writer.WriteDoubleValue("snmp_icmp_in_csum_errors", SnmpIcmpInCsumErrors);
