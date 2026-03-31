@@ -82,6 +82,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version.Workers_Version_migrations Migrations { get; set; }
 #endif
+        /// <summary>Durable Object migration tag. Set when the version is deployed. Omitted if the version has not been deployed or the Worker does not use Durable Objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MigrationTag { get; private set; }
+#nullable restore
+#else
+        public string MigrationTag { get; private set; }
+#endif
         /// <summary>Code, sourcemaps, and other content used at runtime.This includes [`_headers`](https://developers.cloudflare.com/workers/static-assets/headers/#custom-headers) and[`_redirects`](https://developers.cloudflare.com/workers/static-assets/redirects/) files used to configure [Static Assets](https://developers.cloudflare.com/workers/static-assets/). `_headers` and `_redirects` files should be included as modules named `_headers` and `_redirects` with content type `text/plain`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,6 +164,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "limits", n => { Limits = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_limits>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_limits.CreateFromDiscriminatorValue); } },
                 { "main_module", n => { MainModule = n.GetStringValue(); } },
+                { "migration_tag", n => { MigrationTag = n.GetStringValue(); } },
                 { "migrations", n => { Migrations = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version.Workers_Version_migrations>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version.Workers_Version_migrations.CreateFromDiscriminatorValue); } },
                 { "modules", n => { Modules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules>(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_Version_modules.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "number", n => { Number = n.GetIntValue(); } },
