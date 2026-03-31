@@ -31,6 +31,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.FirewallForAi;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold;
@@ -210,6 +211,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder Firewall
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The firewallForAi property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.FirewallForAi.FirewallForAiRequestBuilder FirewallForAi
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.FirewallForAi.FirewallForAiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fraud_detection property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection.Fraud_detectionRequestBuilder Fraud_detection
