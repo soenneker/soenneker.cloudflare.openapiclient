@@ -1,17 +1,16 @@
-﻿using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Cloudflare.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public class CloudflareOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class CloudflareOpenApiClientTests : HostedUnitTest
 {
 
-    public CloudflareOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public CloudflareOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
