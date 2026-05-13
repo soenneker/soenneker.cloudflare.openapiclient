@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TakedownNotices.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TakedownNotices.Lookup;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TakedownNoticesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The lookup property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TakedownNotices.Lookup.LookupRequestBuilder Lookup
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TakedownNotices.Lookup.LookupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Cloudflare.OpenApiClient.accounts.item.cloudforceOne.v2.brandProtection.takedownNotices.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.TakedownNotices.Item.WithNotice_ItemRequestBuilder"/></returns>

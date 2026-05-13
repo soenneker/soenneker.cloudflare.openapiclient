@@ -47,7 +47,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/tags{?categoryUuid*,page*,pageSize*,search*}", pathParameters)
+        public TagsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/tags{?categoryUuid*,filters*,page*,pageSize*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -55,11 +55,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/tags{?categoryUuid*,page*,pageSize*,search*}", rawUrl)
+        public TagsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/tags{?categoryUuid*,filters*,page*,pageSize*,search*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns all Source-of-Truth tags for an account.
+        /// Returns all Source-of-Truth tags for an account. Supports legacy free-text `search` on tag value and `categoryUuid` exact match, plus a structured `filters` JSON array for filtering by metadata fields (originCountryISO, actorCategory, motive, priority, etc.). Country values may be passed as alpha-2, alpha-3, name, or common alias.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagList200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagList200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetTagList200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns all Source-of-Truth tags for an account.
+        /// Returns all Source-of-Truth tags for an account. Supports legacy free-text `search` on tag value and `categoryUuid` exact match, plus a structured `filters` JSON array for filtering by metadata fields (originCountryISO, actorCategory, motive, priority, etc.). Country values may be passed as alpha-2, alpha-3, name, or common alias.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Tags.TagsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns all Source-of-Truth tags for an account.
+        /// Returns all Source-of-Truth tags for an account. Supports legacy free-text `search` on tag value and `categoryUuid` exact match, plus a structured `filters` JSON array for filtering by metadata fields (originCountryISO, actorCategory, motive, priority, etc.). Country values may be passed as alpha-2, alpha-3, name, or common alias.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TagsRequestBuilderGetQueryParameters 
@@ -124,10 +124,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
             [QueryParameter("categoryUuid")]
             public string CategoryUuid { get; set; }
 #endif
+            /// <summary>&quot;Structured filters as a JSON array of {field, op, value} objects. Searchable fields: value, actorCategory, aliasGroupNames, attributionConfidence, attributionOrganization, categoryName, motive, opsecLevel, originCountryISO, sophisticationLevel, priority, analyticPriority. Operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use &apos;in&apos; for bulk OR within a single field, e.g. filters=[{\&quot;field\&quot;:\&quot;originCountryISO\&quot;,\&quot;op\&quot;:\&quot;in\&quot;,\&quot;value\&quot;:[\&quot;IR\&quot;,\&quot;CN\&quot;]}]. Multiple entries are AND-joined. Max 10 entries per request, max 100 values per &apos;in&apos;. Performance notes: `originCountryISO` uses its B-tree index for equals/not/in. `priority` uses its B-tree index for numeric comparisons. Other string columns (`actorCategory`, `motive`, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. `endsWith` and `aliasGroupNames` contains/like are leading-wildcard scans and slow on large result sets. `aliasGroupNames` matches on the JSON-encoded text, so substrings can cross alias boundaries (a search for \&quot;apt28\&quot; will also match \&quot;apt280\&quot; if both appear in the same tag&apos;s alias list).&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filters")]
+            public string[]? Filters { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filters")]
+            public string[] Filters { get; set; }
+#endif
             [QueryParameter("page")]
             public double? Page { get; set; }
             [QueryParameter("pageSize")]
             public double? PageSize { get; set; }
+            /// <summary>Legacy free-text substring match on tag value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]

@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Account_types;
 using Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts;
+using Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns;
 using Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Entitlements;
 using Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Memberships;
 using System.Collections.Generic;
@@ -16,10 +17,10 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \tenants\{tenant_id}
+    /// Builds and executes requests for operations under \tenants\{tenant_-id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithTenant_ItemRequestBuilder : BaseRequestBuilder
+    public partial class Tenant_ItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The account_types property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Account_types.Account_typesRequestBuilder Account_types
@@ -30,6 +31,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder Accounts
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Accounts.AccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The custom_ns property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Custom_nsRequestBuilder Custom_ns
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Custom_ns.Custom_nsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The entitlements property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Entitlements.EntitlementsRequestBuilder Entitlements
@@ -42,19 +48,19 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item
             get => new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Memberships.MembershipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenant_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTenant_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant_id}", pathParameters)
+        public Tenant_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant_%2Did}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenant_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTenant_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant_id}", rawUrl)
+        public Tenant_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/tenants/{tenant_%2Did}", rawUrl)
         {
         }
         /// <summary>
@@ -102,11 +108,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Tenants.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenant_ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenant_ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.WithTenant_ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.Cloudflare.OpenApiClient.Tenants.Item.Tenant_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
     }
 }

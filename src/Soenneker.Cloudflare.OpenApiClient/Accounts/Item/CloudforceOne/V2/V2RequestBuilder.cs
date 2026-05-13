@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Collections;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Events;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.BrandProtectionRequestBuilder BrandProtection
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.BrandProtectionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The collections property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Collections.CollectionsRequestBuilder Collections
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Collections.CollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Events.EventsRequestBuilder Events
