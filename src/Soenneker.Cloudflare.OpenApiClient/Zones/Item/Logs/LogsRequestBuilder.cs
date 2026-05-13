@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Received;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.ControlRequestBuilder Control
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Control.ControlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The explorer property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.ExplorerRequestBuilder Explorer
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Explorer.ExplorerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The rayids property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs.Rayids.RayidsRequestBuilder Rayids

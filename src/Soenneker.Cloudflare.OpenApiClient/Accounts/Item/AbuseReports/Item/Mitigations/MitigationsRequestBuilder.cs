@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\abuse-reports\{report_-id}\mitigations
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\abuse-reports\{report_-id}\mitigations
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MitigationsRequestBuilder : BaseRequestBuilder
@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MitigationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", pathParameters)
+        public MitigationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,31 +36,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MitigationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", rawUrl)
+        public MitigationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/abuse-reports/{report_%2Did}/mitigations{?effective_after*,effective_before*,entity_type*,page*,per_page*,sort*,status*,type*}", rawUrl)
         {
         }
         /// <summary>
         /// List mitigations done to remediate the abuse report.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations_500">When receiving a 500 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations500">When receiving a 500 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations.MitigationsRequestBuilder.MitigationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations.MitigationsRequestBuilder.MitigationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations.MitigationsRequestBuilder.MitigationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations.MitigationsRequestBuilder.MitigationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations_500.CreateFromDiscriminatorValue },
+                { "500", global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations500.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ListMitigations200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List mitigations done to remediate the abuse report.
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
 #endif
             /// <summary>Filter by the type of entity the mitigation impacts.</summary>
             [QueryParameter("entity_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigatedEntityType? EntityType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigatedEntityType? EntityType { get; set; }
             /// <summary>Where in pagination to start listing abuse reports</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
@@ -130,10 +130,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mit
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AbuseReports.Item.Mitigations.GetSortQueryParameterType? Sort { get; set; }
             /// <summary>Filter by the status of the mitigation.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationStatus? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationStatus? Status { get; set; }
             /// <summary>Filter by the type of mitigation. This filter parameter can be specified multiple times to include multiple types of mitigations in the result set, e.g. ?type=rate_limit_cache&amp;type=legal_block.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Abuse_reports_MitigationType? Type { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.AbuseReportsMitigationType? Type { get; set; }
         }
     }
 }

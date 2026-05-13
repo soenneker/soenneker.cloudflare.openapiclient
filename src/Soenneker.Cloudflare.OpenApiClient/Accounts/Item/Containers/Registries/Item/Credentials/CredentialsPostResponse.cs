@@ -10,16 +10,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CredentialsPostResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_V4BaseResponse, IParsable
+    public partial class CredentialsPostResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.CcV4BaseResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Credentials that can be used to interact with the requested image registry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_AccountRegistryToken? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcAccountRegistryToken? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_AccountRegistryToken Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.CcAccountRegistryToken Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_AccountRegistryToken>(global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_AccountRegistryToken.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcAccountRegistryToken>(global::Soenneker.Cloudflare.OpenApiClient.Models.CcAccountRegistryToken.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Containers.Registries
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Cc_AccountRegistryToken>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CcAccountRegistryToken>("result", Result);
         }
     }
 }

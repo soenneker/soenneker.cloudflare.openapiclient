@@ -10,16 +10,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SnippetsGetResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_Response, IParsable
+    public partial class SnippetsGetResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.SnippetsResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Additional information to navigate the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_ResultInfo? ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SnippetsResultInfo? ResultInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_ResultInfo ResultInfo { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.SnippetsResultInfo ResultInfo { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_ResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_ResultInfo.CreateFromDiscriminatorValue); } },
+                { "result_info", n => { ResultInfo = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SnippetsResultInfo>(global::Soenneker.Cloudflare.OpenApiClient.Models.SnippetsResultInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_ResultInfo>("result_info", ResultInfo);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.SnippetsResultInfo>("result_info", ResultInfo);
         }
     }
 }

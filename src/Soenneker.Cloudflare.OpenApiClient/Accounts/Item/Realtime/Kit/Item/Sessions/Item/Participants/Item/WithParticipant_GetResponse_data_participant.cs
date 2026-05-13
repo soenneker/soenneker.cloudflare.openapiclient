@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -67,10 +68,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         /// <summary>The peer_stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_peer_stats? PeerStats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantPeerStatsPeerStats? PeerStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_peer_stats PeerStats { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantPeerStatsPeerStats PeerStats { get; set; }
 #endif
         /// <summary>Name of the preset associated with the participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -136,7 +137,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "joined_at", n => { JoinedAt = n.GetStringValue(); } },
                 { "left_at", n => { LeftAt = n.GetStringValue(); } },
-                { "peer_stats", n => { PeerStats = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_peer_stats>(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_peer_stats.CreateFromDiscriminatorValue); } },
+                { "peer_stats", n => { PeerStats = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantPeerStatsPeerStats>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantPeerStatsPeerStats.CreateFromDiscriminatorValue); } },
                 { "preset_name", n => { PresetName = n.GetStringValue(); } },
                 { "quality_stats", n => { QualityStats = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_quality_stats>(global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_quality_stats.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
@@ -157,7 +158,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("joined_at", JoinedAt);
             writer.WriteStringValue("left_at", LeftAt);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_peer_stats>("peer_stats", PeerStats);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantPeerStatsPeerStats>("peer_stats", PeerStats);
             writer.WriteStringValue("preset_name", PresetName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.Item.WithParticipant_GetResponse_data_participant_quality_stats>("quality_stats", QualityStats);
             writer.WriteStringValue("updated_at", UpdatedAt);

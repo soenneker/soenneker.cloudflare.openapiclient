@@ -10,13 +10,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RulesetsGetResponse_result : global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset, IParsable
+    public partial class RulesetsGetResponse_result : global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The kind of the ruleset.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind? Kind { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetKind? Kind { get; set; }
         /// <summary>The phase of the ruleset.</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase? Phase { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetPhase? Phase { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,8 +35,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>(); } },
-                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetKind>(); } },
+                { "phase", n => { Phase = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetPhase>(); } },
             };
         }
         /// <summary>
@@ -47,8 +47,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetKind>("kind", Kind);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RulesetPhase>("phase", Phase);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetKind>("kind", Kind);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRulesetPhase>("phase", Phase);
         }
     }
 }

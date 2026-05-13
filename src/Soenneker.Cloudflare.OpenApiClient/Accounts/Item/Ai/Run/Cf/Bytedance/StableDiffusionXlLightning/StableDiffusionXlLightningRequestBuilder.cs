@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@cf\bytedance\stable-diffusion-xl-lightning
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\bytedance\stable-diffusion-xl-lightning
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StableDiffusionXlLightningRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.S
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StableDiffusionXlLightningRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning{?queueRequest*,tags*}", pathParameters)
+        public StableDiffusionXlLightningRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.S
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StableDiffusionXlLightningRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning{?queueRequest*,tags*}", rawUrl)
+        public StableDiffusionXlLightningRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/bytedance/stable-diffusion-xl-lightning{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -40,21 +40,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.S
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfBytedanceStableDiffusionXlLightning400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfBytedanceStableDiffusionXlLightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfBytedanceStableDiffusionXlLightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfBytedanceStableDiffusionXlLightning400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.S
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfBytedanceStableDiffusionXlLightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_bytedance_stable_diffusion_xl_lightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfBytedanceStableDiffusionXlLightning body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Bytedance.StableDiffusionXlLightning.StableDiffusionXlLightningRequestBuilder.StableDiffusionXlLightningRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

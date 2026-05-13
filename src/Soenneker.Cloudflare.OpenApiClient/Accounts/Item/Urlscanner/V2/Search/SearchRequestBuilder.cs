@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\urlscanner\v2\search
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\urlscanner\v2\search
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/v2/search{?q*,size*}", pathParameters)
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/search{?q*,size*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/urlscanner/v2/search{?q*,size*}", rawUrl)
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/urlscanner/v2/search{?q*,size*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Use a subset of ElasticSearch Query syntax to filter scans. Some example queries:&lt;br/&gt; &lt;br/&gt;- &apos;path:\&quot;/bundles/jquery.js\&quot;&apos;: Searches for scans who requested resources with the given path.&lt;br/&gt;- &apos;page.asn:AS24940 AND hash:xxx&apos;: Websites hosted in AS24940 where a resource with the given hash was downloaded.&lt;br/&gt;- &apos;page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com&apos;: malicious scans whose hostname starts with \&quot;microsoft\&quot;.&lt;br/&gt;- &apos;apikey:me AND date:[2025-01 TO 2025-02]&apos;: my scans from 2025 January to 2025 February.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_v2_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_v2_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_v2_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_v2_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Urlscanner.V2.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_v2_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_v2_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Urlscanner_search_scans_v2_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.UrlscannerSearchScansV2200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Use a subset of ElasticSearch Query syntax to filter scans. Some example queries:&lt;br/&gt; &lt;br/&gt;- &apos;path:\&quot;/bundles/jquery.js\&quot;&apos;: Searches for scans who requested resources with the given path.&lt;br/&gt;- &apos;page.asn:AS24940 AND hash:xxx&apos;: Websites hosted in AS24940 where a resource with the given hash was downloaded.&lt;br/&gt;- &apos;page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com&apos;: malicious scans whose hostname starts with \&quot;microsoft\&quot;.&lt;br/&gt;- &apos;apikey:me AND date:[2025-01 TO 2025-02]&apos;: my scans from 2025 January to 2025 February.&quot;

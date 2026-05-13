@@ -34,10 +34,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.
         /// <summary>The token_sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithConfig_>? TokenSources { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>? TokenSources { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WithConfig_> TokenSources { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch> TokenSources { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.Item.WithConfig_PatchRequestBody"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "token_sources", n => { TokenSources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithConfig_>(global::Soenneker.Cloudflare.OpenApiClient.Models.WithConfig_.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "token_sources", n => { TokenSources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("title", Title);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WithConfig_>("token_sources", TokenSources);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("token_sources", TokenSources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

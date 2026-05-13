@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\tunnels
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\tunnels
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TunnelsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TunnelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tunnels{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,tun_types*,uuid*,was_active_at*,was_inactive_at*}", pathParameters)
+        public TunnelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tunnels{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,tun_types*,uuid*,was_active_at*,was_inactive_at*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TunnelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/tunnels{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,tun_types*,uuid*,was_active_at*,was_inactive_at*}", rawUrl)
+        public TunnelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/tunnels{?exclude_prefix*,existed_at*,include_prefix*,is_deleted*,name*,page*,per_page*,status*,tun_types*,uuid*,was_active_at*,was_inactive_at*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists and filters all types of Tunnels in an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_list_all_tunnels_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelListAllTunnels4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.TunnelsRequestBuilder.TunnelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.TunnelsRequestBuilder.TunnelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.TunnelsRequestBuilder.TunnelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels.TunnelsRequestBuilder.TunnelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Cloudflare_tunnel_list_all_tunnels_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.CloudflareTunnelListAllTunnels4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists and filters all types of Tunnels in an account.
@@ -147,15 +147,15 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Tunnels
             public string PerPage { get; set; }
 #endif
             [QueryParameter("status")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_status? Status { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelStatus? Status { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tun_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[]? TunTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType[]? TunTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("tun_types")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Tunnel_tunnel_type[] TunTypes { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.TunnelTunnelType[] TunTypes { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

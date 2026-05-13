@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Pre
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithPreset_DeleteResponse_data : global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Preset, IParsable
+    public partial class WithPreset_DeleteResponse_data : global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPreset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>ID of the preset</summary>

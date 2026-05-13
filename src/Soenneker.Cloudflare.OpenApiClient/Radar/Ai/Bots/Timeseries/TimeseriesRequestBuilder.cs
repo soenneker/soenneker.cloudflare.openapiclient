@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", pathParameters)
+        public TimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,responseStatus*,responseStatusCategory*,userAgent*,vertical*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,userAgent*,vertical*}", rawUrl)
+        public TimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/radar/ai/bots/timeseries{?aggInterval*,asn*,contentType*,continent*,crawlPurpose*,dateEnd*,dateRange*,dateStart*,format*,industry*,limitPerGroup*,location*,name*,responseStatus*,responseStatusCategory*,userAgent*,vertical*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves AI bots HTTP request volume over time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAiBotsTimeseries200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAiBotsTimeseries400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAiBotsTimeseries200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAiBotsTimeseries200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.TimeseriesRequestBuilder.TimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAiBotsTimeseries400.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Radar_get_ai_bots_timeseries_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAiBotsTimeseries200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.RadarGetAiBotsTimeseries200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves AI bots HTTP request volume over time.
@@ -198,6 +198,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries
 #else
             [QueryParameter("name")]
             public string[] Name { get; set; }
+#endif
+            /// <summary>Filters results by HTTP response status code (e.g. 200, 403, 404). Only [IANA-registered codes](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) are accepted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("responseStatus")]
+            public string[]? ResponseStatus { get; set; }
+#nullable restore
+#else
+            [QueryParameter("responseStatus")]
+            public string[] ResponseStatus { get; set; }
+#endif
+            /// <summary>Filters results by HTTP response status code category.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("responseStatusCategory")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.GetResponseStatusCategoryQueryParameterType[]? ResponseStatusCategory { get; set; }
+#nullable restore
+#else
+            [QueryParameter("responseStatusCategory")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots.Timeseries.GetResponseStatusCategoryQueryParameterType[] ResponseStatusCategory { get; set; }
 #endif
             /// <summary>Filters results by user agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

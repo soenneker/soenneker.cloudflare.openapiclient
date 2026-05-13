@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@hf\nousresearch\hermes-2-pro-mistral-7b
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@hf\nousresearch\hermes-2-pro-mistral-7b
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Hermes2ProMistral7bRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearc
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Hermes2ProMistral7bRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b{?queueRequest*,tags*}", pathParameters)
+        public Hermes2ProMistral7bRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearc
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Hermes2ProMistral7bRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b{?queueRequest*,tags*}", rawUrl)
+        public Hermes2ProMistral7bRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@hf/nousresearch/hermes-2-pro-mistral-7b{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -40,21 +40,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearc
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunHfNousresearchHermes2ProMistral7b400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunHfNousresearchHermes2ProMistral7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunHfNousresearchHermes2ProMistral7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunHfNousresearchHermes2ProMistral7b400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunHfNousresearchHermes2ProMistral7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_hf_nousresearch_hermes_2_pro_mistral_7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunHfNousresearchHermes2ProMistral7b body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Hf.Nousresearch.Hermes2ProMistral7b.Hermes2ProMistral7bRequestBuilder.Hermes2ProMistral7bRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

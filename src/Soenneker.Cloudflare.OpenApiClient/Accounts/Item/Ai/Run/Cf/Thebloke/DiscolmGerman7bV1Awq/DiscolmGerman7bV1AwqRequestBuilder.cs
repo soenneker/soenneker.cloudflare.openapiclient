@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\ai\run\@cf\thebloke\discolm-german-7b-v1-awq
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai\run\@cf\thebloke\discolm-german-7b-v1-awq
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DiscolmGerman7bV1AwqRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.Di
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DiscolmGerman7bV1AwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq{?queueRequest*,tags*}", pathParameters)
+        public DiscolmGerman7bV1AwqRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq{?queueRequest*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.Di
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DiscolmGerman7bV1AwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq{?queueRequest*,tags*}", rawUrl)
+        public DiscolmGerman7bV1AwqRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/run/@cf/thebloke/discolm-german-7b-v1-awq{?queueRequest*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -40,21 +40,21 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.Di
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq_400">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfTheblokeDiscolmGerman7bV1Awq400">When receiving a 400 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqPostResponse?> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfTheblokeDiscolmGerman7bV1Awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqPostResponse> PostAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfTheblokeDiscolmGerman7bV1Awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq_400.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfTheblokeDiscolmGerman7bV1Awq400.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqPostResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -66,11 +66,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.Di
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfTheblokeDiscolmGerman7bV1Awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Workers_ai_post_run_cf_thebloke_discolm_german_7b_v1_awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiPostRunCfTheblokeDiscolmGerman7bV1Awq body, Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.Run.Cf.Thebloke.DiscolmGerman7bV1Awq.DiscolmGerman7bV1AwqRequestBuilder.DiscolmGerman7bV1AwqRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

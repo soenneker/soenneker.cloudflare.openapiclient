@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.AuditLog;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.Classification;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.Context;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.Dismiss;
 using System.Collections.Generic;
@@ -11,11 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\security-center\insights\{issue_id}
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\security-center\insights\{issue_id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIssue_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The auditLog property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.AuditLog.AuditLogRequestBuilder AuditLog
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.AuditLog.AuditLogRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The classification property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.Classification.ClassificationRequestBuilder Classification
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.Classification.ClassificationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The context property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item.Context.ContextRequestBuilder Context
         {
@@ -31,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIssue_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights/{issue_id}", pathParameters)
+        public WithIssue_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights/{issue_id}", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIssue_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights/{issue_id}", rawUrl)
+        public WithIssue_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights/{issue_id}", rawUrl)
         {
         }
     }

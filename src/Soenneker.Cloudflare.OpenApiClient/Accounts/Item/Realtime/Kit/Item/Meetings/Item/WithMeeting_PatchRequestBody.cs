@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         /// <summary>The AI Config allows you to customize the behavior of meeting transcriptions and summaries</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AIConfig? AiConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAIConfig? AiConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AIConfig AiConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAIConfig AiConfig { get; set; }
 #endif
         /// <summary>Specifies if the meeting should start getting livestreamed on start.</summary>
         public bool? LiveStreamOnStart { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ai_config", n => { AiConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AIConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AIConfig.CreateFromDiscriminatorValue); } },
+                { "ai_config", n => { AiConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAIConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAIConfig.CreateFromDiscriminatorValue); } },
                 { "live_stream_on_start", n => { LiveStreamOnStart = n.GetBoolValue(); } },
                 { "persist_chat", n => { PersistChat = n.GetBoolValue(); } },
                 { "record_on_start", n => { RecordOnStart = n.GetBoolValue(); } },
@@ -85,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AIConfig>("ai_config", AiConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAIConfig>("ai_config", AiConfig);
             writer.WriteBoolValue("live_stream_on_start", LiveStreamOnStart);
             writer.WriteBoolValue("persist_chat", PersistChat);
             writer.WriteBoolValue("record_on_start", RecordOnStart);

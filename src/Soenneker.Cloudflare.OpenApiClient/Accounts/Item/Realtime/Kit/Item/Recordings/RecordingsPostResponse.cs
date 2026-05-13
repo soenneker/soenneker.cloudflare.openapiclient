@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RecordingsPostResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_GenericSuccessResponse, IParsable
+    public partial class RecordingsPostResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitGenericSuccessResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

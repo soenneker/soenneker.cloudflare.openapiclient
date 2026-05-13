@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\access\logs\access_requests
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access\logs\access_requests
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Access_requestsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/access_requests{?allowedOp*,app_typeOp*,app_uidOp*,country_codeOp*,direction*,email*,emailOp*,email_exact*,fields*,idpOp*,limit*,non_identityOp*,page*,per_page*,ray_idOp*,since*,until*,user_id*,user_idOp*}", pathParameters)
+        public Access_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?allowedOp*,app_typeOp*,app_uidOp*,country_codeOp*,direction*,email*,emailOp*,email_exact*,fields*,idpOp*,limit*,non_identityOp*,page*,per_page*,ray_idOp*,since*,until*,user_id*,user_idOp*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access/logs/access_requests{?allowedOp*,app_typeOp*,app_uidOp*,country_codeOp*,direction*,email*,emailOp*,email_exact*,fields*,idpOp*,limit*,non_identityOp*,page*,per_page*,ray_idOp*,since*,until*,user_id*,user_idOp*}", rawUrl)
+        public Access_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access/logs/access_requests{?allowedOp*,app_typeOp*,app_uidOp*,country_codeOp*,direction*,email*,emailOp*,email_exact*,fields*,idpOp*,limit*,non_identityOp*,page*,per_page*,ray_idOp*,since*,until*,user_id*,user_idOp*}", rawUrl)
         {
         }
         /// <summary>
         /// Gets a list of Access authentication audit logs for an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_access_requests_components_schemas_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAccessRequestsComponentsSchemasResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Access_api_response_common_failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_access_requests_components_schemas_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAccessRequestsComponentsSchemasResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_access_requests_components_schemas_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAccessRequestsComponentsSchemasResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.Access_requestsRequestBuilder.Access_requestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Access_api_response_common_failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AccessApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Access_access_requests_components_schemas_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Access_access_requests_components_schemas_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAccessRequestsComponentsSchemasResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AccessAccessRequestsComponentsSchemasResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of Access authentication audit logs for an account.
@@ -105,7 +105,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>The chronological sorting order for the logs.</summary>
             [QueryParameter("direction")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetDirectionQueryParameterType? Direction { get; set; }
-            /// <summary>&quot;Filter by user email. Defaults to substring matching. To force exact matching, set `email_exact=true`.Example (default): `email=@example.com` returns all events with that domain.Example (exact): `email=user@example.com&amp;email_exact=true` returns only that user.&quot;</summary>
+            /// <summary>&quot;Filter by user email. Match mode is controlled by `emailOp` (preferred) or the legacy `email_exact` flag.- Default (no `emailOp`, `email_exact=false` or unset): substring match — `email=@example.com` returns all events with that domain.- Exact match: set `emailOp=eq` (preferred) or `email_exact=true` — e.g. `email=user@example.com&amp;email_exact=true` returns only that user.- Explicit substring match: set `emailOp=contains` (without `email_exact=true`). When both are set, `email_exact=true` takes precedence and the match is exact.- Exclusion: set `emailOp=neq`. With `email_exact=true` this is an exact-value exclusion; without it, a fuzzy substring exclusion.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("email")]
@@ -118,7 +118,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>When true, `email` is matched exactly instead of substring matching.</summary>
             [QueryParameter("email_exact")]
             public bool? EmailExact { get; set; }
-            /// <summary>Operator for the `email` filter.</summary>
+            /// <summary>Operator for the `email` filter.`contains` performs a substring (case-sensitive) match. When `email_exact=true`is also set, `email_exact` takes precedence and `contains` is ignored.</summary>
             [QueryParameter("emailOp")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetEmailOpQueryParameterType? EmailOp { get; set; }
             /// <summary>Comma-separated list of fields to include in the response.When omitted, all fields are returned.</summary>
@@ -153,7 +153,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             /// <summary>The latest event timestamp to query.</summary>
             [QueryParameter("until")]
             public DateTimeOffset? Until { get; set; }
-            /// <summary>Filter by user UUID.</summary>
+            /// <summary>Deprecated. Accepted for backward compatibility but no longer appliedas a filter. Use `email` instead.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user_id")]
@@ -163,7 +164,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
             [QueryParameter("user_id")]
             public string UserId { get; set; }
 #endif
-            /// <summary>Operator for the `user_id` filter.</summary>
+            /// <summary>Deprecated. Accepted for backward compatibility but no longer appliedas a filter (the `user_id` parameter is itself deprecated).</summary>
+            [Obsolete("")]
             [QueryParameter("user_idOp")]
             public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_requests.GetUser_idOpQueryParameterType? UserIdOp { get; set; }
         }

@@ -10,32 +10,32 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RecordingsPostResponse_data : global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Recording, IParsable
+    public partial class RecordingsPostResponse_data : global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRecording, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The start_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_startReason? StartReason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason? StartReason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_startReason StartReason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason StartReason { get; set; }
 #endif
         /// <summary>The stop_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_stopReason? StopReason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason? StopReason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_stopReason StopReason { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason StopReason { get; set; }
 #endif
         /// <summary>The storage_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig? StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig? StorageConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig StorageConfig { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "start_reason", n => { StartReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_startReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_startReason.CreateFromDiscriminatorValue); } },
-                { "stop_reason", n => { StopReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_stopReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_stopReason.CreateFromDiscriminatorValue); } },
-                { "storage_config", n => { StorageConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig.CreateFromDiscriminatorValue); } },
+                { "start_reason", n => { StartReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason.CreateFromDiscriminatorValue); } },
+                { "stop_reason", n => { StopReason = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason.CreateFromDiscriminatorValue); } },
+                { "storage_config", n => { StorageConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,9 +68,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_startReason>("start_reason", StartReason);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_stopReason>("stop_reason", StopReason);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig>("storage_config", StorageConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStartReason>("start_reason", StartReason);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStopReason>("stop_reason", StopReason);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>("storage_config", StorageConfig);
         }
     }
 }

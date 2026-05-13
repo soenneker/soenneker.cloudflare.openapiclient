@@ -36,52 +36,52 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.It
         /// <summary>
         /// &quot;Deletes an IP Access rule at the user level.Note: Deleting a user-level rule will affect all zones owned by the user.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_id_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleIdResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_delete_an_ip_access_rule_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserDeleteAnIpAccessRule4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_id_response?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRule_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleIdResponse?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRule_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_id_response> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRule_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleIdResponse> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.Item.WithRule_DeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_delete_an_ip_access_rule_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserDeleteAnIpAccessRule4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_id_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_id_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleIdResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates an IP Access rule defined at the user level. You can only update the rule action (`mode` parameter) and notes.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_update_an_ip_access_rule_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserUpdateAnIpAccessRule4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_update_an_ip_access_rule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserUpdateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_update_an_ip_access_rule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserUpdateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_update_an_ip_access_rule_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserUpdateAnIpAccessRule4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Firewall_rule_single_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.FirewallRuleSingleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Deletes an IP Access rule at the user level.Note: Deleting a user-level rule will affect all zones owned by the user.&quot;
@@ -113,11 +113,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.User.Firewall.Access_rules.Rules.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_update_an_ip_access_rule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserUpdateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Ip_access_rules_for_a_user_update_an_ip_access_rule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.IpAccessRulesForAUserUpdateAnIpAccessRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

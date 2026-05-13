@@ -10,16 +10,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class EntrypointPutRequestBody : global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Ruleset, IParsable
+    public partial class EntrypointPutRequestBody : global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRuleset, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of rules in the ruleset.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule>? Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule>? Rules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule> Rules { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule> Rules { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Phases.Item.
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule>("rules", Rules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule>("rules", Rules);
         }
     }
 }

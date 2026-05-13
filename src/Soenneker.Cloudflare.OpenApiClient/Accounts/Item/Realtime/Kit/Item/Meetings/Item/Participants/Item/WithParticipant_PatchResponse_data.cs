@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithParticipant_PatchResponse_data : global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Participant, IParsable
+    public partial class WithParticipant_PatchResponse_data : global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipant, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The participant&apos;s auth token that can be used for joining a meeting from the client side.</summary>

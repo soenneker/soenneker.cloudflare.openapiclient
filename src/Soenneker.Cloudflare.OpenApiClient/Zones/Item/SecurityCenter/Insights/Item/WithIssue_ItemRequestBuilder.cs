@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.AuditLog;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.Classification;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.Dismiss;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +17,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIssue_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The auditLog property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.AuditLog.AuditLogRequestBuilder AuditLog
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.AuditLog.AuditLogRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The classification property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.Classification.ClassificationRequestBuilder Classification
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.Classification.ClassificationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The dismiss property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.SecurityCenter.Insights.Item.Dismiss.DismissRequestBuilder Dismiss
         {

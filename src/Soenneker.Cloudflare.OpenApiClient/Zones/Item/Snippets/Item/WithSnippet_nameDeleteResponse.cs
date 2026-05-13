@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Snippets.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithSnippet_nameDeleteResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Snippets_Response, IParsable
+    public partial class WithSnippet_nameDeleteResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.SnippetsResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

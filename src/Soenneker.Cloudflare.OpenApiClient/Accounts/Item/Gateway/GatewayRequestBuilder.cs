@@ -9,9 +9,12 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Audit_ssh_setting
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Categories;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Dns_destination_ips;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Egress_cidr_pairs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Locations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Operations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Pacfiles;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Proxy_endpoints;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Rules;
@@ -24,7 +27,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\gateway
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\gateway
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GatewayRequestBuilder : BaseRequestBuilder
@@ -59,6 +62,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Configuration.ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The dns_destination_ips property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Dns_destination_ips.Dns_destination_ipsRequestBuilder Dns_destination_ips
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Dns_destination_ips.Dns_destination_ipsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The egress_cidr_pairs property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Egress_cidr_pairs.Egress_cidr_pairsRequestBuilder Egress_cidr_pairs
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Egress_cidr_pairs.Egress_cidr_pairsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The lists property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Lists.ListsRequestBuilder Lists
         {
@@ -73,6 +86,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging.LoggingRequestBuilder Logging
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Logging.LoggingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The operations property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Operations.OperationsRequestBuilder Operations
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pacfiles property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway.Pacfiles.PacfilesRequestBuilder Pacfiles
@@ -94,7 +112,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/gateway", pathParameters)
+        public GatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/gateway", pathParameters)
         {
         }
         /// <summary>
@@ -102,54 +120,54 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Gateway
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public GatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/gateway", rawUrl)
+        public GatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/gateway", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve information about the current Zero Trust account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_get_zero_trust_account_information_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsGetZeroTrustAccountInformation4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_get_zero_trust_account_information_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsGetZeroTrustAccountInformation4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a Zero Trust account for an existing Cloudflare account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_create_zero_trust_account_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsCreateZeroTrustAccount4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_accounts_create_zero_trust_account_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustAccountsCreateZeroTrustAccount4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zero_trust_gateway_gateway_account.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZeroTrustGatewayGatewayAccount.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve information about the current Zero Trust account.

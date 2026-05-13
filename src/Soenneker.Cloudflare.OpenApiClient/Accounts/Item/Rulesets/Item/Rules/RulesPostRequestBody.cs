@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Rulesets.Item.Rules
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RulesPostRequestBody : global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_RequestRule, IParsable
+    public partial class RulesPostRequestBody : global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsRequestRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The position property</summary>

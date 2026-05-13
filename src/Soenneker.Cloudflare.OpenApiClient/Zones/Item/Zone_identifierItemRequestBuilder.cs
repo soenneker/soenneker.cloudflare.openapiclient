@@ -8,6 +8,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Activation_check;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Argo;
@@ -31,7 +32,6 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Dnssec;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.FirewallForAi;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Healthchecks;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Hold;
@@ -42,6 +42,7 @@ using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Load_balancers;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logpush;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Logs;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Managed_headers;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Page_shield;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Pagerules;
@@ -96,6 +97,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing.AddressingRequestBuilder Addressing
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing.AddressingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The aiSecurity property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.AiSecurityRequestBuilder AiSecurity
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.AiSecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The analytics property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics.AnalyticsRequestBuilder Analytics
@@ -212,11 +218,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Firewall.FirewallRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The firewallForAi property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.FirewallForAi.FirewallForAiRequestBuilder FirewallForAi
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.FirewallForAi.FirewallForAiRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The fraud_detection property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Fraud_detection.Fraud_detectionRequestBuilder Fraud_detection
         {
@@ -266,6 +267,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Managed_headers.Managed_headersRequestBuilder Managed_headers
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Managed_headers.Managed_headersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The origin property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.OriginRequestBuilder Origin
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin.OriginRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_tls_client_auth property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Origin_tls_client_auth.Origin_tls_client_authRequestBuilder Origin_tls_client_auth
@@ -396,75 +402,75 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         /// <summary>
         /// Deletes an existing zone.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_single_id"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseSingleId"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_common_failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_single_id?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Zone_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseSingleId?> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Zone_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_single_id> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Zone_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseSingleId> DeleteAsync(global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Zone_identifierDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_common_failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_single_id>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_single_id.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseSingleId>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseSingleId.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Zone Details
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_get_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Get200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_common_failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_get_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Get200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_get_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Get200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_common_failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_get_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_get_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Get200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Get200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Edits a zone. Only one zone property can be changed at a time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_common_failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch200?> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch200> PatchAsync(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_api_response_common_failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.ZonesApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes an existing zone.
@@ -515,11 +521,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones_0_patch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Cloudflare.OpenApiClient.Models.Zones0Patch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

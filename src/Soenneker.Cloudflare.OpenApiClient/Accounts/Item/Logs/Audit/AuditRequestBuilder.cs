@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\logs\audit
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\logs\audit
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuditRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", pathParameters)
+        public AuditRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,31 +30,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", rawUrl)
+        public AuditRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/logs/audit?before={before}&since={since}{&account_name*,account_name%2Enot*,action_result*,action_result%2Enot*,action_type*,action_type%2Enot*,actor_context*,actor_context%2Enot*,actor_email*,actor_email%2Enot*,actor_id*,actor_id%2Enot*,actor_ip_address*,actor_ip_address%2Enot*,actor_token_id*,actor_token_id%2Enot*,actor_token_name*,actor_token_name%2Enot*,actor_type*,actor_type%2Enot*,audit_log_id*,audit_log_id%2Enot*,cursor*,direction*,id*,id%2Enot*,limit*,raw_cf_ray_id*,raw_cf_ray_id%2Enot*,raw_method*,raw_method%2Enot*,raw_status_code*,raw_status_code%2Enot*,raw_uri*,raw_uri%2Enot*,resource_id*,resource_id%2Enot*,resource_product*,resource_product%2Enot*,resource_scope*,resource_scope%2Enot*,resource_type*,resource_type%2Enot*,zone_id*,zone_id%2Enot*,zone_name*,zone_name%2Enot*}", rawUrl)
         {
         }
         /// <summary>
         /// Gets a list of audit logs for an account.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemas_api_response_common_failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.AaaSchemasApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Logs.Audit.AuditRequestBuilder.AuditRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_schemas_api_response_common_failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.AaaSchemasApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Aaa_audit_logs_v2_response_collection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.AaaAuditLogsV2ResponseCollection.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets a list of audit logs for an account.

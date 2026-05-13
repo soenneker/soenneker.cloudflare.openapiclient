@@ -20,10 +20,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// <summary>Object containing configuration regarding the audio that is being recorded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AudioConfig? AudioConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig? AudioConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AudioConfig AudioConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig AudioConfig { get; set; }
 #endif
         /// <summary>Update the recording file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,10 +36,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// <summary>Allows you to add timed metadata to your recordings, which are digital markers inserted into a video file to provide contextual information at specific points in the content range. The ID3 tags containing this information are available to clients on the playback timeline in HLS format. The output files are generated in a compressed .tar format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_InteractiveConfig? InteractiveConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitInteractiveConfig? InteractiveConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_InteractiveConfig InteractiveConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitInteractiveConfig InteractiveConfig { get; set; }
 #endif
         /// <summary>Specifies the maximum duration for recording in seconds, ranging from a minimum of 60 seconds to a maximum of 24 hours.</summary>
         public int? MaxSeconds { get; set; }
@@ -48,26 +48,26 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// <summary>The realtimekit_bucket_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_realtimekitBucketConfig? RealtimekitBucketConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig? RealtimekitBucketConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_realtimekitBucketConfig RealtimekitBucketConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig RealtimekitBucketConfig { get; set; }
 #endif
         /// <summary>The rtmp_out_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_LivestreamingConfig? RtmpOutConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig? RtmpOutConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_LivestreamingConfig RtmpOutConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig RtmpOutConfig { get; set; }
 #endif
         /// <summary>The storage_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig? StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig? StorageConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig StorageConfig { get; set; }
 #endif
         /// <summary>Pass a custom url to record arbitary screen</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,10 +80,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// <summary>The video_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_VideoConfig? VideoConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig? VideoConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_VideoConfig VideoConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig VideoConfig { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsPostRequestBody"/> and sets the default values.
@@ -111,16 +111,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allow_multiple_recordings", n => { AllowMultipleRecordings = n.GetBoolValue(); } },
-                { "audio_config", n => { AudioConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AudioConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AudioConfig.CreateFromDiscriminatorValue); } },
+                { "audio_config", n => { AudioConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig.CreateFromDiscriminatorValue); } },
                 { "file_name_prefix", n => { FileNamePrefix = n.GetStringValue(); } },
-                { "interactive_config", n => { InteractiveConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_InteractiveConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_InteractiveConfig.CreateFromDiscriminatorValue); } },
+                { "interactive_config", n => { InteractiveConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitInteractiveConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitInteractiveConfig.CreateFromDiscriminatorValue); } },
                 { "max_seconds", n => { MaxSeconds = n.GetIntValue(); } },
                 { "meeting_id", n => { MeetingId = n.GetGuidValue(); } },
-                { "realtimekit_bucket_config", n => { RealtimekitBucketConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_realtimekitBucketConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_realtimekitBucketConfig.CreateFromDiscriminatorValue); } },
-                { "rtmp_out_config", n => { RtmpOutConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_LivestreamingConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_LivestreamingConfig.CreateFromDiscriminatorValue); } },
-                { "storage_config", n => { StorageConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig.CreateFromDiscriminatorValue); } },
+                { "realtimekit_bucket_config", n => { RealtimekitBucketConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig.CreateFromDiscriminatorValue); } },
+                { "rtmp_out_config", n => { RtmpOutConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig.CreateFromDiscriminatorValue); } },
+                { "storage_config", n => { StorageConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetStringValue(); } },
-                { "video_config", n => { VideoConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_VideoConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_VideoConfig.CreateFromDiscriminatorValue); } },
+                { "video_config", n => { VideoConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,16 +131,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allow_multiple_recordings", AllowMultipleRecordings);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_AudioConfig>("audio_config", AudioConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitAudioConfig>("audio_config", AudioConfig);
             writer.WriteStringValue("file_name_prefix", FileNamePrefix);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_InteractiveConfig>("interactive_config", InteractiveConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitInteractiveConfig>("interactive_config", InteractiveConfig);
             writer.WriteIntValue("max_seconds", MaxSeconds);
             writer.WriteGuidValue("meeting_id", MeetingId);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_realtimekitBucketConfig>("realtimekit_bucket_config", RealtimekitBucketConfig);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_LivestreamingConfig>("rtmp_out_config", RtmpOutConfig);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig>("storage_config", StorageConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitRealtimekitBucketConfig>("realtimekit_bucket_config", RealtimekitBucketConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitLivestreamingConfig>("rtmp_out_config", RtmpOutConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>("storage_config", StorageConfig);
             writer.WriteStringValue("url", Url);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_VideoConfig>("video_config", VideoConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitVideoConfig>("video_config", VideoConfig);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

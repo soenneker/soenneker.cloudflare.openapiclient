@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.CustomProviders;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.EvaluationTypes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Gateways;
 using System.Collections.Generic;
@@ -11,11 +13,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\ai-gateway
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\ai-gateway
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AiGatewayRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The billing property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.BillingRequestBuilder Billing
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The customProviders property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.CustomProviders.CustomProvidersRequestBuilder CustomProviders
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.CustomProviders.CustomProvidersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The evaluationTypes property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway.EvaluationTypes.EvaluationTypesRequestBuilder EvaluationTypes
         {
@@ -31,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway", pathParameters)
+        public AiGatewayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.AiGateway
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AiGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/ai-gateway", rawUrl)
+        public AiGatewayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai-gateway", rawUrl)
         {
         }
     }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.BrandProtection.Logo.Matches
 {
-    /// <summary>&quot;Column to sort by. Options: &apos;matchedAt&apos;, &apos;domain&apos;, or &apos;similarityScore&apos;&quot;</summary>
+    /// <summary>&quot;Column to sort by. Options: &apos;matchedAt&apos;, &apos;domain&apos;, &apos;similarityScore&apos;, or &apos;registrar&apos;&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetOrderByQueryParameterType
     {
@@ -18,6 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.V2.Bran
         [EnumMember(Value = "similarityScore")]
         #pragma warning disable CS1591
         SimilarityScore,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "registrar")]
+        #pragma warning disable CS1591
+        Registrar,
         #pragma warning restore CS1591
     }
 }

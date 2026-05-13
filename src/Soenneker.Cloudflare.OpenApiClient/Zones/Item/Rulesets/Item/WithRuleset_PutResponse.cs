@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Rulesets.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRuleset_PutResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Rulesets_Response, IParsable
+    public partial class WithRuleset_PutResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.RulesetsResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

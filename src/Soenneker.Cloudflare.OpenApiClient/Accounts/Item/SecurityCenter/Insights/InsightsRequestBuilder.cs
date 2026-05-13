@@ -3,8 +3,10 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.AuditLog;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Item;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Scans;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Severity;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.TypeNamespace;
 using Soenneker.Cloudflare.OpenApiClient.Models;
@@ -16,15 +18,25 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\security-center\insights
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\security-center\insights
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InsightsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The auditLog property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.AuditLog.AuditLogRequestBuilder AuditLog
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.AuditLog.AuditLogRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The class property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.ClassRequestBuilder Class
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Class.ClassRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scans property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Scans.ScansRequestBuilder Scans
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Scans.ScansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The severity property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.Severity.SeverityRequestBuilder Severity
@@ -53,7 +65,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
+        public InsightsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", pathParameters)
         {
         }
         /// <summary>
@@ -61,31 +73,31 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
+        public InsightsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/security-center/insights{?dismissed*,issue_class*,issue_class%7Eneq*,issue_type*,issue_type%7Eneq*,page*,per_page*,product*,product%7Eneq*,severity*,severity%7Eneq*,subject*,subject%7Eneq*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists all Security Center insights for the account, showing security findings and recommendations.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterInsights200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_api_response_common_failure">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterInsights200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterInsights200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insights.InsightsRequestBuilder.InsightsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_api_response_common_failure.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Get_security_center_insights_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterInsights200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.GetSecurityCenterInsights200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists all Security Center insights for the account, showing security findings and recommendations.
@@ -151,20 +163,20 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.SecurityCenter.Insigh
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[]? IssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[]? IssueType { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[] IssueType { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[] IssueType { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[]? IssueTypeNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[]? IssueTypeNeq { get; set; }
 #nullable restore
 #else
             [QueryParameter("issue_type%7Eneq")]
-            public global::Soenneker.Cloudflare.OpenApiClient.Models.Security_center_issueType[] IssueTypeNeq { get; set; }
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.SecurityCenterIssueType[] IssueTypeNeq { get; set; }
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

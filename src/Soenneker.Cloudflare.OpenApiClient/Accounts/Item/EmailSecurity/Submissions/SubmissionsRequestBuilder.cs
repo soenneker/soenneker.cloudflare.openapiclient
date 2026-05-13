@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\email-security\submissions
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\email-security\submissions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubmissionsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubmissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/submissions{?customer_status*,end*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,status*,submission_id*,type*}", pathParameters)
+        public SubmissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/submissions{?end*,escalated_from_user*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,status*,submission_id*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,34 +30,34 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubmissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/email-security/submissions{?customer_status*,end*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,status*,submission_id*,type*}", rawUrl)
+        public SubmissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/email-security/submissions{?end*,escalated_from_user*,original_disposition*,outcome_disposition*,page*,per_page*,query*,requested_disposition*,start*,status*,submission_id*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// This endpoint returns information for submissions to made to reclassify emails.
+        /// Returns information for submissions made to reclassify emails. Shows the status, outcome, and disposition changes for reclassification requests made by users or the security team. Useful for tracking false positive/negative reports.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_submissions_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissions200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_submissions_2004XXError">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityApiResponseCommonFailure">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_submissions_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissions200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_submissions_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissions200> GetAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder.SubmissionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_submissions_2004XXError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecurityApiResponseCommonFailure.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_submissions_200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Email_security_submissions_200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissions200>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissions200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns information for submissions to made to reclassify emails.
+        /// Returns information for submissions made to reclassify emails. Shows the status, outcome, and disposition changes for reclassification requests made by users or the security team. Useful for tracking false positive/negative reports.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,45 +85,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
             return new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.SubmissionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint returns information for submissions to made to reclassify emails.
+        /// Returns information for submissions made to reclassify emails. Shows the status, outcome, and disposition changes for reclassification requests made by users or the security team. Useful for tracking false positive/negative reports.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubmissionsRequestBuilderGetQueryParameters 
         {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("customer_status")]
-            public string? CustomerStatus { get; set; }
-#nullable restore
-#else
-            [QueryParameter("customer_status")]
-            public string CustomerStatus { get; set; }
-#endif
-            /// <summary>The end of the search date range.Defaults to `now` if not provided.</summary>
+            /// <summary>The end of the search date range. Defaults to `now`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>When true, return only submissions that were escalated by an end user (vs. by the security team). When false, return only submissions that were not escalated by an end user. When omitted, no filter is applied.</summary>
+            [QueryParameter("escalated_from_user")]
+            public bool? EscalatedFromUser { get; set; }
             [QueryParameter("original_disposition")]
-            public string? OriginalDisposition { get; set; }
-#nullable restore
-#else
-            [QueryParameter("original_disposition")]
-            public string OriginalDisposition { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionDisposition? OriginalDisposition { get; set; }
             [QueryParameter("outcome_disposition")]
-            public string? OutcomeDisposition { get; set; }
-#nullable restore
-#else
-            [QueryParameter("outcome_disposition")]
-            public string OutcomeDisposition { get; set; }
-#endif
-            /// <summary>The page number of paginated results.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionDisposition? OutcomeDisposition { get; set; }
+            /// <summary>Current page within paginated list of results.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }
-            /// <summary>The number of results per page.</summary>
+            /// <summary>The number of results per page. Maximum value is 1000.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -135,16 +115,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("requested_disposition")]
-            public string? RequestedDisposition { get; set; }
-#nullable restore
-#else
-            [QueryParameter("requested_disposition")]
-            public string RequestedDisposition { get; set; }
-#endif
-            /// <summary>The beginning of the search date range.Defaults to `now - 30 days` if not provided.</summary>
+            public global::Soenneker.Cloudflare.OpenApiClient.Models.EmailSecuritySubmissionDisposition? RequestedDisposition { get; set; }
+            /// <summary>The beginning of the search date range. Defaults to `now - 30 days`.</summary>
             [QueryParameter("start")]
             public DateTimeOffset? Start { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,15 +138,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submiss
             [QueryParameter("submission_id")]
             public string SubmissionId { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("type")]
-            public string? Type { get; set; }
-#nullable restore
-#else
-            [QueryParameter("type")]
-            public string Type { get; set; }
-#endif
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.EmailSecurity.Submissions.GetTypeQueryParameterType? Type { get; set; }
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStore_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/system/accounts/{account_tag}/stores/{store_id}", pathParameters)
+        public WithStore_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/system/accounts/{account_tag}/stores/{store_id}{?force*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,67 +36,69 @@ namespace Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithStore_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/system/accounts/{account_tag}/stores/{store_id}", rawUrl)
+        public WithStore_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/system/accounts/{account_tag}/stores/{store_id}{?force*}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.
+        /// Deletes a store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.By default, a store that still contains secrets cannot be deleted and returnsHTTP 409 (Conflict) with the &quot;store_not_empty&quot; error. Pass `force=true` tocascade-delete all secrets in the store.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_system_delete_by_id_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSystemDeleteById409">When receiving a 409 status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSystemDeleteById4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item.WithStore_ItemRequestBuilder.WithStore_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item.WithStore_ItemRequestBuilder.WithStore_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_system_delete_by_id_4XX.CreateFromDiscriminatorValue },
+                { "409", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSystemDeleteById409.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSystemDeleteById4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns details of a single store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreStoreResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_system_get_store_by_id_4XX">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSystemGetStoreById4XX">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreStoreResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreStoreResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_system_get_store_by_id_4XX.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreSystemGetStoreById4XX.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Secrets_store_store_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreStoreResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.SecretsStoreStoreResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.
+        /// Deletes a store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.By default, a store that still contains secrets cannot be deleted and returnsHTTP 409 (Conflict) with the &quot;store_not_empty&quot; error. Pass `force=true` tocascade-delete all secrets in the store.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item.WithStore_ItemRequestBuilder.WithStore_ItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item.WithStore_ItemRequestBuilder.WithStore_ItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
@@ -131,6 +133,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item
         public global::Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item.WithStore_ItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Cloudflare.OpenApiClient.System.Accounts.Item.Stores.Item.WithStore_ItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Deletes a store managed by the calling service.Returns 404 if the store doesn&apos;t exist or is not managed by the authenticated service.By default, a store that still contains secrets cannot be deleted and returnsHTTP 409 (Conflict) with the &quot;store_not_empty&quot; error. Pass `force=true` tocascade-delete all secrets in the store.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithStore_ItemRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>When true, cascade-deletes all secrets in the store before deletingthe store itself. Required when deleting a non-empty store. Withoutthis parameter, attempting to delete a non-empty store returns 409.</summary>
+            [QueryParameter("force")]
+            public bool? Force { get; set; }
         }
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Content;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEscaped;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Links;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Markdown;
@@ -18,7 +19,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\browser-rendering
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\browser-rendering
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BrowserRenderingRequestBuilder : BaseRequestBuilder
@@ -32,6 +33,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl.CrawlRequestBuilder Crawl
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Crawl.CrawlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The devtools property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.DevtoolsRequestBuilder Devtools
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.Devtools.DevtoolsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The json property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering.JsonEscaped.JsonRequestBuilder Json
@@ -73,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRenderingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering", pathParameters)
+        public BrowserRenderingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering", pathParameters)
         {
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.BrowserRendering
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BrowserRenderingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/browser-rendering", rawUrl)
+        public BrowserRenderingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/browser-rendering", rawUrl)
         {
         }
     }

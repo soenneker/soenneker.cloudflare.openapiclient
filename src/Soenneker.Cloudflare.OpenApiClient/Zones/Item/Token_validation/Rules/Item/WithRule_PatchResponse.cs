@@ -10,16 +10,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.I
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class WithRule_PatchResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_api_response_single, IParsable
+    public partial class WithRule_PatchResponse : global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldApiResponseSingle, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A Token Validation rule that can enforce security policies using JWT Tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_Rule? Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRule? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_Rule Result { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRule Result { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.I
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_Rule>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_Rule.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRule>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.I
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_Rule>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldRule>("result", Result);
         }
     }
 }

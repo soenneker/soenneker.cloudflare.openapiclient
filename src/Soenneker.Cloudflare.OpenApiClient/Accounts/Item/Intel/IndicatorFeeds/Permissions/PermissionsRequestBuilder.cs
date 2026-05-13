@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.CreateProvider;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.View;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\intel\indicator-feeds\permissions
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\intel\indicator-feeds\permissions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PermissionsRequestBuilder : BaseRequestBuilder
@@ -21,6 +22,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add.AddRequestBuilder Add
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Add.AddRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The createProvider property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.CreateProvider.CreateProviderRequestBuilder CreateProvider
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.CreateProvider.CreateProviderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The remove property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.Permissions.Remove.RemoveRequestBuilder Remove
@@ -37,7 +43,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/indicator-feeds/permissions", pathParameters)
+        public PermissionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/indicator-feeds/permissions", pathParameters)
         {
         }
         /// <summary>
@@ -45,7 +51,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Intel.IndicatorFeeds.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/intel/indicator-feeds/permissions", rawUrl)
+        public PermissionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/intel/indicator-feeds/permissions", rawUrl)
         {
         }
     }

@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ParticipantsList>? Participants { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantsList>? Participants { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ParticipantsList> Participants { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantsList> Participants { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.Participants.ParticipantsGetResponse_data"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ParticipantsList>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ParticipantsList.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantsList>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantsList.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ParticipantsList>("participants", Participants);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitParticipantsList>("participants", Participants);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

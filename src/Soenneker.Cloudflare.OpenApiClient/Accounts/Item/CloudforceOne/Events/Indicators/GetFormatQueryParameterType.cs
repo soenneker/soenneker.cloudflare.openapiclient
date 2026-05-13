@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.Indicators
 {
-    /// <summary>Output format for indicator data. &apos;json&apos; returns the default format, &apos;stix2&apos; returns STIX 2.1 Indicator SDOs.</summary>
+    /// <summary>Output format for indicator data. &apos;json&apos; returns the default format, &apos;stix2&apos; returns STIX 2.1 Indicator SDOs, &apos;taxii&apos; returns a TAXII 2.1 Envelope with Content-Type application/taxii+json;version=2.1.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetFormatQueryParameterType
     {
@@ -14,6 +14,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         [EnumMember(Value = "stix2")]
         #pragma warning disable CS1591
         Stix2,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "taxii")]
+        #pragma warning disable CS1591
+        Taxii,
         #pragma warning restore CS1591
     }
 }

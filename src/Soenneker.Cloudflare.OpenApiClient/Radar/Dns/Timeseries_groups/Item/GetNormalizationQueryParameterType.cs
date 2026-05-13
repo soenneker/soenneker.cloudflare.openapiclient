@@ -15,5 +15,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Dns.Timeseries_groups.Item
         #pragma warning disable CS1591
         MIN0_MAX,
         #pragma warning restore CS1591
+        [EnumMember(Value = "RANK")]
+        #pragma warning disable CS1591
+        RANK,
+        #pragma warning restore CS1591
     }
 }

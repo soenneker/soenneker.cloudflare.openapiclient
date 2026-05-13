@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Bots;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Markdown_for_agents;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Ai
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.InferenceRequestBuilder Inference
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Inference.InferenceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The markdown_for_agents property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Markdown_for_agents.Markdown_for_agentsRequestBuilder Markdown_for_agents
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.Markdown_for_agents.Markdown_for_agentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.AiRequestBuilder"/> and sets the default values.

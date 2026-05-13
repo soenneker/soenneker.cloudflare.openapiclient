@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.ClientVersions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DeploymentGroups;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.IpProfiles;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.Networks;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.PhysicalDevices;
@@ -18,11 +20,21 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\devices
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\devices
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DevicesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The clientVersions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.ClientVersions.ClientVersionsRequestBuilder ClientVersions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.ClientVersions.ClientVersionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The deploymentGroups property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DeploymentGroups.DeploymentGroupsRequestBuilder DeploymentGroups
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.DeploymentGroups.DeploymentGroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The ipProfiles property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices.IpProfiles.IpProfilesRequestBuilder IpProfiles
         {
@@ -73,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices", pathParameters)
+        public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices", pathParameters)
         {
         }
         /// <summary>
@@ -81,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/devices", rawUrl)
+        public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/devices", rawUrl)
         {
         }
     }

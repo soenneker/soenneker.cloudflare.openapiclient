@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Agent_readiness;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Ai;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Annotations;
 using Soenneker.Cloudflare.OpenApiClient.Radar.As112;
@@ -38,6 +39,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RadarRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agent_readiness property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Agent_readiness.Agent_readinessRequestBuilder Agent_readiness
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Agent_readiness.Agent_readinessRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The ai property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Ai.AiRequestBuilder Ai
         {

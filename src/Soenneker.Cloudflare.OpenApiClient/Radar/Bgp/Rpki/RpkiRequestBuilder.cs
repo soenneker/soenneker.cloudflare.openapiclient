@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.AspaRequestBuilder Aspa
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Aspa.AspaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The roas property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.RoasRequestBuilder Roas
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.Roas.RoasRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Rpki.RpkiRequestBuilder"/> and sets the default values.

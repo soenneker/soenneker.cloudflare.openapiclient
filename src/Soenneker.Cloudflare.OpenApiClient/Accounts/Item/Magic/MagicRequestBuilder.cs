@@ -10,6 +10,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Cloud;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Connectors;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Gre_tunnels;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Redundancy_groups;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Routes;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Sites;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\magic
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\magic
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MagicRequestBuilder : BaseRequestBuilder
@@ -64,6 +65,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Ipsec_tunnels.Ipsec_tunnelsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The redundancy_groups property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Redundancy_groups.Redundancy_groupsRequestBuilder Redundancy_groups
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Redundancy_groups.Redundancy_groupsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The routes property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic.Routes.RoutesRequestBuilder Routes
         {
@@ -79,7 +85,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MagicRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic", pathParameters)
+        public MagicRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic", pathParameters)
         {
         }
         /// <summary>
@@ -87,7 +93,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Magic
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MagicRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/magic", rawUrl)
+        public MagicRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/magic", rawUrl)
         {
         }
     }

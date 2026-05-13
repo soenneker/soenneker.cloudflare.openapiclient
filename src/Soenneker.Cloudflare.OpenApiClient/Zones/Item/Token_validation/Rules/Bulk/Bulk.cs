@@ -10,7 +10,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Rules.B
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Bulk : global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_edit_single_rule_request, IParsable
+    public partial class Bulk : global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldEditSingleRuleRequest, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Rule ID this patch applies to</summary>

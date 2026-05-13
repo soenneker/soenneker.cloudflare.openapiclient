@@ -16,5 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs.Access_re
         #pragma warning disable CS1591
         Neq,
         #pragma warning restore CS1591
+        [EnumMember(Value = "contains")]
+        #pragma warning disable CS1591
+        Contains,
+        #pragma warning restore CS1591
     }
 }

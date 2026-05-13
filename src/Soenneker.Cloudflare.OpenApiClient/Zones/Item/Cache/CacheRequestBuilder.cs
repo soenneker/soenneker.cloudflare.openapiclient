@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve_clear;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_cloud_regions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Regional_tiered_cache;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Tiered_cache_smart_topology_enable;
@@ -29,6 +30,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve_clear.Cache_reserve_clearRequestBuilder Cache_reserve_clear
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Cache_reserve_clear.Cache_reserve_clearRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The origin_cloud_regions property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_cloud_regions.Origin_cloud_regionsRequestBuilder Origin_cloud_regions
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_cloud_regions.Origin_cloud_regionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The origin_post_quantum_encryption property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Cache.Origin_post_quantum_encryption.Origin_post_quantum_encryptionRequestBuilder Origin_post_quantum_encryption

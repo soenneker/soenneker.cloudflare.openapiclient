@@ -26,10 +26,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         /// <summary>The poll property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Poll? Poll { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll? Poll { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Poll Poll { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll Poll { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Meetings.Item.ActiveSession.Poll.PollPostResponse_data"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetStringValue(); } },
-                { "poll", n => { Poll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Poll>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Poll.CreateFromDiscriminatorValue); } },
+                { "poll", n => { Poll = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Mee
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Poll>("poll", Poll);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitPoll>("poll", Poll);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

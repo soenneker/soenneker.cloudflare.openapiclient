@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
 #else
         public string WorkersAlias { get; set; }
 #endif
-        /// <summary>Human-readable message about the version. Truncated to 100 bytes.</summary>
+        /// <summary>Human-readable message about the version. Truncated to 1000 bytes if longer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkersMessage { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item.
 #else
         public string WorkersMessage { get; set; }
 #endif
-        /// <summary>User-provided identifier for the version.</summary>
+        /// <summary>User-provided identifier for the version. Maximum 100 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkersTag { get; set; }

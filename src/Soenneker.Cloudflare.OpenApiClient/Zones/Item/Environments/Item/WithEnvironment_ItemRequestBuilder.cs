@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Models;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Purge_cache;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Rollback;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithEnvironment_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The purge_cache property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Purge_cache.Purge_cacheRequestBuilder Purge_cache
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Purge_cache.Purge_cacheRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The rollback property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item.Rollback.RollbackRequestBuilder Rollback
         {
@@ -42,25 +48,25 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Environments.Item
         /// <summary>
         /// Delete zone environment
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Kamino_environments_response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.Kamino_error_response">When receiving a 4XX status code</exception>
+        /// <exception cref="global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoErrorResponse">When receiving a 4XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Kamino_environments_response?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.Kamino_environments_response> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.Kamino_error_response.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.Kamino_environments_response>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.Kamino_environments_response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse>(requestInfo, global::Soenneker.Cloudflare.OpenApiClient.Models.KaminoEnvironmentsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete zone environment

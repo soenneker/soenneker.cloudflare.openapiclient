@@ -15,7 +15,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Human-readable message about the version.</summary>
+        /// <summary>Human-readable message about the version. Truncated to 1000 bytes if longer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkersMessage { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workers.Scripts.Item
 #else
         public string WorkersMessage { get; set; }
 #endif
-        /// <summary>User-provided identifier for the version.</summary>
+        /// <summary>User-provided identifier for the version. Maximum 100 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WorkersTag { get; set; }

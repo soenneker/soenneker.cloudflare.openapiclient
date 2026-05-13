@@ -42,10 +42,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// <summary>The meeting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting? Meeting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeeting? Meeting { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting Meeting { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeeting Meeting { get; set; }
 #endif
         /// <summary>File name of the recording.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,10 +68,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         /// <summary>The storage_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig? StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig? StorageConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig StorageConfig { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig StorageConfig { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse_data"/> and sets the default values.
@@ -104,14 +104,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
                 { "file_size", n => { FileSize = n.GetDoubleValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "invoked_time", n => { InvokedTime = n.GetDateTimeOffsetValue(); } },
-                { "meeting", n => { Meeting = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting.CreateFromDiscriminatorValue); } },
+                { "meeting", n => { Meeting = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeeting>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeeting.CreateFromDiscriminatorValue); } },
                 { "output_file_name", n => { OutputFileName = n.GetStringValue(); } },
                 { "recording_duration", n => { RecordingDuration = n.GetIntValue(); } },
                 { "session_id", n => { SessionId = n.GetGuidValue(); } },
                 { "started_time", n => { StartedTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse_data_status>(); } },
                 { "stopped_time", n => { StoppedTime = n.GetDateTimeOffsetValue(); } },
-                { "storage_config", n => { StorageConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig.CreateFromDiscriminatorValue); } },
+                { "storage_config", n => { StorageConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -122,13 +122,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Rec
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("invoked_time", InvokedTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_Meeting>("meeting", Meeting);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitMeeting>("meeting", Meeting);
             writer.WriteStringValue("output_file_name", OutputFileName);
             writer.WriteIntValue("recording_duration", RecordingDuration);
             writer.WriteDateTimeOffsetValue("started_time", StartedTime);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Recordings.RecordingsGetResponse_data_status>("status", Status);
             writer.WriteDateTimeOffsetValue("stopped_time", StoppedTime);
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_StorageConfig>("storage_config", StorageConfig);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitStorageConfig>("storage_config", StorageConfig);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing;
+using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Security;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder Routing
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Routing.RoutingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The security property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Security.SecurityRequestBuilder Security
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Security.SecurityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sending property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Email.Sending.SendingRequestBuilder Sending

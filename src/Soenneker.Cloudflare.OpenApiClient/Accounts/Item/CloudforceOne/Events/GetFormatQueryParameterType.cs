@@ -16,5 +16,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events
         #pragma warning disable CS1591
         Stix2,
         #pragma warning restore CS1591
+        [EnumMember(Value = "taxii")]
+        #pragma warning disable CS1591
+        Taxii,
+        #pragma warning restore CS1591
     }
 }

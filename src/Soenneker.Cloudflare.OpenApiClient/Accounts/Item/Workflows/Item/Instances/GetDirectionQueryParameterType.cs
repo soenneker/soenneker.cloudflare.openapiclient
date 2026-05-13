@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances
 {
-    /// <summary>should only be used when `cursor` is used, defines a new direction for the cursor</summary>
+    /// <summary>Defines the direction for cursor-based pagination.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetDirectionQueryParameterType
     {

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Timeseries;
+using Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips
         public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Timeseries.TimeseriesRequestBuilder Timeseries
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Timeseries.TimeseriesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The top property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.TopRequestBuilder Top
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.Top.TopRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Radar.Bgp.Ips.IpsRequestBuilder"/> and sets the default values.

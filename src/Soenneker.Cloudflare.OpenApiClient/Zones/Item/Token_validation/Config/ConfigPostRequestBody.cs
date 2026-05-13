@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config
         /// <summary>The credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials? Credentials { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials? Credentials { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials Credentials { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials Credentials { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,13 +42,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config
         /// <summary>The token_sources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Config>? TokenSources { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>? TokenSources { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.Config> TokenSources { get; set; }
+        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch> TokenSources { get; set; }
 #endif
         /// <summary>The token_type property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_token_type? TokenType { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTokenType? TokenType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config.ConfigPostRequestBody"/> and sets the default values.
         /// </summary>
@@ -74,11 +74,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials>(global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials.CreateFromDiscriminatorValue); } },
+                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials>(global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "token_sources", n => { TokenSources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Config>(global::Soenneker.Cloudflare.OpenApiClient.Models.Config.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_token_type>(); } },
+                { "token_sources", n => { TokenSources = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTokenType>(); } },
             };
         }
         /// <summary>
@@ -88,11 +88,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item.Token_validation.Config
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_credentials>("credentials", Credentials);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldCredentials>("credentials", Credentials);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("title", Title);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.Config>("token_sources", TokenSources);
-            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Api_shield_token_type>("token_type", TokenType);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("token_sources", TokenSources);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.ApiShieldTokenType>("token_type", TokenType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

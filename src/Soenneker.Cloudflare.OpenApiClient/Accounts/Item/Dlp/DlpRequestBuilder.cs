@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Custom_prompt_topics;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Document_fingerprints;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Email;
@@ -18,11 +19,16 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\dlp
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\dlp
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DlpRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The custom_prompt_topics property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Custom_prompt_topics.Custom_prompt_topicsRequestBuilder Custom_prompt_topics
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Custom_prompt_topics.Custom_prompt_topicsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The datasets property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.Datasets.DatasetsRequestBuilder Datasets
         {
@@ -73,7 +79,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DlpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp", pathParameters)
+        public DlpRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp", pathParameters)
         {
         }
         /// <summary>
@@ -81,7 +87,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DlpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/dlp", rawUrl)
+        public DlpRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/dlp", rawUrl)
         {
         }
     }

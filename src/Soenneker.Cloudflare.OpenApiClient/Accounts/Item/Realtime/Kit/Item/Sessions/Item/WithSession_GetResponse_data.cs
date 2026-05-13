@@ -18,10 +18,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         /// <summary>The session property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ActiveSession? Session { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession? Session { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ActiveSession Session { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession Session { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Sessions.Item.WithSession_GetResponse_data"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "session", n => { Session = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ActiveSession>(global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ActiveSession.CreateFromDiscriminatorValue); } },
+                { "session", n => { Session = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession>(global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Realtime.Kit.Item.Ses
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.Realtimekit_ActiveSession>("session", Session);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.RealtimekitActiveSession>("session", Session);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

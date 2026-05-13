@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.AiControls;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Authenticator_device_aaguids;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Custom_pages;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Gateway_ca;
@@ -25,7 +26,7 @@ using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
 {
     /// <summary>
-    /// Builds and executes requests for operations under \accounts\{account-id}\access
+    /// Builds and executes requests for operations under \accounts\{account_identifier-id}\access
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccessRequestBuilder : BaseRequestBuilder
@@ -39,6 +40,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.AppsRequestBuilder Apps
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Apps.AppsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The authenticator_device_aaguids property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Authenticator_device_aaguids.Authenticator_device_aaguidsRequestBuilder Authenticator_device_aaguids
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Authenticator_device_aaguids.Authenticator_device_aaguidsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The certificates property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Certificates.CertificatesRequestBuilder Certificates
@@ -115,7 +121,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access", pathParameters)
+        public AccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access", pathParameters)
         {
         }
         /// <summary>
@@ -123,7 +129,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account%2Did}/access", rawUrl)
+        public AccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/access", rawUrl)
         {
         }
     }
