@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", pathParameters)
+        public IndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tags*}", rawUrl)
+        public IndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/cloudforce-one/events/indicators{?createdAfter*,createdBefore*,datasetIds*,format*,includeTags*,includeTotalCount*,indicatorType*,name*,page*,pageSize*,relatedEvents*,relatedEventsLimit*,search*,tagSearch*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -170,6 +170,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.CloudforceOne.Events.
 #else
             [QueryParameter("tags")]
             public string[] Tags { get; set; }
+#endif
+            /// <summary>&quot;Structured tag-metadata filter as a JSON array of {field, op, value} objects. Operates against the per-dataset IndicatorTag mirror so you can find indicators by tag attributes (origin country, motive, sophistication, priority, etc.) without a separate Tags lookup. Common dashboard usage: drill from a country into indicators, e.g. tagSearch=[{\&quot;field\&quot;:\&quot;originCountryISO\&quot;,\&quot;op\&quot;:\&quot;in\&quot;,\&quot;value\&quot;:[\&quot;IR\&quot;,\&quot;CN\&quot;]}]. Country values may be passed as alpha-2, alpha-3, name, or alias (e.g. \&quot;iran\&quot;). Operators: equals, not, gt/gte/lt/lte (numeric only), contains/like/find/startsWith/endsWith (string only), in. AND-joined across entries; combined with `tags`, a matching tag must satisfy both. Max 10 entries per request, max 100 values per &apos;in&apos;. Performance notes: `originCountryISO` uses its B-tree index for equals/not/in. `priority` uses its B-tree index for numeric comparisons. Other string columns (`actorCategory`, `motive`, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. `endsWith` and `aliasGroupNames` contains/like are leading-wildcard scans and slow on large result sets. `aliasGroupNames` matches on the JSON-encoded text, so substrings can cross alias boundaries (\&quot;apt28\&quot; also matches \&quot;apt280\&quot; when both appear in the same tag&apos;s alias list).&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("tagSearch")]
+            public string[]? TagSearch { get; set; }
+#nullable restore
+#else
+            [QueryParameter("tagSearch")]
+            public string[] TagSearch { get; set; }
 #endif
         }
     }

@@ -22,6 +22,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200_result_stepsMember1_config_retries Retries { get; set; }
 #endif
+        /// <summary>When set to &apos;output&apos;, step output is redacted from log and step output responses.</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200_result_stepsMember1_config_sensitive? Sensitive { get; set; }
         /// <summary>Specifies the timeout duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "retries", n => { Retries = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200_result_stepsMember1_config_retries>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200_result_stepsMember1_config_retries.CreateFromDiscriminatorValue); } },
+                { "sensitive", n => { Sensitive = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200_result_stepsMember1_config_sensitive>(); } },
                 { "timeout", n => { Timeout = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>(global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,6 +70,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200_result_stepsMember1_config_retries>("retries", Retries);
+            writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorDescribeWorkflowInstance200_result_stepsMember1_config_sensitive>("sensitive", Sensitive);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.UnionBranch>("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);
         }

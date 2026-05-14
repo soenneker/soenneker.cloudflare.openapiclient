@@ -40,6 +40,14 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary LastUploadSummary { get; set; }
 #endif
+        /// <summary>Human-readable error message describing why the latest uploadfailed. Populated only when `latest_upload_status` is `Error`.Returns one of a small fixed set of category-level messages(invalid domain / IP / URL entries, malformed row or header,invalid valid_until timestamp, etc.) or the generic`Upload failed` for unknown or infrastructure-level errors.Never echoes raw error text from the underlying loader.Intel accounts receive the verbatim loader/API error text(including specific offending values) instead of thesecategory-level messages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LatestUploadError { get; set; }
+#nullable restore
+#else
+        public string LatestUploadError { get; set; }
+#endif
         /// <summary>Status of the latest snapshot uploaded</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsIndicatorFeedMetadata_latest_upload_status? LatestUploadStatus { get; set; }
         /// <summary>The date and time when the data entry was last modified</summary>
@@ -94,6 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "is_downloadable", n => { IsDownloadable = n.GetBoolValue(); } },
                 { "is_public", n => { IsPublic = n.GetBoolValue(); } },
                 { "last_upload_summary", n => { LastUploadSummary = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary>(global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary.CreateFromDiscriminatorValue); } },
+                { "latest_upload_error", n => { LatestUploadError = n.GetStringValue(); } },
                 { "latest_upload_status", n => { LatestUploadStatus = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsIndicatorFeedMetadata_latest_upload_status>(); } },
                 { "modified_on", n => { ModifiedOn = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -115,6 +124,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteBoolValue("is_downloadable", IsDownloadable);
             writer.WriteBoolValue("is_public", IsPublic);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsLastUploadSummary>("last_upload_summary", LastUploadSummary);
+            writer.WriteStringValue("latest_upload_error", LatestUploadError);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.CustomIndicatorFeedsIndicatorFeedMetadata_latest_upload_status>("latest_upload_status", LatestUploadStatus);
             writer.WriteDateTimeOffsetValue("modified_on", ModifiedOn);
             writer.WriteStringValue("name", Name);

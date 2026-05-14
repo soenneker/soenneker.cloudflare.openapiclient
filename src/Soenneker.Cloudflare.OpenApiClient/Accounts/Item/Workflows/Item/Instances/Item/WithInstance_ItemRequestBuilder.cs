@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Events;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Status;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -28,6 +29,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instan
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Status.StatusRequestBuilder Status
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Status.StatusRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The step property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step.StepRequestBuilder Step
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.Step.StepRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Workflows.Item.Instances.Item.WithInstance_ItemRequestBuilder"/> and sets the default values.
