@@ -91,6 +91,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         #pragma warning disable CS1591
         Mcp_portal_logs,
         #pragma warning restore CS1591
+        [EnumMember(Value = "mnm_flow_logs")]
+        #pragma warning disable CS1591
+        Mnm_flow_logs,
+        #pragma warning restore CS1591
         [EnumMember(Value = "nel_reports")]
         #pragma warning disable CS1591
         Nel_reports,

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Saml_certificate;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim;
 using Soenneker.Cloudflare.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_provi
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIdentity_provider_ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The saml_certificate property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Saml_certificate.Saml_certificateRequestBuilder Saml_certificate
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Saml_certificate.Saml_certificateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The scim property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Identity_providers.Item.Scim.ScimRequestBuilder Scim
         {

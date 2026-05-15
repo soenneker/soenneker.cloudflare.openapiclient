@@ -38,6 +38,16 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The SAML encryption certificate set details, including current and previous certificates.Only present for SAML identity providers with a certificate set assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_saml_certificate_set? SamlCertificateSet { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_saml_certificate_set SamlCertificateSet { get; private set; }
+#endif
+        /// <summary>The UID of the SAML encryption certificate set assigned to this Identity Provider.Only present for SAML identity providers with encryption configured.Create a certificate set via POST to `/identity_providers/{id}/saml_certificate`.</summary>
+        public Guid? SamlCertificateSetId { get; set; }
         /// <summary>The configuration settings for enabling a System for Cross-Domain Identity Management (SCIM) with the identity provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,6 +86,8 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_config>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_config.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "saml_certificate_set", n => { SamlCertificateSet = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_saml_certificate_set>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_saml_certificate_set.CreateFromDiscriminatorValue); } },
+                { "saml_certificate_set_id", n => { SamlCertificateSetId = n.GetGuidValue(); } },
                 { "scim_config", n => { ScimConfig = n.GetObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig>(global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_type>(); } },
             };
@@ -90,6 +102,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_config>("config", Config);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteGuidValue("saml_certificate_set_id", SamlCertificateSetId);
             writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessIdentityProviderScimConfig>("scim_config", ScimConfig);
             writer.WriteEnumValue<global::Soenneker.Cloudflare.OpenApiClient.Models.AccessCentrify_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

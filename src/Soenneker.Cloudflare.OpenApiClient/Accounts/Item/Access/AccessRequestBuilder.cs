@@ -15,6 +15,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Logs;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Organizations;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Policies;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.PolicyTests;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Saml_certificates;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Seats;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Service_tokens;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Tags;
@@ -95,6 +96,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.PolicyTests.PolicyTestsRequestBuilder PolicyTests
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.PolicyTests.PolicyTestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The saml_certificates property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Saml_certificates.Saml_certificatesRequestBuilder Saml_certificates
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Saml_certificates.Saml_certificatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The seats property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Access.Seats.SeatsRequestBuilder Seats
