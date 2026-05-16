@@ -22,7 +22,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Sea
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/models/search{?author*,hide_experimental*,page*,per_page*,search*,source*,task*}", pathParameters)
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/models/search{?author*,format*,hide_experimental*,page*,per_page*,search*,source*,task*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Sea
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/models/search{?author*,hide_experimental*,page*,per_page*,search*,source*,task*}", rawUrl)
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/accounts/{account_identifier%2Did}/ai/models/search{?author*,format*,hide_experimental*,page*,per_page*,search*,source*,task*}", rawUrl)
         {
         }
         /// <summary>
@@ -100,6 +100,9 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Sea
             [QueryParameter("author")]
             public string Author { get; set; }
 #endif
+            /// <summary>If set, return models in the requested marketplace format instead of the default response.</summary>
+            [QueryParameter("format")]
+            public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Ai.ModelsRequests.Search.GetFormatQueryParameterType? Format { get; set; }
             /// <summary>Filter to hide experimental models</summary>
             [QueryParameter("hide_experimental")]
             public bool? HideExperimental { get; set; }

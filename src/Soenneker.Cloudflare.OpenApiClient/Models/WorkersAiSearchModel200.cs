@@ -7,46 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Cloudflare.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member1"/>, <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class WorkersAiSearchModel200 : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class WorkersAiSearchModel200 : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The errors property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_errors>? Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member1? WorkersAiSearchModel200Member1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_errors> Errors { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member1 WorkersAiSearchModel200Member1 { get; set; }
 #endif
-        /// <summary>The messages property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member2? WorkersAiSearchModel200Member2 { get; set; }
 #nullable restore
 #else
-        public List<string> Messages { get; set; }
+        public global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member2 WorkersAiSearchModel200Member2 { get; set; }
 #endif
-        /// <summary>The result property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_result>? Result { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_result> Result { get; set; }
-#endif
-        /// <summary>The success property</summary>
-        public bool? Success { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200"/> and sets the default values.
-        /// </summary>
-        public WorkersAiSearchModel200()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -55,7 +37,10 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public static global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200();
+            var result = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200();
+            result.WorkersAiSearchModel200Member1 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member1();
+            result.WorkersAiSearchModel200Member2 = new global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,13 +48,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(WorkersAiSearchModel200Member1 != null || WorkersAiSearchModel200Member2 != null)
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_errors>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "messages", n => { Messages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "result", n => { Result = n.GetCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_result>(global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_result.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "success", n => { Success = n.GetBoolValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkersAiSearchModel200Member1, WorkersAiSearchModel200Member2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,11 +61,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_errors>("errors", Errors);
-            writer.WriteCollectionOfPrimitiveValues<string>("messages", Messages);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200_result>("result", Result);
-            writer.WriteBoolValue("success", Success);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Cloudflare.OpenApiClient.Models.WorkersAiSearchModel200Member1>(null, WorkersAiSearchModel200Member1, WorkersAiSearchModel200Member2);
         }
     }
 }
