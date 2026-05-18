@@ -7,7 +7,6 @@ using Soenneker.Cloudflare.OpenApiClient.Models;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Access;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Acm;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Activation_check;
-using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Analytics;
 using Soenneker.Cloudflare.OpenApiClient.Zones.Item.Api_gateway;
@@ -92,11 +91,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Zones.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Activation_check.Activation_checkRequestBuilder Activation_check
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Activation_check.Activation_checkRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The addressing property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing.AddressingRequestBuilder Addressing
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.Addressing.AddressingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The aiSecurity property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Zones.Item.AiSecurity.AiSecurityRequestBuilder AiSecurity

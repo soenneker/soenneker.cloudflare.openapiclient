@@ -31,6 +31,7 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Devices;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dex;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Diagnostics;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp;
+using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_records;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_settings;
@@ -247,6 +248,11 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.DlpRequestBuilder Dlp
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dlp.DlpRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dls property</summary>
+        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.DlsRequestBuilder Dls
+        {
+            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dls.DlsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dns_firewall property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Dns_firewall.Dns_firewallRequestBuilder Dns_firewall

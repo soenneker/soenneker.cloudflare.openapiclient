@@ -12,7 +12,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
     public partial class IntelSinkholesSinkholeItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The account tag that owns this sinkhole</summary>
+        /// <summary>The account tag that owns this sinkhole.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountTag { get; set; }
@@ -22,13 +22,13 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date and time when the sinkhole was created</summary>
+        /// <summary>The date and time when the sinkhole was created.</summary>
         public DateTimeOffset? CreatedOn { get; set; }
-        /// <summary>The unique identifier for the sinkhole</summary>
+        /// <summary>The unique identifier for the sinkhole.</summary>
         public int? Id { get; set; }
-        /// <summary>The date and time when the sinkhole was last modified</summary>
+        /// <summary>The date and time when the sinkhole was last modified.</summary>
         public DateTimeOffset? ModifiedOn { get; set; }
-        /// <summary>The name of the sinkhole</summary>
+        /// <summary>The name of the sinkhole.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -36,7 +36,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The name of the R2 bucket to store results</summary>
+        /// <summary>The name of the R2 bucket to store results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? R2Bucket { get; set; }
@@ -44,7 +44,7 @@ namespace Soenneker.Cloudflare.OpenApiClient.Models
 #else
         public string R2Bucket { get; set; }
 #endif
-        /// <summary>The id of the R2 instance</summary>
+        /// <summary>The id of the R2 instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? R2Id { get; set; }

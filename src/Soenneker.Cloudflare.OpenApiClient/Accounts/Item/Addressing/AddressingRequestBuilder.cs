@@ -6,7 +6,6 @@ using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Address_maps;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Leases;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Loa_documents;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes;
-using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames;
 using Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Services;
 using System.Collections.Generic;
 using System.IO;
@@ -39,11 +38,6 @@ namespace Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.PrefixesRequestBuilder Prefixes
         {
             get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Prefixes.PrefixesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The regional_hostnames property</summary>
-        public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder Regional_hostnames
-        {
-            get => new global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Regional_hostnames.Regional_hostnamesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The services property</summary>
         public global::Soenneker.Cloudflare.OpenApiClient.Accounts.Item.Addressing.Services.ServicesRequestBuilder Services
